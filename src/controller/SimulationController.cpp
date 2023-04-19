@@ -1,13 +1,11 @@
 #include "SimulationController.h"
 
-SimulationController::SimulationController(PerformanceFunction *function) {
-    this->function = function;
-}
-
-SimulationController::~SimulationController() {
+template<class P> requires is_base_of_v<Parameter, P>
+SimulationController<P>::~SimulationController() {
     delete function;
 }
 
-double SimulationController::evaluateOutput() {
+template<class P> requires is_base_of_v<Parameter, P>
+double SimulationController<P>::evaluateOutput() {
     return function->evaluateOutput();
 }

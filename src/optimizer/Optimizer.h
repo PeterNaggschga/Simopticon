@@ -1,27 +1,35 @@
 #ifndef SIMOPTICON_OPTIMIZER_H
 #define SIMOPTICON_OPTIMIZER_H
 
+#include <list>
 #include "../controller/SimulationController.h"
+#include "../Parameter.h"
+
+using namespace std;
 
 /**
- * An abstract optimization strategy.
+ * An abstract optimization strategy using parameters of type P.
  */
+template<class P> requires is_base_of_v<Parameter, P>
 class Optimizer {
     private:
-        SimulationController *controller;
+        SimulationController<P> *controller;
+        list<P> parameters;
 
         /**
          * Evaluates the function at the given parameters via the SimulationController.
-         * @return A double value representing the error (the lower the better).
+         * @param params list of simulation parameters
+         * @return double value representing the error (the lower the better)
          */
-        double evaluateFunction();
+        double evaluateFunction(list<P> params);
 
     public:
         /**
          * Creates an Optimizer.
-         * @param controller The SimulationController used for simulation and evaluation.
+         * @param controller SimulationController used for simulation and evaluation
+         * @param params list of parameters to be optimized
          */
-        explicit Optimizer(SimulationController *controller, list<P> params): controller(controller), params(params) {};
+        explicit Optimizer(SimulationController<P> *controller, list<P> params): controller(controller), parameters(parameters) {};
 
         virtual ~Optimizer();
 

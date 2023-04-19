@@ -10,7 +10,7 @@ class PerformanceFunction {
 
         /**
          * Evaluates the last simulation run.
-         * @return A double value representing the error (the lower the better).
+         * @return double value representing the error (the lower the better)
          */
         virtual double evaluateOutput() = 0;
 
