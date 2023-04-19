@@ -6,6 +6,8 @@
  */
 class PerformanceFunction {
     public:
+        virtual ~PerformanceFunction() = 0;
+
         /**
          * Evaluates the last simulation run.
          * @return A double value representing the error (the lower the better).

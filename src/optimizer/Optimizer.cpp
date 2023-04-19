@@ -1,7 +1,8 @@
 #include "Optimizer.h"
 
-Optimizer::Optimizer(SimulationController *controller) {
-    this->controller = controller;
+template<class P> requires is_base_of_v<Parameter, P>
+Optimizer<P>::~Optimizer() {
+    delete controller;
 }
 
 double Optimizer::evaluateFunction() {

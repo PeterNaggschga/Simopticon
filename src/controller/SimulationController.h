@@ -17,6 +17,8 @@ class SimulationController {
          */
         explicit SimulationController(PerformanceFunction *function);
 
+        virtual ~SimulationController();
+
         /**
          * Sets the parameters for the next simulation run.
          */

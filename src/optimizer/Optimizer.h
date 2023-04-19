@@ -21,7 +21,14 @@ class Optimizer {
          * Creates an Optimizer.
          * @param controller The SimulationController used for simulation and evaluation.
          */
-        explicit Optimizer(SimulationController *controller);
+        explicit Optimizer(SimulationController *controller, list<P> params): controller(controller), params(params) {};
+
+        virtual ~Optimizer();
+
+        /**
+         * Starts the optimization process.
+         */
+        virtual void optimize() = 0;
 };
 
 
