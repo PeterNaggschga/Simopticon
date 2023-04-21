@@ -1,23 +1,14 @@
 #include "Parameter.h"
 
-Parameter::Parameter(double min, double max, double val, string unit) {
-    if (max < min || val < min || max < val) {
-        throw invalid_argument("Invalid parameter boundaries");
-    }
-    this->min = min;
-    this->max = max;
-    this->val = val;
-    this->unit = std::move(unit);
-}
+#include <stdexcept>
 
-Parameter::Parameter(double min, double max, string unit) {
+Parameter::Parameter(double min, double max, const string& unit) {
     if (max < min) {
         throw invalid_argument("Invalid parameter boundaries");
     }
-    this->min = min;
-    this->max = max;
-    this->val = (min + max) / 2;
-    this->unit = std::move(unit);
+    Parameter::min = min;
+    setMax(max);
+    setUnit(unit);
 }
 
 double Parameter::getMin() const {
@@ -40,17 +31,6 @@ void Parameter::setMax(double max) {
         throw invalid_argument("Maximum greater than minimum");
     }
     Parameter::max = max;
-}
-
-double Parameter::getVal() const {
-    return val;
-}
-
-void Parameter::setVal(double val) {
-    if (max < val || val < min) {
-        throw invalid_argument("Value out of bounds");
-    }
-    Parameter::val = val;
 }
 
 const string &Parameter::getUnit() const {

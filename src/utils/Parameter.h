@@ -2,8 +2,6 @@
 #define SIMOPTICON_PARAMETER_H
 
 #include <string>
-#include <stdexcept>
-#include <utility>
 
 using namespace std;
 
@@ -14,7 +12,6 @@ class Parameter {
     private:
         double min;
         double max;
-        double val;
         string unit;
 
     public:
@@ -22,18 +19,9 @@ class Parameter {
          * Creates a Parameter.
          * @param min Minimum Value of the parameter.
          * @param max Maximum Value of the parameter.
-         * @param val Current Value of the parameter.
          * @param unit Unit of the parameter.
          */
-        Parameter(double min, double max, double val, string unit="");
-
-        /**
-         * Creates a Parameter.
-         * @param min Minimum Value of the parameter.
-         * @param max Maximum Value of the parameter.
-         * @param unit Unit of the parameter.
-         */
-        Parameter(double min, double max, string unit="");
+        Parameter(double min, double max, const string& unit="");
 
         double getMin() const;
 
@@ -43,9 +31,9 @@ class Parameter {
 
         void setMax(double max);
 
-        double getVal() const;
+        virtual double getVal() const = 0;
 
-        void setVal(double val);
+        virtual void setVal(double val) = 0;
 
         const string &getUnit() const;
 
