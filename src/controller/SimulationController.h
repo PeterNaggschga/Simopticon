@@ -2,7 +2,7 @@
 #define SIMOPTICON_SIMULATIONCONTROLLER_H
 
 #include "../evaluation/PerformanceFunction.h"
-#include "../Parameter.h"
+#include "../utils/Parameter.h"
 #include <list>
 
 using namespace std;

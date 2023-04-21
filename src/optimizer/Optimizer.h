@@ -3,7 +3,7 @@
 
 #include <list>
 #include "../controller/SimulationController.h"
-#include "../Parameter.h"
+#include "../utils/Parameter.h"
 
 using namespace std;
 
