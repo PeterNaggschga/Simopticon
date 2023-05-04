@@ -8,7 +8,7 @@ private:
     ParameterDefinition &definition;
 
 public:
-    Parameter(ParameterDefinition &def);
+    explicit Parameter(ParameterDefinition &def);
 
     double getMin() const;
 
