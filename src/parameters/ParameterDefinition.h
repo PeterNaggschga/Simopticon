@@ -13,7 +13,7 @@ private:
     string config;
 
 public:
-    ParameterDefinition(double min, double max, const string& config, const string& unit="");
+    ParameterDefinition(double min, double max, string  config, string  unit="");
 
     double getMin() const;
 

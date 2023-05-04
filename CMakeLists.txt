@@ -3,4 +3,4 @@ project(simopticon)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(simopticon src/evaluation/Pipeline.h src/main.cpp src/evaluation/ConstantHeadway.h src/evaluation/ConstantHeadway.cpp src/utils/CommandLine.cpp src/utils/CommandLine.h)
+add_executable(simopticon src/evaluation/Pipeline.h src/main.cpp src/evaluation/ConstantHeadway.h src/evaluation/ConstantHeadway.cpp src/utils/CommandLine.cpp src/utils/CommandLine.h src/parameters/ParameterDefinition.h src/parameters/Parameter.h src/parameters/ParameterDefinition.cpp src/parameters/Parameter.cpp)
