@@ -1,7 +1,7 @@
 #include "Parameter.h"
 
 
-Parameter::Parameter(ParameterDefinition &def): definition(def) {
+Parameter::Parameter(ParameterDefinition &def) : definition(def) {
 
 }
 

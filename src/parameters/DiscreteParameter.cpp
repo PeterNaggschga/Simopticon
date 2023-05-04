@@ -3,7 +3,10 @@
 #include <cmath>
 #include <stdexcept>
 
-DiscreteParameter::DiscreteParameter(ParameterDefinition &def, double step, double value): Parameter(def), step(step), times(floor(value / step)), offset(value - times * step) {
+DiscreteParameter::DiscreteParameter(ParameterDefinition &def, double step, double value) : Parameter(def), step(step),
+                                                                                            times(floor(value / step)),
+                                                                                            offset(value -
+                                                                                                   times * step) {
     if (value < getMin() || getMax() < value) {
         throw invalid_argument("Value out of bounds!");
     }
@@ -12,7 +15,10 @@ DiscreteParameter::DiscreteParameter(ParameterDefinition &def, double step, doub
     }
 }
 
-DiscreteParameter::DiscreteParameter(ParameterDefinition &def, double step): DiscreteParameter(def, step, fmod(getMax() + getMin() / 2, step)) {
+DiscreteParameter::DiscreteParameter(ParameterDefinition &def, double step) : DiscreteParameter(def, step,
+                                                                                                fmod(getMax() +
+                                                                                                     getMin() / 2,
+                                                                                                     step)) {
 }
 
 int DiscreteParameter::getTimes() const {

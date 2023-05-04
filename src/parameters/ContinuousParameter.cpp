@@ -2,13 +2,14 @@
 
 #include <stdexcept>
 
-ContinuousParameter::ContinuousParameter(ParameterDefinition &def, double value): Parameter(def), val(value) {
+ContinuousParameter::ContinuousParameter(ParameterDefinition &def, double value) : Parameter(def), val(value) {
     if (value < getMin() || getMax() < value) {
         throw invalid_argument("Value out of bounds!");
     }
 }
 
-ContinuousParameter::ContinuousParameter(ParameterDefinition &def): ContinuousParameter(def, (getMin() + getMax()) / 2) {
+ContinuousParameter::ContinuousParameter(ParameterDefinition &def) : ContinuousParameter(def,
+                                                                                         (getMin() + getMax()) / 2) {
 }
 
 double ContinuousParameter::getVal() const {

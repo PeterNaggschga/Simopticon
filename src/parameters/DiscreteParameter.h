@@ -5,28 +5,28 @@
 #include "Parameter.h"
 
 class DiscreteParameter : public Parameter {
-    private:
-        int times;
-        double step;
-        double offset = 0;
+private:
+    int times;
+    double step;
+    double offset = 0;
 
 
-    public:
-        DiscreteParameter(ParameterDefinition &def, double step, double value);
+public:
+    DiscreteParameter(ParameterDefinition &def, double step, double value);
 
-        DiscreteParameter(ParameterDefinition &def, double step);
+    DiscreteParameter(ParameterDefinition &def, double step);
 
-        int getTimes() const;
+    int getTimes() const;
 
-        void setTimes(int times);
+    void setTimes(int times);
 
-        double getStep() const;
+    double getStep() const;
 
-        double getOffset() const;
+    double getOffset() const;
 
-        double getVal() const override;
+    double getVal() const override;
 
-        void setVal(double val) override;
+    void setVal(double val) override;
 };
 
 

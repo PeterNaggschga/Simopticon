@@ -14,7 +14,7 @@ private:
     list<ParameterDefinition> parameters;
 
 public:
-    list<vector<Parameter&>> getValues(map<vector<Parameter&>, double> values);
+    list<vector<Parameter &>> getValues(map<vector<Parameter &>, double> values);
 
     virtual void runOptimization() = 0;
 };
