@@ -10,11 +10,14 @@ class StoppingCondition {
 private:
     const int L = 0;
     const int M = 0;
-    const time_point<system_clock, seconds> T;
+    time_point<system_clock, seconds> T;
+    const int mins;
     bool time_eval = false;
 
 public:
     explicit StoppingCondition(int L = 0, int M = 0, int T = 0);
+
+    void setStartNow();
 
     bool evaluate(int l = 0, int m = 0);
 };
