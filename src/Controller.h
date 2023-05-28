@@ -1,10 +1,10 @@
 #ifndef SIMOPTICON_CONTROLLER_H
 #define SIMOPTICON_CONTROLLER_H
 
-#include "optimizer/Optimizer.h"
 #include "evaluation/Pipeline.h"
 #include "runner/SimulationRunner.h"
 #include "parameters/Parameter.h"
+#include "optimizer/Optimizer.h"
 
 #include <map>
 #include <vector>
@@ -19,9 +19,14 @@ private:
     map<vector<Parameter>, double> values;
 
 public:
-    map<vector<Parameter>, double> getValues(list<vector<Parameter>>);
+    map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
 
 };
+
+map<vector<Parameter>, double> Controller::getValues(const list<vector<Parameter>> &params) {
+    //TODO
+    return {};
+}
 
 
 #endif //SIMOPTICON_CONTROLLER_H

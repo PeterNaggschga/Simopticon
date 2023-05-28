@@ -10,11 +10,12 @@ using namespace std;
 
 class Optimizer {
 private:
-    Controller controller;
+    Controller &controller;
     list<ParameterDefinition> parameters;
 
 public:
-    list<vector<Parameter &>> getValues(map<vector<Parameter &>, double> values);
+    //TODO con-/destructor
+    map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
 
     virtual void runOptimization() = 0;
 };
