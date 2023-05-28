@@ -30,7 +30,7 @@ array<vector<double>, 2> HyRect::getSamplingVertices() {
         return {a, b};
     }
     array<vector<double>, 2> vertices = parent->getSamplingVertices();
-    int psplit = parent->getDim();
+    int psplit = parent->split;
     double length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
     if (pos != position::RIGHT) {
         vertices[1][psplit - 1] = vertices[0][psplit - 1] + length / 3;
@@ -44,8 +44,6 @@ array<vector<double>, 2> HyRect::getSamplingVertices() {
     return vertices;
 }
 
-#pragma clang diagnostic pop
-
 unsigned char HyRect::getDim() const {
     return split;
 }
@@ -56,4 +54,36 @@ position HyRect::getPos() const {
 
 unsigned int HyRect::getDepth() const {
     return depth;
+}
+
+double HyRect::getValue() const {
+    return value;
+}
+
+void HyRect::setValue(double value) {
+    HyRect::value = value;
+}
+
+bool HyRect::operator==(const HyRect &rect) const {
+    return rect.D == D && rect.depth == depth && rect.pos == pos && &rect.parent == &parent;
+}
+
+bool HyRect::operator<(const HyRect &rect) const {
+    return depth > rect.depth || (depth == rect.depth && value < rect.value);
+}
+
+bool HyRect::operator!=(const HyRect &rhs) const {
+    return !(rhs == *this);
+}
+
+bool HyRect::operator>(const HyRect &rhs) const {
+    return rhs < *this;
+}
+
+bool HyRect::operator<=(const HyRect &rhs) const {
+    return !(rhs < *this);
+}
+
+bool HyRect::operator>=(const HyRect &rhs) const {
+    return !(*this < rhs);
 }

@@ -4,6 +4,7 @@
 #include <optional>
 #include <array>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ private:
     position pos;
     unsigned char split = 0;
     HyRect *parent;
+    double value = INFINITY;
 
 public:
     HyRect(unsigned char D, position pos, HyRect *parent);
@@ -32,7 +34,31 @@ public:
     [[nodiscard]] position getPos() const;
 
     [[nodiscard]] unsigned char getDim() const;
+
+    [[nodiscard]] double getValue() const;
+
+    void setValue(double value);
+
+    bool operator==(const HyRect &rect) const;
+
+    bool operator<(const HyRect &rect) const;
+
+    bool operator!=(const HyRect &rhs) const;
+
+    bool operator>(const HyRect &rhs) const;
+
+    bool operator<=(const HyRect &rhs) const;
+
+    bool operator>=(const HyRect &rhs) const;
 };
 
+namespace std {
+    template<>
+    struct [[maybe_unused]] hash<HyRect> {
+        size_t operator()(const HyRect &x) const {
+            return hash<int>()((int) pow((int) x.getPos() + 2, x.getDim() * x.getDepth() + 1));
+        }
+    };
+}
 
 #endif //SIMOPTICON_HYRECT_H
