@@ -5,7 +5,6 @@
 #include <array>
 #include <vector>
 #include <cmath>
-#include <boost/rational.hpp>
 
 using namespace std;
 
