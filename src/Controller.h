@@ -1,17 +1,19 @@
 #ifndef SIMOPTICON_CONTROLLER_H
 #define SIMOPTICON_CONTROLLER_H
 
-#include "evaluation/Pipeline.h"
-#include "runner/SimulationRunner.h"
-#include "parameters/Parameter.h"
-
 #include <map>
 #include <vector>
 #include <list>
 
-using namespace std;
-
 class Optimizer;
+
+class SimulationRunner;
+
+class Pipeline;
+
+class Parameter;
+
+using namespace std;
 
 class Controller {
 private:
@@ -21,7 +23,7 @@ private:
     map<vector<Parameter>, double> values;
 
 public:
-    map<vector<Parameter>, double> getValues(const list <vector<Parameter>> &params);
+    map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
 
 };
 

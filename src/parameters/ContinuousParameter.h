@@ -13,7 +13,7 @@ public:
 
     explicit ContinuousParameter(ParameterDefinition &def);
 
-    double getVal() const override;
+    [[nodiscard]] double getVal() const override;
 
     void setVal(double val) override;
 };

@@ -16,15 +16,15 @@ public:
 
     DiscreteParameter(ParameterDefinition &def, double step);
 
-    int getTimes() const;
+    [[nodiscard]] int getTimes() const;
 
     void setTimes(int times);
 
-    double getStep() const;
+    [[nodiscard]] double getStep() const;
 
-    double getOffset() const;
+    [[nodiscard]] double getOffset() const;
 
-    double getVal() const override;
+    [[nodiscard]] double getVal() const override;
 
     void setVal(double val) override;
 };

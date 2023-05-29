@@ -1,7 +1,12 @@
 #ifndef SIMOPTICON_PARAMETER_H
 #define SIMOPTICON_PARAMETER_H
 
-#include "ParameterDefinition.h"
+
+#include <string>
+
+class ParameterDefinition;
+
+using namespace std;
 
 class Parameter {
 private:
@@ -10,15 +15,15 @@ private:
 public:
     explicit Parameter(ParameterDefinition &def);
 
-    double getMin() const;
+    [[nodiscard]] double getMin() const;
 
-    double getMax() const;
+    [[nodiscard]] double getMax() const;
 
-    const string &getUnit() const;
+    [[nodiscard]] const string &getUnit() const;
 
-    const string &getConfig() const;
+    [[nodiscard]] const string &getConfig() const;
 
-    virtual double getVal() const = 0;
+    [[nodiscard]] virtual double getVal() const = 0;
 
     virtual void setVal(double val) = 0;
 };

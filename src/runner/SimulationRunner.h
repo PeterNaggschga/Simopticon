@@ -3,7 +3,8 @@
 
 #include <string>
 #include <vector>
-#include "../parameters/Parameter.h"
+
+class Parameter;
 
 using namespace std;
 

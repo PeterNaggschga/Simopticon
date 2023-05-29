@@ -15,13 +15,13 @@ private:
 public:
     ParameterDefinition(double min, double max, string config, string unit = "");
 
-    double getMin() const;
+    [[nodiscard]] double getMin() const;
 
-    double getMax() const;
+    [[nodiscard]] double getMax() const;
 
-    const string &getUnit() const;
+    [[nodiscard]] const string &getUnit() const;
 
-    const string &getConfig() const;
+    [[nodiscard]] const string &getConfig() const;
 };
 
 

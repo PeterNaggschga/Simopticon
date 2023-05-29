@@ -9,6 +9,8 @@
 #include <set>
 #include <unordered_set>
 
+class StoppingCondition;
+
 using namespace std;
 
 class DirectOptimizer : public Optimizer {
@@ -16,7 +18,7 @@ class DirectOptimizer : public Optimizer {
 private:
     const unsigned char D;
     StoppingCondition stopCon;
-    std::set<HyRect> activeRects;
+    set<HyRect> activeRects;
     unordered_set<HyRect> parentRects;
 
 public:

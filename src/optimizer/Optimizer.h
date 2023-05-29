@@ -1,10 +1,15 @@
 #ifndef SIMOPTICON_OPTIMIZER_H
 #define SIMOPTICON_OPTIMIZER_H
 
-#include <list>
 #include "../parameters/ParameterDefinition.h"
-#include "../parameters/Parameter.h"
-#include "../Controller.h"
+
+#include <list>
+#include <vector>
+#include <map>
+
+class Controller;
+
+class Parameter;
 
 using namespace std;
 

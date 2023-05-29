@@ -1,5 +1,6 @@
 #include "Parameter.h"
 
+#include "ParameterDefinition.h"
 
 Parameter::Parameter(ParameterDefinition &def) : definition(def) {
 
