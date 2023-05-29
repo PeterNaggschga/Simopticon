@@ -23,15 +23,15 @@ array<HyRect *, 3> HyRect::divide(unsigned char dimension) {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
 
-array<vector<double>, 2> HyRect::getSamplingVertices() {
+array<vector<long double>, 2> HyRect::getSamplingVertices() {
     if (depth == 0) {
-        vector<double> a(D, 0);
-        vector<double> b(D, 1);
+        vector<long double> a(D, 0);
+        vector<long double> b(D, 1);
         return {a, b};
     }
-    array<vector<double>, 2> vertices = parent->getSamplingVertices();
+    array<vector<long double>, 2> vertices = parent->getSamplingVertices();
     int psplit = parent->split;
-    double length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
+    long double length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
     if (pos != position::RIGHT) {
         vertices[1][psplit - 1] = vertices[0][psplit - 1] + length / 3;
     }
@@ -56,11 +56,11 @@ unsigned int HyRect::getDepth() const {
     return depth;
 }
 
-double HyRect::getValue() const {
+long double HyRect::getValue() const {
     return value;
 }
 
-void HyRect::setValue(double value) {
+void HyRect::setValue(long double value) {
     HyRect::value = value;
 }
 

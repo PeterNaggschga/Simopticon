@@ -5,6 +5,7 @@
 #include <array>
 #include <vector>
 #include <cmath>
+#include <boost/rational.hpp>
 
 using namespace std;
 
@@ -20,14 +21,14 @@ private:
     position pos;
     unsigned char split = 0;
     HyRect *parent;
-    double value = INFINITY;
+    long double value = INFINITY;
 
 public:
     HyRect(unsigned char D, position pos, HyRect *parent);
 
     array<HyRect *, 3> divide(unsigned char dimension);
 
-    array<vector<double>, 2> getSamplingVertices();
+    array<vector<long double>, 2> getSamplingVertices();
 
     [[nodiscard]] unsigned int getDepth() const;
 
@@ -35,9 +36,9 @@ public:
 
     [[nodiscard]] unsigned char getDim() const;
 
-    [[nodiscard]] double getValue() const;
+    [[nodiscard]] long double getValue() const;
 
-    void setValue(double value);
+    void setValue(long double value);
 
     bool operator==(const HyRect &rect) const;
 
@@ -56,7 +57,7 @@ namespace std {
     template<>
     struct [[maybe_unused]] hash<HyRect> {
         size_t operator()(const HyRect &x) const {
-            return hash<int>()((int) pow((int) x.getPos() + 2, x.getDim() * x.getDepth() + 1));
+            return hash<double>()(pow((int) x.getPos() + 2, x.getDim() * x.getDepth() + 1) + (double) x.getValue());
         }
     };
 }
