@@ -4,12 +4,14 @@
 #include "evaluation/Pipeline.h"
 #include "runner/SimulationRunner.h"
 #include "parameters/Parameter.h"
-#include "optimizer/Optimizer.h"
 
 #include <map>
 #include <vector>
+#include <list>
 
 using namespace std;
+
+class Optimizer;
 
 class Controller {
 private:
@@ -19,14 +21,9 @@ private:
     map<vector<Parameter>, double> values;
 
 public:
-    map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
+    map<vector<Parameter>, double> getValues(const list <vector<Parameter>> &params);
 
 };
-
-map<vector<Parameter>, double> Controller::getValues(const list<vector<Parameter>> &params) {
-    //TODO
-    return {};
-}
 
 
 #endif //SIMOPTICON_CONTROLLER_H
