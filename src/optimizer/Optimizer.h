@@ -14,7 +14,10 @@ private:
     list<ParameterDefinition> parameters;
 
 public:
-    //TODO con-/destructor
+    Optimizer(Controller &ctrl, list<ParameterDefinition> params);
+
+    //TODO destructor
+
     map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
 
     virtual void runOptimization() = 0;
