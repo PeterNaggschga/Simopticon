@@ -18,8 +18,14 @@ class DirectOptimizer : public Optimizer {
 private:
     const unsigned char D;
     StoppingCondition stopCon;
-    set<HyRect> activeRects;
+    map<unsigned int, set<HyRect>> activeRects;
     unordered_set<HyRect> parentRects;
+
+    void addActiveRect(HyRect rect);
+
+    void removeActiveRect(HyRect rect);
+
+    list<HyRect *> optimalRectangles();
 
 public:
     DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, unsigned char D, StoppingCondition con);
