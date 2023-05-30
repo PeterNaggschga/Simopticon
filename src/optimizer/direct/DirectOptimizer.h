@@ -24,9 +24,9 @@ private:
     map<depth, set<HyRect>> activeRects;
     unordered_set<HyRect> parentRects;
 
-    map<vector<coordinate>, functionValue> getValues(const list<vector<coordinate>> &points);
+    map<vector<dirCoordinate>, functionValue> getValues(const list<vector<dirCoordinate>> &points);
 
-    functionValue estimatedValue(map<vector<coordinate>, functionValue> samples);
+    functionValue estimatedValue(map<vector<dirCoordinate>, functionValue> samples);
 
     list<HyRect *> optimalRectangles();
 

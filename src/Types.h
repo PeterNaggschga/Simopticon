@@ -3,6 +3,6 @@
 
 typedef long double functionValue;
 
-typedef long double coordinate;
+typedef double coordinate;
 
 #endif //SIMOPTICON_TYPES_H

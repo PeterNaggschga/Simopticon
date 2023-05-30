@@ -28,10 +28,10 @@ void DirectOptimizer::runOptimization() {
     }
 }
 
-map<vector<coordinate>, functionValue> DirectOptimizer::getValues(const list<vector<coordinate>> &points) {
-    map<vector<Parameter *>, vector<coordinate>> paramToCord;
+map<vector<dirCoordinate>, functionValue> DirectOptimizer::getValues(const list<vector<dirCoordinate>> &points) {
+    map<vector<Parameter *>, vector<dirCoordinate>> paramToCord;
     list<vector<Parameter *>> paramList(points.size());
-    for (const vector<coordinate> &point: points) {
+    for (const vector<dirCoordinate> &point: points) {
         vector<Parameter *> paramVec = normalizer.denormalize(point);
         paramList.push_back(paramVec);
         paramToCord.insert(make_pair(paramVec, point));
@@ -39,14 +39,14 @@ map<vector<coordinate>, functionValue> DirectOptimizer::getValues(const list<vec
 
     map<vector<Parameter *>, functionValue> values = requestValues(paramList);
 
-    map<vector<coordinate>, functionValue> result;
+    map<vector<dirCoordinate>, functionValue> result;
     for (pair<vector<Parameter *>, functionValue> pair: values) {
         result.insert(make_pair(paramToCord[pair.first], pair.second));
     }
     return result;
 }
 
-functionValue DirectOptimizer::estimatedValue(map<vector<coordinate>, functionValue> samples) {
+functionValue DirectOptimizer::estimatedValue(map<vector<dirCoordinate>, functionValue> samples) {
     // TODO
     return 0;
 }

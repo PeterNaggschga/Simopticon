@@ -26,14 +26,14 @@ private:
     HyRect *parent;
     functionValue value = INFINITY;
 
-    array<vector<coordinate>, 2> getSamplingVerticesRecursive();
+    array<vector<dirCoordinate>, 2> getSamplingVerticesRecursive();
 
 public:
     HyRect(dimension D, position pos, HyRect *parent);
 
     array<HyRect, 3> divide();
 
-    list<vector<coordinate>> getSamplingVertices();
+    list<vector<dirCoordinate>> getSamplingVertices();
 
     [[nodiscard]] ::depth getDepth() const;
 

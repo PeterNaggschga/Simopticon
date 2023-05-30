@@ -20,9 +20,9 @@ private:
 public:
     explicit ParameterNormalizer(list<ParameterDefinition> &parameters);
 
-    static vector<coordinate> normalize(const vector<Parameter *> &params);
+    static vector<dirCoordinate> normalize(const vector<Parameter *> &params);
 
-    vector<Parameter *> denormalize(vector<coordinate> cords);
+    vector<Parameter *> denormalize(vector<dirCoordinate> cords);
 };
 
 
