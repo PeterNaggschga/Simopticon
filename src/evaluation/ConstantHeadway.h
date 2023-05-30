@@ -5,12 +5,12 @@
 
 class ConstantHeadway : public Pipeline {
 private:
-    double value = 0;
+    functionValue value = 0;
 
 public:
     void processOutput(list<string> experimentIds, string path, int pipelineId) override;
 
-    double getValue() override;
+    functionValue getValue() override;
 };
 
 #endif //SIMOPTICON_CONSTANTHEADWAY_H

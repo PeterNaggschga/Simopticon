@@ -8,9 +8,9 @@ void ConstantHeadway::processOutput(list<string> experimentIds, string path, int
     string pipeline = CommandLine::SOURCE + "src/evaluation/pipeline/pipeline.py ";
     string cmd = pipeline + "-p " + path;
     string out = CommandLine::exec(cmd.c_str());
-    value = stod(out);
+    value = stold(out);
 }
 
-double ConstantHeadway::getValue() {
+functionValue ConstantHeadway::getValue() {
     return value;
 }

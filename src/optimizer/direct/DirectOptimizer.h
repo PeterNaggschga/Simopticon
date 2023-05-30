@@ -5,7 +5,6 @@
 #include "../Optimizer.h"
 #include "StoppingCondition.h"
 #include "HyRect.h"
-#include "../../Types.h"
 
 #include <set>
 #include <unordered_set>

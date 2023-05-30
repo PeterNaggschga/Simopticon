@@ -1,6 +1,7 @@
 #ifndef SIMOPTICON_OPTIMIZER_H
 #define SIMOPTICON_OPTIMIZER_H
 
+#include "../Types.h"
 #include "../parameters/ParameterDefinition.h"
 
 #include <list>
@@ -23,7 +24,7 @@ public:
 
     //TODO destructor
 
-    map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
+    map<vector<Parameter>, functionValue> getValues(const list<vector<Parameter>> &params);
 
     virtual void runOptimization() = 0;
 };
