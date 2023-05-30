@@ -24,7 +24,7 @@ class HyRect {
 
 private:
     const dimension D;
-    depth depth;
+    depth t;
     position pos;
     dimension split = 0;
     HyRect *parent;
