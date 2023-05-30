@@ -16,7 +16,7 @@ class HyRect {
 
 private:
     const unsigned char D;
-    unsigned int depth; // TODO: entfernen?
+    unsigned int depth;
     position pos;
     unsigned char split = 0;
     HyRect *parent;
@@ -25,7 +25,7 @@ private:
 public:
     HyRect(unsigned char D, position pos, HyRect *parent);
 
-    array<HyRect *, 3> divide(unsigned char dimension);
+    array<HyRect, 3> divide();
 
     array<vector<long double>, 2> getSamplingVertices();
 

@@ -6,17 +6,14 @@ HyRect::HyRect(unsigned char D, position pos, HyRect *parent) : D(D), pos(pos), 
                                                                 depth(parent ? parent->depth + 1 : 0) {
 }
 
-array<HyRect *, 3> HyRect::divide(unsigned char dimension) {
+array<HyRect, 3> HyRect::divide() {
     if (split != 0) {
         throw logic_error("HyRect is already divided!");
     }
-    if (dimension == 0 || dimension > D) {
-        throw invalid_argument("Dimension does not exist!");
-    }
-    split = dimension;
-    auto *left = new HyRect(D, position::LEFT, this);
-    auto *mid = new HyRect(D, position::MIDDLE, this);
-    auto *right = new HyRect(D, position::RIGHT, this);
+    split = depth % D + 1;
+    auto left = HyRect(D, position::LEFT, this);
+    auto mid = HyRect(D, position::MIDDLE, this);
+    auto right = HyRect(D, position::RIGHT, this);
     return {left, mid, right};
 }
 
@@ -29,9 +26,9 @@ array<vector<long double>, 2> HyRect::getSamplingVertices() {
         vector<long double> b(D, 1);
         return {a, b};
     }
-    array<vector<long double>, 2> vertices = parent->getSamplingVertices();
-    int psplit = parent->split;
-    long double length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
+    auto vertices = parent->getSamplingVertices();
+    auto psplit = parent->split;
+    auto length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
     if (pos != position::RIGHT) {
         vertices[1][psplit - 1] = vertices[0][psplit - 1] + length / 3;
     }
