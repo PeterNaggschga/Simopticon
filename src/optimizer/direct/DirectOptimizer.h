@@ -5,6 +5,7 @@
 #include "../Optimizer.h"
 #include "StoppingCondition.h"
 #include "HyRect.h"
+#include "../../Types.h"
 
 #include <set>
 #include <unordered_set>
@@ -16,9 +17,9 @@ using namespace std;
 class DirectOptimizer : public Optimizer {
 
 private:
-    const unsigned char D;
+    const dimension D;
     StoppingCondition stopCon;
-    map<unsigned int, set<HyRect>> activeRects;
+    map<depth, set<HyRect>> activeRects;
     unordered_set<HyRect> parentRects;
 
     void addActiveRect(HyRect rect);
@@ -28,7 +29,7 @@ private:
     list<HyRect *> optimalRectangles();
 
 public:
-    DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, unsigned char D, StoppingCondition con);
+    DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D, StoppingCondition con);
 
     void runOptimization() override;
 };

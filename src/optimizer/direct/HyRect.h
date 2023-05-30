@@ -1,12 +1,20 @@
 #ifndef SIMOPTICON_HYRECT_H
 #define SIMOPTICON_HYRECT_H
 
+#include "../../Types.h"
+
 #include <optional>
 #include <array>
 #include <vector>
 #include <cmath>
 
 using namespace std;
+
+typedef unsigned int depth;
+
+typedef unsigned char dimension;
+
+typedef long double coordinate;
 
 enum class position : char {
     LEFT = 0, MIDDLE = 1, RIGHT = 2, BASE = -1
@@ -15,29 +23,29 @@ enum class position : char {
 class HyRect {
 
 private:
-    const unsigned char D;
-    unsigned int depth;
+    const dimension D;
+    depth depth;
     position pos;
-    unsigned char split = 0;
+    dimension split = 0;
     HyRect *parent;
-    long double value = INFINITY;
+    functionValue value = INFINITY;
 
 public:
-    HyRect(unsigned char D, position pos, HyRect *parent);
+    HyRect(dimension D, position pos, HyRect *parent);
 
     array<HyRect, 3> divide();
 
-    array<vector<long double>, 2> getSamplingVertices();
+    array<vector<coordinate>, 2> getSamplingVertices();
 
-    [[nodiscard]] unsigned int getDepth() const;
+    [[nodiscard]] ::depth getDepth() const;
 
     [[nodiscard]] position getPos() const;
 
-    [[nodiscard]] unsigned char getDim() const;
+    [[nodiscard]] ::dimension getDim() const;
 
-    [[nodiscard]] long double getValue() const;
+    [[nodiscard]] functionValue getValue() const;
 
-    void setValue(long double value);
+    void setValue(functionValue value);
 
     bool operator==(const HyRect &rect) const;
 

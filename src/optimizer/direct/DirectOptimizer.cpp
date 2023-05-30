@@ -2,7 +2,7 @@
 
 #include <utility>
 
-DirectOptimizer::DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, unsigned char D,
+DirectOptimizer::DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D,
                                  StoppingCondition con) : Optimizer(ctrl, std::move(params)), D(D), stopCon(con) {
 }
 
@@ -33,7 +33,7 @@ list<HyRect *> DirectOptimizer::optimalRectangles() {
 }
 
 void DirectOptimizer::addActiveRect(HyRect rect) {
-    auto depth = rect.getDepth();
+    depth depth = rect.getDepth();
     auto it = activeRects.find(depth);
     if (it != activeRects.end()) {
         it->second.insert(rect);
@@ -44,7 +44,7 @@ void DirectOptimizer::addActiveRect(HyRect rect) {
 }
 
 void DirectOptimizer::removeActiveRect(HyRect rect) {
-    auto depth = rect.getDepth();
+    depth depth = rect.getDepth();
     set<HyRect> set = activeRects[depth];
     set.erase(rect);
     if (set.empty()) {

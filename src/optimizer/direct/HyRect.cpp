@@ -2,8 +2,8 @@
 
 #include <stdexcept>
 
-HyRect::HyRect(unsigned char D, position pos, HyRect *parent) : D(D), pos(pos), parent(parent),
-                                                                depth(parent ? parent->depth + 1 : 0) {
+HyRect::HyRect(dimension D, position pos, HyRect *parent) : D(D), pos(pos), parent(parent),
+                                                            depth(parent ? parent->depth + 1 : 0) {
 }
 
 array<HyRect, 3> HyRect::divide() {
@@ -20,15 +20,15 @@ array<HyRect, 3> HyRect::divide() {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
 
-array<vector<long double>, 2> HyRect::getSamplingVertices() {
+array<vector<coordinate>, 2> HyRect::getSamplingVertices() {
     if (depth == 0) {
-        vector<long double> a(D, 0);
-        vector<long double> b(D, 1);
+        vector<coordinate> a(D, 0);
+        vector<coordinate> b(D, 1);
         return {a, b};
     }
-    auto vertices = parent->getSamplingVertices();
-    auto psplit = parent->split;
-    auto length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
+    array<vector<coordinate>, 2> vertices = parent->getSamplingVertices();
+    dimension psplit = parent->split;
+    coordinate length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
     if (pos != position::RIGHT) {
         vertices[1][psplit - 1] = vertices[0][psplit - 1] + length / 3;
     }
@@ -41,7 +41,7 @@ array<vector<long double>, 2> HyRect::getSamplingVertices() {
     return vertices;
 }
 
-unsigned char HyRect::getDim() const {
+dimension HyRect::getDim() const {
     return split;
 }
 
@@ -49,15 +49,15 @@ position HyRect::getPos() const {
     return pos;
 }
 
-unsigned int HyRect::getDepth() const {
+depth HyRect::getDepth() const {
     return depth;
 }
 
-long double HyRect::getValue() const {
+functionValue HyRect::getValue() const {
     return value;
 }
 
-void HyRect::setValue(long double value) {
+void HyRect::setValue(functionValue value) {
     HyRect::value = value;
 }
 
