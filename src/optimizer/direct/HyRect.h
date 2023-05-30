@@ -2,19 +2,15 @@
 #define SIMOPTICON_HYRECT_H
 
 #include "../../Types.h"
+#include "DirectTypes.h"
 
 #include <optional>
 #include <array>
 #include <vector>
 #include <cmath>
+#include <list>
 
 using namespace std;
-
-typedef unsigned int depth;
-
-typedef unsigned char dimension;
-
-typedef long double coordinate;
 
 enum class position : char {
     LEFT = 0, MIDDLE = 1, RIGHT = 2, BASE = -1
@@ -30,12 +26,14 @@ private:
     HyRect *parent;
     functionValue value = INFINITY;
 
+    array<vector<coordinate>, 2> getSamplingVerticesRecursive();
+
 public:
     HyRect(dimension D, position pos, HyRect *parent);
 
     array<HyRect, 3> divide();
 
-    array<vector<coordinate>, 2> getSamplingVertices();
+    list<vector<coordinate>> getSamplingVertices();
 
     [[nodiscard]] ::depth getDepth() const;
 

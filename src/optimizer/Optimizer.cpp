@@ -5,8 +5,8 @@
 
 #include <utility>
 
-map<vector<Parameter>, double> Optimizer::getValues(const list<vector<Parameter>> &params) {
-    return controller.getValues(params);
+map<vector<Parameter *>, functionValue> Optimizer::requestValues(const list<vector<Parameter *>> &params) {
+    return controller.requestValues(params);
 }
 
 Optimizer::Optimizer(Controller &ctrl, list<ParameterDefinition> params) : controller(ctrl),

@@ -2,7 +2,7 @@
 
 #include "parameters/Parameter.h"
 
-map<vector<Parameter>, double> Controller::getValues(const list<vector<Parameter>> &params) {
+map<vector<Parameter *>, functionValue> Controller::requestValues(const list<vector<Parameter *>> &params) {
     //TODO
     return {};
 }

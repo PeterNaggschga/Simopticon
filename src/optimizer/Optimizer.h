@@ -24,7 +24,7 @@ public:
 
     //TODO destructor
 
-    map<vector<Parameter>, functionValue> getValues(const list<vector<Parameter>> &params);
+    map<vector<Parameter *>, functionValue> requestValues(const list<vector<Parameter *>> &params);
 
     virtual void runOptimization() = 0;
 };

@@ -20,13 +20,13 @@ array<HyRect, 3> HyRect::divide() {
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
 
-array<vector<coordinate>, 2> HyRect::getSamplingVertices() {
+array<vector<coordinate>, 2> HyRect::getSamplingVerticesRecursive() {
     if (t == 0) {
         vector<coordinate> a(D, 0);
         vector<coordinate> b(D, 1);
         return {a, b};
     }
-    array<vector<coordinate>, 2> vertices = parent->getSamplingVertices();
+    array<vector<coordinate>, 2> vertices = parent->getSamplingVerticesRecursive();
     dimension psplit = parent->split;
     coordinate length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
     if (pos != position::RIGHT) {
@@ -39,6 +39,14 @@ array<vector<coordinate>, 2> HyRect::getSamplingVertices() {
         swap(vertices[0], vertices[1]);
     }
     return vertices;
+}
+
+list<vector<coordinate>> HyRect::getSamplingVertices() {
+    list<vector<coordinate>> result;
+    for (const vector<coordinate> &vertice: getSamplingVerticesRecursive()) {
+        result.push_back(vertice);
+    }
+    return result;
 }
 
 dimension HyRect::getDim() const {

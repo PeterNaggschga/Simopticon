@@ -4,6 +4,7 @@
 #include <map>
 #include <vector>
 #include <list>
+#include "Types.h"
 
 class Optimizer;
 
@@ -20,10 +21,10 @@ private:
     Optimizer &optimizer;
     SimulationRunner &runner;
     Pipeline &pipeline;
-    map<vector<Parameter>, double> values;
+    map<vector<Parameter>, functionValue> values;
 
 public:
-    map<vector<Parameter>, double> getValues(const list<vector<Parameter>> &params);
+    map<vector<Parameter *>, functionValue> requestValues(const list<vector<Parameter *>> &params);
 
 };
 

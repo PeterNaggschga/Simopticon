@@ -3,14 +3,15 @@
 #include <utility>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D,
-                                 StoppingCondition con) : Optimizer(ctrl, std::move(params)), D(D), stopCon(con) {
+                                 StoppingCondition con) : Optimizer(ctrl, std::move(params)), D(D), stopCon(con),
+                                                          normalizer(ParameterNormalizer(params)) {
 }
 
 void DirectOptimizer::runOptimization() {
     int m = 1, l = 0;
 
     auto base = HyRect(D, position::BASE, nullptr);
-    //base.setValue(0);
+    addEstimatedValue(base);
     addActiveRect(base);
     //TODO init
 
@@ -27,9 +28,36 @@ void DirectOptimizer::runOptimization() {
     }
 }
 
-list<HyRect *> DirectOptimizer::optimalRectangles() {
+map<vector<coordinate>, functionValue> DirectOptimizer::getValues(const list<vector<coordinate>> &points) {
+    map<vector<Parameter *>, vector<coordinate>> paramToCord;
+    list<vector<Parameter *>> paramList(points.size());
+    for (const vector<coordinate> &point: points) {
+        vector<Parameter *> paramVec = normalizer.denormalize(point);
+        paramList.push_back(paramVec);
+        paramToCord.insert(make_pair(paramVec, point));
+    }
 
+    map<vector<Parameter *>, functionValue> values = requestValues(paramList);
+
+    map<vector<coordinate>, functionValue> result;
+    for (pair<vector<Parameter *>, functionValue> pair: values) {
+        result.insert(make_pair(paramToCord[pair.first], pair.second));
+    }
+    return result;
+}
+
+functionValue DirectOptimizer::estimatedValue(map<vector<coordinate>, functionValue> samples) {
+    // TODO
+    return 0;
+}
+
+list<HyRect *> DirectOptimizer::optimalRectangles() {
+    // TODO
     return {};
+}
+
+void DirectOptimizer::addEstimatedValue(HyRect &rect) {
+    rect.setValue(estimatedValue(getValues(rect.getSamplingVertices())));
 }
 
 void DirectOptimizer::addActiveRect(HyRect rect) {
@@ -51,4 +79,3 @@ void DirectOptimizer::removeActiveRect(HyRect rect) {
         activeRects.erase(depth);
     }
 }
-
