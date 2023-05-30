@@ -2,9 +2,14 @@
 
 import argparse
 import os
+import sys
 
 import numpy as np
 import pandas as pd
+
+sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')  # TODO: bei Installation $OMNETPP_HOME setzen (.profile)
+
+# noinspection PyUnresolvedReferences
 from omnetpp.scave import results as res, vectorops as ops
 
 
