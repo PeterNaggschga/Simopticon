@@ -24,9 +24,9 @@ public:
 
     [[nodiscard]] double getOffset() const;
 
-    [[nodiscard]] double getVal() const override;
+    [[nodiscard]] coordinate getVal() const override;
 
-    void setVal(double val) override;
+    void setVal(coordinate val) override;
 };
 
 
