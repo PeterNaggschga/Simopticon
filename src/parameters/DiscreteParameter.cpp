@@ -41,10 +41,10 @@ double DiscreteParameter::getOffset() const {
     return offset;
 }
 
-double DiscreteParameter::getVal() const {
+coordinate DiscreteParameter::getVal() const {
     return times * step + offset;
 }
 
-void DiscreteParameter::setVal(double val) {
+void DiscreteParameter::setVal(coordinate val) {
     setTimes((int) round((val - offset) / step));
 }

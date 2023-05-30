@@ -6,16 +6,16 @@
 
 class ContinuousParameter : public Parameter {
 private:
-    double val;
+    coordinate val;
 
 public:
-    ContinuousParameter(ParameterDefinition &def, double value);
+    ContinuousParameter(ParameterDefinition &def, coordinate value);
 
     explicit ContinuousParameter(ParameterDefinition &def);
 
-    [[nodiscard]] double getVal() const override;
+    [[nodiscard]] coordinate getVal() const override;
 
-    void setVal(double val) override;
+    void setVal(coordinate val) override;
 };
 
 
