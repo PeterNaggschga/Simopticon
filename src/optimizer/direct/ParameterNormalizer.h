@@ -2,10 +2,12 @@
 #define SIMOPTICON_PARAMETERNORMALIZER_H
 
 
-#include <list>
-#include <vector>
 #include "DirectTypes.h"
 #include "../../Types.h"
+
+#include <list>
+#include <vector>
+#include <memory>
 
 class ParameterDefinition;
 
@@ -20,9 +22,9 @@ private:
 public:
     explicit ParameterNormalizer(list<ParameterDefinition> &parameters);
 
-    static vector<dirCoordinate> normalize(const vector<Parameter *> &params);
+    static vector<dirCoordinate> normalize(const vector<shared_ptr<Parameter>> &params);
 
-    vector<Parameter *> denormalize(vector<dirCoordinate> cords);
+    vector<shared_ptr<Parameter>> denormalize(vector<dirCoordinate> cords);
 };
 
 

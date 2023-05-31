@@ -1,14 +1,16 @@
 #include "Optimizer.h"
 
-#include "../Controller.h"
+#include "../controller/Controller.h"
 #include "../parameters/Parameter.h"
 
 #include <utility>
 
-map<vector<Parameter *>, functionValue> Optimizer::requestValues(const list<vector<Parameter *>> &params) {
+map<vector<shared_ptr<Parameter>>, functionValue>
+Optimizer::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
     return controller.requestValues(params);
 }
 
-Optimizer::Optimizer(Controller &ctrl, list<ParameterDefinition> params) : controller(ctrl),
-                                                                           parameters(std::move(params)) {
+Optimizer::Optimizer(Controller &ctrl, list<ParameterDefinition> params, ValueMap &map) : controller(ctrl),
+                                                                                          parameters(std::move(params)),
+                                                                                          valueMap(map) {
 }

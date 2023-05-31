@@ -1,23 +1,26 @@
 #ifndef SIMOPTICON_PARAMETERDEFINITION_H
 #define SIMOPTICON_PARAMETERDEFINITION_H
 
+
+#include "../Types.h"
+
 #include <string>
 
 using namespace std;
 
 class ParameterDefinition {
 private:
-    double min;
-    double max;
+    coordinate min;
+    coordinate max;
     string unit;
     string config;
 
 public:
-    ParameterDefinition(double min, double max, string config, string unit = "");
+    ParameterDefinition(coordinate min, coordinate max, string config, string unit = "");
 
-    [[nodiscard]] double getMin() const;
+    [[nodiscard]] coordinate getMin() const;
 
-    [[nodiscard]] double getMax() const;
+    [[nodiscard]] coordinate getMax() const;
 
     [[nodiscard]] const string &getUnit() const;
 

@@ -4,6 +4,11 @@
 #include "utils/CommandLine.h"
 #include "optimizer/direct/HyRect.h"
 #include "utils/GrahamScan.h"
+#include "parameters/ParameterDefinition.h"
+#include "parameters/Parameter.h"
+#include "parameters/ContinuousParameter.h"
+#include "controller/ValueMap.h"
+#include <memory>
 
 using namespace std;
 
@@ -63,12 +68,28 @@ void grahamScanTest() {
     }
 }
 
+void valueMapTest() {
+    ParameterDefinition def = ParameterDefinition(0, 1, "");
+    shared_ptr<Parameter> par1(new ContinuousParameter(def, 0.1));
+    shared_ptr<Parameter> par2(new ContinuousParameter(def, 0.5));
+    shared_ptr<Parameter> par3(new ContinuousParameter(def, 0.7));
+    ValueMap map = ValueMap();
+    cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
+         << endl;
+    map.insert(vector<shared_ptr<Parameter>>({par1}), 1);
+    map.insert(vector<shared_ptr<Parameter>>({par3}), 3);
+    cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
+         << endl;
+    map.insert(vector<shared_ptr<Parameter>>({par2}), 2);
+    cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
+         << endl;
+}
+
 int main() {
-    pipelineTest();
-
-    hyRectStructureTest();
-
-    grahamScanTest();
+    //pipelineTest();
+    //hyRectStructureTest();
+    //grahamScanTest();
+    //valueMapTest();
 
     return 0;
 }

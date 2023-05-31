@@ -2,10 +2,11 @@
 #include "../../utils/GrahamScan.h"
 
 #include <utility>
+#include <memory>
 
-DirectOptimizer::DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D,
-                                 StoppingCondition con) : Optimizer(ctrl, std::move(params)), D(D), stopCon(con),
-                                                          normalizer(ParameterNormalizer(params)) {
+DirectOptimizer::DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D, StoppingCondition con,
+                                 ValueMap &map) : Optimizer(ctrl, std::move(params), map), D(D), stopCon(con),
+                                                  normalizer(ParameterNormalizer(params)) {
 }
 
 void DirectOptimizer::runOptimization() {
@@ -18,6 +19,7 @@ void DirectOptimizer::runOptimization() {
     while (stopCon.evaluate(l, m)) {
         for (HyRect rect: optimalRectangles(m)) {
             for (HyRect newRect: rect.divide()) {
+                //TODO: alle gleichzeitig adden
                 addActiveRect(newRect);
             }
             removeActiveRect(rect);
@@ -28,18 +30,18 @@ void DirectOptimizer::runOptimization() {
 }
 
 map<vector<dirCoordinate>, functionValue> DirectOptimizer::getValues(const list<vector<dirCoordinate>> &points) {
-    map<vector<Parameter *>, vector<dirCoordinate>> paramToCord;
-    list<vector<Parameter *>> paramList(points.size());
+    map<vector<shared_ptr<Parameter>>, vector<dirCoordinate>> paramToCord;
+    list<vector<shared_ptr<Parameter>>> paramList(points.size());
     for (const vector<dirCoordinate> &point: points) {
-        vector<Parameter *> paramVec = normalizer.denormalize(point);
+        vector<shared_ptr<Parameter>> paramVec = normalizer.denormalize(point);
         paramList.push_back(paramVec);
         paramToCord.insert(make_pair(paramVec, point));
     }
 
-    map<vector<Parameter *>, functionValue> values = requestValues(paramList);
+    map<vector<shared_ptr<Parameter>>, functionValue> values = requestValues(paramList);
 
     map<vector<dirCoordinate>, functionValue> result;
-    for (pair<vector<Parameter *>, functionValue> pair: values) {
+    for (pair<vector<shared_ptr<Parameter>>, functionValue> pair: values) {
         result.insert(make_pair(paramToCord[pair.first], pair.second));
     }
     return result;

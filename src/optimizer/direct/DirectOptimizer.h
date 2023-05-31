@@ -37,7 +37,8 @@ private:
     void removeActiveRect(HyRect rect);
 
 public:
-    DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D, StoppingCondition con);
+    DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D, StoppingCondition con,
+                    ValueMap &map);
 
     void runOptimization() override;
 };
