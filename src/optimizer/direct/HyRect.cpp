@@ -49,6 +49,13 @@ list<vector<dirCoordinate>> HyRect::getSamplingVertices() {
     return result;
 }
 
+dirCoordinate HyRect::getDiagonalLength() const {
+    dimension div = t / D;
+    dimension mod = t % D;
+    coordinate longSide = pow((coordinate) 3, -div);
+    return sqrt((D - mod) * pow(longSide, 2) + mod * pow(longSide / 3, 2));
+}
+
 dimension HyRect::getDim() const {
     return split;
 }
@@ -61,12 +68,12 @@ depth HyRect::getDepth() const {
     return t;
 }
 
-functionValue HyRect::getValue() const {
-    return value;
+functionValue HyRect::getAvgValue() const {
+    return avgValue;
 }
 
-void HyRect::setValue(functionValue value) {
-    HyRect::value = value;
+void HyRect::setAvgValue(functionValue value) {
+    HyRect::avgValue = value;
 }
 
 bool HyRect::operator==(const HyRect &rect) const {
@@ -74,7 +81,7 @@ bool HyRect::operator==(const HyRect &rect) const {
 }
 
 bool HyRect::operator<(const HyRect &rect) const {
-    return t > rect.t || (t == rect.t && value < rect.value);
+    return t > rect.t || (t == rect.t && avgValue < rect.avgValue);
 }
 
 bool HyRect::operator!=(const HyRect &rhs) const {

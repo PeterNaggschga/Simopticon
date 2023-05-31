@@ -8,18 +8,18 @@ using namespace std::chrono;
 
 class StoppingCondition {
 private:
-    const int L = 0;
-    const int M = 0;
+    const unsigned long L = 0;
+    const unsigned long M = 0;
     time_point<system_clock, seconds> T;
     const int mins;
     bool time_eval = false;
 
 public:
-    explicit StoppingCondition(int L = 0, int M = 0, int T = 0);
+    explicit StoppingCondition(unsigned long L = 0, unsigned long M = 0, int T = 0);
 
     void setStartNow();
 
-    bool evaluate(int l = 0, int m = 0);
+    bool evaluate(unsigned long l = 0, unsigned long m = 0);
 };
 
 

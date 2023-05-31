@@ -1,4 +1,5 @@
 #include "DirectOptimizer.h"
+#include "../../utils/GrahamScan.h"
 
 #include <utility>
 
@@ -8,23 +9,21 @@ DirectOptimizer::DirectOptimizer(Controller &ctrl, list<ParameterDefinition> par
 }
 
 void DirectOptimizer::runOptimization() {
-    int m = 1, l = 0;
-
+    stopCon.setStartNow();
+    unsigned long m = 1, l = 0;
     auto base = HyRect(D, position::BASE, nullptr);
-    addEstimatedValue(base);
     addActiveRect(base);
     //TODO init
 
     while (stopCon.evaluate(l, m)) {
-        list<HyRect *> optimalRects = optimalRectangles();
-        for (HyRect *rect: optimalRects) {
-            for (HyRect newRect: rect->divide()) {
-                //newRect.setValue(0);
+        for (HyRect rect: optimalRectangles(m)) {
+            for (HyRect newRect: rect.divide()) {
                 addActiveRect(newRect);
             }
-            parentRects.insert(*rect);
-            removeActiveRect(*rect);
+            removeActiveRect(rect);
+            m += 2;
         }
+        l++;
     }
 }
 
@@ -51,16 +50,28 @@ functionValue DirectOptimizer::estimatedValue(map<vector<dirCoordinate>, functio
     return 0;
 }
 
-list<HyRect *> DirectOptimizer::optimalRectangles() {
-    // TODO
-    return {};
-}
+list<HyRect> DirectOptimizer::optimalRectangles(unsigned long m) {
+    list<HyRect> optimalPoints;
+    unsigned long size = level.getRectSubsetSize(m);
+    for (pair<depth, set<HyRect>> entry: activeRects) {
+        size -= entry.second.size();
+        HyRect rect = *entry.second.begin();
+        optimalPoints.emplace_back(rect);
+        if (size <= 0) {
+            break;
+        }
+    }
 
-void DirectOptimizer::addEstimatedValue(HyRect &rect) {
-    rect.setValue(estimatedValue(getValues(rect.getSamplingVertices())));
+    list<pair<HyRect, double>> kValues = GrahamScan::scan(optimalPoints);
+
+    //TODO filtern nach epsilon
+
+    return optimalPoints;
 }
 
 void DirectOptimizer::addActiveRect(HyRect rect) {
+    functionValue value = estimatedValue(getValues(rect.getSamplingVertices()));
+    rect.setAvgValue(value);
     depth depth = rect.getDepth();
     auto it = activeRects.find(depth);
     if (it != activeRects.end()) {
@@ -78,4 +89,5 @@ void DirectOptimizer::removeActiveRect(HyRect rect) {
     if (set.empty()) {
         activeRects.erase(depth);
     }
+    parentRects.insert(rect);
 }

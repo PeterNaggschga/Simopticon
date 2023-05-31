@@ -15,6 +15,8 @@ public:
     constexpr static const double L1_EPSILON = 0.0000001;
     constexpr static const double L0_EPSILON = 0;
 
+    Levels() = default;
+
     level nextLevel();
 
     unsigned long getRectSubsetSize(unsigned long size);

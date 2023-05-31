@@ -7,6 +7,7 @@
 #include "StoppingCondition.h"
 #include "HyRect.h"
 #include "ParameterNormalizer.h"
+#include "Levels.h"
 
 #include <set>
 #include <unordered_set>
@@ -20,6 +21,7 @@ class DirectOptimizer : public Optimizer {
 private:
     const dimension D;
     StoppingCondition stopCon;
+    Levels level = Levels();
     ParameterNormalizer normalizer;
     map<depth, set<HyRect>> activeRects;
     unordered_set<HyRect> parentRects;
@@ -28,9 +30,7 @@ private:
 
     functionValue estimatedValue(map<vector<dirCoordinate>, functionValue> samples);
 
-    list<HyRect *> optimalRectangles();
-
-    void addEstimatedValue(HyRect &rect);
+    list<HyRect> optimalRectangles(unsigned long m);
 
     void addActiveRect(HyRect rect);
 

@@ -19,12 +19,12 @@ enum class position : char {
 class HyRect {
 
 private:
-    const dimension D;
+    dimension D;
     depth t;
     position pos;
     dimension split = 0;
     HyRect *parent;
-    functionValue value = INFINITY;
+    functionValue avgValue = INFINITY;
 
     array<vector<dirCoordinate>, 2> getSamplingVerticesRecursive();
 
@@ -35,15 +35,17 @@ public:
 
     list<vector<dirCoordinate>> getSamplingVertices();
 
+    [[nodiscard]] dirCoordinate getDiagonalLength() const;
+
     [[nodiscard]] ::depth getDepth() const;
 
     [[nodiscard]] position getPos() const;
 
     [[nodiscard]] ::dimension getDim() const;
 
-    [[nodiscard]] functionValue getValue() const;
+    [[nodiscard]] functionValue getAvgValue() const;
 
-    void setValue(functionValue value);
+    void setAvgValue(functionValue value);
 
     bool operator==(const HyRect &rect) const;
 
@@ -62,7 +64,7 @@ namespace std {
     template<>
     struct [[maybe_unused]] hash<HyRect> {
         size_t operator()(const HyRect &x) const {
-            return hash<double>()(pow((int) x.getPos() + 2, x.getDim() * x.getDepth() + 1) + (double) x.getValue());
+            return hash<double>()(pow((int) x.getPos() + 2, x.getDim() * x.getDepth() + 1) + (double) x.getAvgValue());
         }
     };
 }
