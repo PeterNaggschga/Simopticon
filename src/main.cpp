@@ -101,6 +101,7 @@ void directTest() {
         return val;
     };
     unique_ptr<Controller> ctr(new StubController({def, def}, f));
+    ctr->run();
 }
 
 int main() {

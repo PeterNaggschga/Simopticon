@@ -30,6 +30,8 @@ private:
 public:
     explicit Controller(const list<shared_ptr<ParameterDefinition>> &params);
 
+    void run();
+
     virtual map<vector<shared_ptr<Parameter>>, functionValue>
     requestValues(const list<vector<shared_ptr<Parameter>>> &params);
 

@@ -2,8 +2,6 @@
 
 #include "../parameters/Parameter.h"
 #include "ValueMap.h"
-#include "../optimizer/Optimizer.h"
-#include "../evaluation/Pipeline.h"
 #include "../optimizer/direct/DirectOptimizer.h"
 #include "../runner/PlexeSimulationRunner.h"
 #include "../evaluation/ConstantHeadway.h"
@@ -17,7 +15,6 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
     Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner());
     //TODO: pipeline aus config lesen
     Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway());
-    Controller::optimizer->runOptimization();
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue>
@@ -41,4 +38,8 @@ Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
 
 ValueMap &Controller::getValueMap() {
     return *valueMap;
+}
+
+void Controller::run() {
+    optimizer->runOptimization();
 }
