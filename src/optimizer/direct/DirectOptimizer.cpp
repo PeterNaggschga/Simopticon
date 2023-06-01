@@ -32,6 +32,7 @@ void DirectOptimizer::runOptimization() {
         }
         addActiveRects(newRects);
         l = getValueMap().getSize();
+        level.nextLevel();
     }
 }
 
