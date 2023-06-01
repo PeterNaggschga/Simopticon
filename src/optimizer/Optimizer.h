@@ -20,11 +20,11 @@ using namespace std;
 class Optimizer {
 private:
     Controller &controller;
-    list<ParameterDefinition> parameters;
+    list<shared_ptr<ParameterDefinition>> parameters;
     ValueMap &valueMap;
 
 public:
-    Optimizer(Controller &ctrl, list<ParameterDefinition> params, ValueMap &map);
+    Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params, ValueMap &map);
 
     //TODO destructor
 

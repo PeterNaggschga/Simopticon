@@ -5,12 +5,13 @@
 #include "DirectTypes.h"
 #include "../Optimizer.h"
 #include "StoppingCondition.h"
-#include "HyRect.h"
+#include "hyrect/HyRect.h"
 #include "ParameterNormalizer.h"
 #include "Levels.h"
 
 #include <set>
 #include <unordered_set>
+#include <memory>
 
 class StoppingCondition;
 
@@ -23,21 +24,20 @@ private:
     StoppingCondition stopCon;
     Levels level = Levels();
     ParameterNormalizer normalizer;
-    map<depth, set<HyRect>> activeRects;
-    unordered_set<HyRect> parentRects;
+    map<depth, set<shared_ptr<HyRect>>> activeRects;
 
     map<vector<dirCoordinate>, functionValue> getValues(const list<vector<dirCoordinate>> &points);
 
     functionValue estimatedValue(map<vector<dirCoordinate>, functionValue> samples);
 
-    list<HyRect> optimalRectangles(unsigned long m);
+    list<shared_ptr<HyRect>> optimalRectangles(unsigned long m);
 
-    void addActiveRect(HyRect rect);
+    void addActiveRect(const shared_ptr<HyRect> &rect);
 
-    void removeActiveRect(HyRect rect);
+    void removeActiveRect(const shared_ptr<HyRect> &rect);
 
 public:
-    DirectOptimizer(Controller &ctrl, list<ParameterDefinition> params, dimension D, StoppingCondition con,
+    DirectOptimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params, dimension D, StoppingCondition con,
                     ValueMap &map);
 
     void runOptimization() override;

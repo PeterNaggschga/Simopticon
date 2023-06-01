@@ -9,9 +9,9 @@ private:
     coordinate val;
 
 public:
-    ContinuousParameter(ParameterDefinition &def, coordinate value);
+    ContinuousParameter(shared_ptr<ParameterDefinition> def, coordinate value);
 
-    explicit ContinuousParameter(ParameterDefinition &def);
+    explicit ContinuousParameter(shared_ptr<ParameterDefinition> def);
 
     [[nodiscard]] coordinate getVal() const override;
 

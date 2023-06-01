@@ -1,18 +1,18 @@
 #include "GrahamScan.h"
 
-#include "../optimizer/direct/HyRect.h"
+#include "../optimizer/direct/hyrect/HyRect.h"
 
 #include <map>
 
-list<pair<HyRect, double>> GrahamScan::scan(list<HyRect> vertices) {
-    map<double, HyRect> potentialHull;
+list<pair<shared_ptr<HyRect>, double>> GrahamScan::scan(list<shared_ptr<HyRect>> vertices) {
+    map<double, shared_ptr<HyRect>> potentialHull;
     auto it = vertices.begin();
-    HyRect firstRect = *it;
+    shared_ptr<HyRect> firstRect = *it;
     potentialHull.insert(make_pair(0, firstRect));
     it++;
     while (it != vertices.end()) {
-        auto angle = (double) ((it->getAvgValue() - firstRect.getAvgValue()) /
-                               (it->getDiagonalLength() - firstRect.getDiagonalLength()));
+        auto angle = (double) ((it->get()->getAvgValue() - firstRect->getAvgValue()) /
+                               (it->get()->getDiagonalLength() - firstRect->getDiagonalLength()));
         if (angle <= 0) {
             potentialHull.clear();
             firstRect = *it;
@@ -28,15 +28,15 @@ list<pair<HyRect, double>> GrahamScan::scan(list<HyRect> vertices) {
         it++;
     }
 
-    list<pair<HyRect, double>> result;
-    HyRect lastRect = potentialHull.begin()->second;
-    for (pair<const double, HyRect> entry: potentialHull) {
+    list<pair<shared_ptr<HyRect>, double>> result;
+    shared_ptr<HyRect> lastRect = potentialHull.begin()->second;
+    for (const pair<const double, shared_ptr<HyRect>> &entry: potentialHull) {
         if (entry == *potentialHull.begin()) {
             continue;
         }
-        if (entry.second.getDepth() < lastRect.getDepth()) {
-            auto k = (double) ((entry.second.getAvgValue() - lastRect.getAvgValue()) /
-                               (entry.second.getDiagonalLength() - lastRect.getDiagonalLength()));
+        if (entry.second->getDepth() < lastRect->getDepth()) {
+            auto k = (double) ((entry.second->getAvgValue() - lastRect->getAvgValue()) /
+                               (entry.second->getDiagonalLength() - lastRect->getDiagonalLength()));
             result.emplace_back(lastRect, k);
             lastRect = entry.second;
         }

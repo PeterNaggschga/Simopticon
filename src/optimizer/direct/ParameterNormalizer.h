@@ -17,10 +17,10 @@ using namespace std;
 
 class ParameterNormalizer {
 private:
-    list<ParameterDefinition> &parameters;
+    list<shared_ptr<ParameterDefinition>> &parameters;
 
 public:
-    explicit ParameterNormalizer(list<ParameterDefinition> &parameters);
+    explicit ParameterNormalizer(list<shared_ptr<ParameterDefinition>> &parameters);
 
     static vector<dirCoordinate> normalize(const vector<shared_ptr<Parameter>> &params);
 

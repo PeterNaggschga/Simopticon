@@ -12,9 +12,9 @@ private:
 
 
 public:
-    DiscreteParameter(ParameterDefinition &def, double step, double value);
+    DiscreteParameter(shared_ptr<ParameterDefinition> def, double step, double value);
 
-    DiscreteParameter(ParameterDefinition &def, double step);
+    DiscreteParameter(shared_ptr<ParameterDefinition> def, double step);
 
     [[nodiscard]] int getTimes() const;
 

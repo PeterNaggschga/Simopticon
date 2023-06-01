@@ -2,6 +2,7 @@
 #define SIMOPTICON_GRAHAMSCAN_H
 
 #include <list>
+#include <memory>
 
 class HyRect;
 
@@ -10,7 +11,7 @@ using namespace std;
 class GrahamScan {
 
 public:
-    static list<pair<HyRect, double>> scan(list<HyRect> vertices);
+    static list<pair<shared_ptr<HyRect>, double>> scan(list<shared_ptr<HyRect>> vertices);
 };
 
 

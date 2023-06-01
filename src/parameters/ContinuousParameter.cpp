@@ -1,15 +1,19 @@
 #include "ContinuousParameter.h"
 
 #include <stdexcept>
+#include <utility>
 
-ContinuousParameter::ContinuousParameter(ParameterDefinition &def, coordinate value) : Parameter(def), val(value) {
+ContinuousParameter::ContinuousParameter(shared_ptr<ParameterDefinition> def, coordinate value) : Parameter(
+        std::move(def)),
+                                                                                                  val(value) {
     if (value < getMin() || getMax() < value) {
         throw invalid_argument("Value out of bounds!");
     }
 }
 
-ContinuousParameter::ContinuousParameter(ParameterDefinition &def) : ContinuousParameter(def,
-                                                                                         (getMin() + getMax()) / 2) {
+ContinuousParameter::ContinuousParameter(shared_ptr<ParameterDefinition> def) : ContinuousParameter(std::move(def),
+                                                                                                    (getMin() +
+                                                                                                     getMax()) / 2) {
 }
 
 coordinate ContinuousParameter::getVal() const {

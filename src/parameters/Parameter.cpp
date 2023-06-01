@@ -2,22 +2,24 @@
 
 #include "ParameterDefinition.h"
 
-Parameter::Parameter(ParameterDefinition &def) : definition(def) {
+#include <utility>
+
+Parameter::Parameter(shared_ptr<ParameterDefinition> def) : definition(std::move(def)) {
 
 }
 
-double Parameter::getMin() const {
-    return definition.getMin();
+coordinate Parameter::getMin() const {
+    return definition->getMin();
 }
 
-double Parameter::getMax() const {
-    return definition.getMax();
+coordinate Parameter::getMax() const {
+    return definition->getMax();
 }
 
 const string &Parameter::getUnit() const {
-    return definition.getUnit();
+    return definition->getUnit();
 }
 
 const string &Parameter::getConfig() const {
-    return definition.getConfig();
+    return definition->getConfig();
 }

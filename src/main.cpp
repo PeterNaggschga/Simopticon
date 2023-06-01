@@ -2,12 +2,13 @@
 #include "evaluation/Pipeline.h"
 #include "evaluation/ConstantHeadway.h"
 #include "utils/CommandLine.h"
-#include "optimizer/direct/HyRect.h"
+#include "optimizer/direct/hyrect/HyRect.h"
 #include "utils/GrahamScan.h"
 #include "parameters/ParameterDefinition.h"
 #include "parameters/Parameter.h"
 #include "parameters/ContinuousParameter.h"
 #include "controller/ValueMap.h"
+#include "optimizer/direct/hyrect/BaseRect.h"
 #include <memory>
 
 using namespace std;
@@ -31,45 +32,46 @@ string vecToString(vector<T> vector) {
 }
 
 void hyRectStructureTest() {
-    auto base = HyRect(2, position::BASE, nullptr);
-    array<HyRect, 3> children = base.divide();
-    cout << "Base: pos=" << (int) base.getPos() << ", t=" << base.getDepth() << ", vertice1="
-         << vecToString(base.getSamplingVertices().front()) << ", vertice2=" << vecToString(
-            base.getSamplingVertices().back())
+    shared_ptr<HyRect> base(new BaseRect(2));
+    auto children = base->divide(base);
+    cout << base.use_count() << endl;
+    cout << "Base: pos=" << (int) base->getPos() << ", t=" << base->getDepth() << ", vertice1="
+         << vecToString(base->getSamplingVertices().front()) << ", vertice2=" << vecToString(
+            base->getSamplingVertices().back())
          << endl;
-    cout << "Child 1: pos=" << (int) children[0].getPos() << ", t=" << children[0].getDepth() << ", vertice1="
-         << vecToString(children[0].getSamplingVertices().front()) << ", vertice2="
-         << vecToString(children[0].getSamplingVertices().back()) << endl;
-    cout << "Child 2: pos=" << (int) children[1].getPos() << ", t=" << children[1].getDepth() << ", vertice1="
-         << vecToString(children[1].getSamplingVertices().front()) << ", vertice2="
-         << vecToString(children[1].getSamplingVertices().back()) << endl;
-    cout << "Child 3: pos=" << (int) children[2].getPos() << ", t=" << children[2].getDepth() << ", vertice1="
-         << vecToString(children[2].getSamplingVertices().front()) << ", vertice2="
-         << vecToString(children[2].getSamplingVertices().back()) << endl;
+    cout << "Child 1: pos=" << (int) children[0]->getPos() << ", t=" << children[0]->getDepth() << ", vertice1="
+         << vecToString(children[0]->getSamplingVertices().front()) << ", vertice2="
+         << vecToString(children[0]->getSamplingVertices().back()) << endl;
+    cout << "Child 2: pos=" << (int) children[1]->getPos() << ", t=" << children[1]->getDepth() << ", vertice1="
+         << vecToString(children[1]->getSamplingVertices().front()) << ", vertice2="
+         << vecToString(children[1]->getSamplingVertices().back()) << endl;
+    cout << "Child 3: pos=" << (int) children[2]->getPos() << ", t=" << children[2]->getDepth() << ", vertice1="
+         << vecToString(children[2]->getSamplingVertices().front()) << ", vertice2="
+         << vecToString(children[2]->getSamplingVertices().back()) << endl;
 }
 
 void grahamScanTest() {
-    HyRect base = HyRect(2, position::BASE, nullptr);
-    auto childs1 = base.divide();
-    childs1[2].setAvgValue(75);
-    auto childs2 = childs1[0].divide();
-    childs2[2].setAvgValue(25);
-    auto childs3 = childs2[0].divide();
-    childs3[2].setAvgValue(22);
-    auto childs4 = childs3[0].divide();
-    childs4[2].setAvgValue(15);
-    auto childs5 = childs4[0].divide();
-    childs5[2].setAvgValue(15);
+    shared_ptr<HyRect> base(new BaseRect(2));
+    auto childs1 = base->divide(base);
+    childs1[2]->setAvgValue(75);
+    auto childs2 = childs1[0]->divide(childs1[0]);
+    childs2[2]->setAvgValue(25);
+    auto childs3 = childs2[0]->divide(childs2[0]);
+    childs3[2]->setAvgValue(22);
+    auto childs4 = childs3[0]->divide(childs3[0]);
+    childs4[2]->setAvgValue(15);
+    auto childs5 = childs4[0]->divide(childs4[0]);
+    childs5[2]->setAvgValue(15);
     //auto test = childs5[2].getDiagonalLength();
-    list<HyRect> rects({childs5[2], childs4[2], childs3[2], childs2[2], childs1[2]});
-    list<pair<HyRect, double>> optimal = GrahamScan::scan(rects);
-    for (pair<HyRect, double> entry: optimal) {
-        cout << entry.first.getDepth() << ", " << entry.first.getAvgValue() << ", " << entry.second << endl;
+    list<shared_ptr<HyRect>> rects({childs5[2], childs4[2], childs3[2], childs2[2], childs1[2]});
+    list<pair<shared_ptr<HyRect>, double>> optimal = GrahamScan::scan(rects);
+    for (const auto &entry: optimal) {
+        cout << entry.first->getDepth() << ", " << entry.first->getAvgValue() << ", " << entry.second << endl;
     }
 }
 
 void valueMapTest() {
-    ParameterDefinition def = ParameterDefinition(0, 1, "");
+    shared_ptr<ParameterDefinition> def(new ParameterDefinition(0, 1, ""));
     shared_ptr<Parameter> par1(new ContinuousParameter(def, 0.1));
     shared_ptr<Parameter> par2(new ContinuousParameter(def, 0.5));
     shared_ptr<Parameter> par3(new ContinuousParameter(def, 0.7));
@@ -86,10 +88,10 @@ void valueMapTest() {
 }
 
 int main() {
-    //pipelineTest();
-    //hyRectStructureTest();
-    //grahamScanTest();
-    //valueMapTest();
+    pipelineTest();
+    hyRectStructureTest();
+    grahamScanTest();
+    valueMapTest();
 
     return 0;
 }

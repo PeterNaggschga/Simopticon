@@ -2,8 +2,10 @@
 #define SIMOPTICON_PARAMETER_H
 
 
-#include <string>
 #include "../Types.h"
+
+#include <string>
+#include <memory>
 
 class ParameterDefinition;
 
@@ -11,16 +13,16 @@ using namespace std;
 
 class Parameter {
 private:
-    ParameterDefinition &definition;
+    shared_ptr<ParameterDefinition> definition;
 
 public:
-    explicit Parameter(ParameterDefinition &def);
+    explicit Parameter(shared_ptr<ParameterDefinition> def);
 
     virtual ~Parameter() = default;
 
-    [[nodiscard]] double getMin() const;
+    [[nodiscard]] coordinate getMin() const;
 
-    [[nodiscard]] double getMax() const;
+    [[nodiscard]] coordinate getMax() const;
 
     [[nodiscard]] const string &getUnit() const;
 

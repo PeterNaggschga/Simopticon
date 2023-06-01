@@ -1,14 +1,15 @@
 #ifndef SIMOPTICON_HYRECT_H
 #define SIMOPTICON_HYRECT_H
 
-#include "../../Types.h"
-#include "DirectTypes.h"
+#include "../../../Types.h"
+#include "../DirectTypes.h"
 
 #include <optional>
 #include <array>
 #include <vector>
 #include <cmath>
 #include <list>
+#include <memory>
 
 using namespace std;
 
@@ -23,17 +24,14 @@ private:
     depth t;
     position pos;
     dimension split = 0;
-    HyRect *parent;
     functionValue avgValue = INFINITY;
 
-    array<vector<dirCoordinate>, 2> getSamplingVerticesRecursive();
-
 public:
-    HyRect(dimension D, position pos, HyRect *parent);
+    HyRect(dimension D, position pos, depth t);
 
-    array<HyRect, 3> divide();
+    array<shared_ptr<HyRect>, 3> divide(const shared_ptr<HyRect> &ptr);
 
-    list<vector<dirCoordinate>> getSamplingVertices();
+    virtual array<vector<dirCoordinate>, 2> getSamplingVertices() = 0;
 
     [[nodiscard]] dirCoordinate getDiagonalLength() const;
 
@@ -41,13 +39,15 @@ public:
 
     [[nodiscard]] position getPos() const;
 
-    [[nodiscard]] ::dimension getDim() const;
+    [[nodiscard]] ::dimension getSplitDim() const;
 
     [[nodiscard]] functionValue getAvgValue() const;
 
+    [[nodiscard]] dimension getD() const;
+
     void setAvgValue(functionValue value);
 
-    bool operator==(const HyRect &rect) const;
+    virtual bool operator==(const HyRect &rect) const;
 
     bool operator<(const HyRect &rect) const;
 
@@ -64,7 +64,8 @@ namespace std {
     template<>
     struct [[maybe_unused]] hash<HyRect> {
         size_t operator()(const HyRect &x) const {
-            return hash<double>()(pow((int) x.getPos() + 2, x.getDim() * x.getDepth() + 1) + (double) x.getAvgValue());
+            return hash<double>()(
+                    pow((int) x.getPos() + 2, x.getSplitDim() * x.getDepth() + 1) + (double) x.getAvgValue());
         }
     };
 }

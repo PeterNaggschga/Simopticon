@@ -23,10 +23,10 @@ using namespace std;
 
 class Controller {
 private:
-    Optimizer &optimizer;
-    SimulationRunner &runner;
-    Pipeline &pipeline;
-    ValueMap &valueMap;
+    unique_ptr<Optimizer> optimizer;
+    unique_ptr<SimulationRunner> runner;
+    unique_ptr<Pipeline> pipeline;
+    unique_ptr<ValueMap> valueMap;
 
 public:
     map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
