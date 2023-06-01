@@ -8,9 +8,8 @@
 #include <memory>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params, dimension D,
-                                 StoppingCondition con,
-                                 ValueMap &map) : Optimizer(ctrl, std::move(params), map), D(D), stopCon(con),
-                                                  normalizer(ParameterNormalizer(params)) {
+                                 StoppingCondition con) : Optimizer(ctrl, std::move(params)), D(D), stopCon(con),
+                                                          normalizer(ParameterNormalizer(params)) {
 }
 
 void DirectOptimizer::runOptimization() {

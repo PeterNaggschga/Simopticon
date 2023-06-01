@@ -21,12 +21,11 @@ class Optimizer {
 private:
     Controller &controller;
     list<shared_ptr<ParameterDefinition>> parameters;
-    ValueMap &valueMap;
 
 public:
-    Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params, ValueMap &map);
+    Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params);
 
-    //TODO destructor
+    virtual ~Optimizer() = default;
 
     map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
 

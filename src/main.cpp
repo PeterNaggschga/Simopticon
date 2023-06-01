@@ -9,6 +9,9 @@
 #include "parameters/ContinuousParameter.h"
 #include "controller/ValueMap.h"
 #include "optimizer/direct/hyrect/BaseRect.h"
+#include "controller/Controller.h"
+#include "controller/StubController.h"
+#include "optimizer/direct/DirectOptimizer.h"
 #include <memory>
 
 using namespace std;
@@ -88,11 +91,24 @@ void valueMapTest() {
     cout << map.getTopVals().begin()->second << endl;
 }
 
+void directTest() {
+    shared_ptr<ParameterDefinition> def(new ParameterDefinition(0, 10, ""));
+    function<functionValue(vector<shared_ptr<Parameter>>)> f = [](const vector<shared_ptr<Parameter>> &v) {
+        functionValue val = 0;
+        for (const auto &par: v) {
+            val += par->getVal() * par->getVal();
+        }
+        return val;
+    };
+    unique_ptr<Controller> ctr(new StubController({def, def}, f));
+}
+
 int main() {
     //pipelineTest();
     //hyRectStructureTest();
     //grahamScanTest();
     //valueMapTest();
+    //directTest();
 
     return 0;
 }

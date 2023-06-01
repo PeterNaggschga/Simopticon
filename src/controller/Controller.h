@@ -3,19 +3,18 @@
 
 
 #include "../Types.h"
+#include "../optimizer/Optimizer.h"
+#include "../runner/SimulationRunner.h"
+#include "../evaluation/Pipeline.h"
 
 #include <map>
 #include <vector>
 #include <list>
 #include <memory>
 
-class Optimizer;
-
-class SimulationRunner;
-
-class Pipeline;
-
 class Parameter;
+
+class ParameterDefinition;
 
 class ValueMap;
 
@@ -29,8 +28,12 @@ private:
     unique_ptr<ValueMap> valueMap;
 
 public:
-    map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
+    explicit Controller(const list<shared_ptr<ParameterDefinition>> &params);
 
+    virtual map<vector<shared_ptr<Parameter>>, functionValue>
+    requestValues(const list<vector<shared_ptr<Parameter>>> &params);
+
+    [[nodiscard]] ValueMap &getValueMap();
 };
 
 

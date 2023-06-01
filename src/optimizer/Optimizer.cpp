@@ -10,13 +10,10 @@ Optimizer::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
     return controller.requestValues(params);
 }
 
-Optimizer::Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params, ValueMap &map) : controller(ctrl),
-                                                                                                      parameters(
-                                                                                                              std::move(
-                                                                                                                      params)),
-                                                                                                      valueMap(map) {
+Optimizer::Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params) : controller(ctrl),
+                                                                                       parameters(std::move(params)) {
 }
 
 ValueMap &Optimizer::getValueMap() const {
-    return valueMap;
+    return controller.getValueMap();
 }

@@ -10,6 +10,8 @@ using namespace std;
 
 class SimulationRunner {
 public:
+    virtual ~SimulationRunner() = default;
+
     virtual string runSimulation(vector<Parameter>) = 0;
 
 };
