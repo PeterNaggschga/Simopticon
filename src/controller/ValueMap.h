@@ -17,7 +17,7 @@ using namespace std;
 class ValueMap {
 private:
     struct PtrCmp {
-        bool operator()(const functionValue *a, const functionValue *b) const { return *a < *b; }
+        bool operator()(const functionValue *a, const functionValue *b) const { return *a == *b ? a < b : *a < *b; }
     };
 
     set<functionValue *, PtrCmp> upperValues;
@@ -26,7 +26,7 @@ private:
     struct PairCmp {
         bool operator()(const pair<vector<shared_ptr<Parameter>>, functionValue> &a,
                         const pair<vector<shared_ptr<Parameter>>, functionValue> &b) const {
-            return a.second < b.second;
+            return a.second == b.second ? a.first < b.first : a.second < b.second;
         }
     };
 
