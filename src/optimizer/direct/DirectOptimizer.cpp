@@ -1,6 +1,8 @@
 #include "DirectOptimizer.h"
+
 #include "../../utils/GrahamScan.h"
 #include "hyrect/BaseRect.h"
+#include "../../controller/ValueMap.h"
 
 #include <utility>
 #include <memory>
@@ -15,19 +17,20 @@ void DirectOptimizer::runOptimization() {
     stopCon.setStartNow();
     unsigned long m = 1, l = 0;
     shared_ptr<HyRect> base(new BaseRect(D));
-    addActiveRect(base);
+    addActiveRects({base});
     //TODO init
 
     while (stopCon.evaluate(l, m)) {
+        list<shared_ptr<HyRect>> newRects;
         for (const shared_ptr<HyRect> &rect: optimalRectangles(m)) {
             for (const shared_ptr<HyRect> &newRect: rect->divide(rect)) {
-                //TODO: alle gleichzeitig adden
-                addActiveRect(newRect);
+                newRects.push_back(newRect);
             }
             removeActiveRect(rect);
             m += 2;
         }
-        l++; // TODO valueMap abfragen
+        addActiveRects(newRects);
+        l = getValueMap().getSize();
     }
 }
 
@@ -73,17 +76,38 @@ list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(unsigned long m) {
     return optimalPoints;
 }
 
-void DirectOptimizer::addActiveRect(const shared_ptr<HyRect> &rect) {
-    array<vector<dirCoordinate>, 2> vertices = rect->getSamplingVertices();
-    auto samples = getValues(list<vector<dirCoordinate>>({vertices[0], vertices[1]}));
-    rect->setAvgValue(estimatedValue(samples));
-    depth depth = rect->getDepth();
-    auto it = activeRects.find(depth);
-    if (it != activeRects.end()) {
-        it->second.insert(rect);
-    } else {
-        set<shared_ptr<HyRect>> newSet = {rect};
-        activeRects.insert(make_pair(depth, newSet));
+void DirectOptimizer::addActiveRects(const list<shared_ptr<HyRect>> &rects) {
+    struct hashFunction {
+        size_t operator()(const vector<dirCoordinate> &v) const {
+            hash<dirCoordinate> hash;
+            size_t res = 0;
+            for (dirCoordinate cord: v) {
+                res ^= hash(cord);
+            }
+            return hash(res);
+        }
+    };
+
+    map<shared_ptr<HyRect>, array<vector<dirCoordinate>, 2>> rectToVec;
+    unordered_set<vector<dirCoordinate>, hashFunction> vecs;
+    for (const auto &rect: rects) {
+        auto vertices = rect->getSamplingVertices();
+        rectToVec.insert(make_pair(rect, vertices));
+        vecs.insert(vertices.begin(), vertices.end());
+    }
+
+    auto samples = getValues(list<vector<dirCoordinate>>(vecs.begin(), vecs.end()));
+
+    for (const auto &entry: rectToVec) {
+        entry.first->setAvgValue((samples[entry.second[0]] + samples[entry.second[1]]) / 2);
+        depth depth = entry.first->getDepth();
+        auto it = activeRects.find(depth);
+        if (it != activeRects.end()) {
+            it->second.insert(entry.first);
+        } else {
+            set<shared_ptr<HyRect>> newSet = {entry.first};
+            activeRects.insert(make_pair(depth, newSet));
+        }
     }
 }
 

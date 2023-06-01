@@ -16,3 +16,7 @@ Optimizer::Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> par
                                                                                                                       params)),
                                                                                                       valueMap(map) {
 }
+
+ValueMap &Optimizer::getValueMap() const {
+    return valueMap;
+}

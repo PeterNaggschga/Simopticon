@@ -31,6 +31,8 @@ public:
     map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
 
     virtual void runOptimization() = 0;
+
+    [[nodiscard]] ValueMap &getValueMap() const;
 };
 
 

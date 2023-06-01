@@ -32,7 +32,7 @@ private:
 
     list<shared_ptr<HyRect>> optimalRectangles(unsigned long m);
 
-    void addActiveRect(const shared_ptr<HyRect> &rect);
+    void addActiveRects(const list<shared_ptr<HyRect>> &rects);
 
     void removeActiveRect(const shared_ptr<HyRect> &rect);
 
