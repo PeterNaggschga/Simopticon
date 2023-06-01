@@ -8,7 +8,7 @@
 
 Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : valueMap(new ValueMap()) {
     //TODO: Optimizer aus config lesen
-    StoppingCondition con = StoppingCondition(10, 15); // TODO: aus config lesen
+    StoppingCondition con = StoppingCondition(0, 0, 1); // TODO: aus config lesen
     //TODO: params aus config lesen
     Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, params.size(), con));
     //TODO: runner aus config lesen

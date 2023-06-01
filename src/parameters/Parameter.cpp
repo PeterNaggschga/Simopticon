@@ -23,3 +23,27 @@ const string &Parameter::getUnit() const {
 const string &Parameter::getConfig() const {
     return definition->getConfig();
 }
+
+bool Parameter::operator==(const Parameter &rhs) const {
+    return getVal() == rhs.getVal() && definition == rhs.definition;
+}
+
+bool Parameter::operator!=(const Parameter &rhs) const {
+    return !(rhs == *this);
+}
+
+bool Parameter::operator<(const Parameter &rhs) const {
+    return getVal() < rhs.getVal();
+}
+
+bool Parameter::operator>(const Parameter &rhs) const {
+    return rhs < *this;
+}
+
+bool Parameter::operator<=(const Parameter &rhs) const {
+    return !(rhs < *this);
+}
+
+bool Parameter::operator>=(const Parameter &rhs) const {
+    return !(*this < rhs);
+}

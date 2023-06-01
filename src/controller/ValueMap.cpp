@@ -1,7 +1,5 @@
 #include "ValueMap.h"
 
-#include "../parameters/Parameter.h"
-
 #include <stdexcept>
 
 ValueMap::ValueMap(unsigned int topEntries) : topEntries(topEntries) {

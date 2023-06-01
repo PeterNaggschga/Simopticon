@@ -3,14 +3,13 @@
 
 
 #include "../Types.h"
+#include "../parameters/Parameter.h"
 
 #include <map>
 #include <vector>
 #include <list>
 #include <memory>
 #include <set>
-
-class Parameter;
 
 using namespace std;
 
@@ -30,10 +29,24 @@ private:
         }
     };
 
+    struct ParPtrCmp {
+        bool operator()(vector<shared_ptr<Parameter>> a, vector<shared_ptr<Parameter>> b) const {
+            if (a.size() != b.size()) {
+                return a.size() < b.size();
+            }
+            for (int i = 0; i < a.size(); ++i) {
+                if (*a[i] != *b[i]) {
+                    return *a[i] < *b[i];
+                }
+            }
+            return false;
+        }
+    };
+
     unsigned int topEntries;
     set<pair<const vector<shared_ptr<Parameter>>, functionValue>, PairCmp> topVals;
 
-    map<vector<shared_ptr<Parameter>>, functionValue> values;
+    map<vector<shared_ptr<Parameter>>, functionValue, ParPtrCmp> values;
     list<pair<vector<shared_ptr<Parameter>>, functionValue>> tba;
 
     void updateMap();

@@ -31,6 +31,18 @@ public:
     [[nodiscard]] virtual coordinate getVal() const = 0;
 
     virtual void setVal(coordinate val) = 0;
+
+    bool operator==(const Parameter &rhs) const;
+
+    bool operator!=(const Parameter &rhs) const;
+
+    bool operator<(const Parameter &rhs) const;
+
+    bool operator>(const Parameter &rhs) const;
+
+    bool operator<=(const Parameter &rhs) const;
+
+    bool operator>=(const Parameter &rhs) const;
 };
 
 #endif //SIMOPTICON_PARAMETER_H

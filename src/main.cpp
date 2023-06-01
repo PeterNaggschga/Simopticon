@@ -11,7 +11,6 @@
 #include "optimizer/direct/hyrect/BaseRect.h"
 #include "controller/Controller.h"
 #include "controller/StubController.h"
-#include "optimizer/direct/DirectOptimizer.h"
 #include <memory>
 
 using namespace std;
@@ -78,7 +77,7 @@ void valueMapTest() {
     shared_ptr<Parameter> par1(new ContinuousParameter(def, 0.1));
     shared_ptr<Parameter> par2(new ContinuousParameter(def, 0.5));
     shared_ptr<Parameter> par3(new ContinuousParameter(def, 0.7));
-    ValueMap map = ValueMap(1);
+    ValueMap map = ValueMap(2);
     cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
          << endl;
     map.insert(vector<shared_ptr<Parameter>>({par1}), 1);
@@ -89,6 +88,9 @@ void valueMapTest() {
     cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
          << endl;
     cout << map.getTopVals().begin()->second << endl;
+    shared_ptr<Parameter> par4(new ContinuousParameter(def, 0.6));
+    map.insert(vector<shared_ptr<Parameter>>({par4}), 3);
+    map.getMedian();
 }
 
 void directTest() {
