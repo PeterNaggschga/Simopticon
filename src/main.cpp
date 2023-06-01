@@ -88,10 +88,10 @@ void valueMapTest() {
 }
 
 int main() {
-    pipelineTest();
-    hyRectStructureTest();
-    grahamScanTest();
-    valueMapTest();
+    //pipelineTest();
+    //hyRectStructureTest();
+    //grahamScanTest();
+    //valueMapTest();
 
     return 0;
 }

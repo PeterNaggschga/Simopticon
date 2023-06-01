@@ -8,40 +8,47 @@ void ValueMap::updateMap() {
     if (tba.empty()) {
         return;
     }
-    if (lowerValues.empty()) {
+    if (upperValues.empty()) {
         auto entry = tba.begin();
-        lowerValues.insert(*entry);
+        auto worked = values.insert(*entry);
+        if (!worked.second) {
+            throw logic_error("Value couldn't be inserted!");
+        }
+        upperValues.insert(&worked.first->second);
         tba.erase(entry);
     }
 
     for (const auto &entry: tba) {
-        if (entry.first < lowerValues.begin()->first) {
-            upperValues.insert(entry);
+        auto worked = values.insert(entry);
+        if (!worked.second) {
+            throw logic_error("Value couldn't be inserted!");
+        }
+        if (entry.second < **upperValues.begin()) {
+            lowerValues.insert(&worked.first->second);
         } else {
-            lowerValues.insert(entry);
+            upperValues.insert(&worked.first->second);
         }
     }
     tba.clear();
 
     long diff = (long) upperValues.size() - (long) lowerValues.size();
-    if (diff < 0) {
-        auto it = lowerValues.begin();
-        advance(it, -diff / 2);
-        upperValues.insert(lowerValues.begin(), it);
-        lowerValues.erase(lowerValues.begin(), it);
-    } else {
-        auto it = upperValues.end();
-        advance(it, -(diff / 2 + diff % 2));
-        lowerValues.insert(it, upperValues.end());
-        upperValues.erase(it, upperValues.end());
+    if (diff > 0) {
+        auto it = upperValues.begin();
+        advance(it, diff / 2);
+        lowerValues.insert(upperValues.begin(), it);
+        upperValues.erase(upperValues.begin(), it);
+    } else if (diff < 0) {
+        auto it = lowerValues.end();
+        advance(it, diff / 2 - diff % 2);
+        upperValues.insert(it, lowerValues.end());
+        lowerValues.erase(it, lowerValues.end());
     }
 }
 
 functionValue ValueMap::query(const vector<shared_ptr<Parameter>> &params) {
     updateMap();
-    auto *map = params < lowerValues.begin()->first ? &upperValues : &lowerValues;
-    auto res = map->find(params);
-    if (res == map->end()) {
+    auto res = values.find(params);
+    if (res == values.end()) {
         throw invalid_argument("Param combination not present!");
     }
     return res->second;
@@ -56,24 +63,23 @@ bool ValueMap::isKnown(const vector<shared_ptr<Parameter>> &cords) {
         return false;
     }
     updateMap();
-    auto *map = cords < lowerValues.begin()->first ? &upperValues : &lowerValues;
-    return map->find(cords) != map->end();
+    return values.find(cords) != values.end();
 }
 
 functionValue ValueMap::getMedian() {
-    updateMap();
     if (getSize() == 0) {
         return 0;
     }
+    updateMap();
     if (lowerValues.size() == upperValues.size()) {
-        auto it = upperValues.end();
+        auto it = lowerValues.end();
         advance(it, -1);
-        return (it->second + lowerValues.begin()->second) / 2;
+        return (**it + **upperValues.begin()) / 2;
     }
-    return lowerValues.begin()->second;
+    return **upperValues.begin();
 }
 
 unsigned long ValueMap::getSize() const {
-    return upperValues.size() + lowerValues.size() + tba.size();
+    return values.size() + tba.size();
 }
 
