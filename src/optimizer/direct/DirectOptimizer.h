@@ -28,9 +28,9 @@ private:
 
     map<vector<dirCoordinate>, functionValue> getValues(const list<vector<dirCoordinate>> &points);
 
-    functionValue estimatedValue(map<vector<dirCoordinate>, functionValue> samples);
+    static functionValue estimatedValue(const shared_ptr<HyRect> &rect, double k);
 
-    list<shared_ptr<HyRect>> optimalRectangles(unsigned long m);
+    list<shared_ptr<HyRect>> optimalRectangles(unsigned long m, functionValue phi);
 
     void addActiveRects(const list<shared_ptr<HyRect>> &rects);
 

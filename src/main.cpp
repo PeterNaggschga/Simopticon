@@ -92,7 +92,7 @@ int main() {
     //pipelineTest();
     //hyRectStructureTest();
     //grahamScanTest();
-    valueMapTest();
+    //valueMapTest();
 
     return 0;
 }

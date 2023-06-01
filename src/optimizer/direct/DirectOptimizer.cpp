@@ -15,14 +15,15 @@ DirectOptimizer::DirectOptimizer(Controller &ctrl, list<shared_ptr<ParameterDefi
 
 void DirectOptimizer::runOptimization() {
     stopCon.setStartNow();
-    unsigned long m = 1, l = 0;
     shared_ptr<HyRect> base(new BaseRect(D));
     addActiveRects({base});
-    //TODO init
+    unsigned long m = 1, l = 2;
+    functionValue phi;
 
     while (stopCon.evaluate(l, m)) {
+        phi = getValueMap().getTopVals().front().second;
         list<shared_ptr<HyRect>> newRects;
-        for (const shared_ptr<HyRect> &rect: optimalRectangles(m)) {
+        for (const shared_ptr<HyRect> &rect: optimalRectangles(m, phi)) {
             for (const shared_ptr<HyRect> &newRect: rect->divide(rect)) {
                 newRects.push_back(newRect);
             }
@@ -52,12 +53,11 @@ map<vector<dirCoordinate>, functionValue> DirectOptimizer::getValues(const list<
     return result;
 }
 
-functionValue DirectOptimizer::estimatedValue(map<vector<dirCoordinate>, functionValue> samples) {
-    // TODO
-    return 0;
+functionValue DirectOptimizer::estimatedValue(const shared_ptr<HyRect> &rect, double k) {
+    return rect->getAvgValue() - k * rect->getDiagonalLength() / 2;
 }
 
-list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(unsigned long m) {
+list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(unsigned long m, functionValue phi) {
     list<shared_ptr<HyRect>> optimalPoints;
     unsigned long size = level.getRectSubsetSize(m);
     for (pair<depth, set<shared_ptr<HyRect>>> entry: activeRects) {
@@ -71,7 +71,13 @@ list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(unsigned long m) {
 
     list<pair<shared_ptr<HyRect>, double>> kValues = GrahamScan::scan(optimalPoints);
 
-    //TODO filtern nach epsilon
+    optimalPoints.clear();
+    for (const auto &entry: kValues) {
+        if (entry.second == INFINITY || estimatedValue(entry.first, entry.second) <=
+                                        phi - level.getEpsilon() * abs(phi - getValueMap().getMedian())) {
+            optimalPoints.push_back(entry.first);
+        }
+    }
 
     return optimalPoints;
 }
