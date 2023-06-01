@@ -22,13 +22,26 @@ private:
 
     set<functionValue *, PtrCmp> upperValues;
     set<functionValue *, PtrCmp> lowerValues;
+
+    struct PairCmp {
+        bool operator()(const pair<vector<shared_ptr<Parameter>>, functionValue> &a,
+                        const pair<vector<shared_ptr<Parameter>>, functionValue> &b) const {
+            return a.second < b.second;
+        }
+    };
+
+    unsigned int topEntries;
+    set<pair<const vector<shared_ptr<Parameter>>, functionValue>, PairCmp> topVals;
+
     map<vector<shared_ptr<Parameter>>, functionValue> values;
     list<pair<vector<shared_ptr<Parameter>>, functionValue>> tba;
 
     void updateMap();
 
+    void addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val, set<functionValue *, PtrCmp> &set);
+
 public:
-    ValueMap() = default;
+    explicit ValueMap(unsigned int topEntries = 10);
 
     [[nodiscard]] functionValue query(const vector<shared_ptr<Parameter>> &params);
 
@@ -39,6 +52,8 @@ public:
     [[nodiscard]] functionValue getMedian();
 
     [[nodiscard]] unsigned long getSize() const;
+
+    [[nodiscard]] list<pair<vector<shared_ptr<Parameter>>, functionValue>> getTopVals();
 };
 
 

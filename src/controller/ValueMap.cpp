@@ -4,29 +4,24 @@
 
 #include <stdexcept>
 
+ValueMap::ValueMap(unsigned int topEntries) : topEntries(topEntries) {
+}
+
 void ValueMap::updateMap() {
     if (tba.empty()) {
         return;
     }
     if (upperValues.empty()) {
         auto entry = tba.begin();
-        auto worked = values.insert(*entry);
-        if (!worked.second) {
-            throw logic_error("Value couldn't be inserted!");
-        }
-        upperValues.insert(&worked.first->second);
+        addValue(*entry, upperValues);
         tba.erase(entry);
     }
 
     for (const auto &entry: tba) {
-        auto worked = values.insert(entry);
-        if (!worked.second) {
-            throw logic_error("Value couldn't be inserted!");
-        }
         if (entry.second < **upperValues.begin()) {
-            lowerValues.insert(&worked.first->second);
+            addValue(entry, lowerValues);
         } else {
-            upperValues.insert(&worked.first->second);
+            addValue(entry, upperValues);
         }
     }
     tba.clear();
@@ -42,6 +37,29 @@ void ValueMap::updateMap() {
         advance(it, diff / 2 - diff % 2);
         upperValues.insert(it, lowerValues.end());
         lowerValues.erase(it, lowerValues.end());
+    }
+}
+
+void
+ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val, set<functionValue *, PtrCmp> &set) {
+    auto worked = values.insert(val);
+    if (!worked.second) {
+        throw logic_error("Value couldn't be inserted!");
+    }
+    set.insert(&worked.first->second);
+    if (topVals.empty()) {
+        topVals.insert(val);
+        return;
+    }
+    auto it = topVals.end();
+    it--;
+    if (topVals.size() < topEntries || val.second < it->second) {
+        topVals.insert(val);
+        if (topVals.size() > topEntries) {
+            it = topVals.end();
+            it--;
+            topVals.erase(it);
+        }
     }
 }
 
@@ -83,3 +101,7 @@ unsigned long ValueMap::getSize() const {
     return values.size() + tba.size();
 }
 
+list<pair<vector<shared_ptr<Parameter>>, functionValue>> ValueMap::getTopVals() {
+    updateMap();
+    return {topVals.begin(), topVals.end()};
+}

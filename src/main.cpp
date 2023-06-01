@@ -75,7 +75,7 @@ void valueMapTest() {
     shared_ptr<Parameter> par1(new ContinuousParameter(def, 0.1));
     shared_ptr<Parameter> par2(new ContinuousParameter(def, 0.5));
     shared_ptr<Parameter> par3(new ContinuousParameter(def, 0.7));
-    ValueMap map = ValueMap();
+    ValueMap map = ValueMap(1);
     cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
          << endl;
     map.insert(vector<shared_ptr<Parameter>>({par1}), 1);
@@ -85,13 +85,14 @@ void valueMapTest() {
     map.insert(vector<shared_ptr<Parameter>>({par2}), 2);
     cout << map.getSize() << ", " << map.getMedian() << ", " << map.isKnown(vector<shared_ptr<Parameter>>({par2}))
          << endl;
+    cout << map.getTopVals().begin()->second << endl;
 }
 
 int main() {
     //pipelineTest();
     //hyRectStructureTest();
     //grahamScanTest();
-    //valueMapTest();
+    valueMapTest();
 
     return 0;
 }
