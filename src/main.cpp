@@ -92,7 +92,7 @@ void valueMapTest() {
 }
 
 void directTest() {
-    shared_ptr<ParameterDefinition> def(new ParameterDefinition(0, 10, ""));
+    shared_ptr<ParameterDefinition> def(new ParameterDefinition(-1, 1, ""));
     function<functionValue(vector<shared_ptr<Parameter>>)> f = [](const vector<shared_ptr<Parameter>> &v) {
         functionValue val = 0;
         for (const auto &par: v) {

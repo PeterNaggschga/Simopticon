@@ -7,8 +7,8 @@
 #include <utility>
 #include <memory>
 
-DirectOptimizer::DirectOptimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params, dimension D,
-                                 StoppingCondition con) : Optimizer(ctrl, std::move(params)), D(D), stopCon(con),
+DirectOptimizer::DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, dimension D,
+                                 StoppingCondition con) : Optimizer(ctrl, params), D(D), stopCon(con),
                                                           normalizer(ParameterNormalizer(params)) {
 }
 
@@ -37,7 +37,7 @@ void DirectOptimizer::runOptimization() {
 
 map<vector<dirCoordinate>, functionValue> DirectOptimizer::getValues(const list<vector<dirCoordinate>> &points) {
     map<vector<shared_ptr<Parameter>>, vector<dirCoordinate>> paramToCord;
-    list<vector<shared_ptr<Parameter>>> paramList(points.size());
+    list<vector<shared_ptr<Parameter>>> paramList;
     for (const vector<dirCoordinate> &point: points) {
         vector<shared_ptr<Parameter>> paramVec = normalizer.denormalize(point);
         paramList.push_back(paramVec);

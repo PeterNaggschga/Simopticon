@@ -1,9 +1,12 @@
 #include "ParameterNormalizer.h"
 
+#include <utility>
+
 #include "../../parameters/ContinuousParameter.h"
 #include "../../parameters/ParameterDefinition.h"
 
-ParameterNormalizer::ParameterNormalizer(list<shared_ptr<ParameterDefinition>> &parameters) : parameters(parameters) {
+ParameterNormalizer::ParameterNormalizer(list<shared_ptr<ParameterDefinition>> parameters) : parameters(
+        std::move(parameters)) {
 }
 
 vector<dirCoordinate> ParameterNormalizer::normalize(const vector<shared_ptr<Parameter>> &params) {
