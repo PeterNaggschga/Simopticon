@@ -11,13 +11,13 @@ array<vector<dirCoordinate>, 2> ChildRect::getSamplingVertices() {
     array<vector<dirCoordinate>, 2> vertices = ptr->getSamplingVertices();
     dimension psplit = ptr->getSplitDim();
     dirCoordinate length = vertices[1][psplit - 1] - vertices[0][psplit - 1];
-    if (getPos() != position::RIGHT) {
+    if (pos != position::RIGHT) {
         vertices[1][psplit - 1] = vertices[0][psplit - 1] + length / 3;
     }
-    if (getPos() != position::LEFT) {
+    if (pos != position::LEFT) {
         vertices[0][psplit - 1] = vertices[0][psplit - 1] + 2 * length / 3;
     }
-    if (getPos() == position::MIDDLE) {
+    if (pos == position::MIDDLE) {
         swap(vertices[0], vertices[1]);
     }
     return vertices;
@@ -25,7 +25,7 @@ array<vector<dirCoordinate>, 2> ChildRect::getSamplingVertices() {
 
 
 bool ChildRect::operator==(const HyRect &rect) const {
-    if (rect.getPos() != getPos()) {
+    if (rect.getPos() != pos) {
         return false;
     }
     return parent == ((ChildRect &&) rect).parent;

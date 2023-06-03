@@ -20,6 +20,8 @@ using namespace std;
 class Optimizer {
 private:
     Controller &controller;
+
+protected:
     list<shared_ptr<ParameterDefinition>> parameters;
 
 public:

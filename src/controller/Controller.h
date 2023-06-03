@@ -23,15 +23,15 @@ using namespace std;
 
 class Controller {
 private:
-    unique_ptr<Optimizer> optimizer;
-    unique_ptr<SimulationRunner> runner;
-    unique_ptr<Pipeline> pipeline;
-    unique_ptr<ValueMap> valueMap;
-
     virtual void runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
 
     virtual map<vector<shared_ptr<Parameter>>, functionValue> evaluate();
 
+protected:
+    unique_ptr<Optimizer> optimizer;
+    unique_ptr<SimulationRunner> runner;
+    unique_ptr<Pipeline> pipeline;
+    unique_ptr<ValueMap> valueMap;
 
 public:
     explicit Controller(const list<shared_ptr<ParameterDefinition>> &params);

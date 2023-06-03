@@ -19,7 +19,7 @@ enum class position : char {
 
 class HyRect {
 
-private:
+protected:
     dimension D;
     depth t;
     position pos;
