@@ -3,6 +3,7 @@
 
 
 #include "../Types.h"
+#include "../ComparisonFunctions.h"
 #include "../parameters/Parameter.h"
 
 #include <map>
@@ -15,43 +16,19 @@ using namespace std;
 
 class ValueMap {
 private:
-    struct PtrCmp {
-        bool operator()(const functionValue *a, const functionValue *b) const { return *a == *b ? a < b : *a < *b; }
-    };
-
-    set<functionValue *, PtrCmp> upperValues;
-    set<functionValue *, PtrCmp> lowerValues;
-
-    struct PairCmp {
-        bool operator()(const pair<vector<shared_ptr<Parameter>>, functionValue> &a,
-                        const pair<vector<shared_ptr<Parameter>>, functionValue> &b) const {
-            return a.second == b.second ? a.first < b.first : a.second < b.second;
-        }
-    };
-
-    struct ParPtrCmp {
-        bool operator()(vector<shared_ptr<Parameter>> a, vector<shared_ptr<Parameter>> b) const {
-            if (a.size() != b.size()) {
-                return a.size() < b.size();
-            }
-            for (int i = 0; i < a.size(); ++i) {
-                if (*a[i] != *b[i]) {
-                    return *a[i] < *b[i];
-                }
-            }
-            return false;
-        }
-    };
+    set<functionValue *, CmpPtrFunctionvalue> upperValues;
+    set<functionValue *, CmpPtrFunctionvalue> lowerValues;
 
     unsigned int topEntries;
-    set<pair<const vector<shared_ptr<Parameter>>, functionValue>, PairCmp> topVals;
+    set<pair<const vector<shared_ptr<Parameter>>, functionValue>, CmpPairVectorSharedParameterFunctionvalue> topVals;
 
-    map<vector<shared_ptr<Parameter>>, functionValue, ParPtrCmp> values;
+    map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> values;
     list<pair<vector<shared_ptr<Parameter>>, functionValue>> tba;
 
     void updateMap();
 
-    void addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val, set<functionValue *, PtrCmp> &set);
+    void addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
+                  set<functionValue *, CmpPtrFunctionvalue> &set);
 
 public:
     explicit ValueMap(unsigned int topEntries = 10);

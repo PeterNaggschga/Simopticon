@@ -39,7 +39,8 @@ void ValueMap::updateMap() {
 }
 
 void
-ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val, set<functionValue *, PtrCmp> &set) {
+ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
+                   set<functionValue *, CmpPtrFunctionvalue> &set) {
     auto worked = values.insert(val);
     if (!worked.second) {
         throw logic_error("Value couldn't be inserted!");

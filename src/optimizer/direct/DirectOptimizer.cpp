@@ -109,7 +109,7 @@ void DirectOptimizer::addActiveRects(const list<shared_ptr<HyRect>> &rects) {
         if (it != activeRects.end()) {
             it->second.insert(entry.first);
         } else {
-            set<shared_ptr<HyRect>, PtrCmp> newSet = {entry.first};
+            set<shared_ptr<HyRect>, CmpSharedHyrect> newSet = {entry.first};
             activeRects.insert(make_pair(depth, newSet));
         }
     }
@@ -117,7 +117,7 @@ void DirectOptimizer::addActiveRects(const list<shared_ptr<HyRect>> &rects) {
 
 void DirectOptimizer::removeActiveRect(const shared_ptr<HyRect> &rect) {
     depth depth = rect->getDepth();
-    set<shared_ptr<HyRect>, PtrCmp> &set = activeRects[depth];
+    set<shared_ptr<HyRect>, CmpSharedHyrect> &set = activeRects[depth];
     set.erase(rect);
     if (set.empty()) {
         activeRects.erase(depth);

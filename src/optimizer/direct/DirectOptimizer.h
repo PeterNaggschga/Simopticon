@@ -3,6 +3,7 @@
 
 
 #include "DirectTypes.h"
+#include "DirectComparisonFunctions.h"
 #include "../Optimizer.h"
 #include "StoppingCondition.h"
 #include "hyrect/HyRect.h"
@@ -18,20 +19,13 @@ class StoppingCondition;
 using namespace std;
 
 class DirectOptimizer : public Optimizer {
-
 private:
     const dimension D;
     StoppingCondition stopCon;
     Levels level = Levels();
     ParameterNormalizer normalizer;
 
-    struct PtrCmp {
-        bool operator()(const shared_ptr<HyRect> &a, const shared_ptr<HyRect> &b) const {
-            return a->getAvgValue() < b->getAvgValue();
-        }
-    };
-
-    map<depth, set<shared_ptr<HyRect>, PtrCmp>, greater<>> activeRects;
+    map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>, greater<>> activeRects;
 
     map<vector<dirCoordinate>, functionValue> getValues(const list<vector<dirCoordinate>> &points);
 

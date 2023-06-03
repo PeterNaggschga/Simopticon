@@ -8,7 +8,7 @@
 
 Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : valueMap(new ValueMap()) {
     //TODO: Optimizer aus config lesen
-    StoppingCondition con = StoppingCondition(0, 0, 1); // TODO: aus config lesen
+    auto con = StoppingCondition(0, 50000); // TODO: aus config lesen
     //TODO: params aus config lesen
     Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, params.size(), con));
     //TODO: runner aus config lesen
@@ -20,7 +20,7 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
 map<vector<shared_ptr<Parameter>>, functionValue>
 Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
     map<vector<shared_ptr<Parameter>>, functionValue> result;
-    set<vector<shared_ptr<Parameter>>, ParPtrCmp> simRuns;
+    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> simRuns;
     for (const auto &cords: params) {
         if (getValueMap().isKnown(cords)) {
             result.insert(make_pair(cords, getValueMap().query(cords)));
@@ -46,7 +46,7 @@ void Controller::run() {
 }
 
 void
-Controller::runSimulations(set<vector<shared_ptr<Parameter>>, ParPtrCmp> runs) {
+Controller::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue> Controller::evaluate() {

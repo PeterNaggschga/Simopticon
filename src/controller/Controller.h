@@ -3,6 +3,7 @@
 
 
 #include "../Types.h"
+#include "../ComparisonFunctions.h"
 #include "../optimizer/Optimizer.h"
 #include "../runner/SimulationRunner.h"
 #include "../evaluation/Pipeline.h"
@@ -21,28 +22,13 @@ class ValueMap;
 using namespace std;
 
 class Controller {
-protected:
-    struct ParPtrCmp {
-        bool operator()(vector<shared_ptr<Parameter>> a, vector<shared_ptr<Parameter>> b) const {
-            if (a.size() != b.size()) {
-                return a.size() < b.size();
-            }
-            for (int i = 0; i < a.size(); ++i) {
-                if (*a[i] != *b[i]) {
-                    return *a[i] < *b[i];
-                }
-            }
-            return false;
-        }
-    };
-
 private:
     unique_ptr<Optimizer> optimizer;
     unique_ptr<SimulationRunner> runner;
     unique_ptr<Pipeline> pipeline;
     unique_ptr<ValueMap> valueMap;
 
-    virtual void runSimulations(set<vector<shared_ptr<Parameter>>, ParPtrCmp> runs);
+    virtual void runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
 
     virtual map<vector<shared_ptr<Parameter>>, functionValue> evaluate();
 
