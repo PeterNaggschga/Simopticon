@@ -102,6 +102,12 @@ void directTest() {
         }
         return val;
     };
+    function<functionValue(vector<shared_ptr<Parameter>>)> branin = [](const vector<shared_ptr<Parameter>> &v) {
+        functionValue res = pow(
+                v[1]->getVal() - (5.1 / (4 * pow(M_PI, 2))) * pow(v[0]->getVal(), 2) + (5 / M_PI) * v[0]->getVal() - 6,
+                2);
+        return res + 10 * (1 - pow(8 * M_PI, -1)) * cos(v[0]->getVal()) + 10;
+    };
     unique_ptr<Controller> ctr(new StubController({def, def}, f));
     ctr->run();
 }
