@@ -9,13 +9,15 @@
 class StubController : public Controller {
 private:
     function<functionValue(vector<shared_ptr<Parameter>>)> f;
+    map<vector<shared_ptr<Parameter>>, functionValue> result;
 
 public:
     explicit StubController(const list<shared_ptr<ParameterDefinition>> &def,
                             function<functionValue(vector<shared_ptr<Parameter>>)> f);
 
-    map<vector<shared_ptr<Parameter>>, functionValue>
-    requestValues(const list<vector<shared_ptr<Parameter>>> &params) override;
+    void runSimulations(set<vector<shared_ptr<Parameter>>, Controller::ParPtrCmp> runs) override;
+
+    map<vector<shared_ptr<Parameter>>, functionValue> evaluate() override;
 };
 
 

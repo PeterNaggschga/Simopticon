@@ -20,18 +20,19 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
 map<vector<shared_ptr<Parameter>>, functionValue>
 Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
     map<vector<shared_ptr<Parameter>>, functionValue> result;
-    list<vector<shared_ptr<Parameter>>> simRuns;
+    set<vector<shared_ptr<Parameter>>, ParPtrCmp> simRuns;
     for (const auto &cords: params) {
-        if (valueMap->isKnown(cords)) {
-            result.insert(make_pair(cords, valueMap->query(cords)));
+        if (getValueMap().isKnown(cords)) {
+            result.insert(make_pair(cords, getValueMap().query(cords)));
         } else {
-            simRuns.push_back(cords);
+            simRuns.insert(cords);
         }
     }
 
-    // TODO: start Simulations in simRuns
+    runSimulations(simRuns);
 
-    // TODO: evaluate results
+    auto simResults = evaluate();
+    result.insert(simResults.begin(), simResults.end());
 
     return result;
 }
@@ -42,4 +43,12 @@ ValueMap &Controller::getValueMap() {
 
 void Controller::run() {
     optimizer->runOptimization();
+}
+
+void
+Controller::runSimulations(set<vector<shared_ptr<Parameter>>, ParPtrCmp> runs) {
+}
+
+map<vector<shared_ptr<Parameter>>, functionValue> Controller::evaluate() {
+    return {};
 }
