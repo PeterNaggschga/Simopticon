@@ -7,25 +7,20 @@
 list<pair<shared_ptr<HyRect>, double>> GrahamScan::scan(list<shared_ptr<HyRect>> vertices) {
     map<double, shared_ptr<HyRect>> potentialHull;
     auto it = vertices.begin();
-    shared_ptr<HyRect> firstRect = *it;
+    shared_ptr<HyRect> firstRect = vertices.front();
     potentialHull.insert(make_pair(0, firstRect));
-    it++;
-    while (it != vertices.end()) {
-        auto angle = (double) ((it->get()->getAvgValue() - firstRect->getAvgValue()) /
-                               (it->get()->getDiagonalLength() - firstRect->getDiagonalLength()));
+    vertices.erase(vertices.begin());
+    for (const auto &entry: vertices) {
+        auto angle = (double) ((entry->getAvgValue() - firstRect->getAvgValue()) /
+                               (entry->getDiagonalLength() - firstRect->getDiagonalLength()));
         if (angle <= 0) {
             potentialHull.clear();
-            firstRect = *it;
-            potentialHull.insert(make_pair(0, firstRect));
+            firstRect = entry;
+            angle = 0;
         } else {
-            auto angleSet = potentialHull.find(angle);
-            if (angleSet == potentialHull.end()) {
-                potentialHull.insert(make_pair(angle, *it));
-            } else {
-                angleSet->second = *it;
-            }
+            potentialHull.erase(angle);
         }
-        it++;
+        potentialHull.insert(make_pair(angle, entry));
     }
 
     list<pair<shared_ptr<HyRect>, double>> result;

@@ -24,7 +24,14 @@ private:
     StoppingCondition stopCon;
     Levels level = Levels();
     ParameterNormalizer normalizer;
-    map<depth, set<shared_ptr<HyRect>>> activeRects;
+
+    struct PtrCmp {
+        bool operator()(const shared_ptr<HyRect> &a, const shared_ptr<HyRect> &b) const {
+            return a->getAvgValue() < b->getAvgValue();
+        }
+    };
+
+    map<depth, set<shared_ptr<HyRect>, PtrCmp>, greater<>> activeRects;
 
     map<vector<dirCoordinate>, functionValue> getValues(const list<vector<dirCoordinate>> &points);
 

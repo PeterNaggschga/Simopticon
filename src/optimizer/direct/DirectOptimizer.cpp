@@ -59,10 +59,9 @@ functionValue DirectOptimizer::estimatedValue(const shared_ptr<HyRect> &rect, do
 list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(unsigned long m, functionValue phi) {
     list<shared_ptr<HyRect>> optimalPoints;
     unsigned long size = level.getRectSubsetSize(m);
-    for (pair<depth, set<shared_ptr<HyRect>>> entry: activeRects) {
+    for (const auto &entry: activeRects) {
         size -= entry.second.size();
-        shared_ptr<HyRect> rect = *entry.second.begin();
-        optimalPoints.emplace_back(rect);
+        optimalPoints.emplace_back(*entry.second.begin());
         if (size <= 0) {
             break;
         }
@@ -110,7 +109,7 @@ void DirectOptimizer::addActiveRects(const list<shared_ptr<HyRect>> &rects) {
         if (it != activeRects.end()) {
             it->second.insert(entry.first);
         } else {
-            set<shared_ptr<HyRect>> newSet = {entry.first};
+            set<shared_ptr<HyRect>, PtrCmp> newSet = {entry.first};
             activeRects.insert(make_pair(depth, newSet));
         }
     }
@@ -118,7 +117,7 @@ void DirectOptimizer::addActiveRects(const list<shared_ptr<HyRect>> &rects) {
 
 void DirectOptimizer::removeActiveRect(const shared_ptr<HyRect> &rect) {
     depth depth = rect->getDepth();
-    set<shared_ptr<HyRect>> &set = activeRects[depth];
+    set<shared_ptr<HyRect>, PtrCmp> &set = activeRects[depth];
     set.erase(rect);
     if (set.empty()) {
         activeRects.erase(depth);
