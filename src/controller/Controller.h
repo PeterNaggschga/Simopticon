@@ -23,7 +23,8 @@ using namespace std;
 
 class Controller {
 private:
-    virtual void runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
+    virtual map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+    runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
 
     virtual map<vector<shared_ptr<Parameter>>, functionValue> evaluate();
 

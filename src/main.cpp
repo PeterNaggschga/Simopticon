@@ -11,6 +11,7 @@
 #include "optimizer/direct/hyrect/BaseRect.h"
 #include "controller/Controller.h"
 #include "controller/StubController.h"
+#include "runner/plexe/ConfigEditor.h"
 #include <memory>
 
 using namespace std;
@@ -112,12 +113,27 @@ void directTest() {
     ctr->run();
 }
 
+void configEditorTest() {
+    ConfigEditor editor = ConfigEditor("/home/petern/src/plexe/examples/platooning");
+    shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
+    shared_ptr<ParameterDefinition> xi(new ParameterDefinition(0, 1, "*.node[*].scenario.caccOmegaN", "Hz"));
+    vector<shared_ptr<Parameter>> v1 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 0.5)),
+                                        shared_ptr<Parameter>(new ContinuousParameter(xi, 0.5))};
+    vector<shared_ptr<Parameter>> v2 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 1)),
+                                        shared_ptr<Parameter>(new ContinuousParameter(xi, 1))};
+    map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> map;
+    map.insert(make_pair(v1, 0));
+    map.insert(make_pair(v2, 1));
+    editor.createConfig(map, 3);
+}
+
 int main() {
     //pipelineTest();
     //hyRectStructureTest();
     //grahamScanTest();
     //valueMapTest();
     //directTest();
+    //configEditorTest();
 
     return 0;
 }

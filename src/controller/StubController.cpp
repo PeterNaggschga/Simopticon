@@ -8,7 +8,8 @@ StubController::StubController(const list<shared_ptr<ParameterDefinition>> &def,
         : Controller(def), f(std::move(f)) {
 }
 
-void StubController::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
+map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+StubController::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
     result.clear();
     for (const auto &v: runs) {
         functionValue val = f(v);

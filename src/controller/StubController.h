@@ -15,7 +15,8 @@ public:
     explicit StubController(const list<shared_ptr<ParameterDefinition>> &def,
                             function<functionValue(vector<shared_ptr<Parameter>>)> f);
 
-    void runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) override;
+    map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+    runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) override;
 
     map<vector<shared_ptr<Parameter>>, functionValue> evaluate() override;
 };
