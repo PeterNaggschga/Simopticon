@@ -1,6 +1,7 @@
 #include "SimulationRunner.h"
 
 #include <cmath>
+#include <future>
 
 SimulationRunner::SimulationRunner(unsigned int threads, unsigned int runs) : NR_THREADS(threads),
                                                                               NR_RUNS_PER_THREAD(runs) {
@@ -17,13 +18,28 @@ SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSha
         runs.erase(runs.begin(), it);
     }
 
-    // TODO: Multithreading
     map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
-    for (const auto &threadRun: threadRuns) {
-        auto threadResult = runSimulationThread(threadRun);
-        result.insert(threadResult.begin(), threadResult.end());
+    vector<future<map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>>> threads;
+    int i = 0;
+    counting_semaphore<SEMAPHORE_MAX> semaphore(0);
+    while (result.size() < runs.size()) {
+        if (threads.size() < NR_THREADS && i < nrThreadRuns) {
+            threads.push_back(async(std::launch::async, &SimulationRunner::runSimulationThread, this, threadRuns[i++],
+                                    &semaphore));
+        } else {
+            semaphore.acquire();
+            auto it = threads.begin();
+            while (it != threads.end()) {
+                if (it->wait_for(chrono::seconds(0)) == std::future_status::ready) {
+                    auto help = it->get();
+                    result.insert(help.begin(), help.end());
+                    threads.erase(it);
+                    break;
+                }
+                it++;
+            }
+        }
     }
-
 
     return result;
 }

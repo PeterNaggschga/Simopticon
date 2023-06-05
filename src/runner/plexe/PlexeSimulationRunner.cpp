@@ -16,7 +16,8 @@ PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int 
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-PlexeSimulationRunner::runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
+PlexeSimulationRunner::runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs,
+                                           counting_semaphore<SEMAPHORE_MAX> *done) {
     map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId;
     for (const auto &entry: runs) {
         runToId.insert(make_pair(entry, getRunId()));
@@ -57,7 +58,7 @@ PlexeSimulationRunner::runSimulationThread(set<vector<shared_ptr<Parameter>>, Cm
         }
         result.insert(make_pair(entry.first, make_pair(resultDir, ids)));
     }
-
+    done->release();
     return result;
 }
 

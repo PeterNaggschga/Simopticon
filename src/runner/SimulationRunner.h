@@ -9,18 +9,23 @@
 #include <map>
 #include <memory>
 #include <filesystem>
+#include <semaphore>
 
 class Parameter;
 
 using namespace std;
 
 class SimulationRunner {
+protected:
+    const static unsigned int SEMAPHORE_MAX = UINT16_MAX;
+
 private:
     const unsigned int NR_THREADS;
     const unsigned int NR_RUNS_PER_THREAD;
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) = 0;
+    runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs,
+                        counting_semaphore<SEMAPHORE_MAX> *done) = 0;
 
 public:
     SimulationRunner(unsigned int threads, unsigned int runs);
