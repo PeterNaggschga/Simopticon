@@ -126,6 +126,7 @@ void configEditorTest() {
     map.insert(make_pair(v1, 0));
     map.insert(make_pair(v2, 1));
     auto nr = editor.createConfig(map, 2);
+    cout << "Config erstellt - löschen?";
     cin.get();
     editor.deleteConfig(nr);
 }

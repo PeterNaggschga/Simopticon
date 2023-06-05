@@ -25,7 +25,7 @@ PlexeSimulationRunner::runSimulationThread(set<vector<shared_ptr<Parameter>>, Cm
     string command = "cd " + editor.getDir().string();
 
     for (const auto &scenario: SCENARIOS) {
-        string scenarioCmd = " && plexe_run -u Cmdenv -c " + scenario;
+        string scenarioCmd = " && plexe_run -M release -s -u Cmdenv -c " + scenario;
         for (int i = 0; i < REPEAT * runs.size(); ++i) {
             command += scenarioCmd + " -r " + to_string(i) + " " + editor.getConfigPath(iniNumber).string();
         }

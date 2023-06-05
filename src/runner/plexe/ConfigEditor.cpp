@@ -4,9 +4,8 @@
 #include <fstream>
 #include <list>
 
-ConfigEditor::ConfigEditor(const filesystem::path &directory) : DIR(directory), CONFIG(directory), RESULTS(directory) {
-    CONFIG.append("omnetpp.ini");
-    RESULTS.append("optRes");
+ConfigEditor::ConfigEditor(filesystem::path directory) : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
+                                                         RESULTS(directory.parent_path().append("optRes")) {
 }
 
 size_t
@@ -23,6 +22,10 @@ ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorS
     setResultFiles(fileContents, runToId, repeat);
 
     replaceOption(fileContents, "repeat", repeat * runToId.size());
+    replaceOption(fileContents, "debug-on-errors");
+    replaceOption(fileContents, "print-undisposed");
+    replaceOption(fileContents, "cmdenv-autoflush");
+    replaceOption(fileContents, "cmdenv-status-frequency", "100s");
 
     vector<string> paramStrings(runToId.begin()->first.size(), "${");
     for (const auto &entry: runToId) {
@@ -71,6 +74,10 @@ void ConfigEditor::replaceOption(string &file, string option, const string &valu
 
 void ConfigEditor::replaceOption(string &file, string option, integral auto value, size_t start) {
     replaceOption(file, option, to_string(value), start);
+}
+
+void ConfigEditor::replaceOption(string &file, string option, bool value, size_t start) {
+    replaceOption(file, std::move(option), value ? string("true") : string("false"), start);
 }
 
 void ConfigEditor::setResultFiles(string &file,

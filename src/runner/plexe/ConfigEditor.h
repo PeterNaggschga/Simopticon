@@ -17,12 +17,14 @@ using namespace std;
 class ConfigEditor {
 private:
     const filesystem::path DIR;
-    filesystem::path CONFIG;
-    filesystem::path RESULTS;
+    const filesystem::path CONFIG;
+    const filesystem::path RESULTS;
 
     static void replaceOption(string &file, string option, const string &value, size_t start = 0);
 
     static void replaceOption(string &file, string option, integral auto value, size_t start = 0);
+
+    static void replaceOption(string &file, string option, bool value = false, size_t start = 0);
 
     static void setResultFiles(string &file,
                                const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
@@ -31,7 +33,7 @@ private:
     [[nodiscard]] static string getConfigAt(string &file, size_t start = 0);
 
 public:
-    explicit ConfigEditor(const filesystem::path &directory);
+    explicit ConfigEditor(filesystem::path directory);
 
     size_t createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId,
                         unsigned int repeat);
