@@ -8,6 +8,7 @@
 #include <set>
 #include <map>
 #include <memory>
+#include <filesystem>
 
 class Parameter;
 
@@ -18,7 +19,7 @@ private:
     const unsigned int NR_THREADS;
     const unsigned int NR_RUNS_PER_THREAD;
 
-    virtual map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+    virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) = 0;
 
 public:
@@ -26,7 +27,7 @@ public:
 
     virtual ~SimulationRunner() = default;
 
-    virtual map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+    virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
 
 };

@@ -5,7 +5,7 @@
 #include <list>
 
 ConfigEditor::ConfigEditor(filesystem::path directory) : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
-                                                         RESULTS(directory.parent_path().append("optRes")) {
+                                                         RESULTS(directory.parent_path().append("optResults")) {
 }
 
 size_t
@@ -22,9 +22,9 @@ ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorS
     setResultFiles(fileContents, runToId, repeat);
 
     replaceOption(fileContents, "repeat", repeat * runToId.size());
-    replaceOption(fileContents, "debug-on-errors");
-    replaceOption(fileContents, "print-undisposed");
-    replaceOption(fileContents, "cmdenv-autoflush");
+    replaceOption(fileContents, "debug-on-errors", "false");
+    replaceOption(fileContents, "print-undisposed", "false");
+    replaceOption(fileContents, "cmdenv-autoflush", "false");
     replaceOption(fileContents, "cmdenv-status-frequency", "100s");
 
     vector<string> paramStrings(runToId.begin()->first.size(), "${");
@@ -76,10 +76,6 @@ void ConfigEditor::replaceOption(string &file, string option, integral auto valu
     replaceOption(file, option, to_string(value), start);
 }
 
-void ConfigEditor::replaceOption(string &file, string option, bool value, size_t start) {
-    replaceOption(file, std::move(option), value ? string("true") : string("false"), start);
-}
-
 void ConfigEditor::setResultFiles(string &file,
                                   const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
                                   unsigned int repeat) {
@@ -101,7 +97,8 @@ void ConfigEditor::setResultFiles(string &file,
             string resDir = "${resultdir}";
             size_t searchPos = outDir.find(resDir);
             if (searchPos != string::npos) {
-                outDir.replace(searchPos, resDir.size(), "optResults/" + to_string(id));
+                string results = RESULTS;
+                outDir.replace(searchPos, resDir.size(), results + "/" + to_string(id));
             }
             string confName = "${configname}";
             searchPos = outDir.find(confName);

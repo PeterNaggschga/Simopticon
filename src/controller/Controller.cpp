@@ -48,7 +48,7 @@ void Controller::run() {
     optimizer->runOptimization();
 }
 
-map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
 Controller::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
     return runner->runSimulations(std::move(runs));
 }

@@ -6,7 +6,7 @@ SimulationRunner::SimulationRunner(unsigned int threads, unsigned int runs) : NR
                                                                               NR_RUNS_PER_THREAD(runs) {
 }
 
-map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
+map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
 SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
     unsigned int nrThreadRuns = ceil((double) runs.size() / NR_RUNS_PER_THREAD);
     set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> threadRuns[nrThreadRuns];
@@ -18,7 +18,7 @@ SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSha
     }
 
     // TODO: Multithreading
-    map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter> result;
+    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
     for (const auto &threadRun: threadRuns) {
         auto threadResult = runSimulationThread(threadRun);
         result.insert(threadResult.begin(), threadResult.end());

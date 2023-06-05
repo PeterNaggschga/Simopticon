@@ -24,11 +24,9 @@ private:
 
     static void replaceOption(string &file, string option, integral auto value, size_t start = 0);
 
-    static void replaceOption(string &file, string option, bool value = false, size_t start = 0);
-
-    static void setResultFiles(string &file,
-                               const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
-                               unsigned int repeat);
+    void setResultFiles(string &file,
+                        const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
+                        unsigned int repeat);
 
     [[nodiscard]] static string getConfigAt(string &file, size_t start = 0);
 
