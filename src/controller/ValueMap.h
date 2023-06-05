@@ -41,7 +41,7 @@ public:
 
     [[nodiscard]] functionValue getMedian();
 
-    [[nodiscard]] unsigned long getSize() const;
+    [[nodiscard]] size_t getSize() const;
 
     [[nodiscard]] list<pair<vector<shared_ptr<Parameter>>, functionValue>> getTopVals();
 };

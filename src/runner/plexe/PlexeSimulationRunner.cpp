@@ -22,9 +22,9 @@ PlexeSimulationRunner::runSimulationThread(set<vector<shared_ptr<Parameter>>, Cm
     return {};
 }
 
-unsigned long PlexeSimulationRunner::getRunId() {
+size_t PlexeSimulationRunner::getRunId() {
     runNumberLock.lock();
-    unsigned long result = runNumber;
+    size_t result = runNumber;
     runNumber++;
     runNumberLock.unlock();
     return result;

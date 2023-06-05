@@ -96,7 +96,7 @@ functionValue ValueMap::getMedian() {
     return **upperValues.begin();
 }
 
-unsigned long ValueMap::getSize() const {
+size_t ValueMap::getSize() const {
     return values.size() + tba.size();
 }
 

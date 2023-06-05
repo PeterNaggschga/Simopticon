@@ -15,10 +15,10 @@ private:
 
     ConfigEditor editor;
 
-    unsigned long runNumber = 0;
+    size_t runNumber = 0;
     mutex runNumberLock;
 
-    unsigned long getRunId();
+    size_t getRunId();
 
     map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
     runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) override;

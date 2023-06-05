@@ -121,7 +121,7 @@ void configEditorTest() {
                                         shared_ptr<Parameter>(new ContinuousParameter(xi, 0.5))};
     vector<shared_ptr<Parameter>> v2 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 1)),
                                         shared_ptr<Parameter>(new ContinuousParameter(xi, 1))};
-    map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> map;
+    map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> map;
     map.insert(make_pair(v1, 0));
     map.insert(make_pair(v2, 1));
     auto nr = editor.createConfig(map, 2);

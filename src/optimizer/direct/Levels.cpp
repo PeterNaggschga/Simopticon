@@ -5,7 +5,7 @@ level Levels::nextLevel() {
     return currentLevel;
 }
 
-unsigned long Levels::getRectSubsetSize(unsigned long size) {
+size_t Levels::getRectSubsetSize(size_t size) {
     switch (currentLevel) {
         case l1_1:
         case l1_3:

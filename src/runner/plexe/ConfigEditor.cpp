@@ -9,10 +9,10 @@ ConfigEditor::ConfigEditor(const filesystem::path &directory) : DIR(directory), 
     RESULTS.append("optRes");
 }
 
-unsigned long
-ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> runToId,
+size_t
+ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId,
                            unsigned int repeat) {
-    unsigned long iniNumber = runToId.begin()->second;
+    size_t iniNumber = runToId.begin()->second;
 
     ifstream inStream(CONFIG);
     ostringstream textStream;
@@ -74,9 +74,9 @@ void ConfigEditor::replaceOption(string &file, string option, integral auto valu
 }
 
 void ConfigEditor::setResultFiles(string &file,
-                                  const map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> &runToId,
+                                  const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
                                   unsigned int repeat) {
-    vector<unsigned long> runIds;
+    vector<size_t> runIds;
     runIds.reserve(runToId.size());
     for (const auto &entry: runToId) {
         runIds.push_back(entry.second);
@@ -112,12 +112,12 @@ void ConfigEditor::setResultFiles(string &file,
     }
 }
 
-filesystem::path ConfigEditor::getConfigPath(unsigned long runId) const {
+filesystem::path ConfigEditor::getConfigPath(size_t runId) const {
     filesystem::path result = DIR;
     return result.append(".tmp" + to_string(runId) + ".ini");
 }
 
-filesystem::path ConfigEditor::getResultPath(unsigned long runId) const { //TODO change unsigned long to size_t
+filesystem::path ConfigEditor::getResultPath(size_t runId) const {
     filesystem::path result = RESULTS;
     return result.append(to_string(runId));
 }
@@ -135,6 +135,6 @@ string ConfigEditor::getConfigAt(string &file, size_t start) {
     return result;
 }
 
-void ConfigEditor::deleteConfig(unsigned long runId) const {
+void ConfigEditor::deleteConfig(size_t runId) const {
     filesystem::remove(getConfigPath(runId));
 }

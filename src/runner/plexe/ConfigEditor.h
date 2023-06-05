@@ -25,7 +25,7 @@ private:
     static void replaceOption(string &file, string option, integral auto value, size_t start = 0);
 
     static void setResultFiles(string &file,
-                               const map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> &runToId,
+                               const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
                                unsigned int repeat);
 
     [[nodiscard]] static string getConfigAt(string &file, size_t start = 0);
@@ -33,17 +33,17 @@ private:
 public:
     explicit ConfigEditor(const filesystem::path &directory);
 
-    unsigned long createConfig(map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> runToId,
-                               unsigned int repeat);
+    size_t createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId,
+                        unsigned int repeat);
 
-    void deleteConfig(unsigned long runId) const;
+    void deleteConfig(size_t runId) const;
 
     static string getConfigValue(string &file, string option, size_t start = 0);
 
 
-    [[nodiscard]] filesystem::path getConfigPath(unsigned long runId) const;
+    [[nodiscard]] filesystem::path getConfigPath(size_t runId) const;
 
-    [[nodiscard]] filesystem::path getResultPath(unsigned long runId) const;
+    [[nodiscard]] filesystem::path getResultPath(size_t runId) const;
 
 };
 

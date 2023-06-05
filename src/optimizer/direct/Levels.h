@@ -1,6 +1,8 @@
 #ifndef SIMOPTICON_LEVELS_H
 #define SIMOPTICON_LEVELS_H
 
+#include <cstddef>
+
 enum level : unsigned char {
     l2_0 = 0, l1_1 = 1, l0_2 = 2, l1_3 = 3, l1_4 = 4, l0_5 = 5, l1_6 = 6, l2_7 = 7
 };
@@ -19,7 +21,7 @@ public:
 
     level nextLevel();
 
-    unsigned long getRectSubsetSize(unsigned long size);
+    size_t getRectSubsetSize(size_t size);
 
     [[nodiscard]] double getEpsilon();
 };

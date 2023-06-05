@@ -1,13 +1,13 @@
 #include "StoppingCondition.h"
 
-StoppingCondition::StoppingCondition(unsigned long evaluations, unsigned long hyrects, unsigned int minutes,
+StoppingCondition::StoppingCondition(size_t evaluations, size_t hyrects, unsigned int minutes,
                                      functionValue accuracy,
                                      unsigned int accuracyIterations)
         : NR_EVALUATIONS(evaluations), NR_HYRECTS(hyrects), mins(minutes), time_eval(minutes != 0), ACCURACY(accuracy),
           NR_ACCURACY_EVALUATIONS(accuracyIterations) {
 }
 
-bool StoppingCondition::evaluate(unsigned long evaluations, unsigned long hyrects, functionValue newBestVal) {
+bool StoppingCondition::evaluate(size_t evaluations, size_t hyrects, functionValue newBestVal) {
     bool eval = NR_EVALUATIONS == 0 || evaluations < NR_EVALUATIONS;
     bool rects = NR_HYRECTS == 0 || hyrects < NR_HYRECTS;
     bool time = !time_eval || END_TIME > system_clock::now();
