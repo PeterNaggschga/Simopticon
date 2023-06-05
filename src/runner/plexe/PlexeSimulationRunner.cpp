@@ -1,12 +1,16 @@
 #include "PlexeSimulationRunner.h"
+#include "ConfigEditor.h"
 
 #include <utility>
 
 PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat,
-                                             vector<string> scenarios) : SimulationRunner(threads, runs / (repeat *
-                                                                                                           scenarios.size()) +
-                                                                                                   1), REPEAT(repeat),
-                                                                         SCENARIOS(std::move(scenarios)) {
+                                             vector<string> scenarios, ConfigEditor editor) : SimulationRunner(threads,
+                                                                                                               runs /
+                                                                                                               (repeat *
+                                                                                                                scenarios.size()) +
+                                                                                                               1),
+                                                                                              REPEAT(repeat), SCENARIOS(
+                std::move(scenarios)), editor(std::move(editor)) {
 }
 
 map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>

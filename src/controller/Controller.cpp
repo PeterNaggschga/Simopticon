@@ -14,7 +14,8 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
     //TODO: params aus config lesen
     Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, params.size(), con));
     //TODO: runner aus config lesen
-    Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, 0, {}));
+    ConfigEditor edit = ConfigEditor("/home/petern/src/plexe/examples/platooning"); //TODO: aus config lesen
+    Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, 0, {}, edit));
     //TODO: pipeline aus config lesen
     Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway());
 }

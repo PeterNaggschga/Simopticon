@@ -2,8 +2,11 @@
 
 #include <utility>
 #include <fstream>
+#include <list>
 
-ConfigEditor::ConfigEditor(filesystem::path directory) : DIR(directory), CONFIG(directory.append("omnetpp.ini")) {
+ConfigEditor::ConfigEditor(const filesystem::path &directory) : DIR(directory), CONFIG(directory), RESULTS(directory) {
+    CONFIG.append("omnetpp.ini");
+    RESULTS.append("optRes");
 }
 
 unsigned long
@@ -17,12 +20,10 @@ ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, unsigned long, Cmp
     string fileContents = textStream.str();
     inStream.close();
 
-    replaceOptionValue(fileContents, "output-scalar-file", "${resultdir}", "${resultdir}/" + to_string(iniNumber));
-    replaceOptionValue(fileContents, "output-vector-file", "${resultdir}", "${resultdir}/" + to_string(iniNumber));
+    setResultFiles(fileContents, runToId, repeat);
 
     replaceOption(fileContents, "repeat", repeat * runToId.size());
 
-    // TODO: parameter setzen
     vector<string> paramStrings(runToId.begin()->first.size(), "${");
     for (const auto &entry: runToId) {
         for (int i = 0; i < paramStrings.size(); ++i) {
@@ -46,33 +47,68 @@ ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, unsigned long, Cmp
     return iniNumber;
 }
 
-void ConfigEditor::replaceOption(string &file, string option, const string &value) {
+string ConfigEditor::getConfigValue(string &file, string option, size_t start) {
     option = "\n" + option + " = ";
-    size_t pos = file.find(option);
-    while (pos != string::npos) {
-        pos += option.size();
-        size_t endOfLine = file.find('\n', pos);
-        file.replace(pos, endOfLine - pos, value);
-        pos = file.find(option, pos + option.size());
+    size_t pos = file.find(option, start);
+    if (pos == string::npos) {
+        throw invalid_argument("Option not found in file!");
     }
+    pos += option.size();
+    size_t endOfLine = file.find('\n', pos);
+    return file.substr(pos, endOfLine - pos);
 }
 
-void ConfigEditor::replaceOption(string &file, string option, integral auto value) {
-    replaceOption(file, option, to_string(value));
-}
-
-void ConfigEditor::replaceOptionValue(string &file, string option, const string &before, const string &after) {
+void ConfigEditor::replaceOption(string &file, string option, const string &value, size_t start) {
     option = "\n" + option + " = ";
-    size_t pos = file.find(option);
+    size_t pos = file.find(option, start);
+    if (pos == string::npos) {
+        throw invalid_argument("Option not found in file!");
+    }
+    pos += option.size();
+    size_t endOfLine = file.find('\n', pos);
+    file.replace(pos, endOfLine - pos, value);
+}
+
+void ConfigEditor::replaceOption(string &file, string option, integral auto value, size_t start) {
+    replaceOption(file, option, to_string(value), start);
+}
+
+void ConfigEditor::setResultFiles(string &file,
+                                  const map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> &runToId,
+                                  unsigned int repeat) {
+    vector<unsigned long> runIds;
+    runIds.reserve(runToId.size());
+    for (const auto &entry: runToId) {
+        runIds.push_back(entry.second);
+    }
+
+    size_t pos = file.find("\noutput-");
     while (pos != string::npos) {
-        pos += option.size();
-        size_t endOfLine = file.find('\n', pos);
-        pos = file.find(before, pos);
-        if (endOfLine < pos) {
-            return;
+        size_t end = file.find(" = ", pos);
+        string option = file.substr(pos + 1, end - pos - 1);
+        string resultDirectory = getConfigValue(file, option, pos);
+
+        string newVal = "${";
+        for (auto id: runIds) {
+            string outDir = resultDirectory;
+            string resDir = "${resultdir}";
+            size_t searchPos = outDir.find(resDir);
+            if (searchPos != string::npos) {
+                outDir.replace(searchPos, resDir.size(), "optResults/" + to_string(id));
+            }
+            string confName = "${configname}";
+            searchPos = outDir.find(confName);
+            if (searchPos != string::npos) {
+                outDir.replace(searchPos, confName.size(), getConfigAt(file, pos));
+            }
+            for (int j = 0; j < repeat; ++j) {
+                newVal += outDir + ", ";
+            }
         }
-        file.replace(pos, before.size(), after);
-        pos = file.find(option, pos);
+        resultDirectory = newVal + "! repetition}";
+
+        replaceOption(file, option, resultDirectory, pos);
+        pos = file.find("\noutput-", ++pos);
     }
 }
 
@@ -81,7 +117,24 @@ filesystem::path ConfigEditor::getConfigPath(unsigned long runId) const {
     return result.append(".tmp" + to_string(runId) + ".ini");
 }
 
-filesystem::path ConfigEditor::getResultPath(unsigned long runId) const {
-    filesystem::path result = DIR;
-    return result.append("results").append(to_string(runId));
+filesystem::path ConfigEditor::getResultPath(unsigned long runId) const { //TODO change unsigned long to size_t
+    filesystem::path result = RESULTS;
+    return result.append(to_string(runId));
+}
+
+string ConfigEditor::getConfigAt(string &file, size_t start) {
+    string conf = "\n[Config ";
+    size_t pos = file.find(conf);
+    string result;
+    while (pos < start) {
+        pos += conf.size();
+        size_t end = file.find(']', pos);
+        result = file.substr(pos, end - pos);
+        pos = file.find(conf, end);
+    }
+    return result;
+}
+
+void ConfigEditor::deleteConfig(unsigned long runId) const {
+    filesystem::remove(getConfigPath(runId));
 }

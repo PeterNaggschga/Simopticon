@@ -124,7 +124,9 @@ void configEditorTest() {
     map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> map;
     map.insert(make_pair(v1, 0));
     map.insert(make_pair(v2, 1));
-    editor.createConfig(map, 3);
+    auto nr = editor.createConfig(map, 2);
+    cin.get();
+    editor.deleteConfig(nr);
 }
 
 int main() {

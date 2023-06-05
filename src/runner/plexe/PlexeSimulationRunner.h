@@ -3,6 +3,7 @@
 
 
 #include "../SimulationRunner.h"
+#include "ConfigEditor.h"
 
 #include <list>
 #include <mutex>
@@ -11,6 +12,8 @@ class PlexeSimulationRunner : public SimulationRunner {
 private:
     const unsigned int REPEAT;
     const vector<string> SCENARIOS;
+
+    ConfigEditor editor;
 
     unsigned long runNumber = 0;
     mutex runNumberLock;
@@ -21,7 +24,8 @@ private:
     runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) override;
 
 public:
-    PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat, vector<string> scenarios);
+    PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat, vector<string> scenarios,
+                          ConfigEditor editor);
 
 };
 
