@@ -40,6 +40,7 @@ public:
 
     static string getConfigValue(string &file, string option, size_t start = 0);
 
+    [[nodiscard]] const filesystem::path &getDir() const;
 
     [[nodiscard]] filesystem::path getConfigPath(size_t runId) const;
 

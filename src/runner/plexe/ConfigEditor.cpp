@@ -138,3 +138,7 @@ string ConfigEditor::getConfigAt(string &file, size_t start) {
 void ConfigEditor::deleteConfig(size_t runId) const {
     filesystem::remove(getConfigPath(runId));
 }
+
+const filesystem::path &ConfigEditor::getDir() const {
+    return DIR;
+}

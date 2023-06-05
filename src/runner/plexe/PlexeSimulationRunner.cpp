@@ -15,9 +15,23 @@ PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int 
 
 map<vector<shared_ptr<Parameter>>, runId, CmpVectorSharedParameter>
 PlexeSimulationRunner::runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
-    map<vector<shared_ptr<Parameter>>, unsigned long, CmpVectorSharedParameter> runToId;
+    map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId;
+    for (const auto &entry: runs) {
+        runToId.insert(make_pair(entry, getRunId()));
+    }
 
-    // TODO: Sinusoidal und Braking starten (bzw. abrufen, was gestartet werden soll)
+    size_t iniNumber = editor.createConfig(runToId, REPEAT);
+
+    string command = "cd " + editor.getDir().string();
+
+    for (const auto &scenario: SCENARIOS) {
+        string scenarioCmd = " && plexe_run -u Cmdenv -c " + scenario;
+        for (int i = 0; i < REPEAT * runs.size(); ++i) {
+            command += scenarioCmd + " -r " + to_string(i) + " " + editor.getConfigPath(iniNumber).string();
+        }
+    }
+
+    editor.deleteConfig(iniNumber);
 
     return {};
 }
