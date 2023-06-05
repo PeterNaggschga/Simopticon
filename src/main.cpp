@@ -12,6 +12,7 @@
 #include "controller/Controller.h"
 #include "controller/StubController.h"
 #include "runner/plexe/ConfigEditor.h"
+#include "runner/plexe/PlexeSimulationRunner.h"
 #include <memory>
 
 using namespace std;
@@ -129,6 +130,20 @@ void configEditorTest() {
     editor.deleteConfig(nr);
 }
 
+void plexeRunnerTest() {
+    ConfigEditor editor = ConfigEditor("/home/petern/src/plexe/examples/platooning");
+    unique_ptr<SimulationRunner> runner(
+            new PlexeSimulationRunner(14, 8, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
+    shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
+    shared_ptr<ParameterDefinition> xi(new ParameterDefinition(0, 1, "*.node[*].scenario.caccOmegaN", "Hz"));
+    vector<shared_ptr<Parameter>> v1 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 0.5)),
+                                        shared_ptr<Parameter>(new ContinuousParameter(xi, 0.5))};
+    vector<shared_ptr<Parameter>> v2 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 1)),
+                                        shared_ptr<Parameter>(new ContinuousParameter(xi, 1))};
+    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> set = {v1, v2};
+    auto result = runner->runSimulations(set);
+}
+
 int main() {
     //pipelineTest();
     //hyRectStructureTest();
@@ -136,6 +151,7 @@ int main() {
     //valueMapTest();
     //directTest();
     //configEditorTest();
+    //plexeRunnerTest();
 
     return 0;
 }
