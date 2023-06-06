@@ -52,14 +52,12 @@ ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val
         topVals.insert(val);
         return;
     }
-    auto it = topVals.end();
-    it--;
+    auto it = topVals.rbegin();
     if (topVals.size() < topEntries || val.second < it->second) {
         topVals.insert(val);
         if (topVals.size() > topEntries) {
-            it = topVals.end();
-            it--;
-            topVals.erase(it);
+            it = topVals.rbegin();
+            topVals.erase(*it);
         }
     }
 }
