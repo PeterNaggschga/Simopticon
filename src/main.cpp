@@ -22,8 +22,8 @@ using namespace std;
 
 void pipelineTest() {
     Pipeline *pipe = new ConstantHeadway();
-    list<string> experimentIds;
-    string path = CommandLine::SOURCE + "src/evaluation/pipeline/results/";
+    set<runId> experimentIds;
+    string path = CommandLine::SOURCE + "src/evaluation/pipeline/results";
     pipe->processOutput(experimentIds, path, 0);
     cout << to_string(pipe->getValue()) << endl;
 }

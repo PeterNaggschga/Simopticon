@@ -10,7 +10,7 @@
 
 Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : valueMap(new ValueMap()) {
     //TODO: Optimizer aus config lesen
-    auto con = StoppingCondition(0, 0, 2, 1e-7, 15); // TODO: aus config lesen
+    auto con = StoppingCondition(0, 0, 1); // TODO: aus config lesen
     //TODO: params aus config lesen
     Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, params.size(), con));
     //TODO: runner aus config lesen
@@ -26,17 +26,22 @@ Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
     set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> simRuns;
     for (const auto &cords: params) {
         if (getValueMap().isKnown(cords)) {
-            result.insert(make_pair(cords, getValueMap().query(cords)));
+            result.insert(make_pair(cords, valueMap->query(cords)));
         } else {
             simRuns.insert(cords);
         }
     }
 
-    runSimulations(simRuns);
+    auto vecToResult = runSimulations(simRuns);
+    auto simResults = evaluate(vecToResult);
 
-    auto simResults = evaluate();
-    result.insert(simResults.begin(), simResults.end());
+    for (const auto &entry: simResults) {
+        valueMap->insert(entry.first, entry.second);
+    }
 
+    // TODO: nicht mehr genutzte resultfiles löschen
+
+    result.merge(simResults);
     return result;
 }
 
@@ -46,6 +51,7 @@ ValueMap &Controller::getValueMap() {
 
 void Controller::run() {
     optimizer->runOptimization();
+    // TODO: resultfiles löschen?
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
@@ -53,6 +59,12 @@ Controller::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSha
     return runner->runSimulations(runs);
 }
 
-map<vector<shared_ptr<Parameter>>, functionValue> Controller::evaluate() {
-    return {};
+map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Controller::evaluate(
+        const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
+    map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
+    for (const auto &entry: simulationResults) {
+        pipeline->processOutput(entry.second.second, entry.second.first, 0);
+        result.insert(make_pair(entry.first, pipeline->getValue()));
+    }
+    return result;
 }

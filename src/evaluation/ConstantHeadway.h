@@ -8,7 +8,7 @@ private:
     functionValue value = 0;
 
 public:
-    void processOutput(list<string> experimentIds, string path, int pipelineId) override;
+    void processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) override;
 
     functionValue getValue() override;
 };

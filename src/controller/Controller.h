@@ -26,7 +26,8 @@ private:
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
-    virtual map<vector<shared_ptr<Parameter>>, functionValue> evaluate();
+    virtual map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> evaluate(
+            const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults);
 
 protected:
     unique_ptr<Optimizer> optimizer;

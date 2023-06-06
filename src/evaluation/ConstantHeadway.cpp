@@ -4,9 +4,9 @@
 
 using namespace std;
 
-void ConstantHeadway::processOutput(list<string> experimentIds, string path, int pipelineId) {
+void ConstantHeadway::processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) {
     string pipeline = CommandLine::SOURCE + "src/evaluation/pipeline/pipeline.py ";
-    string cmd = pipeline + "-p " + path;
+    string cmd = pipeline + "-p " + path.string();
     string out = *CommandLine::exec(cmd.c_str());
     value = stold(out);
 }

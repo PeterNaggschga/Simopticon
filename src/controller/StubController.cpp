@@ -10,15 +10,18 @@ StubController::StubController(const list<shared_ptr<ParameterDefinition>> &def,
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
 StubController::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) {
-    result.clear();
+    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
     for (const auto &v: runs) {
-        functionValue val = f(v);
-        getValueMap().insert(v, val);
-        result.insert(make_pair(v, val));
+        result.insert(make_pair(v, make_pair("", set<runId>())));
     }
-    return {};
+    return result;
 }
 
-map<vector<shared_ptr<Parameter>>, functionValue> StubController::evaluate() {
+map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> StubController::evaluate(
+        const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
+    map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
+    for (const auto &v: simulationResults) {
+        result.insert(make_pair(v.first, f(v.first)));
+    }
     return result;
 }
