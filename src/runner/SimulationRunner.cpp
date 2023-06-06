@@ -22,7 +22,7 @@ SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSha
     vector<future<map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>>> threads;
     int i = 0;
     counting_semaphore<SEMAPHORE_MAX> semaphore(0);
-    while (result.size() < runs.size()) {
+    while (result.size() < nrRuns) {
         if (threads.size() < NR_THREADS && i < nrThreadRuns) {
             threads.push_back(async(std::launch::async, &SimulationRunner::runSimulationThread, this, threadRuns[i++],
                                     &semaphore));
