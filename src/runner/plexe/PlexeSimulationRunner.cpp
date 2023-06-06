@@ -29,9 +29,8 @@ PlexeSimulationRunner::runSimulationThread() {
             }
         }
 
-        shadowResults(true);
         CommandLine::exec(command.c_str());
-        shadowResults(false);
+
         editor.deleteConfig(iniNumber);
 
         set<runId> ids;
@@ -63,16 +62,3 @@ size_t PlexeSimulationRunner::getRunId() {
     return result;
 }
 
-void PlexeSimulationRunner::shadowResults(bool value) {
-    resultsShadowLock.lock();
-    resultsShadowed += value ? 1 : -1;
-    filesystem::path origResults = editor.getDir(), shadowedResults = editor.getDir();
-    origResults.append("results");
-    shadowedResults.append(".results");
-    if (value && resultsShadowed == 1) {
-        filesystem::rename(origResults, shadowedResults);
-    } else if (!value && resultsShadowed == 0) {
-        filesystem::rename(shadowedResults, origResults);
-    }
-    resultsShadowLock.unlock();
-}

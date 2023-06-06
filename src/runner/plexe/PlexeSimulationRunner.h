@@ -19,12 +19,7 @@ private:
     size_t runNumber = 0;
     mutex runNumberLock;
 
-    unsigned int resultsShadowed = 0;
-    mutex resultsShadowLock;
-
     size_t getRunId();
-
-    void shadowResults(bool value);
 
     map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulationThread() override;
