@@ -2,6 +2,7 @@
 
 #include <cmath>
 #include <future>
+#include <list>
 
 SimulationRunner::SimulationRunner(unsigned int threads, unsigned int runs) : NR_THREADS(threads),
                                                                               NR_RUNS_PER_THREAD(runs) {
@@ -10,37 +11,35 @@ SimulationRunner::SimulationRunner(unsigned int threads, unsigned int runs) : NR
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
 SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
     size_t nrRuns = runs.size();
-    unsigned int nrThreadRuns = ceil((double) nrRuns / NR_RUNS_PER_THREAD);
-    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> threadRuns[nrThreadRuns];
-    for (int i = 0; i < nrThreadRuns; ++i) {
+    for (int i = 0; i < ceil((double) nrRuns / NR_RUNS_PER_THREAD); ++i) {
         auto it = runs.begin();
         advance(it, NR_RUNS_PER_THREAD < runs.size() ? NR_RUNS_PER_THREAD : runs.size());
-        threadRuns[i].insert(runs.begin(), it);
+        runQueue.emplace(runs.begin(), it);
         runs.erase(runs.begin(), it);
     }
 
-    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
-    vector<future<map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>>> threads;
-    int i = 0;
-    counting_semaphore<SEMAPHORE_MAX> semaphore(0);
-    while (result.size() < nrRuns) {
-        if (threads.size() < NR_THREADS && i < nrThreadRuns) {
-            threads.push_back(async(std::launch::async, &SimulationRunner::runSimulationThread, this, threadRuns[i++],
-                                    &semaphore));
-        } else {
-            semaphore.acquire();
-            auto it = threads.begin();
-            while (it != threads.end()) {
-                if (it->wait_for(chrono::seconds(0)) == std::future_status::ready) {
-                    auto help = it->get();
-                    result.insert(help.begin(), help.end());
-                    threads.erase(it);
-                    break;
-                }
-                it++;
-            }
-        }
+    list<future<map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>>> threads;
+    for (int i = 0; i < min((size_t) NR_THREADS, nrRuns); ++i) {
+        threads.push_back(async(std::launch::async, &SimulationRunner::runSimulationThread, this));
     }
 
+    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
+    for (auto &entry: threads) {
+        entry.wait();
+        result.merge(entry.get());
+    }
+
+    return result;
+}
+
+set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> SimulationRunner::getNextRun() {
+    runQueueLock.lock();
+    if (runQueue.empty()) {
+        runQueueLock.unlock();
+        return {};
+    }
+    auto result = runQueue.front();
+    runQueue.pop();
+    runQueueLock.unlock();
     return result;
 }

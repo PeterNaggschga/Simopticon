@@ -27,8 +27,7 @@ private:
     void shadowResults(bool value);
 
     map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulationThread(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs,
-                        counting_semaphore<SEMAPHORE_MAX> *done) override;
+    runSimulationThread() override;
 
 public:
     PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat, vector<string> scenarios,
