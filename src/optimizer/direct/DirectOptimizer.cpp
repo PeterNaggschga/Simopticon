@@ -1,6 +1,6 @@
 #include "DirectOptimizer.h"
 
-#include "../../utils/GrahamScan.h"
+#include "GrahamScan.h"
 #include "hyrect/BaseRect.h"
 #include "../../controller/ValueMap.h"
 

@@ -1,6 +1,6 @@
 #include "GrahamScan.h"
 
-#include "../optimizer/direct/hyrect/HyRect.h"
+#include "hyrect/HyRect.h"
 
 #include <map>
 

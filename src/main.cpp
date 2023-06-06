@@ -3,7 +3,7 @@
 #include "evaluation/ConstantHeadway.h"
 #include "utils/CommandLine.h"
 #include "optimizer/direct/hyrect/HyRect.h"
-#include "utils/GrahamScan.h"
+#include "optimizer/direct/GrahamScan.h"
 #include "parameters/ParameterDefinition.h"
 #include "parameters/Parameter.h"
 #include "parameters/ContinuousParameter.h"
