@@ -15,6 +15,9 @@
 #include "runner/plexe/PlexeSimulationRunner.h"
 #include <memory>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-result"
+
 using namespace std;
 
 void pipelineTest() {
@@ -134,14 +137,14 @@ void configEditorTest() {
 void plexeRunnerTest() {
     ConfigEditor editor = ConfigEditor("/home/petern/src/plexe/examples/platooning");
     unique_ptr<SimulationRunner> runner(
-            new PlexeSimulationRunner(14, 8, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
+            new PlexeSimulationRunner(3, 19, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
     shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
     shared_ptr<ParameterDefinition> xi(new ParameterDefinition(0, 1, "*.node[*].scenario.caccOmegaN", "Hz"));
-    vector<shared_ptr<Parameter>> v1 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 0.5)),
-                                        shared_ptr<Parameter>(new ContinuousParameter(xi, 0.5))};
-    vector<shared_ptr<Parameter>> v2 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 1)),
-                                        shared_ptr<Parameter>(new ContinuousParameter(xi, 1))};
-    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> set = {v1, v2};
+    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> set;
+    for (int i = 0; i < 5; ++i) {
+        set.insert({shared_ptr<Parameter>(new ContinuousParameter(c1, pow(0.75, i))),
+                    shared_ptr<Parameter>(new ContinuousParameter(xi, pow(0.5, i)))});
+    }
     auto result = runner->runSimulations(set);
 }
 
@@ -156,3 +159,5 @@ int main() {
 
     return 0;
 }
+
+#pragma clang diagnostic pop
