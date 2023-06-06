@@ -2,6 +2,7 @@
 
 #include <future>
 #include <list>
+#include <ranges>
 
 SimulationRunner::SimulationRunner(unsigned int threads) : NR_THREADS(threads) {
 }
@@ -18,9 +19,9 @@ SimulationRunner::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVec
     }
 
     map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
-    for (auto &entry: threads) {
-        entry.wait();
-        result.merge(entry.get());
+    for (auto &thread: std::ranges::reverse_view(threads)) {
+        thread.wait();
+        result.merge(thread.get());
     }
 
     return result;
