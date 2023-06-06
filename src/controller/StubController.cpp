@@ -16,6 +16,7 @@ StubController::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVecto
         getValueMap().insert(v, val);
         result.insert(make_pair(v, val));
     }
+    return {};
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue> StubController::evaluate() {
