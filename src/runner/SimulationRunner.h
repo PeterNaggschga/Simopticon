@@ -20,25 +20,25 @@ class SimulationRunner {
 protected:
     const static unsigned int SEMAPHORE_MAX = UINT16_MAX;
 
-    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> getNextRun();
+    vector<shared_ptr<Parameter>> getNextRun();
 
 private:
     const unsigned int NR_THREADS;
-    const unsigned int NR_RUNS_PER_THREAD;
 
-    queue<set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter>> runQueue;
+    queue<vector<shared_ptr<Parameter>>> runQueue;
     mutex runQueueLock;
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulationThread() = 0;
 
 public:
-    SimulationRunner(unsigned int threads, unsigned int runs);
+    explicit SimulationRunner(unsigned int threads);
 
     virtual ~SimulationRunner() = default;
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
+    runSimulations(
+            const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
 };
 

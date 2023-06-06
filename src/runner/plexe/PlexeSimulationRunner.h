@@ -30,8 +30,7 @@ private:
     runSimulationThread() override;
 
 public:
-    PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat, vector<string> scenarios,
-                          ConfigEditor editor);
+    PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios, ConfigEditor editor);
 
 };
 

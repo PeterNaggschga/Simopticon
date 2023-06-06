@@ -24,7 +24,7 @@ using namespace std;
 class Controller {
 private:
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs);
+    runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
     virtual map<vector<shared_ptr<Parameter>>, functionValue> evaluate();
 

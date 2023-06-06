@@ -125,19 +125,18 @@ void configEditorTest() {
                                         shared_ptr<Parameter>(new ContinuousParameter(xi, 0.5))};
     vector<shared_ptr<Parameter>> v2 = {shared_ptr<Parameter>(new ContinuousParameter(c1, 1)),
                                         shared_ptr<Parameter>(new ContinuousParameter(xi, 1))};
-    map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> map;
-    map.insert(make_pair(v1, 0));
-    map.insert(make_pair(v2, 1));
-    auto nr = editor.createConfig(map, 2);
-    cout << "Config erstellt - löschen?";
+    editor.createConfig(v1, 0, 2);
+    editor.createConfig(v2, 1, 5);
+    cout << "Configs erstellt - löschen?";
     cin.get();
-    editor.deleteConfig(nr);
+    editor.deleteConfig(0);
+    editor.deleteConfig(1);
 }
 
 void plexeRunnerTest() {
     ConfigEditor editor = ConfigEditor("/home/petern/src/plexe/examples/platooning");
     unique_ptr<SimulationRunner> runner(
-            new PlexeSimulationRunner(3, 19, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
+            new PlexeSimulationRunner(3, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
     shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
     shared_ptr<ParameterDefinition> xi(new ParameterDefinition(0, 1, "*.node[*].scenario.caccOmegaN", "Hz"));
     set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> set;

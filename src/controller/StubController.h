@@ -16,7 +16,7 @@ public:
                             function<functionValue(vector<shared_ptr<Parameter>>)> f);
 
     map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) override;
+    runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) override;
 
     map<vector<shared_ptr<Parameter>>, functionValue> evaluate() override;
 };

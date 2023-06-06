@@ -15,7 +15,7 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
     Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, params.size(), con));
     //TODO: runner aus config lesen
     ConfigEditor edit = ConfigEditor("/home/petern/src/plexe/examples/platooning"); //TODO: aus config lesen
-    Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, 0, {}, edit));
+    Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, {}, edit));
     //TODO: pipeline aus config lesen
     Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway());
 }
@@ -49,8 +49,8 @@ void Controller::run() {
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-Controller::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
-    return runner->runSimulations(std::move(runs));
+Controller::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) {
+    return runner->runSimulations(runs);
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue> Controller::evaluate() {

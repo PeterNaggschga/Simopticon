@@ -8,46 +8,28 @@ ConfigEditor::ConfigEditor(filesystem::path directory) : DIR(directory), CONFIG(
                                                          RESULTS(directory.parent_path().append("optResults")) {
 }
 
-size_t
-ConfigEditor::createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId,
-                           unsigned int repeat) {
-    size_t iniNumber = runToId.begin()->second;
-
+void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat) {
     ifstream inStream(CONFIG);
     ostringstream textStream;
     textStream << inStream.rdbuf();
     string fileContents = textStream.str();
     inStream.close();
 
-    setResultFiles(fileContents, runToId, repeat);
+    setResultFiles(fileContents, runNumber);
 
-    replaceOption(fileContents, "repeat", repeat * runToId.size());
+    replaceOption(fileContents, "repeat", repeat);
     replaceOption(fileContents, "debug-on-errors", "false");
     replaceOption(fileContents, "print-undisposed", "false");
     replaceOption(fileContents, "cmdenv-autoflush", "false");
     replaceOption(fileContents, "cmdenv-status-frequency", "100s");
 
-    vector<string> paramStrings(runToId.begin()->first.size(), "${");
-    for (const auto &entry: runToId) {
-        for (int i = 0; i < paramStrings.size(); ++i) {
-            coordinate val = entry.first[i]->getVal();
-            for (int j = 0; j < repeat; ++j) {
-                paramStrings[i] += to_string(val) + ", ";
-            }
-        }
+    for (auto &param: params) {
+        replaceOption(fileContents, param->getConfig(), to_string(param->getVal()) + " " + param->getUnit());
     }
 
-    auto entry = runToId.begin()->first;
-    for (int i = 0; i < paramStrings.size(); ++i) {
-        paramStrings[i] += "! repetition}" + entry[i]->getUnit();
-        replaceOption(fileContents, entry[i]->getConfig(), paramStrings[i]);
-    }
-
-    ofstream outStream(getConfigPath(iniNumber));
+    ofstream outStream(getConfigPath(runNumber));
     outStream << fileContents;
     outStream.close();
-
-    return iniNumber;
 }
 
 string ConfigEditor::getConfigValue(string &file, string option, size_t start) {
@@ -76,43 +58,12 @@ void ConfigEditor::replaceOption(string &file, string option, integral auto valu
     replaceOption(file, option, to_string(value), start);
 }
 
-void ConfigEditor::setResultFiles(string &file,
-                                  const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
-                                  unsigned int repeat) {
-    vector<size_t> runIds;
-    runIds.reserve(runToId.size());
-    for (const auto &entry: runToId) {
-        runIds.push_back(entry.second);
-    }
-
-    size_t pos = file.find("\noutput-");
-    while (pos != string::npos) {
-        size_t end = file.find(" = ", pos);
-        string option = file.substr(pos + 1, end - pos - 1);
-        string resultDirectory = getConfigValue(file, option, pos);
-
-        string newVal = "${";
-        for (auto id: runIds) {
-            string outDir = resultDirectory;
-            string resDir = "${resultdir}";
-            size_t searchPos = outDir.find(resDir);
-            if (searchPos != string::npos) {
-                string results = RESULTS;
-                outDir.replace(searchPos, resDir.size(), results + "/" + to_string(id));
-            }
-            string confName = "${configname}";
-            searchPos = outDir.find(confName);
-            if (searchPos != string::npos) {
-                outDir.replace(searchPos, confName.size(), getConfigAt(file, pos));
-            }
-            for (int j = 0; j < repeat; ++j) {
-                newVal += outDir + ", ";
-            }
-        }
-        resultDirectory = newVal + "! repetition}";
-
-        replaceOption(file, option, resultDirectory, pos);
-        pos = file.find("\noutput-", ++pos);
+void ConfigEditor::setResultFiles(string &file, size_t runNumber) {
+    string resDir = "${resultdir}";
+    size_t pos = 0;
+    while ((pos = file.find(resDir, pos)) != string::npos) {
+        file.replace(pos, resDir.size(), RESULTS.filename().string() + "/" + to_string(runNumber));
+        pos++;
     }
 }
 

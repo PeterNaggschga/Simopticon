@@ -24,17 +24,14 @@ private:
 
     static void replaceOption(string &file, string option, integral auto value, size_t start = 0);
 
-    void setResultFiles(string &file,
-                        const map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> &runToId,
-                        unsigned int repeat);
+    void setResultFiles(string &file, size_t runNumber);
 
     [[nodiscard]] static string getConfigAt(string &file, size_t start = 0);
 
 public:
     explicit ConfigEditor(filesystem::path directory);
 
-    size_t createConfig(map<vector<shared_ptr<Parameter>>, size_t, CmpVectorSharedParameter> runToId,
-                        unsigned int repeat);
+    void createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat);
 
     void deleteConfig(size_t runId) const;
 
