@@ -4,13 +4,13 @@
 
 #include <utility>
 #include <fstream>
+#include <cmath>
 
 PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat,
                                              vector<string> scenarios, ConfigEditor editor) : SimulationRunner(threads,
-                                                                                                               runs /
-                                                                                                               (repeat *
-                                                                                                                scenarios.size()) +
-                                                                                                               1),
+                                                                                                               ceil((long double) runs /
+                                                                                                                    (repeat *
+                                                                                                                     scenarios.size()))),
                                                                                               REPEAT(repeat), SCENARIOS(
                 std::move(scenarios)), editor(std::move(editor)) {
 }

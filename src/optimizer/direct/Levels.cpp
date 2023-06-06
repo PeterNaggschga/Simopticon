@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Levels.h"
 
 level Levels::nextLevel() {
@@ -11,10 +12,10 @@ size_t Levels::getRectSubsetSize(size_t size) {
         case l1_3:
         case l1_4:
         case l1_6:
-            return size * 9 / 10 + 1;
+            return ceil((double) (size * 9) / 10.0);
         case l0_2:
         case l0_5:
-            return size / 10 + 1;
+            return ceil((double) size / 10.0);
         default:
             return size;
     }

@@ -1,6 +1,7 @@
 #include "ValueMap.h"
 
 #include <stdexcept>
+#include <cmath>
 
 ValueMap::ValueMap(unsigned int topEntries) : topEntries(topEntries) {
 }
@@ -32,7 +33,7 @@ void ValueMap::updateMap() {
         upperValues.erase(upperValues.begin(), it);
     } else if (diff < 0) {
         auto it = lowerValues.end();
-        advance(it, diff / 2 - diff % 2);
+        advance(it, floor((float) diff / 2));
         upperValues.insert(it, lowerValues.end());
         lowerValues.erase(it, lowerValues.end());
     }

@@ -5,14 +5,7 @@
 #include <utility>
 
 DiscreteParameter::DiscreteParameter(shared_ptr<ParameterDefinition> def, double step, double value) : Parameter(
-        std::move(def)),
-                                                                                                       step(step),
-                                                                                                       times(floor(
-                                                                                                               value /
-                                                                                                               step)),
-                                                                                                       offset(value -
-                                                                                                              times *
-                                                                                                              step) {
+        std::move(def)), step(step), times(floor(value / step)), offset(value - times * step) {
     if (value < getMin() || getMax() < value) {
         throw invalid_argument("Value out of bounds!");
     }
