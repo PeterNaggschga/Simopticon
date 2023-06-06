@@ -4,7 +4,7 @@
 
 const string CommandLine::SOURCE = "/home/petern/programming/simopticon/";    //TODO: dynamisch machen
 
-string CommandLine::exec(const char *cmd) {
+unique_ptr<string> CommandLine::exec(const char *cmd) {
     array<char, 128> buffer{};
     string result;
     unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd, "r"), pclose);
@@ -14,5 +14,5 @@ string CommandLine::exec(const char *cmd) {
     while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
         result += buffer.data();
     }
-    return result;
+    return std::make_unique<string>(result);
 }
