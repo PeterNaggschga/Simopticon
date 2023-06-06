@@ -8,9 +8,9 @@
 
 PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int runs, unsigned int repeat,
                                              vector<string> scenarios, ConfigEditor editor) : SimulationRunner(threads,
-                                                                                                               ceil((long double) runs /
-                                                                                                                    (repeat *
-                                                                                                                     scenarios.size()))),
+                                                                                                               floor((long double) runs /
+                                                                                                                     (repeat *
+                                                                                                                      scenarios.size()))),
                                                                                               REPEAT(repeat), SCENARIOS(
                 std::move(scenarios)), editor(std::move(editor)) {
 }

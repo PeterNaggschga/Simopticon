@@ -9,7 +9,8 @@ SimulationRunner::SimulationRunner(unsigned int threads, unsigned int runs) : NR
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
 SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> runs) {
-    unsigned int nrThreadRuns = ceil((double) runs.size() / NR_RUNS_PER_THREAD);
+    size_t nrRuns = runs.size();
+    unsigned int nrThreadRuns = ceil((double) nrRuns / NR_RUNS_PER_THREAD);
     set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> threadRuns[nrThreadRuns];
     for (int i = 0; i < nrThreadRuns; ++i) {
         auto it = runs.begin();
@@ -22,7 +23,7 @@ SimulationRunner::runSimulations(set<vector<shared_ptr<Parameter>>, CmpVectorSha
     vector<future<map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>>> threads;
     int i = 0;
     counting_semaphore<SEMAPHORE_MAX> semaphore(0);
-    while (result.size() < runs.size()) {
+    while (result.size() < nrRuns) {
         if (threads.size() < NR_THREADS && i < nrThreadRuns) {
             threads.push_back(async(std::launch::async, &SimulationRunner::runSimulationThread, this, threadRuns[i++],
                                     &semaphore));
