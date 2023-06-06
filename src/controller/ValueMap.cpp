@@ -37,6 +37,7 @@ void ValueMap::updateMap() {
         upperValues.insert(it, lowerValues.end());
         lowerValues.erase(it, lowerValues.end());
     }
+    topEntriesChanged = false;
 }
 
 void
@@ -73,6 +74,9 @@ functionValue ValueMap::query(const vector<shared_ptr<Parameter>> &params) {
 }
 
 void ValueMap::insert(const vector<shared_ptr<Parameter>> &params, functionValue val) {
+    if (val < topVals.rend()->second) {
+        topEntriesChanged = true;
+    }
     tba.emplace_back(params, val);
 }
 
@@ -102,6 +106,8 @@ size_t ValueMap::getSize() const {
 }
 
 list<pair<vector<shared_ptr<Parameter>>, functionValue>> ValueMap::getTopVals() {
-    updateMap();
+    if (topEntriesChanged) {
+        updateMap();
+    }
     return {topVals.begin(), topVals.end()};
 }

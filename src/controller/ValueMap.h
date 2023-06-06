@@ -21,6 +21,7 @@ private:
 
     unsigned int topEntries;
     set<pair<const vector<shared_ptr<Parameter>>, functionValue>, CmpPairVectorSharedParameterFunctionvalue> topVals;
+    bool topEntriesChanged = false;
 
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> values;
     list<pair<vector<shared_ptr<Parameter>>, functionValue>> tba;
