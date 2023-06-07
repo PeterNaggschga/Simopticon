@@ -1,8 +1,7 @@
-#include <array>
-#include <memory>
 #include "CommandLine.h"
 
-const string CommandLine::SOURCE = "/home/petern/programming/simopticon/";    //TODO: dynamisch machen
+#include <array>
+#include <memory>
 
 unique_ptr<string> CommandLine::exec(const char *cmd) {
     array<char, 128> buffer{};

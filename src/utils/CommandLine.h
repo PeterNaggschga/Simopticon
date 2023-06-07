@@ -8,9 +8,8 @@ using namespace std;
 
 class CommandLine {
 public:
-    static const string SOURCE;
-
     static unique_ptr<string> exec(const char *cmd);
+
 };
 
 #endif //SIMOPTICON_COMMANDLINE_H
