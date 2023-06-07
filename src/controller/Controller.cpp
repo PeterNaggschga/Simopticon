@@ -6,7 +6,7 @@
 #include "ValueMap.h"
 #include "../optimizer/direct/DirectOptimizer.h"
 #include "../runner/plexe/PlexeSimulationRunner.h"
-#include "../evaluation/ConstantHeadway.h"
+#include "../evaluation/constant_headway/ConstantHeadway.h"
 
 Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : valueMap(new ValueMap()) {
     //TODO: Optimizer aus config lesen

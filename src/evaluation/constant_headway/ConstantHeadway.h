@@ -1,7 +1,7 @@
 #ifndef SIMOPTICON_CONSTANTHEADWAY_H
 #define SIMOPTICON_CONSTANTHEADWAY_H
 
-#include "Pipeline.h"
+#include "../Pipeline.h"
 
 class ConstantHeadway : public Pipeline {
 private:

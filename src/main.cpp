@@ -1,6 +1,6 @@
 #include <iostream>
 #include "evaluation/Pipeline.h"
-#include "evaluation/ConstantHeadway.h"
+#include "evaluation/constant_headway/ConstantHeadway.h"
 #include "utils/CommandLine.h"
 #include "optimizer/direct/hyrect/HyRect.h"
 #include "optimizer/direct/GrahamScan.h"
@@ -22,7 +22,7 @@ using namespace std;
 void pipelineTest() {
     Pipeline *pipe = new ConstantHeadway();
     set<runId> experimentIds;
-    string path = CommandLine::SOURCE + "src/evaluation/pipeline/results";
+    string path = "/home/petern/src/plexe/examples/platooning/results";
     pipe->processOutput(experimentIds, path, 0);
     cout << to_string(pipe->getValue()) << endl;
 }

@@ -1,6 +1,6 @@
 #include "ConstantHeadway.h"
 
-#include "../utils/CommandLine.h"
+#include "../../utils/CommandLine.h"
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCUnusedMacroInspection"
@@ -18,7 +18,7 @@ using namespace std;
 ConstantHeadway::ConstantHeadway() {
     // TODO: bei Installation $SIMOPTICON_HOME setzen
     string scriptPath = getenv("SIMOPTICON_HOME");
-    scriptPath += "/src/evaluation/pipeline";
+    scriptPath += "/src/evaluation/constant_headway";
     setenv("PYTHONPATH", scriptPath.c_str(), 1);
 }
 
@@ -26,7 +26,7 @@ void ConstantHeadway::processOutput(set<runId> experimentIds, filesystem::path p
     PyObject *pName, *pModule, *pFunc, *pArgs, *pValue;
 
     Py_Initialize();
-    pName = PyUnicode_DecodeFSDefault("pipeline");
+    pName = PyUnicode_DecodeFSDefault("constant_headway");
     pModule = PyImport_Import(pName);
     Py_DECREF(pName);
 
