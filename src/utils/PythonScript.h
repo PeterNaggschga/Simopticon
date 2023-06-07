@@ -14,7 +14,7 @@ protected:
     PyObject *pModule, *pFunc;
 
 public:
-    explicit PythonScript(const char *path, const char *scriptName);
+    explicit PythonScript(const char *path, const char *scriptName, const char *functionName);
 
     ~PythonScript();
 

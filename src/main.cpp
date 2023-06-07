@@ -24,6 +24,7 @@ void pipelineTest() {
     set<runId> experimentIds;
     string path = "/home/petern/src/plexe/examples/platooning/results";
     cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
+    cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
 }
 
 template<class T>

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-PythonScript::PythonScript(const char *path, const char *scriptName) {
+PythonScript::PythonScript(const char *path, const char *scriptName, const char *functionName) {
     setenv("PYTHONPATH", path, 1);
 
     Py_Initialize();
@@ -13,7 +13,7 @@ PythonScript::PythonScript(const char *path, const char *scriptName) {
     Py_DECREF(pName);
 
     if (pModule) {
-        pFunc = PyObject_GetAttrString(pModule, "getConstantHeadway");
+        pFunc = PyObject_GetAttrString(pModule, functionName);
         if (!(pFunc && PyCallable_Check(pFunc))) {
             if (PyErr_Occurred()) {
                 PyErr_Print();

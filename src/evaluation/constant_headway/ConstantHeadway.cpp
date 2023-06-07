@@ -6,7 +6,7 @@
 using namespace std;
 
 ConstantHeadway::ConstantHeadway() : PythonScript(strcat(getenv("SIMOPTICON_HOME"), "/src/evaluation/constant_headway"),
-                                                  "constant_headway") {
+                                                  "constant_headway", "get_constant_headway") {
 }
 
 functionValue ConstantHeadway::processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) {
