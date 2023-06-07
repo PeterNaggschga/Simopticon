@@ -25,3 +25,6 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Stub
     }
     return result;
 }
+
+void StubController::removeOldResultfiles() {
+}

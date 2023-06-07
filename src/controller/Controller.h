@@ -23,11 +23,16 @@ using namespace std;
 
 class Controller {
 private:
+    bool keepFiles;
+    map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
+
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
     virtual map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> evaluate(
             const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults);
+
+    virtual void removeOldResultfiles();
 
 protected:
     unique_ptr<Optimizer> optimizer;

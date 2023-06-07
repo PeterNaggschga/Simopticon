@@ -40,6 +40,8 @@ public:
 
     [[nodiscard]] bool isKnown(const vector<shared_ptr<Parameter>> &cords);
 
+    [[nodiscard]] bool isTopValue(const vector<shared_ptr<Parameter>> &cords);
+
     [[nodiscard]] functionValue getMedian();
 
     [[nodiscard]] size_t getSize() const;

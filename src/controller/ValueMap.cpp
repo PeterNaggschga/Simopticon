@@ -2,6 +2,7 @@
 
 #include <stdexcept>
 #include <cmath>
+#include <algorithm>
 
 ValueMap::ValueMap(unsigned int topEntries) : topEntries(topEntries) {
 }
@@ -108,4 +109,22 @@ list<pair<vector<shared_ptr<Parameter>>, functionValue>> ValueMap::getTopVals() 
         updateMap();
     }
     return {topVals.begin(), topVals.end()};
+}
+
+bool ValueMap::isTopValue(const vector<shared_ptr<Parameter>> &cords) {
+    if (topEntriesChanged) {
+        updateMap();
+    }
+    auto pred = [&cords](const pair<const vector<shared_ptr<Parameter>>, functionValue> &p) {
+        if (p.first.size() != cords.size()) {
+            return false;
+        }
+        for (int i = 0; i < p.first.size(); ++i) {
+            if (p.first[i]->getVal() != cords[i]->getVal()) {
+                return false;
+            }
+        }
+        return true;
+    };
+    return ranges::any_of(topVals, pred);
 }
