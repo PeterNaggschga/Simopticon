@@ -4,7 +4,6 @@
 
 #include <utility>
 #include <fstream>
-#include <cmath>
 
 PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios,
                                              ConfigEditor editor) : SimulationRunner(threads),
