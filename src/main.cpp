@@ -13,7 +13,6 @@
 #include "controller/StubController.h"
 #include "runner/plexe/ConfigEditor.h"
 #include "runner/plexe/PlexeSimulationRunner.h"
-#include <memory>
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-result"

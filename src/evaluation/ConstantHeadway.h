@@ -8,6 +8,8 @@ private:
     functionValue value = 0;
 
 public:
+    ConstantHeadway();
+
     void processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) override;
 
     functionValue getValue() override;
