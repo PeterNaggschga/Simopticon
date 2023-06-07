@@ -63,8 +63,8 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Cont
         const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
-        pipeline->processOutput(entry.second.second, entry.second.first, 0);
-        result.insert(make_pair(entry.first, pipeline->getValue()));
+        auto val = pipeline->processOutput(entry.second.second, entry.second.first, 0);
+        result.insert(make_pair(entry.first, val));
     }
     return result;
 }

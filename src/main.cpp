@@ -23,8 +23,7 @@ void pipelineTest() {
     Pipeline *pipe = new ConstantHeadway();
     set<runId> experimentIds;
     string path = "/home/petern/src/plexe/examples/platooning/results";
-    pipe->processOutput(experimentIds, path, 0);
-    cout << to_string(pipe->getValue()) << endl;
+    cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
 }
 
 template<class T>
