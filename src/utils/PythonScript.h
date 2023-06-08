@@ -9,20 +9,16 @@
 
 #pragma clang diagnostic pop
 
-#include <vector>
-#include <string>
-
-using namespace std;
-
 class PythonScript {
+protected:
+    PyObject *pModule, *pFunc;
+
 public:
-    template<class RETURN>
-    static RETURN
-    executePythonFunction(string path, string scriptName, string functionName, vector<string> stringArgs = {},
-                          vector<long long> longArgs = {}, vector<double> doubleArgs = {});
+    explicit PythonScript(const char *path, const char *scriptName, const char *functionName);
+
+    ~PythonScript();
 
 };
 
-#include "PythonScript.tpp"
 
 #endif //SIMOPTICON_PYTHONSCRIPT_H
