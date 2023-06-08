@@ -3,6 +3,7 @@
 
 #include "../Types.h"
 #include "../ComparisonFunctions.h"
+#include "../utils/Multithreaded.h"
 
 #include <vector>
 #include <set>
@@ -16,29 +17,18 @@ class Parameter;
 
 using namespace std;
 
-class SimulationRunner {
-protected:
-    vector<shared_ptr<Parameter>> getNextRun();
-
+class SimulationRunner
+        : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> {
 private:
-    const unsigned int NR_THREADS;
-
-    queue<vector<shared_ptr<Parameter>>> runQueue;
-    mutex runQueueLock;
-
-    virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulationThread();
-
-    virtual pair<filesystem::path, set<runId>> executeSimulation(vector<shared_ptr<Parameter>> run) = 0;
+    pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override = 0;
 
 public:
-    explicit SimulationRunner(unsigned int threads);
+    explicit SimulationRunner(unsigned int treads);
 
     virtual ~SimulationRunner() = default;
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(
-            const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
+    runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
 };
 

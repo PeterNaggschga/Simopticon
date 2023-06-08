@@ -11,8 +11,7 @@ PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int 
                 std::move(scenarios)), editor(std::move(editor)) {
 }
 
-pair<filesystem::path, set<runId>>
-PlexeSimulationRunner::executeSimulation(vector<shared_ptr<Parameter>> run) {
+pair<filesystem::path, set<runId>> PlexeSimulationRunner::work(vector<shared_ptr<Parameter>> run) {
     size_t iniNumber = getRunId();
     editor.createConfig(run, iniNumber, REPEAT);
 
