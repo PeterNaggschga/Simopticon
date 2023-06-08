@@ -18,7 +18,7 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
     ConfigEditor edit = ConfigEditor("/home/petern/src/plexe/examples/platooning"); //TODO: aus config lesen
     Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, {}, edit));
     //TODO: pipeline aus config lesen
-    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway());
+    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway(0));
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue>
@@ -70,7 +70,7 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Cont
         const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
-        functionValue val = pipeline->processOutput(entry.second.second, entry.second.first, 0);
+        functionValue val = pipeline->processOutput(0, entry.second.first, entry.second.second);
         result.insert(make_pair(entry.first, val));
     }
     return result;

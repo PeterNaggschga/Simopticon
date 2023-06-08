@@ -5,11 +5,12 @@
 
 using namespace std;
 
-ConstantHeadway::ConstantHeadway() : PythonScript(strcat(getenv("SIMOPTICON_HOME"), "/src/evaluation/constant_headway"),
-                                                  "constant_headway", "get_constant_headway") {
+ConstantHeadway::ConstantHeadway(unsigned int threads) : MultithreadPipeline(threads), PythonScript(
+        strcat(getenv("SIMOPTICON_HOME"), "/src/evaluation/constant_headway"),
+        "constant_headway", "get_constant_headway") {
 }
 
-functionValue ConstantHeadway::processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) {
+functionValue ConstantHeadway::processOutput(unsigned int pipelineId, filesystem::path path, set<runId> experimentIds) {
     functionValue returnVal;
     PyObject *pArgs, *pValue;
     pArgs = PyTuple_New(1);
