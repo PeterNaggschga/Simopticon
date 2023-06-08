@@ -18,8 +18,6 @@ using namespace std;
 
 class SimulationRunner {
 protected:
-    const static unsigned int SEMAPHORE_MAX = UINT16_MAX;
-
     vector<shared_ptr<Parameter>> getNextRun();
 
 private:
