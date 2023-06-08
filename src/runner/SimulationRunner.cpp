@@ -27,6 +27,19 @@ SimulationRunner::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVec
     return result;
 }
 
+
+map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+SimulationRunner::runSimulationThread() {
+    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
+    vector<shared_ptr<Parameter>> run;
+
+    while (!(run = getNextRun()).empty()) {
+        result.insert(make_pair(run, executeSimulation(run)));
+    }
+    return result;
+}
+
+
 vector<shared_ptr<Parameter>> SimulationRunner::getNextRun() {
     runQueueLock.lock();
     if (runQueue.empty()) {

@@ -29,7 +29,9 @@ private:
     mutex runQueueLock;
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulationThread() = 0;
+    runSimulationThread();
+
+    virtual pair<filesystem::path, set<runId>> executeSimulation(vector<shared_ptr<Parameter>> run) = 0;
 
 public:
     explicit SimulationRunner(unsigned int threads);

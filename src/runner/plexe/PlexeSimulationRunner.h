@@ -21,8 +21,7 @@ private:
 
     size_t getRunId();
 
-    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulationThread() override;
+    pair<filesystem::path, set<runId>> executeSimulation(vector<shared_ptr<Parameter>> run) override;
 
 public:
     PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios, ConfigEditor editor);
