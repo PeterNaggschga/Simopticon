@@ -1,6 +1,7 @@
 #include <future>
 #include <list>
 #include <ranges>
+#include <Python.h>
 
 
 template<class Key, class T, class Compare, class Allocator>
@@ -15,6 +16,7 @@ Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(set<Key, Co
     }
 
     list<future < map<Key, T, Compare, Allocator>> > threads;
+    Py_Initialize();
     for (int i = 0; i < min((size_t) NR_THREADS, runs.size()); ++i) {
         threads.push_back(async(launch::async, &Multithreaded::multithreadFunction, this));
     }
