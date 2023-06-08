@@ -7,7 +7,6 @@
 #include <list>
 #include <set>
 #include <filesystem>
-#include <map>
 
 using namespace std;
 
@@ -15,10 +14,7 @@ class Pipeline {
 public:
     virtual ~Pipeline() = default;
 
-    virtual functionValue processOutput(unsigned int pipelineId, filesystem::path path, set<runId> experimentIds) = 0;
-
-    virtual map<tuple<unsigned int, filesystem::path, set<runId>>, functionValue> processOutput(
-            const set<tuple<unsigned int, filesystem::path, set<runId>>> &experiments);
+    virtual functionValue processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) = 0;
 
 };
 

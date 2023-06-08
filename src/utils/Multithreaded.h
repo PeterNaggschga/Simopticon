@@ -17,16 +17,17 @@ private:
     mutex queueLock;
     queue<Key> taskQueue;
 
-    pair<Key, bool> getNextRun();
+    Key getNextRun();
 
     virtual T work(Key arg) = 0;
 
 protected:
-    explicit Multithreaded(unsigned int threads);
-
     virtual map<Key, T, Compare, Allocator> runMultithreadedFunctions(set<Key, Compare> runs);
 
     virtual map<Key, T, Compare, Allocator> multithreadFunction();
+
+public:
+    explicit Multithreaded(unsigned int threads);
 
 };
 

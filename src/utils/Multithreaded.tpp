@@ -31,22 +31,22 @@ Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(set<Key, Co
 template<class Key, class T, class Compare, class Allocator>
 map<Key, T, Compare, Allocator> Multithreaded<Key, T, Compare, Allocator>::multithreadFunction() {
     map<Key, T, Compare, Allocator> result;
-    pair<Key, bool> run;
-    while ((run = getNextRun()).second) {
-        result.insert(make_pair(run.first, work(run.first)));
+    Key run;
+    while (!(run = getNextRun()).empty()) {
+        result.insert(make_pair(run, work(run)));
     }
     return result;
 }
 
 template<class Key, class T, class Compare, class Allocator>
-pair<Key, bool> Multithreaded<Key, T, Compare, Allocator>::getNextRun() {
+Key Multithreaded<Key, T, Compare, Allocator>::getNextRun() {
     queueLock.lock();
     if (taskQueue.empty()) {
         queueLock.unlock();
-        return make_pair(Key{}, false);
+        return {};
     }
-    auto nextTask = taskQueue.front();
+    auto result = taskQueue.front();
     taskQueue.pop();
     queueLock.unlock();
-    return make_pair(nextTask, true);
+    return result;
 }

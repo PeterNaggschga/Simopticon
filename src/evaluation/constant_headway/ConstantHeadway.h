@@ -1,8 +1,8 @@
 #ifndef SIMOPTICON_CONSTANTHEADWAY_H
 #define SIMOPTICON_CONSTANTHEADWAY_H
 
+#include "../Pipeline.h"
 #include "../../utils/PythonScript.h"
-#include "../MultithreadPipeline.h"
 
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCUnusedMacroInspection"
@@ -12,11 +12,11 @@
 
 #pragma clang diagnostic pop
 
-class ConstantHeadway : public MultithreadPipeline, PythonScript {
+class ConstantHeadway : public Pipeline, public PythonScript {
 public:
-    explicit ConstantHeadway(unsigned int threads);
+    ConstantHeadway();
 
-    functionValue processOutput(unsigned int pipelineId, filesystem::path path, set<runId> experimentIds) override;
+    functionValue processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) override;
 
 };
 

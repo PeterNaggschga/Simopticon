@@ -1,6 +1,7 @@
 #include <iostream>
 #include "evaluation/Pipeline.h"
 #include "evaluation/constant_headway/ConstantHeadway.h"
+#include "utils/CommandLine.h"
 #include "optimizer/direct/hyrect/HyRect.h"
 #include "optimizer/direct/GrahamScan.h"
 #include "parameters/ParameterDefinition.h"
@@ -19,15 +20,11 @@
 using namespace std;
 
 void pipelineTest() {
-    unique_ptr<Pipeline> pipe(new ConstantHeadway(3));
+    Pipeline *pipe = new ConstantHeadway();
     set<runId> experimentIds;
     string path = "/home/petern/src/plexe/examples/platooning/results";
-    tuple<unsigned int, filesystem::path, set<runId>> tp[5];
-    for (int i = 0; i < 5; ++i) {
-        tp[i] = {i, path, experimentIds};
-    }
-    auto result = pipe->processOutput(
-            set<tuple<unsigned int, filesystem::path, set<runId>>>({tp[0], tp[1], tp[2], tp[3], tp[4]}));
+    cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
+    cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
 }
 
 template<class T>
