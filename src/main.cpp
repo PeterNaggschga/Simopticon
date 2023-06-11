@@ -144,6 +144,26 @@ void plexeRunnerTest() {
                     shared_ptr<Parameter>(new ContinuousParameter(xi, pow(0.5, i)))});
     }
     auto result = runner->runSimulations(set);
+    string python = "[";
+    bool first = true;
+    for (const auto &entry: result) {
+        if (!first) {
+            python += ", ";
+        }
+        first = false;
+        python += "[";
+        bool innerFirst = true;
+        for (const auto &id: entry.second.second) {
+            if (!innerFirst) {
+                python += ", ";
+            }
+            innerFirst = false;
+            python += "\"" + id + "\"";
+        }
+        python += "]";
+    }
+    python += "]";
+    cout << python << endl;
 }
 
 int main() {
