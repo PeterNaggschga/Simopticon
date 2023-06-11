@@ -52,7 +52,7 @@ def get_constant_headway(run_ids: list[str]) -> np.float128:
     return np.float128(sum(scenes))
 
 
-def multithreaded(threads: int, directory: str, run_ids: list[list[str]]):
+def multithreaded(threads: int, directory: str, run_ids: list[list[str]]) -> list[np.float128]:
     res.set_inputs(directory)
     with ThreadPoolExecutor(max_workers=threads) as pool:
         results = pool.map(get_constant_headway, run_ids)

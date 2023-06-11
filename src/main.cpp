@@ -19,14 +19,6 @@
 
 using namespace std;
 
-void pipelineTest() {
-    Pipeline *pipe = new ConstantHeadway();
-    set<runId> experimentIds;
-    string path = "/home/petern/src/plexe/examples/platooning/results";
-    cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
-    cout << to_string(pipe->processOutput(experimentIds, path, 0)) << endl;
-}
-
 template<class T>
 string vecToString(vector<T> vector) {
     string buf = "(" + to_string(vector[0]);
@@ -132,10 +124,11 @@ void configEditorTest() {
     editor.deleteConfig(1);
 }
 
-void plexeRunnerTest() {
+map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+plexeRunnerTest(unsigned int nr_Threads = 3) {
     ConfigEditor editor = ConfigEditor("/home/petern/src/plexe/examples/platooning");
     unique_ptr<SimulationRunner> runner(
-            new PlexeSimulationRunner(3, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
+            new PlexeSimulationRunner(nr_Threads, 5, {"BrakingNoGui", "SinusoidalNoGui"}, editor));
     shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
     shared_ptr<ParameterDefinition> xi(new ParameterDefinition(0, 1, "*.node[*].scenario.caccOmegaN", "Hz"));
     set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> set;
@@ -164,6 +157,20 @@ void plexeRunnerTest() {
     }
     python += "]";
     cout << python << endl;
+    return result;
+}
+
+void pipelineTest() {
+    unique_ptr<Pipeline> pipe(new ConstantHeadway(3));
+    //pipe->processOutput("/testPath/subpath", set<runId>({"testId1", "testId2"}), 0);
+    ///*
+    auto simResult = plexeRunnerTest(5);
+    set<pair<filesystem::path, set<runId>>> resultFiles;
+    for (const auto &entry: simResult) {
+        resultFiles.insert(entry.second);
+    }
+    auto result = pipe->processOutput(resultFiles, 0);
+    //*/
 }
 
 int main() {

@@ -13,10 +13,18 @@
 #pragma clang diagnostic pop
 
 class ConstantHeadway : public Pipeline, public PythonScript {
-public:
-    ConstantHeadway();
+private:
+    const unsigned int NR_THREADS;
 
-    functionValue processOutput(set<runId> experimentIds, filesystem::path path, unsigned int pipelineId) override;
+    PyObject *secureValue(PyObject *object);
+
+public:
+    explicit ConstantHeadway(unsigned int nrThreads);
+
+    functionValue processOutput(filesystem::path path, set<runId> experimentIds, unsigned int pipelineId) override;
+
+    map<pair<filesystem::path, set<runId>>, functionValue>
+    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults, unsigned int pipelineId) override;
 
 };
 

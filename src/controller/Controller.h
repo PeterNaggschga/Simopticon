@@ -25,6 +25,7 @@ class Controller {
 private:
     bool keepFiles;
     map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
+    unsigned int pipelineId;
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);

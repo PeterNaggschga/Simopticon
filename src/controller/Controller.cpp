@@ -2,7 +2,6 @@
 
 #include <utility>
 
-#include "../parameters/Parameter.h"
 #include "ValueMap.h"
 #include "../optimizer/direct/DirectOptimizer.h"
 #include "../runner/plexe/PlexeSimulationRunner.h"
@@ -18,7 +17,8 @@ Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : va
     ConfigEditor edit = ConfigEditor("/home/petern/src/plexe/examples/platooning"); //TODO: aus config lesen
     Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, {}, edit));
     //TODO: pipeline aus config lesen
-    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway());
+    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway(0));
+    pipelineId = 0; //TODO: aus config lesen
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue>
@@ -68,10 +68,14 @@ Controller::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSha
 
 map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Controller::evaluate(
         const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
+    set<pair<filesystem::path, set<runId>>> resultFiles;
+    for (const auto &entry: simulationResults) {
+        resultFiles.insert(entry.second);
+    }
+    auto evaluation = pipeline->processOutput(resultFiles, pipelineId);
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
-        functionValue val = pipeline->processOutput(entry.second.second, entry.second.first, 0);
-        result.insert(make_pair(entry.first, val));
+        result.insert(make_pair(entry.first, evaluation[entry.second]));
     }
     return result;
 }
