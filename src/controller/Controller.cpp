@@ -1,5 +1,6 @@
 #include "Controller.h"
 
+#include <memory>
 #include <utility>
 
 #include "ValueMap.h"
@@ -7,9 +8,11 @@
 #include "../runner/plexe/PlexeSimulationRunner.h"
 #include "../evaluation/constant_headway/ConstantHeadway.h"
 
-Controller::Controller() : valueMap(new ValueMap()) {
+Controller::Controller() {
+    //TODO: ValueMap aus config lesen
+    Controller::valueMap = std::make_unique<ValueMap>(10);
     //TODO: Optimizer aus config lesen
-    auto con = StoppingCondition(100); // TODO: aus config lesen
+    auto con = StoppingCondition(500, 1000); // TODO: aus config lesen
     shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
     shared_ptr<ParameterDefinition> omegaN(new ParameterDefinition(0.05, 15, "*.node[*].scenario.caccOmegaN", "Hz"));
     shared_ptr<ParameterDefinition> xi(new ParameterDefinition(1, 5, "*.node[*].scenario.caccXi"));

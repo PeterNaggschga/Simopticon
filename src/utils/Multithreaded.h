@@ -17,7 +17,7 @@ private:
     mutex queueLock;
     queue<Key> taskQueue;
 
-    Key getNextRun();
+    pair<Key, bool> getNextRun();
 
     virtual T work(Key arg) = 0;
 

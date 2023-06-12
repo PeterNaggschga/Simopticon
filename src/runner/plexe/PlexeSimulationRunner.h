@@ -9,7 +9,8 @@
 #include <mutex>
 #include <semaphore>
 
-class PlexeSimulationRunner : public SimulationRunner {
+class PlexeSimulationRunner
+        : public SimulationRunner, Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool> {
 private:
     const unsigned int REPEAT;
     const vector<string> SCENARIOS;
@@ -22,6 +23,8 @@ private:
     size_t getRunId();
 
     pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override;
+
+    bool work(std::pair<std::filesystem::path, std::pair<std::basic_string<char>, unsigned int>> arg) override;
 
 public:
     PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios, ConfigEditor editor);
