@@ -91,11 +91,15 @@ void Controller::removeOldResultfiles() {
         filesystem::path resultDir = topResults.begin()->second.parent_path();
         filesystem::remove_all(resultDir);
     } else if (topResults.size() > valueMap->getTopVals().size()) {
+        list<vector<shared_ptr<Parameter>>> toBeRemoved;
         for (const auto &entry: topResults) {
             if (!valueMap->isTopValue(entry.first)) {
                 filesystem::remove_all(entry.second);
-                topResults.erase(entry.first);
+                toBeRemoved.push_back(entry.first);
             }
+        }
+        for (const auto &entry: toBeRemoved) {
+            topResults.erase(entry);
         }
     }
 }
