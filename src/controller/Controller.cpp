@@ -39,23 +39,26 @@ Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
         }
     }
 
-    auto vecToResult = runSimulations(simRuns);
-    auto simResults = evaluate(vecToResult);
+    if (!simRuns.empty()) {
+        auto vecToResult = runSimulations(simRuns);
+        auto simResults = evaluate(vecToResult);
 
-    functionValue leastVal = valueMap->getTopVals().rbegin()->second;
-    for (const auto &entry: simResults) {
-        if (entry.second < leastVal) {
-            leastVal = entry.second;
-            topResults.insert(make_pair(entry.first, vecToResult[entry.first].first));
-        } else {
-            filesystem::remove_all(vecToResult[entry.first].first);
+        functionValue leastVal = valueMap->getTopVals().rbegin()->second;
+        for (const auto &entry: simResults) {
+            if (entry.second < leastVal) {
+                leastVal = entry.second;
+                topResults.insert(make_pair(entry.first, vecToResult[entry.first].first));
+            } else {
+                filesystem::remove_all(vecToResult[entry.first].first);
+            }
+            valueMap->insert(entry.first, entry.second);
         }
-        valueMap->insert(entry.first, entry.second);
+
+        removeOldResultfiles();
+
+        result.merge(simResults);
     }
 
-    removeOldResultfiles();
-
-    result.merge(simResults);
     return result;
 }
 
