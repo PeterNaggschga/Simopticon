@@ -11,7 +11,7 @@ template<class Key, class T, class Compare, class Allocator>
 map<Key, T, Compare, Allocator>
 Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(set<Key, Compare> runs) {
     for (const auto &entry: runs) {
-        taskQueue.push(entry);
+        queue.push(entry);
     }
 
     list<future < map<Key, T, Compare, Allocator>> > threads;
@@ -32,21 +32,8 @@ template<class Key, class T, class Compare, class Allocator>
 map<Key, T, Compare, Allocator> Multithreaded<Key, T, Compare, Allocator>::multithreadFunction() {
     map<Key, T, Compare, Allocator> result;
     pair<Key, bool> run;
-    while ((run = getNextRun()).second) {
+    while ((run = queue.pop()).second) {
         result.insert(make_pair(run.first, work(run.first)));
     }
     return result;
-}
-
-template<class Key, class T, class Compare, class Allocator>
-pair<Key, bool> Multithreaded<Key, T, Compare, Allocator>::getNextRun() {
-    queueLock.lock();
-    if (taskQueue.empty()) {
-        queueLock.unlock();
-        return make_pair(Key{}, false);
-    }
-    auto nextTask = taskQueue.front();
-    taskQueue.pop();
-    queueLock.unlock();
-    return make_pair(nextTask, true);
 }
