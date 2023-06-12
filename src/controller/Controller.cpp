@@ -7,17 +7,23 @@
 #include "../runner/plexe/PlexeSimulationRunner.h"
 #include "../evaluation/constant_headway/ConstantHeadway.h"
 
-Controller::Controller(const list<shared_ptr<ParameterDefinition>> &params) : valueMap(new ValueMap()) {
+Controller::Controller() : valueMap(new ValueMap()) {
     //TODO: Optimizer aus config lesen
-    auto con = StoppingCondition(0, 0, 1); // TODO: aus config lesen
+    auto con = StoppingCondition(100); // TODO: aus config lesen
+    shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
+    shared_ptr<ParameterDefinition> omegaN(new ParameterDefinition(0.05, 15, "*.node[*].scenario.caccOmegaN", "Hz"));
+    shared_ptr<ParameterDefinition> xi(new ParameterDefinition(1, 5, "*.node[*].scenario.caccXi"));
+    shared_ptr<ParameterDefinition> spacing(new ParameterDefinition(5, 7, "*.node[*].scenario.caccSpacing", "m"));
+    list<shared_ptr<ParameterDefinition>> params({c1, xi, omegaN, spacing});
     //TODO: params aus config lesen
-    Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, params.size(), con));
+    Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, con));
     //TODO: runner aus config lesen
     keepFiles = true; //TODO: aus config lesen
     ConfigEditor edit = ConfigEditor("/home/petern/src/plexe/examples/platooning"); //TODO: aus config lesen
-    Controller::runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(0, 0, {}, edit));
+    Controller::runner = unique_ptr<SimulationRunner>(
+            new PlexeSimulationRunner(16, 3, {"SinusoidalNoGui", "BrakingNoGui"}, edit));
     //TODO: pipeline aus config lesen
-    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway(0));
+    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway(16));
     pipelineId = 0; //TODO: aus config lesen
 }
 

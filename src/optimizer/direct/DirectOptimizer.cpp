@@ -7,8 +7,8 @@
 #include <utility>
 #include <memory>
 
-DirectOptimizer::DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, dimension D,
-                                 StoppingCondition con) : Optimizer(ctrl, params), D(D), stopCon(con),
+DirectOptimizer::DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params,
+                                 StoppingCondition con) : Optimizer(ctrl, params), D(params.size()), stopCon(con),
                                                           normalizer(ParameterNormalizer(params)) {
 }
 

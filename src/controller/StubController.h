@@ -19,8 +19,7 @@ private:
     void removeOldResultfiles() override;
 
 public:
-    explicit StubController(const list<shared_ptr<ParameterDefinition>> &def,
-                            function<functionValue(vector<shared_ptr<Parameter>>)> f);
+    explicit StubController(function<functionValue(vector<shared_ptr<Parameter>>)> f);
 
 };
 

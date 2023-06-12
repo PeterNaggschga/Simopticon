@@ -42,7 +42,7 @@ protected:
     unique_ptr<ValueMap> valueMap;
 
 public:
-    explicit Controller(const list<shared_ptr<ParameterDefinition>> &params);
+    Controller();
 
     void run();
 
