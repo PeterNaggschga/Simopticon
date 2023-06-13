@@ -6,6 +6,7 @@
 #define PY_SSIZE_T_CLEAN
 
 #include <Python.h>
+#include <filesystem>
 
 #pragma clang diagnostic pop
 
@@ -14,7 +15,7 @@ protected:
     PyObject *pModule, *pFunc;
 
 public:
-    explicit PythonScript(const char *path, const char *scriptName, const char *functionName);
+    PythonScript(const std::filesystem::path &path, const char *functionName);
 
     ~PythonScript();
 

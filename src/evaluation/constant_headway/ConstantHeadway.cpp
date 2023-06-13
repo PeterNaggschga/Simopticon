@@ -4,7 +4,7 @@
 using namespace std;
 
 ConstantHeadway::ConstantHeadway(unsigned int nrThreads, const filesystem::path &pathToScript) : PythonScript(
-        pathToScript.c_str(), "constant_headway", "multithreaded"), NR_THREADS(nrThreads) {
+        pathToScript, "multithreaded"), NR_THREADS(nrThreads) {
 }
 
 map<pair<filesystem::path, set<runId>>, functionValue>
