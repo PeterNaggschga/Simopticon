@@ -18,7 +18,7 @@
       "useCondition": true,
       "n": 10
     },
-    // stop when the best value hasn't changed more than delta in n Iterations
+    // stop when the best value hasn't changed more than delta in n iterations
     "accuracy": {
       "useCondition": false,
       "delta": 0.00001,
