@@ -7,7 +7,7 @@ from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 import pandas as pd
 
-sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')  # TODO: bei Installation $OMNETPP_HOME setzen (.profile)
+sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')
 
 # noinspection PyUnresolvedReferences
 from omnetpp.scave import results as res, vectorops as ops

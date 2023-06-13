@@ -82,9 +82,12 @@ Controller::Controller(const filesystem::path &configPath) {
     // Pipeline settings
     string pipe = baseConfig.at("pipeline").at("pipeline").get<string>();
     if (pipe == "ConstantHeadway") {
-        pipelineId = baseConfig.at("pipeline").at("id").get<unsigned int>();
-        unsigned int nrThreads = pipelineConfig.at("nrThreads").get<unsigned int>();
+        string omnetppDirectory = pipelineConfig.at("omnetppDirectory").get<string>();
+        setenv("OMNETPP_HOME", omnetppDirectory.c_str(), true);
 
+        pipelineId = baseConfig.at("pipeline").at("id").get<unsigned int>();
+
+        unsigned int nrThreads = pipelineConfig.at("nrThreads").get<unsigned int>();
         pipeline = unique_ptr<Pipeline>(new ConstantHeadway(nrThreads));
     } else {
         throw runtime_error("SimulationRunner not found: " + run);
