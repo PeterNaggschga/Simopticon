@@ -104,7 +104,7 @@ void directTest() {
                 2);
         return res + 10 * (1 - pow(8 * M_PI, -1)) * cos(v[0]->getVal()) + 10;
     };
-    unique_ptr<Controller> ctr(new StubController(f));
+    unique_ptr<Controller> ctr(new StubController(f, filesystem::path()));
     ctr->run();
 }
 
@@ -174,7 +174,7 @@ void pipelineTest() {
 }
 
 void completeTest() {
-    unique_ptr<Controller> ctr(new Controller());
+    unique_ptr<Controller> ctr(new Controller("/home/petern/programming/simopticon/config/simopticon.json"));
     ctr->run();
 }
 

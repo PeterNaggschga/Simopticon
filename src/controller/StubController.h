@@ -19,7 +19,8 @@ private:
     void removeOldResultfiles() override;
 
 public:
-    explicit StubController(function<functionValue(vector<shared_ptr<Parameter>>)> f);
+    explicit StubController(function<functionValue(vector<shared_ptr<Parameter>>)> f,
+                            const filesystem::path &configPath); //TODO: config für Stubcontroller hinzufüen
 
 };
 

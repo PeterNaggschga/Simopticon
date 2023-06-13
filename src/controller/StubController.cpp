@@ -3,7 +3,8 @@
 
 #include <utility>
 
-StubController::StubController(function<functionValue(vector<shared_ptr<Parameter>>)> f) : f(std::move(f)) {
+StubController::StubController(function<functionValue(vector<shared_ptr<Parameter>>)> f,
+                               const filesystem::path &configPath) : f(std::move(f)), Controller(configPath) {
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>

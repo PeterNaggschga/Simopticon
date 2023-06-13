@@ -1,0 +1,6 @@
+// ConstantHeadway Config
+
+{
+  "nrThreads": 16
+  // maximum number of threads to be used for evaluation
+}

@@ -2,32 +2,93 @@
 
 #include <memory>
 #include <utility>
+#include <algorithm>
+#include <fstream>
 
 #include "ValueMap.h"
 #include "../optimizer/direct/DirectOptimizer.h"
 #include "../runner/plexe/PlexeSimulationRunner.h"
 #include "../evaluation/constant_headway/ConstantHeadway.h"
+#include "nlohmann/json.hpp"
 
-Controller::Controller() {
-    //TODO: ValueMap aus config lesen
-    Controller::valueMap = std::make_unique<ValueMap>(10);
-    //TODO: Optimizer aus config lesen
-    auto con = StoppingCondition(500, 1000); // TODO: aus config lesen
-    shared_ptr<ParameterDefinition> c1(new ParameterDefinition(0, 1, "*.node[*].scenario.caccC1"));
-    shared_ptr<ParameterDefinition> omegaN(new ParameterDefinition(0.05, 15, "*.node[*].scenario.caccOmegaN", "Hz"));
-    shared_ptr<ParameterDefinition> xi(new ParameterDefinition(1, 5, "*.node[*].scenario.caccXi"));
-    shared_ptr<ParameterDefinition> spacing(new ParameterDefinition(5, 7, "*.node[*].scenario.caccSpacing", "m"));
-    list<shared_ptr<ParameterDefinition>> params({c1, xi, omegaN, spacing});
-    //TODO: params aus config lesen
-    Controller::optimizer = unique_ptr<Optimizer>(new DirectOptimizer(*this, params, con));
-    //TODO: runner aus config lesen
-    keepFiles = true; //TODO: aus config lesen
-    ConfigEditor edit = ConfigEditor("/home/petern/src/plexe/examples/platooning"); //TODO: aus config lesen
-    Controller::runner = unique_ptr<SimulationRunner>(
-            new PlexeSimulationRunner(16, 3, {"SinusoidalNoGui", "BrakingNoGui"}, edit));
-    //TODO: pipeline aus config lesen
-    Controller::pipeline = unique_ptr<Pipeline>(new ConstantHeadway(16));
-    pipelineId = 0; //TODO: aus config lesen
+using json = nlohmann::json;
+
+json getConfigByPath(filesystem::path baseDir, const string &config) {
+    filesystem::path configPath = std::move(baseDir);
+    configPath.append(config);
+    ifstream configStream(configPath);
+    json result = json::parse(configStream, nullptr, true, true);
+    configStream.close();
+    return result;
+}
+
+Controller::Controller(const filesystem::path &configPath) {
+    json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());
+    json paramJson = getConfigByPath(configPath.parent_path(), baseConfig.at("controller").at("params").get<string>());
+    json optimizerConfig = getConfigByPath(configPath.parent_path(),
+                                           baseConfig.at("optimizer").at("config").get<string>());
+    json runnerConfig = getConfigByPath(configPath.parent_path(), baseConfig.at("runner").at("config").get<string>());
+    json pipelineConfig = getConfigByPath(configPath.parent_path(),
+                                          baseConfig.at("pipeline").at("config").get<string>());
+
+    // Controller settings
+    keepFiles = baseConfig.at("controller").at("keepResultFiles").get<bool>();
+    unsigned int nrTopEntries = baseConfig.at("controller").at("nrTopEntries").get<unsigned int>();
+    valueMap = std::make_unique<ValueMap>(nrTopEntries);
+
+    // Read Parameters
+    list<shared_ptr<ParameterDefinition>> params;
+    for (auto param: paramJson) {
+        coordinate min = param.at("min").get<coordinate>();
+        coordinate max = param.at("max").get<coordinate>();
+        string config;
+        if (param.contains("config")) {
+            config = param.at("config").get<string>();
+        }
+        string unit;
+        if (param.contains("unit")) {
+            unit = param.at("unit").get<string>();
+        }
+        params.push_back(make_shared<ParameterDefinition>(min, max, config, unit));
+    }
+
+    // Optimizer settings
+    string opt = baseConfig.at("optimizer").at("optimizer").get<string>();
+    if (opt == "Direct") {
+        optimizer = unique_ptr<Optimizer>(
+                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon"))));
+    } else {
+        throw runtime_error("Optimzer not found: " + opt);
+    }
+
+    // SimulationRunner settings
+    string run = baseConfig.at("runner").at("runner").get<string>();
+    if (run == "Plexe") {
+        unsigned int nrThreads = runnerConfig.at("nrThreads").get<unsigned int>();
+        unsigned int repeat = runnerConfig.at("repeat").get<unsigned int>();
+
+        vector<string> scenarios(runnerConfig.at("scenarios").size());
+        for (int i = 0; i < scenarios.size(); ++i) {
+            scenarios[i] = runnerConfig.at("scenarios").at(i).get<string>();
+        }
+
+        string dir = runnerConfig.at("configDirectory").get<string>();
+        runner = unique_ptr<SimulationRunner>(
+                new PlexeSimulationRunner(nrThreads, repeat, scenarios, ConfigEditor(dir)));
+    } else {
+        throw runtime_error("SimulationRunner not found: " + run);
+    }
+
+    // Pipeline settings
+    string pipe = baseConfig.at("pipeline").at("pipeline").get<string>();
+    if (pipe == "ConstantHeadway") {
+        pipelineId = baseConfig.at("pipeline").at("id").get<unsigned int>();
+        unsigned int nrThreads = pipelineConfig.at("nrThreads").get<unsigned int>();
+
+        pipeline = unique_ptr<Pipeline>(new ConstantHeadway(nrThreads));
+    } else {
+        throw runtime_error("SimulationRunner not found: " + run);
+    }
 }
 
 map<vector<shared_ptr<Parameter>>, functionValue>

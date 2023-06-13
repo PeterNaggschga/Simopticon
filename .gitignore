@@ -1,4 +1,4 @@
 # CLion project files
 .idea
 cmake-build-*
-/CMakeFiles/cmake.check_cache
+CMakeFiles

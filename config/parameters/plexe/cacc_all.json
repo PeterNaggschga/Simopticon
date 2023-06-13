@@ -1,0 +1,26 @@
+// Definitions of all parameters used in CACC by Swaroop
+
+{
+  "c1": {
+    "min": 0,
+    "max": 1,
+    "config": "*.node[*].scenario.caccC1"
+  },
+  "omegaN": {
+    "min": 0.05,
+    "max": 10,
+    "config": "*.node[*].scenario.caccOmegaN",
+    "unit": "Hz"
+  },
+  "xi": {
+    "min": 1,
+    "max": 5,
+    "config": "*.node[*].scenario.caccXi"
+  },
+  "spacing": {
+    "min": 5,
+    "max": 7,
+    "config": "*.node[*].scenario.caccSpacing",
+    "unit": "m"
+  }
+}

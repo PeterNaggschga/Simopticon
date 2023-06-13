@@ -1,0 +1,28 @@
+// DirectOptimizer Config
+
+{
+  // StoppingCondition-related Options
+  "stopCon": {
+    // stop after n evaluations
+    "evaluations": {
+      "useCondition": false,
+      "n": 500
+    },
+    // stop when the search space is partitioned into n rectangles
+    "hyrects": {
+      "useCondition": false,
+      "n": 2000
+    },
+    // stop after n minutes
+    "minutes": {
+      "useCondition": true,
+      "n": 10
+    },
+    // stop when the best value hasn't changed more than delta in n Iterations
+    "accuracy": {
+      "useCondition": false,
+      "delta": 0.00001,
+      "n": 10
+    }
+  }
+}

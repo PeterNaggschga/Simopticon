@@ -1,0 +1,15 @@
+// PlexeRunner Config
+
+{
+  "nrThreads": 16,
+  // maximum number of threads to be used for concurrent execution
+  "repeat": 3,
+  // number of repetitions for the same parameters
+  "scenarios": [
+    "BrakingNoGui",
+    "SinusoidalNoGui"
+  ],
+  // scenarios to simulate
+  "configDirectory": "/path/to/plexe/examples/platooning"
+  // path to directory containing omnetpp.ini
+}

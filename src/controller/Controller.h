@@ -42,7 +42,7 @@ protected:
     unique_ptr<ValueMap> valueMap;
 
 public:
-    Controller();
+    explicit Controller(const filesystem::path &configPath);
 
     void run();
 

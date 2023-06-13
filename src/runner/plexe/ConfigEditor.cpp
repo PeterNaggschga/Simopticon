@@ -1,8 +1,6 @@
 #include "ConfigEditor.h"
 
-#include <utility>
 #include <fstream>
-#include <list>
 
 ConfigEditor::ConfigEditor(filesystem::path directory) : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
                                                          RESULTS(directory.parent_path().append("optResults")) {

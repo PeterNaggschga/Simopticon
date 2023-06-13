@@ -1,0 +1,36 @@
+// Simopticon Config
+
+{
+  // SimulationController-related Options
+  "controller": {
+    "nrTopEntries": 10,
+    // number of optimal values to be presented
+    "keepResultFiles": true,
+    // keep resultfiles of {nrTopEntries} best runs
+    "params": "parameters/plexe/cacc_all.json"
+    // parameters to be optimized
+  },
+  // Optimizer-related Options
+  "optimizer": {
+    "optimizer": "Direct",
+    // optimizer to be used
+    "config": "optimizers/direct.json"
+    // config of the used optimizer
+  },
+  // SimulationRunner-related Options
+  "runner": {
+    "runner": "Plexe",
+    // runner to be used
+    "config": "runners/plexe.json"
+    // config of the used runner
+  },
+  // Pipeline-related Options
+  "pipeline": {
+    "pipeline": "ConstantHeadway",
+    // pipeline to be used
+    "config": "pipelines/constant_headway.json",
+    // config of the used pipeline
+    "id": 0
+    // id of the used pipeline
+  }
+}

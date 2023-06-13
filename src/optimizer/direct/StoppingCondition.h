@@ -3,11 +3,13 @@
 
 
 #include "../../Types.h"
+#include "nlohmann/json.hpp"
 
 #include <chrono>
 #include <cmath>
 
 using namespace std::chrono;
+using json = nlohmann::json;
 
 class StoppingCondition {
 private:
@@ -28,6 +30,8 @@ private:
 public:
     explicit StoppingCondition(size_t evaluations = 0, size_t hyrects = 0, unsigned int minutes = 0,
                                functionValue accuracy = 0, unsigned int accuracyIterations = 0);
+
+    explicit StoppingCondition(json stopCon);
 
     void setStartNow();
 
