@@ -19,7 +19,7 @@ private:
     PyObject *secureValue(PyObject *object);
 
 public:
-    explicit ConstantHeadway(unsigned int nrThreads);
+    ConstantHeadway(unsigned int nrThreads, const filesystem::path &pathToScript);
 
     functionValue processOutput(filesystem::path path, set<runId> experimentIds, unsigned int pipelineId) override;
 

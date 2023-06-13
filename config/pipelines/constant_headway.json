@@ -3,6 +3,8 @@
 {
   // maximum number of threads to be used for evaluation,
   "nrThreads": 16,
+  // absolute path to the python script
+  "pythonScript": "/path/to/constant_headway.py",
   // absolute path to the OMNeT++ installation directory
-  "omnetppDirectory": "/path/to/directory"
+  "omnetppDirectory": "/home/petern/src/omnetpp-6.0.1"
 }

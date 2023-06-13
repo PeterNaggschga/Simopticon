@@ -88,7 +88,8 @@ Controller::Controller(const filesystem::path &configPath) {
         pipelineId = baseConfig.at("pipeline").at("id").get<unsigned int>();
 
         unsigned int nrThreads = pipelineConfig.at("nrThreads").get<unsigned int>();
-        pipeline = unique_ptr<Pipeline>(new ConstantHeadway(nrThreads));
+        filesystem::path scriptPath(pipelineConfig.at("pythonScript").get<string>());
+        pipeline = unique_ptr<Pipeline>(new ConstantHeadway(nrThreads, scriptPath));
     } else {
         throw runtime_error("SimulationRunner not found: " + run);
     }
