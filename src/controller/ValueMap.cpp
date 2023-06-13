@@ -38,12 +38,10 @@ void ValueMap::updateMap() {
         upperValues.insert(it, lowerValues.end());
         lowerValues.erase(it, lowerValues.end());
     }
-    topEntriesChanged = false;
 }
 
-void
-ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
-                   set<functionValue *, CmpPtrFunctionvalue> &set) {
+void ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
+                        set<functionValue *, CmpPtrFunctionvalue> &set) {
     auto worked = values.insert(val);
     if (!worked.second) {
         throw logic_error("Value couldn't be inserted!");
@@ -73,8 +71,7 @@ functionValue ValueMap::query(const vector<shared_ptr<Parameter>> &params) {
 }
 
 void ValueMap::insert(const vector<shared_ptr<Parameter>> &params, functionValue val) {
-    if (topVals.empty() || val < topVals.rend()->second) {
-        topEntriesChanged = true;
+    if (topVals.size() < topEntries || val <= topVals.rend()->second) {
     }
     tba.emplace_back(params, val);
 }
@@ -92,12 +89,8 @@ functionValue ValueMap::getMedian() {
         return 0;
     }
     updateMap();
-    if (lowerValues.size() == upperValues.size()) {
-        auto it = lowerValues.end();
-        advance(it, -1);
-        return (**it + **upperValues.begin()) / 2;
-    }
-    return **upperValues.begin();
+    return lowerValues.size() == upperValues.size() ? (**lowerValues.rbegin() + **upperValues.begin()) / 2
+                                                    : **upperValues.begin();
 }
 
 size_t ValueMap::getSize() const {
@@ -105,16 +98,12 @@ size_t ValueMap::getSize() const {
 }
 
 list<pair<vector<shared_ptr<Parameter>>, functionValue>> ValueMap::getTopVals() {
-    if (topEntriesChanged) {
-        updateMap();
-    }
+    updateMap();
     return {topVals.begin(), topVals.end()};
 }
 
 bool ValueMap::isTopValue(const vector<shared_ptr<Parameter>> &cords) {
-    if (topEntriesChanged) {
-        updateMap();
-    }
+    updateMap();
     auto pred = [&cords](const pair<const vector<shared_ptr<Parameter>>, functionValue> &p) {
         if (p.first.size() != cords.size()) {
             return false;
