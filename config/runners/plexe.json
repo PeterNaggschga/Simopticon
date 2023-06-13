@@ -11,5 +11,5 @@
     "SinusoidalNoGui"
   ],
   // path to directory containing omnetpp.ini
-  "configDirectory": "/home/petern/src/plexe/examples/platooning"
+  "configDirectory": "/path/to/plexe/examples/platooning"
 }
