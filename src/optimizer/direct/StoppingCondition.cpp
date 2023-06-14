@@ -26,7 +26,7 @@ bool StoppingCondition::evaluate(size_t evaluations, size_t hyrects, functionVal
     bool eval = NR_EVALUATIONS == 0 || evaluations < NR_EVALUATIONS;
     bool rects = NR_HYRECTS == 0 || hyrects < NR_HYRECTS;
     bool time = !time_eval || END_TIME > system_clock::now();
-    bool accuracy = (ACCURACY == 0 && NR_ACCURACY_EVALUATIONS == 0) || updateAccuracy(newBestVal);
+    bool accuracy = updateAccuracy(newBestVal) || (ACCURACY == 0 && NR_ACCURACY_EVALUATIONS == 0);
     return eval && rects && time && accuracy;
 }
 
@@ -37,7 +37,7 @@ void StoppingCondition::setStartNow() {
 }
 
 bool StoppingCondition::updateAccuracy(functionValue newBestVal) {
-    if (newBestVal <= bestVal - ACCURACY) {
+    if (newBestVal < bestVal - ACCURACY) {
         evaluationsSinceImprov = 0;
         bestVal = newBestVal;
     } else {
