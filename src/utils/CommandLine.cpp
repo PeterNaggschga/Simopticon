@@ -5,7 +5,7 @@
 
 unique_ptr<string> CommandLine::exec(string cmd) {
     array<char, 128> buffer{};
-    cmd += " 2> errors.txt";
+    cmd += " 2>&1";
     unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd.c_str(), "r"), pclose);
     if (!pipe) {
         throw std::runtime_error("Pipeline execution failed!");
