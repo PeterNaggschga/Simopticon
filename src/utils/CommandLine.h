@@ -8,7 +8,7 @@ using namespace std;
 
 class CommandLine {
 public:
-    static unique_ptr<string> exec(const char *cmd);
+    static unique_ptr<string> exec(string cmd);
 
 };
 

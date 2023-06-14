@@ -3,13 +3,14 @@
 #include <array>
 #include <memory>
 
-unique_ptr<string> CommandLine::exec(const char *cmd) {
+unique_ptr<string> CommandLine::exec(string cmd) {
     array<char, 128> buffer{};
-    string result;
-    unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd, "r"), pclose);
+    cmd += " 2> errors.txt";
+    unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd.c_str(), "r"), pclose);
     if (!pipe) {
         throw std::runtime_error("Pipeline execution failed!");
     }
+    string result;
     while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
         result += buffer.data();
     }
