@@ -2,6 +2,7 @@
 #define SIMOPTICON_PIPELINE_H
 
 #include "../Types.h"
+#include "../controller/Status.h"
 
 #include <set>
 #include <filesystem>
@@ -9,7 +10,7 @@
 
 using namespace std;
 
-class Pipeline {
+class Pipeline : public Status {
 public:
     virtual ~Pipeline() = default;
 

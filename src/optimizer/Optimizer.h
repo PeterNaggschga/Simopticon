@@ -3,6 +3,7 @@
 
 #include "../Types.h"
 #include "../parameters/ParameterDefinition.h"
+#include "../controller/Status.h"
 
 #include <list>
 #include <vector>
@@ -17,7 +18,7 @@ class ValueMap;
 
 using namespace std;
 
-class Optimizer {
+class Optimizer : public Status {
 private:
     Controller &controller;
 

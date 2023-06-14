@@ -4,6 +4,7 @@
 #include "../Types.h"
 #include "../ComparisonFunctions.h"
 #include "../utils/Multithreaded.h"
+#include "../controller/Status.h"
 
 #include <vector>
 #include <set>
@@ -18,7 +19,8 @@ class Parameter;
 using namespace std;
 
 class SimulationRunner
-        : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> {
+        : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>,
+          Status {
 private:
     pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override = 0;
 
