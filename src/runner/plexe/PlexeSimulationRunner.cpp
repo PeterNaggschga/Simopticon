@@ -96,5 +96,5 @@ string PlexeSimulationRunner::getStatusBar() {
     auto plexeStart = Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::queue.getStartSize();
 
     return "Running simulations... waiting: " + to_string(plexeStart * runnerCurrent) + ", running/done: " +
-           to_string(plexeStart * (runnerStart - runnerCurrent));;
+           to_string(plexeStart * (runnerStart - runnerCurrent));
 }
