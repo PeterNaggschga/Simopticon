@@ -4,6 +4,7 @@ template<class T>
 void ThreadsafeQueue<T>::push(T val) {
     queueLock.lock();
     safeQueue.push(val);
+    startSize = safeQueue.size();
     queueLock.unlock();
 }
 
@@ -18,4 +19,20 @@ pair<T, bool> ThreadsafeQueue<T>::pop() {
     safeQueue.pop();
     queueLock.unlock();
     return make_pair(val, true);
+}
+
+template<class T>
+size_t ThreadsafeQueue<T>::getStartSize() {
+    queueLock.lock();
+    size_t res = startSize;
+    queueLock.unlock();
+    return res;
+}
+
+template<class T>
+size_t ThreadsafeQueue<T>::getSize() {
+    queueLock.lock();
+    size_t res = safeQueue.size();
+    queueLock.unlock();
+    return res;
 }

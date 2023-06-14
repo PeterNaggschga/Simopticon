@@ -64,11 +64,34 @@ bool PlexeSimulationRunner::work(pair<filesystem::path, pair<string, unsigned in
     command += " -r " + to_string(arg.second.second) + " " + arg.first.string();
 
     try {
-        CommandLine::exec(command.c_str());
+        CommandLine::exec(command);
         return true;
     } catch (exception &e) {
         cerr << e.what() << endl;
     }
     return false;
 
+}
+
+string PlexeSimulationRunner::getName() {
+    return "Plexe-Runner";
+}
+
+string PlexeSimulationRunner::getStatus() {
+    string status = "Evaluations: " + to_string(runNumber) + "\n";
+    status += "Scenarios: " + SCENARIOS[0];
+    for (int i = 1; i < SCENARIOS.size(); ++i) {
+        status += ", " + SCENARIOS[i];
+    }
+    status += "\nRepeat: " + to_string(REPEAT);
+    return status;
+}
+
+string PlexeSimulationRunner::getStatusBar() {
+    auto runnerCurrent = Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getSize();
+    auto runnerStart = Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getStartSize();
+    auto plexeStart = Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::queue.getStartSize();
+
+    return "Running simulations... waiting: " + to_string(plexeStart * runnerCurrent) + ", running/done: " +
+           to_string(plexeStart * (runnerStart - runnerCurrent));;
 }

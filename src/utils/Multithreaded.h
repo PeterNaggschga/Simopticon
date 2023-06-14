@@ -16,11 +16,11 @@ class Multithreaded {
 private:
     const unsigned int NR_THREADS;
 
-    ThreadsafeQueue<Key> queue;
-
     virtual T work(Key arg) = 0;
 
 protected:
+    ThreadsafeQueue<Key> queue;
+
     virtual map<Key, T, Compare, Allocator> runMultithreadedFunctions(set<Key, Compare> runs);
 
     virtual map<Key, T, Compare, Allocator> multithreadFunction();

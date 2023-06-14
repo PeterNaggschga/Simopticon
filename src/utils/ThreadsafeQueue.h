@@ -12,11 +12,16 @@ class ThreadsafeQueue {
 private:
     queue<T> safeQueue;
     mutex queueLock;
+    size_t startSize = 0;
 
 public:
     void push(T val);
 
     pair<T, bool> pop();
+
+    [[nodiscard]] size_t getStartSize();
+
+    [[nodiscard]] size_t getSize();
 
 };
 

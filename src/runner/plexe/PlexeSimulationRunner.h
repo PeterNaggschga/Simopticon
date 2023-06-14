@@ -29,6 +29,12 @@ private:
 public:
     PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios, ConfigEditor editor);
 
+    string getName() override;
+
+    string getStatus() override;
+
+    string getStatusBar() override;
+
 };
 
 
