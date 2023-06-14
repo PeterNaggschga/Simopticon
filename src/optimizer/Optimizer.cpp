@@ -17,3 +17,15 @@ Optimizer::Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> par
 ValueMap &Optimizer::getValueMap() const {
     return controller.getValueMap();
 }
+
+string Optimizer::getName() {
+    return Status::getName();
+}
+
+string Optimizer::getStatus() {
+    return Status::getStatus();
+}
+
+string Optimizer::getStatusBar() {
+    return Status::getStatusBar();
+}

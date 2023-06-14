@@ -35,6 +35,13 @@ public:
     virtual void runOptimization() = 0;
 
     [[nodiscard]] ValueMap &getValueMap() const;
+
+    string getName() override;
+
+    string getStatus() override;
+
+    string getStatusBar() override;
+
 };
 
 

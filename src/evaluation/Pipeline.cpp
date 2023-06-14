@@ -8,3 +8,15 @@ Pipeline::processOutput(const set<pair<filesystem::path, set<runId>>> &experimen
     }
     return result;
 }
+
+string Pipeline::getName() {
+    return Status::getName();
+}
+
+string Pipeline::getStatus() {
+    return Status::getStatus();
+}
+
+string Pipeline::getStatusBar() {
+    return Status::getStatusBar();
+}

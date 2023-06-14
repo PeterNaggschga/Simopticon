@@ -32,6 +32,12 @@ public:
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
+    string getName() override;
+
+    string getStatus() override;
+
+    string getStatusBar() override;
+
 };
 
 

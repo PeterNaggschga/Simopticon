@@ -19,6 +19,12 @@ public:
     virtual map<pair<filesystem::path, set<runId>>, functionValue>
     processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults, unsigned int pipelineId);
 
+    string getName() override;
+
+    string getStatus() override;
+
+    string getStatusBar() override;
+
 };
 
 
