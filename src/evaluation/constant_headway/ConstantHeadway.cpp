@@ -10,6 +10,7 @@ ConstantHeadway::ConstantHeadway(unsigned int nrThreads, const filesystem::path 
 map<pair<filesystem::path, set<runId>>, functionValue>
 ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults,
                                unsigned int pipelineId) {
+    usedThreads = min((size_t) NR_THREADS, experimentResults.size());
     map<pair<filesystem::path, set<runId>>, functionValue> result;
 
     PyObject *pArgs, *pValue, *pList;
@@ -47,6 +48,7 @@ ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &ex
         PyErr_Print();
         throw runtime_error("Call to Python function failed!");
     }
+    usedThreads = 0;
     return result;
 }
 
@@ -62,4 +64,16 @@ PyObject *ConstantHeadway::secureValue(PyObject *object) {
         throw invalid_argument("PyObject couldn't be created!");
     }
     return object;
+}
+
+string ConstantHeadway::getName() {
+    return "Constant-Headway-Evaluation";
+}
+
+string ConstantHeadway::getStatus() {
+    return "Maximum number of threads: " + to_string(NR_THREADS);
+}
+
+string ConstantHeadway::getStatusBar() {
+    return "Evaluating results... using " + to_string(usedThreads) + "/" + to_string(NR_THREADS) + " threads";
 }

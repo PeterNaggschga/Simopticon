@@ -15,6 +15,7 @@
 class ConstantHeadway : public Pipeline, public PythonScript {
 private:
     const unsigned int NR_THREADS;
+    unsigned int usedThreads = 0;
 
     PyObject *secureValue(PyObject *object);
 
@@ -25,6 +26,12 @@ public:
 
     map<pair<filesystem::path, set<runId>>, functionValue>
     processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults, unsigned int pipelineId) override;
+
+    string getName() override;
+
+    string getStatus() override;
+
+    string getStatusBar() override;
 
 };
 
