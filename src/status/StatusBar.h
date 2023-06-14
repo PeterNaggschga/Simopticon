@@ -10,13 +10,9 @@
 #include <vector>
 
 class Parameter;
-
 class Optimizer;
-
 class SimulationRunner;
-
 class Pipeline;
-
 class ValueMap;
 
 using namespace std;
@@ -37,7 +33,8 @@ private:
 
 public:
     void updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
-                      const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, step currentStep);
+                      const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged = false,
+                      step currentStep = INIT);
 
 };
 

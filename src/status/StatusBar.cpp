@@ -3,8 +3,9 @@
 #include <iostream>
 
 void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
-                             const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, step currentStep) {
-    bool stepChanged = currentStep != lastStep;
+                             const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged,
+                             step currentStep) {
+    currentStep = stepChanged ? currentStep : lastStep;
     if (stepChanged || currentVal != lastVal) {
         if (lastStep != INIT) {
             cout << "\n\n";
