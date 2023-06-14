@@ -59,6 +59,6 @@ void StatusBar::printOptimum(const pair<vector<shared_ptr<Parameter>>, functionV
 }
 
 void StatusBar::printStatus(Status *object) {
-    cout << object->getName() << ":\n";
+    cout << object->getName() << "\n";
     cout << object->getStatus() << "\n";
 }
