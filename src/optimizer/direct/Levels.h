@@ -21,9 +21,11 @@ public:
 
     level nextLevel();
 
-    size_t getRectSubsetSize(size_t size);
+    [[nodiscard]] size_t getRectSubsetSize(size_t size);
 
     [[nodiscard]] double getEpsilon();
+
+    [[nodiscard]] unsigned char getLevel();
 };
 
 

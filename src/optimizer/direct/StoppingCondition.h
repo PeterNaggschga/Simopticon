@@ -36,6 +36,8 @@ public:
     void setStartNow();
 
     bool evaluate(size_t evaluations, size_t hyrects, functionValue newBestVal);
+
+    [[nodiscard]] unsigned int getEvaluationsSinceImprov() const;
 };
 
 
