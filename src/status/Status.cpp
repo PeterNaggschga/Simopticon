@@ -3,7 +3,7 @@
 
 const string Status::NO_STATUS_SUPPORT = "Component doesn't support status updates!";
 
-const string Status::NO_NAME = "No name given";
+const string Status::NO_NAME = "No name specified";
 
 string Status::getStatus() {
     return NO_STATUS_SUPPORT;

@@ -3,7 +3,7 @@
 
 #include "../Types.h"
 #include "../parameters/ParameterDefinition.h"
-#include "../controller/Status.h"
+#include "../status/Status.h"
 
 #include <list>
 #include <vector>

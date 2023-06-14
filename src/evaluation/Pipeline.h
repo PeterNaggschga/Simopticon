@@ -2,7 +2,7 @@
 #define SIMOPTICON_PIPELINE_H
 
 #include "../Types.h"
-#include "../controller/Status.h"
+#include "../status/Status.h"
 
 #include <set>
 #include <filesystem>

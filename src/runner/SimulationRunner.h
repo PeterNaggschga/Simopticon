@@ -4,7 +4,7 @@
 #include "../Types.h"
 #include "../ComparisonFunctions.h"
 #include "../utils/Multithreaded.h"
-#include "../controller/Status.h"
+#include "../status/Status.h"
 
 #include <vector>
 #include <set>
