@@ -14,11 +14,10 @@ using namespace std;
 template<class Key, class T, class Compare = less<Key>, class Allocator = allocator<pair<const Key, T>>>
 class Multithreaded {
 private:
-    const unsigned int NR_THREADS;
-
     virtual T work(Key arg) = 0;
 
 protected:
+    const unsigned int NR_THREADS;
     ThreadsafeQueue<Key> queue;
 
     virtual map<Key, T, Compare, Allocator> runMultithreadedFunctions(set<Key, Compare> runs);

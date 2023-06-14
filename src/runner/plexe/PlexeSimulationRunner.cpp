@@ -83,7 +83,10 @@ string PlexeSimulationRunner::getStatus() {
     for (int i = 1; i < SCENARIOS.size(); ++i) {
         status += ", " + SCENARIOS[i];
     }
-    status += "\nRepeat: " + to_string(REPEAT);
+    status += "\nRepeat: " + to_string(REPEAT) + "\n";
+    status += "Maximum number of threads: " + to_string(
+            Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::NR_THREADS *
+            Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::NR_THREADS);
     return status;
 }
 
