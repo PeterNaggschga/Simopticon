@@ -43,7 +43,7 @@ private:
         }
     } stepState;
 
-    chrono::milliseconds statusInterval;
+    chrono::milliseconds statusInterval = chrono::milliseconds(0);
 
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);

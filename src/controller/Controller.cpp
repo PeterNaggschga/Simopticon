@@ -23,7 +23,7 @@ json getConfigByPath(filesystem::path baseDir, const string &config) {
     return result;
 }
 
-Controller::Controller(const filesystem::path &configPath) : statusInterval(0) {
+Controller::Controller(const filesystem::path &configPath) {
     cout << "Initializing optimization...";
     cout.flush();
 
