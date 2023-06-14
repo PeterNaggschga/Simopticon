@@ -20,7 +20,7 @@ using namespace std;
 
 class SimulationRunner
         : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>,
-          Status {
+          public Status {
 private:
     pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override = 0;
 

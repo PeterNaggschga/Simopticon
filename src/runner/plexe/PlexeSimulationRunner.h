@@ -10,7 +10,7 @@
 #include <semaphore>
 
 class PlexeSimulationRunner
-        : public SimulationRunner, Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool> {
+        : public SimulationRunner, public Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool> {
 private:
     const unsigned int REPEAT;
     const vector<string> SCENARIOS;
