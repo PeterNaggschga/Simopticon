@@ -8,6 +8,7 @@
 #include "../runner/SimulationRunner.h"
 #include "../evaluation/Pipeline.h"
 #include "../parameters/Parameter.h"
+#include "../status/StatusBar.h"
 
 #include <map>
 #include <vector>
@@ -27,6 +28,23 @@ private:
     map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
     unsigned int pipelineId;
 
+    struct stepstate {
+        bool stepChanged;
+        step currentStep = INIT;
+
+        void next() {
+            stepChanged = true;
+            currentStep = static_cast<step>((currentStep + 1) % 3);
+        }
+
+        step get() {
+            stepChanged = false;
+            return currentStep;
+        }
+    } stepState;
+
+    chrono::milliseconds statusInterval;
+
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
@@ -35,7 +53,10 @@ private:
 
     virtual void removeOldResultfiles();
 
+    virtual void updateStatus();
+
 protected:
+    StatusBar statusBar;
     unique_ptr<Optimizer> optimizer;
     unique_ptr<SimulationRunner> runner;
     unique_ptr<Pipeline> pipeline;
