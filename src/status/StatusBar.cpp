@@ -6,19 +6,24 @@
 
 #include <iostream>
 
+const string StatusBar::LARGE_DIVIDER = "\n" + string(70, '#') + "\n";
+
+const string StatusBar::SMALL_DIVIDER = string(70, '-') + "\n";
+
 void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
                              const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged,
                              step currentStep) {
     currentStep = stepChanged ? currentStep : lastStep;
     if (stepChanged || currentVal != lastVal) {
-        if (lastStep != INIT) {
-            cout << "\n\n";
-        }
-        cout << "Irgendein Trenner\n";
+        cout << LARGE_DIVIDER;
         printOptimum(currentVal);
+        cout << SMALL_DIVIDER;
         printStatus(static_cast<Status *>(opt));
+        cout << SMALL_DIVIDER;
         printStatus(static_cast<Status *>(runner));
+        cout << SMALL_DIVIDER;
         printStatus(static_cast<Status *>(pipe));
+        cout << SMALL_DIVIDER;
         cout << "Status: ";
         lastStatus = "";
     }
@@ -27,7 +32,7 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
     }
     Status *stat;
     switch (currentStep) {
-        case INIT:
+        default:
         case OPTIMIZER:
             stat = static_cast<Status *>(opt);
             break;

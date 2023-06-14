@@ -23,6 +23,9 @@ enum step : char {
 
 class StatusBar {
 private:
+    const static string LARGE_DIVIDER;
+    const static string SMALL_DIVIDER;
+
     pair<vector<shared_ptr<Parameter>>, functionValue> lastVal;
     step lastStep = INIT;
     string lastStatus;
