@@ -21,6 +21,7 @@ using namespace std;
 class DirectOptimizer : public Optimizer {
 private:
     const dimension D;
+    size_t iterations = 0;
     StoppingCondition stopCon;
     Levels level = Levels();
     ParameterNormalizer normalizer;
@@ -31,7 +32,7 @@ private:
 
     static functionValue estimatedValue(const shared_ptr<HyRect> &rect, double k);
 
-    list<shared_ptr<HyRect>> optimalRectangles(size_t m, functionValue phi);
+    list<shared_ptr<HyRect>> optimalRectangles(size_t nrRects, functionValue phi);
 
     void addActiveRects(const list<shared_ptr<HyRect>> &rects);
 
@@ -41,6 +42,13 @@ public:
     DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con);
 
     void runOptimization() override;
+
+    string getName() override;
+
+    string getStatus() override;
+
+    string getStatusBar() override;
+
 };
 
 

@@ -45,3 +45,7 @@ bool StoppingCondition::updateAccuracy(functionValue newBestVal) {
     }
     return evaluationsSinceImprov < NR_ACCURACY_EVALUATIONS;
 }
+
+unsigned int StoppingCondition::getEvaluationsSinceImprov() const {
+    return evaluationsSinceImprov;
+}

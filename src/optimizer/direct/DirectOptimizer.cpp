@@ -32,6 +32,7 @@ void DirectOptimizer::runOptimization() {
         l = getValueMap().getSize();
         level.nextLevel();
         phi = getValueMap().getTopVals().front().second;
+        iterations++;
     }
 }
 
@@ -57,9 +58,9 @@ functionValue DirectOptimizer::estimatedValue(const shared_ptr<HyRect> &rect, do
     return rect->getAvgValue() - k * rect->getDiagonalLength() / 2;
 }
 
-list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(size_t m, functionValue phi) {
+list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(size_t nrRects, functionValue phi) {
     list<shared_ptr<HyRect>> optimalPoints;
-    size_t size = level.getRectSubsetSize(m);
+    size_t size = level.getRectSubsetSize(nrRects);
     for (const auto &entry: activeRects) {
         size -= entry.second.size();
         optimalPoints.emplace_back(*entry.second.begin());
@@ -123,4 +124,25 @@ void DirectOptimizer::removeActiveRect(const shared_ptr<HyRect> &rect) {
     if (set.empty()) {
         activeRects.erase(depth);
     }
+}
+
+string DirectOptimizer::getName() {
+    return "Direct-Optimizer";
+}
+
+string DirectOptimizer::getStatus() {
+    size_t m = 0;
+    for (const auto &entry: activeRects) {
+        m += entry.second.size();
+    }
+    string status = "Rectangles: " + to_string(m) + "\n";
+    status += "Iterations: " + to_string(iterations) + "\n";
+    status += "Iterations without improvement: " + to_string(stopCon.getEvaluationsSinceImprov()) + "\n";
+    status += "Level: " + to_string(level.getLevel());
+
+    return status;
+}
+
+string DirectOptimizer::getStatusBar() {
+    return "Optimizer running...";
 }

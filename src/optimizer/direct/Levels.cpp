@@ -35,3 +35,18 @@ double Levels::getEpsilon() {
             return L2_EPSILON;
     }
 }
+
+unsigned char Levels::getLevel() {
+    switch (currentLevel) {
+        case l1_1:
+        case l1_3:
+        case l1_4:
+        case l1_6:
+            return 1;
+        case l0_2:
+        case l0_5:
+            return 0;
+        default:
+            return 2;
+    }
+}
