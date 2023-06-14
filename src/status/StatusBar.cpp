@@ -1,5 +1,9 @@
 #include "StatusBar.h"
 
+#include "../optimizer/Optimizer.h"
+#include "../runner/SimulationRunner.h"
+#include "../evaluation/Pipeline.h"
+
 #include <iostream>
 
 void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
@@ -12,9 +16,9 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
         }
         cout << "Irgendein Trenner\n";
         printOptimum(currentVal);
-        printStatus(reinterpret_cast<Status *>(opt));
-        printStatus(reinterpret_cast<Status *>(runner));
-        printStatus(reinterpret_cast<Status *>(pipe));
+        printStatus(static_cast<Status *>(opt));
+        printStatus(static_cast<Status *>(runner));
+        printStatus(static_cast<Status *>(pipe));
         cout << "Status: ";
         lastStatus = "";
     }
@@ -25,13 +29,13 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
     switch (currentStep) {
         case INIT:
         case OPTIMIZER:
-            stat = reinterpret_cast<Status *>(opt);
+            stat = static_cast<Status *>(opt);
             break;
         case RUNNER:
-            stat = reinterpret_cast<Status *>(runner);
+            stat = static_cast<Status *>(runner);
             break;
         case PIPELINE:
-            stat = reinterpret_cast<Status *>(pipe);
+            stat = static_cast<Status *>(pipe);
             break;
     }
     lastStatus = stat->getStatusBar();
