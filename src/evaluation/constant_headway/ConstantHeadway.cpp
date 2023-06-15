@@ -74,7 +74,7 @@ string ConstantHeadway::getName() {
 }
 
 string ConstantHeadway::getStatus() {
-    return "Maximum number of threads: " + to_string(NR_THREADS);
+    return "Max. number of threads: " + to_string(NR_THREADS);
 }
 
 string ConstantHeadway::getStatusBar() {

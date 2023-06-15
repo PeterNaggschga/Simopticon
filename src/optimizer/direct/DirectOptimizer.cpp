@@ -135,10 +135,10 @@ string DirectOptimizer::getStatus() {
     for (const auto &entry: activeRects) {
         m += entry.second.size();
     }
-    string status = "Rectangles: " + to_string(m) + "\n";
-    status += "Iterations: " + to_string(iterations) + "\n";
-    status += "Iterations without improvement: " + to_string(stopCon.getEvaluationsSinceImprov()) + "\n";
-    status += "Level: " + to_string(level.getLevel());
+    string status = "Rectangles:\t\t\t" + to_string(m) + "\n";
+    status += "Iterations:\t\t\t" + to_string(iterations) + "\n";
+    status += "Iterations without improvement:\t" + to_string(stopCon.getEvaluationsSinceImprov()) + "\n";
+    status += "Level:\t\t\t\t" + to_string(level.getLevel());
 
     return status;
 }
