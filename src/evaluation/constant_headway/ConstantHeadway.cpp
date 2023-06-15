@@ -47,7 +47,6 @@ ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &ex
     } else {
         Py_DECREF(pFunc);
         Py_DECREF(pModule);
-        PyErr_Print();
         cerr << "Call to Python function failed!";
         return {};
     }
