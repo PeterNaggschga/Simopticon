@@ -4,6 +4,7 @@
 #include "../Types.h"
 #include "../parameters/ParameterDefinition.h"
 #include "../status/Status.h"
+#include "../utils/Abortable.h"
 
 #include <list>
 #include <vector>
@@ -18,7 +19,7 @@ class ValueMap;
 
 using namespace std;
 
-class Optimizer : public Status {
+class Optimizer : public Status, public Abortable {
 private:
     Controller &controller;
 

@@ -9,6 +9,7 @@
 #include "../evaluation/Pipeline.h"
 #include "../parameters/Parameter.h"
 #include "../status/StatusBar.h"
+#include "../utils/Abortable.h"
 
 #include <map>
 #include <vector>
@@ -22,7 +23,7 @@ class ValueMap;
 
 using namespace std;
 
-class Controller {
+class Controller : public Abortable {
 private:
     bool keepFiles;
     map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
@@ -70,6 +71,8 @@ public:
     map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
 
     [[nodiscard]] ValueMap &getValueMap();
+
+    void abort() override;
 };
 
 

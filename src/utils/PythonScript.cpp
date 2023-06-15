@@ -32,6 +32,5 @@ PythonScript::PythonScript(const filesystem::path &path, const char *functionNam
 PythonScript::~PythonScript() {
     Py_DECREF(pFunc);
     Py_DECREF(pModule);
-    Py_Finalize();
 }
 

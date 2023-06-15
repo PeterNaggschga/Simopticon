@@ -143,8 +143,8 @@ ValueMap &Controller::getValueMap() {
 void Controller::run() {
     auto runStatusUpdate = [this]() {
         while (statusInterval != milliseconds(0)) {
-            this_thread::sleep_for(statusInterval);
             updateStatus();
+            this_thread::sleep_for(statusInterval);
         }
     };
     stepState.next();
@@ -203,4 +203,8 @@ void Controller::updateStatus() {
                                                                                   (functionValue) INFINITY);
     bool stateChanged = stepState.stepChanged;
     statusBar.updateStatus(optimizer.get(), runner.get(), pipeline.get(), p, stateChanged, stepState.get());
+}
+
+void Controller::abort() {
+    optimizer->abort();
 }

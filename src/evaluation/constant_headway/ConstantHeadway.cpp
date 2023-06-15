@@ -1,5 +1,7 @@
 #include "ConstantHeadway.h"
 
+#include <iostream>
+
 
 using namespace std;
 
@@ -46,7 +48,8 @@ ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &ex
         Py_DECREF(pFunc);
         Py_DECREF(pModule);
         PyErr_Print();
-        throw runtime_error("Call to Python function failed!");
+        cerr << "Call to Python function failed!";
+        return {};
     }
     usedThreads = 0;
     return result;
@@ -61,7 +64,8 @@ PyObject *ConstantHeadway::secureValue(PyObject *object) {
     if (!object) {
         Py_DECREF(pFunc);
         Py_DECREF(pModule);
-        throw invalid_argument("PyObject couldn't be created!");
+        cerr << "PyObject couldn't be created!" << endl;
+        return nullptr;
     }
     return object;
 }

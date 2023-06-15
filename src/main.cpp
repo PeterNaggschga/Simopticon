@@ -7,7 +7,7 @@ unique_ptr<Controller> ctr;
 
 void interruptHandler([[maybe_unused]] int s) {
     signal(SIGINT, SIG_DFL);
-    raise(SIGINT);
+    ctr->abort();
 }
 
 int main(int argc, char **argv) {
@@ -20,10 +20,8 @@ int main(int argc, char **argv) {
     intHandler.sa_handler = interruptHandler;
     sigemptyset(&intHandler.sa_mask);
     intHandler.sa_flags = 0;
-
     sigaction(SIGINT, &intHandler, nullptr);
 
     ctr->run();
-
     return 0;
 }

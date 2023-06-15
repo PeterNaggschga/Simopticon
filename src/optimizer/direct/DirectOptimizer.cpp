@@ -19,7 +19,7 @@ void DirectOptimizer::runOptimization() {
     size_t m = 1, l = 2;
     functionValue phi = getValueMap().getTopVals().front().second;
 
-    while (stopCon.evaluate(l, m, phi)) {
+    while (!aborted && stopCon.evaluate(l, m, phi)) {
         list<shared_ptr<HyRect>> newRects;
         for (const shared_ptr<HyRect> &rect: optimalRectangles(m, phi)) {
             for (const shared_ptr<HyRect> &newRect: rect->divide(rect)) {
