@@ -8,6 +8,7 @@
 
 #include <memory>
 #include <vector>
+#include <filesystem>
 
 class Parameter;
 class Optimizer;
@@ -30,7 +31,7 @@ private:
     step lastStep = INIT;
     string lastStatus;
 
-    static void printOptimum(const pair<vector<shared_ptr<Parameter>>, functionValue> &optimum);
+    static void printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum);
 
     static void printStatus(Status *object);
 
@@ -38,6 +39,8 @@ public:
     void updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
                       const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged = false,
                       step currentStep = INIT);
+
+    static void printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top);
 
 };
 

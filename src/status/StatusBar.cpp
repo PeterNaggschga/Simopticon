@@ -5,8 +5,9 @@
 #include "../evaluation/Pipeline.h"
 
 #include <iostream>
+#include <ranges>
 
-const string StatusBar::LARGE_DIVIDER = "\n" + string(70, '#') + "\n";
+const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
 
 const string StatusBar::SMALL_DIVIDER = string(70, '-') + "\n";
 
@@ -16,7 +17,8 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
     currentStep = stepChanged ? currentStep : lastStep;
     if (stepChanged || currentVal != lastVal) {
         cout << LARGE_DIVIDER;
-        printOptimum(currentVal);
+        cout << "Current optimum:\n";
+        printResult(currentVal.first, currentVal.second);
         cout << SMALL_DIVIDER;
         printStatus(static_cast<Status *>(opt));
         cout << SMALL_DIVIDER;
@@ -50,15 +52,29 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
     cout.flush();
 }
 
-void StatusBar::printOptimum(const pair<vector<shared_ptr<Parameter>>, functionValue> &optimum) {
-    cout << "Aktuelles Optimum:\n";
-    for (const auto &param: optimum.first) {
-        cout << param->getConfig() << ": " << param->getVal() << param->getUnit() << "\n";
+void StatusBar::printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum) {
+    for (const auto &param: cords) {
+        cout << param->getConfig() << ":\t" << param->getVal() << param->getUnit() << "\n";
     }
-    cout << "Wert: " << optimum.second << "\n";
+    cout << "Value: " << optimum << "\n";
 }
 
 void StatusBar::printStatus(Status *object) {
     cout << object->getName() << "\n";
     cout << object->getStatus() << "\n";
+}
+
+void StatusBar::printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top) {
+    cout << LARGE_DIVIDER;
+    size_t i = top.size();
+    for (auto &result: std::ranges::reverse_view(top)) {
+        cout << i-- << ". Result\n";
+        printResult(result.first, result.second.first);
+        cout << "Path to result files: " << result.second.second << "\n";
+        cout << SMALL_DIVIDER;
+    }
+    for (const auto &result: top) {
+        cout << ++i << ".\t" << result.second.first << "\n";
+    }
+    cout.flush();
 }

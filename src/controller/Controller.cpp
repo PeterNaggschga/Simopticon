@@ -124,7 +124,9 @@ Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
         stepState.next();
 
         for (const auto &entry: simResults) {
-            valueMap->insert(entry.first, entry.second);
+            if (!aborted) {
+                valueMap->insert(entry.first, entry.second);
+            }
             topResults.insert(make_pair(entry.first, vecToResult[entry.first].first));
         }
 
@@ -153,6 +155,11 @@ void Controller::run() {
     optimizer->runOptimization();
     statusInterval = milliseconds(0);
     statusThread.join();
+    list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top;
+    for (const auto &entry: valueMap->getTopVals()) {
+        top.emplace_back(entry.first, make_pair(entry.second, topResults[entry.first]));
+    }
+    StatusBar::printResults(top);
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
@@ -206,5 +213,6 @@ void Controller::updateStatus() {
 }
 
 void Controller::abort() {
+    Abortable::abort();
     optimizer->abort();
 }
