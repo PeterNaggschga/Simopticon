@@ -3,6 +3,8 @@
 {
   // SimulationController-related Options
   "controller": {
+    // minimal time between status updates in seconds
+    "updateInterval": 2,
     // number of optimal values to be presented,
     "nrTopEntries": 10,
     // keep resultfiles of {nrTopEntries} best runs,
