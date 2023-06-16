@@ -10,8 +10,7 @@ ConstantHeadway::ConstantHeadway(unsigned int nrThreads, const filesystem::path 
 }
 
 map<pair<filesystem::path, set<runId>>, functionValue>
-ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults,
-                               unsigned int pipelineId) {
+ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults) {
     usedThreads = min((size_t) NR_THREADS, experimentResults.size());
     map<pair<filesystem::path, set<runId>>, functionValue> result;
 
@@ -54,9 +53,8 @@ ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &ex
     return result;
 }
 
-functionValue ConstantHeadway::processOutput(filesystem::path path, set<runId> experimentIds, unsigned int pipelineId) {
-    return processOutput(set<pair<filesystem::path, set<runId>>>({make_pair(path, experimentIds)}),
-                         pipelineId).begin()->second;
+functionValue ConstantHeadway::processOutput(filesystem::path path, set<runId> experimentIds) {
+    return processOutput(set<pair<filesystem::path, set<runId>>>({make_pair(path, experimentIds)})).begin()->second;
 }
 
 PyObject *ConstantHeadway::secureValue(PyObject *object) {

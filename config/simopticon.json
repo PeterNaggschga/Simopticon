@@ -29,8 +29,6 @@
     // pipeline to be used,
     "pipeline": "ConstantHeadway",
     // config of the used pipeline,
-    "config": "pipelines/constant_headway.json",
-    // id of the used pipeline,
-    "id": 0
+    "config": "pipelines/constant_headway.json"
   }
 }

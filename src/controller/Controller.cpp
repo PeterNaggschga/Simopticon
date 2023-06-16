@@ -91,8 +91,6 @@ Controller::Controller(const filesystem::path &configPath) {
         string omnetppDirectory = pipelineConfig.at("omnetppDirectory").get<string>();
         setenv("OMNETPP_HOME", omnetppDirectory.c_str(), true);
 
-        pipelineId = baseConfig.at("pipeline").at("id").get<unsigned int>();
-
         unsigned int nrThreads = pipelineConfig.at("nrThreads").get<unsigned int>();
         filesystem::path scriptPath(pipelineConfig.at("pythonScript").get<string>());
         pipeline = unique_ptr<Pipeline>(new ConstantHeadway(nrThreads, scriptPath));
@@ -177,7 +175,7 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Cont
     for (const auto &entry: simulationResults) {
         resultFiles.insert(entry.second);
     }
-    auto evaluation = pipeline->processOutput(resultFiles, pipelineId);
+    auto evaluation = pipeline->processOutput(resultFiles);
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
         result.insert(make_pair(entry.first, evaluation[entry.second]));

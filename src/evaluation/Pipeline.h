@@ -14,10 +14,10 @@ class Pipeline : public Status {
 public:
     virtual ~Pipeline() = default;
 
-    virtual functionValue processOutput(filesystem::path path, set<runId> experimentIds, unsigned int pipelineId) = 0;
+    virtual functionValue processOutput(filesystem::path path, set<runId> experimentIds) = 0;
 
     virtual map<pair<filesystem::path, set<runId>>, functionValue>
-    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults, unsigned int pipelineId);
+    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults);
 
     string getName() override;
 

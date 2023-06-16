@@ -1,10 +1,10 @@
 #include "Pipeline.h"
 
 map<pair<filesystem::path, set<runId>>, functionValue>
-Pipeline::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults, unsigned int pipelineId) {
+Pipeline::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults) {
     map<pair<filesystem::path, set<runId>>, functionValue> result;
     for (const auto &entry: experimentResults) {
-        result.insert(make_pair(entry, processOutput(entry.first, entry.second, pipelineId)));
+        result.insert(make_pair(entry, processOutput(entry.first, entry.second)));
     }
     return result;
 }

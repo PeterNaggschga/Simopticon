@@ -27,7 +27,6 @@ class Controller : public Abortable {
 private:
     bool keepFiles;
     map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
-    unsigned int pipelineId;
 
     struct stepstate {
         bool stepChanged;

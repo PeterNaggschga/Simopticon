@@ -22,10 +22,10 @@ private:
 public:
     ConstantHeadway(unsigned int nrThreads, const filesystem::path &pathToScript);
 
-    functionValue processOutput(filesystem::path path, set<runId> experimentIds, unsigned int pipelineId) override;
+    functionValue processOutput(filesystem::path path, set<runId> experimentIds) override;
 
     map<pair<filesystem::path, set<runId>>, functionValue>
-    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults, unsigned int pipelineId) override;
+    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults) override;
 
     string getName() override;
 
