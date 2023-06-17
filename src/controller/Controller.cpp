@@ -175,10 +175,10 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Cont
     for (const auto &entry: simulationResults) {
         resultFiles.insert(entry.second);
     }
-    auto evaluation = evaluation->processOutput(resultFiles);
+    auto evaluationResult = evaluation->processOutput(resultFiles);
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
-        result.insert(make_pair(entry.first, evaluation[entry.second]));
+        result.insert(make_pair(entry.first, evaluationResult[entry.second]));
     }
     updateStatus();
     return result;
