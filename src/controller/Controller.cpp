@@ -32,8 +32,8 @@ Controller::Controller(const filesystem::path &configPath) {
     json optimizerConfig = getConfigByPath(configPath.parent_path(),
                                            baseConfig.at("optimizer").at("config").get<string>());
     json runnerConfig = getConfigByPath(configPath.parent_path(), baseConfig.at("runner").at("config").get<string>());
-    json pipelineConfig = getConfigByPath(configPath.parent_path(),
-                                          baseConfig.at("pipeline").at("config").get<string>());
+    json evalConfig = getConfigByPath(configPath.parent_path(),
+                                      baseConfig.at("evaluation").at("config").get<string>());
 
     // Controller settings
     keepFiles = baseConfig.at("controller").at("keepResultFiles").get<bool>();
@@ -85,15 +85,15 @@ Controller::Controller(const filesystem::path &configPath) {
         throw runtime_error("SimulationRunner not found: " + run);
     }
 
-    // Pipeline settings
-    string pipe = baseConfig.at("pipeline").at("pipeline").get<string>();
-    if (pipe == "ConstantHeadway") {
-        string omnetppDirectory = pipelineConfig.at("omnetppDirectory").get<string>();
+    // Evaluation settings
+    string eval = baseConfig.at("evaluation").at("evaluation").get<string>();
+    if (eval == "ConstantHeadway") {
+        string omnetppDirectory = evalConfig.at("omnetppDirectory").get<string>();
         setenv("OMNETPP_HOME", omnetppDirectory.c_str(), true);
 
-        unsigned int nrThreads = pipelineConfig.at("nrThreads").get<unsigned int>();
-        filesystem::path scriptPath(pipelineConfig.at("pythonScript").get<string>());
-        pipeline = unique_ptr<Pipeline>(new ConstantHeadway(nrThreads, scriptPath));
+        unsigned int nrThreads = evalConfig.at("nrThreads").get<unsigned int>();
+        filesystem::path scriptPath(evalConfig.at("pythonScript").get<string>());
+        evaluation = unique_ptr<Evaluation>(new ConstantHeadway(nrThreads, scriptPath));
     } else {
         throw runtime_error("SimulationRunner not found: " + run);
     }
@@ -175,7 +175,7 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Cont
     for (const auto &entry: simulationResults) {
         resultFiles.insert(entry.second);
     }
-    auto evaluation = pipeline->processOutput(resultFiles);
+    auto evaluation = evaluation->processOutput(resultFiles);
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
         result.insert(make_pair(entry.first, evaluation[entry.second]));
@@ -207,7 +207,7 @@ void Controller::updateStatus() {
             valueMap->getSize() != 0 ? valueMap->getTopVals().front() : make_pair(vector<shared_ptr<Parameter>>(),
                                                                                   (functionValue) INFINITY);
     bool stateChanged = stepState.stepChanged;
-    statusBar.updateStatus(optimizer.get(), runner.get(), pipeline.get(), p, stateChanged, stepState.get());
+    statusBar.updateStatus(optimizer.get(), runner.get(), evaluation.get(), p, stateChanged, stepState.get());
 }
 
 void Controller::abort() {

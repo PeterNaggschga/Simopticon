@@ -6,7 +6,7 @@
 #include "../ComparisonFunctions.h"
 #include "../optimizer/Optimizer.h"
 #include "../runner/SimulationRunner.h"
-#include "../evaluation/Pipeline.h"
+#include "../evaluation/Evaluation.h"
 #include "../parameters/Parameter.h"
 #include "../status/StatusBar.h"
 #include "../utils/Abortable.h"
@@ -59,7 +59,7 @@ protected:
     StatusBar statusBar;
     unique_ptr<Optimizer> optimizer;
     unique_ptr<SimulationRunner> runner;
-    unique_ptr<Pipeline> pipeline;
+    unique_ptr<Evaluation> evaluation;
     unique_ptr<ValueMap> valueMap;
 
 public:

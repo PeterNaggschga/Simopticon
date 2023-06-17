@@ -13,13 +13,15 @@
 class Parameter;
 class Optimizer;
 class SimulationRunner;
-class Pipeline;
+
+class Evaluation;
+
 class ValueMap;
 
 using namespace std;
 
 enum step : char {
-    INIT = -1, OPTIMIZER = 0, RUNNER = 1, PIPELINE = 2
+    INIT = -1, OPTIMIZER = 0, RUNNER = 1, EVALUATION = 2
 };
 
 class StatusBar {
@@ -36,7 +38,7 @@ private:
     static void printStatus(Status *object);
 
 public:
-    void updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
+    void updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluation *eval,
                       const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged = false,
                       step currentStep = INIT);
 

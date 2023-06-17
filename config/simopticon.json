@@ -26,11 +26,11 @@
     // config of the used runner,
     "config": "runners/plexe.json"
   },
-  // Pipeline-related Options
-  "pipeline": {
-    // pipeline to be used,
-    "pipeline": "ConstantHeadway",
-    // config of the used pipeline,
-    "config": "pipelines/constant_headway.json"
+  // Evaluation-related Options
+  "evaluation": {
+    // evaluation to be used,
+    "evaluation": "ConstantHeadway",
+    // config of the used evaluation
+    "config": "evaluations/constant_headway.json"
   }
 }

@@ -2,7 +2,7 @@
 
 #include "../optimizer/Optimizer.h"
 #include "../runner/SimulationRunner.h"
-#include "../evaluation/Pipeline.h"
+#include "../evaluation/Evaluation.h"
 
 #include <iostream>
 #include <ranges>
@@ -11,7 +11,7 @@ const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
 
 const string StatusBar::SMALL_DIVIDER = string(70, '-') + "\n";
 
-void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline *pipe,
+void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluation *eval,
                              const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged,
                              step currentStep) {
     currentStep = stepChanged ? currentStep : lastStep;
@@ -24,7 +24,7 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
         cout << SMALL_DIVIDER;
         printStatus(static_cast<Status *>(runner));
         cout << SMALL_DIVIDER;
-        printStatus(static_cast<Status *>(pipe));
+        printStatus(static_cast<Status *>(eval));
         cout << SMALL_DIVIDER;
         cout << "Status: ";
         lastStatus = "";
@@ -41,8 +41,8 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Pipeline 
         case RUNNER:
             stat = static_cast<Status *>(runner);
             break;
-        case PIPELINE:
-            stat = static_cast<Status *>(pipe);
+        case EVALUATION:
+            stat = static_cast<Status *>(eval);
             break;
     }
     lastStatus = stat->getStatusBar();

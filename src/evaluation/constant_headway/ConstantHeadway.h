@@ -1,7 +1,7 @@
 #ifndef SIMOPTICON_CONSTANTHEADWAY_H
 #define SIMOPTICON_CONSTANTHEADWAY_H
 
-#include "../Pipeline.h"
+#include "../Evaluation.h"
 #include "../../utils/PythonScript.h"
 
 #pragma clang diagnostic push
@@ -12,7 +12,7 @@
 
 #pragma clang diagnostic pop
 
-class ConstantHeadway : public Pipeline, public PythonScript {
+class ConstantHeadway : public Evaluation, public PythonScript {
 private:
     const unsigned int NR_THREADS;
     unsigned int usedThreads = 0;

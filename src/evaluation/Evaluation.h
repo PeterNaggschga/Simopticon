@@ -1,5 +1,5 @@
-#ifndef SIMOPTICON_PIPELINE_H
-#define SIMOPTICON_PIPELINE_H
+#ifndef SIMOPTICON_EVALUATION_H
+#define SIMOPTICON_EVALUATION_H
 
 #include "../Types.h"
 #include "../status/Status.h"
@@ -10,9 +10,9 @@
 
 using namespace std;
 
-class Pipeline : public Status {
+class Evaluation : public Status {
 public:
-    virtual ~Pipeline() = default;
+    virtual ~Evaluation() = default;
 
     virtual functionValue processOutput(filesystem::path path, set<runId> experimentIds) = 0;
 
@@ -28,4 +28,4 @@ public:
 };
 
 
-#endif //SIMOPTICON_PIPELINE_H
+#endif //SIMOPTICON_EVALUATION_H
