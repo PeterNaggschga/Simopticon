@@ -8,7 +8,9 @@
 
 class StubController : public Controller {
 private:
-    function<functionValue(vector<shared_ptr<Parameter>>)> f;
+    static map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> functions;
+
+    const function<functionValue(vector<shared_ptr<Parameter>>)> f;
 
     map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) override;
@@ -19,8 +21,7 @@ private:
     void removeOldResultfiles() override;
 
 public:
-    explicit StubController(function<functionValue(vector<shared_ptr<Parameter>>)> f,
-                            const filesystem::path &configPath); //TODO: config für Stubcontroller hinzufüen
+    StubController(const filesystem::path &configPath, const string &function);
 
 };
 

@@ -1,4 +1,5 @@
 #include "controller/Controller.h"
+#include "controller/StubController.h"
 
 #include <iostream>
 #include <csignal>
@@ -11,10 +12,15 @@ void interruptHandler([[maybe_unused]] int s) {
 }
 
 int main(int argc, char **argv) {
-    if (argc != 2) {
+    if (argc < 2) {
         throw invalid_argument("You need to specify a path to the config.json file as argument!");
     }
-    ctr = make_unique<Controller>(argv[1]);
+
+    if (argc == 2) {
+        ctr = make_unique<Controller>(argv[1]);
+    } else {
+        ctr = make_unique<StubController>(argv[1], argv[2]);
+    }
 
     struct sigaction intHandler{};
     intHandler.sa_handler = interruptHandler;
