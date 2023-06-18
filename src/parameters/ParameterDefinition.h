@@ -10,10 +10,10 @@ using namespace std;
 
 class ParameterDefinition {
 private:
-    coordinate min;
-    coordinate max;
-    string unit;
-    string config;
+    const coordinate min;
+    const coordinate max;
+    const string unit;
+    const string config;
 
 public:
     ParameterDefinition(coordinate min, coordinate max, string config, string unit = "");
