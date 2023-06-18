@@ -19,7 +19,7 @@ private:
     set<functionValue *, CmpPtrFunctionvalue> upperValues;
     set<functionValue *, CmpPtrFunctionvalue> lowerValues;
 
-    unsigned int topEntries;
+    const unsigned int topEntries;
     set<pair<const vector<shared_ptr<Parameter>>, functionValue>, CmpPairVectorSharedParameterFunctionvalue> topVals;
 
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> values;
