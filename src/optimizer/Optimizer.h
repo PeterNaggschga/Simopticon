@@ -26,12 +26,12 @@ private:
 protected:
     list<shared_ptr<ParameterDefinition>> parameters;
 
+    map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
+
 public:
     Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params);
 
     virtual ~Optimizer() = default;
-
-    map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
 
     virtual void runOptimization() = 0;
 
