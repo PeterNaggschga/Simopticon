@@ -6,11 +6,7 @@
 HyRect::HyRect(dimension D, position pos, depth t) : D(D), pos(pos), t(t) {
 }
 
-array<shared_ptr<HyRect>, 3> HyRect::divide(const shared_ptr<HyRect> &ptr) {
-    if (split != 0) {
-        throw logic_error("HyRect is already divided!");
-    }
-    split = t % D + 1;
+array<shared_ptr<HyRect>, 3> HyRect::divide(const shared_ptr<HyRect> &ptr) const {
     shared_ptr<HyRect> left(new ChildRect(D, position::LEFT, ptr));
     shared_ptr<HyRect> mid(new ChildRect(D, position::MIDDLE, ptr));
     shared_ptr<HyRect> right(new ChildRect(D, position::RIGHT, ptr));
@@ -25,7 +21,7 @@ dirCoordinate HyRect::getDiagonalLength() const {
 }
 
 dimension HyRect::getSplitDim() const {
-    return split;
+    return t % D + 1;
 }
 
 position HyRect::getPos() const {

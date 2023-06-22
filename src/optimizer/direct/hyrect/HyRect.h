@@ -23,13 +23,12 @@ protected:
     dimension D;
     depth t;
     position pos;
-    dimension split = 0;
     functionValue avgValue = INFINITY;
 
 public:
     HyRect(dimension D, position pos, depth t);
 
-    array<shared_ptr<HyRect>, 3> divide(const shared_ptr<HyRect> &ptr);
+    [[nodiscard]] array<shared_ptr<HyRect>, 3> divide(const shared_ptr<HyRect> &ptr) const;
 
     virtual array<vector<dirCoordinate>, 2> getSamplingVertices() = 0;
 
