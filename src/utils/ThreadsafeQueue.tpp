@@ -1,19 +1,19 @@
 #include "ThreadsafeQueue.h"
 
-template<class T>
-void ThreadsafeQueue<T>::push(T val) {
+template<class Key>
+void ThreadsafeQueue<Key>::push(Key val) {
     queueLock.lock();
     safeQueue.push(val);
     startSize = safeQueue.size();
     queueLock.unlock();
 }
 
-template<class T>
-pair<T, bool> ThreadsafeQueue<T>::pop() {
+template<class Key>
+pair<Key, bool> ThreadsafeQueue<Key>::pop() {
     queueLock.lock();
     if (safeQueue.empty()) {
         queueLock.unlock();
-        return make_pair(T{}, false);
+        return make_pair(Key{}, false);
     }
     auto val = safeQueue.front();
     safeQueue.pop();
@@ -21,16 +21,16 @@ pair<T, bool> ThreadsafeQueue<T>::pop() {
     return make_pair(val, true);
 }
 
-template<class T>
-size_t ThreadsafeQueue<T>::getStartSize() {
+template<class Key>
+size_t ThreadsafeQueue<Key>::getStartSize() {
     queueLock.lock();
     size_t res = startSize;
     queueLock.unlock();
     return res;
 }
 
-template<class T>
-size_t ThreadsafeQueue<T>::getSize() {
+template<class Key>
+size_t ThreadsafeQueue<Key>::getSize() {
     queueLock.lock();
     size_t res = safeQueue.size();
     queueLock.unlock();

@@ -7,17 +7,17 @@
 
 using namespace std;
 
-template<class T>
+template<class Key>
 class ThreadsafeQueue {
 private:
-    queue<T> safeQueue;
+    queue<Key> safeQueue;
     mutex queueLock;
     size_t startSize = 0;
 
 public:
-    void push(T val);
+    void push(Key val);
 
-    pair<T, bool> pop();
+    pair<Key, bool> pop();
 
     [[nodiscard]] size_t getStartSize();
 
