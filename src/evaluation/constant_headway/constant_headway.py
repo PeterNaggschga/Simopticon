@@ -15,7 +15,7 @@ from omnetpp.scave import results as res, vectorops as ops
 
 def get_last_value(df: pd.DataFrame) -> np.float128:
     vec = list(df.iloc[0]["vecvalue"])
-    return vec[len(vec) - 1]
+    return np.float128(vec[len(vec) - 1])
 
 
 # je Auto differenz bilden, quadrieren, durchschnitt
@@ -48,8 +48,7 @@ def get_constant_headway(run_ids: list[str]) -> np.float128:
             vecs = ops.aggregate(vecs, "sum")
             reps.append(vecs)
         scenes.append(ops.aggregate(pd.concat(reps, ignore_index=True)))
-    scenes = list(map(get_last_value, scenes))
-    return np.float128(sum(scenes))
+    return get_last_value(ops.aggregate(pd.concat(scenes, ignore_index=True)))
 
 
 def multithreaded(threads: int, directory: str, run_ids: list[list[str]]) -> list[np.float128]:
