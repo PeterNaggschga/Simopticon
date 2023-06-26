@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import collections
 import os
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -26,29 +25,22 @@ def get_last_value(df: pd.DataFrame) -> np.float128:
 def get_constant_headway(run_ids: list[str]) -> np.float128:
     run_filter = f"(run =~ {run_ids[0]}"
     for i in range(1, len(run_ids)):
-        run_filter += f" OR run =~ {run_ids[0]}"
+        run_filter += f" OR run =~ {run_ids[i]}"
     run_filter += ")"
-
-    runs = collections.defaultdict(set)
-    for run_id in run_ids:
-        runs[run_id.split('-')[0]].add(run_id)
 
     name_filter = f"{run_filter} AND **.scenario.caccSpacing"
     headway = float(res.get_param_assignments(name_filter).iloc[0]["value"][0])
 
-    scenes = []
-    for scenario in runs.keys():
-        reps = []
-        for repetition in runs[scenario]:
-            name_filter = f"run =~ {repetition} AND distance AND module =~ **.node[*].appl AND NOT module =~ **.node[" \
-                          f"0].appl"
-            vecs = res.get_vectors(name_filter)
-            vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
-            vecs = ops.mean(vecs)
-            vecs = ops.aggregate(vecs, "sum")
-            reps.append(vecs)
-        scenes.append(ops.aggregate(pd.concat(reps, ignore_index=True)))
-    return get_last_value(ops.aggregate(pd.concat(scenes, ignore_index=True)))
+    values = np.empty(len(run_ids), dtype=np.float128)
+    for i in range(len(run_ids)):
+        name_filter = f"run =~ {run_ids[i]} AND distance AND module =~ **.node[*].appl AND NOT module =~ **.node[0]" \
+                      f".appl"
+        vecs = res.get_vectors(name_filter)
+        vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
+        vecs = ops.mean(vecs)
+        vecs = ops.aggregate(vecs, "sum")
+        values.put(i, get_last_value(vecs))
+    return values.mean(dtype=np.float128)
 
 
 def multithreaded(threads: int, directory: str, run_ids: list[list[str]]) -> list[np.float128]:
