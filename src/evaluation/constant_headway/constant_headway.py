@@ -36,9 +36,8 @@ def get_constant_headway(run_ids: list[str]) -> np.float128:
     name_filter = f"{run_filter} AND **.scenario.caccSpacing"
     headway = float(res.get_param_assignments(name_filter).iloc[0]["value"][0])
 
-    scenes = []
+    value = (np.float128(0), 0)
     for scenario in runs.keys():
-        reps = []
         for repetition in runs[scenario]:
             name_filter = f"run =~ {repetition} AND distance AND module =~ **.node[*].appl AND NOT module =~ **.node[" \
                           f"0].appl"
@@ -46,9 +45,8 @@ def get_constant_headway(run_ids: list[str]) -> np.float128:
             vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
             vecs = ops.mean(vecs)
             vecs = ops.aggregate(vecs, "sum")
-            reps.append(vecs)
-        scenes.append(ops.aggregate(pd.concat(reps, ignore_index=True)))
-    return get_last_value(ops.aggregate(pd.concat(scenes, ignore_index=True)))
+            value = (value[0] + get_last_value(vecs), value[1] + 1)
+    return value[0] / value[1]
 
 
 def multithreaded(threads: int, directory: str, run_ids: list[list[str]]) -> list[np.float128]:
