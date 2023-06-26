@@ -43,8 +43,8 @@ def get_constant_headway(run_ids: list[str]) -> np.float128:
             name_filter = f"run =~ {repetition} AND distance AND module =~ **.node[*].appl AND NOT module =~ **.node[" \
                           f"0].appl"
             vecs = res.get_vectors(name_filter)
-            vecs = ops.expression(vecs.loc[0:7], f"(y - {headway}) ** 2")
-            vecs = ops.mean(vecs.loc[0:7])
+            vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
+            vecs = ops.mean(vecs)
             vecs = ops.aggregate(vecs, "sum")
             reps.append(vecs)
         scenes.append(ops.aggregate(pd.concat(reps, ignore_index=True)))
