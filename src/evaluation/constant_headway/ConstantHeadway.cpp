@@ -38,7 +38,9 @@ ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &ex
     if (pValue) {
         Py_ssize_t j = 0;
         for (const auto &entry: experimentResults) {
-            functionValue val = PyFloat_AsDouble(secureValue(PyList_GetItem(pValue, j)));
+            char *bytes = PyByteArray_AsString(PyByteArray_FromObject(secureValue(PyList_GetItem(pValue, j))));
+            functionValue val;
+            memmove(&val, bytes, sizeof(functionValue));
             result.insert(make_pair(entry, val));
             j++;
         }

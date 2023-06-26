@@ -13,7 +13,7 @@ sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')
 from omnetpp.scave import results as res, vectorops as ops
 
 
-def get_last_value(df: pd.DataFrame) -> float:
+def get_last_value(df: pd.DataFrame) -> np.float128:
     vec = list(df.iloc[0]["vecvalue"])
     return vec[len(vec) - 1]
 
