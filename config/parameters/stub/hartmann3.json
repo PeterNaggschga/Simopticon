@@ -1,0 +1,16 @@
+// Definition of parameters for the hartmann function in 3 dimensions
+
+[
+  {
+    "min": 0,
+    "max": 1
+  },
+  {
+    "min": 0,
+    "max": 1
+  },
+  {
+    "min": 0,
+    "max": 1
+  }
+]
