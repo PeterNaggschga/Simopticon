@@ -16,7 +16,7 @@ private:
     const string config;
 
 public:
-    ParameterDefinition(coordinate min, coordinate max, string config, string unit = "");
+    ParameterDefinition(coordinate min, coordinate max, string config = "", string unit = "");
 
     [[nodiscard]] coordinate getMin() const;
 
