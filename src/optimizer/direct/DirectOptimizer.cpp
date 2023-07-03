@@ -74,8 +74,8 @@ list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(size_t nrRects, func
 
     optimalPoints.clear();
     for (const auto &entry: kValues) {
-        if (entry.second == INFINITY || estimatedValue(entry.first, entry.second) <=
-                                        phi - level.getEpsilon() * abs(phi - getValueMap().getMedian())) {
+        if (estimatedValue(entry.first, entry.second) <=
+            phi - level.getEpsilon() * abs(phi - getValueMap().getMedian())) {
             optimalPoints.push_back(entry.first);
         }
     }
