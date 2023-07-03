@@ -56,7 +56,7 @@ map<vector<dirCoordinate>, functionValue> DirectOptimizer::getValues(const list<
 }
 
 functionValue DirectOptimizer::estimatedValue(const shared_ptr<HyRect> &rect, double k) {
-    return rect->getAvgValue() - k * rect->getDiagonalLength() / 2;
+    return rect->getAvgValue() - k * rect->getDiagonalLength() / 2 * min(1.0, log2(rect->getD()));
 }
 
 list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(size_t nrRects, functionValue phi) {
