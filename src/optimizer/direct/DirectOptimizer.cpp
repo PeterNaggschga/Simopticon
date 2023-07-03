@@ -62,10 +62,11 @@ list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(size_t nrRects, func
     list<shared_ptr<HyRect>> optimalPoints;
     size_t size = level.getRectSubsetSize(nrRects);
     for (const auto &entry: activeRects) {
-        size -= entry.second.size();
         optimalPoints.emplace_back(*entry.second.begin());
-        if (size <= 0) {
+        if (size <= entry.second.size()) {
             break;
+        } else {
+            size -= entry.second.size();
         }
     }
 
