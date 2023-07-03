@@ -36,7 +36,7 @@ private:
 
     void addActiveRects(const list<shared_ptr<HyRect>> &rects);
 
-    void removeActiveRect(const shared_ptr<HyRect> &rect);
+    void removeActiveRects(const list<shared_ptr<HyRect>> &rects);
 
 public:
     DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con);
