@@ -14,7 +14,10 @@ array<shared_ptr<HyRect>, 3> HyRect::divide(const shared_ptr<HyRect> &ptr) const
 }
 
 dirCoordinate HyRect::getDiagonalLength() const {
-    return pow(3, (dimension) -(t / D)) * sqrt(D - 8 * (t % D) / 9.0);
+    auto longT = (long) t;
+    auto longD = (long) D;
+    return pow(3, -(longT / longD)) *
+           sqrt(functionValue((functionValue) D) - 8 * (longT % longD) / (functionValue) 9.0);
 }
 
 dimension HyRect::getSplitDim() const {
