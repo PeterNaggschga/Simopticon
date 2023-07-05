@@ -13,8 +13,8 @@ private:
     level currentLevel = l2_0;
 
 public:
-    constexpr static const double L2_EPSILON = 0.00001;
-    constexpr static const double L1_EPSILON = 0.0000001;
+    constexpr static const double L2_EPSILON = 1e-5;
+    constexpr static const double L1_EPSILON = 1e-7;
     constexpr static const double L0_EPSILON = 0;
 
     Levels() = default;
