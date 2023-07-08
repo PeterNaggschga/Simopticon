@@ -30,9 +30,24 @@ void DirectOptimizer::runOptimization() {
         }
         addActiveRects(newRects);
         removeActiveRects(oldRects);
-        l = getValueMap().getSize();
-        level.nextLevel();
+        static functionValue oldPhi = phi;
+        static unsigned char phaseIters = 0;
         phi = getValueMap().getTopVals().front().second;
+        phaseIters++;
+        if (level.isGlobal()) {
+            if (phi < oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()) || phaseIters > 21) {
+                level.setGlobal(false);
+                oldPhi = phi;
+                phaseIters = 0;
+            }
+        }
+        if (!level.isGlobal() && phaseIters > 7) {
+            level.setGlobal(phi > oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()));
+            oldPhi = phi;
+            phaseIters = 0;
+        }
+        level.nextLevel();
+        l = getValueMap().getSize();
         iterations++;
     }
 }
@@ -60,16 +75,7 @@ functionValue DirectOptimizer::estimatedValue(const shared_ptr<HyRect> &rect, do
 }
 
 list<shared_ptr<HyRect>> DirectOptimizer::optimalRectangles(size_t nrRects, functionValue phi) {
-    list<shared_ptr<HyRect>> optimalPoints;
-    size_t size = level.getRectSubsetSize(nrRects);
-    for (const auto &entry: activeRects) {
-        optimalPoints.emplace_back(*entry.second.begin());
-        if (size <= entry.second.size()) {
-            break;
-        } else {
-            size -= entry.second.size();
-        }
-    }
+    list<shared_ptr<HyRect>> optimalPoints = level.getRectSubset(activeRects, nrRects);
 
     list<pair<shared_ptr<HyRect>, double>> kValues = GrahamScan::scan(optimalPoints);
 
