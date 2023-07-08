@@ -23,8 +23,8 @@ functionValue shekel(int m, const vector<shared_ptr<Parameter>> &v) {
     return val;
 }
 
-functionValue hartmann(const vector<vector<functionValue>> &A, const vector<vector<functionValue>> &P,
-                       const vector<shared_ptr<Parameter>> &v) {
+functionValue hartman(const vector<vector<functionValue>> &A, const vector<vector<functionValue>> &P,
+                      const vector<shared_ptr<Parameter>> &v) {
     const vector<functionValue> alpha = {1, 1.2, 3, 3.2};
     functionValue val = 0;
     for (int i = 0; i < alpha.size(); ++i) {
@@ -54,11 +54,11 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
         make_pair("shekel10", [](const vector<shared_ptr<Parameter>> &v) {
             return shekel(10, v);
         }),
-        make_pair("hartmann3", [](const vector<shared_ptr<Parameter>> &v) {
+        make_pair("hartman3", [](const vector<shared_ptr<Parameter>> &v) {
             const vector<vector<functionValue>> A = {
-                    {3, 10, 30},
+                    {3,   10, 30},
                     {0.1, 10, 35},
-                    {3, 10, 30},
+                    {3,   10, 30},
                     {0.1, 10, 35}
             };
             const vector<vector<functionValue>> P = {
@@ -67,14 +67,14 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
                     {0.1091, 0.8732, 0.5547},
                     {0.0381, 0.5743, 0.8828}
             };
-            return hartmann(A, P, v);
+            return hartman(A, P, v);
         }),
-        make_pair("hartmann6", [](const vector<shared_ptr<Parameter>> &v) {
+        make_pair("hartman6", [](const vector<shared_ptr<Parameter>> &v) {
             const vector<vector<functionValue>> A = {
-                    {10, 3, 17, 3.5, 1.7, 8},
-                    {0.05, 10, 17, 0.1, 8, 14},
-                    {3, 3.5, 1.7, 10, 17, 8},
-                    {17, 8, 0.05, 10, 0.1, 14}
+                    {10,   3,   17,   3.5, 1.7, 8},
+                    {0.05, 10,  17,   0.1, 8,   14},
+                    {3,    3.5, 1.7,  10,  17,  8},
+                    {17,   8,   0.05, 10,  0.1, 14}
             };
             const vector<vector<functionValue>> P = {
                     {0.1312, 0.1696, 0.5569, 0.0124, 0.8283, 0.5886},
@@ -82,7 +82,7 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
                     {0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650},
                     {0.4047, 0.8828, 0.8732, 0.5743, 0.1091, 0.0381}
             };
-            return hartmann(A, P, v);
+            return hartman(A, P, v);
         }),
         make_pair("branin", [](const vector<shared_ptr<Parameter>> &v) {
             functionValue res = pow(v[1]->getVal() - ((functionValue) 5.1 / (4 * pow((functionValue) M_PI, 2))) *
