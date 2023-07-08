@@ -11,6 +11,7 @@ void ValueMap::updateMap() {
     if (tba.empty()) {
         return;
     }
+    operationsLock.lock();
     if (upperValues.empty()) {
         auto entry = tba.begin();
         addValue(*entry, upperValues);
@@ -38,6 +39,7 @@ void ValueMap::updateMap() {
         upperValues.insert(it, lowerValues.end());
         lowerValues.erase(it, lowerValues.end());
     }
+    operationsLock.unlock();
 }
 
 void ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
@@ -63,10 +65,12 @@ void ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue>
 
 functionValue ValueMap::query(const vector<shared_ptr<Parameter>> &params) {
     updateMap();
+    operationsLock.lock();
     auto res = values.find(params);
     if (res == values.end()) {
         throw invalid_argument("Param combination not present!");
     }
+    operationsLock.unlock();
     return res->second;
 }
 
@@ -81,7 +85,10 @@ bool ValueMap::isKnown(const vector<shared_ptr<Parameter>> &cords) {
         return false;
     }
     updateMap();
-    return values.find(cords) != values.end();
+    operationsLock.lock();
+    bool res = values.find(cords) != values.end();
+    operationsLock.unlock();
+    return res;
 }
 
 functionValue ValueMap::getMedian() {
@@ -89,8 +96,11 @@ functionValue ValueMap::getMedian() {
         return 0;
     }
     updateMap();
-    return lowerValues.size() == upperValues.size() ? (**lowerValues.rbegin() + **upperValues.begin()) / 2
-                                                    : **upperValues.begin();
+    operationsLock.lock();
+    functionValue res = lowerValues.size() == upperValues.size() ? (**lowerValues.rbegin() + **upperValues.begin()) / 2
+                                                                 : **upperValues.begin();
+    operationsLock.unlock();
+    return res;
 }
 
 size_t ValueMap::getSize() const {

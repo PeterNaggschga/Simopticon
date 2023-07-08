@@ -16,6 +16,8 @@ using namespace std;
 
 class ValueMap {
 private:
+    mutex operationsLock;
+
     set<functionValue *, CmpPtrFunctionvalue> upperValues;
     set<functionValue *, CmpPtrFunctionvalue> lowerValues;
 
