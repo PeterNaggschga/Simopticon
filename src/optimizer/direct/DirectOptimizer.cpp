@@ -8,8 +8,10 @@
 #include <memory>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params,
-                                 StoppingCondition con) : Optimizer(ctrl, params), D(params.size()), stopCon(con),
-                                                          normalizer(ParameterNormalizer(params)) {
+                                 StoppingCondition con, Levels levels) : Optimizer(ctrl, params), D(params.size()),
+                                                                         stopCon(con),
+                                                                         normalizer(ParameterNormalizer(params)),
+                                                                         level(levels) {
 }
 
 void DirectOptimizer::runOptimization() {

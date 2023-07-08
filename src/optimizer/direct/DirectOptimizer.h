@@ -23,7 +23,7 @@ private:
     const dimension D;
     size_t iterations = 0;
     StoppingCondition stopCon;
-    Levels level = Levels();
+    Levels level;
     ParameterNormalizer normalizer;
 
     map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>, greater<>> activeRects;
@@ -39,7 +39,8 @@ private:
     void removeActiveRects(const list<shared_ptr<HyRect>> &rects);
 
 public:
-    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con);
+    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con,
+                    Levels levels);
 
     void runOptimization() override;
 

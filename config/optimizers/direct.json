@@ -1,6 +1,8 @@
 // DirectOptimizer Config
 
 {
+  // Fraction of rectangles to be considered on level 0
+  "level0Size": 0.1,
   // StoppingCondition-related Options
   "stopCon": {
     // stop after n evaluations

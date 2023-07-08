@@ -5,6 +5,9 @@
 #include <cmath>
 #include <ranges>
 
+Levels::Levels(long double l0Size) : L0_SIZE(l0Size) {
+}
+
 unsigned char Levels::nextLevel() {
     if (!global) {
         currentLevel = static_cast<level>(((int) currentLevel + 1) % 8);

@@ -62,7 +62,8 @@ Controller::Controller(const filesystem::path &configPath) {
     string opt = baseConfig.at("optimizer").at("optimizer").get<string>();
     if (opt == "Direct") {
         optimizer = unique_ptr<Optimizer>(
-                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon"))));
+                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon")),
+                                    Levels(optimizerConfig.at("level0Size"))));
     } else {
         throw runtime_error("Optimzer not found: " + opt);
     }
