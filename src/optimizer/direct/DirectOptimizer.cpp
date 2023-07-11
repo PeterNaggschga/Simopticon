@@ -8,10 +8,9 @@
 #include <memory>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params,
-                                 StoppingCondition con, Levels levels) : Optimizer(ctrl, params), D(params.size()),
-                                                                         stopCon(con),
-                                                                         normalizer(ParameterNormalizer(params)),
-                                                                         level(levels) {
+                                 StoppingCondition con) : Optimizer(ctrl, params), D(params.size()),
+                                                          stopCon(con), normalizer(ParameterNormalizer(params)),
+                                                          level(Levels()) {
 }
 
 void DirectOptimizer::runOptimization() {
@@ -36,19 +35,19 @@ void DirectOptimizer::runOptimization() {
         static unsigned char phaseIters = 0;
         phi = getValueMap().getTopVals().front().second;
         phaseIters++;
+        level.nextLevel();
         if (level.isGlobal()) {
-            if (phi < oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()) || phaseIters > 21) {
+            if (phi < oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()) || phaseIters > 35) {
                 level.setGlobal(false);
                 oldPhi = phi;
                 phaseIters = 0;
             }
         }
-        if (!level.isGlobal() && phaseIters > 7) {
+        if (!level.isGlobal() && phaseIters > 3) {
             level.setGlobal(phi > oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()));
             oldPhi = phi;
             phaseIters = 0;
         }
-        level.nextLevel();
         l = getValueMap().getSize();
         iterations++;
     }

@@ -29,10 +29,10 @@ public:
 
     constexpr static const long double L3_SIZE = 0.5;
     constexpr static const long double L2_SIZE = 1;
-    constexpr static const long double L1_SIZE = 0.9;
-    const long double L0_SIZE;
+    constexpr static const long double L1_SIZE = 0.95;
+    constexpr static const long double L0_SIZE = 0.04;
 
-    explicit Levels(long double l0Size);
+    Levels() = default;
 
     unsigned char nextLevel();
 

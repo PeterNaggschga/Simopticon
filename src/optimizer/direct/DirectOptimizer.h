@@ -39,8 +39,7 @@ private:
     void removeActiveRects(const list<shared_ptr<HyRect>> &rects);
 
 public:
-    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con,
-                    Levels levels);
+    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con);
 
     void runOptimization() override;
 
