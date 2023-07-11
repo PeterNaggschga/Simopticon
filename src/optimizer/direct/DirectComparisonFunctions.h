@@ -5,7 +5,8 @@
 
 struct CmpSharedHyrect {
     bool operator()(const shared_ptr<HyRect> &a, const shared_ptr<HyRect> &b) const {
-        return a->getAvgValue() < b->getAvgValue();
+        return a->getAvgValue() == b->getAvgValue() ? a->getSamplingVertices() < b->getSamplingVertices() :
+               a->getAvgValue() < b->getAvgValue();
     }
 };
 
