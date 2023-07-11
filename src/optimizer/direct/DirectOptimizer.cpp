@@ -143,11 +143,7 @@ string DirectOptimizer::getName() {
 }
 
 string DirectOptimizer::getStatus() {
-    size_t m = 0;
-    for (const auto &entry: activeRects) {
-        m += entry.second.size();
-    }
-    string status = "Rectangles:\t\t\t" + to_string(m) + "\n";
+    string status = "Rectangles:\t\t\t" + to_string(getPartitionSize()) + "\n";
     status += "Iterations:\t\t\t" + to_string(iterations) + "\n";
     status += "Iterations without improvement:\t" + to_string(stopCon.getEvaluationsSinceImprov()) + "\n";
     status += "Level:\t\t\t\t" + to_string(level.getLevel());
@@ -157,4 +153,12 @@ string DirectOptimizer::getStatus() {
 
 string DirectOptimizer::getStatusBar() {
     return "Optimizer running...";
+}
+
+size_t DirectOptimizer::getPartitionSize() {
+    size_t size = 0;
+    for (const auto &entry: activeRects) {
+        size += entry.second.size();
+    }
+    return size;
 }

@@ -50,6 +50,7 @@ public:
 
     string getStatusBar() override;
 
+    size_t getPartitionSize();
 };
 
 
