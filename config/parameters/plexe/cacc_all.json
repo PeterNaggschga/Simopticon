@@ -16,11 +16,5 @@
     "min": 1,
     "max": 5,
     "config": "*.node[*].scenario.caccXi"
-  },
-  {
-    "min": 5,
-    "max": 7,
-    "config": "*.node[*].scenario.caccSpacing",
-    "unit": "m"
   }
 ]
