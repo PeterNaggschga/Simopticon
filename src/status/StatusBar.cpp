@@ -53,8 +53,15 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluatio
 }
 
 void StatusBar::printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum) {
+    unsigned int i = 1;
     for (const auto &param: cords) {
-        cout << param->getConfig() << ":\t" << param->getVal() << param->getUnit() << "\n";
+        if (param->getConfig().empty()) {
+            cout << "x" << i;
+        } else {
+            cout << param->getConfig();
+        }
+        cout << ":\t" << param->getVal() << param->getUnit() << "\n";
+        i++;
     }
     cout << "Value: " << optimum << "\n";
 }
