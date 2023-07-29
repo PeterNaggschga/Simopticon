@@ -43,6 +43,8 @@ public:
 
     [[nodiscard]] bool isTopValue(const vector<shared_ptr<Parameter>> &cords);
 
+    const map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> &getValues();
+
     [[nodiscard]] functionValue getMedian();
 
     [[nodiscard]] size_t getSize() const;

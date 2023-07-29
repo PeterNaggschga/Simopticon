@@ -25,6 +25,8 @@ private:
     StoppingCondition stopCon;
     Levels level;
     ParameterNormalizer normalizer;
+    bool trackProgress;
+    bool printValues;
 
     map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>, greater<>> activeRects;
 
@@ -38,8 +40,13 @@ private:
 
     void removeActiveRects(const list<shared_ptr<HyRect>> &rects);
 
+    void saveProgress(functionValue bestVal, size_t evaluations, size_t nrRects) const;
+
+    void saveValues();
+
 public:
-    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con);
+    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con,
+                    bool trackProgress, bool printValues);
 
     void runOptimization() override;
 

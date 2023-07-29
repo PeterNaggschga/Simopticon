@@ -61,8 +61,11 @@ Controller::Controller(const filesystem::path &configPath) {
     // Optimizer settings
     string opt = baseConfig.at("optimizer").at("optimizer").get<string>();
     if (opt == "Direct") {
+        bool trackProgress = optimizerConfig.at("output").at("progress");
+        bool printValues = optimizerConfig.at("output").at("values");
         optimizer = unique_ptr<Optimizer>(
-                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon"))));
+                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon")), trackProgress,
+                                    printValues));
     } else {
         throw runtime_error("Optimzer not found: " + opt);
     }

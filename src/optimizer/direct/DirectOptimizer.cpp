@@ -6,11 +6,13 @@
 
 #include <utility>
 #include <memory>
+#include <fstream>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params,
-                                 StoppingCondition con) : Optimizer(ctrl, params), D(params.size()),
-                                                          stopCon(con), normalizer(ParameterNormalizer(params)),
-                                                          level(Levels()) {
+                                 StoppingCondition con, bool trackProgress, bool printValues)
+        : Optimizer(ctrl, params), D(params.size()),
+          stopCon(con), normalizer(ParameterNormalizer(params)), level(Levels()),
+          trackProgress(trackProgress), printValues(printValues) {
 }
 
 void DirectOptimizer::runOptimization() {
@@ -19,6 +21,9 @@ void DirectOptimizer::runOptimization() {
     addActiveRects({base});
     size_t m = 1, l = 2;
     functionValue phi = getValueMap().getTopVals().front().second;
+    if (trackProgress) {
+        saveProgress(phi, l, m);
+    }
 
     while (!aborted && stopCon.evaluate(l, m, phi)) {
         list<shared_ptr<HyRect>> newRects, oldRects;
@@ -50,6 +55,12 @@ void DirectOptimizer::runOptimization() {
         }
         l = getValueMap().getSize();
         iterations++;
+        if (trackProgress) {
+            saveProgress(phi, l, m);
+        }
+    }
+    if (printValues) {
+        saveValues();
     }
 }
 
@@ -135,6 +146,43 @@ void DirectOptimizer::removeActiveRects(const list<shared_ptr<HyRect>> &rects) {
             activeRects.erase(depth);
         }
     }
+}
+
+void DirectOptimizer::saveProgress(functionValue bestVal, size_t evaluations, size_t nrRects) const {
+    static ofstream out;
+    if (!out.is_open()) {
+        if (!filesystem::exists("results/progress.csv")) {
+            filesystem::create_directories("results");
+        }
+        out.open("results/progress.csv", std::ios::out | std::ios::trunc);
+        out << "Iteration;" << "Evaluations;" << "Rectangles;" << "Minimum\n";
+    }
+    out << iterations << ";" << evaluations << ";" << nrRects << ";" << bestVal << endl;
+}
+
+void DirectOptimizer::saveValues() {
+    if (!filesystem::exists("results/values.csv")) {
+        filesystem::create_directories("results");
+    }
+    ofstream out;
+    out.open("results/values.csv", std::ios::out | std::ios::trunc);
+    for (const auto &param: getValueMap().getValues().begin()->first) {
+        static unsigned int i = 1;
+        if (param->getConfig().empty()) {
+            out << "x" << i << ";";
+        } else {
+            out << param->getConfig() << ";";
+        }
+        i++;
+    }
+    out << "Value\n";
+    for (const auto &entry: getValueMap().getValues()) {
+        for (const auto &param: entry.first) {
+            out << param->getVal() << ";";
+        }
+        out << entry.second << "\n";
+    }
+    out.close();
 }
 
 string DirectOptimizer::getName() {
