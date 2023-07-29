@@ -25,7 +25,7 @@ private:
 
     static void replaceOption(string &file, string option, const string &value, size_t start = 0);
 
-    static void replaceOption(string &file, string option, integral auto value, size_t start = 0);
+    static void replaceOption(string &file, string option, double value, size_t start = 0);
 
     void setResultFiles(string &file, size_t runNumber);
 

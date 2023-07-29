@@ -148,7 +148,7 @@ void Controller::run() {
     auto runStatusUpdate = [this]() {
         while (statusInterval != milliseconds(0)) {
             updateStatus();
-            this_thread::sleep_for(statusInterval);
+            //this_thread::sleep_for(statusInterval);
         }
     };
     stepState.next();

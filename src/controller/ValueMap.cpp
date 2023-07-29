@@ -125,7 +125,8 @@ bool ValueMap::isTopValue(const vector<shared_ptr<Parameter>> &cords) {
         }
         return true;
     };
-    return ranges::any_of(topVals, pred);
+    //return ranges::any_of(topVals, pred);
+    return true;
 }
 
 const map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> &ValueMap::getValues() {

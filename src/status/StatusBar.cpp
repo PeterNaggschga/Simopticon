@@ -74,12 +74,14 @@ void StatusBar::printStatus(Status *object) {
 void StatusBar::printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top) {
     cout << LARGE_DIVIDER;
     size_t i = top.size();
+    /*
     for (auto &result: std::ranges::reverse_view(top)) {
         cout << i-- << ". Result\n";
         printResult(result.first, result.second.first);
         cout << "Path to result files: " << result.second.second << "\n";
         cout << SMALL_DIVIDER;
     }
+     */
     for (const auto &result: top) {
         cout << ++i << ".\t" << result.second.first << "\n";
     }

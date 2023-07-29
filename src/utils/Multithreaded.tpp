@@ -1,6 +1,6 @@
 #include <future>
 #include <list>
-#include <ranges>
+//#include <ranges>
 
 
 template<class Key, class T, class Compare, class Allocator>
@@ -20,11 +20,12 @@ Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(set<Key, Co
     }
 
     map<Key, T, Compare, Allocator> result;
+    /*
     for (auto &thread: ranges::reverse_view(threads)) {
         thread.wait();
         result.merge(thread.get());
     }
-
+    */
     return result;
 }
 

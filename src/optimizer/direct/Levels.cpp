@@ -29,6 +29,7 @@ Levels::getRectSubset(const map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>,
     }
     list<shared_ptr<HyRect>> result;
     if (global) {
+        /*
         for (const auto &entry: std::views::reverse(rects)) {
             result.emplace_back(*entry.second.begin());
             if (size <= entry.second.size()) {
@@ -37,6 +38,7 @@ Levels::getRectSubset(const map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>,
                 size -= entry.second.size();
             }
         }
+         */
     } else {
         for (const auto &entry: rects) {
             result.emplace_back(*entry.second.begin());

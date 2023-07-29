@@ -64,7 +64,7 @@ void ConfigEditor::replaceOption(string &file, string option, const string &valu
     file.replace(pos, endOfLine - pos, value);
 }
 
-void ConfigEditor::replaceOption(string &file, string option, integral auto value, size_t start) {
+void ConfigEditor::replaceOption(string &file, string option, double value, size_t start) {
     replaceOption(file, option, to_string(value), start);
 }
 
