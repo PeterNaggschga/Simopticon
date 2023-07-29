@@ -7,7 +7,7 @@
 
 #include <list>
 #include <mutex>
-#include <semaphore>
+//#include <semaphore>
 
 class PlexeSimulationRunner
         : public SimulationRunner, public Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool> {
