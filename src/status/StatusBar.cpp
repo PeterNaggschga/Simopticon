@@ -5,7 +5,7 @@
 #include "../evaluation/Evaluation.h"
 
 #include <iostream>
-#include <ranges>
+//#include <ranges>
 
 const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
 
