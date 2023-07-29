@@ -1,6 +1,17 @@
 // PlexeRunner Config
 
 {
+  // controller-related options for simulations
+  "controller": {
+    // name of controller to be used in simulations
+    "controller": "CACC",
+    // headway (only relevant for ACCs)
+    "headway": 0.1,
+    // insert distance of platoon vehicles in metre
+    "insertDistance": 5,
+    // insert headway of platoon vehicles in seconds
+    "insertHeadway": 0
+  },
   // maximum number of threads to be used for concurrent execution
   "nrThreads": 16,
   // number of repetitions for the same parameters

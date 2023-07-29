@@ -1,9 +1,11 @@
 #include "ConfigEditor.h"
 
 #include <fstream>
+#include <utility>
 
-ConfigEditor::ConfigEditor(filesystem::path directory) : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
-                                                         RESULTS(directory.parent_path().append("optResults")) {
+ConfigEditor::ConfigEditor(filesystem::path directory, json controller)
+        : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
+          RESULTS(directory.parent_path().append("optResults")), CONTROLLER(std::move(controller)) {
 }
 
 void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat) {
@@ -14,6 +16,13 @@ void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, siz
     inStream.close();
 
     setResultFiles(fileContents, runNumber);
+
+    replaceOption(fileContents, "**.numericController", "${controller = 1}");
+    replaceOption(fileContents, "**.headway", "${headway = " + to_string(CONTROLLER.at("headway")) + "! controller}s");
+    replaceOption(fileContents, "**.traffic.controller",
+                  "${sController = " + to_string(CONTROLLER.at("controller")) + " ! controller}");
+    replaceOption(fileContents, "**.traffic.platoonInsertDistance", to_string(CONTROLLER.at("insertDistance")) + "m");
+    replaceOption(fileContents, "**.traffic.platoonInsertHeadway", to_string(CONTROLLER.at("insertHeadway")) + "s");
 
     replaceOption(fileContents, "repeat", repeat);
     replaceOption(fileContents, "debug-on-errors", "false");
@@ -45,7 +54,10 @@ void ConfigEditor::replaceOption(string &file, string option, const string &valu
     option = "\n" + option + " = ";
     size_t pos = file.find(option, start);
     if (pos == string::npos) {
-        throw invalid_argument("Option not found in file!");
+        const string general = "[General]\n";
+        pos = file.find(general);
+        file.insert(pos + general.size(), option + value + "\n");
+        return;
     }
     pos += option.size();
     size_t endOfLine = file.find('\n', pos);

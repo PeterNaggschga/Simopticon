@@ -82,8 +82,9 @@ Controller::Controller(const filesystem::path &configPath) {
         }
 
         string dir = runnerConfig.at("configDirectory").get<string>();
-        runner = unique_ptr<SimulationRunner>(
-                new PlexeSimulationRunner(nrThreads, repeat, scenarios, ConfigEditor(dir)));
+        runner = unique_ptr<SimulationRunner>(new PlexeSimulationRunner(nrThreads, repeat, scenarios, ConfigEditor(dir,
+                                                                                                                   runnerConfig.at(
+                                                                                                                           "controller"))));
     } else {
         throw runtime_error("SimulationRunner not found: " + run);
     }

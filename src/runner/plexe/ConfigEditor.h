@@ -3,6 +3,7 @@
 
 
 #include "../../ComparisonFunctions.h"
+#include "nlohmann/json.hpp"
 
 #include <memory>
 #include <string>
@@ -13,12 +14,14 @@
 class Parameter;
 
 using namespace std;
+using json = nlohmann::json;
 
 class ConfigEditor {
 private:
     const filesystem::path DIR;
     const filesystem::path CONFIG;
     const filesystem::path RESULTS;
+    const json CONTROLLER;
 
     static void replaceOption(string &file, string option, const string &value, size_t start = 0);
 
@@ -29,7 +32,7 @@ private:
     [[nodiscard]] static string getConfigAt(string &file, size_t start = 0);
 
 public:
-    explicit ConfigEditor(filesystem::path directory);
+    ConfigEditor(filesystem::path directory, json controller);
 
     void createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat);
 
