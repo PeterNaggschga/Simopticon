@@ -60,7 +60,7 @@ size_t PlexeSimulationRunner::getRunId() {
 
 bool PlexeSimulationRunner::work(pair<filesystem::path, pair<string, unsigned int>> arg) {
     string command = "cd " + editor.getDir().string() + "; ";
-    command += "plexe_run -M release -s -u Cmdenv -c " + arg.second.first;
+    command += "./run -M release -s -u Cmdenv -c " + arg.second.first;
     command += " -r " + to_string(arg.second.second) + " " + arg.first.string();
 
     try {
