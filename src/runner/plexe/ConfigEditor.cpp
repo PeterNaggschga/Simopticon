@@ -19,7 +19,7 @@ void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, siz
 
     replaceOption(fileContents, "**.numericController", "${controller = 1}");
     replaceOption(fileContents, "**.headway", "${headway = " + to_string(CONTROLLER.at("headway")) + "! controller}s");
-    replaceOption(fileContents, "**.traffic.controller",
+    replaceOption(fileContents, getControllerOption(fileContents),
                   "${sController = " + to_string(CONTROLLER.at("controller")) + " ! controller}");
     replaceOption(fileContents, "**.traffic.platoonInsertDistance", to_string(CONTROLLER.at("insertDistance")) + "m");
     replaceOption(fileContents, "**.traffic.platoonInsertHeadway", to_string(CONTROLLER.at("insertHeadway")) + "s");
@@ -69,12 +69,23 @@ void ConfigEditor::replaceOption(string &file, string option, long value) {
 }
 
 void ConfigEditor::setResultFiles(string &file, size_t runNumber) {
-    string resDir = "${resultdir}";
+    const string resDir = "${resultdir}";
     size_t pos = 0;
     while ((pos = file.find(resDir, pos)) != string::npos) {
         file.replace(pos, resDir.size(), RESULTS.filename().string() + "/" + to_string(runNumber));
         pos++;
     }
+}
+
+string ConfigEditor::getControllerOption(string &file) {
+    const string option = ".controller = ";
+    size_t optionPos = file.find(option);
+    size_t startOfLine = file.find('\n') + 1;
+    size_t nextLine;
+    while ((nextLine = file.find('\n', startOfLine)) < optionPos) {
+        startOfLine = nextLine + 1;
+    }
+    return file.substr(startOfLine, optionPos - startOfLine + option.size() - 3);
 }
 
 filesystem::path ConfigEditor::getConfigPath(size_t runId) const {
@@ -88,7 +99,7 @@ filesystem::path ConfigEditor::getResultPath(size_t runId) const {
 }
 
 string ConfigEditor::getConfigAt(string &file, size_t start) {
-    string conf = "\n[Config ";
+    const string conf = "\n[Config ";
     size_t pos = file.find(conf);
     string result;
     while (pos < start) {

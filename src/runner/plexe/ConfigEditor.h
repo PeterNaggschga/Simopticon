@@ -31,6 +31,8 @@ private:
 
     [[nodiscard]] static string getConfigAt(string &file, size_t start = 0);
 
+    static string getControllerOption(string &file);
+
 public:
     ConfigEditor(filesystem::path directory, json controller);
 
