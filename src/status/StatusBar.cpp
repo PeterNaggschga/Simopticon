@@ -5,7 +5,6 @@
 #include "../evaluation/Evaluation.h"
 
 #include <iostream>
-//#include <ranges>
 
 const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
 
@@ -74,14 +73,12 @@ void StatusBar::printStatus(Status *object) {
 void StatusBar::printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top) {
     cout << LARGE_DIVIDER;
     size_t i = top.size();
-    /*
-    for (auto &result: std::ranges::reverse_view(top)) {
+    for (auto it = top.rbegin(); it != top.rend(); ++it) {
         cout << i-- << ". Result\n";
-        printResult(result.first, result.second.first);
-        cout << "Path to result files: " << result.second.second << "\n";
+        printResult(it->first, it->second.first);
+        cout << "Path to result files: " << it->second.second << "\n";
         cout << SMALL_DIVIDER;
     }
-     */
     for (const auto &result: top) {
         cout << ++i << ".\t" << result.second.first << "\n";
     }

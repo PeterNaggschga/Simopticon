@@ -2,7 +2,6 @@
 
 #include <future>
 #include <list>
-//#include <ranges>
 
 SimulationRunner::SimulationRunner(unsigned int treads) : Multithreaded(treads) {
 }

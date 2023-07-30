@@ -3,7 +3,6 @@
 #include "hyrect/HyRect.h"
 
 #include <cmath>
-//#include <ranges>
 
 unsigned char Levels::nextLevel() {
     if (!global) {
@@ -29,16 +28,14 @@ Levels::getRectSubset(const map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>,
     }
     list<shared_ptr<HyRect>> result;
     if (global) {
-        /*
-        for (const auto &entry: std::views::reverse(rects)) {
-            result.emplace_back(*entry.second.begin());
-            if (size <= entry.second.size()) {
+        for (auto it = rects.rbegin(); it != rects.rend(); ++it) {
+            result.push_back(*it->second.begin());
+            if (size <= it->second.size()) {
                 break;
             } else {
-                size -= entry.second.size();
+                size -= it->second.size();
             }
         }
-         */
     } else {
         for (const auto &entry: rects) {
             result.emplace_back(*entry.second.begin());

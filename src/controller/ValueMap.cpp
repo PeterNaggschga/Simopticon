@@ -114,19 +114,18 @@ list<pair<vector<shared_ptr<Parameter>>, functionValue>> ValueMap::getTopVals() 
 
 bool ValueMap::isTopValue(const vector<shared_ptr<Parameter>> &cords) {
     updateMap();
-    auto pred = [&cords](const pair<const vector<shared_ptr<Parameter>>, functionValue> &p) {
-        if (p.first.size() != cords.size()) {
-            return false;
+    for (const auto &entry: topVals) {
+        if (entry.first.size() != cords.size()) {
+            continue;
         }
-        for (int i = 0; i < p.first.size(); ++i) {
-            if (p.first[i]->getVal() != cords[i]->getVal()) {
-                return false;
+        for (int i = 0; i < entry.first.size(); ++i) {
+            if (entry.first[i]->getVal() != cords[i]->getVal()) {
+                continue;
             }
         }
         return true;
-    };
-    //return ranges::any_of(topVals, pred);
-    return true;
+    }
+    return false;
 }
 
 const map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> &ValueMap::getValues() {
