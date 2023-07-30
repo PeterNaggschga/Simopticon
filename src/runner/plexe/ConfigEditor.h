@@ -23,9 +23,9 @@ private:
     const filesystem::path RESULTS;
     const json CONTROLLER;
 
-    static void replaceOption(string &file, string option, const string &value, size_t start = 0);
+    static void replaceOption(string &file, string option, const string &value);
 
-    static void replaceOption(string &file, string option, long value, size_t start = 0);
+    static void replaceOption(string &file, string option, long value);
 
     void setResultFiles(string &file, size_t runNumber);
 

@@ -50,9 +50,9 @@ string ConfigEditor::getConfigValue(string &file, string option, size_t start) {
     return file.substr(pos, endOfLine - pos);
 }
 
-void ConfigEditor::replaceOption(string &file, string option, const string &value, size_t start) {
+void ConfigEditor::replaceOption(string &file, string option, const string &value) {
     option = "\n" + option + " = ";
-    size_t pos = file.find(option, start);
+    size_t pos = file.find(option);
     if (pos == string::npos) {
         const string general = "[General]\n";
         pos = file.find(general);
@@ -64,8 +64,8 @@ void ConfigEditor::replaceOption(string &file, string option, const string &valu
     file.replace(pos, endOfLine - pos, value);
 }
 
-void ConfigEditor::replaceOption(string &file, string option, long value, size_t start) {
-    replaceOption(file, std::move(option), to_string(value), start);
+void ConfigEditor::replaceOption(string &file, string option, long value) {
+    replaceOption(file, std::move(option), to_string(value));
 }
 
 void ConfigEditor::setResultFiles(string &file, size_t runNumber) {
