@@ -22,7 +22,7 @@ def get_last_value(df: pd.DataFrame) -> np.float128:
 # Durchschnitt über reps bilden
 # je Szenario durchschnitt bilden
 
-def get_constant_headway(run_ids: list[str]) -> np.float128:
+def get_constant_headway(run_ids: list) -> np.float128:
     run_filter = f"(run =~ {run_ids[0]}"
     for i in range(1, len(run_ids)):
         run_filter += f" OR run =~ {run_ids[i]}"
@@ -43,7 +43,7 @@ def get_constant_headway(run_ids: list[str]) -> np.float128:
     return values.mean(dtype=np.float128)
 
 
-def multithreaded(threads: int, directory: str, run_ids: list[list[str]]) -> list[np.float128]:
+def multithreaded(threads: int, directory: str, run_ids: list) -> list:
     res.set_inputs(directory)
     with ThreadPoolExecutor(max_workers=threads) as pool:
         results = pool.map(get_constant_headway, run_ids)
