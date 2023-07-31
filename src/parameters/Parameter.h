@@ -55,6 +55,12 @@ public:
     [[nodiscard]] const string &getConfig() const;
 
     /**
+     * Returns the current value of the Parameter.
+     * @return A coordinate representing the value of the Parameter.
+     */
+    [[nodiscard]] virtual coordinate getVal() const = 0;
+
+    /**
      * Sets the value of the Parameter to the given value.
      * @param val: Value to set the Parameter to.
      */
