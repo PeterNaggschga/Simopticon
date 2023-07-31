@@ -116,7 +116,7 @@ protected:
 public:
     /**
      * Creates a Controller which uses Optimizer, SimulationRunner and Evaluation as specified in the given config files.
-     * @param configPath: Path to the main config.
+     * @param configPath: Path to the main config. Chosen by first command line argument.
      */
     explicit Controller(const filesystem::path &configPath);
 
