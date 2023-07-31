@@ -15,23 +15,19 @@ DiscreteParameter::DiscreteParameter(shared_ptr<ParameterDefinition> def, double
 }
 
 DiscreteParameter::DiscreteParameter(shared_ptr<ParameterDefinition> def, double step) : DiscreteParameter(
-        std::move(def), step,
-        fmod(getMax() +
-             getMin() /
-             2,
-             step)) {
+        std::move(def), step, fmod(getMax() + getMin() / 2, step)) {
 }
 
 int DiscreteParameter::getTimes() const {
     return times;
 }
 
-void DiscreteParameter::setTimes(int times) {
-    double val = times * step + offset;
+void DiscreteParameter::setTimes(int newTimes) {
+    double val = newTimes * step + offset;
     if (getMax() < val || val < getMin()) {
         throw invalid_argument("Value out of bounds");
     }
-    DiscreteParameter::times = times;
+    times = newTimes;
 }
 
 double DiscreteParameter::getStep() const {
