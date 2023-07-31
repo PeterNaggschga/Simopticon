@@ -24,7 +24,9 @@ class ValueMap;
 using namespace std;
 
 /**
- * A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also user interaction such as tracking results, updating StatusBar and handling interrupts by the user via Abortable.
+ * A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also
+ * user interaction such as tracking results, updating StatusBar and handling interrupts by the user via Abortable.
+ *
  */
 class Controller : public Abortable {
 private:
