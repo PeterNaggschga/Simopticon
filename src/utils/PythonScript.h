@@ -10,13 +10,32 @@
 
 #pragma clang diagnostic pop
 
+/**
+ * A class containing functionality for interfacing with the function of a Python module on creation.
+ * See https://docs.python.org/3/c-api/index.html for more information.
+ */
 class PythonScript {
 protected:
-    PyObject *pModule, *pFunc;
+    /**
+     * Pointer to module that contains function which should be used by the class.
+     */
+    PyObject *pModule;
+    /**
+     * Pointer to function which should be used by the class.
+     */
+    PyObject *pFunc;
 
 public:
+    /**
+     * Creates a connection to the given function of a Python script at the given path.
+     * @param path: Path to the Python script containing the function.
+     * @param functionName: Name of the function to be used.
+     */
     PythonScript(const std::filesystem::path &path, const char *functionName);
 
+    /**
+     * Ends connection to function PythonScript::pFunc and module PythonScript::pModule.
+     */
     ~PythonScript();
 
 };
