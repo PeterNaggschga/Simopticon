@@ -17,17 +17,36 @@ class Parameter;
 
 using namespace std;
 
+/**
+ * A class capable of running simulations with certain Parameter combinations.
+ */
 class SimulationRunner
         : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>,
           public Status {
 private:
+    /**
+     * Deals with the simulation of a single Parameter combination.
+     * Overrides Multithreaded::work and therefore can be executed concurrently.
+     * @param run: Parameter combination to be simulated.
+     * @return A pair containing a path to the result directory and a set of runIds identifying the respective simulation runs.
+     */
     pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override = 0;
 
 public:
-    explicit SimulationRunner(unsigned int treads);
+    /**
+     * Creates a SimulationRunner which can use no more than the given number of threads to simulate Parameter combinations concurrently.
+     * @param threads: Maximum number of threads that may be used for concurrent simulations.
+     */
+    explicit SimulationRunner(unsigned int threads);
 
     virtual ~SimulationRunner() = default;
 
+    /**
+     * Simulates the given Parameter combinations concurrently and returns their respective results.
+     * Basically calls Multithreaded::runMultithreadedFunctions which uses the ThreadPool pattern to parallelize the execution of SimulationRunner::work.
+     * @param runs: Set of Parameter combinations to be simulated.
+     * @return A map which maps the given Parameter combinations to their respective result directory and runIds.
+     */
     virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 

@@ -75,8 +75,6 @@ functionValue ValueMap::query(const vector<shared_ptr<Parameter>> &params) {
 }
 
 void ValueMap::insert(const vector<shared_ptr<Parameter>> &params, functionValue val) {
-    if (topVals.size() < topEntries || val <= topVals.rend()->second) {
-    }
     tba.emplace_back(params, val);
 }
 

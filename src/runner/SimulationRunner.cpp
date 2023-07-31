@@ -3,7 +3,7 @@
 #include <future>
 #include <list>
 
-SimulationRunner::SimulationRunner(unsigned int treads) : Multithreaded(treads) {
+SimulationRunner::SimulationRunner(unsigned int threads) : Multithreaded(threads) {
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
