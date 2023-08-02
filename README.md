@@ -23,8 +23,8 @@ The described process is distributed over four major components:
 4. Controller: A component managing the optimization process and communication between Optimizer, SimulationRunner and
    Evaluation. Used to abstract components 1-3 from each other.
 
-Extensions of the framework may introduce new Optimizer, SimulationRunner and Evaluation implementations (
-see [Extension](#extension)).
+Extensions of the framework may introduce new Optimizer, SimulationRunner and Evaluation implementations
+(see [Extension](#extension)).
 Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers
 using the [Plexe](https://plexe.car2x.org/) framework.
 
@@ -139,8 +139,8 @@ make -j  $(nproc)
 
 The resulting executable `simopticon` may be copied to other locations or referenced via symlinks for more convenient
 access.
-The same applies to the `config` directory in `~/src/simopticon` which is used to configure the optimization process (
-see [Usage](#usage)).
+The same applies to the `config` directory in `~/src/simopticon` which is used to configure the optimization process
+(see [Usage](#usage)).
 
 ## Usage
 
