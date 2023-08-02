@@ -97,15 +97,10 @@ Open the newly created directory and run the configuration script with:
 cd cmake-[version number] && ./configure
 ```
 
-When the configuration has completed successfully, you are ready to build using:
+When the configuration has completed successfully, you are ready to build and install using:
 
 ```
 make -j $(nproc)
-```
-
-When the build has finished, install CMake on your machine with:
-
-```
 sudo make install
 ```
 
@@ -131,18 +126,14 @@ git clone https://github.com/PeterNaggschga/simopticon.git
 Create a build directory in the downloaded files with:
 
 ```
-mkdir simopticon/build && cd simopticon/build
-```
-
-Configure build:
-
-```
-cmake ..
+mkdir simopticon/build
+cd simopticon/build
 ```
 
 Build *Simopticon* by calling:
 
 ```
+cmake ..
 make -j  $(nproc)
 ```
 
