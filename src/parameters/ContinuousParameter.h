@@ -6,6 +6,7 @@
 
 /**
  * Implements a Parameter using continuos values in the form of floating point numbers.
+ * @ingroup parameters
  */
 class ContinuousParameter : public Parameter {
 private:
