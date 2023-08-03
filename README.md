@@ -5,6 +5,8 @@
    1. [Requirements](#requirements)
    2. [Installation](#installation)
 3. [Usage](#usage)
+   1. [Configuration](#configuration)
+   2. [Optimization](#optimization)
 4. [Extension](#extension)
 
 ## Overview
@@ -143,5 +145,85 @@ The same applies to the `config` directory in `~/src/simopticon` which is used t
 (see [Usage](#usage)).
 
 ## Usage
+
+### Configuration
+
+The optimization process and its components are configured using several JSON files.
+Default examples of such files can be found in the `config` directory.
+Be aware, however,
+that the default files in `config` must be edited before use
+since some file paths must be set which depend on your filesystem.
+
+The options in the JSON files are commented and therefore self-explanatory.
+The following sections only show options that must be changed to successfully run optimizations.
+
+#### Main Configuration
+
+The main configuration can be found in `config/simopticon.json`.
+It contains settings of the Controller and selects the other components.
+In the `controller` settings,
+the key `params` must be set
+to reference another JSON file containing an array of ParameterDefinition that are to be optimized.
+
+The main configuration selects which Optimizer, SimulationRunner and Evaluation implementations are to be used.
+For each of those components, a name of the implementation and a reference to a JSON file configuring it must be given.
+References are used
+because different implementations of the same component may vastly differ in their configurable options,
+and switching the used components gets easier this way.
+
+#### PlexeSimulationRunner
+
+If you want to use PlexeSimulationRunner, you need to configure `config/runners/plexe.json`.
+There you have to set the `configDirectory` key to match the path to the directory containing your Plexe configuration
+(`omnetpp.ini`).
+For default installations
+that should be something along the lines of `[installation-directory]/plexe/examples/platooning`.
+
+#### ConstantHeadway
+
+If you want to use ConstantHeadway evaluation, you need to configure `config/evaluations/constant_headway.json`.
+There you have to set the `pythonScript` and the `omnetppDirectory` keys.
+`pythonScript` must point to the script `constant_headway.py` which can be found in `src/evaluation/constant_headway`.
+`omnetppDirectory` must point to the directory where OMNeT++ Version 6 or higher is installed,
+e.g. `~/src/omnetpp-6.0.1`.
+
+### Optimization
+
+The optimization is invoked on the command line by executing the program built in [Setup](#setup).
+The call on the command line has one mandatory and one optional argument.
+The First argument must be the path to the main config, i.e. `config/simopticon.json`.
+A valid call to an optimization could be:
+
+```
+./simopticon ../config/simopticon.json
+```
+
+If a second argument is given,
+instead of running actual simulations with the configured SimulationRunner
+and evaluating their results with an Evaluation, the StubController is used.
+StubController can be used
+to implement and optimize benchmark functions
+to test Optimizer implementations without relying on actual costly simulations.
+The second argument holds the name of the function to be optimized, i.e., one of the following:
+
+- quadratic (squares all Parameter values and adds them up)
+- [branin](https://www.sfu.ca/~ssurjano/branin.html)
+- [goldprice](https://www.sfu.ca/~ssurjano/goldpr.html)
+- [camel6](https://www.sfu.ca/~ssurjano/camel6.html)
+- [shubert](https://www.sfu.ca/~ssurjano/shubert.html)
+- [hartman3](https://www.sfu.ca/~ssurjano/hart3.html)
+- [shekel5](https://www.sfu.ca/~ssurjano/shekel.html)
+- [shekel7](https://www.sfu.ca/~ssurjano/shekel.html)
+- [shekel10](https://www.sfu.ca/~ssurjano/shekel.html)
+- [hartman6](https://www.sfu.ca/~ssurjano/hart6.html)
+
+A valid call to the optimization of a benchmark function could be:
+
+```
+./simopticon ../config/simopticon.json branin
+```
+
+Please note
+that you need to define the optimized parameters in `config/simopticon.json` even when you are optimizing a benchmark.
 
 ## Extension
