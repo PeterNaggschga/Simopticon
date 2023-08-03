@@ -1,5 +1,7 @@
 # Simopticon
 
+---
+
 1. [Overview](#overview)
 2. [Setup](#setup)
    1. [Requirements](#requirements)
@@ -10,6 +12,8 @@
 4. [Extension](#extension)
    1. [Development](#development)
    2. [Integration](#integration)
+
+---
 
 ## Overview
 
@@ -31,6 +35,8 @@ Extensions of the framework may introduce new Optimizer, SimulationRunner and Ev
 (see [Extension](#extension)).
 Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers
 using the [Plexe](https://plexe.car2x.org/) framework.
+
+---
 
 ## Setup
 
@@ -146,6 +152,8 @@ access.
 The same applies to the `config` directory in `~/src/simopticon` which is used to configure the optimization process
 (see [Usage](#usage)).
 
+---
+
 ## Usage
 
 ### Configuration
@@ -227,6 +235,8 @@ A valid call to the optimization of a benchmark function could be:
 
 Please note
 that you need to define the optimized parameters in `config/simopticon.json` even when you are optimizing a benchmark.
+
+---
 
 ## Extension
 
