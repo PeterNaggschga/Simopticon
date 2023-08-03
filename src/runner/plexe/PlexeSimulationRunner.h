@@ -8,6 +8,12 @@
 #include <list>
 #include <mutex>
 
+/**
+ * This module extends SimulationRunner to interface with the Plexe framework to enable the optimization of platooning controllers.
+ * @defgroup plexe
+ * @ingroup runner
+ */
+
 class PlexeSimulationRunner
         : public SimulationRunner, public Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool> {
 private:

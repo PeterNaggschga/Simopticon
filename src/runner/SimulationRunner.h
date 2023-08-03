@@ -18,7 +18,14 @@ class Parameter;
 using namespace std;
 
 /**
+ * This module contains components capable of automatically running simulations with certain Parameter combinations.
+ * Implementations must extend SimulationRunner.
+ * @defgroup runner
+ */
+
+/**
  * A class capable of running simulations with certain Parameter combinations.
+ * @ingroup runner
  */
 class SimulationRunner
         : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>,
