@@ -5,6 +5,13 @@
 #include <csignal>
 
 /**
+ * Definition of the main function running the *Simopticon* framework.
+ *
+ * @file main.cpp
+ * @ingroup utils
+ */
+
+/**
  * Reference to the Controller that is running the optimization.
  */
 unique_ptr<Controller> ctr;
