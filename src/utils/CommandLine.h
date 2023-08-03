@@ -7,7 +7,13 @@
 using namespace std;
 
 /**
+ * This package provides general functionality and classes that may be useful to classes in any other package.
+ * @defgroup utils
+ */
+
+/**
  * A class containing functionality for executing commands on UNIX shell.
+ * @ingroup utils
  */
 class CommandLine {
 public:

@@ -13,6 +13,7 @@
 /**
  * A class containing functionality for interfacing with the function of a Python module on creation.
  * See https://docs.python.org/3/c-api/index.html for more information.
+ * @ingroup utils
  */
 class PythonScript {
 protected:

@@ -10,6 +10,7 @@ using namespace std;
 /**
  * A container class of a queue that is safe for concurrent access of different threads.
  * @tparam Key: Type of elements in the contained queue.
+ * @ingroup utils
  */
 template<class Key>
 class ThreadsafeQueue {
