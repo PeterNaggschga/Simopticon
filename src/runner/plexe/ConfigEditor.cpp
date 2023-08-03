@@ -39,17 +39,6 @@ void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, siz
     outStream.close();
 }
 
-string ConfigEditor::getConfigValue(string &file, string option, size_t start) {
-    option = "\n" + option + " = ";
-    size_t pos = file.find(option, start);
-    if (pos == string::npos) {
-        throw invalid_argument("Option not found in file!");
-    }
-    pos += option.size();
-    size_t endOfLine = file.find('\n', pos);
-    return file.substr(pos, endOfLine - pos);
-}
-
 void ConfigEditor::replaceOption(string &file, string option, const string &value) {
     option = "\n" + option + " = ";
     size_t pos = file.find(option);
@@ -96,19 +85,6 @@ filesystem::path ConfigEditor::getConfigPath(size_t runId) const {
 filesystem::path ConfigEditor::getResultPath(size_t runId) const {
     filesystem::path result = RESULTS;
     return result.append(to_string(runId));
-}
-
-string ConfigEditor::getConfigAt(string &file, size_t start) {
-    const string conf = "\n[Config ";
-    size_t pos = file.find(conf);
-    string result;
-    while (pos < start) {
-        pos += conf.size();
-        size_t end = file.find(']', pos);
-        result = file.substr(pos, end - pos);
-        pos = file.find(conf, end);
-    }
-    return result;
 }
 
 void ConfigEditor::deleteConfig(size_t runId) const {
