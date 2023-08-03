@@ -20,9 +20,16 @@ class ValueMap;
 using namespace std;
 
 /**
+ * This module contains components capable of finding the minimum of a function only defined through argument-value pairs.
+ * Implementations must extend Optimizer.
+ * @defgroup optimizer
+ */
+
+/**
  * A class containing an optimization strategy which searches the minimum of a blackbox function given through argument-value pairs.
  * The Optimizer has control over which Parameter combinations are simulated and evaluated as well as the duration of the optimization.
  * If Optimizer::abort is called the optimization strategy should finish the optimization as soon as possible.
+ * @ingroup optimizer
  */
 class Optimizer : public Status, public Abortable {
 private:
