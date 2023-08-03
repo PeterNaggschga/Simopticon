@@ -8,6 +8,8 @@
    1. [Configuration](#configuration)
    2. [Optimization](#optimization)
 4. [Extension](#extension)
+   1. [Development](#development)
+   2. [Integration](#integration)
 
 ## Overview
 
@@ -85,7 +87,7 @@ First, make sure to install g++ and OpenSSL Development tools.
 sudo apt install g++ libssl-dev
 ```
 
-Then you need to download the latest version of CMake from their [download page](https://cmake.org/download/) - search
+Then you need to download the latest version of CMake from their [download page](https://cmake.org/download/) — search
 for the source distribution tar package.
 Unpack the downloaded package using:
 
@@ -227,3 +229,87 @@ Please note
 that you need to define the optimized parameters in `config/simopticon.json` even when you are optimizing a benchmark.
 
 ## Extension
+
+This section goes through the steps you need to undertake to extend the framework with new Optimizer,
+SimulationRunner or Evaluation implementations.
+
+### Development
+
+When developing new implementations of components,
+please stick to the project structure — Optimizer extensions go into `src/optimizer`,
+SimulationRunner extensions go into `src/runner` and Evaluation extensions go into `src/evaluation`.
+If your implementation needs a more sophisticated implementation of the Parameter class than the ones provided
+in `src/parameters`,
+feel free to extend the abstract Parameter class.
+
+#### Optimization Strategies
+
+To add a new optimization strategy, you have to extend the Optimizer class.
+You need
+to override the Optimizer::runOptimization method which should start the optimization process
+and only return
+when your strategy is finished or if the Abortable::abort method is called which you also should implement.
+
+Optimizer extensions can instruct the Controller to start simulations
+and evaluate them with the Optimizer::requestValues method.
+Please try
+to commission as many Parameters as possible in one call of the method
+so the other components may parallelize calculations.
+
+Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.
+
+#### Simulation Execution
+
+To add a new way of executing simulations, you have to extend the SimulationRunner class.
+You need
+to override the SimulationRunner::work function, which is run concurrently for all Parameter vectors
+provided to SimulationRunner::runSimulations.
+If you want to prohibit concurrent execution, you may override SimulationRunner::runSimulations instead
+(in that case, SimulationRunner::work should return an empty pair).
+See documentation of Multithreaded class for more information on that.
+
+SimulationRunner::work should run a simulation with the given parameters
+and return a path to the result files and a set of identifiers relating to simulation runs.
+The interface for the identifiers is very loosely defined —
+if your Evaluation does not need any identifiers of simulation runs, you may return an empty set.
+Please be aware that the Controller might try to delete the path you return after some time,
+so that should not be an empty path!
+Other than that,
+it is not further standardized
+what must be returned as a path and identifiers as long
+as your Evaluation component can evaluate the simulation based on the returned information.
+
+Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.
+
+#### Simulation Evaluation
+
+To add a new rating algorithm based on simulation data, you have to extend the Evaluation class.
+You need to override the Evaluation::processOutput function,
+which conducts the rating of simulation performance based on the path to the result files and the given identifiers.
+This process heavily depends on the implemented SimulationRunner,
+which is responsible for returning result files and run identifiers if necessary.
+Your Evaluation implementation should rate the given simulation results with a `functionValue` — the lower, the better.
+
+### Integration
+
+All newly added classes must be registered in `CMakeList.txt` so the compiler does not ignore them!
+External dependencies and added libraries should be included there too.
+
+To make your new component available for configuration, you must add it to the constructor of the Controller class.
+Let's assume you wrote a new Optimizer implementation.
+First you need to create a JSON configuration file in `config/optimizer`.
+There you can define any desired options for your component.
+
+The next step is editing the Controller class to make your Optimizer available.
+To do that, you find the "Optimizer settings" in the constructor of the Controller.
+There you add another case to the `if`-Statement where `opt` equals the name of your component
+(this is the name that will be set in the main config later, see [Configuration](#configuration)).
+In the added case you can read the necessary options from the JSON object in `optimizerConfig`.
+You have to set Controller::optimizer to an `unique_ptr<Optimizer>`,
+owning a new instance of your Optimizer implementation.
+
+When this setup is complete,
+you may build the framework again and update the main configuration
+to use your new Optimizer
+by changing the `optimizer.optimizer` key to the name of your Optimizer and the `optimizer.config` key to the path of
+your created JSON configuration file.
