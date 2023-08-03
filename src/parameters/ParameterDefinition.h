@@ -10,6 +10,7 @@ using namespace std;
 
 /**
  * A class storing information on the properties of parameters that are being optimized.
+ * @ingroup parameters
  */
 class ParameterDefinition {
 private:

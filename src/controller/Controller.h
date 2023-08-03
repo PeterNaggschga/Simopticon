@@ -24,9 +24,14 @@ class ValueMap;
 using namespace std;
 
 /**
+ * This module provides classes coordinating the optimization process independently from the actual implementation of Optimizer, SimulationRunner and Evaluation.
+ * @defgroup controller
+ */
+
+/**
  * A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also
  * user interaction such as tracking results, updating StatusBar and handling interrupts by the user via Abortable.
- *
+ * @ingroup controller
  */
 class Controller : public Abortable {
 private:

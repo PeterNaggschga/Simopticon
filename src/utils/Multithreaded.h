@@ -18,6 +18,7 @@ using namespace std;
  * @tparam T: Result type of the concurrent Multithreaded::work function.
  * @tparam Compare: Comparison for objects of type Key.
  * @tparam Allocator: Allocator for pairs of constant Key and T.
+ * @ingroup utils
  */
 template<class Key, class T, class Compare = less<Key>, class Allocator = allocator<pair<const Key, T>>>
 class Multithreaded {

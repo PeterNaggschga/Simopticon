@@ -7,6 +7,7 @@
 /**
  * Implements a Parameter using discrete values.
  * The value of the Parameter is calculated as @f$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} @f$.
+ * @ingroup parameters
  */
 class DiscreteParameter : public Parameter {
 private:

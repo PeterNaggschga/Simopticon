@@ -12,7 +12,13 @@ class ParameterDefinition;
 using namespace std;
 
 /**
+ * This module defines framework-wide representations of the optimized parameters.
+ * @defgroup parameters
+ */
+
+/**
  * A class acting as the container of the value of a parameter defined by a ParameterDefinition.
+ * @ingroup parameters
  */
 class Parameter {
 private:
