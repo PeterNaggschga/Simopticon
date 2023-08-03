@@ -161,7 +161,7 @@ The same applies to the `config` directory in `~/src/simopticon` which is used t
 The optimization process and its components are configured using several JSON files.
 Default examples of such files can be found in the `config` directory.
 Be aware, however,
-that the default files in `config` must be edited before use
+that the default files in `config` must be edited before use,
 since some file paths must be set which depend on your filesystem.
 
 The options in the JSON files are commented and therefore self-explanatory.
@@ -252,13 +252,19 @@ If your implementation needs a more sophisticated implementation of the Paramete
 in `src/parameters`,
 feel free to extend the abstract Parameter class.
 
+The `src/Types.h` header file defines framework-wide types such as `functionValue` for values
+returned by the Evaluation component or `coordinate` which is used to store Parameter values.
+The `src/ComparisonFunctions.h` header file defines comparison functions,
+which can be used in STL containers that are ordered.
+E.g. `CmpVectorSharedParameter` can be used to compare two objects of type `vector<shared_ptr<Parameter>>`.
+
 #### Optimization Strategies
 
 To add a new optimization strategy, you have to extend the Optimizer class.
 You need
 to override the Optimizer::runOptimization method which should start the optimization process
 and only return
-when your strategy is finished or if the Abortable::abort method is called which you also should implement.
+when your strategy is finished or if the Optimizer::abort method is called which you should implement too.
 
 Optimizer extensions can instruct the Controller to start simulations
 and evaluate them with the Optimizer::requestValues method.
@@ -299,6 +305,8 @@ which conducts the rating of simulation performance based on the path to the res
 This process heavily depends on the implemented SimulationRunner,
 which is responsible for returning result files and run identifiers if necessary.
 Your Evaluation implementation should rate the given simulation results with a `functionValue` — the lower, the better.
+
+Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.
 
 ### Integration
 
