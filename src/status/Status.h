@@ -6,8 +6,14 @@
 using namespace std;
 
 /**
+ * This package provides functionality for command line output to keep the user updated about the optimization state and progress.
+ * @defgroup status
+ */
+
+/**
  * An interface defining functions for status updates on configuration and progress of a class.
  * Used for creation of a StatusBar. Overriding the defined methods is not mandatory but recommended.
+ * @ingroup status
  */
 class Status {
 protected:

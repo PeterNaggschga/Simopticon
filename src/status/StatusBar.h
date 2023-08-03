@@ -21,12 +21,17 @@ class ValueMap;
 using namespace std;
 
 /**
- * Enum defining the steps, an optimization process cycles through.
+ * An Enum defining the steps, an optimization process cycles through.
+ * @ingroup status
  */
 enum step : char {
     INIT = -1, OPTIMIZER = 0, RUNNER = 1, EVALUATION = 2
 };
 
+/**
+ * A class used to conduct command line output containing information about the state of the used Optimizer, SimulationRunner and Evaluation along with the found optima.
+ * @ingroup status
+ */
 class StatusBar {
 private:
     /**
