@@ -6,7 +6,7 @@
 using namespace std;
 
 /**
- * This package provides functionality for command line output to keep the user updated about the optimization state and progress.
+ * This module provides functionality for command line output to keep the user updated about the optimization state and progress.
  * @defgroup status
  */
 

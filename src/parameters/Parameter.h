@@ -12,7 +12,7 @@ class ParameterDefinition;
 using namespace std;
 
 /**
- * This package defines framework-wide representations of the optimized parameters.
+ * This module defines framework-wide representations of the optimized parameters.
  * @defgroup parameters
  */
 
