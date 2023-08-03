@@ -12,6 +12,7 @@
  * To use StubController instead of Controller a second command line argument has to be passed containing the name of the function to be optimized.
  * The name can be one of the following: quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 or hartman6.
  * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html
+ * @ingroup controller
  */
 class StubController : public Controller {
 private:

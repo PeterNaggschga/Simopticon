@@ -21,6 +21,7 @@ using namespace std;
  * Running median calculation is supported by using sets ValueMap::upperValues and ValueMap::lowerValues.
  * Values are inserted into the data structure at once when ValueMap::updateMap is called.
  * Before that they are saved in ValueMap::tba to avoid unnecessary costly insertion operations.
+ * @ingroup controller
  */
 class ValueMap {
 private:
