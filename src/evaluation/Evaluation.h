@@ -11,8 +11,15 @@
 using namespace std;
 
 /**
+ * This module contains components capable of evaluating the performance of simulations by rating simulation data with a number value.
+ * Implementations must extend Evaluation.
+ * @defgroup evaluation
+ */
+
+/**
  * A class capable of evaluating simulation results and scoring them with a value which is treated as the function value for the optimization.
  * A lower value is considered better in this framework. The optimized function can be viewed as an error function.
+ * @ingroup evaluation
  */
 class Evaluation : public Status {
 public:

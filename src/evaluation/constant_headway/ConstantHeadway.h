@@ -12,6 +12,12 @@
 
 #pragma clang diagnostic pop
 
+/**
+ * This module extends Evaluation to interface with a Python script evaluating the performance of platooning simulations with Plexe by analyzing the deviation of vehicles from the pre-specified gap.
+ * @defgroup constant_headway
+ * @ingroup evaluation
+ */
+
 class ConstantHeadway : public Evaluation, public PythonScript {
 private:
     const unsigned int NR_THREADS;
