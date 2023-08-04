@@ -2,8 +2,8 @@
 
 #include <utility>
 
-ChildRect::ChildRect(dimension D, position pos, shared_ptr<HyRect> parent) : HyRect(D, pos, parent->getDepth() + 1),
-                                                                             parent(std::move(parent)) {
+ChildRect::ChildRect(position pos, shared_ptr<HyRect> parent) : HyRect(parent->getD(), pos, parent->getDepth() + 1),
+                                                                parent(std::move(parent)) {
 }
 
 array<vector<dirCoordinate>, 2> ChildRect::getSamplingVertices() {
