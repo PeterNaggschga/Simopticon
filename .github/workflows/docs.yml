@@ -1,5 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy documentation to Pages
+name: Deploy documentation
 
 on:
   # Runs on pushes targeting the default branch
@@ -32,10 +31,24 @@ jobs:
         run: sudo apt-get install doxygen graphviz -y
         shell: bash
 
+      - name: Remove old documentation
+        run: |
+          rm -r docs/html
+          rm docs/documentation.pdf
+
       - name: Run Doxygen
         run: |
           cd docs
           doxygen Doxyfile
+        shell: bash
+
+      - name: Make PDF
+        run: |
+          cd docs/latex
+          make
+          mv refman.pdf ../documentation.pdf
+          cd ..
+          rm -r latex
         shell: bash
 
       - name: Push changes
@@ -45,6 +58,7 @@ jobs:
           git add docs
           git commit -m "updated API documentation"
           git push
+        shell: bash
       
   deploy:
     needs: update-documentation
@@ -60,7 +74,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # Upload entire repository
           path: './docs/html'
       - name: Deploy to GitHub Pages
         id: deployment
