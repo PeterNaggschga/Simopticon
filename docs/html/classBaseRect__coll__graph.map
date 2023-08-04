@@ -1,0 +1,4 @@
+<map id="BaseRect" name="BaseRect">
+<area shape="rect" id="node1" title="A class representing a HyRect without a parent rectangle." alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node2" href="$classHyRect.html" title="An abstract class representing a rectangular part of the search space." alt="" coords="12,5,81,32"/>
+</map>

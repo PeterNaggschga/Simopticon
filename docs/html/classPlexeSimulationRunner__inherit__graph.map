@@ -1,0 +1,7 @@
+<map id="PlexeSimulationRunner" name="PlexeSimulationRunner">
+<area shape="rect" id="node1" title="A class capable of starting platooning simulations in the Plexe framework with given Parameter combin..." alt="" coords="496,112,669,139"/>
+<area shape="rect" id="node2" href="$classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations." alt="" coords="293,75,432,101"/>
+<area shape="rect" id="node3" href="$classMultithreaded.html" title=" " alt="" coords="5,5,229,91"/>
+<area shape="rect" id="node4" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="86,115,149,141"/>
+<area shape="rect" id="node5" href="$classMultithreaded.html" title=" " alt="" coords="277,126,448,197"/>
+</map>

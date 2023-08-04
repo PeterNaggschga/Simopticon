@@ -1,0 +1,7 @@
+<map id="StubController" name="StubController">
+<area shape="rect" id="node1" title="A class that mocks behaviour of Controller." alt="" coords="100,171,215,197"/>
+<area shape="rect" id="node2" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="114,95,201,121"/>
+<area shape="rect" id="node3" href="$classAbortable.html" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node4" href="$classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi..." alt="" coords="115,5,200,32"/>
+<area shape="rect" id="node5" href="$structController_1_1stepstate.html" title="A struct keeping track of the currently running optimization step for StatusBar::updateStatus." alt="" coords="224,5,379,32"/>
+</map>

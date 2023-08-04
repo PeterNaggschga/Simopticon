@@ -1,0 +1,7 @@
+<map id="Abortable" name="Abortable">
+<area shape="rect" id="node1" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="91,5,176,32"/>
+<area shape="rect" id="node2" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="27,80,114,107"/>
+<area shape="rect" id="node4" href="$classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="154,80,241,107"/>
+<area shape="rect" id="node3" href="$classStubController.html" title="A class that mocks behaviour of Controller." alt="" coords="5,155,120,181"/>
+<area shape="rect" id="node5" href="$classDirectOptimizer.html" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm." alt="" coords="144,155,269,181"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="DirectOptimizer" name="DirectOptimizer">
+<area shape="rect" id="node1" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm." alt="" coords="279,273,405,300"/>
+<area shape="rect" id="node2" href="$classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="63,184,149,211"/>
+<area shape="rect" id="node3" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node4" href="$classAbortable.html" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="50,5,135,32"/>
+<area shape="rect" id="node5" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="152,95,239,121"/>
+<area shape="rect" id="node6" href="$classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi..." alt="" coords="159,5,245,32"/>
+<area shape="rect" id="node7" href="$structController_1_1stepstate.html" title="A struct keeping track of the currently running optimization step for StatusBar::updateStatus." alt="" coords="269,5,423,32"/>
+<area shape="rect" id="node8" href="$classParameterNormalizer.html" title="A class used for transforming parameters between the actual Parameter space and the unit hypercube us..." alt="" coords="173,184,335,211"/>
+<area shape="rect" id="node9" href="$classStoppingCondition.html" title="A class used for deciding whether the DIRECT should be stopped." alt="" coords="359,184,501,211"/>
+<area shape="rect" id="node10" href="$classLevels.html" title="A providing functionality for the usage of different weightings between local and global search throu..." alt="" coords="525,184,589,211"/>
+</map>

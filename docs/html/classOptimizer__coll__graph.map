@@ -1,0 +1,8 @@
+<map id="Optimizer" name="Optimizer">
+<area shape="rect" id="node1" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="63,184,149,211"/>
+<area shape="rect" id="node2" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node3" href="$classAbortable.html" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="50,5,135,32"/>
+<area shape="rect" id="node4" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="152,95,239,121"/>
+<area shape="rect" id="node5" href="$classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi..." alt="" coords="159,5,245,32"/>
+<area shape="rect" id="node6" href="$structController_1_1stepstate.html" title="A struct keeping track of the currently running optimization step for StatusBar::updateStatus." alt="" coords="269,5,423,32"/>
+</map>
