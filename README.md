@@ -36,7 +36,9 @@ Extensions of the framework may introduce new Optimizer, SimulationRunner and Ev
 Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers
 using the [Plexe](https://plexe.car2x.org/) framework.
 
-The full API documentation may be found on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/simopticon/).
+The full API documentation may be found
+on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/simopticon/)
+or in the comprehensive [PDF file](https://peternaggschga.github.io/simopticon/documentation.pdf) provided.
 
 ---
 
@@ -253,6 +255,8 @@ SimulationRunner extensions go into `src/runner` and Evaluation extensions go in
 If your implementation needs a more sophisticated implementation of the Parameter class than the ones provided
 in `src/parameters`,
 feel free to extend the abstract Parameter class.
+
+Please document your code using [Doxygen](https://www.doxygen.nl/) comments!
 
 The `src/Types.h` header file defines framework-wide types such as `functionValue` for values
 returned by the Evaluation component or `coordinate` which is used to store Parameter values.
