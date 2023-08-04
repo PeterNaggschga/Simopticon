@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+  \newunicodechar{⁻}{${}^{-}$}% Superscript minus
+  \newunicodechar{²}{${}^{2}$}% Superscript two
+  \newunicodechar{³}{${}^{3}$}% Superscript three
+
+\pagestyle{empty}
+\begin{document}
+$ t = \min(\mathit{threads}, \mathit{repeat} \cdot \mathit{size}(\mathit{scenarios})) $
+\pagebreak
+
+$ t' = \lfloor \mathit{threads} \div t \rfloor $
+\pagebreak
+
+$ t=0 $
+\pagebreak
+
+$ t > 0 $
+\pagebreak
+
+$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} $
+\pagebreak
+
+\end{document}
