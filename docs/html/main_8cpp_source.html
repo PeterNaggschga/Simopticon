@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/main.cpp Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/main.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * Reference to the Controller that is running the optimization.</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">unique_ptr</a>&lt;<a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">Controller</a>&gt; <a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">ctr</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;unique_ptr&lt;<a class="code" href="classController.html">Controller</a>&gt; <a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">ctr</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Handler routine for SIGINT signal which calls Controller#abort and sets the new handler of SIGINT to the default (instant interrupt of the software).</span></div>
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.html#a6165098e568a4d12627b33ad880d0961">interruptHandler</a>([[<a class="code" href="main_8cpp.html#a6165098e568a4d12627b33ad880d0961">maybe_unused</a>]] <span class="keywordtype">int</span> s) {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    signal(SIGINT, SIG_DFL);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ctr-&gt;abort();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">ctr</a>-&gt;<a class="code" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">abort</a><a class="code" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">(</a><a class="code" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">)</a>;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/**</span></div>
@@ -128,18 +128,18 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (argc == 2) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        ctr = make_unique&lt;Controller&gt;(argv[1]);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">ctr</a> = make_unique&lt;<a class="code" href="classController.html">Controller</a>&gt;(argv[1]);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        ctr = make_unique&lt;StubController&gt;(argv[1], argv[2]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">ctr</a> = make_unique&lt;<a class="code" href="classStubController.html">StubController</a>&gt;(argv[1], argv[2]);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">struct</span> sigaction intHandler{};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    intHandler.sa_handler = interruptHandler;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    intHandler.sa_handler = <a class="code" href="main_8cpp.html#a6165098e568a4d12627b33ad880d0961">interruptHandler</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    sigemptyset(&amp;intHandler.sa_mask);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    intHandler.sa_flags = 0;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    sigaction(SIGINT, &amp;intHandler, <span class="keywordtype">nullptr</span>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ctr-&gt;run();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="main_8cpp.html#a8cf0493492d3c34f680c1737c5a15708">ctr</a>-&gt;<a class="code" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">run</a><a class="code" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">(</a><a class="code" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">)</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('main_8cpp_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:42 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

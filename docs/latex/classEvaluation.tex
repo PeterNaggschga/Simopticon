@@ -1,0 +1,188 @@
+\hypertarget{classEvaluation}{}\doxysection{Evaluation Class Reference}
+\label{classEvaluation}\index{Evaluation@{Evaluation}}
+
+
+A class capable of evaluating simulation results and scoring them with a value which is treated as the function value for the optimization.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Evaluation.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Evaluation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classEvaluation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Evaluation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classEvaluation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} \mbox{\hyperlink{classEvaluation_ad0f537b437962a4da51766ba8d542759}{process\+Output}} (filesystem\+::path path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ experiment\+Ids)=0
+\begin{DoxyCompactList}\small\item\em Returns a value to the results of a single simulation run. \end{DoxyCompactList}\item 
+virtual map$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ \mbox{\hyperlink{classEvaluation_a188f942f56366f021c0f32d218f4d1b6}{process\+Output}} (const set$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$$>$$>$ \&experiment\+Results)
+\begin{DoxyCompactList}\small\item\em Returns values to the results of multiple simulation runs. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classEvaluation_a479b98a82908b3d5c72d8a73e24b78a1}{get\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the name of the implementing component in natural language. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classEvaluation_a26e219504b717e6f44ac31ecb11272b5}{get\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current state of the implementing component. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classEvaluation_a16d1e5ec9c149224e0fdacec598b5293}{get\+Status\+Bar}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current progress of the calculations of the implementing component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class capable of evaluating simulation results and scoring them with a value which is treated as the function value for the optimization. 
+
+A lower value is considered better in this framework. The optimized function can be viewed as an error function. 
+
+Definition at line 24 of file Evaluation.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEvaluation_a479b98a82908b3d5c72d8a73e24b78a1}\label{classEvaluation_a479b98a82908b3d5c72d8a73e24b78a1}} 
+\index{Evaluation@{Evaluation}!getName@{getName}}
+\index{getName@{getName}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Evaluation\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the name of the implementing component in natural language. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the name of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}{Status}}.
+
+
+
+Definition at line 12 of file Evaluation.\+cpp.
+
+
+
+References Status\+::get\+Name().
+
+\mbox{\Hypertarget{classEvaluation_a26e219504b717e6f44ac31ecb11272b5}\label{classEvaluation_a26e219504b717e6f44ac31ecb11272b5}} 
+\index{Evaluation@{Evaluation}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily string Evaluation\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current state of the implementing component. 
+
+May contain values of class members or other meaningful information. The returned string is always visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}. \begin{DoxyReturn}{Returns}
+A string containing the state of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a587fbda25430f10e4cade040aaad198f}{Status}}.
+
+
+
+Definition at line 16 of file Evaluation.\+cpp.
+
+
+
+References Status\+::get\+Status().
+
+\mbox{\Hypertarget{classEvaluation_a16d1e5ec9c149224e0fdacec598b5293}\label{classEvaluation_a16d1e5ec9c149224e0fdacec598b5293}} 
+\index{Evaluation@{Evaluation}!getStatusBar@{getStatusBar}}
+\index{getStatusBar@{getStatusBar}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{getStatusBar()}{getStatusBar()}}
+{\footnotesize\ttfamily string Evaluation\+::get\+Status\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current progress of the calculations of the implementing component. 
+
+The returned string is visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}, when the component is actively calculating something. Must not exceed one console line! \begin{DoxyReturn}{Returns}
+A string containing the progress of a calculation. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}{Status}}.
+
+
+
+Definition at line 20 of file Evaluation.\+cpp.
+
+
+
+References Status\+::get\+Status\+Bar().
+
+\mbox{\Hypertarget{classEvaluation_a188f942f56366f021c0f32d218f4d1b6}\label{classEvaluation_a188f942f56366f021c0f32d218f4d1b6}} 
+\index{Evaluation@{Evaluation}!processOutput@{processOutput}}
+\index{processOutput@{processOutput}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{processOutput()}{processOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ Evaluation\+::process\+Output (\begin{DoxyParamCaption}\item[{const set$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$$>$$>$ \&}]{experiment\+Results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns values to the results of multiple simulation runs. 
+
+Simply calls \mbox{\hyperlink{classEvaluation_ad0f537b437962a4da51766ba8d542759}{process\+Output(filesystem\+::path, set$<$run\+Id$>$)}} multiple times if not overridden. 
+\begin{DoxyParams}{Parameters}
+{\em experiment\+Results} & Paths to and identifiers of the simulation results. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map which maps the given results to their respective performance value. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classConstantHeadway_aaca45f5b8a3c145d3e68c4f459379930}{Constant\+Headway}}.
+
+
+
+Definition at line 4 of file Evaluation.\+cpp.
+
+\mbox{\Hypertarget{classEvaluation_ad0f537b437962a4da51766ba8d542759}\label{classEvaluation_ad0f537b437962a4da51766ba8d542759}} 
+\index{Evaluation@{Evaluation}!processOutput@{processOutput}}
+\index{processOutput@{processOutput}!Evaluation@{Evaluation}}
+\doxysubsubsection{\texorpdfstring{processOutput()}{processOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} Evaluation\+::process\+Output (\begin{DoxyParamCaption}\item[{filesystem\+::path}]{path,  }\item[{set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$}]{experiment\+Ids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns a value to the results of a single simulation run. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the result files. \\
+\hline
+{\em experiment\+Ids} & Identifiers of certain simulation runs within the directory represented by the given path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value that represents the performance of the simulation -\/ the lower the better. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classConstantHeadway_a7cfc3bab6fa092f2c84059325b10be07}{Constant\+Headway}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/evaluation/Evaluation.\+h\item 
+/home/runner/work/simopticon/simopticon/src/evaluation/Evaluation.\+cpp\end{DoxyCompactItemize}

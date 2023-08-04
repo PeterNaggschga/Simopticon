@@ -1,0 +1,58 @@
+\hypertarget{classGrahamScan}{}\doxysection{Graham\+Scan Class Reference}
+\label{classGrahamScan}\index{GrahamScan@{GrahamScan}}
+
+
+A class providing functionality for finding the lower right convex hull of a set of points.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Graham\+Scan.\+h\char`\"{}}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static list$<$ pair$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$, double $>$ $>$ \mbox{\hyperlink{classGrahamScan_a4344dd919a7cfb55322d2caf57f1780a}{scan}} (list$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$$>$ vertices)
+\begin{DoxyCompactList}\small\item\em Calculates the lower right convex hull of a set of points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class providing functionality for finding the lower right convex hull of a set of points. 
+
+Definition at line 15 of file Graham\+Scan.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrahamScan_a4344dd919a7cfb55322d2caf57f1780a}\label{classGrahamScan_a4344dd919a7cfb55322d2caf57f1780a}} 
+\index{GrahamScan@{GrahamScan}!scan@{scan}}
+\index{scan@{scan}!GrahamScan@{GrahamScan}}
+\doxysubsubsection{\texorpdfstring{scan()}{scan()}}
+{\footnotesize\ttfamily list$<$ pair$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$, double $>$ $>$ Graham\+Scan\+::scan (\begin{DoxyParamCaption}\item[{list$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$$>$}]{vertices }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculates the lower right convex hull of a set of points. 
+
+Points are defined by the given Hy\+Rects diagonal length (x axis) and average value (y axis). For each returned \mbox{\hyperlink{classHyRect}{Hy\+Rect}} the slope to the point right of it is returned (if it is the rightmost point, infinity is chosen). That slope value can be used by DIRECT as the highest Lipschitz constant for which the \mbox{\hyperlink{classHyRect}{Hy\+Rect}} satisfies the first condition. 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & List of rectangles with different sizes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of rectangles and corresponding Lipschitz constants that represents convex hull meaning a subset of the given \mbox{\hyperlink{classHyRect}{Hy\+Rect}} list. 
+\end{DoxyReturn}
+
+
+Definition at line 7 of file Graham\+Scan.\+cpp.
+
+
+
+References Hy\+Rect\+::get\+Avg\+Value(), Hy\+Rect\+::get\+Depth(), and Hy\+Rect\+::get\+Diagonal\+Length().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/Graham\+Scan.\+h\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/Graham\+Scan.\+cpp\end{DoxyCompactItemize}

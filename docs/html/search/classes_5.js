@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['grahamscan_260', ['GrahamScan', ['../classGrahamScan.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['grahamscan_260',['GrahamScan',['../classGrahamScan.html',1,'']]]
+];

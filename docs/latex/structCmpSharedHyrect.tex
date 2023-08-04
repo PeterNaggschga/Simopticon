@@ -1,0 +1,59 @@
+\hypertarget{structCmpSharedHyrect}{}\doxysection{Cmp\+Shared\+Hyrect Struct Reference}
+\label{structCmpSharedHyrect}\index{CmpSharedHyrect@{CmpSharedHyrect}}
+
+
+This struct implements the comparison of two shared pointers to \mbox{\hyperlink{classHyRect}{Hy\+Rect}} instances.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Direct\+Comparison\+Functions.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structCmpSharedHyrect_abe38cfe0242f48d20fe4467f5e3724a2}{operator()}} (const shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$ \&a, const shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$ \&b) const
+\begin{DoxyCompactList}\small\item\em Compares two shared pointers to \mbox{\hyperlink{classHyRect}{Hy\+Rect}} instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This struct implements the comparison of two shared pointers to \mbox{\hyperlink{classHyRect}{Hy\+Rect}} instances. 
+
+Definition at line 17 of file Direct\+Comparison\+Functions.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structCmpSharedHyrect_abe38cfe0242f48d20fe4467f5e3724a2}\label{structCmpSharedHyrect_abe38cfe0242f48d20fe4467f5e3724a2}} 
+\index{CmpSharedHyrect@{CmpSharedHyrect}!operator()@{operator()}}
+\index{operator()@{operator()}!CmpSharedHyrect@{CmpSharedHyrect}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Cmp\+Shared\+Hyrect\+::operator() (\begin{DoxyParamCaption}\item[{const shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$ \&}]{a,  }\item[{const shared\+\_\+ptr$<$ \mbox{\hyperlink{classHyRect}{Hy\+Rect}} $>$ \&}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares two shared pointers to \mbox{\hyperlink{classHyRect}{Hy\+Rect}} instances. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & First pointer to a \mbox{\hyperlink{classHyRect}{Hy\+Rect}}. \\
+\hline
+{\em b} & Second pointer to a \mbox{\hyperlink{classHyRect}{Hy\+Rect}}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a has a lower \mbox{\hyperlink{classHyRect_aaed25fd458c840441423fb11d1ddff55}{Hy\+Rect\+::avg\+Value}} value than b. If both values are the same, compare the sampling vertices returned by \mbox{\hyperlink{classHyRect_ae19c28ce098e9dd107f6f907c6606b36}{Hy\+Rect\+::get\+Sampling\+Vertices}}. 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Direct\+Comparison\+Functions.\+h.
+
+
+
+References Hy\+Rect\+::get\+Avg\+Value(), and Hy\+Rect\+::get\+Sampling\+Vertices().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/\mbox{\hyperlink{DirectComparisonFunctions_8h}{Direct\+Comparison\+Functions.\+h}}\end{DoxyCompactItemize}

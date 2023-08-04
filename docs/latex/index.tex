@@ -1,0 +1,257 @@
+\label{index_md__home_runner_work_simopticon_simopticon_README}%
+\Hypertarget{index_md__home_runner_work_simopticon_simopticon_README}%
+ \DoxyHorRuler{0}
+
+
+
+\begin{DoxyEnumerate}
+\item \href{\#overview}{\texttt{ Overview}}
+\item \href{\#setup}{\texttt{ Setup}}
+\begin{DoxyEnumerate}
+\item \href{\#requirements}{\texttt{ Requirements}}
+\item \href{\#installation}{\texttt{ Installation}}
+\end{DoxyEnumerate}
+\item \href{\#usage}{\texttt{ Usage}}
+\begin{DoxyEnumerate}
+\item \href{\#configuration}{\texttt{ Configuration}}
+\item \href{\#optimization}{\texttt{ Optimization}}
+\end{DoxyEnumerate}
+\item \href{\#extension}{\texttt{ Extension}}
+\begin{DoxyEnumerate}
+\item \href{\#development}{\texttt{ Development}}
+\item \href{\#integration}{\texttt{ Integration}}
+\end{DoxyEnumerate}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md3}{}\doxysection{Overview}\label{index_autotoc_md3}
+{\itshape Simopticon} is a framework which automates the search for optimal parameters for simulated processes. The key strategy is to define parameters that shall be optimized, automatically run simulations with certain parameters, evaluate their performance by calculating a number rating (the lower, the better) and trying to find parameter combinations that minimize the rating.
+
+The described process is distributed over four major components\+:
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{classOptimizer}{Optimizer}}\+: An optimization strategy capable of finding the minimum of a blackbox function only accessible through argument-\/value pairs.
+\item \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}}\+: A component used to run simulations with certain parameters automatically.
+\item \mbox{\hyperlink{classEvaluation}{Evaluation}}\+: A component capable of calculating a rating value based on result files of simulations.
+\item \mbox{\hyperlink{classController}{Controller}}\+: A component managing the optimization process and communication between \mbox{\hyperlink{classOptimizer}{Optimizer}}, \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} and \mbox{\hyperlink{classEvaluation}{Evaluation}}. Used to abstract components 1-\/3 from each other.
+\end{DoxyEnumerate}
+
+Extensions of the framework may introduce new \mbox{\hyperlink{classOptimizer}{Optimizer}}, \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} and \mbox{\hyperlink{classEvaluation}{Evaluation}} implementations (see \href{\#extension}{\texttt{ Extension}}). Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers using the \href{https://plexe.car2x.org/}{\texttt{ Plexe}} framework.
+
+The full API documentation may be found on \href{https://peternaggschga.github.io/simopticon/}{\texttt{ peternaggschga.\+github.\+io/simopticon}}.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md5}{}\doxysection{Setup}\label{index_autotoc_md5}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{Requirements}\label{index_autotoc_md6}
+The following sections describe the requirements your machine has to fulfill to run {\itshape Simopticon}. They may differ depending on the \mbox{\hyperlink{classOptimizer}{Optimizer}}, \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} and \mbox{\hyperlink{classEvaluation}{Evaluation}} implementations you plan to use, therefore, the implementations have their own dependency sections.
+
+\doxysubsubsection*{Simopticon}
+
+The framework itself is developed for Debian-\/based Unix/\+Linux machines. Other operating systems might work but are not actively supported. To be able to install the framework, you need the following software\+:
+
+
+\begin{DoxyItemize}
+\item Git (see \href{\#git}{\texttt{ Git}})
+\item CMake Version 3.\+25 or higher (see \href{\#cmake}{\texttt{ CMake}})
+\item Python3 development tools (see \href{\#python3-development-tools}{\texttt{ Python3 Development Tools}})
+\end{DoxyItemize}
+
+\doxysubsubsection*{\mbox{\hyperlink{classPlexeSimulationRunner}{Plexe\+Simulation\+Runner}}}
+
+To enable simulations with Plexe, Version 3.\+1 of the framework must be installed. Refer to the \href{https://plexe.car2x.org/building/}{\texttt{ Plexe install guide}} for more information. Please mind that you might want to install OMNe\+T++ Version 6 or higher in order to use the \href{\#constantheadway}{\texttt{ Constant\+Headway}} \mbox{\hyperlink{classEvaluation}{Evaluation}}, even though the installation guide might suggest an older version.
+
+\doxysubsubsection*{\mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}}}
+
+To use the \mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}} \mbox{\hyperlink{classEvaluation}{Evaluation}}, OMNe\+T++ Version 6 or higher is needed. Please refer to the \href{https://doc.omnetpp.org/omnetpp/InstallGuide.pdf}{\texttt{ OMNe\+T++ Install Guide}} for more information on the requirements.\hypertarget{index_autotoc_md7}{}\doxysubsection{Installation}\label{index_autotoc_md7}
+\doxysubsubsection*{Prerequisites}
+
+\doxyparagraph*{Git}
+
+Check whether Git is installed on your machine and install it if necessary using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install git}
+
+\end{DoxyCode}
+
+
+\doxyparagraph*{CMake}
+
+CMake Version 3.\+25 or higher is needed for building {\itshape Simopticon}. If you don\textquotesingle{}t have CMake installed, follow the guide below. If you have an older version installed, you must first remove it.
+
+First, make sure to install g++ and Open\+SSL Development tools.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install g++ libssl-\/dev}
+
+\end{DoxyCode}
+
+
+Then you need to download the latest version of CMake from their \href{https://cmake.org/download/}{\texttt{ download page}} — search for the source distribution tar package. Unpack the downloaded package using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{tar xf cmake-\/[version number].tar.gz}
+
+\end{DoxyCode}
+
+
+Open the newly created directory and run the configuration script with\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd cmake-\/[version number] \&\& ./configure}
+
+\end{DoxyCode}
+
+
+When the configuration has completed successfully, you are ready to build and install using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make -\/j \$(nproc)}
+\DoxyCodeLine{sudo make install}
+
+\end{DoxyCode}
+
+
+You may remove the downloaded tar file and extracted directory if needed.
+
+\doxyparagraph*{Python3 Development Tools}
+
+Check whether Python3 development tools are installed on your machine and install them if necessary using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt install python3-\/dev}
+
+\end{DoxyCode}
+
+
+\doxysubsubsection*{Simopticon}
+
+Go to the directory you want to install {\itshape Simopticon} in, e.\+g. {\ttfamily $\sim$/src}. To get the source code, clone the git repository using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/PeterNaggschga/simopticon.git}
+
+\end{DoxyCode}
+
+
+Create a build directory in the downloaded files with\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir simopticon/build}
+\DoxyCodeLine{cd simopticon/build}
+
+\end{DoxyCode}
+
+
+Build {\itshape Simopticon} by calling\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake ..}
+\DoxyCodeLine{make -\/j  \$(nproc)}
+
+\end{DoxyCode}
+
+
+The resulting executable {\ttfamily simopticon} may be copied to other locations or referenced via symlinks for more convenient access. The same applies to the {\ttfamily config} directory in {\ttfamily $\sim$/src/simopticon} which is used to configure the optimization process (see \href{\#usage}{\texttt{ Usage}}).
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md9}{}\doxysection{Usage}\label{index_autotoc_md9}
+\hypertarget{index_autotoc_md10}{}\doxysubsection{Configuration}\label{index_autotoc_md10}
+The optimization process and its components are configured using several JSON files. Default examples of such files can be found in the {\ttfamily config} directory. Be aware, however, that the default files in {\ttfamily config} must be edited before use, since some file paths must be set which depend on your filesystem.
+
+The options in the JSON files are commented and therefore self-\/explanatory. The following sections only show options that must be changed to successfully run optimizations.
+
+\doxysubsubsection*{Main Configuration}
+
+The main configuration can be found in {\ttfamily config/simopticon.\+json}. It contains settings of the \mbox{\hyperlink{classController}{Controller}} and selects the other components. In the {\ttfamily controller} settings, the key {\ttfamily params} must be set to reference another JSON file containing an array of \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} that are to be optimized.
+
+The main configuration selects which \mbox{\hyperlink{classOptimizer}{Optimizer}}, \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} and \mbox{\hyperlink{classEvaluation}{Evaluation}} implementations are to be used. For each of those components, a name of the implementation and a reference to a JSON file configuring it must be given. References are used because different implementations of the same component may vastly differ in their configurable options, and switching the used components gets easier this way.
+
+\doxysubsubsection*{\mbox{\hyperlink{classPlexeSimulationRunner}{Plexe\+Simulation\+Runner}}}
+
+If you want to use \mbox{\hyperlink{classPlexeSimulationRunner}{Plexe\+Simulation\+Runner}}, you need to configure {\ttfamily config/runners/plexe.\+json}. There you have to set the {\ttfamily config\+Directory} key to match the path to the directory containing your Plexe configuration ({\ttfamily omnetpp.\+ini}). For default installations that should be something along the lines of {\ttfamily \mbox{[}installation-\/directory\mbox{]}/plexe/examples/platooning}.
+
+\doxysubsubsection*{\mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}}}
+
+If you want to use \mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}} evaluation, you need to configure {\ttfamily config/evaluations/constant\+\_\+headway.\+json}. There you have to set the {\ttfamily python\+Script} and the {\ttfamily omnetpp\+Directory} keys. {\ttfamily python\+Script} must point to the script {\ttfamily \mbox{\hyperlink{constant__headway_8py}{constant\+\_\+headway.\+py}}} which can be found in {\ttfamily src/evaluation/constant\+\_\+headway}. {\ttfamily omnetpp\+Directory} must point to the directory where OMNe\+T++ Version 6 or higher is installed, e.\+g. {\ttfamily $\sim$/src/omnetpp-\/6.0.\+1}.\hypertarget{index_autotoc_md11}{}\doxysubsection{Optimization}\label{index_autotoc_md11}
+The optimization is invoked on the command line by executing the program built in \href{\#setup}{\texttt{ Setup}}. The call on the command line has one mandatory and one optional argument. The First argument must be the path to the main config, i.\+e. {\ttfamily config/simopticon.\+json}. A valid call to an optimization could be\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./simopticon ../config/simopticon.json}
+
+\end{DoxyCode}
+
+
+If a second argument is given, instead of running actual simulations with the configured \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} and evaluating their results with an \mbox{\hyperlink{classEvaluation}{Evaluation}}, the \mbox{\hyperlink{classStubController}{Stub\+Controller}} is used. \mbox{\hyperlink{classStubController}{Stub\+Controller}} can be used to implement and optimize benchmark functions to test \mbox{\hyperlink{classOptimizer}{Optimizer}} implementations without relying on actual costly simulations. The second argument holds the name of the function to be optimized, i.\+e., one of the following\+:
+
+
+\begin{DoxyItemize}
+\item quadratic (squares all \mbox{\hyperlink{classParameter}{Parameter}} values and adds them up)
+\item \href{https://www.sfu.ca/~ssurjano/branin.html}{\texttt{ branin}}
+\item \href{https://www.sfu.ca/~ssurjano/goldpr.html}{\texttt{ goldprice}}
+\item \href{https://www.sfu.ca/~ssurjano/camel6.html}{\texttt{ camel6}}
+\item \href{https://www.sfu.ca/~ssurjano/shubert.html}{\texttt{ shubert}}
+\item \href{https://www.sfu.ca/~ssurjano/hart3.html}{\texttt{ hartman3}}
+\item \href{https://www.sfu.ca/~ssurjano/shekel.html}{\texttt{ shekel5}}
+\item \href{https://www.sfu.ca/~ssurjano/shekel.html}{\texttt{ shekel7}}
+\item \href{https://www.sfu.ca/~ssurjano/shekel.html}{\texttt{ shekel10}}
+\item \href{https://www.sfu.ca/~ssurjano/hart6.html}{\texttt{ hartman6}}
+\end{DoxyItemize}
+
+A valid call to the optimization of a benchmark function could be\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./simopticon ../config/simopticon.json branin}
+
+\end{DoxyCode}
+
+
+Please note that you need to define the optimized parameters in {\ttfamily config/simopticon.\+json} even when you are optimizing a benchmark.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md13}{}\doxysection{Extension}\label{index_autotoc_md13}
+This section goes through the steps you need to undertake to extend the framework with new \mbox{\hyperlink{classOptimizer}{Optimizer}}, \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} or \mbox{\hyperlink{classEvaluation}{Evaluation}} implementations.\hypertarget{index_autotoc_md14}{}\doxysubsection{Development}\label{index_autotoc_md14}
+When developing new implementations of components, please stick to the project structure — \mbox{\hyperlink{classOptimizer}{Optimizer}} extensions go into {\ttfamily src/optimizer}, \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} extensions go into {\ttfamily src/runner} and \mbox{\hyperlink{classEvaluation}{Evaluation}} extensions go into {\ttfamily src/evaluation}. If your implementation needs a more sophisticated implementation of the \mbox{\hyperlink{classParameter}{Parameter}} class than the ones provided in {\ttfamily src/parameters}, feel free to extend the abstract \mbox{\hyperlink{classParameter}{Parameter}} class.
+
+The {\ttfamily \mbox{\hyperlink{Types_8h}{src/\+Types.\+h}}} header file defines framework-\/wide types such as {\ttfamily function\+Value} for values returned by the \mbox{\hyperlink{classEvaluation}{Evaluation}} component or {\ttfamily coordinate} which is used to store \mbox{\hyperlink{classParameter}{Parameter}} values. The {\ttfamily \mbox{\hyperlink{ComparisonFunctions_8h}{src/\+Comparison\+Functions.\+h}}} header file defines comparison functions, which can be used in STL containers that are ordered. E.\+g. {\ttfamily \mbox{\hyperlink{structCmpVectorSharedParameter}{Cmp\+Vector\+Shared\+Parameter}}} can be used to compare two objects of type {\ttfamily vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classParameter}{Parameter}}$>$$>$}.
+
+\doxysubsubsection*{Optimization Strategies}
+
+To add a new optimization strategy, you have to extend the \mbox{\hyperlink{classOptimizer}{Optimizer}} class. You need to override the \mbox{\hyperlink{classOptimizer_af9a3322b650a543d78c19a658d9319d4}{Optimizer\+::run\+Optimization}} method which should start the optimization process and only return when your strategy is finished or if the \mbox{\hyperlink{classAbortable_aa93818ee48fcc8f9ed845215d533436d}{Optimizer\+::abort}} method is called which you should implement too.
+
+\mbox{\hyperlink{classOptimizer}{Optimizer}} extensions can instruct the \mbox{\hyperlink{classController}{Controller}} to start simulations and evaluate them with the \mbox{\hyperlink{classOptimizer_a65c16b4d0f9ee3b84e24eec43e89cedd}{Optimizer\+::request\+Values}} method. Please try to commission as many Parameters as possible in one call of the method so the other components may parallelize calculations.
+
+Please consider overriding the methods provided by the \mbox{\hyperlink{classStatus}{Status}} interface to give the user a sense of what is happening.
+
+\doxysubsubsection*{Simulation Execution}
+
+To add a new way of executing simulations, you have to extend the \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}} class. You need to override the \mbox{\hyperlink{classSimulationRunner_aee43d80890242d162b796049a2144b60}{Simulation\+Runner\+::work}} function, which is run concurrently for all \mbox{\hyperlink{classParameter}{Parameter}} vectors provided to \mbox{\hyperlink{classSimulationRunner_a94b47c33b33f68366e0b0c6aacd94541}{Simulation\+Runner\+::run\+Simulations}}. If you want to prohibit concurrent execution, you may override \mbox{\hyperlink{classSimulationRunner_a94b47c33b33f68366e0b0c6aacd94541}{Simulation\+Runner\+::run\+Simulations}} instead (in that case, \mbox{\hyperlink{classSimulationRunner_aee43d80890242d162b796049a2144b60}{Simulation\+Runner\+::work}} should return an empty pair). See documentation of \mbox{\hyperlink{classMultithreaded}{Multithreaded}} class for more information on that.
+
+\mbox{\hyperlink{classSimulationRunner_aee43d80890242d162b796049a2144b60}{Simulation\+Runner\+::work}} should run a simulation with the given parameters and return a path to the result files and a set of identifiers relating to simulation runs. The interface for the identifiers is very loosely defined — if your \mbox{\hyperlink{classEvaluation}{Evaluation}} does not need any identifiers of simulation runs, you may return an empty set. Please be aware that the \mbox{\hyperlink{classController}{Controller}} might try to delete the path you return after some time, so that should not be an empty path! Other than that, it is not further standardized what must be returned as a path and identifiers as long as your \mbox{\hyperlink{classEvaluation}{Evaluation}} component can evaluate the simulation based on the returned information.
+
+Please consider overriding the methods provided by the \mbox{\hyperlink{classStatus}{Status}} interface to give the user a sense of what is happening.
+
+\doxysubsubsection*{Simulation \mbox{\hyperlink{classEvaluation}{Evaluation}}}
+
+To add a new rating algorithm based on simulation data, you have to extend the \mbox{\hyperlink{classEvaluation}{Evaluation}} class. You need to override the \mbox{\hyperlink{classEvaluation_ad0f537b437962a4da51766ba8d542759}{Evaluation\+::process\+Output}} function, which conducts the rating of simulation performance based on the path to the result files and the given identifiers. This process heavily depends on the implemented \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}}, which is responsible for returning result files and run identifiers if necessary. Your \mbox{\hyperlink{classEvaluation}{Evaluation}} implementation should rate the given simulation results with a {\ttfamily function\+Value} — the lower, the better.
+
+Please consider overriding the methods provided by the \mbox{\hyperlink{classStatus}{Status}} interface to give the user a sense of what is happening.\hypertarget{index_autotoc_md15}{}\doxysubsection{Integration}\label{index_autotoc_md15}
+All newly added classes must be registered in {\ttfamily CMake\+List.\+txt} so the compiler does not ignore them! External dependencies and added libraries should be included there too.
+
+To make your new component available for configuration, you must add it to the constructor of the \mbox{\hyperlink{classController}{Controller}} class. Let\textquotesingle{}s assume you wrote a new \mbox{\hyperlink{classOptimizer}{Optimizer}} implementation. First you need to create a JSON configuration file in {\ttfamily config/optimizer}. There you can define any desired options for your component.
+
+The next step is editing the \mbox{\hyperlink{classController}{Controller}} class to make your \mbox{\hyperlink{classOptimizer}{Optimizer}} available. To do that, you find the \char`\"{}\+Optimizer settings\char`\"{} in the constructor of the \mbox{\hyperlink{classController}{Controller}}. There you add another case to the {\ttfamily if}-\/Statement where {\ttfamily opt} equals the name of your component (this is the name that will be set in the main config later, see \href{\#configuration}{\texttt{ Configuration}}). In the added case you can read the necessary options from the JSON object in {\ttfamily optimizer\+Config}. You have to set \mbox{\hyperlink{classController_a76a1904fb9734e0ca27e0ca9609a5d47}{Controller\+::optimizer}} to an {\ttfamily unique\+\_\+ptr$<$\mbox{\hyperlink{classOptimizer}{Optimizer}}$>$}, owning a new instance of your \mbox{\hyperlink{classOptimizer}{Optimizer}} implementation.
+
+When this setup is complete, you may build the framework again and update the main configuration to use your new \mbox{\hyperlink{classOptimizer}{Optimizer}} by changing the {\ttfamily optimizer.\+optimizer} key to the name of your \mbox{\hyperlink{classOptimizer}{Optimizer}} and the {\ttfamily optimizer.\+config} key to the path of your created JSON configuration file. 

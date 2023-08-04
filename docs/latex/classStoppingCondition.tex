@@ -1,0 +1,389 @@
+\hypertarget{classStoppingCondition}{}\doxysection{Stopping\+Condition Class Reference}
+\label{classStoppingCondition}\index{StoppingCondition@{StoppingCondition}}
+
+
+A class used for deciding whether the DIRECT should be stopped.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Stopping\+Condition.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStoppingCondition_ab89a31368e0d5392a975dfc4a4f4276f}{Stopping\+Condition}} (size\+\_\+t evaluations=0, size\+\_\+t hyrects=0, unsigned int minutes=0, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} accuracy=0, unsigned int accuracy\+Iterations=0)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classStoppingCondition}{Stopping\+Condition}} with the given condition values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStoppingCondition_a07c942af2e845cc7e8e52bfca41d2c91}{Stopping\+Condition}} (json stop\+Con)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classStoppingCondition}{Stopping\+Condition}} based on the given json configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStoppingCondition_ae8f18cde9fe020efe710b8395d546168}{set\+Start\+Now}} ()
+\begin{DoxyCompactList}\small\item\em Sets \mbox{\hyperlink{classStoppingCondition_a35397e32910024f5d2a21278dfc3499b}{END\+\_\+\+TIME}} to be the current time plus \mbox{\hyperlink{classStoppingCondition_a276ba85d2c7a68f13abe91afc9c4aac6}{mins}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStoppingCondition_a493c4f36528167c6585ab44649c1b4ee}{evaluate}} (size\+\_\+t evaluations, size\+\_\+t hyrects, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} new\+Best\+Val)
+\begin{DoxyCompactList}\small\item\em Checks if any of the configured conditions is met for the given parameters. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classStoppingCondition_a94700e15200a6d4eb85f4c473afad741}{get\+Iterations\+Since\+Improv}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of \mbox{\hyperlink{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}{iterations\+Since\+Improv}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classStoppingCondition_a79d653f53cd4947613d8595c418c420b}{update\+Accuracy}} (\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} new\+Best\+Val)
+\begin{DoxyCompactList}\small\item\em Checks if the current optimum improves the one saved in \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} by more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const size\+\_\+t \mbox{\hyperlink{classStoppingCondition_ae8e6c737422c82c811b55b5716d7aae2}{NR\+\_\+\+EVALUATIONS}}
+\begin{DoxyCompactList}\small\item\em Number of evaluations after which the optimization should stop. \end{DoxyCompactList}\item 
+const size\+\_\+t \mbox{\hyperlink{classStoppingCondition_aac8a02e45818311cbd4de360ebc3f068}{NR\+\_\+\+HYRECTS}}
+\begin{DoxyCompactList}\small\item\em Number of rectangles in the partition after which the optimization should stop. \end{DoxyCompactList}\item 
+time\+\_\+point$<$ system\+\_\+clock, seconds $>$ \mbox{\hyperlink{classStoppingCondition_a35397e32910024f5d2a21278dfc3499b}{END\+\_\+\+TIME}}
+\begin{DoxyCompactList}\small\item\em Point in time after which optimization should end. \end{DoxyCompactList}\item 
+const unsigned int \mbox{\hyperlink{classStoppingCondition_a276ba85d2c7a68f13abe91afc9c4aac6}{mins}}
+\begin{DoxyCompactList}\small\item\em Number of minutes after which the optimization should stop. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStoppingCondition_a58d93ccfb455014f2a780f98ee7deecd}{time\+\_\+eval}}
+\begin{DoxyCompactList}\small\item\em Defines whether the time condition should be used. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}}
+\begin{DoxyCompactList}\small\item\em Accuracy used in accuracy condition. \end{DoxyCompactList}\item 
+const unsigned int \mbox{\hyperlink{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}{NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS}}
+\begin{DoxyCompactList}\small\item\em Number of iterations used in accuracy condition. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} = INFINITY
+\begin{DoxyCompactList}\small\item\em Best value used to keep track of accuracy condition. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}{iterations\+Since\+Improv}} = 0
+\begin{DoxyCompactList}\small\item\em Number of iterations since last improvement of the optimum used to keep track of accuracy condition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class used for deciding whether the DIRECT should be stopped. 
+
+Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met. 
+
+Definition at line 19 of file Stopping\+Condition.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStoppingCondition_ab89a31368e0d5392a975dfc4a4f4276f}\label{classStoppingCondition_ab89a31368e0d5392a975dfc4a4f4276f}} 
+\index{StoppingCondition@{StoppingCondition}!StoppingCondition@{StoppingCondition}}
+\index{StoppingCondition@{StoppingCondition}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{StoppingCondition()}{StoppingCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Stopping\+Condition\+::\+Stopping\+Condition (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{evaluations = {\ttfamily 0},  }\item[{size\+\_\+t}]{hyrects = {\ttfamily 0},  }\item[{unsigned int}]{minutes = {\ttfamily 0},  }\item[{\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}}]{accuracy = {\ttfamily 0},  }\item[{unsigned int}]{accuracy\+Iterations = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a \mbox{\hyperlink{classStoppingCondition}{Stopping\+Condition}} with the given condition values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em evaluations} & Number of evaluations after which the optimization should stop. \\
+\hline
+{\em hyrects} & Number of rectangles in the partition after which the optimization should stop. \\
+\hline
+{\em minutes} & Number of minutes after which the optimization should stop. \\
+\hline
+{\em accuracy} & Accuracy used in accuracy condition (see \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}}). \\
+\hline
+{\em accuracy\+Iterations} & Number of iterations used in accuracy condition (see \mbox{\hyperlink{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}{NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS}}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Stopping\+Condition.\+cpp.
+
+
+
+References ACCURACY, mins, NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS, NR\+\_\+\+EVALUATIONS, NR\+\_\+\+HYRECTS, and time\+\_\+eval.
+
+\mbox{\Hypertarget{classStoppingCondition_a07c942af2e845cc7e8e52bfca41d2c91}\label{classStoppingCondition_a07c942af2e845cc7e8e52bfca41d2c91}} 
+\index{StoppingCondition@{StoppingCondition}!StoppingCondition@{StoppingCondition}}
+\index{StoppingCondition@{StoppingCondition}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{StoppingCondition()}{StoppingCondition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Stopping\+Condition\+::\+Stopping\+Condition (\begin{DoxyParamCaption}\item[{json}]{stop\+Con }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a \mbox{\hyperlink{classStoppingCondition}{Stopping\+Condition}} based on the given json configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stop\+Con} & JSON object defining the condition values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Stopping\+Condition.\+cpp.
+
+
+
+References Stopping\+Condition().
+
+
+
+Referenced by Stopping\+Condition().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStoppingCondition_a493c4f36528167c6585ab44649c1b4ee}\label{classStoppingCondition_a493c4f36528167c6585ab44649c1b4ee}} 
+\index{StoppingCondition@{StoppingCondition}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily bool Stopping\+Condition\+::evaluate (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{evaluations,  }\item[{size\+\_\+t}]{hyrects,  }\item[{\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}}]{new\+Best\+Val }\end{DoxyParamCaption})}
+
+
+
+Checks if any of the configured conditions is met for the given parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em evaluations} & Number of evaluations conducted by the optimization. \\
+\hline
+{\em hyrects} & Number of rectangles in the current partition. \\
+\hline
+{\em new\+Best\+Val} & Value of the current optimum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining whether none of the configured conditions is met (meaning whether the optimization should keep running). 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Stopping\+Condition.\+cpp.
+
+
+
+References ACCURACY, NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS, NR\+\_\+\+EVALUATIONS, NR\+\_\+\+HYRECTS, and update\+Accuracy().
+
+\mbox{\Hypertarget{classStoppingCondition_a94700e15200a6d4eb85f4c473afad741}\label{classStoppingCondition_a94700e15200a6d4eb85f4c473afad741}} 
+\index{StoppingCondition@{StoppingCondition}!getIterationsSinceImprov@{getIterationsSinceImprov}}
+\index{getIterationsSinceImprov@{getIterationsSinceImprov}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{getIterationsSinceImprov()}{getIterationsSinceImprov()}}
+{\footnotesize\ttfamily unsigned int Stopping\+Condition\+::get\+Iterations\+Since\+Improv (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of \mbox{\hyperlink{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}{iterations\+Since\+Improv}}. 
+
+\begin{DoxyReturn}{Returns}
+An integral representing the number of iterations since the best value improved by more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}}. 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Stopping\+Condition.\+cpp.
+
+
+
+References iterations\+Since\+Improv.
+
+\mbox{\Hypertarget{classStoppingCondition_ae8f18cde9fe020efe710b8395d546168}\label{classStoppingCondition_ae8f18cde9fe020efe710b8395d546168}} 
+\index{StoppingCondition@{StoppingCondition}!setStartNow@{setStartNow}}
+\index{setStartNow@{setStartNow}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{setStartNow()}{setStartNow()}}
+{\footnotesize\ttfamily void Stopping\+Condition\+::set\+Start\+Now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets \mbox{\hyperlink{classStoppingCondition_a35397e32910024f5d2a21278dfc3499b}{END\+\_\+\+TIME}} to be the current time plus \mbox{\hyperlink{classStoppingCondition_a276ba85d2c7a68f13abe91afc9c4aac6}{mins}}. 
+
+
+
+Definition at line 33 of file Stopping\+Condition.\+cpp.
+
+
+
+References time\+\_\+eval.
+
+\mbox{\Hypertarget{classStoppingCondition_a79d653f53cd4947613d8595c418c420b}\label{classStoppingCondition_a79d653f53cd4947613d8595c418c420b}} 
+\index{StoppingCondition@{StoppingCondition}!updateAccuracy@{updateAccuracy}}
+\index{updateAccuracy@{updateAccuracy}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{updateAccuracy()}{updateAccuracy()}}
+{\footnotesize\ttfamily bool Stopping\+Condition\+::update\+Accuracy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}}]{new\+Best\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Checks if the current optimum improves the one saved in \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} by more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}}. 
+
+If that is the case, \mbox{\hyperlink{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}{iterations\+Since\+Improv}} is reset to zero and the current optimum is saved in \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}}. If not \mbox{\hyperlink{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}{iterations\+Since\+Improv}} is increased. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Best\+Val} & Current optimum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A bool defining if the accuracy condition is met after the values where updated. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Stopping\+Condition.\+cpp.
+
+
+
+References ACCURACY, best\+Val, iterations\+Since\+Improv, and NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS.
+
+
+
+Referenced by evaluate().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}\label{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}} 
+\index{StoppingCondition@{StoppingCondition}!ACCURACY@{ACCURACY}}
+\index{ACCURACY@{ACCURACY}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{ACCURACY}{ACCURACY}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} Stopping\+Condition\+::\+ACCURACY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Accuracy used in accuracy condition. 
+
+When the \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} has not changed more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}} after \mbox{\hyperlink{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}{NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS}} iterations, the optimization is stopped. 
+
+Definition at line 48 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by Stopping\+Condition(), evaluate(), and update\+Accuracy().
+
+\mbox{\Hypertarget{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}\label{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}} 
+\index{StoppingCondition@{StoppingCondition}!bestVal@{bestVal}}
+\index{bestVal@{bestVal}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{bestVal}{bestVal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} Stopping\+Condition\+::best\+Val = INFINITY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Best value used to keep track of accuracy condition. 
+
+When the \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} has not changed more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}} after \mbox{\hyperlink{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}{NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS}} iterations, the optimization is stopped. 
+
+Definition at line 58 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by update\+Accuracy().
+
+\mbox{\Hypertarget{classStoppingCondition_a35397e32910024f5d2a21278dfc3499b}\label{classStoppingCondition_a35397e32910024f5d2a21278dfc3499b}} 
+\index{StoppingCondition@{StoppingCondition}!END\_TIME@{END\_TIME}}
+\index{END\_TIME@{END\_TIME}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{END\_TIME}{END\_TIME}}
+{\footnotesize\ttfamily time\+\_\+point$<$system\+\_\+clock, seconds$>$ Stopping\+Condition\+::\+END\+\_\+\+TIME\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Point in time after which optimization should end. 
+
+Calculated using time when \mbox{\hyperlink{classStoppingCondition_ae8f18cde9fe020efe710b8395d546168}{set\+Start\+Now}} is called and \mbox{\hyperlink{classStoppingCondition_a276ba85d2c7a68f13abe91afc9c4aac6}{mins}}. 
+
+Definition at line 34 of file Stopping\+Condition.\+h.
+
+\mbox{\Hypertarget{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}\label{classStoppingCondition_ace80e2bd8cdce582d265ad0fe536476f}} 
+\index{StoppingCondition@{StoppingCondition}!iterationsSinceImprov@{iterationsSinceImprov}}
+\index{iterationsSinceImprov@{iterationsSinceImprov}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{iterationsSinceImprov}{iterationsSinceImprov}}
+{\footnotesize\ttfamily unsigned int Stopping\+Condition\+::iterations\+Since\+Improv = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of iterations since last improvement of the optimum used to keep track of accuracy condition. 
+
+When the \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} has not changed more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}} after \mbox{\hyperlink{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}{NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS}} iterations, the optimization is stopped. 
+
+Definition at line 63 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by get\+Iterations\+Since\+Improv(), and update\+Accuracy().
+
+\mbox{\Hypertarget{classStoppingCondition_a276ba85d2c7a68f13abe91afc9c4aac6}\label{classStoppingCondition_a276ba85d2c7a68f13abe91afc9c4aac6}} 
+\index{StoppingCondition@{StoppingCondition}!mins@{mins}}
+\index{mins@{mins}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{mins}{mins}}
+{\footnotesize\ttfamily const unsigned int Stopping\+Condition\+::mins\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of minutes after which the optimization should stop. 
+
+
+
+Definition at line 38 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by Stopping\+Condition().
+
+\mbox{\Hypertarget{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}\label{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}} 
+\index{StoppingCondition@{StoppingCondition}!NR\_ACCURACY\_ITERATIONS@{NR\_ACCURACY\_ITERATIONS}}
+\index{NR\_ACCURACY\_ITERATIONS@{NR\_ACCURACY\_ITERATIONS}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{NR\_ACCURACY\_ITERATIONS}{NR\_ACCURACY\_ITERATIONS}}
+{\footnotesize\ttfamily const unsigned int Stopping\+Condition\+::\+NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of iterations used in accuracy condition. 
+
+When the \mbox{\hyperlink{classStoppingCondition_ab12484975b244e078b726ce9ba8b1399}{best\+Val}} has not changed more than \mbox{\hyperlink{classStoppingCondition_aa05be5f5ed70be46723bff346fd62dd7}{ACCURACY}} after \mbox{\hyperlink{classStoppingCondition_a4a496422b9c56a808a6b548183d9f35e}{NR\+\_\+\+ACCURACY\+\_\+\+ITERATIONS}} iterations, the optimization is stopped. 
+
+Definition at line 53 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by Stopping\+Condition(), evaluate(), and update\+Accuracy().
+
+\mbox{\Hypertarget{classStoppingCondition_ae8e6c737422c82c811b55b5716d7aae2}\label{classStoppingCondition_ae8e6c737422c82c811b55b5716d7aae2}} 
+\index{StoppingCondition@{StoppingCondition}!NR\_EVALUATIONS@{NR\_EVALUATIONS}}
+\index{NR\_EVALUATIONS@{NR\_EVALUATIONS}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{NR\_EVALUATIONS}{NR\_EVALUATIONS}}
+{\footnotesize\ttfamily const size\+\_\+t Stopping\+Condition\+::\+NR\+\_\+\+EVALUATIONS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of evaluations after which the optimization should stop. 
+
+
+
+Definition at line 24 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by Stopping\+Condition(), and evaluate().
+
+\mbox{\Hypertarget{classStoppingCondition_aac8a02e45818311cbd4de360ebc3f068}\label{classStoppingCondition_aac8a02e45818311cbd4de360ebc3f068}} 
+\index{StoppingCondition@{StoppingCondition}!NR\_HYRECTS@{NR\_HYRECTS}}
+\index{NR\_HYRECTS@{NR\_HYRECTS}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{NR\_HYRECTS}{NR\_HYRECTS}}
+{\footnotesize\ttfamily const size\+\_\+t Stopping\+Condition\+::\+NR\+\_\+\+HYRECTS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of rectangles in the partition after which the optimization should stop. 
+
+
+
+Definition at line 28 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by Stopping\+Condition(), and evaluate().
+
+\mbox{\Hypertarget{classStoppingCondition_a58d93ccfb455014f2a780f98ee7deecd}\label{classStoppingCondition_a58d93ccfb455014f2a780f98ee7deecd}} 
+\index{StoppingCondition@{StoppingCondition}!time\_eval@{time\_eval}}
+\index{time\_eval@{time\_eval}!StoppingCondition@{StoppingCondition}}
+\doxysubsubsection{\texorpdfstring{time\_eval}{time\_eval}}
+{\footnotesize\ttfamily bool Stopping\+Condition\+::time\+\_\+eval\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Defines whether the time condition should be used. 
+
+
+
+Definition at line 42 of file Stopping\+Condition.\+h.
+
+
+
+Referenced by Stopping\+Condition(), and set\+Start\+Now().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/Stopping\+Condition.\+h\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/Stopping\+Condition.\+cpp\end{DoxyCompactItemize}

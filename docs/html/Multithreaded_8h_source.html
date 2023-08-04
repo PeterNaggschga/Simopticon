@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/utils/Multithreaded.h Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/utils/Multithreaded.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('Multithreaded_8h_source.html',''); ini
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @tparam Allocator: Allocator for pairs of constant Key and T.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @ingroup utils</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare = <a class="code" href="classMultithreaded.html">less</a>&lt;<a class="code" href="classMultithreaded.html">Key</a>&gt;, <span class="keyword">class</span> Allocator = <a class="code" href="classMultithreaded.html">allocator</a>&lt;<a class="code" href="classMultithreaded.html">pair</a>&lt;<span class="keyword">const</span> <a class="code" href="classMultithreaded.html">Key</a>, <a class="code" href="classMultithreaded.html">T</a>&gt;&gt;&gt;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare = less&lt;Key&gt;, <span class="keyword">class</span> Allocator = allocator&lt;pair&lt;<span class="keyword">const</span> Key, T&gt;&gt;&gt;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classMultithreaded.html">   24</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classMultithreaded.html">Multithreaded</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/**</span></div>
@@ -134,14 +134,14 @@ $(document).ready(function(){initNavTree('Multithreaded_8h_source.html',''); ini
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * @param runs: Set of arguments on which #work should to be executed.</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">   48</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">map</a>&lt;<a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">Key</a>, <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">T</a>, <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">Compare</a>, <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">Allocator</a>&gt; <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">runMultithreadedFunctions</a>(<a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">set</a>&lt;<a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">Key</a>, <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">Compare</a>&gt; <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">runs</a>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">   48</a></span>&#160;    <span class="keyword">virtual</span> map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">runMultithreadedFunctions</a>(set&lt;Key, Compare&gt; runs);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * Function that is executed by each thread. As long as #queue is not empty, tasks are started.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * When #queue is empty, the processed results are returned</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">   55</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">map</a>&lt;<a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">Key</a>, <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">T</a>, <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">Compare</a>, <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">Allocator</a>&gt; <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">multithreadFunction</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">   55</a></span>&#160;    <span class="keyword">virtual</span> map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">multithreadFunction</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/**</span></div>
@@ -161,7 +161,7 @@ $(document).ready(function(){initNavTree('Multithreaded_8h_source.html',''); ini
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><b>Multithreaded.h</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:40 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

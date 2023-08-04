@@ -1,0 +1,162 @@
+\hypertarget{classThreadsafeQueue}{}\doxysection{Threadsafe\+Queue$<$ Key $>$ Class Template Reference}
+\label{classThreadsafeQueue}\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+
+
+A container class of a queue that is safe for concurrent access of different threads.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Threadsafe\+Queue.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classThreadsafeQueue_a1b5afe3b948403e0967b807cf5c926d2}{push}} (Key val)
+\begin{DoxyCompactList}\small\item\em Adds the given value to \mbox{\hyperlink{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}{safe\+Queue}}. \end{DoxyCompactList}\item 
+pair$<$ Key, bool $>$ \mbox{\hyperlink{classThreadsafeQueue_a543fb5e54b5dfe064862f708a2523b41}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first element of the queue. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classThreadsafeQueue_ade19ff302f75c6be3e417bb5cc22e89f}{get\+Start\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns the value of \mbox{\hyperlink{classThreadsafeQueue_a085f257b2c4541db5ef9eb5c8605d49b}{start\+Size}}. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classThreadsafeQueue_aa46228c650ec0199d03007c2a682d28f}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em Returns current size of the underlying queue structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+queue$<$ Key $>$ \mbox{\hyperlink{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}{safe\+Queue}}
+\begin{DoxyCompactList}\small\item\em The actual queue data structure. \end{DoxyCompactList}\item 
+mutex \mbox{\hyperlink{classThreadsafeQueue_a247eabea2111272fbba04f0ef3402a54}{queue\+Lock}}
+\begin{DoxyCompactList}\small\item\em Threadlock to avoid damage to \mbox{\hyperlink{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}{safe\+Queue}} on concurrent access. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classThreadsafeQueue_a085f257b2c4541db5ef9eb5c8605d49b}{start\+Size}} = 0
+\begin{DoxyCompactList}\small\item\em Number of elements in queue when \mbox{\hyperlink{classThreadsafeQueue_a1b5afe3b948403e0967b807cf5c926d2}{push}} was called the last time. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Key$>$\newline
+class Threadsafe\+Queue$<$ Key $>$}
+
+A container class of a queue that is safe for concurrent access of different threads. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Key} & Type of elements in the contained queue. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 16 of file Threadsafe\+Queue.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classThreadsafeQueue_aa46228c650ec0199d03007c2a682d28f}\label{classThreadsafeQueue_aa46228c650ec0199d03007c2a682d28f}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!getSize@{getSize}}
+\index{getSize@{getSize}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+size\+\_\+t \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns current size of the underlying queue structure. 
+
+\begin{DoxyReturn}{Returns}
+A number representing the size of the queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThreadsafeQueue_ade19ff302f75c6be3e417bb5cc22e89f}\label{classThreadsafeQueue_ade19ff302f75c6be3e417bb5cc22e89f}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!getStartSize@{getStartSize}}
+\index{getStartSize@{getStartSize}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{getStartSize()}{getStartSize()}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+size\+\_\+t \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::get\+Start\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the value of \mbox{\hyperlink{classThreadsafeQueue_a085f257b2c4541db5ef9eb5c8605d49b}{start\+Size}}. 
+
+\begin{DoxyReturn}{Returns}
+A number representing the number of tasks, when \mbox{\hyperlink{classThreadsafeQueue_a1b5afe3b948403e0967b807cf5c926d2}{push}} was called last. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThreadsafeQueue_a543fb5e54b5dfe064862f708a2523b41}\label{classThreadsafeQueue_a543fb5e54b5dfe064862f708a2523b41}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!pop@{pop}}
+\index{pop@{pop}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+pair$<$Key, bool$>$ \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the first element of the queue. 
+
+If the queue is empty, the second entry of the returned pair is false. \begin{DoxyReturn}{Returns}
+A pair containing an element of type Key and a boolean determining if access was successful. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classThreadsafeQueue_a1b5afe3b948403e0967b807cf5c926d2}\label{classThreadsafeQueue_a1b5afe3b948403e0967b807cf5c926d2}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!push@{push}}
+\index{push@{push}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+void \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::push (\begin{DoxyParamCaption}\item[{Key}]{val }\end{DoxyParamCaption})}
+
+
+
+Adds the given value to \mbox{\hyperlink{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}{safe\+Queue}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Values to be added to queue. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classThreadsafeQueue_a247eabea2111272fbba04f0ef3402a54}\label{classThreadsafeQueue_a247eabea2111272fbba04f0ef3402a54}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!queueLock@{queueLock}}
+\index{queueLock@{queueLock}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{queueLock}{queueLock}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+mutex \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::queue\+Lock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Threadlock to avoid damage to \mbox{\hyperlink{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}{safe\+Queue}} on concurrent access. 
+
+
+
+Definition at line 25 of file Threadsafe\+Queue.\+h.
+
+\mbox{\Hypertarget{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}\label{classThreadsafeQueue_a486d4dc4cc7aead3f6f0cb8c0dbf8e38}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!safeQueue@{safeQueue}}
+\index{safeQueue@{safeQueue}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{safeQueue}{safeQueue}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+queue$<$Key$>$ \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::safe\+Queue\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The actual queue data structure. 
+
+
+
+Definition at line 21 of file Threadsafe\+Queue.\+h.
+
+\mbox{\Hypertarget{classThreadsafeQueue_a085f257b2c4541db5ef9eb5c8605d49b}\label{classThreadsafeQueue_a085f257b2c4541db5ef9eb5c8605d49b}} 
+\index{ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}!startSize@{startSize}}
+\index{startSize@{startSize}!ThreadsafeQueue$<$ Key $>$@{ThreadsafeQueue$<$ Key $>$}}
+\doxysubsubsection{\texorpdfstring{startSize}{startSize}}
+{\footnotesize\ttfamily template$<$class Key $>$ \\
+size\+\_\+t \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$\+::start\+Size = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of elements in queue when \mbox{\hyperlink{classThreadsafeQueue_a1b5afe3b948403e0967b807cf5c926d2}{push}} was called the last time. 
+
+Can be used for progress information. 
+
+Definition at line 30 of file Threadsafe\+Queue.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/utils/Threadsafe\+Queue.\+h\end{DoxyCompactItemize}

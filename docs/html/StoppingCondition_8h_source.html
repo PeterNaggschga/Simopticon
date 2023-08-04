@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/optimizer/direct/StoppingCondition.h Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/optimizer/direct/StoppingCondition.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -110,17 +110,17 @@ $(document).ready(function(){initNavTree('StoppingCondition_8h_source.html','');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     * Number of evaluations after which the optimization should stop.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#ae8e6c737422c82c811b55b5716d7aae2">   24</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classStoppingCondition.html#ae8e6c737422c82c811b55b5716d7aae2">size_t</a> <a class="code" href="classStoppingCondition.html#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#ae8e6c737422c82c811b55b5716d7aae2">   24</a></span>&#160;    <span class="keyword">const</span> size_t <a class="code" href="classStoppingCondition.html#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * Number of rectangles in the partition after which the optimization should stop.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#aac8a02e45818311cbd4de360ebc3f068">   28</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="classStoppingCondition.html#aac8a02e45818311cbd4de360ebc3f068">size_t</a> <a class="code" href="classStoppingCondition.html#aac8a02e45818311cbd4de360ebc3f068">NR_HYRECTS</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#aac8a02e45818311cbd4de360ebc3f068">   28</a></span>&#160;    <span class="keyword">const</span> size_t <a class="code" href="classStoppingCondition.html#aac8a02e45818311cbd4de360ebc3f068">NR_HYRECTS</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * Point in time after which optimization should end.</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * Calculated using time when #setStartNow is called and #mins.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">   34</a></span>&#160;    <a class="code" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">time_point</a>&lt;<a class="code" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">system_clock</a>, <a class="code" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">seconds</a>&gt; <a class="code" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">END_TIME</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">   34</a></span>&#160;    time_point&lt;system_clock, seconds&gt; <a class="code" href="classStoppingCondition.html#a35397e32910024f5d2a21278dfc3499b">END_TIME</a>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * Number of minutes after which the optimization should stop.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     */</span></div>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('StoppingCondition_8h_source.html','');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * Best value used to keep track of accuracy condition.</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * When the #bestVal has not changed more than #ACCURACY after #NR_ACCURACY_ITERATIONS iterations, the optimization is stopped.</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#ab12484975b244e078b726ce9ba8b1399">   58</a></span>&#160;    <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> <a class="code" href="classStoppingCondition.html#ab12484975b244e078b726ce9ba8b1399">bestVal</a> = <a class="code" href="classStoppingCondition.html">INFINITY</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classStoppingCondition.html#ab12484975b244e078b726ce9ba8b1399">   58</a></span>&#160;    <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> <a class="code" href="classStoppingCondition.html#ab12484975b244e078b726ce9ba8b1399">bestVal</a> = INFINITY;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * Number of iterations since last improvement of the optimum used to keep track of accuracy condition.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * When the #bestVal has not changed more than #ACCURACY after #NR_ACCURACY_ITERATIONS iterations, the optimization is stopped.</span></div>
@@ -207,7 +207,7 @@ $(document).ready(function(){initNavTree('StoppingCondition_8h_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fef26d3633d38d4ca65fa53115b5e5dd.html">optimizer</a></li><li class="navelem"><a class="el" href="dir_2d657aea63603d07fa4cf559e7749f92.html">direct</a></li><li class="navelem"><b>StoppingCondition.h</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:40 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

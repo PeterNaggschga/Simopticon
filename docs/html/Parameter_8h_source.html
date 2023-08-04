@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/parameters/Parameter.h Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/parameters/Parameter.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -114,14 +114,14 @@ $(document).ready(function(){initNavTree('Parameter_8h_source.html',''); initRes
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * Reference to the defining ParameterDefinition.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6">   28</a></span>&#160;    <a class="code" href="classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6">shared_ptr</a>&lt;<a class="code" href="classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6">ParameterDefinition</a>&gt; <a class="code" href="classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6">definition</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6">   28</a></span>&#160;    shared_ptr&lt;<a class="code" href="classParameterDefinition.html">ParameterDefinition</a>&gt; <a class="code" href="classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6">definition</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * Creates a Parameter with the given ParameterDefinition.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * @param def: Definition of properties of the Parameter.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classParameter.html">Parameter</a>(shared_ptr&lt;ParameterDefinition&gt; def);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classParameter.html#a3ccbfe7db8e8d926778c9954ffd15bba">Parameter</a>(shared_ptr&lt;<a class="code" href="classParameterDefinition.html">ParameterDefinition</a>&gt; def);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> ~Parameter() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
@@ -141,13 +141,13 @@ $(document).ready(function(){initNavTree('Parameter_8h_source.html',''); initRes
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * Returns the unit string of the Parameter stored in ParameterDefinition#unit of #definition.</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * @return A string reference containing the unit.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    [[<a class="code" href="classParameter.html">nodiscard</a>]] <span class="keyword">const</span> <a class="code" href="classParameter.html#a2e6e3124f7bfe4835d84f692389e9b7a">string</a> &amp;<a class="code" href="classParameter.html#a2e6e3124f7bfe4835d84f692389e9b7a">getUnit</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    [[<a class="code" href="classParameter.html">nodiscard</a>]] <span class="keyword">const</span> string &amp;<a class="code" href="classParameter.html#a2e6e3124f7bfe4835d84f692389e9b7a">getUnit</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     * Returns the configuration string of the Parameter stored in ParameterDefinition#config of #definition.</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * @return A string reference containing the configuration.</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    [[<a class="code" href="classParameter.html">nodiscard</a>]] <span class="keyword">const</span> <a class="code" href="classParameter.html#a00b4cf81f2e2724d595f90dbc382b8a0">string</a> &amp;<a class="code" href="classParameter.html#a00b4cf81f2e2724d595f90dbc382b8a0">getConfig</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    [[<a class="code" href="classParameter.html">nodiscard</a>]] <span class="keyword">const</span> string &amp;<a class="code" href="classParameter.html#a00b4cf81f2e2724d595f90dbc382b8a0">getConfig</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     * Returns the current value of the Parameter.</span></div>
@@ -215,7 +215,7 @@ $(document).ready(function(){initNavTree('Parameter_8h_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_434cae81b587a8a3fa87d985996d40d2.html">parameters</a></li><li class="navelem"><b>Parameter.h</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:40 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

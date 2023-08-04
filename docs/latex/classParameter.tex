@@ -1,0 +1,430 @@
+\hypertarget{classParameter}{}\doxysection{Parameter Class Reference}
+\label{classParameter}\index{Parameter@{Parameter}}
+
+
+A class acting as the container of the value of a parameter defined by a \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Parameter.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Parameter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classParameter__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParameter_a3ccbfe7db8e8d926778c9954ffd15bba}{Parameter}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$ def)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classParameter}{Parameter}} with the given \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameter_a49e6b8c47cbd44d4b2348d3b8cea7bba}{get\+Min}} () const
+\begin{DoxyCompactList}\small\item\em Returns the minimum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}{Parameter\+Definition\+::min}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameter_a00c82745dc024154c697cbecaf02cc55}{get\+Max}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}{Parameter\+Definition\+::max}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classParameter_a2e6e3124f7bfe4835d84f692389e9b7a}{get\+Unit}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unit string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}{Parameter\+Definition\+::unit}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classParameter_a00b4cf81f2e2724d595f90dbc382b8a0}{get\+Config}} () const
+\begin{DoxyCompactList}\small\item\em Returns the configuration string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}{Parameter\+Definition\+::config}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameter_a39f52082ae9e000edff3d517ef78a8bb}{get\+Val}} () const =0
+\begin{DoxyCompactList}\small\item\em Returns the current value of the \mbox{\hyperlink{classParameter}{Parameter}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParameter_a4299bc2da9ef07c8a94ac5017ef7668b}{set\+Val}} (\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} val)=0
+\begin{DoxyCompactList}\small\item\em Sets the value of the \mbox{\hyperlink{classParameter}{Parameter}} to the given value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParameter_ada4106ab9962e61d1aecf5bf032290c3}{operator==}} (const \mbox{\hyperlink{classParameter}{Parameter}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Checks if the current and the given \mbox{\hyperlink{classParameter}{Parameter}} objects are equal by comparing their value and \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParameter_a7e84411f681eaed252a790827968a87f}{operator!=}} (const \mbox{\hyperlink{classParameter}{Parameter}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Checks if the current and the given \mbox{\hyperlink{classParameter}{Parameter}} objects are unequal by comparing their value and \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParameter_ad55dd9e2a509e3293be18a3be55a3fd7}{operator$<$}} (const \mbox{\hyperlink{classParameter}{Parameter}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParameter_ab644815d2a11967cdb1676ba823fe828}{operator$>$}} (const \mbox{\hyperlink{classParameter}{Parameter}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParameter_a8e21f5b9a785bca78c82c1a5f4202a0d}{operator$<$=}} (const \mbox{\hyperlink{classParameter}{Parameter}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParameter_ac18e33c9e734edd27753dba28f7c6738}{operator$>$=}} (const \mbox{\hyperlink{classParameter}{Parameter}} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$ \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}
+\begin{DoxyCompactList}\small\item\em Reference to the defining \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class acting as the container of the value of a parameter defined by a \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. 
+
+Definition at line 23 of file Parameter.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParameter_a3ccbfe7db8e8d926778c9954ffd15bba}\label{classParameter_a3ccbfe7db8e8d926778c9954ffd15bba}} 
+\index{Parameter@{Parameter}!Parameter@{Parameter}}
+\index{Parameter@{Parameter}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{Parameter()}{Parameter()}}
+{\footnotesize\ttfamily Parameter\+::\+Parameter (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$}]{def }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a \mbox{\hyperlink{classParameter}{Parameter}} with the given \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em def} & Definition of properties of the \mbox{\hyperlink{classParameter}{Parameter}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file Parameter.\+cpp.
+
+
+
+References definition.
+
+
+
+Referenced by Continuous\+Parameter\+::\+Continuous\+Parameter(), and Discrete\+Parameter\+::\+Discrete\+Parameter().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParameter_a00b4cf81f2e2724d595f90dbc382b8a0}\label{classParameter_a00b4cf81f2e2724d595f90dbc382b8a0}} 
+\index{Parameter@{Parameter}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily const string \& Parameter\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the configuration string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}{Parameter\+Definition\+::config}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+
+\begin{DoxyReturn}{Returns}
+A string reference containing the configuration. 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Parameter.\+cpp.
+
+
+
+References definition, and Parameter\+Definition\+::get\+Config().
+
+
+
+Referenced by Status\+Bar\+::print\+Result().
+
+\mbox{\Hypertarget{classParameter_a00c82745dc024154c697cbecaf02cc55}\label{classParameter_a00c82745dc024154c697cbecaf02cc55}} 
+\index{Parameter@{Parameter}!getMax@{getMax}}
+\index{getMax@{getMax}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{getMax()}{getMax()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+::get\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the maximum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}{Parameter\+Definition\+::max}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+
+\begin{DoxyReturn}{Returns}
+A coordinate representing the maximum value. 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file Parameter.\+cpp.
+
+
+
+References definition, and Parameter\+Definition\+::get\+Max().
+
+
+
+Referenced by Continuous\+Parameter\+::\+Continuous\+Parameter(), Discrete\+Parameter\+::\+Discrete\+Parameter(), Parameter\+Normalizer\+::normalize(), Discrete\+Parameter\+::set\+Times(), and Continuous\+Parameter\+::set\+Val().
+
+\mbox{\Hypertarget{classParameter_a49e6b8c47cbd44d4b2348d3b8cea7bba}\label{classParameter_a49e6b8c47cbd44d4b2348d3b8cea7bba}} 
+\index{Parameter@{Parameter}!getMin@{getMin}}
+\index{getMin@{getMin}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{getMin()}{getMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+::get\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the minimum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}{Parameter\+Definition\+::min}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+
+\begin{DoxyReturn}{Returns}
+A coordinate representing the minimum value. 
+\end{DoxyReturn}
+
+
+Definition at line 11 of file Parameter.\+cpp.
+
+
+
+References definition, and Parameter\+Definition\+::get\+Min().
+
+
+
+Referenced by Continuous\+Parameter\+::\+Continuous\+Parameter(), Discrete\+Parameter\+::\+Discrete\+Parameter(), Parameter\+Normalizer\+::normalize(), Discrete\+Parameter\+::set\+Times(), and Continuous\+Parameter\+::set\+Val().
+
+\mbox{\Hypertarget{classParameter_a2e6e3124f7bfe4835d84f692389e9b7a}\label{classParameter_a2e6e3124f7bfe4835d84f692389e9b7a}} 
+\index{Parameter@{Parameter}!getUnit@{getUnit}}
+\index{getUnit@{getUnit}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{getUnit()}{getUnit()}}
+{\footnotesize\ttfamily const string \& Parameter\+::get\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the unit string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}{Parameter\+Definition\+::unit}} of \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+
+\begin{DoxyReturn}{Returns}
+A string reference containing the unit. 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file Parameter.\+cpp.
+
+
+
+References definition, and Parameter\+Definition\+::get\+Unit().
+
+
+
+Referenced by Status\+Bar\+::print\+Result().
+
+\mbox{\Hypertarget{classParameter_a39f52082ae9e000edff3d517ef78a8bb}\label{classParameter_a39f52082ae9e000edff3d517ef78a8bb}} 
+\index{Parameter@{Parameter}!getVal@{getVal}}
+\index{getVal@{getVal}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{getVal()}{getVal()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+::get\+Val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the current value of the \mbox{\hyperlink{classParameter}{Parameter}}. 
+
+\begin{DoxyReturn}{Returns}
+A coordinate representing the value of the \mbox{\hyperlink{classParameter}{Parameter}}. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDiscreteParameter_aa84ef5350df8d1c0f9acb5609087263f}{Discrete\+Parameter}}, and \mbox{\hyperlink{classContinuousParameter_ab82e895a47c2f7952fae9bcade6804bf}{Continuous\+Parameter}}.
+
+
+
+Referenced by Value\+Map\+::is\+Top\+Value(), Parameter\+Normalizer\+::normalize(), operator$<$(), operator==(), and Status\+Bar\+::print\+Result().
+
+\mbox{\Hypertarget{classParameter_a7e84411f681eaed252a790827968a87f}\label{classParameter_a7e84411f681eaed252a790827968a87f}} 
+\index{Parameter@{Parameter}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Parameter\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParameter}{Parameter}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the current and the given \mbox{\hyperlink{classParameter}{Parameter}} objects are unequal by comparing their value and \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+
+Basically negates \mbox{\hyperlink{classParameter_ada4106ab9962e61d1aecf5bf032290c3}{operator==}}. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \mbox{\hyperlink{classParameter}{Parameter}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining if the \mbox{\hyperlink{classParameter}{Parameter}} objects contain another value or another \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file Parameter.\+cpp.
+
+
+
+References operator==().
+
+
+
+Referenced by Cmp\+Vector\+Shared\+Parameter\+::operator()().
+
+\mbox{\Hypertarget{classParameter_ad55dd9e2a509e3293be18a3be55a3fd7}\label{classParameter_ad55dd9e2a509e3293be18a3be55a3fd7}} 
+\index{Parameter@{Parameter}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Parameter\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParameter}{Parameter}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \mbox{\hyperlink{classParameter}{Parameter}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining if the value of this \mbox{\hyperlink{classParameter}{Parameter}} is less than that of the given \mbox{\hyperlink{classParameter}{Parameter}}. 
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Parameter.\+cpp.
+
+
+
+References get\+Val().
+
+
+
+Referenced by Cmp\+Vector\+Shared\+Parameter\+::operator()(), operator$<$=(), operator$>$(), and operator$>$=().
+
+\mbox{\Hypertarget{classParameter_a8e21f5b9a785bca78c82c1a5f4202a0d}\label{classParameter_a8e21f5b9a785bca78c82c1a5f4202a0d}} 
+\index{Parameter@{Parameter}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Parameter\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParameter}{Parameter}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. 
+
+Basically negates \mbox{\hyperlink{classParameter_ad55dd9e2a509e3293be18a3be55a3fd7}{operator$<$}}. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \mbox{\hyperlink{classParameter}{Parameter}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining if the value of this \mbox{\hyperlink{classParameter}{Parameter}} is less than or equal to that of the given \mbox{\hyperlink{classParameter}{Parameter}}. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file Parameter.\+cpp.
+
+
+
+References operator$<$().
+
+\mbox{\Hypertarget{classParameter_ada4106ab9962e61d1aecf5bf032290c3}\label{classParameter_ada4106ab9962e61d1aecf5bf032290c3}} 
+\index{Parameter@{Parameter}!operator==@{operator==}}
+\index{operator==@{operator==}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Parameter\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParameter}{Parameter}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the current and the given \mbox{\hyperlink{classParameter}{Parameter}} objects are equal by comparing their value and \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \mbox{\hyperlink{classParameter}{Parameter}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining if the \mbox{\hyperlink{classParameter}{Parameter}} objects contain the same value for the same \mbox{\hyperlink{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}{definition}}. 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Parameter.\+cpp.
+
+
+
+References definition, and get\+Val().
+
+
+
+Referenced by operator!=().
+
+\mbox{\Hypertarget{classParameter_ab644815d2a11967cdb1676ba823fe828}\label{classParameter_ab644815d2a11967cdb1676ba823fe828}} 
+\index{Parameter@{Parameter}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool Parameter\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParameter}{Parameter}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. 
+
+Basically calls \mbox{\hyperlink{classParameter_ad55dd9e2a509e3293be18a3be55a3fd7}{operator$<$}} on the switched inputs. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \mbox{\hyperlink{classParameter}{Parameter}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining if the value of this \mbox{\hyperlink{classParameter}{Parameter}} is greater than that of the given \mbox{\hyperlink{classParameter}{Parameter}}. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Parameter.\+cpp.
+
+
+
+References operator$<$().
+
+\mbox{\Hypertarget{classParameter_ac18e33c9e734edd27753dba28f7c6738}\label{classParameter_ac18e33c9e734edd27753dba28f7c6738}} 
+\index{Parameter@{Parameter}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Parameter\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParameter}{Parameter}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Compares the value of the given \mbox{\hyperlink{classParameter}{Parameter}} objects. 
+
+Basically negates \mbox{\hyperlink{classParameter_ab644815d2a11967cdb1676ba823fe828}{operator$>$}}. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & \mbox{\hyperlink{classParameter}{Parameter}} to be compared. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining if the value of this \mbox{\hyperlink{classParameter}{Parameter}} is greater than or equal to that of the given \mbox{\hyperlink{classParameter}{Parameter}}. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file Parameter.\+cpp.
+
+
+
+References operator$<$().
+
+\mbox{\Hypertarget{classParameter_a4299bc2da9ef07c8a94ac5017ef7668b}\label{classParameter_a4299bc2da9ef07c8a94ac5017ef7668b}} 
+\index{Parameter@{Parameter}!setVal@{setVal}}
+\index{setVal@{setVal}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{setVal()}{setVal()}}
+{\footnotesize\ttfamily virtual void Parameter\+::set\+Val (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Sets the value of the \mbox{\hyperlink{classParameter}{Parameter}} to the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Value to set the \mbox{\hyperlink{classParameter}{Parameter}} to. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classDiscreteParameter_af20b49b28b2b309be93e72edeeeb8f36}{Discrete\+Parameter}}, and \mbox{\hyperlink{classContinuousParameter_a82f428c7d0f8d76fb9084e40838ab545}{Continuous\+Parameter}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}\label{classParameter_a6b15b5be5cd15f7f5421ef765e4867b6}} 
+\index{Parameter@{Parameter}!definition@{definition}}
+\index{definition@{definition}!Parameter@{Parameter}}
+\doxysubsubsection{\texorpdfstring{definition}{definition}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$\mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}$>$ Parameter\+::definition\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reference to the defining \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. 
+
+
+
+Definition at line 28 of file Parameter.\+h.
+
+
+
+Referenced by Parameter(), get\+Config(), get\+Max(), get\+Min(), get\+Unit(), and operator==().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/parameters/Parameter.\+h\item 
+/home/runner/work/simopticon/simopticon/src/parameters/Parameter.\+cpp\end{DoxyCompactItemize}

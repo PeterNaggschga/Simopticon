@@ -1,0 +1,293 @@
+\hypertarget{classConstantHeadway}{}\doxysection{Constant\+Headway Class Reference}
+\label{classConstantHeadway}\index{ConstantHeadway@{ConstantHeadway}}
+
+
+A wrapper for the \mbox{\hyperlink{constant__headway_8py}{constant\+\_\+headway.\+py}} script.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Constant\+Headway.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Constant\+Headway\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classConstantHeadway__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constant\+Headway\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classConstantHeadway__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConstantHeadway_a604dc59177e949396424fb88db557560}{Constant\+Headway}} (unsigned int nr\+Threads, const filesystem\+::path \&path\+To\+Script)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}} object that uses no more than the given number of threads and interfaces with the multithreaded function of the given script. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} \mbox{\hyperlink{classConstantHeadway_a7cfc3bab6fa092f2c84059325b10be07}{process\+Output}} (filesystem\+::path path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ experiment\+Ids) override
+\begin{DoxyCompactList}\small\item\em Returns a value to the results of a single simulation run. \end{DoxyCompactList}\item 
+map$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ \mbox{\hyperlink{classConstantHeadway_aaca45f5b8a3c145d3e68c4f459379930}{process\+Output}} (const set$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$$>$$>$ \&experiment\+Results) override
+\begin{DoxyCompactList}\small\item\em Returns values to the results of multiple simulation runs. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classConstantHeadway_a2679a95a2660e34a5cde3a512dfdcff7}{get\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the name of the implementing component in natural language. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classConstantHeadway_a64f1f5277d284f7de52b198bf22aa34b}{get\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current state of the implementing component. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classConstantHeadway_a9cdf1dd06fc492636dbc6181073409a3}{get\+Status\+Bar}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current progress of the calculations of the implementing component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Py\+Object $\ast$ \mbox{\hyperlink{classConstantHeadway_a82d9ae9a75b91a2155e593e0d30fa1ca}{secure\+Value}} (Py\+Object $\ast$object)
+\begin{DoxyCompactList}\small\item\em Helper function checking if the given object is a null-\/pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{classConstantHeadway_a37f540c221d3afe7119499d222f2d84a}{NR\+\_\+\+THREADS}}
+\begin{DoxyCompactList}\small\item\em Maximum number of threads to use for concurrent evaluation. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classConstantHeadway_a50567350e8734298d87f7d3a6e2e4ce9}{used\+Threads}} = 0
+\begin{DoxyCompactList}\small\item\em Number of threads currently used for concurrent evaluation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A wrapper for the \mbox{\hyperlink{constant__headway_8py}{constant\+\_\+headway.\+py}} script. 
+
+Definition at line 25 of file Constant\+Headway.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConstantHeadway_a604dc59177e949396424fb88db557560}\label{classConstantHeadway_a604dc59177e949396424fb88db557560}} 
+\index{ConstantHeadway@{ConstantHeadway}!ConstantHeadway@{ConstantHeadway}}
+\index{ConstantHeadway@{ConstantHeadway}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{ConstantHeadway()}{ConstantHeadway()}}
+{\footnotesize\ttfamily Constant\+Headway\+::\+Constant\+Headway (\begin{DoxyParamCaption}\item[{unsigned int}]{nr\+Threads,  }\item[{const filesystem\+::path \&}]{path\+To\+Script }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}} object that uses no more than the given number of threads and interfaces with the multithreaded function of the given script. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nr\+Threads} & Maximum number of threads used for concurrent calculations. \\
+\hline
+{\em path\+To\+Script} & Path to the \mbox{\hyperlink{constant__headway_8py}{constant\+\_\+headway.\+py}} script. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file Constant\+Headway.\+cpp.
+
+
+
+References Constant\+Headway(), and NR\+\_\+\+THREADS.
+
+
+
+Referenced by Constant\+Headway().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConstantHeadway_a2679a95a2660e34a5cde3a512dfdcff7}\label{classConstantHeadway_a2679a95a2660e34a5cde3a512dfdcff7}} 
+\index{ConstantHeadway@{ConstantHeadway}!getName@{getName}}
+\index{getName@{getName}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Constant\+Headway\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the name of the implementing component in natural language. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the name of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}{Status}}.
+
+
+
+Definition at line 72 of file Constant\+Headway.\+cpp.
+
+\mbox{\Hypertarget{classConstantHeadway_a64f1f5277d284f7de52b198bf22aa34b}\label{classConstantHeadway_a64f1f5277d284f7de52b198bf22aa34b}} 
+\index{ConstantHeadway@{ConstantHeadway}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily string Constant\+Headway\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current state of the implementing component. 
+
+May contain values of class members or other meaningful information. The returned string is always visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}. \begin{DoxyReturn}{Returns}
+A string containing the state of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a587fbda25430f10e4cade040aaad198f}{Status}}.
+
+
+
+Definition at line 76 of file Constant\+Headway.\+cpp.
+
+
+
+References NR\+\_\+\+THREADS.
+
+\mbox{\Hypertarget{classConstantHeadway_a9cdf1dd06fc492636dbc6181073409a3}\label{classConstantHeadway_a9cdf1dd06fc492636dbc6181073409a3}} 
+\index{ConstantHeadway@{ConstantHeadway}!getStatusBar@{getStatusBar}}
+\index{getStatusBar@{getStatusBar}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{getStatusBar()}{getStatusBar()}}
+{\footnotesize\ttfamily string Constant\+Headway\+::get\+Status\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current progress of the calculations of the implementing component. 
+
+The returned string is visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}, when the component is actively calculating something. Must not exceed one console line! \begin{DoxyReturn}{Returns}
+A string containing the progress of a calculation. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}{Status}}.
+
+
+
+Definition at line 80 of file Constant\+Headway.\+cpp.
+
+
+
+References NR\+\_\+\+THREADS, and used\+Threads.
+
+\mbox{\Hypertarget{classConstantHeadway_aaca45f5b8a3c145d3e68c4f459379930}\label{classConstantHeadway_aaca45f5b8a3c145d3e68c4f459379930}} 
+\index{ConstantHeadway@{ConstantHeadway}!processOutput@{processOutput}}
+\index{processOutput@{processOutput}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{processOutput()}{processOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily map$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ Constant\+Headway\+::process\+Output (\begin{DoxyParamCaption}\item[{const set$<$ pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$$>$$>$ \&}]{experiment\+Results }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns values to the results of multiple simulation runs. 
+
+Passes given parameters to the multithreaded function of \mbox{\hyperlink{constant__headway_8py}{constant\+\_\+headway.\+py}}. 
+\begin{DoxyParams}{Parameters}
+{\em experiment\+Results} & Paths to and identifiers of the simulation results. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map which maps the given results to their respective performance value. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEvaluation_a188f942f56366f021c0f32d218f4d1b6}{Evaluation}}.
+
+
+
+Definition at line 13 of file Constant\+Headway.\+cpp.
+
+\mbox{\Hypertarget{classConstantHeadway_a7cfc3bab6fa092f2c84059325b10be07}\label{classConstantHeadway_a7cfc3bab6fa092f2c84059325b10be07}} 
+\index{ConstantHeadway@{ConstantHeadway}!processOutput@{processOutput}}
+\index{processOutput@{processOutput}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{processOutput()}{processOutput()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} Constant\+Headway\+::process\+Output (\begin{DoxyParamCaption}\item[{filesystem\+::path}]{path,  }\item[{set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$}]{experiment\+Ids }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a value to the results of a single simulation run. 
+
+Basically calls \mbox{\hyperlink{classConstantHeadway_aaca45f5b8a3c145d3e68c4f459379930}{process\+Output(const set$<$pair$<$filesystem\+::path, set$<$run\+Id$>$$>$$>$ \&)}} with the given values. 
+\begin{DoxyParams}{Parameters}
+{\em path} & Path to the result files. \\
+\hline
+{\em experiment\+Ids} & Identifiers of certain simulation runs within the directory represented by the given path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A value that represents the performance of the simulation -\/ the lower the better. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEvaluation_ad0f537b437962a4da51766ba8d542759}{Evaluation}}.
+
+
+
+Definition at line 58 of file Constant\+Headway.\+cpp.
+
+\mbox{\Hypertarget{classConstantHeadway_a82d9ae9a75b91a2155e593e0d30fa1ca}\label{classConstantHeadway_a82d9ae9a75b91a2155e593e0d30fa1ca}} 
+\index{ConstantHeadway@{ConstantHeadway}!secureValue@{secureValue}}
+\index{secureValue@{secureValue}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{secureValue()}{secureValue()}}
+{\footnotesize\ttfamily Py\+Object $\ast$ Constant\+Headway\+::secure\+Value (\begin{DoxyParamCaption}\item[{Py\+Object $\ast$}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Helper function checking if the given object is a null-\/pointer. 
+
+If so the \mbox{\hyperlink{constant__headway_8py}{constant\+\_\+headway.\+py}} script is disconnected and an error is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em object} & Pointer to Py\+Object that must be tested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The given pointer, if no error was thrown. 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Constant\+Headway.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classConstantHeadway_a37f540c221d3afe7119499d222f2d84a}\label{classConstantHeadway_a37f540c221d3afe7119499d222f2d84a}} 
+\index{ConstantHeadway@{ConstantHeadway}!NR\_THREADS@{NR\_THREADS}}
+\index{NR\_THREADS@{NR\_THREADS}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{NR\_THREADS}{NR\_THREADS}}
+{\footnotesize\ttfamily const unsigned int Constant\+Headway\+::\+NR\+\_\+\+THREADS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum number of threads to use for concurrent evaluation. 
+
+Can be set in config. 
+
+Definition at line 31 of file Constant\+Headway.\+h.
+
+
+
+Referenced by Constant\+Headway(), get\+Status(), and get\+Status\+Bar().
+
+\mbox{\Hypertarget{classConstantHeadway_a50567350e8734298d87f7d3a6e2e4ce9}\label{classConstantHeadway_a50567350e8734298d87f7d3a6e2e4ce9}} 
+\index{ConstantHeadway@{ConstantHeadway}!usedThreads@{usedThreads}}
+\index{usedThreads@{usedThreads}!ConstantHeadway@{ConstantHeadway}}
+\doxysubsubsection{\texorpdfstring{usedThreads}{usedThreads}}
+{\footnotesize\ttfamily unsigned int Constant\+Headway\+::used\+Threads = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of threads currently used for concurrent evaluation. 
+
+Used in \mbox{\hyperlink{classConstantHeadway_a9cdf1dd06fc492636dbc6181073409a3}{get\+Status\+Bar}}. 
+
+Definition at line 36 of file Constant\+Headway.\+h.
+
+
+
+Referenced by get\+Status\+Bar().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/evaluation/constant\+\_\+headway/Constant\+Headway.\+h\item 
+/home/runner/work/simopticon/simopticon/src/evaluation/constant\+\_\+headway/Constant\+Headway.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,181 @@
+\hypertarget{classStatus}{}\doxysection{Status Class Reference}
+\label{classStatus}\index{Status@{Status}}
+
+
+An interface defining functions for status updates on configuration and progress of a class.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Status.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStatus__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representing the name of the implementing component in natural language. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classStatus_a587fbda25430f10e4cade040aaad198f}{get\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current state of the implementing component. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}{get\+Status\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current progress of the calculations of the implementing component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const string \mbox{\hyperlink{classStatus_a3090c3575be971368217ae7e3e470120}{NO\+\_\+\+STATUS\+\_\+\+SUPPORT}} = \char`\"{}Component doesn\textquotesingle{}t support status updates!\char`\"{}
+\begin{DoxyCompactList}\small\item\em Default message returned by \mbox{\hyperlink{classStatus_a587fbda25430f10e4cade040aaad198f}{get\+Status}} and \mbox{\hyperlink{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}{get\+Status\+Bar}} if the implementing class does not override the respective function. \end{DoxyCompactList}\item 
+static const string \mbox{\hyperlink{classStatus_aafda770737cec4ad6e503526aef7e7f0}{NO\+\_\+\+NAME}} = \char`\"{}No name specified\char`\"{}
+\begin{DoxyCompactList}\small\item\em Default message returned by \mbox{\hyperlink{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}{get\+Name}} if the implementing class does not override the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface defining functions for status updates on configuration and progress of a class. 
+
+Used for creation of a \mbox{\hyperlink{classStatusBar}{Status\+Bar}}. Overriding the defined methods is not mandatory but recommended. 
+
+Definition at line 18 of file Status.\+h.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}\label{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}} 
+\index{Status@{Status}!getName@{getName}}
+\index{getName@{getName}!Status@{Status}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Status\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string representing the name of the implementing component in natural language. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the name of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSimulationRunner_a6a64df92141a48ada5b9e237ba2986c5}{Simulation\+Runner}}, \mbox{\hyperlink{classPlexeSimulationRunner_a2a475691156ad79f368767afc67a554a}{Plexe\+Simulation\+Runner}}, \mbox{\hyperlink{classOptimizer_a910c6014a1b462ddc82ad280bd5f39f7}{Optimizer}}, \mbox{\hyperlink{classDirectOptimizer_ab26050e25a4ef58038f8f8f848483421}{Direct\+Optimizer}}, \mbox{\hyperlink{classEvaluation_a479b98a82908b3d5c72d8a73e24b78a1}{Evaluation}}, and \mbox{\hyperlink{classConstantHeadway_a2679a95a2660e34a5cde3a512dfdcff7}{Constant\+Headway}}.
+
+
+
+Definition at line 16 of file Status.\+cpp.
+
+
+
+References NO\+\_\+\+NAME.
+
+
+
+Referenced by Evaluation\+::get\+Name(), Optimizer\+::get\+Name(), and Status\+Bar\+::print\+Status().
+
+\mbox{\Hypertarget{classStatus_a587fbda25430f10e4cade040aaad198f}\label{classStatus_a587fbda25430f10e4cade040aaad198f}} 
+\index{Status@{Status}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Status@{Status}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily string Status\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current state of the implementing component. 
+
+May contain values of class members or other meaningful information. The returned string is always visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}. \begin{DoxyReturn}{Returns}
+A string containing the state of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSimulationRunner_acb01dab67ff0e672b583a635ce4f74aa}{Simulation\+Runner}}, \mbox{\hyperlink{classPlexeSimulationRunner_a5df794766deb2ac952c9e0236660290d}{Plexe\+Simulation\+Runner}}, \mbox{\hyperlink{classOptimizer_ade37ad13536479c3430d7fd7eae41cad}{Optimizer}}, \mbox{\hyperlink{classDirectOptimizer_a04675cc1316296f43e8ebf0d7511ec59}{Direct\+Optimizer}}, \mbox{\hyperlink{classEvaluation_a26e219504b717e6f44ac31ecb11272b5}{Evaluation}}, and \mbox{\hyperlink{classConstantHeadway_a64f1f5277d284f7de52b198bf22aa34b}{Constant\+Headway}}.
+
+
+
+Definition at line 8 of file Status.\+cpp.
+
+
+
+References NO\+\_\+\+STATUS\+\_\+\+SUPPORT.
+
+
+
+Referenced by Evaluation\+::get\+Status(), Optimizer\+::get\+Status(), and Status\+Bar\+::print\+Status().
+
+\mbox{\Hypertarget{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}\label{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}} 
+\index{Status@{Status}!getStatusBar@{getStatusBar}}
+\index{getStatusBar@{getStatusBar}!Status@{Status}}
+\doxysubsubsection{\texorpdfstring{getStatusBar()}{getStatusBar()}}
+{\footnotesize\ttfamily string Status\+::get\+Status\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current progress of the calculations of the implementing component. 
+
+The returned string is visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}, when the component is actively calculating something. Must not exceed one console line! \begin{DoxyReturn}{Returns}
+A string containing the progress of a calculation. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSimulationRunner_aee360ed53b2160fc6ad4bb7a2dd2cd10}{Simulation\+Runner}}, \mbox{\hyperlink{classPlexeSimulationRunner_aa11de4c5f5f71b8049cda12b21e16ad6}{Plexe\+Simulation\+Runner}}, \mbox{\hyperlink{classOptimizer_ae94cf165014c25200612e23d8716a27d}{Optimizer}}, \mbox{\hyperlink{classDirectOptimizer_a238a3dd96dafebf25c8ffaa62eb65cd2}{Direct\+Optimizer}}, \mbox{\hyperlink{classEvaluation_a16d1e5ec9c149224e0fdacec598b5293}{Evaluation}}, and \mbox{\hyperlink{classConstantHeadway_a9cdf1dd06fc492636dbc6181073409a3}{Constant\+Headway}}.
+
+
+
+Definition at line 12 of file Status.\+cpp.
+
+
+
+References NO\+\_\+\+STATUS\+\_\+\+SUPPORT.
+
+
+
+Referenced by Evaluation\+::get\+Status\+Bar(), Optimizer\+::get\+Status\+Bar(), and Status\+Bar\+::update\+Status().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStatus_aafda770737cec4ad6e503526aef7e7f0}\label{classStatus_aafda770737cec4ad6e503526aef7e7f0}} 
+\index{Status@{Status}!NO\_NAME@{NO\_NAME}}
+\index{NO\_NAME@{NO\_NAME}!Status@{Status}}
+\doxysubsubsection{\texorpdfstring{NO\_NAME}{NO\_NAME}}
+{\footnotesize\ttfamily const string Status\+::\+NO\+\_\+\+NAME = \char`\"{}No name specified\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Default message returned by \mbox{\hyperlink{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}{get\+Name}} if the implementing class does not override the function. 
+
+
+
+Definition at line 27 of file Status.\+h.
+
+
+
+Referenced by get\+Name().
+
+\mbox{\Hypertarget{classStatus_a3090c3575be971368217ae7e3e470120}\label{classStatus_a3090c3575be971368217ae7e3e470120}} 
+\index{Status@{Status}!NO\_STATUS\_SUPPORT@{NO\_STATUS\_SUPPORT}}
+\index{NO\_STATUS\_SUPPORT@{NO\_STATUS\_SUPPORT}!Status@{Status}}
+\doxysubsubsection{\texorpdfstring{NO\_STATUS\_SUPPORT}{NO\_STATUS\_SUPPORT}}
+{\footnotesize\ttfamily const string Status\+::\+NO\+\_\+\+STATUS\+\_\+\+SUPPORT = \char`\"{}Component doesn\textquotesingle{}t support status updates!\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Default message returned by \mbox{\hyperlink{classStatus_a587fbda25430f10e4cade040aaad198f}{get\+Status}} and \mbox{\hyperlink{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}{get\+Status\+Bar}} if the implementing class does not override the respective function. 
+
+
+
+Definition at line 23 of file Status.\+h.
+
+
+
+Referenced by get\+Status(), and get\+Status\+Bar().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/status/Status.\+h\item 
+/home/runner/work/simopticon/simopticon/src/status/Status.\+cpp\end{DoxyCompactItemize}

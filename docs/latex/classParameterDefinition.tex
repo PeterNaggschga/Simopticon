@@ -1,0 +1,258 @@
+\hypertarget{classParameterDefinition}{}\doxysection{Parameter\+Definition Class Reference}
+\label{classParameterDefinition}\index{ParameterDefinition@{ParameterDefinition}}
+
+
+A class storing information on the properties of parameters that are being optimized.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Parameter\+Definition.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParameterDefinition_a8391a8243a0b88fcd6d9e1a2ed5b141a}{Parameter\+Definition}} (\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}{min}}, \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}{max}}, string \mbox{\hyperlink{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}{config}}=\char`\"{}\char`\"{}, string \mbox{\hyperlink{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}{unit}}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} with the given minimum, maximum, configuration string and unit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameterDefinition_ab65c3d1b2f6ec0ef1674633bb1403021}{get\+Min}} () const
+\begin{DoxyCompactList}\small\item\em Returns the minimum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}{min}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameterDefinition_a4ba9b3feac909312382af311dea10801}{get\+Max}} () const
+\begin{DoxyCompactList}\small\item\em Returns the maximum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}{max}}. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classParameterDefinition_a1c24ce49b6675b0b06933d25b54d7bc3}{get\+Unit}} () const
+\begin{DoxyCompactList}\small\item\em Returns the unit string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}{unit}}. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classParameterDefinition_aba470d79fd5afa92b9f3557e080b15a0}{get\+Config}} () const
+\begin{DoxyCompactList}\small\item\em Returns the configuration string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}{config}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}{min}}
+\begin{DoxyCompactList}\small\item\em Minimum value of the \mbox{\hyperlink{classParameter}{Parameter}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}{max}}
+\begin{DoxyCompactList}\small\item\em Maximum value of the \mbox{\hyperlink{classParameter}{Parameter}}. \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}{unit}}
+\begin{DoxyCompactList}\small\item\em Unit of the \mbox{\hyperlink{classParameter}{Parameter}} (optional). \end{DoxyCompactList}\item 
+const string \mbox{\hyperlink{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}{config}}
+\begin{DoxyCompactList}\small\item\em String containing configuration details of the \mbox{\hyperlink{classParameter}{Parameter}} (optional). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class storing information on the properties of parameters that are being optimized. 
+
+Definition at line 15 of file Parameter\+Definition.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParameterDefinition_a8391a8243a0b88fcd6d9e1a2ed5b141a}\label{classParameterDefinition_a8391a8243a0b88fcd6d9e1a2ed5b141a}} 
+\index{ParameterDefinition@{ParameterDefinition}!ParameterDefinition@{ParameterDefinition}}
+\index{ParameterDefinition@{ParameterDefinition}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{ParameterDefinition()}{ParameterDefinition()}}
+{\footnotesize\ttfamily Parameter\+Definition\+::\+Parameter\+Definition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}}}]{min,  }\item[{\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}}}]{max,  }\item[{string}]{config = {\ttfamily \char`\"{}\char`\"{}},  }\item[{string}]{unit = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} with the given minimum, maximum, configuration string and unit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Minimum value of the \mbox{\hyperlink{classParameter}{Parameter}}. \\
+\hline
+{\em max} & Maximum value of the \mbox{\hyperlink{classParameter}{Parameter}}. \\
+\hline
+{\em config} & Configuration string for the \mbox{\hyperlink{classParameter}{Parameter}} (optional). \\
+\hline
+{\em unit} & Unit of the \mbox{\hyperlink{classParameter}{Parameter}} (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6 of file Parameter\+Definition.\+cpp.
+
+
+
+References config, max, min, and unit.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParameterDefinition_aba470d79fd5afa92b9f3557e080b15a0}\label{classParameterDefinition_aba470d79fd5afa92b9f3557e080b15a0}} 
+\index{ParameterDefinition@{ParameterDefinition}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{getConfig()}{getConfig()}}
+{\footnotesize\ttfamily const string \& Parameter\+Definition\+::get\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the configuration string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}{config}}. 
+
+\begin{DoxyReturn}{Returns}
+A string reference containing the configuration. 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Parameter\+Definition.\+cpp.
+
+
+
+References config.
+
+
+
+Referenced by Parameter\+::get\+Config().
+
+\mbox{\Hypertarget{classParameterDefinition_a4ba9b3feac909312382af311dea10801}\label{classParameterDefinition_a4ba9b3feac909312382af311dea10801}} 
+\index{ParameterDefinition@{ParameterDefinition}!getMax@{getMax}}
+\index{getMax@{getMax}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{getMax()}{getMax()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+Definition\+::get\+Max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the maximum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}{max}}. 
+
+\begin{DoxyReturn}{Returns}
+A coordinate representing the maximum value. 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Parameter\+Definition.\+cpp.
+
+
+
+References max.
+
+
+
+Referenced by Parameter\+Normalizer\+::denormalize(), and Parameter\+::get\+Max().
+
+\mbox{\Hypertarget{classParameterDefinition_ab65c3d1b2f6ec0ef1674633bb1403021}\label{classParameterDefinition_ab65c3d1b2f6ec0ef1674633bb1403021}} 
+\index{ParameterDefinition@{ParameterDefinition}!getMin@{getMin}}
+\index{getMin@{getMin}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{getMin()}{getMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+Definition\+::get\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the minimum value of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}{min}}. 
+
+\begin{DoxyReturn}{Returns}
+A coordinate representing the minimum value. 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file Parameter\+Definition.\+cpp.
+
+
+
+References min.
+
+
+
+Referenced by Parameter\+Normalizer\+::denormalize(), and Parameter\+::get\+Min().
+
+\mbox{\Hypertarget{classParameterDefinition_a1c24ce49b6675b0b06933d25b54d7bc3}\label{classParameterDefinition_a1c24ce49b6675b0b06933d25b54d7bc3}} 
+\index{ParameterDefinition@{ParameterDefinition}!getUnit@{getUnit}}
+\index{getUnit@{getUnit}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{getUnit()}{getUnit()}}
+{\footnotesize\ttfamily const string \& Parameter\+Definition\+::get\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the unit string of the \mbox{\hyperlink{classParameter}{Parameter}} stored in \mbox{\hyperlink{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}{unit}}. 
+
+\begin{DoxyReturn}{Returns}
+A string reference containing the unit. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Parameter\+Definition.\+cpp.
+
+
+
+References unit.
+
+
+
+Referenced by Parameter\+::get\+Unit().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}\label{classParameterDefinition_a6232aa3ae1f255cf67eafd1dce148d2e}} 
+\index{ParameterDefinition@{ParameterDefinition}!config@{config}}
+\index{config@{config}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{config}{config}}
+{\footnotesize\ttfamily const string Parameter\+Definition\+::config\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+String containing configuration details of the \mbox{\hyperlink{classParameter}{Parameter}} (optional). 
+
+May be used to transfer configuration information for \mbox{\hyperlink{classSimulationRunner}{Simulation\+Runner}}. 
+
+Definition at line 33 of file Parameter\+Definition.\+h.
+
+
+
+Referenced by Parameter\+Definition(), and get\+Config().
+
+\mbox{\Hypertarget{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}\label{classParameterDefinition_a296c62a39c6adad6da5af3ead874ddc3}} 
+\index{ParameterDefinition@{ParameterDefinition}!max@{max}}
+\index{max@{max}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+Definition\+::max\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Maximum value of the \mbox{\hyperlink{classParameter}{Parameter}}. 
+
+
+
+Definition at line 24 of file Parameter\+Definition.\+h.
+
+
+
+Referenced by Parameter\+Definition(), and get\+Max().
+
+\mbox{\Hypertarget{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}\label{classParameterDefinition_aab20725ea78ebd717b3fe5c9344e846c}} 
+\index{ParameterDefinition@{ParameterDefinition}!min@{min}}
+\index{min@{min}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Parameter\+Definition\+::min\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Minimum value of the \mbox{\hyperlink{classParameter}{Parameter}}. 
+
+
+
+Definition at line 20 of file Parameter\+Definition.\+h.
+
+
+
+Referenced by Parameter\+Definition(), and get\+Min().
+
+\mbox{\Hypertarget{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}\label{classParameterDefinition_ab4bb2aa11569c4eaa5b8ebb8c0739ee8}} 
+\index{ParameterDefinition@{ParameterDefinition}!unit@{unit}}
+\index{unit@{unit}!ParameterDefinition@{ParameterDefinition}}
+\doxysubsubsection{\texorpdfstring{unit}{unit}}
+{\footnotesize\ttfamily const string Parameter\+Definition\+::unit\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Unit of the \mbox{\hyperlink{classParameter}{Parameter}} (optional). 
+
+
+
+Definition at line 28 of file Parameter\+Definition.\+h.
+
+
+
+Referenced by Parameter\+Definition(), and get\+Unit().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/parameters/Parameter\+Definition.\+h\item 
+/home/runner/work/simopticon/simopticon/src/parameters/Parameter\+Definition.\+cpp\end{DoxyCompactItemize}

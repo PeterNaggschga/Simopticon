@@ -1,0 +1,335 @@
+\hypertarget{classDiscreteParameter}{}\doxysection{Discrete\+Parameter Class Reference}
+\label{classDiscreteParameter}\index{DiscreteParameter@{DiscreteParameter}}
+
+
+Implements a \mbox{\hyperlink{classParameter}{Parameter}} using discrete values.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Discrete\+Parameter.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Discrete\+Parameter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classDiscreteParameter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Discrete\+Parameter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classDiscreteParameter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDiscreteParameter_a7c77d05d06207d5cb5bde5bab608076c}{Discrete\+Parameter}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$ def, double \mbox{\hyperlink{group__status_gaa607b08567c9a77d9cfc9f4137d6dea2}{step}}, double value)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} with the given \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}, step and value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDiscreteParameter_aaa410a8904a6c5ef71563633de7fc8c6}{Discrete\+Parameter}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$ def, double \mbox{\hyperlink{group__status_gaa607b08567c9a77d9cfc9f4137d6dea2}{step}})
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} with the given \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} and step. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classDiscreteParameter_a4dda62dbc671674af0fd082bbd16c4f0}{get\+Times}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDiscreteParameter_a724fb5a23b4e312152e89e435243d824}{set\+Times}} (int new\+Times)
+\begin{DoxyCompactList}\small\item\em Sets the value of \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}} to the given value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDiscreteParameter_ad1b32356f2abd3ea777411ae6caa9b15}{get\+Step}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of \mbox{\hyperlink{classDiscreteParameter_a07c95f48b45bb4900e649cd70582738b}{step}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDiscreteParameter_a32168788903a536998d0eb37a57abe85}{get\+Offset}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of \mbox{\hyperlink{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}{offset}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} \mbox{\hyperlink{classDiscreteParameter_aa84ef5350df8d1c0f9acb5609087263f}{get\+Val}} () const override
+\begin{DoxyCompactList}\small\item\em Returns the current value of the \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} as calculated by the following formula\+: $ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} $. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDiscreteParameter_af20b49b28b2b309be93e72edeeeb8f36}{set\+Val}} (\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} val) override
+\begin{DoxyCompactList}\small\item\em Sets the value of the \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} to the discrete value closest to the given value by modifying \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}} using \mbox{\hyperlink{classDiscreteParameter_a724fb5a23b4e312152e89e435243d824}{set\+Times}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}}
+\begin{DoxyCompactList}\small\item\em Times used in the value calculation. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDiscreteParameter_a07c95f48b45bb4900e649cd70582738b}{step}}
+\begin{DoxyCompactList}\small\item\em Difference between discrete values. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}{offset}} = 0
+\begin{DoxyCompactList}\small\item\em Offset used in the value calculation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements a \mbox{\hyperlink{classParameter}{Parameter}} using discrete values. 
+
+The value of the \mbox{\hyperlink{classParameter}{Parameter}} is calculated as $ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} $. 
+
+Definition at line 12 of file Discrete\+Parameter.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDiscreteParameter_a7c77d05d06207d5cb5bde5bab608076c}\label{classDiscreteParameter_a7c77d05d06207d5cb5bde5bab608076c}} 
+\index{DiscreteParameter@{DiscreteParameter}!DiscreteParameter@{DiscreteParameter}}
+\index{DiscreteParameter@{DiscreteParameter}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{DiscreteParameter()}{DiscreteParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Discrete\+Parameter\+::\+Discrete\+Parameter (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$}]{def,  }\item[{double}]{step,  }\item[{double}]{value }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} with the given \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}, step and value. 
+
+Checks if given value is in bounds set by the \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. Calculates \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}} and \mbox{\hyperlink{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}{offset}} automatically. 
+\begin{DoxyParams}{Parameters}
+{\em def} & \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} of the \mbox{\hyperlink{classParameter}{Parameter}}. \\
+\hline
+{\em step} & Difference between discrete values. \\
+\hline
+{\em value} & Initial value of the \mbox{\hyperlink{classParameter}{Parameter}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file Discrete\+Parameter.\+cpp.
+
+
+
+References Parameter\+::\+Parameter(), Parameter\+::get\+Max(), Parameter\+::get\+Min(), offset, step, and times.
+
+
+
+Referenced by Discrete\+Parameter().
+
+\mbox{\Hypertarget{classDiscreteParameter_aaa410a8904a6c5ef71563633de7fc8c6}\label{classDiscreteParameter_aaa410a8904a6c5ef71563633de7fc8c6}} 
+\index{DiscreteParameter@{DiscreteParameter}!DiscreteParameter@{DiscreteParameter}}
+\index{DiscreteParameter@{DiscreteParameter}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{DiscreteParameter()}{DiscreteParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Discrete\+Parameter\+::\+Discrete\+Parameter (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} $>$}]{def,  }\item[{double}]{step }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} with the given \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} and step. 
+
+Calculates \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}} and \mbox{\hyperlink{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}{offset}} automatically. 
+\begin{DoxyParams}{Parameters}
+{\em def} & \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}} of the \mbox{\hyperlink{classParameter}{Parameter}}. \\
+\hline
+{\em step} & Difference between discrete values. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Discrete\+Parameter.\+cpp.
+
+
+
+References Discrete\+Parameter(), Parameter\+::get\+Max(), and Parameter\+::get\+Min().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDiscreteParameter_a32168788903a536998d0eb37a57abe85}\label{classDiscreteParameter_a32168788903a536998d0eb37a57abe85}} 
+\index{DiscreteParameter@{DiscreteParameter}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily double Discrete\+Parameter\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of \mbox{\hyperlink{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}{offset}}. 
+
+\begin{DoxyReturn}{Returns}
+A floating point number representing the offset. 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file Discrete\+Parameter.\+cpp.
+
+
+
+References offset.
+
+\mbox{\Hypertarget{classDiscreteParameter_ad1b32356f2abd3ea777411ae6caa9b15}\label{classDiscreteParameter_ad1b32356f2abd3ea777411ae6caa9b15}} 
+\index{DiscreteParameter@{DiscreteParameter}!getStep@{getStep}}
+\index{getStep@{getStep}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{getStep()}{getStep()}}
+{\footnotesize\ttfamily double Discrete\+Parameter\+::get\+Step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of \mbox{\hyperlink{classDiscreteParameter_a07c95f48b45bb4900e649cd70582738b}{step}}. 
+
+\begin{DoxyReturn}{Returns}
+A floating point number representing the difference between discrete values. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Discrete\+Parameter.\+cpp.
+
+
+
+References step.
+
+\mbox{\Hypertarget{classDiscreteParameter_a4dda62dbc671674af0fd082bbd16c4f0}\label{classDiscreteParameter_a4dda62dbc671674af0fd082bbd16c4f0}} 
+\index{DiscreteParameter@{DiscreteParameter}!getTimes@{getTimes}}
+\index{getTimes@{getTimes}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{getTimes()}{getTimes()}}
+{\footnotesize\ttfamily int Discrete\+Parameter\+::get\+Times (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the value of \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}}. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the times value. 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Discrete\+Parameter.\+cpp.
+
+
+
+References times.
+
+\mbox{\Hypertarget{classDiscreteParameter_aa84ef5350df8d1c0f9acb5609087263f}\label{classDiscreteParameter_aa84ef5350df8d1c0f9acb5609087263f}} 
+\index{DiscreteParameter@{DiscreteParameter}!getVal@{getVal}}
+\index{getVal@{getVal}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{getVal()}{getVal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}} Discrete\+Parameter\+::get\+Val (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the current value of the \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} as calculated by the following formula\+: $ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} $. 
+
+\begin{DoxyReturn}{Returns}
+A coordinate representing the value of the \mbox{\hyperlink{classContinuousParameter}{Continuous\+Parameter}}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParameter_a39f52082ae9e000edff3d517ef78a8bb}{Parameter}}.
+
+
+
+Definition at line 41 of file Discrete\+Parameter.\+cpp.
+
+
+
+References offset, step, and times.
+
+\mbox{\Hypertarget{classDiscreteParameter_a724fb5a23b4e312152e89e435243d824}\label{classDiscreteParameter_a724fb5a23b4e312152e89e435243d824}} 
+\index{DiscreteParameter@{DiscreteParameter}!setTimes@{setTimes}}
+\index{setTimes@{setTimes}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{setTimes()}{setTimes()}}
+{\footnotesize\ttfamily void Discrete\+Parameter\+::set\+Times (\begin{DoxyParamCaption}\item[{int}]{new\+Times }\end{DoxyParamCaption})}
+
+
+
+Sets the value of \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}} to the given value. 
+
+Checks if value is in bounds set by \mbox{\hyperlink{classParameterDefinition}{Parameter\+Definition}}. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Times} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 25 of file Discrete\+Parameter.\+cpp.
+
+
+
+References Parameter\+::get\+Max(), Parameter\+::get\+Min(), offset, step, and times.
+
+
+
+Referenced by set\+Val().
+
+\mbox{\Hypertarget{classDiscreteParameter_af20b49b28b2b309be93e72edeeeb8f36}\label{classDiscreteParameter_af20b49b28b2b309be93e72edeeeb8f36}} 
+\index{DiscreteParameter@{DiscreteParameter}!setVal@{setVal}}
+\index{setVal@{setVal}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{setVal()}{setVal()}}
+{\footnotesize\ttfamily void Discrete\+Parameter\+::set\+Val (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Types_8h_ac6e8101996ab6f0705e43049d0d1abbd}{coordinate}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets the value of the \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} to the discrete value closest to the given value by modifying \mbox{\hyperlink{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}{times}} using \mbox{\hyperlink{classDiscreteParameter_a724fb5a23b4e312152e89e435243d824}{set\+Times}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Value to set the \mbox{\hyperlink{classDiscreteParameter}{Discrete\+Parameter}} to. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classParameter_a4299bc2da9ef07c8a94ac5017ef7668b}{Parameter}}.
+
+
+
+Definition at line 45 of file Discrete\+Parameter.\+cpp.
+
+
+
+References offset, set\+Times(), and step.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}\label{classDiscreteParameter_a844bc19ba733297cc899115d01bfd185}} 
+\index{DiscreteParameter@{DiscreteParameter}!offset@{offset}}
+\index{offset@{offset}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily double Discrete\+Parameter\+::offset = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Offset used in the value calculation. 
+
+
+
+Definition at line 25 of file Discrete\+Parameter.\+h.
+
+
+
+Referenced by Discrete\+Parameter(), get\+Offset(), get\+Val(), set\+Times(), and set\+Val().
+
+\mbox{\Hypertarget{classDiscreteParameter_a07c95f48b45bb4900e649cd70582738b}\label{classDiscreteParameter_a07c95f48b45bb4900e649cd70582738b}} 
+\index{DiscreteParameter@{DiscreteParameter}!step@{step}}
+\index{step@{step}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{step}{step}}
+{\footnotesize\ttfamily double Discrete\+Parameter\+::step\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Difference between discrete values. 
+
+Used in the value calculation. 
+
+Definition at line 21 of file Discrete\+Parameter.\+h.
+
+
+
+Referenced by Discrete\+Parameter(), get\+Step(), get\+Val(), set\+Times(), and set\+Val().
+
+\mbox{\Hypertarget{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}\label{classDiscreteParameter_ab66ffee0181e1c577f57eb33e78cc6bf}} 
+\index{DiscreteParameter@{DiscreteParameter}!times@{times}}
+\index{times@{times}!DiscreteParameter@{DiscreteParameter}}
+\doxysubsubsection{\texorpdfstring{times}{times}}
+{\footnotesize\ttfamily int Discrete\+Parameter\+::times\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Times used in the value calculation. 
+
+
+
+Definition at line 17 of file Discrete\+Parameter.\+h.
+
+
+
+Referenced by Discrete\+Parameter(), get\+Times(), get\+Val(), and set\+Times().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/parameters/Discrete\+Parameter.\+h\item 
+/home/runner/work/simopticon/simopticon/src/parameters/Discrete\+Parameter.\+cpp\end{DoxyCompactItemize}

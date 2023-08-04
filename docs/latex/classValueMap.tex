@@ -1,0 +1,471 @@
+\hypertarget{classValueMap}{}\doxysection{Value\+Map Class Reference}
+\label{classValueMap}\index{ValueMap@{ValueMap}}
+
+
+A container managing a map data structure that maps \mbox{\hyperlink{classParameter}{Parameter}} combinations to their respective found values.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Value\+Map.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classValueMap_a0358924a0892af703067a64314de868c}{Value\+Map}} (unsigned int \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}}=10)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classValueMap}{Value\+Map}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} \mbox{\hyperlink{classValueMap_ac176542d8baf403fbe843350384b2137}{query}} (const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&params)
+\begin{DoxyCompactList}\small\item\em Returns the value saved at the given \mbox{\hyperlink{classParameter}{Parameter}} combination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classValueMap_a464650b67b154cad96054587a6b5cb6d}{insert}} (const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&params, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} val)
+\begin{DoxyCompactList}\small\item\em Adds the given \mbox{\hyperlink{classParameter}{Parameter}} combination and value to \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classValueMap_abfbe2d2baf080ebd50cbf0cb70c1c31b}{is\+Known}} (const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&cords)
+\begin{DoxyCompactList}\small\item\em Checks if a value has been recorded at the given \mbox{\hyperlink{classParameter}{Parameter}} combination. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classValueMap_a48f7503620ad30ab3cb683fc514f389b}{is\+Top\+Value}} (const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&cords)
+\begin{DoxyCompactList}\small\item\em Checks if the given \mbox{\hyperlink{classParameter}{Parameter}} combination is to be found in \mbox{\hyperlink{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}{top\+Vals}}. \end{DoxyCompactList}\item 
+const map$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}, \mbox{\hyperlink{structCmpVectorSharedParameter}{Cmp\+Vector\+Shared\+Parameter}} $>$ \& \mbox{\hyperlink{classValueMap_a5f85ce224917104f530a14bd8fac3a52}{get\+Values}} ()
+\begin{DoxyCompactList}\small\item\em Returns the whole \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}} member. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} \mbox{\hyperlink{classValueMap_aa9c5e1b67ec01dd4b94328da64c3074c}{get\+Median}} ()
+\begin{DoxyCompactList}\small\item\em Returns the median of all values using \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} and \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}}. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classValueMap_a617f5348dcf85e794516e496a04fde7a}{get\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the number of inserted values. \end{DoxyCompactList}\item 
+list$<$ pair$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ $>$ \mbox{\hyperlink{classValueMap_a81306997e2c2f17d904330773ade5df5}{get\+Top\+Vals}} ()
+\begin{DoxyCompactList}\small\item\em Returns the best \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}} entries that are saved in \mbox{\hyperlink{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}{top\+Vals}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}} ()
+\begin{DoxyCompactList}\small\item\em Takes all values in \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}}, adds them to \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} or \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} and inserts them into \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classValueMap_acd42c2c593539874b96e4aa6cb13ff35}{add\+Value}} (const pair$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ \&val, set$<$ \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $\ast$, \mbox{\hyperlink{structCmpPtrFunctionvalue}{Cmp\+Ptr\+Functionvalue}} $>$ \&set)
+\begin{DoxyCompactList}\small\item\em Inserts a single value into \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}} and into \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} or \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} depending on {\itshape set} argument. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+mutex \mbox{\hyperlink{classValueMap_adfb0c4d55f17d85cd53186d0be2c1cfb}{operations\+Lock}}
+\begin{DoxyCompactList}\small\item\em Threadlock to avoid damage to the data structure when concurrent threads access it. \end{DoxyCompactList}\item 
+set$<$ \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $\ast$, \mbox{\hyperlink{structCmpPtrFunctionvalue}{Cmp\+Ptr\+Functionvalue}} $>$ \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}}
+\begin{DoxyCompactList}\small\item\em Greater half of the values in \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. \end{DoxyCompactList}\item 
+set$<$ \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $\ast$, \mbox{\hyperlink{structCmpPtrFunctionvalue}{Cmp\+Ptr\+Functionvalue}} $>$ \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}}
+\begin{DoxyCompactList}\small\item\em Lesser half of the values in \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. \end{DoxyCompactList}\item 
+const unsigned int \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}}
+\begin{DoxyCompactList}\small\item\em Number of entries to be printed as best values at the end of the optimization process. \end{DoxyCompactList}\item 
+set$<$ pair$<$ const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$, \mbox{\hyperlink{structCmpPairVectorSharedParameterFunctionvalue}{Cmp\+Pair\+Vector\+Shared\+Parameter\+Functionvalue}} $>$ \mbox{\hyperlink{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}{top\+Vals}}
+\begin{DoxyCompactList}\small\item\em Set of pairs of the best \mbox{\hyperlink{classParameter}{Parameter}} combinations and their respective values. \end{DoxyCompactList}\item 
+map$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}, \mbox{\hyperlink{structCmpVectorSharedParameter}{Cmp\+Vector\+Shared\+Parameter}} $>$ \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}
+\begin{DoxyCompactList}\small\item\em Actual map that contains \mbox{\hyperlink{classParameter}{Parameter}} combinations and their respective values. \end{DoxyCompactList}\item 
+list$<$ pair$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ $>$ \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}}
+\begin{DoxyCompactList}\small\item\em Entries that have been added since last \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container managing a map data structure that maps \mbox{\hyperlink{classParameter}{Parameter}} combinations to their respective found values. 
+
+The class manages concurrent access using the \mbox{\hyperlink{classValueMap_adfb0c4d55f17d85cd53186d0be2c1cfb}{operations\+Lock}}. Running median calculation is supported by using sets \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} and \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}}. Values are inserted into the data structure at once when \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}} is called. Before that they are saved in \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}} to avoid unnecessary costly insertion operations. 
+
+Definition at line 26 of file Value\+Map.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classValueMap_a0358924a0892af703067a64314de868c}\label{classValueMap_a0358924a0892af703067a64314de868c}} 
+\index{ValueMap@{ValueMap}!ValueMap@{ValueMap}}
+\index{ValueMap@{ValueMap}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{ValueMap()}{ValueMap()}}
+{\footnotesize\ttfamily Value\+Map\+::\+Value\+Map (\begin{DoxyParamCaption}\item[{unsigned int}]{top\+Entries = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a \mbox{\hyperlink{classValueMap}{Value\+Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top\+Entries} & Value to be assigned to \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file Value\+Map.\+cpp.
+
+
+
+References top\+Entries.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classValueMap_acd42c2c593539874b96e4aa6cb13ff35}\label{classValueMap_acd42c2c593539874b96e4aa6cb13ff35}} 
+\index{ValueMap@{ValueMap}!addValue@{addValue}}
+\index{addValue@{addValue}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{addValue()}{addValue()}}
+{\footnotesize\ttfamily void Value\+Map\+::add\+Value (\begin{DoxyParamCaption}\item[{const pair$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ \&}]{val,  }\item[{set$<$ \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $\ast$, \mbox{\hyperlink{structCmpPtrFunctionvalue}{Cmp\+Ptr\+Functionvalue}} $>$ \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inserts a single value into \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}} and into \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} or \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} depending on {\itshape set} argument. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & \mbox{\hyperlink{classParameter}{Parameter}} combination and respective value to be inserted. \\
+\hline
+{\em set} & Set that value is inserted in. Either \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} or \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file Value\+Map.\+cpp.
+
+
+
+References top\+Entries, top\+Vals, and values.
+
+
+
+Referenced by update\+Map().
+
+\mbox{\Hypertarget{classValueMap_aa9c5e1b67ec01dd4b94328da64c3074c}\label{classValueMap_aa9c5e1b67ec01dd4b94328da64c3074c}} 
+\index{ValueMap@{ValueMap}!getMedian@{getMedian}}
+\index{getMedian@{getMedian}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{getMedian()}{getMedian()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} Value\+Map\+::get\+Median (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the median of all values using \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} and \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}}. 
+
+If no values have been added, 0 is returned. Triggers \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. \begin{DoxyReturn}{Returns}
+A value representing the median of all values. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Value\+Map.\+cpp.
+
+
+
+References get\+Size(), lower\+Values, operations\+Lock, update\+Map(), and upper\+Values.
+
+\mbox{\Hypertarget{classValueMap_a617f5348dcf85e794516e496a04fde7a}\label{classValueMap_a617f5348dcf85e794516e496a04fde7a}} 
+\index{ValueMap@{ValueMap}!getSize@{getSize}}
+\index{getSize@{getSize}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily size\+\_\+t Value\+Map\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the number of inserted values. 
+
+Values in \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}} are included. \begin{DoxyReturn}{Returns}
+An integral representing the number of inserted values. 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file Value\+Map.\+cpp.
+
+
+
+References tba, and values.
+
+
+
+Referenced by get\+Median(), and is\+Known().
+
+\mbox{\Hypertarget{classValueMap_a81306997e2c2f17d904330773ade5df5}\label{classValueMap_a81306997e2c2f17d904330773ade5df5}} 
+\index{ValueMap@{ValueMap}!getTopVals@{getTopVals}}
+\index{getTopVals@{getTopVals}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{getTopVals()}{getTopVals()}}
+{\footnotesize\ttfamily list$<$ pair$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $>$ $>$ Value\+Map\+::get\+Top\+Vals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the best \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}} entries that are saved in \mbox{\hyperlink{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}{top\+Vals}}. 
+
+Triggers \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. \begin{DoxyReturn}{Returns}
+A list of the best \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}} \mbox{\hyperlink{classParameter}{Parameter}} combinations and their respective values. 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file Value\+Map.\+cpp.
+
+
+
+References top\+Vals, and update\+Map().
+
+\mbox{\Hypertarget{classValueMap_a5f85ce224917104f530a14bd8fac3a52}\label{classValueMap_a5f85ce224917104f530a14bd8fac3a52}} 
+\index{ValueMap@{ValueMap}!getValues@{getValues}}
+\index{getValues@{getValues}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{getValues()}{getValues()}}
+{\footnotesize\ttfamily const map$<$ vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}, \mbox{\hyperlink{structCmpVectorSharedParameter}{Cmp\+Vector\+Shared\+Parameter}} $>$ \& Value\+Map\+::get\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the whole \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}} member. 
+
+Triggers \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. \begin{DoxyReturn}{Returns}
+A map reference to \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file Value\+Map.\+cpp.
+
+
+
+References update\+Map(), and values.
+
+\mbox{\Hypertarget{classValueMap_a464650b67b154cad96054587a6b5cb6d}\label{classValueMap_a464650b67b154cad96054587a6b5cb6d}} 
+\index{ValueMap@{ValueMap}!insert@{insert}}
+\index{insert@{insert}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Value\+Map\+::insert (\begin{DoxyParamCaption}\item[{const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&}]{params,  }\item[{\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}}]{val }\end{DoxyParamCaption})}
+
+
+
+Adds the given \mbox{\hyperlink{classParameter}{Parameter}} combination and value to \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em params} & \mbox{\hyperlink{classParameter}{Parameter}} combination to be added. \\
+\hline
+{\em val} & Value to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 77 of file Value\+Map.\+cpp.
+
+
+
+References tba.
+
+\mbox{\Hypertarget{classValueMap_abfbe2d2baf080ebd50cbf0cb70c1c31b}\label{classValueMap_abfbe2d2baf080ebd50cbf0cb70c1c31b}} 
+\index{ValueMap@{ValueMap}!isKnown@{isKnown}}
+\index{isKnown@{isKnown}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{isKnown()}{isKnown()}}
+{\footnotesize\ttfamily bool Value\+Map\+::is\+Known (\begin{DoxyParamCaption}\item[{const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&}]{cords }\end{DoxyParamCaption})}
+
+
+
+Checks if a value has been recorded at the given \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+
+Triggers \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. 
+\begin{DoxyParams}{Parameters}
+{\em cords} & \mbox{\hyperlink{classParameter}{Parameter}} combination that is checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean value that represents if the value is known. 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Value\+Map.\+cpp.
+
+
+
+References get\+Size(), operations\+Lock, update\+Map(), and values.
+
+\mbox{\Hypertarget{classValueMap_a48f7503620ad30ab3cb683fc514f389b}\label{classValueMap_a48f7503620ad30ab3cb683fc514f389b}} 
+\index{ValueMap@{ValueMap}!isTopValue@{isTopValue}}
+\index{isTopValue@{isTopValue}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{isTopValue()}{isTopValue()}}
+{\footnotesize\ttfamily bool Value\+Map\+::is\+Top\+Value (\begin{DoxyParamCaption}\item[{const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&}]{cords }\end{DoxyParamCaption})}
+
+
+
+Checks if the given \mbox{\hyperlink{classParameter}{Parameter}} combination is to be found in \mbox{\hyperlink{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}{top\+Vals}}. 
+
+Triggers \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. 
+\begin{DoxyParams}{Parameters}
+{\em cords} & \mbox{\hyperlink{classParameter}{Parameter}} combination that is checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean value that represents if the value is one of the best \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}} entries in \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. 
+\end{DoxyReturn}
+
+
+Definition at line 113 of file Value\+Map.\+cpp.
+
+
+
+References Parameter\+::get\+Val(), top\+Vals, and update\+Map().
+
+\mbox{\Hypertarget{classValueMap_ac176542d8baf403fbe843350384b2137}\label{classValueMap_ac176542d8baf403fbe843350384b2137}} 
+\index{ValueMap@{ValueMap}!query@{query}}
+\index{query@{query}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{query()}{query()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} Value\+Map\+::query (\begin{DoxyParamCaption}\item[{const vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ \&}]{params }\end{DoxyParamCaption})}
+
+
+
+Returns the value saved at the given \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+
+If no value is present, an exception is thrown. Triggers \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. 
+\begin{DoxyParams}{Parameters}
+{\em params} & \mbox{\hyperlink{classParameter}{Parameter}} combination to which the value is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value saved in \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}} at the given \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file Value\+Map.\+cpp.
+
+
+
+References operations\+Lock, update\+Map(), and values.
+
+\mbox{\Hypertarget{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}\label{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}} 
+\index{ValueMap@{ValueMap}!updateMap@{updateMap}}
+\index{updateMap@{updateMap}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{updateMap()}{updateMap()}}
+{\footnotesize\ttfamily void Value\+Map\+::update\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Takes all values in \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}}, adds them to \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} or \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} and inserts them into \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. 
+
+\mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} and \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} are sorted as is required by their constraints. Afterwards \mbox{\hyperlink{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}{tba}} is cleared. 
+
+Definition at line 10 of file Value\+Map.\+cpp.
+
+
+
+References add\+Value(), lower\+Values, operations\+Lock, tba, and upper\+Values.
+
+
+
+Referenced by get\+Median(), get\+Top\+Vals(), get\+Values(), is\+Known(), is\+Top\+Value(), and query().
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}\label{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}} 
+\index{ValueMap@{ValueMap}!lowerValues@{lowerValues}}
+\index{lowerValues@{lowerValues}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{lowerValues}{lowerValues}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $\ast$, \mbox{\hyperlink{structCmpPtrFunctionvalue}{Cmp\+Ptr\+Functionvalue}}$>$ Value\+Map\+::lower\+Values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lesser half of the values in \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. 
+
+Same size as or one element less than \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}}. 
+
+Definition at line 40 of file Value\+Map.\+h.
+
+
+
+Referenced by get\+Median(), and update\+Map().
+
+\mbox{\Hypertarget{classValueMap_adfb0c4d55f17d85cd53186d0be2c1cfb}\label{classValueMap_adfb0c4d55f17d85cd53186d0be2c1cfb}} 
+\index{ValueMap@{ValueMap}!operationsLock@{operationsLock}}
+\index{operationsLock@{operationsLock}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{operationsLock}{operationsLock}}
+{\footnotesize\ttfamily mutex Value\+Map\+::operations\+Lock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Threadlock to avoid damage to the data structure when concurrent threads access it. 
+
+
+
+Definition at line 31 of file Value\+Map.\+h.
+
+
+
+Referenced by get\+Median(), is\+Known(), query(), and update\+Map().
+
+\mbox{\Hypertarget{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}\label{classValueMap_ab3d7fb7bf10aa25f98c3555e972ebcbd}} 
+\index{ValueMap@{ValueMap}!tba@{tba}}
+\index{tba@{tba}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{tba}{tba}}
+{\footnotesize\ttfamily list$<$pair$<$vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classParameter}{Parameter}}$>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}$>$ $>$ Value\+Map\+::tba\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Entries that have been added since last \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}}. 
+
+Will be inserted into \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}, \mbox{\hyperlink{classValueMap_add6b191069b0975d94d5bdb695992936}{upper\+Values}} and \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}} when \mbox{\hyperlink{classValueMap_aa13ab1a81147776fe1b76c1342b2dbd5}{update\+Map}} is called. 
+
+Definition at line 62 of file Value\+Map.\+h.
+
+
+
+Referenced by get\+Size(), insert(), and update\+Map().
+
+\mbox{\Hypertarget{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}\label{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}} 
+\index{ValueMap@{ValueMap}!topEntries@{topEntries}}
+\index{topEntries@{topEntries}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{topEntries}{topEntries}}
+{\footnotesize\ttfamily const unsigned int Value\+Map\+::top\+Entries\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of entries to be printed as best values at the end of the optimization process. 
+
+Can be configured in main config. 
+
+Definition at line 46 of file Value\+Map.\+h.
+
+
+
+Referenced by Value\+Map(), and add\+Value().
+
+\mbox{\Hypertarget{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}\label{classValueMap_acf3a3b49e448011b7fd63a14c427dcaa}} 
+\index{ValueMap@{ValueMap}!topVals@{topVals}}
+\index{topVals@{topVals}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{topVals}{topVals}}
+{\footnotesize\ttfamily set$<$pair$<$const vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classParameter}{Parameter}}$>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}$>$, \mbox{\hyperlink{structCmpPairVectorSharedParameterFunctionvalue}{Cmp\+Pair\+Vector\+Shared\+Parameter\+Functionvalue}}$>$ Value\+Map\+::top\+Vals\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Set of pairs of the best \mbox{\hyperlink{classParameter}{Parameter}} combinations and their respective values. 
+
+Contains not more than \mbox{\hyperlink{classValueMap_aaef0053f649f407dd9e7a4bddfb6bde7}{top\+Entries}} entries. 
+
+Definition at line 51 of file Value\+Map.\+h.
+
+
+
+Referenced by add\+Value(), get\+Top\+Vals(), and is\+Top\+Value().
+
+\mbox{\Hypertarget{classValueMap_add6b191069b0975d94d5bdb695992936}\label{classValueMap_add6b191069b0975d94d5bdb695992936}} 
+\index{ValueMap@{ValueMap}!upperValues@{upperValues}}
+\index{upperValues@{upperValues}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{upperValues}{upperValues}}
+{\footnotesize\ttfamily set$<$\mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}} $\ast$, \mbox{\hyperlink{structCmpPtrFunctionvalue}{Cmp\+Ptr\+Functionvalue}}$>$ Value\+Map\+::upper\+Values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Greater half of the values in \mbox{\hyperlink{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}{values}}. 
+
+Same size as or one element more than \mbox{\hyperlink{classValueMap_ac4dcc6213ff75c29ca81e1bd586f7b73}{lower\+Values}}. 
+
+Definition at line 36 of file Value\+Map.\+h.
+
+
+
+Referenced by get\+Median(), and update\+Map().
+
+\mbox{\Hypertarget{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}\label{classValueMap_af8c9d80bac78383c2a06def0043a8e8e}} 
+\index{ValueMap@{ValueMap}!values@{values}}
+\index{values@{values}!ValueMap@{ValueMap}}
+\doxysubsubsection{\texorpdfstring{values}{values}}
+{\footnotesize\ttfamily map$<$vector$<$shared\+\_\+ptr$<$\mbox{\hyperlink{classParameter}{Parameter}}$>$ $>$, \mbox{\hyperlink{Types_8h_aa12a140bd1c79b30f8aa5311b12f13cc}{function\+Value}}, \mbox{\hyperlink{structCmpVectorSharedParameter}{Cmp\+Vector\+Shared\+Parameter}}$>$ Value\+Map\+::values\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Actual map that contains \mbox{\hyperlink{classParameter}{Parameter}} combinations and their respective values. 
+
+
+
+Definition at line 56 of file Value\+Map.\+h.
+
+
+
+Referenced by add\+Value(), get\+Size(), get\+Values(), is\+Known(), and query().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/controller/Value\+Map.\+h\item 
+/home/runner/work/simopticon/simopticon/src/controller/Value\+Map.\+cpp\end{DoxyCompactItemize}

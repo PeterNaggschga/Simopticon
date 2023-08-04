@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['hyrect_261', ['HyRect', ['../classHyRect.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['hyrect_261',['HyRect',['../classHyRect.html',1,'']]]
+];

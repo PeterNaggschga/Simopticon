@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/optimizer/direct/Levels.cpp Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/optimizer/direct/Levels.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,22 +100,22 @@ $(document).ready(function(){initNavTree('Levels_8cpp_source.html',''); initResi
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classLevels.html#aa67493dec7929cb6927b8513ea86fb43">getLevel</a><a class="code" href="classLevels.html#aa67493dec7929cb6927b8513ea86fb43">(</a><a class="code" href="classLevels.html#aa67493dec7929cb6927b8513ea86fb43">)</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">list</a>&lt;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">shared_ptr</a>&lt;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">HyRect</a>&gt;&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">   15</a></span>&#160;<a class="code" href="classLevels.html">Levels</a>::<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">getRectSubset</a>(<span class="keyword">const</span> <a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">map</a>&lt;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">depth</a>, <a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">set</a>&lt;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">shared_ptr</a>&lt;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">HyRect</a>&gt;, <a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">CmpSharedHyrect</a>&gt;, <a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">greater</a>&lt;&gt;&gt; &amp;<a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">rects</a>, <a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">size_t</a> <a class="code" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">size</a>) <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;list&lt;shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt;&gt;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">   15</a></span>&#160;<a class="code" href="classLevels.html">Levels</a>::getRectSubset(<span class="keyword">const</span> map&lt;<a class="code" href="DirectTypes_8h.html#a083ce87ca066d42ecd2a0fd189019120">depth</a>, set&lt;shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt;, <a class="code" href="structCmpSharedHyrect.html">CmpSharedHyrect</a>&gt;, greater&lt;&gt;&gt; &amp;rects, size_t size) <span class="keyword">const</span> {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="classLevels.html#aa67493dec7929cb6927b8513ea86fb43">getLevel</a><a class="code" href="classLevels.html#aa67493dec7929cb6927b8513ea86fb43">(</a><a class="code" href="classLevels.html#aa67493dec7929cb6927b8513ea86fb43">)</a>) {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            size = ceil(size * L2_SIZE);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            size = ceil(size * <a class="code" href="classLevels.html#a226af67588934ac95c6f1c7071d05cf8">L2_SIZE</a>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            size = ceil(size * L1_SIZE);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            size = ceil(size * <a class="code" href="classLevels.html#af7449339c72e9b5b13a21e8ffa966c17">L1_SIZE</a>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            size = ceil(size * L0_SIZE);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            size = ceil(size * <a class="code" href="classLevels.html#ab21dde2c431fc78b6cd39330aeb7e61d">L0_SIZE</a>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            size = ceil(size * L3_SIZE);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            size = ceil(size * <a class="code" href="classLevels.html#a6c1ba0d90051286f2d7878fb491f4dd1">L3_SIZE</a>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    list&lt;shared_ptr&lt;HyRect&gt;&gt; result;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    list&lt;shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt;&gt; result;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classLevels.html#a72284fae03025ce37da257459ea5837b">global</a>) {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = rects.rbegin(); it != rects.rend(); ++it) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            result.push_back(*it-&gt;second.begin());</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('Levels_8cpp_source.html',''); initResi
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fef26d3633d38d4ca65fa53115b5e5dd.html">optimizer</a></li><li class="navelem"><a class="el" href="dir_2d657aea63603d07fa4cf559e7749f92.html">direct</a></li><li class="navelem"><b>Levels.cpp</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:44 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

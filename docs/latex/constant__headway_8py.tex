@@ -1,0 +1,100 @@
+\hypertarget{constant__headway_8py}{}\doxysection{/home/runner/work/simopticon/simopticon/src/evaluation/constant\+\_\+headway/constant\+\_\+headway.py File Reference}
+\label{constant__headway_8py}\index{/home/runner/work/simopticon/simopticon/src/evaluation/constant\_headway/constant\_headway.py@{/home/runner/work/simopticon/simopticon/src/evaluation/constant\_headway/constant\_headway.py}}
+
+
+A Python script providing functionality for automatic rating of Plexe result files on the mean deviation from the pre-\/defined gap.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+np.\+float128 \mbox{\hyperlink{constant__headway_8py_a64dfa74908407bff7b39d8e3a2a21312}{constant\+\_\+headway.\+get\+\_\+last\+\_\+value}} (pd.\+Data\+Frame df)
+\begin{DoxyCompactList}\small\item\em Returns the last value of the numpy array located in the first row of the given Data\+Frame in field \textquotesingle{}vecvalue\textquotesingle{}. \end{DoxyCompactList}\item 
+np.\+float128 \mbox{\hyperlink{constant__headway_8py_a969b5761f9fc8f873b6378eb48208cc2}{constant\+\_\+headway.\+get\+\_\+constant\+\_\+headway}} (list run\+\_\+ids)
+\begin{DoxyCompactList}\small\item\em Calculates a value rating the mean deviation of all vehicles from the pre-\/defined gap. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{constant__headway_8py_a4267eaf0c54cb7545e455c762d6f751b}{constant\+\_\+headway.\+multithreaded}} (int threads, str directory, list run\+\_\+ids)
+\begin{DoxyCompactList}\small\item\em Runs get\+\_\+constant\+\_\+headway concurrently for multiple simulation results with no more than the given number of threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Python script providing functionality for automatic rating of Plexe result files on the mean deviation from the pre-\/defined gap. 
+
+To achieve this, the OMNe\+T++ Python API omnetpp.\+scave is used. Multithreading is introduced to speed up the processing of multiple evaluations. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{constant__headway_8py_a969b5761f9fc8f873b6378eb48208cc2}\label{constant__headway_8py_a969b5761f9fc8f873b6378eb48208cc2}} 
+\index{constant\_headway.py@{constant\_headway.py}!get\_constant\_headway@{get\_constant\_headway}}
+\index{get\_constant\_headway@{get\_constant\_headway}!constant\_headway.py@{constant\_headway.py}}
+\doxysubsubsection{\texorpdfstring{get\_constant\_headway()}{get\_constant\_headway()}}
+{\footnotesize\ttfamily  np.\+float128 constant\+\_\+headway.\+get\+\_\+constant\+\_\+headway (\begin{DoxyParamCaption}\item[{list}]{run\+\_\+ids }\end{DoxyParamCaption})}
+
+
+
+Calculates a value rating the mean deviation of all vehicles from the pre-\/defined gap. 
+
+It calculates the mean squared deviation of each vehicle from its pre-\/defined gap, adds that value up for each vehicle of a particular run and calculates the mean over all runs (i.\+e., all repetitions and scenarios).
+
+
+\begin{DoxyParams}{Parameters}
+{\em run\+\_\+ids} & List of strings representing the OMNe\+T++ run ids of all runs to be evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A longfloat rating the deviation from the pre-\/defined gap. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]Running mean calculation over vectors using omnetpp.\+scave does not work correctly! \end{DoxyRefDesc}
+
+
+Definition at line 36 of file constant\+\_\+headway.\+py.
+
+\mbox{\Hypertarget{constant__headway_8py_a64dfa74908407bff7b39d8e3a2a21312}\label{constant__headway_8py_a64dfa74908407bff7b39d8e3a2a21312}} 
+\index{constant\_headway.py@{constant\_headway.py}!get\_last\_value@{get\_last\_value}}
+\index{get\_last\_value@{get\_last\_value}!constant\_headway.py@{constant\_headway.py}}
+\doxysubsubsection{\texorpdfstring{get\_last\_value()}{get\_last\_value()}}
+{\footnotesize\ttfamily  np.\+float128 constant\+\_\+headway.\+get\+\_\+last\+\_\+value (\begin{DoxyParamCaption}\item[{pd.\+Data\+Frame}]{df }\end{DoxyParamCaption})}
+
+
+
+Returns the last value of the numpy array located in the first row of the given Data\+Frame in field \textquotesingle{}vecvalue\textquotesingle{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em df} & A Data\+Frame containing a recorded vector of simulation data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The longfloat at the last vector position in the first row of the Data\+Frame. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file constant\+\_\+headway.\+py.
+
+\mbox{\Hypertarget{constant__headway_8py_a4267eaf0c54cb7545e455c762d6f751b}\label{constant__headway_8py_a4267eaf0c54cb7545e455c762d6f751b}} 
+\index{constant\_headway.py@{constant\_headway.py}!multithreaded@{multithreaded}}
+\index{multithreaded@{multithreaded}!constant\_headway.py@{constant\_headway.py}}
+\doxysubsubsection{\texorpdfstring{multithreaded()}{multithreaded()}}
+{\footnotesize\ttfamily  list constant\+\_\+headway.\+multithreaded (\begin{DoxyParamCaption}\item[{int}]{threads,  }\item[{str}]{directory,  }\item[{list}]{run\+\_\+ids }\end{DoxyParamCaption})}
+
+
+
+Runs get\+\_\+constant\+\_\+headway concurrently for multiple simulation results with no more than the given number of threads. 
+
+This is the function actually called by \mbox{\hyperlink{classConstantHeadway}{Constant\+Headway}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em threads} & Maximum number of threads to be used for concurrent execution. \\
+\hline
+{\em directory} & A path to the directory directly or indirectly containing all result files that are to be evaluated. \\
+\hline
+{\em run\+\_\+ids} & A list of lists of strings where each list of strings contains all OMNe\+T++ run ids of the runs conducted for one \mbox{\hyperlink{classParameter}{Parameter}} combination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of longfloats representing the rating of the given simulation runs. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file constant\+\_\+headway.\+py.
+

@@ -1,0 +1,334 @@
+\hypertarget{classPlexeSimulationRunner}{}\doxysection{Plexe\+Simulation\+Runner Class Reference}
+\label{classPlexeSimulationRunner}\index{PlexeSimulationRunner@{PlexeSimulationRunner}}
+
+
+A class capable of starting platooning simulations in the \href{https://plexe.car2x.org/}{\texttt{ Plexe}} framework with given \mbox{\hyperlink{classParameter}{Parameter}} combinations.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Plexe\+Simulation\+Runner.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Plexe\+Simulation\+Runner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlexeSimulationRunner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Plexe\+Simulation\+Runner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPlexeSimulationRunner__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlexeSimulationRunner_ae644b1abcb8ee00e7f405a0f5bbc4da3}{Plexe\+Simulation\+Runner}} (unsigned int threads, unsigned int repeat, vector$<$ string $>$ scenarios, \mbox{\hyperlink{classConfigEditor}{Config\+Editor}} \mbox{\hyperlink{classPlexeSimulationRunner_a44b9937016f3e3982ac340d45dde8aa3}{editor}})
+\begin{DoxyCompactList}\small\item\em Creates \mbox{\hyperlink{classPlexeSimulationRunner}{Plexe\+Simulation\+Runner}} which cannot use more than the given number of threads. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPlexeSimulationRunner_a2a475691156ad79f368767afc67a554a}{get\+Name}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the name of the implementing component in natural language. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPlexeSimulationRunner_a5df794766deb2ac952c9e0236660290d}{get\+Status}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current state of the implementing component. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPlexeSimulationRunner_aa11de4c5f5f71b8049cda12b21e16ad6}{get\+Status\+Bar}} () override
+\begin{DoxyCompactList}\small\item\em Returns a string representing the current progress of the calculations of the implementing component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classPlexeSimulationRunner_a7554fca254bffd2238ab29c3f24d2aa9}{get\+Run\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Returns an unique number which can be used to identify the results of a certain \mbox{\hyperlink{classParameter}{Parameter}} combination. \end{DoxyCompactList}\item 
+pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ $>$ \mbox{\hyperlink{classPlexeSimulationRunner_a323b762ef210ebdb846cd3456bd20f67}{work}} (vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$ run) override
+\begin{DoxyCompactList}\small\item\em Runs simulations for the given \mbox{\hyperlink{classParameter}{Parameter}} combination. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPlexeSimulationRunner_a1e79cf0374bf9280cd0293fb037c531e}{work}} (std\+::pair$<$ std\+::filesystem\+::path, std\+::pair$<$ std\+::basic\+\_\+string$<$ char $>$, unsigned int $>$$>$ arg) override
+\begin{DoxyCompactList}\small\item\em Executes one run of a \mbox{\hyperlink{classParameter}{Parameter}} combination (meaning repetition {\itshape k} of scenario {\itshape c}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{classPlexeSimulationRunner_ab1f36f6f9de394070048d296788e3619}{REPEAT}}
+\begin{DoxyCompactList}\small\item\em Number of repetitions per \mbox{\hyperlink{classParameter}{Parameter}} combination and scenario in \mbox{\hyperlink{classPlexeSimulationRunner_a351ca8103dd4893bd043e1e39484e237}{SCENARIOS}}. \end{DoxyCompactList}\item 
+const vector$<$ string $>$ \mbox{\hyperlink{classPlexeSimulationRunner_a351ca8103dd4893bd043e1e39484e237}{SCENARIOS}}
+\begin{DoxyCompactList}\small\item\em Scenarios that are simulated per \mbox{\hyperlink{classParameter}{Parameter}} combination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConfigEditor}{Config\+Editor}} \mbox{\hyperlink{classPlexeSimulationRunner_a44b9937016f3e3982ac340d45dde8aa3}{editor}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConfigEditor}{Config\+Editor}} used for automatically creating {\ttfamily .ini} files with given \mbox{\hyperlink{classParameter}{Parameter}} settings. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classPlexeSimulationRunner_a15a54c15cf66260a3977092b0aa97424}{run\+Number}} = 0
+\begin{DoxyCompactList}\small\item\em Identifier for each simulated \mbox{\hyperlink{classParameter}{Parameter}} combination. \end{DoxyCompactList}\item 
+mutex \mbox{\hyperlink{classPlexeSimulationRunner_a761f3c8443bae678dd8cc5f1a97d49f7}{run\+Number\+Lock}}
+\begin{DoxyCompactList}\small\item\em Threadlock to prevent race conditions on concurrent access of \mbox{\hyperlink{classPlexeSimulationRunner_a15a54c15cf66260a3977092b0aa97424}{run\+Number}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class capable of starting platooning simulations in the \href{https://plexe.car2x.org/}{\texttt{ Plexe}} framework with given \mbox{\hyperlink{classParameter}{Parameter}} combinations. 
+
+Definition at line 21 of file Plexe\+Simulation\+Runner.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPlexeSimulationRunner_ae644b1abcb8ee00e7f405a0f5bbc4da3}\label{classPlexeSimulationRunner_ae644b1abcb8ee00e7f405a0f5bbc4da3}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{PlexeSimulationRunner()}{PlexeSimulationRunner()}}
+{\footnotesize\ttfamily Plexe\+Simulation\+Runner\+::\+Plexe\+Simulation\+Runner (\begin{DoxyParamCaption}\item[{unsigned int}]{threads,  }\item[{unsigned int}]{repeat,  }\item[{vector$<$ string $>$}]{scenarios,  }\item[{\mbox{\hyperlink{classConfigEditor}{Config\+Editor}}}]{editor }\end{DoxyParamCaption})}
+
+
+
+Creates \mbox{\hyperlink{classPlexeSimulationRunner}{Plexe\+Simulation\+Runner}} which cannot use more than the given number of threads. 
+
+Number of repetitions, scenarios to be simulated and the \mbox{\hyperlink{classConfigEditor}{Config\+Editor}} must also be defined. The new \mbox{\hyperlink{classPlexeSimulationRunner}{Plexe\+Simulation\+Runner}} uses $ t = \min(\mathit{threads}, \mathit{repeat} \cdot \mathit{size}(\mathit{scenarios})) $ concurrent threads for parallelization of \mbox{\hyperlink{classPlexeSimulationRunner_a1e79cf0374bf9280cd0293fb037c531e}{work(std\+::pair$<$ std\+::filesystem\+::path, std\+::pair$<$ std\+::basic\+\_\+string$<$ char $>$, unsigned int $>$$>$)}}. For the parallelization of \mbox{\hyperlink{classPlexeSimulationRunner_a323b762ef210ebdb846cd3456bd20f67}{work(vector$<$shared\+\_\+ptr$<$\+Parameter$>$$>$)}} $ t\textnormal{\textquotesingle} = \lfloor \mathit{threads} \div t \rfloor $ concurrent threads are used. 
+\begin{DoxyParams}{Parameters}
+{\em threads} & Maximum number of threads to be used. \\
+\hline
+{\em repeat} & Number of repetitions per \mbox{\hyperlink{classParameter}{Parameter}} combination and scenario. \\
+\hline
+{\em scenarios} & Scenarios to be simulated per \mbox{\hyperlink{classParameter}{Parameter}} combination. \\
+\hline
+{\em editor} & \mbox{\hyperlink{classConfigEditor}{Config\+Editor}} to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Plexe\+Simulation\+Runner.\+cpp.
+
+
+
+References Plexe\+Simulation\+Runner().
+
+
+
+Referenced by Plexe\+Simulation\+Runner().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPlexeSimulationRunner_a2a475691156ad79f368767afc67a554a}\label{classPlexeSimulationRunner_a2a475691156ad79f368767afc67a554a}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!getName@{getName}}
+\index{getName@{getName}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily string Plexe\+Simulation\+Runner\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the name of the implementing component in natural language. 
+
+\begin{DoxyReturn}{Returns}
+A string containing the name of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a6fcb6d7e6a56ad2506f362a4bd9a4f25}{Status}}.
+
+
+
+Definition at line 76 of file Plexe\+Simulation\+Runner.\+cpp.
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_a7554fca254bffd2238ab29c3f24d2aa9}\label{classPlexeSimulationRunner_a7554fca254bffd2238ab29c3f24d2aa9}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!getRunId@{getRunId}}
+\index{getRunId@{getRunId}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{getRunId()}{getRunId()}}
+{\footnotesize\ttfamily size\+\_\+t Plexe\+Simulation\+Runner\+::get\+Run\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Returns an unique number which can be used to identify the results of a certain \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+
+Returned value is only unique for one optimization process. Basically increments \mbox{\hyperlink{classPlexeSimulationRunner_a15a54c15cf66260a3977092b0aa97424}{run\+Number}} and returns value before incrementation. \begin{DoxyReturn}{Returns}
+An unique number used for discerning results of different runs. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Plexe\+Simulation\+Runner.\+cpp.
+
+
+
+References run\+Number, and run\+Number\+Lock.
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_a5df794766deb2ac952c9e0236660290d}\label{classPlexeSimulationRunner_a5df794766deb2ac952c9e0236660290d}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily string Plexe\+Simulation\+Runner\+::get\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current state of the implementing component. 
+
+May contain values of class members or other meaningful information. The returned string is always visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}. \begin{DoxyReturn}{Returns}
+A string containing the state of the component. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a587fbda25430f10e4cade040aaad198f}{Status}}.
+
+
+
+Definition at line 80 of file Plexe\+Simulation\+Runner.\+cpp.
+
+
+
+References REPEAT, and run\+Number.
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_aa11de4c5f5f71b8049cda12b21e16ad6}\label{classPlexeSimulationRunner_aa11de4c5f5f71b8049cda12b21e16ad6}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!getStatusBar@{getStatusBar}}
+\index{getStatusBar@{getStatusBar}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{getStatusBar()}{getStatusBar()}}
+{\footnotesize\ttfamily string Plexe\+Simulation\+Runner\+::get\+Status\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns a string representing the current progress of the calculations of the implementing component. 
+
+The returned string is visible in \mbox{\hyperlink{classStatusBar}{Status\+Bar}}, when the component is actively calculating something. Must not exceed one console line! \begin{DoxyReturn}{Returns}
+A string containing the progress of a calculation. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classStatus_a2c8e1942534a480bb0da7cbf17fb65d0}{Status}}.
+
+
+
+Definition at line 93 of file Plexe\+Simulation\+Runner.\+cpp.
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_a1e79cf0374bf9280cd0293fb037c531e}\label{classPlexeSimulationRunner_a1e79cf0374bf9280cd0293fb037c531e}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!work@{work}}
+\index{work@{work}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{work()}{work()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Plexe\+Simulation\+Runner\+::work (\begin{DoxyParamCaption}\item[{std\+::pair$<$ std\+::filesystem\+::path, std\+::pair$<$ std\+::basic\+\_\+string$<$ char $>$, unsigned int $>$$>$}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}}
+
+
+
+Executes one run of a \mbox{\hyperlink{classParameter}{Parameter}} combination (meaning repetition {\itshape k} of scenario {\itshape c}). 
+
+Runs command for starting Plexe and returns after execution is done. 
+\begin{DoxyParams}{Parameters}
+{\em arg} & A triple containing the path to the {\ttfamily .ini} defining the parameters, the scenario name and the repetition number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A boolean defining whether the execution ran without throwing exceptions. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPlexeSimulationRunner_a323b762ef210ebdb846cd3456bd20f67}\label{classPlexeSimulationRunner_a323b762ef210ebdb846cd3456bd20f67}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!work@{work}}
+\index{work@{work}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{work()}{work()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily pair$<$ filesystem\+::path, set$<$ \mbox{\hyperlink{Types_8h_a057a8240c128713802bc4f54e877e8df}{run\+Id}} $>$ $>$ Plexe\+Simulation\+Runner\+::work (\begin{DoxyParamCaption}\item[{vector$<$ shared\+\_\+ptr$<$ \mbox{\hyperlink{classParameter}{Parameter}} $>$$>$}]{run }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [private]}, {\ttfamily [virtual]}}
+
+
+
+Runs simulations for the given \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+
+Creates a new {\ttfamily .ini} file for the \mbox{\hyperlink{classParameter}{Parameter}} combination. Parallelizes the execution of different scenarios (see \mbox{\hyperlink{classPlexeSimulationRunner_a351ca8103dd4893bd043e1e39484e237}{SCENARIOS}}) and their repetitions (see \mbox{\hyperlink{classPlexeSimulationRunner_ab1f36f6f9de394070048d296788e3619}{REPEAT}}) using \mbox{\hyperlink{classMultithreaded}{Multithreaded}} class. Parallelized function is defined in \mbox{\hyperlink{classPlexeSimulationRunner_a1e79cf0374bf9280cd0293fb037c531e}{work(std\+::pair$<$ std\+::filesystem\+::path, std\+::pair$<$ std\+::basic\+\_\+string$<$ char $>$, unsigned int $>$$>$)}}. 
+\begin{DoxyParams}{Parameters}
+{\em run} & \mbox{\hyperlink{classParameter}{Parameter}} combination to be simulated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair containing the path to the result files and OMNe\+T++-\/\+Run-\/\+IDs of the executed simulations. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSimulationRunner_aee43d80890242d162b796049a2144b60}{Simulation\+Runner}}.
+
+
+
+Definition at line 19 of file Plexe\+Simulation\+Runner.\+cpp.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classPlexeSimulationRunner_a44b9937016f3e3982ac340d45dde8aa3}\label{classPlexeSimulationRunner_a44b9937016f3e3982ac340d45dde8aa3}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!editor@{editor}}
+\index{editor@{editor}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{editor}{editor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classConfigEditor}{Config\+Editor}} Plexe\+Simulation\+Runner\+::editor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classConfigEditor}{Config\+Editor}} used for automatically creating {\ttfamily .ini} files with given \mbox{\hyperlink{classParameter}{Parameter}} settings. 
+
+
+
+Definition at line 38 of file Plexe\+Simulation\+Runner.\+h.
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_ab1f36f6f9de394070048d296788e3619}\label{classPlexeSimulationRunner_ab1f36f6f9de394070048d296788e3619}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!REPEAT@{REPEAT}}
+\index{REPEAT@{REPEAT}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{REPEAT}{REPEAT}}
+{\footnotesize\ttfamily const unsigned int Plexe\+Simulation\+Runner\+::\+REPEAT\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of repetitions per \mbox{\hyperlink{classParameter}{Parameter}} combination and scenario in \mbox{\hyperlink{classPlexeSimulationRunner_a351ca8103dd4893bd043e1e39484e237}{SCENARIOS}}. 
+
+Translates to repeat setting in {\ttfamily omnetpp.\+ini}. Can be set in configuration. 
+
+Definition at line 28 of file Plexe\+Simulation\+Runner.\+h.
+
+
+
+Referenced by get\+Status().
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_a15a54c15cf66260a3977092b0aa97424}\label{classPlexeSimulationRunner_a15a54c15cf66260a3977092b0aa97424}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!runNumber@{runNumber}}
+\index{runNumber@{runNumber}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{runNumber}{runNumber}}
+{\footnotesize\ttfamily size\+\_\+t Plexe\+Simulation\+Runner\+::run\+Number = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Identifier for each simulated \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+
+Is incremented when new \mbox{\hyperlink{classParameter}{Parameter}} combination is simulated. Used for unique directory names for result files. 
+
+Definition at line 44 of file Plexe\+Simulation\+Runner.\+h.
+
+
+
+Referenced by get\+Run\+Id(), and get\+Status().
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_a761f3c8443bae678dd8cc5f1a97d49f7}\label{classPlexeSimulationRunner_a761f3c8443bae678dd8cc5f1a97d49f7}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!runNumberLock@{runNumberLock}}
+\index{runNumberLock@{runNumberLock}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{runNumberLock}{runNumberLock}}
+{\footnotesize\ttfamily mutex Plexe\+Simulation\+Runner\+::run\+Number\+Lock\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Threadlock to prevent race conditions on concurrent access of \mbox{\hyperlink{classPlexeSimulationRunner_a15a54c15cf66260a3977092b0aa97424}{run\+Number}}. 
+
+
+
+Definition at line 48 of file Plexe\+Simulation\+Runner.\+h.
+
+
+
+Referenced by get\+Run\+Id().
+
+\mbox{\Hypertarget{classPlexeSimulationRunner_a351ca8103dd4893bd043e1e39484e237}\label{classPlexeSimulationRunner_a351ca8103dd4893bd043e1e39484e237}} 
+\index{PlexeSimulationRunner@{PlexeSimulationRunner}!SCENARIOS@{SCENARIOS}}
+\index{SCENARIOS@{SCENARIOS}!PlexeSimulationRunner@{PlexeSimulationRunner}}
+\doxysubsubsection{\texorpdfstring{SCENARIOS}{SCENARIOS}}
+{\footnotesize\ttfamily const vector$<$string$>$ Plexe\+Simulation\+Runner\+::\+SCENARIOS\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Scenarios that are simulated per \mbox{\hyperlink{classParameter}{Parameter}} combination. 
+
+Should not invoke a GUI (e.\+g. pick Braking\+No\+Gui instead of Braking). Can be set in configuration. 
+
+Definition at line 33 of file Plexe\+Simulation\+Runner.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/runner/plexe/Plexe\+Simulation\+Runner.\+h\item 
+/home/runner/work/simopticon/simopticon/src/runner/plexe/Plexe\+Simulation\+Runner.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,170 @@
+\hypertarget{classMultithreaded}{}\doxysection{Multithreaded$<$ Key, T, Compare, Allocator $>$ Class Template Reference}
+\label{classMultithreaded}\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+
+
+A class implementing concurrent execution of the same function for different arguments.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Multithreaded.\+h\char`\"{}}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMultithreaded_abb856a33aad9a1cc76a91c15c40bef8e}{Multithreaded}} (unsigned int threads)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classMultithreaded}{Multithreaded}} class that does not use more than the given number of threads. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual map$<$ Key, T, Compare, Allocator $>$ \mbox{\hyperlink{classMultithreaded_a997dd9ec746bf7ae1ef78dff449d0e5d}{run\+Multithreaded\+Functions}} (set$<$ Key, Compare $>$ runs)
+\begin{DoxyCompactList}\small\item\em Pushes given tasks into \mbox{\hyperlink{classMultithreaded_af18b358906f0dd910122e6541c46f45e}{queue}}, creates concurrent threads and merges them when execution is done. \end{DoxyCompactList}\item 
+virtual map$<$ Key, T, Compare, Allocator $>$ \mbox{\hyperlink{classMultithreaded_aaf260ad3dd9510fc07d66c5a81ba3797}{multithread\+Function}} ()
+\begin{DoxyCompactList}\small\item\em Function that is executed by each thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned int \mbox{\hyperlink{classMultithreaded_af49cb7239ee452d7c1d29ae50fe482a3}{NR\+\_\+\+THREADS}}
+\begin{DoxyCompactList}\small\item\em Maximum number of concurrent threads to be used in Thread\+Pool. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$ Key $>$ \mbox{\hyperlink{classMultithreaded_af18b358906f0dd910122e6541c46f45e}{queue}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}} containing the arguments that have to be processed by the Thread\+Pool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual T \mbox{\hyperlink{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}{work}} (Key arg)=0
+\begin{DoxyCompactList}\small\item\em Function that should be executed concurrently on different arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Key, class T, class Compare = less$<$\+Key$>$, class Allocator = allocator$<$pair$<$const Key, T$>$$>$$>$\newline
+class Multithreaded$<$ Key, T, Compare, Allocator $>$}
+
+A class implementing concurrent execution of the same function for different arguments. 
+
+The function must be implemented through \mbox{\hyperlink{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}{work}} and execution follows the Thread\+Pool design pattern. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Key} & Argument type of the concurrent \mbox{\hyperlink{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}{work}} function. \\
+\hline
+{\em T} & Result type of the concurrent \mbox{\hyperlink{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}{work}} function. \\
+\hline
+{\em Compare} & Comparison for objects of type Key. \\
+\hline
+{\em Allocator} & Allocator for pairs of constant Key and T. \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 24 of file Multithreaded.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMultithreaded_abb856a33aad9a1cc76a91c15c40bef8e}\label{classMultithreaded_abb856a33aad9a1cc76a91c15c40bef8e}} 
+\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}!Multithreaded@{Multithreaded}}
+\index{Multithreaded@{Multithreaded}!Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{Multithreaded()}{Multithreaded()}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Compare  = less$<$\+Key$>$, class Allocator  = allocator$<$pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{classMultithreaded}{Multithreaded}}$<$ Key, T, Compare, Allocator $>$\+::\mbox{\hyperlink{classMultithreaded}{Multithreaded}} (\begin{DoxyParamCaption}\item[{unsigned int}]{threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a \mbox{\hyperlink{classMultithreaded}{Multithreaded}} class that does not use more than the given number of threads. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threads} & Maximum number of threads to use. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMultithreaded_aaf260ad3dd9510fc07d66c5a81ba3797}\label{classMultithreaded_aaf260ad3dd9510fc07d66c5a81ba3797}} 
+\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}!multithreadFunction@{multithreadFunction}}
+\index{multithreadFunction@{multithreadFunction}!Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{multithreadFunction()}{multithreadFunction()}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Compare  = less$<$\+Key$>$, class Allocator  = allocator$<$pair$<$const Key, T$>$$>$$>$ \\
+virtual map$<$Key, T, Compare, Allocator$>$ \mbox{\hyperlink{classMultithreaded}{Multithreaded}}$<$ Key, T, Compare, Allocator $>$\+::multithread\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Function that is executed by each thread. 
+
+As long as \mbox{\hyperlink{classMultithreaded_af18b358906f0dd910122e6541c46f45e}{queue}} is not empty, tasks are started. When \mbox{\hyperlink{classMultithreaded_af18b358906f0dd910122e6541c46f45e}{queue}} is empty, the processed results are returned \begin{DoxyReturn}{Returns}
+A map which maps arguments to their respective calculated values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMultithreaded_a997dd9ec746bf7ae1ef78dff449d0e5d}\label{classMultithreaded_a997dd9ec746bf7ae1ef78dff449d0e5d}} 
+\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}!runMultithreadedFunctions@{runMultithreadedFunctions}}
+\index{runMultithreadedFunctions@{runMultithreadedFunctions}!Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{runMultithreadedFunctions()}{runMultithreadedFunctions()}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Compare  = less$<$\+Key$>$, class Allocator  = allocator$<$pair$<$const Key, T$>$$>$$>$ \\
+virtual map$<$Key, T, Compare, Allocator$>$ \mbox{\hyperlink{classMultithreaded}{Multithreaded}}$<$ Key, T, Compare, Allocator $>$\+::run\+Multithreaded\+Functions (\begin{DoxyParamCaption}\item[{set$<$ Key, Compare $>$}]{runs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Pushes given tasks into \mbox{\hyperlink{classMultithreaded_af18b358906f0dd910122e6541c46f45e}{queue}}, creates concurrent threads and merges them when execution is done. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em runs} & Set of arguments on which \mbox{\hyperlink{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}{work}} should to be executed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map which maps arguments to their respective calculated values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}\label{classMultithreaded_a295f1db64506dc4054dc5d7bac9ba231}} 
+\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}!work@{work}}
+\index{work@{work}!Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{work()}{work()}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Compare  = less$<$\+Key$>$, class Allocator  = allocator$<$pair$<$const Key, T$>$$>$$>$ \\
+virtual T \mbox{\hyperlink{classMultithreaded}{Multithreaded}}$<$ Key, T, Compare, Allocator $>$\+::work (\begin{DoxyParamCaption}\item[{Key}]{arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [pure virtual]}}
+
+
+
+Function that should be executed concurrently on different arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arg} & Argument of the concurrently executed function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return value of the concurrently executed function. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classMultithreaded_af49cb7239ee452d7c1d29ae50fe482a3}\label{classMultithreaded_af49cb7239ee452d7c1d29ae50fe482a3}} 
+\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}!NR\_THREADS@{NR\_THREADS}}
+\index{NR\_THREADS@{NR\_THREADS}!Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{NR\_THREADS}{NR\_THREADS}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Compare  = less$<$\+Key$>$, class Allocator  = allocator$<$pair$<$const Key, T$>$$>$$>$ \\
+const unsigned int \mbox{\hyperlink{classMultithreaded}{Multithreaded}}$<$ Key, T, Compare, Allocator $>$\+::NR\+\_\+\+THREADS\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Maximum number of concurrent threads to be used in Thread\+Pool. 
+
+
+
+Definition at line 37 of file Multithreaded.\+h.
+
+\mbox{\Hypertarget{classMultithreaded_af18b358906f0dd910122e6541c46f45e}\label{classMultithreaded_af18b358906f0dd910122e6541c46f45e}} 
+\index{Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}!queue@{queue}}
+\index{queue@{queue}!Multithreaded$<$ Key, T, Compare, Allocator $>$@{Multithreaded$<$ Key, T, Compare, Allocator $>$}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily template$<$class Key , class T , class Compare  = less$<$\+Key$>$, class Allocator  = allocator$<$pair$<$const Key, T$>$$>$$>$ \\
+\mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}}$<$Key$>$ \mbox{\hyperlink{classMultithreaded}{Multithreaded}}$<$ Key, T, Compare, Allocator $>$\+::queue\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classThreadsafeQueue}{Threadsafe\+Queue}} containing the arguments that have to be processed by the Thread\+Pool. 
+
+
+
+Definition at line 41 of file Multithreaded.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/utils/Multithreaded.\+h\end{DoxyCompactItemize}

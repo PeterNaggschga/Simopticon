@@ -1,4 +1,4 @@
-var searchData =
-    [
-        ['abortable_245', ['Abortable', ['../classAbortable.html', 1, '']]]
-    ];
+var searchData=
+[
+  ['abortable_245',['Abortable',['../classAbortable.html',1,'']]]
+];

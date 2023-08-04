@@ -1,0 +1,101 @@
+\hypertarget{main_8cpp}{}\doxysection{/home/runner/work/simopticon/simopticon/src/main.cpp File Reference}
+\label{main_8cpp}\index{/home/runner/work/simopticon/simopticon/src/main.cpp@{/home/runner/work/simopticon/simopticon/src/main.cpp}}
+
+
+Definition of the main function running the {\itshape Simopticon} framework.  
+
+
+{\ttfamily \#include \char`\"{}controller/\+Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controller/\+Stub\+Controller.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$csignal$>$}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a6165098e568a4d12627b33ad880d0961}{interrupt\+Handler}} (\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]}\mbox{]} int s)
+\begin{DoxyCompactList}\small\item\em Handler routine for SIGINT signal which calls \mbox{\hyperlink{classController_a51557bd56ca512daeb02ac99d359b2e7}{Controller\+::abort}} and sets the new handler of SIGINT to the default (instant interrupt of the software). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Checks correct command line input and registers interrupt handler for SIGINT signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unique\+\_\+ptr$<$ \mbox{\hyperlink{classController}{Controller}} $>$ \mbox{\hyperlink{main_8cpp_a8cf0493492d3c34f680c1737c5a15708}{ctr}}
+\begin{DoxyCompactList}\small\item\em Reference to the \mbox{\hyperlink{classController}{Controller}} that is running the optimization. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of the main function running the {\itshape Simopticon} framework. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a6165098e568a4d12627b33ad880d0961}\label{main_8cpp_a6165098e568a4d12627b33ad880d0961}} 
+\index{main.cpp@{main.cpp}!interruptHandler@{interruptHandler}}
+\index{interruptHandler@{interruptHandler}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{interruptHandler()}{interruptHandler()}}
+{\footnotesize\ttfamily void interrupt\+Handler (\begin{DoxyParamCaption}\item[{\mbox{[}\mbox{[}maybe\+\_\+unused\mbox{]} \mbox{]} int}]{s }\end{DoxyParamCaption})}
+
+
+
+Handler routine for SIGINT signal which calls \mbox{\hyperlink{classController_a51557bd56ca512daeb02ac99d359b2e7}{Controller\+::abort}} and sets the new handler of SIGINT to the default (instant interrupt of the software). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Necessary parameter for interrupt handlers (unused). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Make interrupt handling independent from OS -\/ currently only Systems using POSIX signals are supported. \end{DoxyRefDesc}
+
+
+Definition at line 24 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Checks correct command line input and registers interrupt handler for SIGINT signal. 
+
+Instantiates \mbox{\hyperlink{classController}{Controller}} or \mbox{\hyperlink{classStubController}{Stub\+Controller}} and kicks of the optimization using \mbox{\hyperlink{classController_a692f0f5dc600cdcb79786a31cf283ce1}{Controller\+::run}}. 
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of command line arguments. \\
+\hline
+{\em argv} & Array of command line arguments. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classStatus}{Status}} code. 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file main.\+cpp.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a8cf0493492d3c34f680c1737c5a15708}\label{main_8cpp_a8cf0493492d3c34f680c1737c5a15708}} 
+\index{main.cpp@{main.cpp}!ctr@{ctr}}
+\index{ctr@{ctr}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{ctr}{ctr}}
+{\footnotesize\ttfamily unique\+\_\+ptr$<$\mbox{\hyperlink{classController}{Controller}}$>$ ctr}
+
+
+
+Reference to the \mbox{\hyperlink{classController}{Controller}} that is running the optimization. 
+
+
+
+Definition at line 17 of file main.\+cpp.
+

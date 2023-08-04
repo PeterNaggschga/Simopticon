@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/runner/plexe/PlexeSimulationRunner.cpp Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/runner/plexe/PlexeSimulationRunner.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -139,11 +139,11 @@ $(document).ready(function(){initNavTree('PlexeSimulationRunner_8cpp_source.html
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> make_pair(resultDir, ids);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#a7554fca254bffd2238ab29c3f24d2aa9">   53</a></span>&#160;<a class="code" href="classPlexeSimulationRunner.html#a7554fca254bffd2238ab29c3f24d2aa9">size_t</a> <a class="code" href="classPlexeSimulationRunner.html">PlexeSimulationRunner</a>::<a class="code" href="classPlexeSimulationRunner.html#a7554fca254bffd2238ab29c3f24d2aa9">getRunId</a>() {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    runNumberLock.lock();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    size_t result = runNumber;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    runNumber++;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    runNumberLock.unlock();</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#a7554fca254bffd2238ab29c3f24d2aa9">   53</a></span>&#160;size_t <a class="code" href="classPlexeSimulationRunner.html">PlexeSimulationRunner</a>::<a class="code" href="classPlexeSimulationRunner.html#a7554fca254bffd2238ab29c3f24d2aa9">getRunId</a>() {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classPlexeSimulationRunner.html#a761f3c8443bae678dd8cc5f1a97d49f7">runNumberLock</a>.lock();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    size_t result = <a class="code" href="classPlexeSimulationRunner.html#a15a54c15cf66260a3977092b0aa97424">runNumber</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classPlexeSimulationRunner.html#a15a54c15cf66260a3977092b0aa97424">runNumber</a>++;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classPlexeSimulationRunner.html#a761f3c8443bae678dd8cc5f1a97d49f7">runNumberLock</a>.unlock();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
@@ -162,24 +162,24 @@ $(document).ready(function(){initNavTree('PlexeSimulationRunner_8cpp_source.html
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#a2a475691156ad79f368767afc67a554a">   76</a></span>&#160;string PlexeSimulationRunner::getName() {</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#a2a475691156ad79f368767afc67a554a">   76</a></span>&#160;string <a class="code" href="classPlexeSimulationRunner.html">PlexeSimulationRunner</a>::<a class="code" href="classPlexeSimulationRunner.html#a2a475691156ad79f368767afc67a554a">getName</a>() {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Plexe-Runner&quot;</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#a5df794766deb2ac952c9e0236660290d">   80</a></span>&#160;string PlexeSimulationRunner::getStatus() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    string status = <span class="stringliteral">&quot;Evaluations:\t\t&quot;</span> + to_string(runNumber) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#a5df794766deb2ac952c9e0236660290d">   80</a></span>&#160;string <a class="code" href="classPlexeSimulationRunner.html">PlexeSimulationRunner</a>::<a class="code" href="classPlexeSimulationRunner.html#a5df794766deb2ac952c9e0236660290d">getStatus</a>() {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    string status = <span class="stringliteral">&quot;Evaluations:\t\t&quot;</span> + to_string(<a class="code" href="classPlexeSimulationRunner.html#a15a54c15cf66260a3977092b0aa97424">runNumber</a>) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    status += <span class="stringliteral">&quot;Scenarios:\t\t&quot;</span> + SCENARIOS[0];</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; SCENARIOS.size(); ++i) {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        status += <span class="stringliteral">&quot;, &quot;</span> + SCENARIOS[i];</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    status += <span class="stringliteral">&quot;\nRepeat:\t\t\t&quot;</span> + to_string(REPEAT) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    status += <span class="stringliteral">&quot;\nRepeat:\t\t\t&quot;</span> + to_string(<a class="code" href="classPlexeSimulationRunner.html#ab1f36f6f9de394070048d296788e3619">REPEAT</a>) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    status += <span class="stringliteral">&quot;Max. number of threads:\t&quot;</span> + to_string(</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            Multithreaded&lt;pair&lt;filesystem::path, pair&lt;string, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;&gt;, <span class="keywordtype">bool</span>&gt;::NR_THREADS *</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            Multithreaded&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;filesystem::path, set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt;::NR_THREADS);</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> status;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#aa11de4c5f5f71b8049cda12b21e16ad6">   93</a></span>&#160;string PlexeSimulationRunner::getStatusBar() {</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classPlexeSimulationRunner.html#aa11de4c5f5f71b8049cda12b21e16ad6">   93</a></span>&#160;string <a class="code" href="classPlexeSimulationRunner.html">PlexeSimulationRunner</a>::<a class="code" href="classPlexeSimulationRunner.html#aa11de4c5f5f71b8049cda12b21e16ad6">getStatusBar</a>() {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">auto</span> runnerCurrent = Multithreaded&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;filesystem::path, set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt;::queue.getSize();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">auto</span> runnerStart = Multithreaded&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;filesystem::path, set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt;::queue.getStartSize();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">auto</span> plexeStart = Multithreaded&lt;pair&lt;filesystem::path, pair&lt;string, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;&gt;, <span class="keywordtype">bool</span>&gt;::queue.getStartSize();</div>
@@ -193,7 +193,7 @@ $(document).ready(function(){initNavTree('PlexeSimulationRunner_8cpp_source.html
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_4b8531e8826e0d1f43bc622169bd7122.html">runner</a></li><li class="navelem"><a class="el" href="dir_840a2e32f029e00a99e161cb1105f99d.html">plexe</a></li><li class="navelem"><b>PlexeSimulationRunner.cpp</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:47 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/status/StatusBar.h Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/status/StatusBar.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -126,16 +126,16 @@ $(document).ready(function(){initNavTree('StatusBar_8h_source.html',''); initRes
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * Large divider used to visibly divide two sections of content.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classStatusBar.html#ac547a5d3873206533bbf973bdb3e692a">   40</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <a class="code" href="classStatusBar.html#ac547a5d3873206533bbf973bdb3e692a">string</a> <a class="code" href="classStatusBar.html#ac547a5d3873206533bbf973bdb3e692a">LARGE_DIVIDER</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classStatusBar.html#ac547a5d3873206533bbf973bdb3e692a">   40</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> string <a class="code" href="classStatusBar.html#ac547a5d3873206533bbf973bdb3e692a">LARGE_DIVIDER</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     * Small divider used to visibly divide two sections of content.</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classStatusBar.html#af267b6b291583919ab9bebeeb47efce2">   44</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <a class="code" href="classStatusBar.html#af267b6b291583919ab9bebeeb47efce2">string</a> <a class="code" href="classStatusBar.html#af267b6b291583919ab9bebeeb47efce2">SMALL_DIVIDER</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classStatusBar.html#af267b6b291583919ab9bebeeb47efce2">   44</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> string <a class="code" href="classStatusBar.html#af267b6b291583919ab9bebeeb47efce2">SMALL_DIVIDER</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to #updateStatus.</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">   49</a></span>&#160;    <a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">pair</a>&lt;<a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">vector</a>&lt;<a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">shared_ptr</a>&lt;<a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">Parameter</a>&gt;&gt;, <a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">functionValue</a>&gt; <a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">lastVal</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">   49</a></span>&#160;    pair&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; <a class="code" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">lastVal</a>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * Step which the optimization was in when #updateStatus was called the last time.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     */</span></div>
@@ -143,14 +143,14 @@ $(document).ready(function(){initNavTree('StatusBar_8h_source.html',''); initRes
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * Last values of the StatusBar output (excluding value returned by Status#getStatusBar)</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classStatusBar.html#abb3579818701079d6ddce79081c05362">   57</a></span>&#160;    <a class="code" href="classStatusBar.html#abb3579818701079d6ddce79081c05362">string</a> <a class="code" href="classStatusBar.html#abb3579818701079d6ddce79081c05362">lastStatus</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classStatusBar.html#abb3579818701079d6ddce79081c05362">   57</a></span>&#160;    string <a class="code" href="classStatusBar.html#abb3579818701079d6ddce79081c05362">lastStatus</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     Prints the given result command line.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * @param cords: Parameter combination of the given result.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * @param optimum: Value of the given result.</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classStatusBar.html#a99449623885279b8d9723da4364b0054">printResult</a>(<span class="keyword">const</span> vector&lt;shared_ptr&lt;Parameter&gt;&gt; &amp;cords, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> optimum);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classStatusBar.html#a99449623885279b8d9723da4364b0054">printResult</a>(<span class="keyword">const</span> vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt; &amp;cords, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> optimum);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * Prints the Status of the given object to the command line using Status#getStatus.</span></div>
@@ -171,14 +171,14 @@ $(document).ready(function(){initNavTree('StatusBar_8h_source.html',''); initRes
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     * @param currentStep: Current step the optimization is in.</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e">updateStatus</a>(<a class="code" href="classOptimizer.html">Optimizer</a> *opt, SimulationRunner *runner, <a class="code" href="classEvaluation.html">Evaluation</a> *eval,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                      <span class="keyword">const</span> pair&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, functionValue&gt; &amp;currentVal, <span class="keywordtype">bool</span> stepChanged = <span class="keyword">false</span>,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                      <span class="keyword">const</span> pair&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; &amp;currentVal, <span class="keywordtype">bool</span> stepChanged = <span class="keyword">false</span>,</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                      <a class="code" href="group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2">step</a> currentStep = INIT);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * Prints the given Parameter combinations and respective values to command line.</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">     * @param top: List of Parameter combinations and respective values to be printed.</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">printResults</a>(<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">list</a>&lt;<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">pair</a>&lt;<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">vector</a>&lt;<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">shared_ptr</a>&lt;<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">Parameter</a>&gt;&gt;, <a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">pair</a>&lt;<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">functionValue</a>, <a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">filesystem</a>::<a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">path</a>&gt;&gt;&gt; <a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">top</a>);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classStatusBar.html#a3925b372e4339cab95b0f433128f0756">printResults</a>(list&lt;pair&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;functionValue, filesystem::path&gt;&gt;&gt; top);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('StatusBar_8h_source.html',''); initRes
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3b5a16ca9d597ec3bd11cf60fc07b716.html">status</a></li><li class="navelem"><b>StatusBar.h</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:40 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

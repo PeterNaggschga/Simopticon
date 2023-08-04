@@ -1,0 +1,108 @@
+\hypertarget{classBaseRect}{}\doxysection{Base\+Rect Class Reference}
+\label{classBaseRect}\index{BaseRect@{BaseRect}}
+
+
+A class representing a \mbox{\hyperlink{classHyRect}{Hy\+Rect}} without a parent rectangle.  
+
+
+
+
+{\ttfamily \#include \char`\"{}Base\+Rect.\+h\char`\"{}}
+
+
+
+Inheritance diagram for Base\+Rect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classBaseRect__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Base\+Rect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classBaseRect__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBaseRect_a8cc8a03fff059cff70e9f534237a8694}{Base\+Rect}} (\mbox{\hyperlink{DirectTypes_8h_a3f22cc1f9a0eb7ab35eea55cd61c9112}{dimension}} \mbox{\hyperlink{classHyRect_a4a6c86c3a10e740c3c4937532325fb90}{D}})
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classBaseRect}{Base\+Rect}} representing a hypercube with the given dimensionality. \end{DoxyCompactList}\item 
+array$<$ vector$<$ \mbox{\hyperlink{DirectTypes_8h_a747d142e8f05a5bad1a7b29c9ee5dee0}{dir\+Coordinate}} $>$, 2 $>$ \mbox{\hyperlink{classBaseRect_a2f3938c3d65982d2d2e1615901831a8a}{get\+Sampling\+Vertices}} () override
+\begin{DoxyCompactList}\small\item\em Returns the coordinates of two opposite corner points of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class representing a \mbox{\hyperlink{classHyRect}{Hy\+Rect}} without a parent rectangle. 
+
+This rectangle is always at the root of a partition tree and therefore has depth $ t=0 $ and represents the whole search space. 
+
+Definition at line 12 of file Base\+Rect.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBaseRect_a8cc8a03fff059cff70e9f534237a8694}\label{classBaseRect_a8cc8a03fff059cff70e9f534237a8694}} 
+\index{BaseRect@{BaseRect}!BaseRect@{BaseRect}}
+\index{BaseRect@{BaseRect}!BaseRect@{BaseRect}}
+\doxysubsubsection{\texorpdfstring{BaseRect()}{BaseRect()}}
+{\footnotesize\ttfamily Base\+Rect\+::\+Base\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{DirectTypes_8h_a3f22cc1f9a0eb7ab35eea55cd61c9112}{dimension}}}]{D }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Creates a \mbox{\hyperlink{classBaseRect}{Base\+Rect}} representing a hypercube with the given dimensionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em D} & Number of dimensions of the search space. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Base\+Rect.\+cpp.
+
+
+
+References Hy\+Rect\+::\+Hy\+Rect().
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBaseRect_a2f3938c3d65982d2d2e1615901831a8a}\label{classBaseRect_a2f3938c3d65982d2d2e1615901831a8a}} 
+\index{BaseRect@{BaseRect}!getSamplingVertices@{getSamplingVertices}}
+\index{getSamplingVertices@{getSamplingVertices}!BaseRect@{BaseRect}}
+\doxysubsubsection{\texorpdfstring{getSamplingVertices()}{getSamplingVertices()}}
+{\footnotesize\ttfamily array$<$ vector$<$ \mbox{\hyperlink{DirectTypes_8h_a747d142e8f05a5bad1a7b29c9ee5dee0}{dir\+Coordinate}} $>$, 2 $>$ Base\+Rect\+::get\+Sampling\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the coordinates of two opposite corner points of the rectangle. 
+
+The returned vertices must be sampled. For \mbox{\hyperlink{classBaseRect}{Base\+Rect}} always returns one vector full of zeros and one vector full of ones. \begin{DoxyReturn}{Returns}
+An array containing two dir\+Coordinate vectors of the sampled vertices. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classHyRect_ae19c28ce098e9dd107f6f907c6606b36}{Hy\+Rect}}.
+
+
+
+Definition at line 6 of file Base\+Rect.\+cpp.
+
+
+
+References Hy\+Rect\+::D.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/hyrect/Base\+Rect.\+h\item 
+/home/runner/work/simopticon/simopticon/src/optimizer/direct/hyrect/Base\+Rect.\+cpp\end{DoxyCompactItemize}

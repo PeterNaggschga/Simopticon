@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Simopticon: /home/petern/programming/simopticon/src/status/Status.h Source File</title>
+<title>Simopticon: /home/runner/work/simopticon/simopticon/src/status/Status.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -109,25 +109,25 @@ $(document).ready(function(){initNavTree('Status_8h_source.html',''); initResiza
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     * Default message returned by #getStatus and #getStatusBar if the implementing class does not override the respective function.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classStatus.html#a3090c3575be971368217ae7e3e470120">   23</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <a class="code" href="classStatus.html#a3090c3575be971368217ae7e3e470120">string</a> <a class="code" href="classStatus.html#a3090c3575be971368217ae7e3e470120">NO_STATUS_SUPPORT</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classStatus.html#a3090c3575be971368217ae7e3e470120">   23</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> string <a class="code" href="classStatus.html#a3090c3575be971368217ae7e3e470120">NO_STATUS_SUPPORT</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     * Default message returned by #getName if the implementing class does not override the function.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">   27</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> <a class="code" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">string</a> <a class="code" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">NO_NAME</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">   27</a></span>&#160;    <span class="keyword">const</span> <span class="keyword">static</span> string <a class="code" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">NO_NAME</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * Returns a string representing the name of the implementing component in natural language.</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @return A string containing the name of the component.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    [[<a class="code" href="classStatus.html">nodiscard</a>]] <span class="keyword">virtual</span> <a class="code" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25">string</a> <a class="code" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25">getName</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    [[<a class="code" href="classStatus.html">nodiscard</a>]] <span class="keyword">virtual</span> string <a class="code" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25">getName</a>();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * Returns a string representing the current state of the implementing component.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * May contain values of class members or other meaningful information. The returned string is always visible in StatusBar.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @return A string containing the state of the component.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    [[<a class="code" href="classStatus.html">nodiscard</a>]] <span class="keyword">virtual</span> <a class="code" href="classStatus.html#a587fbda25430f10e4cade040aaad198f">string</a> <a class="code" href="classStatus.html#a587fbda25430f10e4cade040aaad198f">getStatus</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    [[<a class="code" href="classStatus.html">nodiscard</a>]] <span class="keyword">virtual</span> string <a class="code" href="classStatus.html#a587fbda25430f10e4cade040aaad198f">getStatus</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * Returns a string representing the current progress of the calculations of the implementing component.</span></div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('Status_8h_source.html',''); initResiza
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Must not exceed one console line!</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * @return A string containing the progress of a calculation.</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    [[<a class="code" href="classStatus.html">nodiscard</a>]] <span class="keyword">virtual</span> <a class="code" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0">string</a> <a class="code" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0">getStatusBar</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    [[<a class="code" href="classStatus.html">nodiscard</a>]] <span class="keyword">virtual</span> string <a class="code" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0">getStatusBar</a>();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_STATUS_H</span></div>
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('Status_8h_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3b5a16ca9d597ec3bd11cf60fc07b716.html">status</a></li><li class="navelem"><b>Status.h</b></li>
-    <li class="footer">Generated on Fri Aug 4 2023 22:46:01 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Fri Aug 4 2023 22:17:40 for Simopticon by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>
