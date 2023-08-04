@@ -23,6 +23,8 @@ concurrency:
 
 jobs:
   update-documentation:
+    strategy:
+      max-parallel: 1
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -44,7 +46,10 @@ jobs:
           git commit -m "updated API documentation"
 
       - name: Push changes
-        run: git push
+        run: |
+          git config --global user.name "PeterNaggschga"
+          git config --global user.email "rep.akhcsztan@gmail.com"
+          git push
       
   deploy:
     environment:
