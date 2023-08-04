@@ -19,44 +19,45 @@ void DirectOptimizer::runOptimization() {
     stopCon.setStartNow();
     shared_ptr<HyRect> base(new BaseRect(D));
     addActiveRects({base});
-    size_t m = 1, l = 2;
-    functionValue phi = getValueMap().getTopVals().front().second;
+    size_t evaluations = 2;
+    size_t numberOfRectangles = 1;
+    functionValue bestValue = getValueMap().getTopVals().front().second;
     if (trackProgress) {
-        saveProgress(phi, l, m);
+        saveProgress(bestValue, evaluations, numberOfRectangles);
     }
 
-    while (!aborted && stopCon.evaluate(l, m, phi)) {
+    while (!aborted && stopCon.evaluate(evaluations, numberOfRectangles, bestValue)) {
         list<shared_ptr<HyRect>> newRects, oldRects;
-        for (const shared_ptr<HyRect> &rect: optimalRectangles(m, phi)) {
-            for (const shared_ptr<HyRect> &newRect: rect->divide(rect)) {
+        for (const shared_ptr<HyRect> &rect: optimalRectangles(numberOfRectangles, bestValue)) {
+            for (const shared_ptr<HyRect> &newRect: HyRect::divide(rect)) {
                 newRects.push_back(newRect);
             }
             oldRects.push_back(rect);
-            m += 2;
+            numberOfRectangles += 2;
         }
         addActiveRects(newRects);
         removeActiveRects(oldRects);
-        static functionValue oldPhi = phi;
+        static functionValue oldPhi = bestValue;
         static unsigned char phaseIters = 0;
-        phi = getValueMap().getTopVals().front().second;
+        bestValue = getValueMap().getTopVals().front().second;
         phaseIters++;
         level.nextLevel();
         if (level.isGlobal()) {
-            if (phi < oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()) || phaseIters > 35) {
+            if (bestValue < oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()) || phaseIters > 35) {
                 level.setGlobal(false);
-                oldPhi = phi;
+                oldPhi = bestValue;
                 phaseIters = 0;
             }
         }
         if (!level.isGlobal() && phaseIters > 3) {
-            level.setGlobal(phi > oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()));
-            oldPhi = phi;
+            level.setGlobal(bestValue > oldPhi - Levels::L3_EPSILON * abs(oldPhi - getValueMap().getMedian()));
+            oldPhi = bestValue;
             phaseIters = 0;
         }
-        l = getValueMap().getSize();
+        evaluations = getValueMap().getSize();
         iterations++;
         if (trackProgress) {
-            saveProgress(phi, l, m);
+            saveProgress(bestValue, evaluations, numberOfRectangles);
         }
     }
     if (printValues) {
@@ -192,7 +193,7 @@ string DirectOptimizer::getName() {
 string DirectOptimizer::getStatus() {
     string status = "Rectangles:\t\t\t" + to_string(getPartitionSize()) + "\n";
     status += "Iterations:\t\t\t" + to_string(iterations) + "\n";
-    status += "Iterations without improvement:\t" + to_string(stopCon.getEvaluationsSinceImprov()) + "\n";
+    status += "Iterations without improvement:\t" + to_string(stopCon.getIterationsSinceImprov()) + "\n";
     status += "Level:\t\t\t\t" + to_string(level.getLevel());
 
     return status;
