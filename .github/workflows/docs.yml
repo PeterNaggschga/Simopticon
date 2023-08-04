@@ -40,8 +40,8 @@ jobs:
 
       - name: Commit HTML
         run: |
-          git add html
-          git commit -m "updated html of API documentation"
+          git add docs
+          git commit -m "updated API documentation"
 
       - name: Push changes
         run: git push
