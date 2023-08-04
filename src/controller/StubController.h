@@ -8,7 +8,7 @@
 
 /**
  * A class that mocks behaviour of Controller.
- * Instead of real simulations one of the predefined function in StubController::functions is being evaluated, when Controller::requestValues is called.
+ * Instead of real simulations one of the predefined function in #functions is being evaluated, when Controller#requestValues is called.
  * To use StubController instead of Controller a second command line argument has to be passed containing the name of the function to be optimized.
  * The name can be one of the following: quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 or hartman6.
  * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html
@@ -23,7 +23,7 @@ private:
     static map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> functions;
 
     /**
-     * Function to be optimized in the current optimization. One of the functions in StubController::functions.
+     * Function to be optimized in the current optimization. One of the functions in #functions.
      */
     const function<functionValue(vector<shared_ptr<Parameter>>)> f;
 
@@ -36,9 +36,9 @@ private:
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) override;
 
     /**
-     * Evaluates the given Parameter combinations with StubController::f.
-     * @param simulationResults: Map which maps Parameter combinations to empty results (see StubController::runSimulations).
-     * @return A Map which maps the given Parameter combinations to the respective value of StubController::f.
+     * Evaluates the given Parameter combinations with #f.
+     * @param simulationResults: Map which maps Parameter combinations to empty results (see #runSimulations).
+     * @return A Map which maps the given Parameter combinations to the respective value of #f.
      */
     map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> evaluate(
             const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) override;

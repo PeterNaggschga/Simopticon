@@ -12,7 +12,7 @@
 class ChildRect : public HyRect {
 private:
     /**
-     * Reference to the parent rectangle. Used for recursive calculation of ChildRect::getSamplingVertices.
+     * Reference to the parent rectangle. Used for recursive calculation of #getSamplingVertices.
      */
     shared_ptr<HyRect> parent;
 
@@ -27,7 +27,7 @@ public:
     /**
      * Returns the coordinates of two opposite corner points of the rectangle.
      * The returned vertices must be sampled.
-     * The vertices are calculated recursively based on the sampling vertices of ChildRect::parent.
+     * The vertices are calculated recursively based on the sampling vertices of #parent.
      * @return An array containing two dirCoordinate vectors of the sampled vertices.
      */
     array<vector<dirCoordinate>, 2> getSamplingVertices() override;

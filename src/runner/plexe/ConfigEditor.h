@@ -28,11 +28,11 @@ private:
      */
     const filesystem::path DIR;
     /**
-     * Path to the `omnetpp.ini` file in ConfigEditor::DIR.
+     * Path to the `omnetpp.ini` file in #DIR.
      */
     const filesystem::path CONFIG;
     /**
-     * Path to the `optResults` directory in ConfigEditor::DIR where the simulation result files are generated.
+     * Path to the `optResults` directory in #DIR where the simulation result files are generated.
      */
     const filesystem::path RESULTS;
     /**
@@ -51,7 +51,7 @@ private:
 
     /**
      * Replaces the value of the given key with the given new value in the given string.
-     * Basically parses the given value to string and calls ConfigEditor::replaceOption(string &, string, const string &).
+     * Basically parses the given value to string and calls #replaceOption(string &, string, const string &).
      * @param file: A string containing the contents of an `.ini` file.
      * @param option: A string representing a key in the given file.
      * @param value: The new value of the given option in the given file.
@@ -59,7 +59,7 @@ private:
     static void replaceOption(string &file, string option, long value);
 
     /**
-     * Sets all output directories in the given file to a directory that is named after the given number and a subdirectory of ConfigEditor::RESULTS.
+     * Sets all output directories in the given file to a directory that is named after the given number and a subdirectory of #RESULTS.
      * @param file: A string containing the contents of an `.ini` file.
      * @param runNumber: The unique number of the Parameter combination.
      */
@@ -82,7 +82,7 @@ public:
     ConfigEditor(filesystem::path directory, json controller);
 
     /**
-     * Copies the config at ConfigEditor::CONFIG to a file `.tmpx.ini` where `x` is given by @a runNumber and edits the file for the purposes of the optimization.
+     * Copies the config at #CONFIG to a file `.tmpx.ini` where `x` is given by @a runNumber and edits the file for the purposes of the optimization.
      * Sets the values of optimized parameters, controller, result directory and some options minimizing output of Plexe.
      * @param params: The Parameter combination to be simulated.
      * @param runNumber: An unique number of the simulated Parameter combination.
@@ -91,14 +91,14 @@ public:
     void createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat);
 
     /**
-     * Deletes the file `.tmpx.ini` from ConfigEditor::DIR where `x` is given by @a runId.
+     * Deletes the file `.tmpx.ini` from #DIR where `x` is given by @a runId.
      * @param runId: Number of the configuration file to be deleted.
      */
     void deleteConfig(size_t runId) const;
 
     /**
      * Returns the directory of the Plexe configuration.
-     * @return The path saved in ConfigEditor::DIR
+     * @return The path stored in #DIR
      */
     [[nodiscard]] const filesystem::path &getDir() const;
 

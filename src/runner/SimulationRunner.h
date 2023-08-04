@@ -33,7 +33,7 @@ class SimulationRunner
 private:
     /**
      * Deals with the simulation of a single Parameter combination.
-     * Overrides Multithreaded::work and therefore can be executed concurrently.
+     * Overrides Multithreaded#work and therefore can be executed concurrently.
      * @param run: Parameter combination to be simulated.
      * @return A pair containing a path to the result directory and a set of runIds identifying the respective simulation runs.
      */
@@ -50,7 +50,7 @@ public:
 
     /**
      * Simulates the given Parameter combinations concurrently and returns their respective results.
-     * Basically calls Multithreaded::runMultithreadedFunctions which uses the ThreadPool pattern to parallelize the execution of SimulationRunner::work.
+     * Basically calls Multithreaded#runMultithreadedFunctions which uses the ThreadPool pattern to parallelize the execution of #work.
      * @param runs: Set of Parameter combinations to be simulated.
      * @return A map which maps the given Parameter combinations to their respective result directory and runIds.
      */

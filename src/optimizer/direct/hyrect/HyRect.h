@@ -50,7 +50,7 @@ protected:
      */
     position pos;
     /**
-     * Mean between the values obtained at the parameters returned by HyRect::getSamplingVertices.
+     * Mean between the values obtained at the parameters returned by #getSamplingVertices.
      */
     functionValue avgValue = INFINITY;
 
@@ -79,45 +79,45 @@ public:
 
     /**
      * Returns the length of the diagonal of the rectangle.
-     * Basically calculates the euclidian distance between the vertices returned by HyRect::getSamplingVertices.
-     * Instead of actually invoking the costly recursive HyRect::getSamplingVertices function, a calculation based on HyRect::t is executed
+     * Basically calculates the euclidian distance between the vertices returned by #getSamplingVertices.
+     * Instead of actually invoking the costly recursive #getSamplingVertices function, a calculation based on #t is executed
      * @return A dirCoordinate representing the diagonal length of the rectangle.
      */
     [[nodiscard]] dirCoordinate getDiagonalLength() const;
 
     /**
-     * Returns the value of HyRect::t.
+     * Returns the value of #t.
      * @return A depth value representing the depth of the rectangle in the partition tree.
      */
     [[nodiscard]] depth getDepth() const;
 
     /**
-     * Returns the value of HyRect::pos.
+     * Returns the value of #pos.
      * @return A position value representing the relative position to the parent rectangle.
      */
     [[nodiscard]] position getPos() const;
 
     /**
-     * Calculates the dimension where this rectangle must be or has been split by HyRect::divide.
-     * Since the split dimensions are simply chosen in ascending order the calculations only needs the depth stored in HyRect::t.
+     * Calculates the dimension where this rectangle must be or has been split by #divide.
+     * Since the split dimensions are simply chosen in ascending order the calculations only needs the depth stored in #t.
      * @return A dimension where the HyRect has been oder will be split.
      */
     [[nodiscard]] dimension getSplitDim() const;
 
     /**
-     * Returns the value of HyRect::avgValue.
+     * Returns the value of #avgValue.
      * @return A functionValue representing the average value on the sampled corners of the rectangle.
      */
     [[nodiscard]] functionValue getAvgValue() const;
 
     /**
-     * Returns the value of HyRect::D.
+     * Returns the value of #D.
      * @return A dimension representing the number of dimensions of the rectangle.
      */
     [[nodiscard]] dimension getD() const;
 
     /**
-     * Sets the value of HyRect::avgValue.
+     * Sets the value of #avgValue.
      * @param value: Average value sampled at the corners of the rectangle.
      */
     void setAvgValue(functionValue value);

@@ -37,25 +37,25 @@ public:
     virtual ~Parameter() = default;
 
     /**
-     * Returns the minimum value of the Parameter stored in ParameterDefinition::min of Parameter::definition.
+     * Returns the minimum value of the Parameter stored in ParameterDefinition#min of #definition.
      * @return A coordinate representing the minimum value.
      */
     [[nodiscard]] coordinate getMin() const;
 
     /**
-     * Returns the maximum value of the Parameter stored in ParameterDefinition::max of Parameter::definition.
+     * Returns the maximum value of the Parameter stored in ParameterDefinition#max of #definition.
      * @return A coordinate representing the maximum value.
      */
     [[nodiscard]] coordinate getMax() const;
 
     /**
-     * Returns the unit string of the Parameter stored in ParameterDefinition::unit of Parameter::definition.
+     * Returns the unit string of the Parameter stored in ParameterDefinition#unit of #definition.
      * @return A string reference containing the unit.
      */
     [[nodiscard]] const string &getUnit() const;
 
     /**
-     * Returns the configuration string of the Parameter stored in ParameterDefinition::config of Parameter::definition.
+     * Returns the configuration string of the Parameter stored in ParameterDefinition#config of #definition.
      * @return A string reference containing the configuration.
      */
     [[nodiscard]] const string &getConfig() const;

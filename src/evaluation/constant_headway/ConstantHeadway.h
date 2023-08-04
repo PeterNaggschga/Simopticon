@@ -31,7 +31,7 @@ private:
     const unsigned int NR_THREADS;
     /**
      * Number of threads currently used for concurrent evaluation.
-     * Used in ConstantHeadway::getStatusBar.
+     * Used in #getStatusBar.
      */
     unsigned int usedThreads = 0;
 
@@ -53,7 +53,7 @@ public:
 
     /**
      * Returns a value to the results of a single simulation run.
-     * Basically calls ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &) with the given values.
+     * Basically calls #processOutput(const set<pair<filesystem::path, set<runId>>> &) with the given values.
      * @param path: Path to the result files.
      * @param experimentIds: Identifiers of certain simulation runs within the directory represented by the given path.
      * @return A value that represents the performance of the simulation - the lower the better.

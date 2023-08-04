@@ -29,7 +29,7 @@ private:
 
     /**
      * Point in time after which optimization should end.
-     * Calculated using time when StoppingCondition::setStartNow is called and StoppingCondition::mins.
+     * Calculated using time when #setStartNow is called and #mins.
      */
     time_point<system_clock, seconds> END_TIME;
     /**
@@ -43,33 +43,29 @@ private:
 
     /**
      * Accuracy used in accuracy condition.
-     * When the StoppingCondition::bestVal has not changed more than StoppingCondition::ACCURACY after StoppingCondition::NR_ACCURACY_ITERATIONS iterations,
-     * the optimization is stopped.
+     * When the #bestVal has not changed more than #ACCURACY after #NR_ACCURACY_ITERATIONS iterations, the optimization is stopped.
      */
     const functionValue ACCURACY;
     /**
      * Number of iterations used in accuracy condition.
-     * When the StoppingCondition::bestVal has not changed more than StoppingCondition::ACCURACY after StoppingCondition::NR_ACCURACY_ITERATIONS iterations,
-     * the optimization is stopped.
+     * When the #bestVal has not changed more than #ACCURACY after #NR_ACCURACY_ITERATIONS iterations, the optimization is stopped.
      */
     const unsigned int NR_ACCURACY_ITERATIONS;
     /**
      * Best value used to keep track of accuracy condition.
-     * When the StoppingCondition::bestVal has not changed more than StoppingCondition::ACCURACY after StoppingCondition::NR_ACCURACY_ITERATIONS iterations,
-     * the optimization is stopped.
+     * When the #bestVal has not changed more than #ACCURACY after #NR_ACCURACY_ITERATIONS iterations, the optimization is stopped.
      */
     functionValue bestVal = INFINITY;
     /**
      * Number of iterations since last improvement of the optimum used to keep track of accuracy condition.
-     * When the StoppingCondition::bestVal has not changed more than StoppingCondition::ACCURACY after StoppingCondition::NR_ACCURACY_ITERATIONS iterations,
-     * the optimization is stopped.
+     * When the #bestVal has not changed more than #ACCURACY after #NR_ACCURACY_ITERATIONS iterations, the optimization is stopped.
      */
     unsigned int iterationsSinceImprov = 0;
 
     /**
-     * Checks if the current optimum improves the one saved in StoppingCondition::bestVal by more than StoppingCondition::ACCURACY.
-     * If that is the case, StoppingCondition::iterationsSinceImprov is reset to zero and the current optimum is saved in StoppingCondition::bestVal.
-     * If not StoppingCondition::iterationsSinceImprov is increased.
+     * Checks if the current optimum improves the one saved in #bestVal by more than #ACCURACY.
+     * If that is the case, #iterationsSinceImprov is reset to zero and the current optimum is saved in #bestVal.
+     * If not #iterationsSinceImprov is increased.
      * @param newBestVal: Current optimum.
      * @return A bool defining if the accuracy condition is met after the values where updated.
      */
@@ -81,8 +77,8 @@ public:
      * @param evaluations: Number of evaluations after which the optimization should stop.
      * @param hyrects: Number of rectangles in the partition after which the optimization should stop.
      * @param minutes: Number of minutes after which the optimization should stop.
-     * @param accuracy: Accuracy used in accuracy condition (see StoppingCondition::ACCURACY).
-     * @param accuracyIterations: Number of iterations used in accuracy condition (see StoppingCondition::NR_ACCURACY_ITERATIONS).
+     * @param accuracy: Accuracy used in accuracy condition (see #ACCURACY).
+     * @param accuracyIterations: Number of iterations used in accuracy condition (see #NR_ACCURACY_ITERATIONS).
      */
     explicit StoppingCondition(size_t evaluations = 0, size_t hyrects = 0, unsigned int minutes = 0,
                                functionValue accuracy = 0, unsigned int accuracyIterations = 0);
@@ -94,7 +90,7 @@ public:
     explicit StoppingCondition(json stopCon);
 
     /**
-     * Sets StoppingCondition::END_TIME to be the current time plus StoppingCondition::mins.
+     * Sets #END_TIME to be the current time plus #mins.
      */
     void setStartNow();
 
@@ -108,8 +104,8 @@ public:
     bool evaluate(size_t evaluations, size_t hyrects, functionValue newBestVal);
 
     /**
-     * Returns the value of StoppingCondition::iterationsSinceImprov.
-     * @return An integral representing the number of iterations since the best value improved by more than StoppingCondition::ACCURACY.
+     * Returns the value of #iterationsSinceImprov.
+     * @return An integral representing the number of iterations since the best value improved by more than #ACCURACY.
      */
     [[nodiscard]] unsigned int getIterationsSinceImprov() const;
 };

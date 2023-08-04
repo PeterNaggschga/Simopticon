@@ -29,7 +29,7 @@ public:
     /**
      * Creates a DiscreteParameter with the given ParameterDefinition, step and value.
      * Checks if given value is in bounds set by the ParameterDefinition.
-     * Calculates DiscreteParameter::times and DiscreteParameter::offset automatically.
+     * Calculates #times and #offset automatically.
      * @param def: ParameterDefinition of the Parameter.
      * @param step: Difference between discrete values.
      * @param value: Initial value of the Parameter.
@@ -38,33 +38,33 @@ public:
 
     /**
      * Creates a DiscreteParameter with the given ParameterDefinition and step.
-     * Calculates DiscreteParameter::times and DiscreteParameter::offset automatically.
+     * Calculates #times and #offset automatically.
      * @param def: ParameterDefinition of the Parameter.
      * @param value: Initial value of the Parameter.
      */
     DiscreteParameter(shared_ptr<ParameterDefinition> def, double step);
 
     /**
-     * Returns the value of DiscreteParameter::times.
+     * Returns the value of #times.
      * @return An integer representing the times value.
      */
     [[nodiscard]] int getTimes() const;
 
     /**
-     * Sets the value of DiscreteParameter::times to the given value.
+     * Sets the value of #times to the given value.
      * Checks if value is in bounds set by ParameterDefinition.
      * @param newTimes
      */
     void setTimes(int newTimes);
 
     /**
-     * Returns the value of DiscreteParameter::step.
+     * Returns the value of #step.
      * @return A floating point number representing the difference between discrete values.
      */
     [[nodiscard]] double getStep() const;
 
     /**
-     * Returns the value of DiscreteParameter::offset.
+     * Returns the value of #offset.
      * @return A floating point number representing the offset.
      */
     [[nodiscard]] double getOffset() const;
@@ -77,7 +77,7 @@ public:
     [[nodiscard]] coordinate getVal() const override;
 
     /**
-     * Sets the value of the DiscreteParameter to the discrete value closest to the given value by modifying DiscreteParameter::times using DiscreteParameter::setTimes.
+     * Sets the value of the DiscreteParameter to the discrete value closest to the given value by modifying #times using #setTimes.
      * @param val: Value to set the DiscreteParameter to.
      */
     void setVal(coordinate val) override;

@@ -18,11 +18,11 @@ using namespace std;
 class Status {
 protected:
     /**
-     * Default message returned by Status::getStatus and Status::getStatusBar if the implementing class does not override the respective function.
+     * Default message returned by #getStatus and #getStatusBar if the implementing class does not override the respective function.
      */
     const static string NO_STATUS_SUPPORT;
     /**
-     * Default message returned by Status::getName if the implementing class does not override the function.
+     * Default message returned by #getName if the implementing class does not override the function.
      */
     const static string NO_NAME;
 

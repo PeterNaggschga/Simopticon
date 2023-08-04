@@ -13,9 +13,9 @@ using namespace std;
 
 /**
  * A class implementing concurrent execution of the same function for different arguments.
- * The function must be implemented through Multithreaded::work and execution follows the ThreadPool design pattern.
- * @tparam Key: Argument type of the concurrent Multithreaded::work function.
- * @tparam T: Result type of the concurrent Multithreaded::work function.
+ * The function must be implemented through #work and execution follows the ThreadPool design pattern.
+ * @tparam Key: Argument type of the concurrent #work function.
+ * @tparam T: Result type of the concurrent #work function.
  * @tparam Compare: Comparison for objects of type Key.
  * @tparam Allocator: Allocator for pairs of constant Key and T.
  * @ingroup utils
@@ -41,15 +41,15 @@ protected:
     ThreadsafeQueue<Key> queue;
 
     /**
-     * Pushes given tasks into Multithreaded::queue, creates concurrent threads and merges them when execution is done.
-     * @param runs: Set of arguments on which Multithreaded::work should to be executed.
+     * Pushes given tasks into #queue, creates concurrent threads and merges them when execution is done.
+     * @param runs: Set of arguments on which #work should to be executed.
      * @return A map which maps arguments to their respective calculated values.
      */
     virtual map<Key, T, Compare, Allocator> runMultithreadedFunctions(set<Key, Compare> runs);
 
     /**
-     * Function that is executed by each thread. As long as Multithreaded::queue is not empty, tasks are started.
-     * When Multithreaded::queue is empty, the processed results are returned
+     * Function that is executed by each thread. As long as #queue is not empty, tasks are started.
+     * When #queue is empty, the processed results are returned
      * @return A map which maps arguments to their respective calculated values.
      */
     virtual map<Key, T, Compare, Allocator> multithreadFunction();

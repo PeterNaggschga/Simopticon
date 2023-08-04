@@ -26,7 +26,7 @@ enum level : unsigned char {
 class Levels {
 private:
     /**
-     * Local level the optimization is currently using when Levels::global is @a false.
+     * Local level the optimization is currently using when #global is @a false.
      */
     level currentLevel = l2_0;
     /**
@@ -72,14 +72,14 @@ public:
     Levels() = default;
 
     /**
-     * Switches Levels::currentLevel to the next local level if Levels::global is false.
+     * Switches #currentLevel to the next local level if #global is false.
      * @return A number representing the current level after switching.
      */
     unsigned char nextLevel();
 
     /**
      * Calculates the subset of all given rectangles based on the current level and returns a list containing only the best HyRect per diagonal length.
-     * @param rects: Map containing all HyRect of the current partition grouped by HyRect::t and sorted by HyRect::avgValue.
+     * @param rects: Map containing all HyRect of the current partition grouped by HyRect#t and sorted by HyRect#avgValue.
      * @param size: Number of HyRect in the given partition.
      * @return A list containing only the best HyRect per diagonal length in the subset based on the current level.
      */
@@ -88,7 +88,7 @@ public:
 
     /**
      * Returns the epsilon value on the current level the DIRECT algorithm resides on.
-     * Either Levels::L3_EPSILON, Levels::L2_EPSILON, Levels::L1_EPSILON or Levels::L0_EPSILON.
+     * Either #L3_EPSILON, #L2_EPSILON, #L1_EPSILON or #L0_EPSILON.
      * @return A floating point value used as epsilon parameter on the current level.
      */
     [[nodiscard]] double getEpsilon() const;
@@ -100,13 +100,13 @@ public:
     [[nodiscard]] unsigned char getLevel() const;
 
     /**
-     * Returns the value of Levels::global.
+     * Returns the value of #global.
      * @return A boolean defining whether the optimization is currently in the global phase.
      */
     [[nodiscard]] bool isGlobal() const;
 
     /**
-     * Sets the value of Levels::global.
+     * Sets the value of #global.
      * @param val: Defines whether global optimization should be used in the following iterations.
      */
     void setGlobal(bool val);
