@@ -33,8 +33,18 @@ jobs:
         shell: bash
 
       - name: Run Doxygen
-        run: cd docs && doxygen Doxyfile
+        run: |
+          cd docs
+          doxygen Doxyfile
         shell: bash
+
+      - name: Commit HTML
+        run: |
+          git add html
+          git commit -m "updated html of API documentation"
+
+      - name: Push changes
+        run: git push
       
   deploy:
     environment:
