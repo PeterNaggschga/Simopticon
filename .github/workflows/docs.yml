@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Install Doxygen
-        run: sudo apt-get install doxygen graphviz pdflatex -y
+        run: sudo apt-get install doxygen graphviz texlive -y
         shell: bash
 
       - name: Remove old documentation
