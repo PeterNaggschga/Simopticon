@@ -56,7 +56,7 @@ jobs:
         run: |
           git config --global user.name "PeterNaggschga"
           git config --global user.email "rep.akhcsztan@gmail.com"
-          git add docs
+          git add -f docs
           git commit -m "updated API documentation"
           git push
         shell: bash
