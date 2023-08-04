@@ -50,6 +50,7 @@ jobs:
           mv refman.pdf ../documentation.pdf
           cd ..
           rm -r latex
+          cp documentation.pdf html/
         shell: bash
 
       - name: Push changes
