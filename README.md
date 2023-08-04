@@ -36,6 +36,8 @@ Extensions of the framework may introduce new Optimizer, SimulationRunner and Ev
 Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers
 using the [Plexe](https://plexe.car2x.org/) framework.
 
+The full API documentation may be found on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/simopticon/).
+
 ---
 
 ## Setup
