@@ -122,16 +122,54 @@ public:
      */
     void setAvgValue(functionValue value);
 
+    /**
+     * Checks if the current and the given HyRect objects are equal by comparing their #pos, #D, and #t.
+     * @param rect: HyRect to be compared.
+     * @return A boolean defining if the HyRect objects have the same position in the partition tree.
+     */
     virtual bool operator==(const HyRect &rect) const;
 
+    /**
+     * Compares depth #t and #avgValue of the given HyRect objects.
+     * @param rect: HyRect to be compared.
+     * @return A boolean defining if the depth #t of this HyRect is greater than that of the given HyRect or
+     * whether the #avgValue is less than that of the given HyRect if depth #t is the same.
+     */
     bool operator<(const HyRect &rect) const;
 
+    /**
+     * Checks if the current and the given HyRect objects are unequal by comparing their #pos, #D, and #t.
+     * Basically negates #operator==.
+     * @param rhs: HyRect to be compared.
+     * @return A boolean defining if the HyRect objects have different positions in the partition tree.
+     */
     bool operator!=(const HyRect &rhs) const;
 
+    /**
+     * Compares depth #t and #avgValue of the given HyRect objects.
+     * Basically calls #operator< on the switched inputs.
+     * @param rhs: HyRect to be compared.
+     * @return A boolean defining if the depth #t of this HyRect is less or equal than that of the given HyRect or
+     * whether the #avgValue is greater than or equal that of the given HyRect if depth #t is the same.
+     */
     bool operator>(const HyRect &rhs) const;
 
+    /**
+     * Compares depth #t and #avgValue of the given HyRect objects.
+     * Basically negates #operator>.
+     * @param rhs: HyRect to be compared.
+     * @return A boolean defining if the depth #t of this HyRect is greater than or equal to that of the given HyRect or
+     * whether the #avgValue is less than or equal that of the given HyRect if depth #t is the same.
+     */
     bool operator<=(const HyRect &rhs) const;
 
+    /**
+     * Compares depth #t and #avgValue of the given HyRect objects.
+     * Basically negates #operator<.
+     * @param rhs: HyRect to be compared.
+     * @return A boolean defining if the depth #t of this HyRect is less than or equal that of the given HyRect or
+     * whether the #avgValue is greater than or equal that of the given HyRect if depth #t is the same.
+     */
     bool operator>=(const HyRect &rhs) const;
 };
 

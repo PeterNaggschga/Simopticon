@@ -40,7 +40,7 @@ public:
      * Creates a DiscreteParameter with the given ParameterDefinition and step.
      * Calculates #times and #offset automatically.
      * @param def: ParameterDefinition of the Parameter.
-     * @param value: Initial value of the Parameter.
+     * @param step: Difference between discrete values.
      */
     DiscreteParameter(shared_ptr<ParameterDefinition> def, double step);
 

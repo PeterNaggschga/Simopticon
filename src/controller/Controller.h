@@ -46,21 +46,39 @@ private:
 
     /**
      * A struct keeping track of the currently running optimization step for StatusBar#updateStatus.
+     * @ingroup controller
      */
     struct stepstate {
+        /**
+         * Defines if #currentStep has changed since the last call to #get.
+         */
         bool stepChanged;
+        /**
+         * Current step the optimization is in.
+         */
         step currentStep = INIT;
 
+        /**
+         * Switches #currentStep to the next step.
+         */
         void next() {
             stepChanged = true;
             currentStep = static_cast<step>((currentStep + 1) % 3);
         }
 
+        /**
+         * Returns the value of #currentStep.
+         * @return The step that is currently run.
+         */
         step get() {
             stepChanged = false;
             return currentStep;
         }
-    } stepState;
+    }
+    /**
+     * An object keeping track of the current optimization step.
+     */
+    stepState;
 
     /**
      * Interval of updates of StatusBar using #updateStatus in concurrent status thread.

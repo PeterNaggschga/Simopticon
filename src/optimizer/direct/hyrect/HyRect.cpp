@@ -41,7 +41,7 @@ void HyRect::setAvgValue(functionValue value) {
 }
 
 bool HyRect::operator==(const HyRect &rect) const {
-    return rect.pos == pos && rect.D == D;
+    return rect.pos == pos && rect.D == D && rect.t == t;
 }
 
 bool HyRect::operator<(const HyRect &rect) const {

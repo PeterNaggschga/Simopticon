@@ -72,16 +72,50 @@ public:
      */
     virtual void setVal(coordinate val) = 0;
 
+    /**
+     * Checks if the current and the given Parameter objects are equal by comparing their value and #definition.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the Parameter objects contain the same value for the same #definition.
+     */
     bool operator==(const Parameter &rhs) const;
 
+    /**
+     * Checks if the current and the given Parameter objects are unequal by comparing their value and #definition.
+     * Basically negates #operator==.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the Parameter objects contain another value or another #definition.
+     */
     bool operator!=(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is less than that of the given Parameter.
+     */
     bool operator<(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * Basically calls #operator< on the switched inputs.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is greater than that of the given Parameter.
+     */
     bool operator>(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * Basically negates #operator<.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is less than or equal to that of the given Parameter.
+     */
     bool operator<=(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * Basically negates #operator>.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is greater than or equal to that of the given Parameter.
+     */
     bool operator>=(const Parameter &rhs) const;
 };
 
