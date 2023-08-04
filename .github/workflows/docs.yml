@@ -22,7 +22,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  update-documentation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
+      - name: Install Doxygen
+        run: sudo apt-get install doxygen graphviz -y
+        shell: bash
+
+      - name: Run Doxygen
+        run: cd docs && doxygen Doxyfile
+        shell: bash
+      
   deploy:
     environment:
       name: github-pages
