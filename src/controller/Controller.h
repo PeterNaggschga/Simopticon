@@ -40,36 +40,54 @@ private:
      */
     bool keepFiles;
     /**
-     * Saves the best @a n Parameter combinations and the corresponding path to the result files, if Controller::keepFiles is true. @a n can be set in main config.
+     * Saves the best @a n Parameter combinations and the corresponding path to the result files, if #keepFiles is true. @a n can be set in main config.
      */
     map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
 
     /**
-     * A struct keeping track of the currently running optimization step for StatusBar::updateStatus.
+     * A struct keeping track of the currently running optimization step for StatusBar#updateStatus.
+     * @ingroup controller
      */
     struct stepstate {
+        /**
+         * Defines if #currentStep has changed since the last call to #get.
+         */
         bool stepChanged;
+        /**
+         * Current step the optimization is in.
+         */
         step currentStep = INIT;
 
+        /**
+         * Switches #currentStep to the next step.
+         */
         void next() {
             stepChanged = true;
             currentStep = static_cast<step>((currentStep + 1) % 3);
         }
 
+        /**
+         * Returns the value of #currentStep.
+         * @return The step that is currently run.
+         */
         step get() {
             stepChanged = false;
             return currentStep;
         }
-    } stepState;
+    }
+    /**
+     * An object keeping track of the current optimization step.
+     */
+    stepState;
 
     /**
-     * Interval of updates of StatusBar using Controller::updateStatus in concurrent status thread.
+     * Interval of updates of StatusBar using #updateStatus in concurrent status thread.
      */
     chrono::milliseconds statusInterval = chrono::milliseconds(0);
 
     /**
-     * Calls the Controller::runner to run simulations for the given Parameter combinations.
-     * Updates Controller::statusBar before and after execution of simulations.
+     * Calls the #runner to run simulations for the given Parameter combinations.
+     * Updates #statusBar before and after execution of simulations.
      * @param runs: A set of Parameter combinations to be executed.
      * @return A map which maps the given Parameter combinations to their respective result file paths and runIds.
      */
@@ -77,8 +95,8 @@ private:
     runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
 
     /**
-     * Calls the Controller::evaluation to evaluate the given result files.
-     * Updates Controller::statusBar before and after execution of evaluation.
+     * Calls the #evaluation to evaluate the given result files.
+     * Updates #statusBar before and after execution of evaluation.
      * @param simulationResults: A map which maps the Parameter combinations that must be evaluated to their respective file paths of simulation results and runIds.
      * @return A map which maps the given Parameter combinations to their respective functionValue.
      */
@@ -87,12 +105,12 @@ private:
 
     /**
      * Removes all result files that don't belong to the best @a n results, where @a n is configured in main config.
-     * If Controller::keepFiles is @a false, all result files are removed.
+     * If #keepFiles is @a false, all result files are removed.
      */
     virtual void removeOldResultfiles();
 
     /**
-     * Updates the Controller::statusBar using StatusBar::updateStatus.
+     * Updates the #statusBar using StatusBar#updateStatus.
      */
     virtual void updateStatus();
 
@@ -110,7 +128,7 @@ protected:
      */
     unique_ptr<SimulationRunner> runner;
     /**
-     * Evaluation capable of evaluating data produced by Controller::runner.
+     * Evaluation capable of evaluating data produced by #runner.
      */
     unique_ptr<Evaluation> evaluation;
     /**
@@ -126,30 +144,30 @@ public:
     explicit Controller(const filesystem::path &configPath);
 
     /**
-     * Starts optimization process by calling Optimizer::runOptimization.
-     * Creates concurrent thread that updates Controller::statusBar every Controller::statusInterval milliseconds.
-     * Prints results in command line after optimization is done using StatusBar::printResults.
+     * Starts optimization process by calling Optimizer#runOptimization.
+     * Creates concurrent thread that updates #statusBar every #statusInterval milliseconds.
+     * Prints results in command line after optimization is done using StatusBar#printResults.
      */
     void run();
 
     /**
-     * Searches Controller::valueMap for results to given Parameter combinations.
-     * Each combination that hasn't been simulated is simulated and evaluated using Controller::runSimulations and Controller::evaluate.
-     * Updates Controller::statusBar before and after execution.
+     * Searches #valueMap for results to given Parameter combinations.
+     * Each combination that hasn't been simulated is simulated and evaluated using #runSimulations and #evaluate.
+     * Updates #statusBar before and after execution.
      * @param params: A set of Parameter combinations to be evaluated.
      * @return A map which maps the given Parameter combinations to their respective functionValue.
      */
     map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
 
     /**
-     * Returns Controller::valueMap.
+     * Returns #valueMap.
      * @return A ValueMap object.
      */
     [[nodiscard]] ValueMap &getValueMap();
 
     /**
-     * Aborts Controller::optimizer using Optimizer::abort.
-     * Aborts the concurrent thread that regularly updates Controller::statusBar.
+     * Aborts #optimizer using Optimizer#abort.
+     * Aborts the concurrent thread that regularly updates #statusBar.
      */
     void abort() override;
 };

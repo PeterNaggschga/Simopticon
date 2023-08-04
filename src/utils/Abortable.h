@@ -9,13 +9,13 @@
 class Abortable {
 protected:
     /**
-     * Defines if the process has been abortet i.e. Abortable::abort has been called.
+     * Defines if the process has been aborted, i.e. #abort has been called.
      */
     bool aborted = false;
 
 public:
     /**
-     * Sets Abortable::aborted to @a true.
+     * Sets #aborted to @a true.
      */
     virtual void abort();
 

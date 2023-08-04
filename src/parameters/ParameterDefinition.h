@@ -43,25 +43,25 @@ public:
     ParameterDefinition(coordinate min, coordinate max, string config = "", string unit = "");
 
     /**
-     * Returns the minimum value of the Parameter stored in ParameterDefinition::min.
+     * Returns the minimum value of the Parameter stored in #min.
      * @return A coordinate representing the minimum value.
      */
     [[nodiscard]] coordinate getMin() const;
 
     /**
-     * Returns the maximum value of the Parameter stored in ParameterDefinition::max.
+     * Returns the maximum value of the Parameter stored in #max.
      * @return A coordinate representing the maximum value.
      */
     [[nodiscard]] coordinate getMax() const;
 
     /**
-     * Returns the unit string of the Parameter stored in ParameterDefinition::unit.
+     * Returns the unit string of the Parameter stored in #unit.
      * @return A string reference containing the unit.
      */
     [[nodiscard]] const string &getUnit() const;
 
     /**
-     * Returns the configuration string of the Parameter stored in ParameterDefinition::config.
+     * Returns the configuration string of the Parameter stored in #config.
      * @return A string reference containing the configuration.
      */
     [[nodiscard]] const string &getConfig() const;

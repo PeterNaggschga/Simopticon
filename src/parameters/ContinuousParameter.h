@@ -31,13 +31,13 @@ public:
     explicit ContinuousParameter(shared_ptr<ParameterDefinition> def);
 
     /**
-     * Returns the current value of ContinuousParameter::val.
+     * Returns the current value of #val.
      * @return A coordinate representing the value of the ContinuousParameter.
      */
     [[nodiscard]] coordinate getVal() const override;
 
     /**
-     * Sets the value of ContinuousParameter::val to the given value.
+     * Sets the value of #val to the given value.
      * Checks if given value is in bounds set by the ParameterDefinition.
      * @param val: Value to set the ContinuousParameter to.
      */

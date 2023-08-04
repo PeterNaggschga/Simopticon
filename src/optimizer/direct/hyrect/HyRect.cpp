@@ -6,10 +6,10 @@
 HyRect::HyRect(dimension D, position pos, depth t) : D(D), pos(pos), t(t) {
 }
 
-array<shared_ptr<HyRect>, 3> HyRect::divide(const shared_ptr<HyRect> &ptr) const {
-    shared_ptr<HyRect> left(new ChildRect(D, position::LEFT, ptr));
-    shared_ptr<HyRect> mid(new ChildRect(D, position::MIDDLE, ptr));
-    shared_ptr<HyRect> right(new ChildRect(D, position::RIGHT, ptr));
+array<shared_ptr<HyRect>, 3> HyRect::divide(const shared_ptr<HyRect> &ptr) {
+    shared_ptr<HyRect> left(new ChildRect(position::LEFT, ptr));
+    shared_ptr<HyRect> mid(new ChildRect(position::MIDDLE, ptr));
+    shared_ptr<HyRect> right(new ChildRect(position::RIGHT, ptr));
     return {left, mid, right};
 }
 
@@ -41,7 +41,7 @@ void HyRect::setAvgValue(functionValue value) {
 }
 
 bool HyRect::operator==(const HyRect &rect) const {
-    return rect.pos == pos && rect.D == D;
+    return rect.pos == pos && rect.D == D && rect.t == t;
 }
 
 bool HyRect::operator<(const HyRect &rect) const {

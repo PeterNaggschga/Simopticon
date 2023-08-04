@@ -35,7 +35,7 @@ public:
     PythonScript(const std::filesystem::path &path, const char *functionName);
 
     /**
-     * Ends connection to function PythonScript::pFunc and module PythonScript::pModule.
+     * Ends connection to function #pFunc and module #pModule.
      */
     ~PythonScript();
 

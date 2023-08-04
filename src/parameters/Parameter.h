@@ -37,25 +37,25 @@ public:
     virtual ~Parameter() = default;
 
     /**
-     * Returns the minimum value of the Parameter stored in ParameterDefinition::min of Parameter::definition.
+     * Returns the minimum value of the Parameter stored in ParameterDefinition#min of #definition.
      * @return A coordinate representing the minimum value.
      */
     [[nodiscard]] coordinate getMin() const;
 
     /**
-     * Returns the maximum value of the Parameter stored in ParameterDefinition::max of Parameter::definition.
+     * Returns the maximum value of the Parameter stored in ParameterDefinition#max of #definition.
      * @return A coordinate representing the maximum value.
      */
     [[nodiscard]] coordinate getMax() const;
 
     /**
-     * Returns the unit string of the Parameter stored in ParameterDefinition::unit of Parameter::definition.
+     * Returns the unit string of the Parameter stored in ParameterDefinition#unit of #definition.
      * @return A string reference containing the unit.
      */
     [[nodiscard]] const string &getUnit() const;
 
     /**
-     * Returns the configuration string of the Parameter stored in ParameterDefinition::config of Parameter::definition.
+     * Returns the configuration string of the Parameter stored in ParameterDefinition#config of #definition.
      * @return A string reference containing the configuration.
      */
     [[nodiscard]] const string &getConfig() const;
@@ -72,16 +72,50 @@ public:
      */
     virtual void setVal(coordinate val) = 0;
 
+    /**
+     * Checks if the current and the given Parameter objects are equal by comparing their value and #definition.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the Parameter objects contain the same value for the same #definition.
+     */
     bool operator==(const Parameter &rhs) const;
 
+    /**
+     * Checks if the current and the given Parameter objects are unequal by comparing their value and #definition.
+     * Basically negates #operator==.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the Parameter objects contain another value or another #definition.
+     */
     bool operator!=(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is less than that of the given Parameter.
+     */
     bool operator<(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * Basically calls #operator< on the switched inputs.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is greater than that of the given Parameter.
+     */
     bool operator>(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * Basically negates #operator<.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is less than or equal to that of the given Parameter.
+     */
     bool operator<=(const Parameter &rhs) const;
 
+    /**
+     * Compares the value of the given Parameter objects.
+     * Basically negates #operator>.
+     * @param rhs: Parameter to be compared.
+     * @return A boolean defining if the value of this Parameter is greater than or equal to that of the given Parameter.
+     */
     bool operator>=(const Parameter &rhs) const;
 };
 

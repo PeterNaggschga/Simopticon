@@ -4,7 +4,7 @@ StoppingCondition::StoppingCondition(size_t evaluations, size_t hyrects, unsigne
                                      functionValue accuracy,
                                      unsigned int accuracyIterations)
         : NR_EVALUATIONS(evaluations), NR_HYRECTS(hyrects), mins(minutes), time_eval(minutes != 0), ACCURACY(accuracy),
-          NR_ACCURACY_EVALUATIONS(accuracyIterations) {
+          NR_ACCURACY_ITERATIONS(accuracyIterations) {
 }
 
 template<typename T>
@@ -18,7 +18,7 @@ StoppingCondition::StoppingCondition(json stopCon) :
         mins(getConditionFromJSON<unsigned int>(stopCon, "minutes")),
         time_eval(stopCon.at("minutes").at("useCondition").get<bool>()),
         ACCURACY(getConditionFromJSON<functionValue>(stopCon, "accuracy", "delta")),
-        NR_ACCURACY_EVALUATIONS(getConditionFromJSON<unsigned int>(stopCon, "accuracy")) {
+        NR_ACCURACY_ITERATIONS(getConditionFromJSON<unsigned int>(stopCon, "accuracy")) {
 }
 
 
@@ -26,7 +26,7 @@ bool StoppingCondition::evaluate(size_t evaluations, size_t hyrects, functionVal
     bool eval = NR_EVALUATIONS == 0 || evaluations < NR_EVALUATIONS;
     bool rects = NR_HYRECTS == 0 || hyrects < NR_HYRECTS;
     bool time = !time_eval || END_TIME > system_clock::now();
-    bool accuracy = updateAccuracy(newBestVal) || (ACCURACY == 0 && NR_ACCURACY_EVALUATIONS == 0);
+    bool accuracy = updateAccuracy(newBestVal) || (ACCURACY == 0 && NR_ACCURACY_ITERATIONS == 0);
     return eval && rects && time && accuracy;
 }
 
@@ -38,14 +38,14 @@ void StoppingCondition::setStartNow() {
 
 bool StoppingCondition::updateAccuracy(functionValue newBestVal) {
     if (newBestVal < bestVal - ACCURACY) {
-        evaluationsSinceImprov = 0;
+        iterationsSinceImprov = 0;
         bestVal = newBestVal;
     } else {
-        evaluationsSinceImprov++;
+        iterationsSinceImprov++;
     }
-    return evaluationsSinceImprov < NR_ACCURACY_EVALUATIONS;
+    return iterationsSinceImprov < NR_ACCURACY_ITERATIONS;
 }
 
-unsigned int StoppingCondition::getEvaluationsSinceImprov() const {
-    return evaluationsSinceImprov;
+unsigned int StoppingCondition::getIterationsSinceImprov() const {
+    return iterationsSinceImprov;
 }

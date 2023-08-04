@@ -20,18 +20,18 @@ private:
      */
     queue<Key> safeQueue;
     /**
-     * Threadlock to avoid damage to ThreadsafeQueue::safeQueue on concurrent access.
+     * Threadlock to avoid damage to #safeQueue on concurrent access.
      */
     mutex queueLock;
     /**
-     * Number of elements in queue when ThreadsafeQueue::push was called the last time.
+     * Number of elements in queue when #push was called the last time.
      * Can be used for progress information.
      */
     size_t startSize = 0;
 
 public:
     /**
-     * Adds the given value to ThreadsafeQueue::safeQueue.
+     * Adds the given value to #safeQueue.
      * @param val: Values to be added to queue.
      */
     void push(Key val);
@@ -43,8 +43,8 @@ public:
     pair<Key, bool> pop();
 
     /**
-     * Returns the value of ThreadsafeQueue::startSize.
-     * @return A number representing the number of tasks, when ThreadsafeQueue::push was called last.
+     * Returns the value of #startSize.
+     * @return A number representing the number of tasks, when #push was called last.
      */
     [[nodiscard]] size_t getStartSize();
 

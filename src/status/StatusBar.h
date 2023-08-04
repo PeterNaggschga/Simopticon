@@ -44,15 +44,15 @@ private:
     const static string SMALL_DIVIDER;
 
     /**
-     * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to StatusBar::updateStatus.
+     * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to #updateStatus.
      */
     pair<vector<shared_ptr<Parameter>>, functionValue> lastVal;
     /**
-     * Step which the optimization was in when StatusBar::updateStatus was called the last time.
+     * Step which the optimization was in when #updateStatus was called the last time.
      */
     step lastStep = INIT;
     /**
-     * Last values of the StatusBar output (excluding value returned by Status::getStatusBar)
+     * Last values of the StatusBar output (excluding value returned by Status#getStatusBar)
      */
     string lastStatus;
 
@@ -64,7 +64,7 @@ private:
     static void printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum);
 
     /**
-     * Prints the Status of the given object to the command line using Status::getStatus.
+     * Prints the Status of the given object to the command line using Status#getStatus.
      * @param object: Object that inherits from Status and whose state is being printed.
      */
     static void printStatus(Status *object);
@@ -73,7 +73,7 @@ public:
     /**
      * Updates the output in the command line with gathered information from the used Optimizer, SimulationRunner and Evaluation.
      * If the current optimum or the step the optimization is in has changed since the last call, the whole output is printed again.
-     * Otherwise only the progress of the active component obtained by Status::getStatusBar is updated.
+     * Otherwise only the progress of the active component obtained by Status#getStatusBar is updated.
      * @param opt: Pointer to Optimizer used in optimization.
      * @param runner: Pointer to SimulationRunner used in optimization.
      * @param eval: Pointer to Evaluation used in optimization.

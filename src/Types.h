@@ -5,6 +5,9 @@
 
 /**
  * In this file types are defined which should be used across the whole framework.
+ *
+ * @file Types.h
+ * @ingroup utils
  */
 
 /**

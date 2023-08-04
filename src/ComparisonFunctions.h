@@ -8,6 +8,9 @@
 /**
  * In this file comparison functions are defined which should be used across the whole framework.
  * They can be used to order elements in STL containers.
+ *
+ * @file ComparisonFunctions.h
+ * @ingroup utils
  */
 
 /**
