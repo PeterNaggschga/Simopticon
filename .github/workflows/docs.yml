@@ -33,8 +33,9 @@ jobs:
 
       - name: Remove old documentation
         run: |
-          rm -r docs/html
-#          rm docs/documentation.pdf
+          cd docs
+          touch html documentation.pdf
+          rm -r html documentation.pdf
 
       - name: Run Doxygen
         run: |
