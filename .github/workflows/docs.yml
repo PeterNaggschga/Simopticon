@@ -77,6 +77,7 @@ jobs:
           sha_new=$(git rev-parse HEAD)
           echo $sha_new
           echo "::set-output name=SHA::$sha_new"
+          echo "SHA=$sha_new" >> $GITHUB_OUTPUT
           echo ${{ steps.sha.outputs.SHA }}
       
   deploy:
