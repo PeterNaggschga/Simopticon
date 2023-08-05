@@ -81,7 +81,7 @@ public:
      * @param stepChanged: Boolean defining whether the current step has changed since the last call.
      * @param currentStep: Current step the optimization is in.
      */
-    void updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluation *eval,
+    void updateStatus(Status *opt, Status *runner, Status *eval,
                       const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged = false,
                       step currentStep = INIT);
 

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <thread>
 
+#include "StubController.h"
 #include "ValueMap.h"
 #include "../optimizer/direct/DirectOptimizer.h"
 #include "../runner/plexe/PlexeSimulationRunner.h"
@@ -24,19 +25,12 @@ json getConfigByPath(filesystem::path baseDir, const string &config) {
     return result;
 }
 
-Controller::Controller(const filesystem::path &configPath) {
+Controller::Controller(const filesystem::path &configPath, bool isStub) {
     cout << "Initializing optimization...";
     cout.flush();
 
-    json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());
-    json paramJson = getConfigByPath(configPath.parent_path(), baseConfig.at("controller").at("params").get<string>());
-    json optimizerConfig = getConfigByPath(configPath.parent_path(),
-                                           baseConfig.at("optimizer").at("config").get<string>());
-    json runnerConfig = getConfigByPath(configPath.parent_path(), baseConfig.at("runner").at("config").get<string>());
-    json evalConfig = getConfigByPath(configPath.parent_path(),
-                                      baseConfig.at("evaluation").at("config").get<string>());
-
     // Controller settings
+    json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());
     keepFiles = baseConfig.at("controller").at("keepResultFiles").get<bool>();
     unsigned int nrTopEntries = baseConfig.at("controller").at("nrTopEntries").get<unsigned int>();
     valueMap = std::make_unique<ValueMap>(nrTopEntries);
@@ -44,6 +38,7 @@ Controller::Controller(const filesystem::path &configPath) {
     statusInterval = milliseconds((long) round(seconds * 1000));
 
     // Read Parameters
+    json paramJson = getConfigByPath(configPath.parent_path(), baseConfig.at("controller").at("params").get<string>());
     list<shared_ptr<ParameterDefinition>> params;
     for (auto param: paramJson) {
         coordinate min = param.at("min").get<coordinate>();
@@ -60,6 +55,8 @@ Controller::Controller(const filesystem::path &configPath) {
     }
 
     // Optimizer settings
+    json optimizerConfig = getConfigByPath(configPath.parent_path(),
+                                           baseConfig.at("optimizer").at("config").get<string>());
     string opt = baseConfig.at("optimizer").at("optimizer").get<string>();
     if (opt == "Direct") {
         bool trackProgress = optimizerConfig.at("output").at("progress");
@@ -71,7 +68,16 @@ Controller::Controller(const filesystem::path &configPath) {
         throw runtime_error("Optimzer not found: " + opt);
     }
 
+    // If StubController is used, initialization of SimulationRunner and Evaluation may be skipped
+    if (isStub) {
+        runner = unique_ptr<SimulationRunner>(nullptr);
+        evaluation = unique_ptr<Evaluation>(nullptr);
+        cout << "done\n" << endl;
+        return;
+    }
+
     // SimulationRunner settings
+    json runnerConfig = getConfigByPath(configPath.parent_path(), baseConfig.at("runner").at("config").get<string>());
     string run = baseConfig.at("runner").at("runner").get<string>();
     if (run == "Plexe") {
         unsigned int nrThreads = runnerConfig.at("nrThreads").get<unsigned int>();
@@ -91,6 +97,8 @@ Controller::Controller(const filesystem::path &configPath) {
     }
 
     // Evaluation settings
+    json evalConfig = getConfigByPath(configPath.parent_path(),
+                                      baseConfig.at("evaluation").at("config").get<string>());
     string eval = baseConfig.at("evaluation").at("evaluation").get<string>();
     if (eval == "ConstantHeadway") {
         string omnetppDirectory = evalConfig.at("omnetppDirectory").get<string>();

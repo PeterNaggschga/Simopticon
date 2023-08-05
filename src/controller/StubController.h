@@ -48,6 +48,8 @@ private:
      */
     void removeOldResultfiles() override;
 
+    void updateStatus() override;
+
 public:
     /**
      * Creates a StubController with the given config and function.

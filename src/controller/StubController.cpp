@@ -117,7 +117,8 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
 };
 
 StubController::StubController(const filesystem::path &configPath, const string &function) : f(functions[function]),
-                                                                                             Controller(configPath) {
+                                                                                             Controller(configPath,
+                                                                                                        true) {
 }
 
 map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
@@ -139,4 +140,13 @@ map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Stub
 }
 
 void StubController::removeOldResultfiles() {
+}
+
+void StubController::updateStatus() {
+    pair<vector<shared_ptr<Parameter>>, functionValue> p =
+            valueMap->getSize() != 0 ? valueMap->getTopVals().front() : make_pair(vector<shared_ptr<Parameter>>(),
+                                                                                  (functionValue) INFINITY);
+    bool stateChanged = stepState.stepChanged;
+    static Status empty = Status();
+    statusBar.updateStatus(optimizer.get(), &empty, &empty, p, stateChanged, stepState.get());
 }

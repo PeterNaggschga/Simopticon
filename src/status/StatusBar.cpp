@@ -1,8 +1,6 @@
 #include "StatusBar.h"
 
 #include "../optimizer/Optimizer.h"
-#include "../runner/SimulationRunner.h"
-#include "../evaluation/Evaluation.h"
 
 #include <iostream>
 
@@ -10,7 +8,7 @@ const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
 
 const string StatusBar::SMALL_DIVIDER = string(70, '-') + "\n";
 
-void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluation *eval,
+void StatusBar::updateStatus(Status *opt, Status *runner, Status *eval,
                              const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged,
                              step currentStep) {
     currentStep = stepChanged ? currentStep : lastStep;
@@ -19,11 +17,11 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluatio
         cout << "Current optimum:\n";
         printResult(currentVal.first, currentVal.second);
         cout << SMALL_DIVIDER;
-        printStatus(static_cast<Status *>(opt));
+        printStatus(opt);
         cout << SMALL_DIVIDER;
-        printStatus(static_cast<Status *>(runner));
+        printStatus(runner);
         cout << SMALL_DIVIDER;
-        printStatus(static_cast<Status *>(eval));
+        printStatus(eval);
         cout << SMALL_DIVIDER;
         cout << "Status: ";
         lastStatus = "";
@@ -31,20 +29,18 @@ void StatusBar::updateStatus(Optimizer *opt, SimulationRunner *runner, Evaluatio
     for (int i = 0; i < lastStatus.size(); ++i) {
         cout << "\b \b";
     }
-    Status *stat;
     switch (currentStep) {
         default:
         case OPTIMIZER:
-            stat = static_cast<Status *>(opt);
+            lastStatus = opt->getStatusBar();
             break;
         case RUNNER:
-            stat = static_cast<Status *>(runner);
+            lastStatus = runner->getStatusBar();
             break;
         case EVALUATION:
-            stat = static_cast<Status *>(eval);
+            lastStatus = eval->getStatusBar();
             break;
     }
-    lastStatus = stat->getStatusBar();
     lastVal = currentVal;
     lastStep = currentStep;
     cout << lastStatus;
