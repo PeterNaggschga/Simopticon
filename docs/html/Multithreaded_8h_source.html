@@ -134,25 +134,25 @@ $(document).ready(function(){initNavTree('Multithreaded_8h_source.html',''); ini
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * @param runs: Set of arguments on which #work should to be executed.</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">   48</a></span>&#160;    <span class="keyword">virtual</span> map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.html#a997dd9ec746bf7ae1ef78dff449d0e5d">runMultithreadedFunctions</a>(set&lt;Key, Compare&gt; runs);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f">runMultithreadedFunctions</a>(set&lt;Key, Compare&gt; runs);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * Function that is executed by each thread. As long as #queue is not empty, tasks are started.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * When #queue is empty, the processed results are returned</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">   55</a></span>&#160;    <span class="keyword">virtual</span> map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.html#aaf260ad3dd9510fc07d66c5a81ba3797">multithreadFunction</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.html#a4dcca101a87d5e05e7a4c7c9219b4ab5">multithreadFunction</a>();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * Creates a Multithreaded class that does not use more than the given number of threads.</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @param threads: Maximum number of threads to use.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classMultithreaded.html#abb856a33aad9a1cc76a91c15c40bef8e">   62</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMultithreaded.html#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threads);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMultithreaded.html#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threads);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;Multithreaded.tpp&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Multithreaded_8tpp.html">&quot;Multithreaded.tpp&quot;</a></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_MULTITHREADED_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
