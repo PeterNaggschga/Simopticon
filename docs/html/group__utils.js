@@ -3,15 +3,15 @@ var group__utils =
     [ "Types.h", "Types_8h.html", null ],
     [ "ComparisonFunctions.h", "ComparisonFunctions_8h.html", null ],
     [ "main.cpp", "main_8cpp.html", null ],
+    [ "Abortable", "classAbortable.html", [
+      [ "abort", "classAbortable.html#aa93818ee48fcc8f9ed845215d533436d", null ],
+      [ "aborted", "classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603", null ]
+    ] ],
     [ "PythonScript", "classPythonScript.html", [
       [ "PythonScript", "classPythonScript.html#a74bee58d7a6489a37a2200e9aeabb884", null ],
       [ "~PythonScript", "classPythonScript.html#a3fcfdd0cb55e0dba5b197625a005327d", null ],
       [ "pFunc", "classPythonScript.html#a33365a89ca9cfa267c7a4b9527f7c201", null ],
       [ "pModule", "classPythonScript.html#a06576c1093a5bdb725b0a872c93129e3", null ]
-    ] ],
-    [ "Abortable", "classAbortable.html", [
-      [ "abort", "classAbortable.html#aa93818ee48fcc8f9ed845215d533436d", null ],
-      [ "aborted", "classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603", null ]
     ] ],
     [ "Multithreaded", "classMultithreaded.html", [
       [ "Multithreaded", "classMultithreaded.html#abb856a33aad9a1cc76a91c15c40bef8e", null ],

@@ -127,9 +127,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa3a9d6b96b6d4d11adc0445d6e6e0119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classStubController.html" title="A class that mocks behaviour of Controller.">StubController</a> with the given config and function.  <a href="classStubController.html#aa3a9d6b96b6d4d11adc0445d6e6e0119">More...</a><br /></td></tr>
 <tr class="separator:aa3a9d6b96b6d4d11adc0445d6e6e0119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classController"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classController')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classController.html">Controller</a></td></tr>
-<tr class="memitem:a605a53c049fd81b198667cc1dd980fed inherit pub_methods_classController"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a605a53c049fd81b198667cc1dd980fed">Controller</a> (const filesystem::path &amp;configPath)</td></tr>
-<tr class="memdesc:a605a53c049fd81b198667cc1dd980fed inherit pub_methods_classController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> which uses <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a>, <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations.">SimulationRunner</a> and <a class="el" href="classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> as specified in the given config files.  <a href="classController.html#a605a53c049fd81b198667cc1dd980fed">More...</a><br /></td></tr>
-<tr class="separator:a605a53c049fd81b198667cc1dd980fed inherit pub_methods_classController"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bedbc3a1cc0e479302ec2b3e651e693 inherit pub_methods_classController"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a0bedbc3a1cc0e479302ec2b3e651e693">Controller</a> (const filesystem::path &amp;configPath, bool isStub=false)</td></tr>
+<tr class="memdesc:a0bedbc3a1cc0e479302ec2b3e651e693 inherit pub_methods_classController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> which uses <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a>, <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations.">SimulationRunner</a> and <a class="el" href="classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> as specified in the given config files.  <a href="classController.html#a0bedbc3a1cc0e479302ec2b3e651e693">More...</a><br /></td></tr>
+<tr class="separator:a0bedbc3a1cc0e479302ec2b3e651e693 inherit pub_methods_classController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a692f0f5dc600cdcb79786a31cf283ce1 inherit pub_methods_classController"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">run</a> ()</td></tr>
 <tr class="memdesc:a692f0f5dc600cdcb79786a31cf283ce1 inherit pub_methods_classController"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts optimization process by calling <a class="el" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4" title="Starts the optimization process.">Optimizer::runOptimization</a>.  <a href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">More...</a><br /></td></tr>
 <tr class="separator:a692f0f5dc600cdcb79786a31cf283ce1 inherit pub_methods_classController"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,6 +154,9 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:adc942af04e05cdce84f9db0cd6d788cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStubController.html#adc942af04e05cdce84f9db0cd6d788cf">removeOldResultfiles</a> () override</td></tr>
 <tr class="memdesc:adc942af04e05cdce84f9db0cd6d788cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does nothing, since no simulations are run and therefore no result files are created.  <a href="classStubController.html#adc942af04e05cdce84f9db0cd6d788cf">More...</a><br /></td></tr>
 <tr class="separator:adc942af04e05cdce84f9db0cd6d788cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7974121c2eaa51eb718e0eed6fa27e4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStubController.html#a7974121c2eaa51eb718e0eed6fa27e4b">updateStatus</a> () override</td></tr>
+<tr class="memdesc:a7974121c2eaa51eb718e0eed6fa27e4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the <a class="el" href="classController.html#a2c6f1dfb295e5533cfa9b2d7a061b326" title="StatusBar object used for output.">statusBar</a> using <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">StatusBar::updateStatus</a>.  <a href="classStubController.html#a7974121c2eaa51eb718e0eed6fa27e4b">More...</a><br /></td></tr>
+<tr class="separator:a7974121c2eaa51eb718e0eed6fa27e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -185,6 +188,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a2d698ae17fd1548139f68bc6c93dfd02 inherit pro_attribs_classController"><td class="memItemLeft" align="right" valign="top">unique_ptr&lt; <a class="el" href="classValueMap.html">ValueMap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02">valueMap</a></td></tr>
 <tr class="memdesc:a2d698ae17fd1548139f68bc6c93dfd02 inherit pro_attribs_classController"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classValueMap.html" title="A container managing a map data structure that maps Parameter combinations to their respective found ...">ValueMap</a> containing all values gathered by simulating and evaluating certain <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations.  <a href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02">More...</a><br /></td></tr>
 <tr class="separator:a2d698ae17fd1548139f68bc6c93dfd02 inherit pro_attribs_classController"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae16dcbfaf98be49180edea1bf00954ea inherit pro_attribs_classController"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structController_1_1stepstate.html">Controller::stepstate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__controller.html#gae16dcbfaf98be49180edea1bf00954ea">stepState</a></td></tr>
+<tr class="memdesc:gae16dcbfaf98be49180edea1bf00954ea inherit pro_attribs_classController"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object keeping track of the current optimization step.  <a href="group__controller.html#gae16dcbfaf98be49180edea1bf00954ea">More...</a><br /></td></tr>
+<tr class="separator:gae16dcbfaf98be49180edea1bf00954ea inherit pro_attribs_classController"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classAbortable"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classAbortable')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classAbortable.html">Abortable</a></td></tr>
 <tr class="memitem:a54a0450742a1bac15e66aebb5cbe4603 inherit pro_attribs_classAbortable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603">aborted</a> = false</td></tr>
 <tr class="memdesc:a54a0450742a1bac15e66aebb5cbe4603 inherit pro_attribs_classAbortable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines if the process has been aborted, i.e.  <a href="classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603">More...</a><br /></td></tr>
@@ -275,7 +281,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classController.html#ac7be0a2e1af37b2565323e5878483bb1">Controller</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00132">132</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00133">133</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
 
 </div>
 </div>
@@ -306,7 +312,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">Controller</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00141">141</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00142">142</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
 
 </div>
 </div>
@@ -345,7 +351,40 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classController.html#a8c5bc8e2aeca77614fd124fc579699d1">Controller</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00124">124</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00125">125</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7974121c2eaa51eb718e0eed6fa27e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7974121c2eaa51eb718e0eed6fa27e4b">&#9670;&nbsp;</a></span>updateStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubController::updateStatus </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">private</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the <a class="el" href="classController.html#a2c6f1dfb295e5533cfa9b2d7a061b326" title="StatusBar object used for output.">statusBar</a> using <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">StatusBar::updateStatus</a>. </p>
+
+<p>Reimplemented from <a class="el" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">Controller</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="StubController_8cpp_source.html#l00145">145</a> of file <a class="el" href="StubController_8cpp_source.html">StubController.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="Controller_8h_source.html#l00129">Controller::stepstate::get()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00104">ValueMap::getSize()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00108">ValueMap::getTopVals()</a>, <a class="el" href="Controller_8h_source.html#l00089">Controller::optimizer</a>, <a class="el" href="Controller_8h_source.html#l00085">Controller::statusBar</a>, <a class="el" href="Controller_8h_source.html#l00111">Controller::stepstate::stepChanged</a>, <a class="el" href="StatusBar_8cpp_source.html#l00011">StatusBar::updateStatus()</a>, and <a class="el" href="Controller_8h_source.html#l00101">Controller::valueMap</a>.</p>
 
 </div>
 </div>

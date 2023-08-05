@@ -92,8 +92,10 @@ $(document).ready(function(){initNavTree('structController_1_1stepstate.html',''
 </div><!--header-->
 <div class="contents">
 
-<p>A struct keeping track of the currently running optimization step for <a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e" title="Updates the output in the command line with gathered information from the used Optimizer,...">StatusBar::updateStatus</a>.  
+<p>A struct keeping track of the currently running optimization step for <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">StatusBar::updateStatus</a>.  
  <a href="structController_1_1stepstate.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="Controller_8h_source.html">Controller.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -114,9 +116,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a0ee8a7cbcb9a230ca066224a3a9ba0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A struct keeping track of the currently running optimization step for <a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e" title="Updates the output in the command line with gathered information from the used Optimizer,...">StatusBar::updateStatus</a>. </p>
+<div class="textblock"><p>A struct keeping track of the currently running optimization step for <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">StatusBar::updateStatus</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00051">51</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00107">107</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="abff53428282626b9af0e34b054c02675"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abff53428282626b9af0e34b054c02675">&#9670;&nbsp;</a></span>get()</h2>
@@ -144,9 +146,11 @@ Public Attributes</h2></td></tr>
 <p>Returns the value of <a class="el" href="structController_1_1stepstate.html#a0ee8a7cbcb9a230ca066224a3a9ba0af" title="Current step the optimization is in.">currentStep</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The step that is currently run. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00073">73</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00129">129</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
-<p class="reference">References <a class="el" href="Controller_8h_source.html#l00059">currentStep</a>, and <a class="el" href="Controller_8h_source.html#l00055">stepChanged</a>.</p>
+<p class="reference">References <a class="el" href="Controller_8h_source.html#l00115">currentStep</a>, and <a class="el" href="Controller_8h_source.html#l00111">stepChanged</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="StubController_8cpp_source.html#l00145">StubController::updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -175,11 +179,11 @@ Public Attributes</h2></td></tr>
 
 <p>Switches <a class="el" href="structController_1_1stepstate.html#a0ee8a7cbcb9a230ca066224a3a9ba0af" title="Current step the optimization is in.">currentStep</a> to the next step. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00064">64</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00120">120</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
-<p class="reference">References <a class="el" href="Controller_8h_source.html#l00059">currentStep</a>, and <a class="el" href="Controller_8h_source.html#l00055">stepChanged</a>.</p>
+<p class="reference">References <a class="el" href="Controller_8h_source.html#l00115">currentStep</a>, and <a class="el" href="Controller_8h_source.html#l00111">stepChanged</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Controller_8cpp_source.html#l00110">Controller::requestValues()</a>, and <a class="el" href="Controller_8cpp_source.html#l00148">Controller::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Controller_8cpp_source.html#l00118">Controller::requestValues()</a>, and <a class="el" href="Controller_8cpp_source.html#l00156">Controller::run()</a>.</p>
 
 </div>
 </div>
@@ -198,9 +202,9 @@ Public Attributes</h2></td></tr>
 
 <p>Current step the optimization is in. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00059">59</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00115">115</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Controller_8h_source.html#l00073">get()</a>, and <a class="el" href="Controller_8h_source.html#l00064">next()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Controller_8h_source.html#l00129">get()</a>, and <a class="el" href="Controller_8h_source.html#l00120">next()</a>.</p>
 
 </div>
 </div>
@@ -218,9 +222,9 @@ Public Attributes</h2></td></tr>
 
 <p>Defines if <a class="el" href="structController_1_1stepstate.html#a0ee8a7cbcb9a230ca066224a3a9ba0af" title="Current step the optimization is in.">currentStep</a> has changed since the last call to <a class="el" href="structController_1_1stepstate.html#abff53428282626b9af0e34b054c02675" title="Returns the value of currentStep.">get</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00055">55</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.html#l00111">111</a> of file <a class="el" href="Controller_8h_source.html">Controller.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Controller_8h_source.html#l00073">get()</a>, <a class="el" href="Controller_8h_source.html#l00064">next()</a>, and <a class="el" href="Controller_8cpp_source.html#l00210">Controller::updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Controller_8h_source.html#l00129">get()</a>, <a class="el" href="Controller_8h_source.html#l00120">next()</a>, <a class="el" href="Controller_8cpp_source.html#l00218">Controller::updateStatus()</a>, and <a class="el" href="StubController_8cpp_source.html#l00145">StubController::updateStatus()</a>.</p>
 
 </div>
 </div>

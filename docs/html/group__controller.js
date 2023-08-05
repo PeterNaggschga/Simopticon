@@ -1,7 +1,7 @@
 var group__controller =
 [
     [ "Controller", "classController.html", [
-      [ "Controller", "classController.html#a605a53c049fd81b198667cc1dd980fed", null ],
+      [ "Controller", "classController.html#a0bedbc3a1cc0e479302ec2b3e651e693", null ],
       [ "abort", "classController.html#a51557bd56ca512daeb02ac99d359b2e7", null ],
       [ "evaluate", "classController.html#ac7be0a2e1af37b2565323e5878483bb1", null ],
       [ "getValueMap", "classController.html#ae3ea03330051f982d4e9bee7ffad29d2", null ],
@@ -26,6 +26,15 @@ var group__controller =
       [ "currentStep", "structController_1_1stepstate.html#a0ee8a7cbcb9a230ca066224a3a9ba0af", null ],
       [ "stepChanged", "structController_1_1stepstate.html#a6343ff694edd3f21039f7c339790005a", null ]
     ] ],
+    [ "StubController", "classStubController.html", [
+      [ "StubController", "classStubController.html#aa3a9d6b96b6d4d11adc0445d6e6e0119", null ],
+      [ "evaluate", "classStubController.html#a5ff951d32c315e95c156d4c3aa0eb202", null ],
+      [ "removeOldResultfiles", "classStubController.html#adc942af04e05cdce84f9db0cd6d788cf", null ],
+      [ "runSimulations", "classStubController.html#ae90967cb11a8fd624728eb7c5dd9e1ef", null ],
+      [ "updateStatus", "classStubController.html#a7974121c2eaa51eb718e0eed6fa27e4b", null ],
+      [ "f", "classStubController.html#aecd2aeb9e0bc8b75d92a61d52c349d85", null ],
+      [ "functions", "classStubController.html#a573d135cdaeee648ab4fa2a762a593e4", null ]
+    ] ],
     [ "ValueMap", "classValueMap.html", [
       [ "ValueMap", "classValueMap.html#a0358924a0892af703067a64314de868c", null ],
       [ "addValue", "classValueMap.html#acd42c2c593539874b96e4aa6cb13ff35", null ],
@@ -45,14 +54,6 @@ var group__controller =
       [ "topVals", "classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa", null ],
       [ "upperValues", "classValueMap.html#add6b191069b0975d94d5bdb695992936", null ],
       [ "values", "classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e", null ]
-    ] ],
-    [ "StubController", "classStubController.html", [
-      [ "StubController", "classStubController.html#aa3a9d6b96b6d4d11adc0445d6e6e0119", null ],
-      [ "evaluate", "classStubController.html#a5ff951d32c315e95c156d4c3aa0eb202", null ],
-      [ "removeOldResultfiles", "classStubController.html#adc942af04e05cdce84f9db0cd6d788cf", null ],
-      [ "runSimulations", "classStubController.html#ae90967cb11a8fd624728eb7c5dd9e1ef", null ],
-      [ "f", "classStubController.html#aecd2aeb9e0bc8b75d92a61d52c349d85", null ],
-      [ "functions", "classStubController.html#a573d135cdaeee648ab4fa2a762a593e4", null ]
     ] ],
     [ "stepState", "group__controller.html#gae16dcbfaf98be49180edea1bf00954ea", null ]
 ];

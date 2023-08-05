@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('classStatusBar.html',''); initResizabl
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0f2d2e0130cf58a913bdc9ccea165e6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e">updateStatus</a> (<a class="el" href="classOptimizer.html">Optimizer</a> *opt, <a class="el" href="classSimulationRunner.html">SimulationRunner</a> *runner, <a class="el" href="classEvaluation.html">Evaluation</a> *eval, const pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &amp;currentVal, bool stepChanged=false, <a class="el" href="group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2">step</a> currentStep=INIT)</td></tr>
-<tr class="memdesc:a0f2d2e0130cf58a913bdc9ccea165e6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the output in the command line with gathered information from the used <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a>, <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations.">SimulationRunner</a> and <a class="el" href="classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a>.  <a href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e">More...</a><br /></td></tr>
-<tr class="separator:a0f2d2e0130cf58a913bdc9ccea165e6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107cb6b54d0c41491566e0b3395195a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8">updateStatus</a> (<a class="el" href="classStatus.html">Status</a> *opt, <a class="el" href="classStatus.html">Status</a> *runner, <a class="el" href="classStatus.html">Status</a> *eval, const pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &amp;currentVal, bool stepChanged=false, <a class="el" href="group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2">step</a> currentStep=INIT)</td></tr>
+<tr class="memdesc:a107cb6b54d0c41491566e0b3395195a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the output in the command line with gathered information from the used <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a>, <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations.">SimulationRunner</a> and <a class="el" href="classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a>.  <a href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8">More...</a><br /></td></tr>
+<tr class="separator:a107cb6b54d0c41491566e0b3395195a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -124,10 +124,10 @@ Static Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aecf510d876e286102eb5aa1de9b67d56"><td class="memItemLeft" align="right" valign="top">pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">lastVal</a></td></tr>
-<tr class="memdesc:aecf510d876e286102eb5aa1de9b67d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pair of <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and respective value used to discern if the best value has changed since the last call to <a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a>.  <a href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">More...</a><br /></td></tr>
+<tr class="memdesc:aecf510d876e286102eb5aa1de9b67d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pair of <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and respective value used to discern if the best value has changed since the last call to <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a>.  <a href="classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56">More...</a><br /></td></tr>
 <tr class="separator:aecf510d876e286102eb5aa1de9b67d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3277bbd17dbaf1d6d626c6ad625e575e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2">step</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusBar.html#a3277bbd17dbaf1d6d626c6ad625e575e">lastStep</a> = INIT</td></tr>
-<tr class="memdesc:a3277bbd17dbaf1d6d626c6ad625e575e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step which the optimization was in when <a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a> was called the last time.  <a href="classStatusBar.html#a3277bbd17dbaf1d6d626c6ad625e575e">More...</a><br /></td></tr>
+<tr class="memdesc:a3277bbd17dbaf1d6d626c6ad625e575e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step which the optimization was in when <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a> was called the last time.  <a href="classStatusBar.html#a3277bbd17dbaf1d6d626c6ad625e575e">More...</a><br /></td></tr>
 <tr class="separator:a3277bbd17dbaf1d6d626c6ad625e575e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb3579818701079d6ddce79081c05362"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatusBar.html#abb3579818701079d6ddce79081c05362">lastStatus</a></td></tr>
 <tr class="memdesc:abb3579818701079d6ddce79081c05362"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last values of the <a class="el" href="classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a> output (excluding value returned by <a class="el" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0" title="Returns a string representing the current progress of the calculations of the implementing component.">Status::getStatusBar</a>)  <a href="classStatusBar.html#abb3579818701079d6ddce79081c05362">More...</a><br /></td></tr>
@@ -190,11 +190,11 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00054">54</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00050">50</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Parameter_8cpp_source.html#l00023">Parameter::getConfig()</a>, <a class="el" href="Parameter_8cpp_source.html#l00019">Parameter::getUnit()</a>, and <a class="el" href="classParameter.html#a39f52082ae9e000edff3d517ef78a8bb">Parameter::getVal()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -230,7 +230,7 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00073">73</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00069">69</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="StatusBar_8h_source.html#l00040">LARGE_DIVIDER</a>.</p>
 
@@ -268,16 +268,16 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00068">68</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00064">64</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Status_8cpp_source.html#l00016">Status::getName()</a>, and <a class="el" href="Status_8cpp_source.html#l00008">Status::getStatus()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
-<a id="a0f2d2e0130cf58a913bdc9ccea165e6e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f2d2e0130cf58a913bdc9ccea165e6e">&#9670;&nbsp;</a></span>updateStatus()</h2>
+<a id="a107cb6b54d0c41491566e0b3395195a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107cb6b54d0c41491566e0b3395195a8">&#9670;&nbsp;</a></span>updateStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -285,19 +285,19 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void StatusBar::updateStatus </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classOptimizer.html">Optimizer</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classStatus.html">Status</a> *&#160;</td>
           <td class="paramname"><em>opt</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classSimulationRunner.html">SimulationRunner</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classStatus.html">Status</a> *&#160;</td>
           <td class="paramname"><em>runner</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classEvaluation.html">Evaluation</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classStatus.html">Status</a> *&#160;</td>
           <td class="paramname"><em>eval</em>, </td>
         </tr>
         <tr>
@@ -339,9 +339,11 @@ Static Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00013">13</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StatusBar_8cpp_source.html#l00011">11</a> of file <a class="el" href="StatusBar_8cpp_source.html">StatusBar.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Status_8cpp_source.html#l00012">Status::getStatusBar()</a>, <a class="el" href="StatusBar_8h_source.html#l00040">LARGE_DIVIDER</a>, <a class="el" href="StatusBar_8h_source.html#l00057">lastStatus</a>, <a class="el" href="StatusBar_8h_source.html#l00053">lastStep</a>, <a class="el" href="StatusBar_8h_source.html#l00049">lastVal</a>, <a class="el" href="StatusBar_8cpp_source.html#l00054">printResult()</a>, <a class="el" href="StatusBar_8cpp_source.html#l00068">printStatus()</a>, and <a class="el" href="StatusBar_8h_source.html#l00044">SMALL_DIVIDER</a>.</p>
+<p class="reference">References <a class="el" href="Status_8cpp_source.html#l00012">Status::getStatusBar()</a>, <a class="el" href="StatusBar_8h_source.html#l00040">LARGE_DIVIDER</a>, <a class="el" href="StatusBar_8h_source.html#l00057">lastStatus</a>, <a class="el" href="StatusBar_8h_source.html#l00053">lastStep</a>, <a class="el" href="StatusBar_8h_source.html#l00049">lastVal</a>, <a class="el" href="StatusBar_8cpp_source.html#l00050">printResult()</a>, <a class="el" href="StatusBar_8cpp_source.html#l00064">printStatus()</a>, and <a class="el" href="StatusBar_8h_source.html#l00044">SMALL_DIVIDER</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="StubController_8cpp_source.html#l00145">StubController::updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -370,7 +372,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="StatusBar_8h_source.html#l00040">40</a> of file <a class="el" href="StatusBar_8h_source.html">StatusBar.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00073">printResults()</a>, and <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00069">printResults()</a>, and <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -398,7 +400,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="StatusBar_8h_source.html#l00057">57</a> of file <a class="el" href="StatusBar_8h_source.html">StatusBar.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -422,11 +424,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Step which the optimization was in when <a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a> was called the last time. </p>
+<p>Step which the optimization was in when <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a> was called the last time. </p>
 
 <p class="definition">Definition at line <a class="el" href="StatusBar_8h_source.html#l00053">53</a> of file <a class="el" href="StatusBar_8h_source.html">StatusBar.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -450,11 +452,11 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pair of <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and respective value used to discern if the best value has changed since the last call to <a class="el" href="classStatusBar.html#a0f2d2e0130cf58a913bdc9ccea165e6e" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a>. </p>
+<p>Pair of <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and respective value used to discern if the best value has changed since the last call to <a class="el" href="classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8" title="Updates the output in the command line with gathered information from the used Optimizer,...">updateStatus</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="StatusBar_8h_source.html#l00049">49</a> of file <a class="el" href="StatusBar_8h_source.html">StatusBar.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
@@ -482,7 +484,7 @@ Static Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="StatusBar_8h_source.html#l00044">44</a> of file <a class="el" href="StatusBar_8h_source.html">StatusBar.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00013">updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="StatusBar_8cpp_source.html#l00011">updateStatus()</a>.</p>
 
 </div>
 </div>
