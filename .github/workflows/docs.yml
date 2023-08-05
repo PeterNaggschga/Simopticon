@@ -23,6 +23,8 @@ concurrency:
 jobs:
   update-documentation:
     runs-on: ubuntu-latest
+    outputs:
+      new_sha: ${{ steps.sha.outputs.SHA }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -54,13 +56,28 @@ jobs:
         shell: bash
 
       - name: Push changes
+        uses: actions-x/commit@v6
+        with:
+          name: github-actions
+          email: action@github.com
+          message: updated API documentation
+          files: docs
+          force: true
+#        run: |
+#          git config --global user.name "PeterNaggschga"
+#          git config --global user.email "rep.akhcsztan@gmail.com"
+#          git add -f docs
+#          git commit -m "updated API documentation"
+#          git push
+#        shell: bash
+
+      - name: Get SHA
+        id: sha
         run: |
-          git config --global user.name "PeterNaggschga"
-          git config --global user.email "rep.akhcsztan@gmail.com"
-          git add -f docs
-          git commit -m "updated API documentation"
-          git push
-        shell: bash
+          sha_new=$(git rev-parse HEAD)
+          echo $sha_new
+          echo "::set-output name=SHA::$sha_new"
+          echo ${{ steps.sha.outputs.SHA }}
       
   deploy:
     needs: update-documentation
@@ -72,11 +89,12 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           sparse-checkout: ./docs/html
+          ref: ${{ steps.sha.outputs.SHA }}
 
-      - name: Checkout Head
-        run: git checkout HEAD^
+#      - name: Checkout Head
+#        run: git checkout HEAD^
             
       - name: Setup Pages
         uses: actions/configure-pages@v3
