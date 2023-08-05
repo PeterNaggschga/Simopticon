@@ -10,8 +10,9 @@ var searchData=
   ['dircoordinate_41',['dirCoordinate',['../DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0',1,'DirectTypes.h']]],
   ['direct_42',['Direct',['../group__direct.html',1,'']]],
   ['directcomparisonfunctions_2eh_43',['DirectComparisonFunctions.h',['../DirectComparisonFunctions_8h.html',1,'']]],
-  ['directoptimizer_44',['DirectOptimizer',['../classDirectOptimizer.html#a0d055e54d255ed9f4576dcea97ec38f4',1,'DirectOptimizer::DirectOptimizer()'],['../classDirectOptimizer.html',1,'DirectOptimizer']]],
+  ['directoptimizer_44',['DirectOptimizer',['../classDirectOptimizer.html',1,'DirectOptimizer'],['../classDirectOptimizer.html#a0d055e54d255ed9f4576dcea97ec38f4',1,'DirectOptimizer::DirectOptimizer()']]],
   ['directtypes_2eh_45',['DirectTypes.h',['../DirectTypes_8h.html',1,'']]],
-  ['discreteparameter_46',['DiscreteParameter',['../classDiscreteParameter.html#a7c77d05d06207d5cb5bde5bab608076c',1,'DiscreteParameter::DiscreteParameter(shared_ptr&lt; ParameterDefinition &gt; def, double step, double value)'],['../classDiscreteParameter.html#aaa410a8904a6c5ef71563633de7fc8c6',1,'DiscreteParameter::DiscreteParameter(shared_ptr&lt; ParameterDefinition &gt; def, double step)'],['../classDiscreteParameter.html',1,'DiscreteParameter']]],
-  ['divide_47',['divide',['../classHyRect.html#af0eaedc8ac149f85abf57be89889a26e',1,'HyRect']]]
+  ['discreteparameter_46',['DiscreteParameter',['../classDiscreteParameter.html',1,'DiscreteParameter'],['../classDiscreteParameter.html#aaa410a8904a6c5ef71563633de7fc8c6',1,'DiscreteParameter::DiscreteParameter(shared_ptr&lt; ParameterDefinition &gt; def, double step)'],['../classDiscreteParameter.html#a7c77d05d06207d5cb5bde5bab608076c',1,'DiscreteParameter::DiscreteParameter(shared_ptr&lt; ParameterDefinition &gt; def, double step, double value)']]],
+  ['divide_47',['divide',['../classHyRect.html#af0eaedc8ac149f85abf57be89889a26e',1,'HyRect']]],
+  ['documentation_48',['Documentation',['../index.html',1,'']]]
 ];

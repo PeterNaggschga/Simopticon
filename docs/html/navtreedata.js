@@ -25,18 +25,20 @@
 var NAVTREE =
 [
   [ "Simopticon", "index.html", [
-    [ "Overview", "index.html#autotoc_md3", null ],
-    [ "Setup", "index.html#autotoc_md5", [
-      [ "Requirements", "index.html#autotoc_md6", null ],
-      [ "Installation", "index.html#autotoc_md7", null ]
-    ] ],
-    [ "Usage", "index.html#autotoc_md9", [
-      [ "Configuration", "index.html#autotoc_md10", null ],
-      [ "Optimization", "index.html#autotoc_md11", null ]
-    ] ],
-    [ "Extension", "index.html#autotoc_md13", [
-      [ "Development", "index.html#autotoc_md14", null ],
-      [ "Integration", "index.html#autotoc_md15", null ]
+    [ "Documentation", "index.html", [
+      [ "Overview", "index.html#autotoc_md3", null ],
+      [ "Setup", "index.html#autotoc_md5", [
+        [ "Requirements", "index.html#autotoc_md6", null ],
+        [ "Installation", "index.html#autotoc_md7", null ]
+      ] ],
+      [ "Usage", "index.html#autotoc_md9", [
+        [ "Configuration", "index.html#autotoc_md10", null ],
+        [ "Optimization", "index.html#autotoc_md11", null ]
+      ] ],
+      [ "Extension", "index.html#autotoc_md13", [
+        [ "Development", "index.html#autotoc_md14", null ],
+        [ "Integration", "index.html#autotoc_md15", null ]
+      ] ]
     ] ],
     [ "Todo List", "todo.html", null ],
     [ "Bug List", "bug.html", null ],

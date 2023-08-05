@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simopticon_511',['Simopticon',['../index.html',1,'']]]
+  ['documentation_511',['Documentation',['../index.html',1,'']]]
 ];
