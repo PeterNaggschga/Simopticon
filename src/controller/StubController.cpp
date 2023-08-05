@@ -41,7 +41,7 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
         make_pair("quadratic", [](const vector<shared_ptr<Parameter>> &v) {
             functionValue val = 0;
             for (const auto &par: v) {
-                val += par->getVal() * par->getVal();
+                val += (functionValue) par->getVal() * par->getVal();
             }
             return val;
         }),
@@ -88,7 +88,7 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
             functionValue res = pow(v[1]->getVal() - ((functionValue) 5.1 / (4 * pow((functionValue) M_PI, 2))) *
                                                      pow(v[0]->getVal(), 2) +
                                     ((functionValue) 5 / M_PI) * v[0]->getVal() - 6, 2);
-            return res + 10 * (1 - pow(8 * M_PI, -1)) * cos(v[0]->getVal()) + 10;
+            return res + (functionValue) 10 * (1 - pow(8 * M_PI, -1)) * cos(v[0]->getVal()) + 10;
         }),
         make_pair("goldprice", [](const vector<shared_ptr<Parameter>> &v) {
             functionValue x1 = v[0]->getVal();
@@ -106,11 +106,11 @@ map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> StubControll
         make_pair("shubert", [](const vector<shared_ptr<Parameter>> &v) {
             functionValue sum1 = 0;
             for (int i = 1; i <= 5; ++i) {
-                sum1 += i * cos((i + 1) * v[0]->getVal() + i);
+                sum1 += (functionValue) i * cos((i + 1) * v[0]->getVal() + i);
             }
             functionValue sum2 = 0;
             for (int i = 1; i <= 5; ++i) {
-                sum2 += i * cos((i + 1) * v[1]->getVal() + i);
+                sum2 += (functionValue) i * cos((i + 1) * v[1]->getVal() + i);
             }
             return sum1 * sum2;
         })
