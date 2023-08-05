@@ -22,7 +22,7 @@ using namespace std;
 /**
  * This module contains components capable of finding the minimum of a function only defined through argument-value pairs.
  * Implementations must extend Optimizer.
- * @defgroup optimizer
+ * @defgroup optimizer optimizer
  */
 
 /**

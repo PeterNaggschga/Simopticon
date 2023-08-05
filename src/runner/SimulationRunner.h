@@ -20,7 +20,7 @@ using namespace std;
 /**
  * This module contains components capable of automatically running simulations with certain Parameter combinations.
  * Implementations must extend SimulationRunner.
- * @defgroup runner
+ * @defgroup runner runner
  */
 
 /**

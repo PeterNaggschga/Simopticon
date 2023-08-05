@@ -13,7 +13,7 @@ using namespace std;
 
 /**
  * This module defines framework-wide representations of the optimized parameters.
- * @defgroup parameters
+ * @defgroup parameters parameters
  */
 
 /**

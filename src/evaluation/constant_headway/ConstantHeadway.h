@@ -14,7 +14,7 @@
 
 /**
  * This module extends Evaluation to interface with a Python script evaluating the performance of platooning simulations with Plexe by analyzing the deviation of vehicles from the pre-specified gap.
- * @defgroup constant_headway
+ * @defgroup constant_headway constant_headway
  * @ingroup evaluation
  */
 

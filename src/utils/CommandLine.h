@@ -8,7 +8,7 @@ using namespace std;
 
 /**
  * This module provides general functionality and classes that may be useful to classes in any other package.
- * @defgroup utils
+ * @defgroup utils utils
  */
 
 /**

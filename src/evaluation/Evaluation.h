@@ -13,7 +13,7 @@ using namespace std;
 /**
  * This module contains components capable of evaluating the performance of simulations by rating simulation data with a number value.
  * Implementations must extend Evaluation.
- * @defgroup evaluation
+ * @defgroup evaluation evaluation
  */
 
 /**

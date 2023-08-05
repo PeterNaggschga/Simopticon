@@ -31,7 +31,7 @@ void interruptHandler([[maybe_unused]] int s) {
  * Instantiates Controller or StubController and kicks of the optimization using Controller#run.
  * @param argc: Number of command line arguments.
  * @param argv: Array of command line arguments.
- * @return Status code.
+ * @return %Status code.
  */
 int main(int argc, char **argv) {
     if (argc < 2) {

@@ -15,7 +15,7 @@ using namespace std;
 
 /**
  * This module contains the definition of a tree-like data structure representing the partition of a search space into multiple hyper-rectangles (HyRect).
- * @defgroup hyrect
+ * @defgroup hyrect hyrect
  * @ingroup direct
  */
 

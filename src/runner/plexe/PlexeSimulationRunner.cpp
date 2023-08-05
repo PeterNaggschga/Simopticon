@@ -58,7 +58,8 @@ size_t PlexeSimulationRunner::getRunId() {
     return result;
 }
 
-bool PlexeSimulationRunner::work(pair<filesystem::path, pair<string, unsigned int>> arg) {
+bool
+PlexeSimulationRunner::work(std::pair<std::filesystem::path, std::pair<std::basic_string<char>, unsigned int>> arg) {
     string command = "cd " + editor.getDir().string() + "; ";
     command += "./run -M release -s -u Cmdenv -c " + arg.second.first;
     command += " -r " + to_string(arg.second.second) + " " + arg.first.string();

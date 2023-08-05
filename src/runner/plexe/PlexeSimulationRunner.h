@@ -10,7 +10,7 @@
 
 /**
  * This module extends SimulationRunner to interface with the Plexe framework to enable the optimization of platooning controllers.
- * @defgroup plexe
+ * @defgroup plexe plexe
  * @ingroup runner
  */
 
