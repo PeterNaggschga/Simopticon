@@ -17,6 +17,13 @@ var group__parameters =
       [ "setVal", "classParameter.html#a4299bc2da9ef07c8a94ac5017ef7668b", null ],
       [ "definition", "classParameter.html#a6b15b5be5cd15f7f5421ef765e4867b6", null ]
     ] ],
+    [ "ContinuousParameter", "classContinuousParameter.html", [
+      [ "ContinuousParameter", "classContinuousParameter.html#ad81b84aad78c0ee79f453c08a0453ed7", null ],
+      [ "ContinuousParameter", "classContinuousParameter.html#ae7ad7597ea64670079afa3d3b552070b", null ],
+      [ "getVal", "classContinuousParameter.html#ab82e895a47c2f7952fae9bcade6804bf", null ],
+      [ "setVal", "classContinuousParameter.html#a82f428c7d0f8d76fb9084e40838ab545", null ],
+      [ "val", "classContinuousParameter.html#a0af5c75e7757e27c2b7f0cba1e7cefb0", null ]
+    ] ],
     [ "ParameterDefinition", "classParameterDefinition.html", [
       [ "ParameterDefinition", "classParameterDefinition.html#a8391a8243a0b88fcd6d9e1a2ed5b141a", null ],
       [ "getConfig", "classParameterDefinition.html#aba470d79fd5afa92b9f3557e080b15a0", null ],
@@ -27,13 +34,6 @@ var group__parameters =
       [ "max", "classParameterDefinition.html#a296c62a39c6adad6da5af3ead874ddc3", null ],
       [ "min", "classParameterDefinition.html#aab20725ea78ebd717b3fe5c9344e846c", null ],
       [ "unit", "classParameterDefinition.html#ab4bb2aa11569c4eaa5b8ebb8c0739ee8", null ]
-    ] ],
-    [ "ContinuousParameter", "classContinuousParameter.html", [
-      [ "ContinuousParameter", "classContinuousParameter.html#ad81b84aad78c0ee79f453c08a0453ed7", null ],
-      [ "ContinuousParameter", "classContinuousParameter.html#ae7ad7597ea64670079afa3d3b552070b", null ],
-      [ "getVal", "classContinuousParameter.html#ab82e895a47c2f7952fae9bcade6804bf", null ],
-      [ "setVal", "classContinuousParameter.html#a82f428c7d0f8d76fb9084e40838ab545", null ],
-      [ "val", "classContinuousParameter.html#a0af5c75e7757e27c2b7f0cba1e7cefb0", null ]
     ] ],
     [ "DiscreteParameter", "classDiscreteParameter.html", [
       [ "DiscreteParameter", "classDiscreteParameter.html#a7c77d05d06207d5cb5bde5bab608076c", null ],
