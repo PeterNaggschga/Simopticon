@@ -1,6 +1,6 @@
 var group__direct =
 [
-    [ "Hyrect", "group__hyrect.html", "group__hyrect" ],
+    [ "hyrect", "group__hyrect.html", "group__hyrect" ],
     [ "DirectTypes.h", "DirectTypes_8h.html", null ],
     [ "DirectComparisonFunctions.h", "DirectComparisonFunctions_8h.html", null ],
     [ "DirectOptimizer", "classDirectOptimizer.html", [

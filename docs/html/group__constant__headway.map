@@ -1,4 +1,4 @@
-<map id="Constant_headway" name="Constant_headway">
+<map id="constant_headway" name="constant_headway">
 <area shape="rect" id="node1" href="$group__evaluation.html" title="This module contains components capable of evaluating the performance of simulations by rating simula..." alt="" coords="5,5,96,31"/>
-<area shape="rect" id="node2" title="This module extends Evaluation to interface with a Python script evaluating the performance of platoo..." alt="" coords="144,5,291,31"/>
+<area shape="rect" id="node2" title="This module extends Evaluation to interface with a Python script evaluating the performance of platoo..." alt="" coords="144,5,288,31"/>
 </map>

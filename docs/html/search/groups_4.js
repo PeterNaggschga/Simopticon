@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optimizer_505',['Optimizer',['../group__optimizer.html',1,'']]]
+  ['optimizer_503',['optimizer',['../group__optimizer.html',1,'']]]
 ];

@@ -11,6 +11,5 @@ var searchData=
   ['operator_3e_3d_152',['operator&gt;=',['../classParameter.html#ac18e33c9e734edd27753dba28f7c6738',1,'Parameter::operator&gt;=()'],['../classHyRect.html#a6a06a98c6020a6497f8463d7459ca473',1,'HyRect::operator&gt;=()']]],
   ['optimalrectangles_153',['optimalRectangles',['../classDirectOptimizer.html#a9a4caf5065f6c3e111898a32c51f2cd1',1,'DirectOptimizer']]],
   ['optimizer_154',['Optimizer',['../classOptimizer.html',1,'Optimizer'],['../classOptimizer.html#ad082211744ae021d540f3816c9b935d0',1,'Optimizer::Optimizer()']]],
-  ['optimizer_155',['optimizer',['../classController.html#a76a1904fb9734e0ca27e0ca9609a5d47',1,'Controller']]],
-  ['optimizer_156',['Optimizer',['../group__optimizer.html',1,'']]]
+  ['optimizer_155',['optimizer',['../classController.html#a76a1904fb9734e0ca27e0ca9609a5d47',1,'Controller::optimizer()'],['../group__optimizer.html',1,'(Global Namespace)']]]
 ];

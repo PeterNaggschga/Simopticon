@@ -1,10 +1,10 @@
 var modules =
 [
-    [ "Controller", "group__controller.html", "group__controller" ],
-    [ "Parameters", "group__parameters.html", "group__parameters" ],
-    [ "Evaluation", "group__evaluation.html", "group__evaluation" ],
-    [ "Runner", "group__runner.html", "group__runner" ],
-    [ "Status", "group__status.html", "group__status" ],
-    [ "Optimizer", "group__optimizer.html", "group__optimizer" ],
-    [ "Utils", "group__utils.html", "group__utils" ]
+    [ "controller", "group__controller.html", "group__controller" ],
+    [ "parameters", "group__parameters.html", "group__parameters" ],
+    [ "evaluation", "group__evaluation.html", "group__evaluation" ],
+    [ "runner", "group__runner.html", "group__runner" ],
+    [ "status", "group__status.html", "group__status" ],
+    [ "optimizer", "group__optimizer.html", "group__optimizer" ],
+    [ "utils", "group__utils.html", "group__utils" ]
 ];

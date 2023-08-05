@@ -1,6 +1,6 @@
 var group__optimizer =
 [
-    [ "Direct", "group__direct.html", "group__direct" ],
+    [ "direct", "group__direct.html", "group__direct" ],
     [ "Optimizer", "classOptimizer.html", [
       [ "Optimizer", "classOptimizer.html#ad082211744ae021d540f3816c9b935d0", null ],
       [ "~Optimizer", "classOptimizer.html#a29eeb57d268354286bf7673f70c24b5c", null ],

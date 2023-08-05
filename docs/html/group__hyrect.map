@@ -1,4 +1,4 @@
-<map id="Hyrect" name="Hyrect">
-<area shape="rect" id="node1" href="$group__direct.html" title="This module extends Optimizer to use a variant of the DIRECT algorithm by Jones et al." alt="" coords="5,5,67,31"/>
-<area shape="rect" id="node2" title="This module contains the definition of a tree&#45;like data structure representing the partition of a sea..." alt="" coords="115,5,180,31"/>
+<map id="hyrect" name="hyrect">
+<area shape="rect" id="node1" href="$group__direct.html" title="This module extends Optimizer to use a variant of the DIRECT algorithm by Jones et al." alt="" coords="5,5,64,31"/>
+<area shape="rect" id="node2" title="This module contains the definition of a tree&#45;like data structure representing the partition of a sea..." alt="" coords="112,5,175,31"/>
 </map>

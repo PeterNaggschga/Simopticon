@@ -1,6 +1,6 @@
 var group__evaluation =
 [
-    [ "Constant_headway", "group__constant__headway.html", "group__constant__headway" ],
+    [ "constant_headway", "group__constant__headway.html", "group__constant__headway" ],
     [ "Evaluation", "classEvaluation.html", [
       [ "~Evaluation", "classEvaluation.html#a28078181fca504f35af51149ad75fb8f", null ],
       [ "getName", "classEvaluation.html#a479b98a82908b3d5c72d8a73e24b78a1", null ],

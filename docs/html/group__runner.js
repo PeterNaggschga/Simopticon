@@ -1,6 +1,6 @@
 var group__runner =
 [
-    [ "Plexe", "group__plexe.html", "group__plexe" ],
+    [ "plexe", "group__plexe.html", "group__plexe" ],
     [ "SimulationRunner", "classSimulationRunner.html", [
       [ "SimulationRunner", "classSimulationRunner.html#a2a41b4b74ffb111ede54937551266a53", null ],
       [ "~SimulationRunner", "classSimulationRunner.html#a4b9830121d4d31e1ee613642c80ef7e5", null ],
