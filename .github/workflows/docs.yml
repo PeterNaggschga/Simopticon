@@ -24,7 +24,7 @@ jobs:
   update-documentation:
     runs-on: ubuntu-latest
     outputs:
-      new_sha: ${{ steps.sha.outputs.SHA }}
+      SHA: ${{ steps.sha.outputs.SHA }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -92,8 +92,8 @@ jobs:
           SHA1: ${{ needs.update-documentation.outputs.sha_new }}
           SHA2: ${{ needs.update-documentation.outputs.SHA }}
         run: |
-          echo "$SHA1"
-          echo $SHA2
+          echo "${{ needs.update-documentation.outputs.sha_new }}"
+          echo "${{ needs.update-documentation.outputs.SHA }}"
       
       - name: Checkout Repo
         uses: actions/checkout@v3
