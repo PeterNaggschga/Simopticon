@@ -63,19 +63,11 @@ jobs:
           message: updated API documentation
           files: docs
           force: true
-#        run: |
-#          git config --global user.name "PeterNaggschga"
-#          git config --global user.email "rep.akhcsztan@gmail.com"
-#          git add -f docs
-#          git commit -m "updated API documentation"
-#          git push
-#        shell: bash
 
       - name: Get SHA
         id: sha
         run: |
           sha_new=$(git rev-parse HEAD)
-          echo $sha_new
           echo "SHA=$sha_new" >> $GITHUB_OUTPUT
           echo ${{ steps.sha.outputs.SHA }}
       
@@ -88,12 +80,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - env:
-          SHA1: ${{ needs.update-documentation.outputs.sha_new }}
-          SHA2: ${{ needs.update-documentation.outputs.SHA }}
-        run: |
-          echo "${{ needs.update-documentation.outputs.SHA }}"
-      
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
@@ -101,9 +87,6 @@ jobs:
           sparse-checkout: ./docs/html
           ref: ${{ needs.update-documentation.outputs.SHA }}
 
-#      - name: Checkout Head
-#        run: git checkout HEAD^
-            
       - name: Setup Pages
         uses: actions/configure-pages@v3
         
