@@ -88,7 +88,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ steps.sha.outputs.SHA }}
+      - run: echo ${{ needs.update-documentation.outputs.sha_new }}
+      - run: echo ${{ needs.update-documentation.outputs.SHA }}
       
       - name: Checkout Repo
         uses: actions/checkout@v3
