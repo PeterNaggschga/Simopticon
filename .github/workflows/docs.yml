@@ -92,7 +92,6 @@ jobs:
           SHA1: ${{ needs.update-documentation.outputs.sha_new }}
           SHA2: ${{ needs.update-documentation.outputs.SHA }}
         run: |
-          echo "${{ needs.update-documentation.outputs.sha_new }}"
           echo "${{ needs.update-documentation.outputs.SHA }}"
       
       - name: Checkout Repo
@@ -100,7 +99,7 @@ jobs:
         with:
           fetch-depth: 0
           sparse-checkout: ./docs/html
-          ref: ${{ steps.sha.outputs.new_sha }}
+          ref: ${{ needs.update-documentation.outputs.SHA }}
 
 #      - name: Checkout Head
 #        run: git checkout HEAD^
