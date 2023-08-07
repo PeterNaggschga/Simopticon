@@ -1,8 +1,8 @@
 <map id="/home/runner/work/simopticon/simopticon/src/optimizer/direct/DirectComparisonFunctions.h" name="/home/runner/work/simopticon/simopticon/src/optimizer/direct/DirectComparisonFunctions.h">
-<area shape="rect" id="node1" title="In this file comparison functions are defined which are used in the direct module." alt="" coords="321,5,580,61"/>
-<area shape="rect" id="node2" href="$HyRect_8h_source.html" title=" " alt="" coords="387,109,514,136"/>
-<area shape="rect" id="node3" href="$Types_8h.html" title="In this file types are defined which should be used across the whole framework." alt="" coords="5,184,112,211"/>
-<area shape="rect" id="node5" href="$DirectTypes_8h.html" title="In this file types are defined which are in the direct module." alt="" coords="136,184,259,211"/>
+<area shape="rect" id="node1" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="321,5,580,61"/>
+<area shape="rect" id="node2" href="$HyRect_8h.html" title="In this file, the header of the HyRect class is defined." alt="" coords="387,109,514,136"/>
+<area shape="rect" id="node3" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="5,184,112,211"/>
+<area shape="rect" id="node5" href="$DirectTypes_8h.html" title="In this file, types are defined which are used in the direct module." alt="" coords="136,184,259,211"/>
 <area shape="rect" id="node6" title=" " alt="" coords="283,184,357,211"/>
 <area shape="rect" id="node7" title=" " alt="" coords="381,184,437,211"/>
 <area shape="rect" id="node8" title=" " alt="" coords="462,184,525,211"/>

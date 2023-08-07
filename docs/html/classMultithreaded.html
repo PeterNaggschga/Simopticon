@@ -144,7 +144,7 @@ class Multithreaded&lt; Key, T, Compare, Allocator &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00024">24</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00028">28</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abb856a33aad9a1cc76a91c15c40bef8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb856a33aad9a1cc76a91c15c40bef8e">&#9670;&nbsp;</a></span>Multithreaded()</h2>
@@ -180,11 +180,11 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00006">6</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00011">11</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00037">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>.</p>
+<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00041">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimulationRunner_8cpp_source.html#l00006">SimulationRunner::SimulationRunner()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimulationRunner_8cpp_source.html#l00011">SimulationRunner::SimulationRunner()</a>.</p>
 
 </div>
 </div>
@@ -214,11 +214,11 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
 <p>Function that is executed by each thread. </p>
 <p>As long as <a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e" title="ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.">queue</a> is not empty, tasks are started. When <a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e" title="ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.">queue</a> is empty, the processed results are returned </p><dl class="section return"><dt>Returns</dt><dd>A map which maps arguments to their respective calculated values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00030">30</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00035">35</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00041">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>, and <a class="el" href="classMultithreaded.html#a295f1db64506dc4054dc5d7bac9ba231">Multithreaded&lt; Key, T, Compare, Allocator &gt;::work()</a>.</p>
+<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00045">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>, and <a class="el" href="classMultithreaded.html#a295f1db64506dc4054dc5d7bac9ba231">Multithreaded&lt; Key, T, Compare, Allocator &gt;::work()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00011">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00016">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
 
 </div>
 </div>
@@ -257,11 +257,11 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A map which maps arguments to their respective calculated values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00011">11</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00016">16</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Multithreaded_8tpp_source.html#l00030">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, <a class="el" href="Multithreaded_8h_source.html#l00037">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>, and <a class="el" href="Multithreaded_8h_source.html#l00041">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>.</p>
+<p class="reference">References <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, <a class="el" href="Multithreaded_8h_source.html#l00041">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>, and <a class="el" href="Multithreaded_8h_source.html#l00045">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="SimulationRunner_8cpp_source.html#l00010">SimulationRunner::runSimulations()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="SimulationRunner_8cpp_source.html#l00015">SimulationRunner::runSimulations()</a>.</p>
 
 </div>
 </div>
@@ -300,7 +300,7 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return value of the concurrently executed function. </dd></dl>
 
-<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00030">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>.</p>
 
 </div>
 </div>
@@ -329,9 +329,9 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 
 <p>Maximum number of concurrent threads to be used in ThreadPool. </p>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00037">37</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00041">41</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00006">Multithreaded&lt; Key, T, Compare, Allocator &gt;::Multithreaded()</a>, and <a class="el" href="Multithreaded_8tpp_source.html#l00011">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00011">Multithreaded&lt; Key, T, Compare, Allocator &gt;::Multithreaded()</a>, and <a class="el" href="Multithreaded_8tpp_source.html#l00016">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
 
 </div>
 </div>
@@ -359,9 +359,9 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 
 <p><a class="el" href="classThreadsafeQueue.html" title="A container class of a queue that is safe for concurrent access of different threads.">ThreadsafeQueue</a> containing the arguments that have to be processed by the ThreadPool. </p>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00041">41</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00045">45</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00030">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, and <a class="el" href="Multithreaded_8tpp_source.html#l00011">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, and <a class="el" href="Multithreaded_8tpp_source.html#l00016">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
 
 </div>
 </div>

@@ -87,31 +87,36 @@ $(document).ready(function(){initNavTree('CommandLine_8cpp_source.html',''); ini
 <div class="title">CommandLine.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="CommandLine_8h.html">&quot;CommandLine.h&quot;</a></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">array</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdexcept</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classCommandLine.html#aeb9190b57a50a99bc152247712ccdba0">    7</a></span>&#160;unique_ptr&lt;string&gt; <a class="code" href="classCommandLine.html">CommandLine</a>::<a class="code" href="classCommandLine.html#aeb9190b57a50a99bc152247712ccdba0">exec</a>(string cmd) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    array&lt;<span class="keywordtype">char</span>, 128&gt; buffer{};</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    cmd += <span class="stringliteral">&quot; 2&gt;&amp;1&quot;</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    unique_ptr&lt;FILE, <span class="keyword">decltype</span>(&amp;pclose)&gt; pipe(popen(cmd.c_str(), <span class="stringliteral">&quot;r&quot;</span>), pclose);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span> (!pipe) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Pipeline execution failed!&quot;</span>);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    string result;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">while</span> (fgets(buffer.data(), buffer.size(), pipe.get()) != <span class="keywordtype">nullptr</span>) {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        result += buffer.data();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> std::make_unique&lt;string&gt;(result);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<a href="CommandLine_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * In this file, the implementation of the CommandLine class is defined.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="CommandLine_8h.html" title="In this file, the header of the CommandLine class is defined.">&quot;CommandLine.h&quot;</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">array</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">stdexcept</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classCommandLine.html#aeb9190b57a50a99bc152247712ccdba0">   12</a></span>&#160;unique_ptr&lt;string&gt; <a class="code" href="classCommandLine.html">CommandLine</a>::<a class="code" href="classCommandLine.html#aeb9190b57a50a99bc152247712ccdba0">exec</a>(string cmd) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    array&lt;<span class="keywordtype">char</span>, 128&gt; buffer{};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    cmd += <span class="stringliteral">&quot; 2&gt;&amp;1&quot;</span>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    unique_ptr&lt;FILE, <span class="keyword">decltype</span>(&amp;pclose)&gt; pipe(popen(cmd.c_str(), <span class="stringliteral">&quot;r&quot;</span>), pclose);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (!pipe) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Pipeline execution failed!&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    string result;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">while</span> (fgets(buffer.data(), buffer.size(), pipe.get()) != <span class="keywordtype">nullptr</span>) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        result += buffer.data();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> std::make_unique&lt;string&gt;(result);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><b>CommandLine.cpp</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="CommandLine_8cpp.html">CommandLine.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

@@ -87,76 +87,80 @@ $(document).ready(function(){initNavTree('StubController_8h_source.html',''); in
 <div class="title">StubController.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">SIMOPTICON_STUBCONTROLLER_H</span></div>
+<a href="StubController_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">ifndef</span> <span class="preprocessor">SIMOPTICON_STUBCONTROLLER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">define</span> <span class="preprocessor">SIMOPTICON_STUBCONTROLLER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">functional</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Controller_8h.html">&quot;Controller.h&quot;</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../optimizer/direct/DirectTypes.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * @file</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * In this file, the header of the StubController class is defined.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * A class that mocks behaviour of Controller.</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Instead of real simulations one of the predefined function in #functions is being evaluated, when Controller#requestValues is called.</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * To use StubController instead of Controller a second command line argument has to be passed containing the name of the function to be optimized.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * The name can be one of the following: quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 or hartman6.</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @ingroup controller</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classStubController.html">   17</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classStubController.html">StubController</a> : <span class="keyword">public</span> <a class="code" href="classController.html">Controller</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     * Map that contains the predefined functions quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 and hartman6.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classStubController.html#a573d135cdaeee648ab4fa2a762a593e4">   23</a></span>&#160;    <span class="keyword">static</span> map&lt;string, function&lt;<a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>(vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;)&gt;&gt; <a class="code" href="classStubController.html#a573d135cdaeee648ab4fa2a762a593e4">functions</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * Function to be optimized in the current optimization. One of the functions in #functions.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classStubController.html#aecd2aeb9e0bc8b75d92a61d52c349d85">   28</a></span>&#160;    <span class="keyword">const</span> function&lt;<a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>(vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;)&gt; <a class="code" href="classStubController.html#aecd2aeb9e0bc8b75d92a61d52c349d85">f</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * Returns empty paths and runIds for each requested Parameter combination.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @param runs: Parameter combination to be simulated.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * @return Map which maps the given Parameter combinations to empty paths and runIds.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    map&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, pair&lt;filesystem::path, set&lt;<a class="code" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classStubController.html#ae90967cb11a8fd624728eb7c5dd9e1ef">runSimulations</a>(<span class="keyword">const</span> set&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; &amp;runs) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * Evaluates the given Parameter combinations with #f.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * @param simulationResults: Map which maps Parameter combinations to empty results (see #runSimulations).</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * @return A Map which maps the given Parameter combinations to the respective value of #f.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    map&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; <a class="code" href="classStubController.html#a5ff951d32c315e95c156d4c3aa0eb202">evaluate</a>(</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">const</span> map&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, pair&lt;filesystem::path, set&lt;<a class="code" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; &amp;simulationResults) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * Does nothing, since no simulations are run and therefore no result files are created.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStubController.html#adc942af04e05cdce84f9db0cd6d788cf">removeOldResultfiles</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStubController.html#a7974121c2eaa51eb718e0eed6fa27e4b">updateStatus</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * Creates a StubController with the given config and function.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * @param configPath: Path to the main config. Chosen by first command line argument.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     * @param function: Name of the function to be used. Chosen by second command line argument.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classStubController.html#aa3a9d6b96b6d4d11adc0445d6e6e0119">StubController</a>(<span class="keyword">const</span> filesystem::path &amp;configPath, <span class="keyword">const</span> string &amp;function);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_STUBCONTROLLER_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">functional</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Controller_8h.html" title="In this file, the header of the Controller class is defined.">&quot;Controller.h&quot;</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../optimizer/direct/DirectTypes.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * A class that mocks behaviour of Controller.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * Instead of real simulations one of the predefined function in #functions is being evaluated, when Controller#requestValues is called.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * To use StubController instead of Controller a second command line argument has to be passed containing the name of the function to be optimized.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * The name can be one of the following: quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 or hartman6.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @ingroup controller</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classStubController.html">   21</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classStubController.html">StubController</a> : <span class="keyword">public</span> <a class="code" href="classController.html">Controller</a> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     * Map that contains the predefined functions quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 and hartman6.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classStubController.html#a573d135cdaeee648ab4fa2a762a593e4">   27</a></span>&#160;    <span class="keyword">static</span> map&lt;string, function&lt;<a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>(vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;)&gt;&gt; <a class="code" href="classStubController.html#a573d135cdaeee648ab4fa2a762a593e4">functions</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * Function to be optimized in the current optimization. One of the functions in #functions.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classStubController.html#aecd2aeb9e0bc8b75d92a61d52c349d85">   32</a></span>&#160;    <span class="keyword">const</span> function&lt;<a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>(vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;)&gt; <a class="code" href="classStubController.html#aecd2aeb9e0bc8b75d92a61d52c349d85">f</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * Returns empty paths and runIds for each requested Parameter combination.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * @param runs: Parameter combination to be simulated.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * @return Map which maps the given Parameter combinations to empty paths and runIds.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    map&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, pair&lt;filesystem::path, set&lt;<a class="code" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classStubController.html#ae90967cb11a8fd624728eb7c5dd9e1ef">runSimulations</a>(<span class="keyword">const</span> set&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; &amp;runs) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     * Evaluates the given Parameter combinations with #f.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * @param simulationResults: Map which maps Parameter combinations to empty results (see #runSimulations).</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * @return A Map which maps the given Parameter combinations to the respective value of #f.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    map&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; <a class="code" href="classStubController.html#a5ff951d32c315e95c156d4c3aa0eb202">evaluate</a>(</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">const</span> map&lt;vector&lt;shared_ptr&lt;<a class="code" href="classParameter.html">Parameter</a>&gt;&gt;, pair&lt;filesystem::path, set&lt;<a class="code" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;, <a class="code" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; &amp;simulationResults) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * Does nothing, since no simulations are run and therefore no result files are created.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStubController.html#adc942af04e05cdce84f9db0cd6d788cf">removeOldResultfiles</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classStubController.html#a7974121c2eaa51eb718e0eed6fa27e4b">updateStatus</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * Creates a StubController with the given config and function.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @param configPath: Path to the main config. Chosen by first command line argument.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * @param function: Name of the function to be used. Chosen by second command line argument.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classStubController.html#aa3a9d6b96b6d4d11adc0445d6e6e0119">StubController</a>(<span class="keyword">const</span> filesystem::path &amp;configPath, <span class="keyword">const</span> string &amp;function);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_STUBCONTROLLER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_41ef5d8a90b9cc03a02949a5c062e6f0.html">controller</a></li><li class="navelem"><b>StubController.h</b></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_41ef5d8a90b9cc03a02949a5c062e6f0.html">controller</a></li><li class="navelem"><a class="el" href="StubController_8h.html">StubController.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

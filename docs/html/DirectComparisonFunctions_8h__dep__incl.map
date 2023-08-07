@@ -1,8 +1,8 @@
 <map id="/home/runner/work/simopticon/simopticon/src/optimizer/direct/DirectComparisonFunctions.h" name="/home/runner/work/simopticon/simopticon/src/optimizer/direct/DirectComparisonFunctions.h">
-<area shape="rect" id="node1" title="In this file comparison functions are defined which are used in the direct module." alt="" coords="183,5,441,61"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8h_source.html" title=" " alt="" coords="128,213,349,269"/>
-<area shape="rect" id="node5" href="$Levels_8h_source.html" title=" " alt="" coords="276,109,497,165"/>
-<area shape="rect" id="node3" href="$Controller_8cpp_source.html" title=" " alt="" coords="5,317,227,373"/>
-<area shape="rect" id="node4" href="$DirectOptimizer_8cpp_source.html" title=" " alt="" coords="251,317,472,373"/>
-<area shape="rect" id="node6" href="$Levels_8cpp_source.html" title=" " alt="" coords="373,213,595,269"/>
+<area shape="rect" id="node1" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="183,5,441,61"/>
+<area shape="rect" id="node2" href="$DirectOptimizer_8h.html" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="128,213,349,269"/>
+<area shape="rect" id="node5" href="$Levels_8h.html" title="In this file, the header of the Levels class is defined." alt="" coords="276,109,497,165"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,317,227,373"/>
+<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="251,317,472,373"/>
+<area shape="rect" id="node6" href="$Levels_8cpp.html" title="In this file, the implementation of the Levels class is defined." alt="" coords="373,213,595,269"/>
 </map>
