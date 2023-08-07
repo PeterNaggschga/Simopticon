@@ -69,8 +69,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Abortable_8cpp.html",
-"classHyRect.html#a96df21ffd424d02b112e2f47f67572d0",
-"group__status.html"
+"classHyRect.html#aa04990af9102dad46d5d29a8c62773cd",
+"group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

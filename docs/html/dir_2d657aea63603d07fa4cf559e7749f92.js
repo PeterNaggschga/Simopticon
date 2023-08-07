@@ -14,5 +14,5 @@ var dir_2d657aea63603d07fa4cf559e7749f92 =
     [ "ParameterNormalizer.cpp", "ParameterNormalizer_8cpp.html", null ],
     [ "ParameterNormalizer.h", "ParameterNormalizer_8h.html", null ],
     [ "StoppingCondition.cpp", "StoppingCondition_8cpp.html", "StoppingCondition_8cpp" ],
-    [ "StoppingCondition.h", "StoppingCondition_8h.html", "StoppingCondition_8h" ]
+    [ "StoppingCondition.h", "StoppingCondition_8h.html", null ]
 ];

@@ -3,7 +3,7 @@ var classLevels =
     [ "Levels", "classLevels.html#a25578a465fbed4f9bd335c693b312ab1", null ],
     [ "getEpsilon", "classLevels.html#a34b84c704d0a8af303b5266d238f57e3", null ],
     [ "getLevel", "classLevels.html#aa67493dec7929cb6927b8513ea86fb43", null ],
-    [ "getRectSubset", "classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449", null ],
+    [ "getRectSubset", "classLevels.html#ad36d674c5dd72407671725086b3b45a2", null ],
     [ "isGlobal", "classLevels.html#a61be04e785318336297702b38409e09e", null ],
     [ "nextLevel", "classLevels.html#a74a0701bbc7e23f2364cac58f04e446a", null ],
     [ "setGlobal", "classLevels.html#a0922cbbce779efadd8d3e514035b525b", null ],

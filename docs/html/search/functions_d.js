@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['removeactiverects_494',['removeActiveRects',['../classDirectOptimizer.html#ae2e9e0ab6fe9781853c7f4357557277c',1,'DirectOptimizer']]],
-  ['removeoldresultfiles_495',['removeOldResultfiles',['../classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84',1,'Controller::removeOldResultfiles()'],['../classStubController.html#adc942af04e05cdce84f9db0cd6d788cf',1,'StubController::removeOldResultfiles()']]],
-  ['replaceoption_496',['replaceOption',['../classConfigEditor.html#a3108d751e73e41af9747093acd52fd5d',1,'ConfigEditor::replaceOption(string &amp;file, string option, const string &amp;value)'],['../classConfigEditor.html#a2a563c1e0909c8040b448382c5eba3cf',1,'ConfigEditor::replaceOption(string &amp;file, string option, long value)']]],
-  ['requestvalues_497',['requestValues',['../classController.html#a2f373e8a6679515e782927fc86681ec9',1,'Controller::requestValues()'],['../classOptimizer.html#a65c16b4d0f9ee3b84e24eec43e89cedd',1,'Optimizer::requestValues()']]],
-  ['run_498',['run',['../classController.html#a692f0f5dc600cdcb79786a31cf283ce1',1,'Controller']]],
-  ['runmultithreadedfunctions_499',['runMultithreadedFunctions',['../classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f',1,'Multithreaded']]],
-  ['runoptimization_500',['runOptimization',['../classDirectOptimizer.html#a6ac79132f9fa57dc9cab3d23f4ee1207',1,'DirectOptimizer::runOptimization()'],['../classOptimizer.html#af9a3322b650a543d78c19a658d9319d4',1,'Optimizer::runOptimization()']]],
-  ['runsimulations_501',['runSimulations',['../classController.html#a8c5bc8e2aeca77614fd124fc579699d1',1,'Controller::runSimulations()'],['../classStubController.html#ae90967cb11a8fd624728eb7c5dd9e1ef',1,'StubController::runSimulations()'],['../classSimulationRunner.html#a94b47c33b33f68366e0b0c6aacd94541',1,'SimulationRunner::runSimulations()']]]
+  ['removeactiverects_495',['removeActiveRects',['../classDirectOptimizer.html#a523c720b819b9d22131d4e5518de83ba',1,'DirectOptimizer']]],
+  ['removeoldresultfiles_496',['removeOldResultfiles',['../classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84',1,'Controller::removeOldResultfiles()'],['../classStubController.html#adc942af04e05cdce84f9db0cd6d788cf',1,'StubController::removeOldResultfiles()']]],
+  ['replaceoption_497',['replaceOption',['../classConfigEditor.html#a33a1289bd7c0ee95dabd9e620db720f9',1,'ConfigEditor::replaceOption(std::string &amp;file, std::string option, const std::string &amp;value)'],['../classConfigEditor.html#a21c737b8f0ca617fbffb1f67a1d1be7d',1,'ConfigEditor::replaceOption(std::string &amp;file, std::string option, long value)']]],
+  ['requestvalues_498',['requestValues',['../classController.html#afb32e05616850fa9ab5c75e2a1c3d218',1,'Controller::requestValues()'],['../classOptimizer.html#a10c14e49cea1f9dfbb0fed45b93c6fc9',1,'Optimizer::requestValues()']]],
+  ['run_499',['run',['../classController.html#a692f0f5dc600cdcb79786a31cf283ce1',1,'Controller']]],
+  ['runmultithreadedfunctions_500',['runMultithreadedFunctions',['../classMultithreaded.html#a1fcc1c0642faa664e11fefadde148b5f',1,'Multithreaded']]],
+  ['runoptimization_501',['runOptimization',['../classDirectOptimizer.html#a6ac79132f9fa57dc9cab3d23f4ee1207',1,'DirectOptimizer::runOptimization()'],['../classOptimizer.html#af9a3322b650a543d78c19a658d9319d4',1,'Optimizer::runOptimization()']]],
+  ['runsimulations_502',['runSimulations',['../classController.html#aaae67948b92cb0e2d4624852b0a5761f',1,'Controller::runSimulations()'],['../classStubController.html#a11c5ca829d9211ddcdc263041e015675',1,'StubController::runSimulations()'],['../classSimulationRunner.html#a37f73e47fd21b1167be2c44ab36e6254',1,'SimulationRunner::runSimulations()']]]
 ];

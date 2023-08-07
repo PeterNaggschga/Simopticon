@@ -100,11 +100,11 @@ $(document).ready(function(){initNavTree('classThreadsafeQueue.html',''); initRe
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b5afe3b948403e0967b807cf5c926d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">push</a> (Key val)</td></tr>
-<tr class="memdesc:a1b5afe3b948403e0967b807cf5c926d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given value to <a class="el" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38" title="The actual queue data structure.">safeQueue</a>.  <a href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">More...</a><br /></td></tr>
+<tr class="memdesc:a1b5afe3b948403e0967b807cf5c926d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given value to <a class="el" href="classThreadsafeQueue.html#af7780cccd01d381bed4303c45bafa613" title="The actual queue data structure.">safeQueue</a>.  <a href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">More...</a><br /></td></tr>
 <tr class="separator:a1b5afe3b948403e0967b807cf5c926d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b6a9a27b8239443acfd7ce6c4fa78cf"><td class="memItemLeft" align="right" valign="top">pair&lt; Key, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#a2b6a9a27b8239443acfd7ce6c4fa78cf">pop</a> ()</td></tr>
-<tr class="memdesc:a2b6a9a27b8239443acfd7ce6c4fa78cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the queue.  <a href="classThreadsafeQueue.html#a2b6a9a27b8239443acfd7ce6c4fa78cf">More...</a><br /></td></tr>
-<tr class="separator:a2b6a9a27b8239443acfd7ce6c4fa78cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40bffdfa93996d51215ccd1672db488"><td class="memItemLeft" align="right" valign="top">std::pair&lt; Key, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#aa40bffdfa93996d51215ccd1672db488">pop</a> ()</td></tr>
+<tr class="memdesc:aa40bffdfa93996d51215ccd1672db488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the queue.  <a href="classThreadsafeQueue.html#aa40bffdfa93996d51215ccd1672db488">More...</a><br /></td></tr>
+<tr class="separator:aa40bffdfa93996d51215ccd1672db488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade19ff302f75c6be3e417bb5cc22e89f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#ade19ff302f75c6be3e417bb5cc22e89f">getStartSize</a> ()</td></tr>
 <tr class="memdesc:ade19ff302f75c6be3e417bb5cc22e89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of <a class="el" href="classThreadsafeQueue.html#a085f257b2c4541db5ef9eb5c8605d49b" title="Number of elements in queue when push was called the last time.">startSize</a>.  <a href="classThreadsafeQueue.html#ade19ff302f75c6be3e417bb5cc22e89f">More...</a><br /></td></tr>
 <tr class="separator:ade19ff302f75c6be3e417bb5cc22e89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,12 +114,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a486d4dc4cc7aead3f6f0cb8c0dbf8e38"><td class="memItemLeft" align="right" valign="top">queue&lt; Key &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">safeQueue</a></td></tr>
-<tr class="memdesc:a486d4dc4cc7aead3f6f0cb8c0dbf8e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual queue data structure.  <a href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">More...</a><br /></td></tr>
-<tr class="separator:a486d4dc4cc7aead3f6f0cb8c0dbf8e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a247eabea2111272fbba04f0ef3402a54"><td class="memItemLeft" align="right" valign="top">mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#a247eabea2111272fbba04f0ef3402a54">queueLock</a></td></tr>
-<tr class="memdesc:a247eabea2111272fbba04f0ef3402a54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threadlock to avoid damage to <a class="el" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38" title="The actual queue data structure.">safeQueue</a> on concurrent access.  <a href="classThreadsafeQueue.html#a247eabea2111272fbba04f0ef3402a54">More...</a><br /></td></tr>
-<tr class="separator:a247eabea2111272fbba04f0ef3402a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7780cccd01d381bed4303c45bafa613"><td class="memItemLeft" align="right" valign="top">std::queue&lt; Key &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#af7780cccd01d381bed4303c45bafa613">safeQueue</a></td></tr>
+<tr class="memdesc:af7780cccd01d381bed4303c45bafa613"><td class="mdescLeft">&#160;</td><td class="mdescRight">The actual queue data structure.  <a href="classThreadsafeQueue.html#af7780cccd01d381bed4303c45bafa613">More...</a><br /></td></tr>
+<tr class="separator:af7780cccd01d381bed4303c45bafa613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9d245fce3dffb361848b281caf0ac1"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a></td></tr>
+<tr class="memdesc:a7e9d245fce3dffb361848b281caf0ac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threadlock to avoid damage to <a class="el" href="classThreadsafeQueue.html#af7780cccd01d381bed4303c45bafa613" title="The actual queue data structure.">safeQueue</a> on concurrent access.  <a href="classThreadsafeQueue.html#a7e9d245fce3dffb361848b281caf0ac1">More...</a><br /></td></tr>
+<tr class="separator:a7e9d245fce3dffb361848b281caf0ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a085f257b2c4541db5ef9eb5c8605d49b"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classThreadsafeQueue.html#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a> = 0</td></tr>
 <tr class="memdesc:a085f257b2c4541db5ef9eb5c8605d49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements in queue when <a class="el" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2" title="Adds the given value to safeQueue.">push</a> was called the last time.  <a href="classThreadsafeQueue.html#a085f257b2c4541db5ef9eb5c8605d49b">More...</a><br /></td></tr>
 <tr class="separator:a085f257b2c4541db5ef9eb5c8605d49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,7 +136,7 @@ class ThreadsafeQueue&lt; Key &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00020">20</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00018">18</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa46228c650ec0199d03007c2a682d28f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa46228c650ec0199d03007c2a682d28f">&#9670;&nbsp;</a></span>getSize()</h2>
@@ -157,7 +157,7 @@ template&lt;class Key &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00038">38</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.html">ThreadsafeQueue.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00029">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00025">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>.</p>
+<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00027">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00023">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>.</p>
 
 </div>
 </div>
@@ -180,12 +180,12 @@ template&lt;class Key &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00030">30</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.html">ThreadsafeQueue.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00029">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00034">ThreadsafeQueue&lt; Key &gt;::startSize</a>.</p>
+<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00027">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00032">ThreadsafeQueue&lt; Key &gt;::startSize</a>.</p>
 
 </div>
 </div>
-<a id="a2b6a9a27b8239443acfd7ce6c4fa78cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b6a9a27b8239443acfd7ce6c4fa78cf">&#9670;&nbsp;</a></span>pop()</h2>
+<a id="aa40bffdfa93996d51215ccd1672db488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40bffdfa93996d51215ccd1672db488">&#9670;&nbsp;</a></span>pop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ template&lt;class Key &gt; </div>
 template&lt;class Key &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">pair&lt; Key, bool &gt; <a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; Key &gt;::pop</td>
+          <td class="memname">std::pair&lt; Key, bool &gt; <a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; Key &gt;::pop</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -203,7 +203,7 @@ template&lt;class Key &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00017">17</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.html">ThreadsafeQueue.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00029">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00025">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>.</p>
+<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00027">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00023">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>.</p>
 
 </div>
 </div>
@@ -225,7 +225,7 @@ template&lt;class Key &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Adds the given value to <a class="el" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38" title="The actual queue data structure.">safeQueue</a>. </p>
+<p>Adds the given value to <a class="el" href="classThreadsafeQueue.html#af7780cccd01d381bed4303c45bafa613" title="The actual queue data structure.">safeQueue</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">val</td><td>Values to be added to queue. </td></tr>
@@ -235,13 +235,13 @@ template&lt;class Key &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00009">9</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.html">ThreadsafeQueue.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00029">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, <a class="el" href="ThreadsafeQueue_8h_source.html#l00025">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00034">ThreadsafeQueue&lt; Key &gt;::startSize</a>.</p>
+<p class="reference">References <a class="el" href="ThreadsafeQueue_8h_source.html#l00027">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, <a class="el" href="ThreadsafeQueue_8h_source.html#l00023">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>, and <a class="el" href="ThreadsafeQueue_8h_source.html#l00032">ThreadsafeQueue&lt; Key &gt;::startSize</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a247eabea2111272fbba04f0ef3402a54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a247eabea2111272fbba04f0ef3402a54">&#9670;&nbsp;</a></span>queueLock</h2>
+<a id="a7e9d245fce3dffb361848b281caf0ac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9d245fce3dffb361848b281caf0ac1">&#9670;&nbsp;</a></span>queueLock</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,7 +252,7 @@ template&lt;class Key &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mutex <a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; Key &gt;::queueLock</td>
+          <td class="memname">std::mutex <a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; Key &gt;::queueLock</td>
         </tr>
       </table>
   </td>
@@ -262,16 +262,16 @@ template&lt;class Key &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Threadlock to avoid damage to <a class="el" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38" title="The actual queue data structure.">safeQueue</a> on concurrent access. </p>
+<p>Threadlock to avoid damage to <a class="el" href="classThreadsafeQueue.html#af7780cccd01d381bed4303c45bafa613" title="The actual queue data structure.">safeQueue</a> on concurrent access. </p>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00029">29</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00027">27</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00038">ThreadsafeQueue&lt; Key &gt;::getSize()</a>, <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00030">ThreadsafeQueue&lt; Key &gt;::getStartSize()</a>, <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00017">ThreadsafeQueue&lt; Key &gt;::pop()</a>, and <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00009">ThreadsafeQueue&lt; Key &gt;::push()</a>.</p>
 
 </div>
 </div>
-<a id="a486d4dc4cc7aead3f6f0cb8c0dbf8e38"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">&#9670;&nbsp;</a></span>safeQueue</h2>
+<a id="af7780cccd01d381bed4303c45bafa613"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7780cccd01d381bed4303c45bafa613">&#9670;&nbsp;</a></span>safeQueue</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +282,7 @@ template&lt;class Key &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">queue&lt;Key&gt; <a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; Key &gt;::safeQueue</td>
+          <td class="memname">std::queue&lt;Key&gt; <a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; Key &gt;::safeQueue</td>
         </tr>
       </table>
   </td>
@@ -294,7 +294,7 @@ template&lt;class Key &gt; </div>
 
 <p>The actual queue data structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00025">25</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00023">23</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00038">ThreadsafeQueue&lt; Key &gt;::getSize()</a>, <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00017">ThreadsafeQueue&lt; Key &gt;::pop()</a>, and <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00009">ThreadsafeQueue&lt; Key &gt;::push()</a>.</p>
 
@@ -325,7 +325,7 @@ template&lt;class Key &gt; </div>
 <p>Number of elements in queue when <a class="el" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2" title="Adds the given value to safeQueue.">push</a> was called the last time. </p>
 <p>Can be used for progress information. </p>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00034">34</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.html#l00032">32</a> of file <a class="el" href="ThreadsafeQueue_8h_source.html">ThreadsafeQueue.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00030">ThreadsafeQueue&lt; Key &gt;::getStartSize()</a>, and <a class="el" href="ThreadsafeQueue_8tpp_source.html#l00009">ThreadsafeQueue&lt; Key &gt;::push()</a>.</p>
 

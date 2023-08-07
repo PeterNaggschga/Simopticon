@@ -1,13 +1,13 @@
 <map id="/home/runner/work/simopticon/simopticon/src/optimizer/direct/hyrect/ChildRect.h" name="/home/runner/work/simopticon/simopticon/src/optimizer/direct/hyrect/ChildRect.h">
-<area shape="rect" id="node1" title="In this file, the header of the ChildRect class is defined." alt="" coords="340,5,561,61"/>
-<area shape="rect" id="node2" href="$HyRect_8h.html" title="In this file, the header of the HyRect class is defined." alt="" coords="410,109,491,136"/>
-<area shape="rect" id="node3" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="5,184,112,211"/>
-<area shape="rect" id="node5" href="$DirectTypes_8h.html" title="In this file, types are defined which are used in the direct module." alt="" coords="136,184,259,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="283,184,357,211"/>
-<area shape="rect" id="node7" title=" " alt="" coords="381,184,437,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="462,184,525,211"/>
-<area shape="rect" id="node9" title=" " alt="" coords="549,184,611,211"/>
-<area shape="rect" id="node10" title=" " alt="" coords="636,184,679,211"/>
-<area shape="rect" id="node11" title=" " alt="" coords="703,184,780,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="29,259,88,285"/>
+<area shape="rect" id="node1" title="In this file, the header of the ChildRect class is defined." alt="" coords="265,5,486,61"/>
+<area shape="rect" id="node2" href="$HyRect_8h.html" title="In this file, the header of the HyRect class is defined." alt="" coords="335,109,416,136"/>
+<area shape="rect" id="node3" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="71,184,178,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,259,68,285"/>
+<area shape="rect" id="node6" title=" " alt="" coords="177,259,254,285"/>
+<area shape="rect" id="node7" href="$DirectTypes_8h.html" title="In this file, types are defined which are used in the direct module." alt="" coords="253,184,375,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="399,184,474,211"/>
+<area shape="rect" id="node9" title=" " alt="" coords="498,184,554,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="579,184,641,211"/>
+<area shape="rect" id="node11" title=" " alt="" coords="666,184,709,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="94,259,153,285"/>
 </map>

@@ -115,13 +115,13 @@ $(document).ready(function(){initNavTree('ContinuousParameter_8h_source.html',''
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * @param def: ParameterDefinition of the Parameter.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * @param value: Initial value of the Parameter.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classContinuousParameter.html#ad81b84aad78c0ee79f453c08a0453ed7">ContinuousParameter</a>(shared_ptr&lt;<a class="code" href="classParameterDefinition.html">ParameterDefinition</a>&gt; def, <a class="code" href="Types_8h.html#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> value);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classContinuousParameter.html#aa4553bdd1dab1de5ea9f60d0feddd2f9">ContinuousParameter</a>(std::shared_ptr&lt;<a class="code" href="classParameterDefinition.html">ParameterDefinition</a>&gt; def, <a class="code" href="Types_8h.html#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> value);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * Creates a ContinuousParameter with the given ParameterDefinition and the initial value being the mean between minimum and maximum.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * @param def: ParameterDefinition of the Parameter.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classContinuousParameter.html#ae7ad7597ea64670079afa3d3b552070b">ContinuousParameter</a>(shared_ptr&lt;<a class="code" href="classParameterDefinition.html">ParameterDefinition</a>&gt; def);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classContinuousParameter.html#ae75317852804a195738e4f3f501ecdbf">ContinuousParameter</a>(std::shared_ptr&lt;<a class="code" href="classParameterDefinition.html">ParameterDefinition</a>&gt; def);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * Returns the current value of #val.</span></div>
@@ -132,9 +132,9 @@ $(document).ready(function(){initNavTree('ContinuousParameter_8h_source.html',''
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * Sets the value of #val to the given value.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * Checks if given value is in bounds set by the ParameterDefinition.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * @param val: Value to set the ContinuousParameter to.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * @param newVal: Value to set the ContinuousParameter to.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classContinuousParameter.html#a82f428c7d0f8d76fb9084e40838ab545">setVal</a>(<a class="code" href="Types_8h.html#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> val) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classContinuousParameter.html#a896de17a63e6b2d047f3805be3e6ba13">setVal</a>(<a class="code" href="Types_8h.html#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> newVal) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>

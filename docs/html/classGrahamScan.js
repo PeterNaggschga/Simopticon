@@ -1,4 +1,4 @@
 var classGrahamScan =
 [
-    [ "scan", "classGrahamScan.html#a4344dd919a7cfb55322d2caf57f1780a", null ]
+    [ "scan", "classGrahamScan.html#afff343805884bd171a127bd1e5a52e37", null ]
 ];

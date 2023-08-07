@@ -1,8 +1,8 @@
 <map id="/home/runner/work/simopticon/simopticon/src/ComparisonFunctions.h" name="/home/runner/work/simopticon/simopticon/src/ComparisonFunctions.h">
-<area shape="rect" id="node1" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="59,5,336,47"/>
-<area shape="rect" id="node2" href="$Parameter_8h.html" title="In this file, the header of the Parameter class is defined." alt="" coords="36,95,215,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="239,95,302,121"/>
-<area shape="rect" id="node3" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="5,169,88,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="56,244,115,271"/>
-<area shape="rect" id="node5" title=" " alt="" coords="163,169,240,196"/>
+<area shape="rect" id="node1" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="28,5,305,47"/>
+<area shape="rect" id="node2" href="$Parameter_8h.html" title="In this file, the header of the Parameter class is defined." alt="" coords="15,95,193,121"/>
+<area shape="rect" id="node5" title=" " alt="" coords="198,244,261,271"/>
+<area shape="rect" id="node3" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="61,169,144,196"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,244,64,271"/>
+<area shape="rect" id="node6" title=" " alt="" coords="93,244,171,271"/>
 </map>

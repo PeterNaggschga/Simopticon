@@ -2,13 +2,13 @@ var group__hyrect =
 [
     [ "HyRect", "classHyRect.html", [
       [ "HyRect", "classHyRect.html#a074dd7cc4b16fcebb6dd3f68957007b1", null ],
-      [ "divide", "classHyRect.html#af0eaedc8ac149f85abf57be89889a26e", null ],
+      [ "divide", "classHyRect.html#af9a26c555fd9ac4d42ae56b532b21935", null ],
       [ "getAvgValue", "classHyRect.html#add4d30ef978a52194bcd990e2757aadf", null ],
       [ "getD", "classHyRect.html#ab940dbf1d55a6df7649eb931f814c9a3", null ],
       [ "getDepth", "classHyRect.html#a90abc4e3ecc0a9a5a5f0e7e0250f3121", null ],
       [ "getDiagonalLength", "classHyRect.html#a65aa2a8878742309bfb9dccc751b7bcb", null ],
       [ "getPos", "classHyRect.html#aaaf4f13552c02eada0e75e771524b02f", null ],
-      [ "getSamplingVertices", "classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36", null ],
+      [ "getSamplingVertices", "classHyRect.html#a603fe77569003ae273b3fb5be5d69592", null ],
       [ "getSplitDim", "classHyRect.html#ab1667b7a0394ff53fc61f3f88b4cb9bb", null ],
       [ "operator!=", "classHyRect.html#a727c67caa93a8af946685adf456dda04", null ],
       [ "operator<", "classHyRect.html#a4170bce42d9733872d102dd7db56ebd5", null ],
@@ -24,13 +24,13 @@ var group__hyrect =
     ] ],
     [ "BaseRect", "classBaseRect.html", [
       [ "BaseRect", "classBaseRect.html#a8cc8a03fff059cff70e9f534237a8694", null ],
-      [ "getSamplingVertices", "classBaseRect.html#a2f3938c3d65982d2d2e1615901831a8a", null ]
+      [ "getSamplingVertices", "classBaseRect.html#ac5443b99f1acd241ccd874dbdb8fd492", null ]
     ] ],
     [ "ChildRect", "classChildRect.html", [
-      [ "ChildRect", "classChildRect.html#a71a71ff9f52f2d846c1ecfbb3fc46793", null ],
-      [ "getSamplingVertices", "classChildRect.html#ac9a5ed60fa39e62a1d8726d90840947b", null ],
+      [ "ChildRect", "classChildRect.html#a873626d01b973a678b881242a1afb432", null ],
+      [ "getSamplingVertices", "classChildRect.html#a6544411d52121e78efb221108e3cc474", null ],
       [ "operator==", "classChildRect.html#adf5ba69c837223db712a35221fd5b04b", null ],
-      [ "parent", "classChildRect.html#a2fc3af136a386ee170d540d57355c44f", null ]
+      [ "parent", "classChildRect.html#ac93627818db86c88b4ebef9baccdb169", null ]
     ] ],
     [ "position", "group__hyrect.html#gad173c5addf1993b5b138135b644279ab", null ]
 ];

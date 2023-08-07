@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('ChildRect_8h_source.html',''); initRes
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">     * Reference to the parent rectangle. Used for recursive calculation of #getSamplingVertices.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classChildRect.html#a2fc3af136a386ee170d540d57355c44f">   21</a></span>&#160;    shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt; <a class="code" href="classChildRect.html#a2fc3af136a386ee170d540d57355c44f">parent</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classChildRect.html#ac93627818db86c88b4ebef9baccdb169">   21</a></span>&#160;    std::shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt; <a class="code" href="classChildRect.html#ac93627818db86c88b4ebef9baccdb169">parent</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/**</span></div>
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('ChildRect_8h_source.html',''); initRes
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * @param pos: Relative position to the given parent rectangle.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * @param parent: Parent rectangle in the partition tree.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classChildRect.html#a71a71ff9f52f2d846c1ecfbb3fc46793">ChildRect</a>(<a class="code" href="group__hyrect.html#gad173c5addf1993b5b138135b644279ab">position</a> pos, shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt; parent);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classChildRect.html#a873626d01b973a678b881242a1afb432">ChildRect</a>(<a class="code" href="group__hyrect.html#gad173c5addf1993b5b138135b644279ab">position</a> pos, std::shared_ptr&lt;<a class="code" href="classHyRect.html">HyRect</a>&gt; parent);</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/**</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * Returns the coordinates of two opposite corner points of the rectangle.</span></div>
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('ChildRect_8h_source.html',''); initRes
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * The vertices are calculated recursively based on the sampling vertices of #parent.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * @return An array containing two dirCoordinate vectors of the sampled vertices.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    array&lt;vector&lt;<a class="code" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt;, 2&gt; <a class="code" href="classChildRect.html#ac9a5ed60fa39e62a1d8726d90840947b">getSamplingVertices</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::array&lt;std::vector&lt;<a class="code" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt;, 2&gt; <a class="code" href="classChildRect.html#a6544411d52121e78efb221108e3cc474">getSamplingVertices</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classChildRect.html#adf5ba69c837223db712a35221fd5b04b">operator</a>==(<span class="keyword">const</span> <a class="code" href="classHyRect.html">HyRect</a> &amp;rect) <span class="keyword">const</span> <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>

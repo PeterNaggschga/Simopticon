@@ -1,5 +1,5 @@
 var StubController_8cpp =
 [
-    [ "hartman", "StubController_8cpp.html#a06c9564c9eeb851ce913f9be5c8dfd61", null ],
-    [ "shekel", "StubController_8cpp.html#a0f3687317607c66ec998e0847513b403", null ]
+    [ "hartman", "StubController_8cpp.html#ad6a4bfe0264213fcc019c15260e4242c", null ],
+    [ "shekel", "StubController_8cpp.html#a8eabeea235e0e1adc48be717917f8436", null ]
 ];

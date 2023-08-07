@@ -113,9 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a074dd7cc4b16fcebb6dd3f68957007b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#a074dd7cc4b16fcebb6dd3f68957007b1">HyRect</a> (<a class="el" href="DirectTypes_8h.html#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> <a class="el" href="classHyRect.html#a4a6c86c3a10e740c3c4937532325fb90">D</a>, <a class="el" href="group__hyrect.html#gad173c5addf1993b5b138135b644279ab">position</a> <a class="el" href="classHyRect.html#ad3de4de4b307a600af5ee1c5cad0ed86">pos</a>, <a class="el" href="DirectTypes_8h.html#a083ce87ca066d42ecd2a0fd189019120">depth</a> <a class="el" href="classHyRect.html#a96df21ffd424d02b112e2f47f67572d0">t</a>)</td></tr>
 <tr class="memdesc:a074dd7cc4b16fcebb6dd3f68957007b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> with the given dimensionality, position and depth.  <a href="classHyRect.html#a074dd7cc4b16fcebb6dd3f68957007b1">More...</a><br /></td></tr>
 <tr class="separator:a074dd7cc4b16fcebb6dd3f68957007b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae19c28ce098e9dd107f6f907c6606b36"><td class="memItemLeft" align="right" valign="top">virtual array&lt; vector&lt; <a class="el" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a> &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36">getSamplingVertices</a> ()=0</td></tr>
-<tr class="memdesc:ae19c28ce098e9dd107f6f907c6606b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the coordinates of two opposite corner points of the rectangle.  <a href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36">More...</a><br /></td></tr>
-<tr class="separator:ae19c28ce098e9dd107f6f907c6606b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603fe77569003ae273b3fb5be5d69592"><td class="memItemLeft" align="right" valign="top">virtual std::array&lt; std::vector&lt; <a class="el" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a> &gt;, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592">getSamplingVertices</a> ()=0</td></tr>
+<tr class="memdesc:a603fe77569003ae273b3fb5be5d69592"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the coordinates of two opposite corner points of the rectangle.  <a href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592">More...</a><br /></td></tr>
+<tr class="separator:a603fe77569003ae273b3fb5be5d69592"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65aa2a8878742309bfb9dccc751b7bcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#a65aa2a8878742309bfb9dccc751b7bcb">getDiagonalLength</a> () const</td></tr>
 <tr class="memdesc:a65aa2a8878742309bfb9dccc751b7bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the diagonal of the rectangle.  <a href="classHyRect.html#a65aa2a8878742309bfb9dccc751b7bcb">More...</a><br /></td></tr>
 <tr class="separator:a65aa2a8878742309bfb9dccc751b7bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aaaf4f13552c02eada0e75e771524b02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of <a class="el" href="classHyRect.html#ad3de4de4b307a600af5ee1c5cad0ed86" title="Position of the rectangle relative to its parent rectangle.">pos</a>.  <a href="classHyRect.html#aaaf4f13552c02eada0e75e771524b02f">More...</a><br /></td></tr>
 <tr class="separator:aaaf4f13552c02eada0e75e771524b02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1667b7a0394ff53fc61f3f88b4cb9bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="DirectTypes_8h.html#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#ab1667b7a0394ff53fc61f3f88b4cb9bb">getSplitDim</a> () const</td></tr>
-<tr class="memdesc:ab1667b7a0394ff53fc61f3f88b4cb9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the dimension where this rectangle must be or has been split by <a class="el" href="classHyRect.html#af0eaedc8ac149f85abf57be89889a26e" title="Divides the given rectangle into three smaller ChildRect which take the given HyRect as a parent.">divide</a>.  <a href="classHyRect.html#ab1667b7a0394ff53fc61f3f88b4cb9bb">More...</a><br /></td></tr>
+<tr class="memdesc:ab1667b7a0394ff53fc61f3f88b4cb9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the dimension where this rectangle must be or has been split by <a class="el" href="classHyRect.html#af9a26c555fd9ac4d42ae56b532b21935" title="Divides the given rectangle into three smaller ChildRect which take the given HyRect as a parent.">divide</a>.  <a href="classHyRect.html#ab1667b7a0394ff53fc61f3f88b4cb9bb">More...</a><br /></td></tr>
 <tr class="separator:ab1667b7a0394ff53fc61f3f88b4cb9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add4d30ef978a52194bcd990e2757aadf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#add4d30ef978a52194bcd990e2757aadf">getAvgValue</a> () const</td></tr>
 <tr class="memdesc:add4d30ef978a52194bcd990e2757aadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of <a class="el" href="classHyRect.html#aaed25fd458c840441423fb11d1ddff55" title="Mean between the values obtained at the parameters returned by getSamplingVertices.">avgValue</a>.  <a href="classHyRect.html#add4d30ef978a52194bcd990e2757aadf">More...</a><br /></td></tr>
@@ -158,9 +158,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af0eaedc8ac149f85abf57be89889a26e"><td class="memItemLeft" align="right" valign="top">static array&lt; shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#af0eaedc8ac149f85abf57be89889a26e">divide</a> (const shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;ptr)</td></tr>
-<tr class="memdesc:af0eaedc8ac149f85abf57be89889a26e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides the given rectangle into three smaller <a class="el" href="classChildRect.html" title="A class representing a HyRect that has a parent HyRect.">ChildRect</a> which take the given <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> as a parent.  <a href="classHyRect.html#af0eaedc8ac149f85abf57be89889a26e">More...</a><br /></td></tr>
-<tr class="separator:af0eaedc8ac149f85abf57be89889a26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a26c555fd9ac4d42ae56b532b21935"><td class="memItemLeft" align="right" valign="top">static std::array&lt; std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#af9a26c555fd9ac4d42ae56b532b21935">divide</a> (const std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;ptr)</td></tr>
+<tr class="memdesc:af9a26c555fd9ac4d42ae56b532b21935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides the given rectangle into three smaller <a class="el" href="classChildRect.html" title="A class representing a HyRect that has a parent HyRect.">ChildRect</a> which take the given <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> as a parent.  <a href="classHyRect.html#af9a26c555fd9ac4d42ae56b532b21935">More...</a><br /></td></tr>
+<tr class="separator:af9a26c555fd9ac4d42ae56b532b21935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -174,13 +174,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memdesc:ad3de4de4b307a600af5ee1c5cad0ed86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Position of the rectangle relative to its parent rectangle.  <a href="classHyRect.html#ad3de4de4b307a600af5ee1c5cad0ed86">More...</a><br /></td></tr>
 <tr class="separator:ad3de4de4b307a600af5ee1c5cad0ed86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaed25fd458c840441423fb11d1ddff55"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHyRect.html#aaed25fd458c840441423fb11d1ddff55">avgValue</a> = INFINITY</td></tr>
-<tr class="memdesc:aaed25fd458c840441423fb11d1ddff55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mean between the values obtained at the parameters returned by <a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>.  <a href="classHyRect.html#aaed25fd458c840441423fb11d1ddff55">More...</a><br /></td></tr>
+<tr class="memdesc:aaed25fd458c840441423fb11d1ddff55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mean between the values obtained at the parameters returned by <a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>.  <a href="classHyRect.html#aaed25fd458c840441423fb11d1ddff55">More...</a><br /></td></tr>
 <tr class="separator:aaed25fd458c840441423fb11d1ddff55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstract class representing a rectangular part of the search space. </p>
 
-<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00045">45</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00043">43</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a074dd7cc4b16fcebb6dd3f68957007b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a074dd7cc4b16fcebb6dd3f68957007b1">&#9670;&nbsp;</a></span>HyRect()</h2>
@@ -226,15 +226,15 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00011">11</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00051">D</a>, <a class="el" href="HyRect_8h_source.html#l00061">pos</a>, and <a class="el" href="HyRect_8h_source.html#l00056">t</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00049">D</a>, <a class="el" href="HyRect_8h_source.html#l00059">pos</a>, and <a class="el" href="HyRect_8h_source.html#l00054">t</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="BaseRect_8cpp_source.html#l00008">BaseRect::BaseRect()</a>, and <a class="el" href="ChildRect_8cpp_source.html#l00010">ChildRect::ChildRect()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af0eaedc8ac149f85abf57be89889a26e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0eaedc8ac149f85abf57be89889a26e">&#9670;&nbsp;</a></span>divide()</h2>
+<a id="af9a26c555fd9ac4d42ae56b532b21935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a26c555fd9ac4d42ae56b532b21935">&#9670;&nbsp;</a></span>divide()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,9 +243,9 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">array&lt; shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, 3 &gt; HyRect::divide </td>
+          <td class="memname">std::array&lt; std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, 3 &gt; HyRect::divide </td>
           <td>(</td>
-          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -292,9 +292,9 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00040">40</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00065">avgValue</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00063">avgValue</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirectOptimizer_8cpp_source.html#l00091">DirectOptimizer::estimatedValue()</a>, <a class="el" href="DirectComparisonFunctions_8h_source.html#l00024">CmpSharedHyrect::operator()()</a>, and <a class="el" href="GrahamScan_8cpp_source.html#l00012">GrahamScan::scan()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirectOptimizer_8cpp_source.html#l00093">DirectOptimizer::estimatedValue()</a>, <a class="el" href="DirectComparisonFunctions_8h_source.html#l00024">CmpSharedHyrect::operator()()</a>, and <a class="el" href="GrahamScan_8cpp_source.html#l00012">GrahamScan::scan()</a>.</p>
 
 </div>
 </div>
@@ -318,7 +318,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00072">72</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00051">D</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00049">D</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00010">ChildRect::ChildRect()</a>.</p>
 
@@ -344,7 +344,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00036">36</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00056">t</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00054">t</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00010">ChildRect::ChildRect()</a>, and <a class="el" href="GrahamScan_8cpp_source.html#l00012">GrahamScan::scan()</a>.</p>
 
@@ -366,13 +366,13 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the length of the diagonal of the rectangle. </p>
-<p>Basically calculates the euclidian distance between the vertices returned by <a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>. Instead of actually invoking the costly recursive <a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a> function, a calculation based on <a class="el" href="classHyRect.html#a96df21ffd424d02b112e2f47f67572d0" title="Depth of the rectangle in the partition tree.">t</a> is executed </p><dl class="section return"><dt>Returns</dt><dd>A dirCoordinate representing the diagonal length of the rectangle. </dd></dl>
+<p>Basically calculates the euclidian distance between the vertices returned by <a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>. Instead of actually invoking the costly recursive <a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a> function, a calculation based on <a class="el" href="classHyRect.html#a96df21ffd424d02b112e2f47f67572d0" title="Depth of the rectangle in the partition tree.">t</a> is executed </p><dl class="section return"><dt>Returns</dt><dd>A dirCoordinate representing the diagonal length of the rectangle. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00021">21</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00051">D</a>, and <a class="el" href="HyRect_8h_source.html#l00056">t</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00049">D</a>, and <a class="el" href="HyRect_8h_source.html#l00054">t</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="DirectOptimizer_8cpp_source.html#l00091">DirectOptimizer::estimatedValue()</a>, and <a class="el" href="GrahamScan_8cpp_source.html#l00012">GrahamScan::scan()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="DirectOptimizer_8cpp_source.html#l00093">DirectOptimizer::estimatedValue()</a>, and <a class="el" href="GrahamScan_8cpp_source.html#l00012">GrahamScan::scan()</a>.</p>
 
 </div>
 </div>
@@ -396,14 +396,14 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00032">32</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00061">pos</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00059">pos</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00032">ChildRect::operator==()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00033">ChildRect::operator==()</a>.</p>
 
 </div>
 </div>
-<a id="ae19c28ce098e9dd107f6f907c6606b36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae19c28ce098e9dd107f6f907c6606b36">&#9670;&nbsp;</a></span>getSamplingVertices()</h2>
+<a id="a603fe77569003ae273b3fb5be5d69592"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603fe77569003ae273b3fb5be5d69592">&#9670;&nbsp;</a></span>getSamplingVertices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -412,7 +412,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual array&lt;vector&lt;<a class="el" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt;, 2&gt; HyRect::getSamplingVertices </td>
+          <td class="memname">virtual std::array&lt;std::vector&lt;<a class="el" href="DirectTypes_8h.html#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt;, 2&gt; HyRect::getSamplingVertices </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -428,9 +428,9 @@ Protected Attributes</h2></td></tr>
 <p>Returns the coordinates of two opposite corner points of the rectangle. </p>
 <p>The returned vertices must be sampled. </p><dl class="section return"><dt>Returns</dt><dd>An array containing two dirCoordinate vectors of the sampled vertices. </dd></dl>
 
-<p>Implemented in <a class="el" href="classChildRect.html#ac9a5ed60fa39e62a1d8726d90840947b">ChildRect</a>, and <a class="el" href="classBaseRect.html#a2f3938c3d65982d2d2e1615901831a8a">BaseRect</a>.</p>
+<p>Implemented in <a class="el" href="classChildRect.html#a6544411d52121e78efb221108e3cc474">ChildRect</a>, and <a class="el" href="classBaseRect.html#ac5443b99f1acd241ccd874dbdb8fd492">BaseRect</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00014">ChildRect::getSamplingVertices()</a>, and <a class="el" href="DirectComparisonFunctions_8h_source.html#l00024">CmpSharedHyrect::operator()()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00015">ChildRect::getSamplingVertices()</a>, and <a class="el" href="DirectComparisonFunctions_8h_source.html#l00024">CmpSharedHyrect::operator()()</a>.</p>
 
 </div>
 </div>
@@ -449,14 +449,14 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the dimension where this rectangle must be or has been split by <a class="el" href="classHyRect.html#af0eaedc8ac149f85abf57be89889a26e" title="Divides the given rectangle into three smaller ChildRect which take the given HyRect as a parent.">divide</a>. </p>
+<p>Calculates the dimension where this rectangle must be or has been split by <a class="el" href="classHyRect.html#af9a26c555fd9ac4d42ae56b532b21935" title="Divides the given rectangle into three smaller ChildRect which take the given HyRect as a parent.">divide</a>. </p>
 <p>Since the split dimensions are simply chosen in ascending order the calculations only needs the depth stored in <a class="el" href="classHyRect.html#a96df21ffd424d02b112e2f47f67572d0" title="Depth of the rectangle in the partition tree.">t</a>. </p><dl class="section return"><dt>Returns</dt><dd>A dimension where the <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> has been oder will be split. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00028">28</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00051">D</a>, and <a class="el" href="HyRect_8h_source.html#l00056">t</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00049">D</a>, and <a class="el" href="HyRect_8h_source.html#l00054">t</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00014">ChildRect::getSamplingVertices()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ChildRect_8cpp_source.html#l00015">ChildRect::getSamplingVertices()</a>.</p>
 
 </div>
 </div>
@@ -518,7 +518,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00052">52</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00065">avgValue</a>, and <a class="el" href="HyRect_8h_source.html#l00056">t</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00063">avgValue</a>, and <a class="el" href="HyRect_8h_source.html#l00054">t</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00064">operator&lt;=()</a>, <a class="el" href="HyRect_8cpp_source.html#l00060">operator&gt;()</a>, and <a class="el" href="HyRect_8cpp_source.html#l00068">operator&gt;=()</a>.</p>
 
@@ -592,7 +592,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00048">48</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00051">D</a>, <a class="el" href="HyRect_8h_source.html#l00061">pos</a>, and <a class="el" href="HyRect_8h_source.html#l00056">t</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00049">D</a>, <a class="el" href="HyRect_8h_source.html#l00059">pos</a>, and <a class="el" href="HyRect_8h_source.html#l00054">t</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00056">operator!=()</a>.</p>
 
@@ -686,7 +686,7 @@ Protected Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="HyRect_8cpp_source.html#l00044">44</a> of file <a class="el" href="HyRect_8cpp_source.html">HyRect.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00065">avgValue</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8h_source.html#l00063">avgValue</a>.</p>
 
 </div>
 </div>
@@ -711,9 +711,9 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Mean between the values obtained at the parameters returned by <a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>. </p>
+<p>Mean between the values obtained at the parameters returned by <a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00065">65</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00063">63</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00040">getAvgValue()</a>, <a class="el" href="HyRect_8cpp_source.html#l00052">operator&lt;()</a>, and <a class="el" href="HyRect_8cpp_source.html#l00044">setAvgValue()</a>.</p>
 
@@ -742,7 +742,7 @@ Protected Attributes</h2></td></tr>
 <p>Dimensionality of the rectangle. </p>
 <p>Is equivalent to the dimensionality of the search space, i.e. the number of optimized parameters. </p>
 
-<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00051">51</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00049">49</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00011">HyRect()</a>, <a class="el" href="HyRect_8cpp_source.html#l00072">getD()</a>, <a class="el" href="HyRect_8cpp_source.html#l00021">getDiagonalLength()</a>, <a class="el" href="BaseRect_8cpp_source.html#l00011">BaseRect::getSamplingVertices()</a>, <a class="el" href="HyRect_8cpp_source.html#l00028">getSplitDim()</a>, and <a class="el" href="HyRect_8cpp_source.html#l00048">operator==()</a>.</p>
 
@@ -771,9 +771,9 @@ Protected Attributes</h2></td></tr>
 <p>Position of the rectangle relative to its parent rectangle. </p>
 <p>For <a class="el" href="classBaseRect.html" title="A class representing a HyRect without a parent rectangle.">BaseRect</a>, <em>pos</em> is always BASE. </p>
 
-<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00061">61</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00059">59</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00011">HyRect()</a>, <a class="el" href="HyRect_8cpp_source.html#l00032">getPos()</a>, <a class="el" href="ChildRect_8cpp_source.html#l00014">ChildRect::getSamplingVertices()</a>, <a class="el" href="HyRect_8cpp_source.html#l00048">operator==()</a>, and <a class="el" href="ChildRect_8cpp_source.html#l00032">ChildRect::operator==()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00011">HyRect()</a>, <a class="el" href="HyRect_8cpp_source.html#l00032">getPos()</a>, <a class="el" href="ChildRect_8cpp_source.html#l00015">ChildRect::getSamplingVertices()</a>, <a class="el" href="HyRect_8cpp_source.html#l00048">operator==()</a>, and <a class="el" href="ChildRect_8cpp_source.html#l00033">ChildRect::operator==()</a>.</p>
 
 </div>
 </div>
@@ -800,7 +800,7 @@ Protected Attributes</h2></td></tr>
 <p>Depth of the rectangle in the partition tree. </p>
 <p>Equal to the number of transitive parent rectangles. For <a class="el" href="classBaseRect.html" title="A class representing a HyRect without a parent rectangle.">BaseRect</a>, <em>t</em> is always 0. </p>
 
-<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00056">56</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="HyRect_8h_source.html#l00054">54</a> of file <a class="el" href="HyRect_8h_source.html">HyRect.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="HyRect_8cpp_source.html#l00011">HyRect()</a>, <a class="el" href="HyRect_8cpp_source.html#l00036">getDepth()</a>, <a class="el" href="HyRect_8cpp_source.html#l00021">getDiagonalLength()</a>, <a class="el" href="HyRect_8cpp_source.html#l00028">getSplitDim()</a>, <a class="el" href="HyRect_8cpp_source.html#l00052">operator&lt;()</a>, and <a class="el" href="HyRect_8cpp_source.html#l00048">operator==()</a>.</p>
 

@@ -125,24 +125,24 @@ Collaboration diagram for Optimizer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad082211744ae021d540f3816c9b935d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#ad082211744ae021d540f3816c9b935d0">Optimizer</a> (<a class="el" href="classController.html">Controller</a> &amp;ctrl, list&lt; shared_ptr&lt; <a class="el" href="classParameterDefinition.html">ParameterDefinition</a> &gt;&gt; params)</td></tr>
-<tr class="memdesc:ad082211744ae021d540f3816c9b935d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> which can request values from the given <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> and tries to optimize the given parameters.  <a href="classOptimizer.html#ad082211744ae021d540f3816c9b935d0">More...</a><br /></td></tr>
-<tr class="separator:ad082211744ae021d540f3816c9b935d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfab50ab4ad02f02cde68a7e2689f3ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#abfab50ab4ad02f02cde68a7e2689f3ab">Optimizer</a> (<a class="el" href="classController.html">Controller</a> &amp;ctrl, std::list&lt; std::shared_ptr&lt; <a class="el" href="classParameterDefinition.html">ParameterDefinition</a> &gt;&gt; params)</td></tr>
+<tr class="memdesc:abfab50ab4ad02f02cde68a7e2689f3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> which can request values from the given <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> and tries to optimize the given parameters.  <a href="classOptimizer.html#abfab50ab4ad02f02cde68a7e2689f3ab">More...</a><br /></td></tr>
+<tr class="separator:abfab50ab4ad02f02cde68a7e2689f3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9a3322b650a543d78c19a658d9319d4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">runOptimization</a> ()=0</td></tr>
 <tr class="memdesc:af9a3322b650a543d78c19a658d9319d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the optimization process.  <a href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">More...</a><br /></td></tr>
 <tr class="separator:af9a3322b650a543d78c19a658d9319d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2442b637e285b98eb30e1266986bbe3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classValueMap.html">ValueMap</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a> () const</td></tr>
-<tr class="memdesc:a2442b637e285b98eb30e1266986bbe3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to <a class="el" href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02" title="ValueMap containing all values gathered by simulating and evaluating certain Parameter combinations.">Controller::valueMap</a>.  <a href="classOptimizer.html#a2442b637e285b98eb30e1266986bbe3e">More...</a><br /></td></tr>
+<tr class="memdesc:a2442b637e285b98eb30e1266986bbe3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to <a class="el" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6" title="ValueMap containing all values gathered by simulating and evaluating certain parameterCombinations.">Controller::valueMap</a>.  <a href="classOptimizer.html#a2442b637e285b98eb30e1266986bbe3e">More...</a><br /></td></tr>
 <tr class="separator:a2442b637e285b98eb30e1266986bbe3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910c6014a1b462ddc82ad280bd5f39f7"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a910c6014a1b462ddc82ad280bd5f39f7">getName</a> () override</td></tr>
-<tr class="memdesc:a910c6014a1b462ddc82ad280bd5f39f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the name of the implementing component in natural language.  <a href="classOptimizer.html#a910c6014a1b462ddc82ad280bd5f39f7">More...</a><br /></td></tr>
-<tr class="separator:a910c6014a1b462ddc82ad280bd5f39f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade37ad13536479c3430d7fd7eae41cad"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#ade37ad13536479c3430d7fd7eae41cad">getStatus</a> () override</td></tr>
-<tr class="memdesc:ade37ad13536479c3430d7fd7eae41cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current state of the implementing component.  <a href="classOptimizer.html#ade37ad13536479c3430d7fd7eae41cad">More...</a><br /></td></tr>
-<tr class="separator:ade37ad13536479c3430d7fd7eae41cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae94cf165014c25200612e23d8716a27d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#ae94cf165014c25200612e23d8716a27d">getStatusBar</a> () override</td></tr>
-<tr class="memdesc:ae94cf165014c25200612e23d8716a27d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current progress of the calculations of the implementing component.  <a href="classOptimizer.html#ae94cf165014c25200612e23d8716a27d">More...</a><br /></td></tr>
-<tr class="separator:ae94cf165014c25200612e23d8716a27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefad5ca2243994a8526ef01d1905f37f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#aefad5ca2243994a8526ef01d1905f37f">getName</a> () override</td></tr>
+<tr class="memdesc:aefad5ca2243994a8526ef01d1905f37f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the name of the implementing component in natural language.  <a href="classOptimizer.html#aefad5ca2243994a8526ef01d1905f37f">More...</a><br /></td></tr>
+<tr class="separator:aefad5ca2243994a8526ef01d1905f37f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77e086bd9d9d483331443df935790f5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#ad77e086bd9d9d483331443df935790f5">getStatus</a> () override</td></tr>
+<tr class="memdesc:ad77e086bd9d9d483331443df935790f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current state of the implementing component.  <a href="classOptimizer.html#ad77e086bd9d9d483331443df935790f5">More...</a><br /></td></tr>
+<tr class="separator:ad77e086bd9d9d483331443df935790f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa09cccc12c47996be6a3130f7c086648"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#aa09cccc12c47996be6a3130f7c086648">getStatusBar</a> () override</td></tr>
+<tr class="memdesc:aa09cccc12c47996be6a3130f7c086648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current progress of the calculations of the implementing component.  <a href="classOptimizer.html#aa09cccc12c47996be6a3130f7c086648">More...</a><br /></td></tr>
+<tr class="separator:aa09cccc12c47996be6a3130f7c086648"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAbortable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classAbortable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classAbortable.html">Abortable</a></td></tr>
 <tr class="memitem:aa93818ee48fcc8f9ed845215d533436d inherit pub_methods_classAbortable"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">abort</a> ()</td></tr>
 <tr class="memdesc:aa93818ee48fcc8f9ed845215d533436d inherit pub_methods_classAbortable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603" title="Defines if the process has been aborted, i.e.">aborted</a> to <em>true</em>.  <a href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">More...</a><br /></td></tr>
@@ -150,15 +150,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a65c16b4d0f9ee3b84e24eec43e89cedd"><td class="memItemLeft" align="right" valign="top">map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a65c16b4d0f9ee3b84e24eec43e89cedd">requestValues</a> (const list&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;&gt; &amp;params)</td></tr>
-<tr class="memdesc:a65c16b4d0f9ee3b84e24eec43e89cedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the values when using certain <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations from <a class="el" href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de" title="Reference to the executing Controller to be able to request values using Controller::requestValues.">controller</a>.  <a href="classOptimizer.html#a65c16b4d0f9ee3b84e24eec43e89cedd">More...</a><br /></td></tr>
-<tr class="separator:a65c16b4d0f9ee3b84e24eec43e89cedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c14e49cea1f9dfbb0fed45b93c6fc9"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a10c14e49cea1f9dfbb0fed45b93c6fc9">requestValues</a> (const std::list&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &gt; &amp;params)</td></tr>
+<tr class="memdesc:a10c14e49cea1f9dfbb0fed45b93c6fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the values when using certain parameterCombinations from <a class="el" href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de" title="Reference to the executing Controller to be able to request values using Controller::requestValues.">controller</a>.  <a href="classOptimizer.html#a10c14e49cea1f9dfbb0fed45b93c6fc9">More...</a><br /></td></tr>
+<tr class="separator:a10c14e49cea1f9dfbb0fed45b93c6fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a0f3d438c0b417d8b3faa646dd9c2c02f"><td class="memItemLeft" align="right" valign="top">list&lt; shared_ptr&lt; <a class="el" href="classParameterDefinition.html">ParameterDefinition</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a0f3d438c0b417d8b3faa646dd9c2c02f">parameters</a></td></tr>
-<tr class="memdesc:a0f3d438c0b417d8b3faa646dd9c2c02f"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of parameters to be optimized.  <a href="classOptimizer.html#a0f3d438c0b417d8b3faa646dd9c2c02f">More...</a><br /></td></tr>
-<tr class="separator:a0f3d438c0b417d8b3faa646dd9c2c02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ad239e14d433114af6a5544ecb7a87e"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="classParameterDefinition.html">ParameterDefinition</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a5ad239e14d433114af6a5544ecb7a87e">parameters</a></td></tr>
+<tr class="memdesc:a5ad239e14d433114af6a5544ecb7a87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of parameters to be optimized.  <a href="classOptimizer.html#a5ad239e14d433114af6a5544ecb7a87e">More...</a><br /></td></tr>
+<tr class="separator:a5ad239e14d433114af6a5544ecb7a87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classAbortable"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classAbortable')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classAbortable.html">Abortable</a></td></tr>
 <tr class="memitem:a54a0450742a1bac15e66aebb5cbe4603 inherit pro_attribs_classAbortable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603">aborted</a> = false</td></tr>
 <tr class="memdesc:a54a0450742a1bac15e66aebb5cbe4603 inherit pro_attribs_classAbortable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines if the process has been aborted, i.e.  <a href="classAbortable.html#a54a0450742a1bac15e66aebb5cbe4603">More...</a><br /></td></tr>
@@ -167,27 +167,27 @@ Protected Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a39b5a35015181c52e78b7c444ec2c7de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classController.html">Controller</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de">controller</a></td></tr>
-<tr class="memdesc:a39b5a35015181c52e78b7c444ec2c7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the executing <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be able to request values using <a class="el" href="classController.html#a2f373e8a6679515e782927fc86681ec9" title="Searches valueMap for results to given Parameter combinations.">Controller::requestValues</a>.  <a href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de">More...</a><br /></td></tr>
+<tr class="memdesc:a39b5a35015181c52e78b7c444ec2c7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to the executing <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be able to request values using <a class="el" href="classController.html#afb32e05616850fa9ab5c75e2a1c3d218" title="Searches valueMap for results to given parameterCombinations.">Controller::requestValues</a>.  <a href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de">More...</a><br /></td></tr>
 <tr class="separator:a39b5a35015181c52e78b7c444ec2c7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_static_attribs_classStatus"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classStatus')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classStatus.html">Status</a></td></tr>
-<tr class="memitem:a3090c3575be971368217ae7e3e470120 inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#a3090c3575be971368217ae7e3e470120">NO_STATUS_SUPPORT</a> = &quot;Component doesn't support status updates!&quot;</td></tr>
-<tr class="memdesc:a3090c3575be971368217ae7e3e470120 inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a587fbda25430f10e4cade040aaad198f" title="Returns a string representing the current state of the implementing component.">getStatus</a> and <a class="el" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0" title="Returns a string representing the current progress of the calculations of the implementing component.">getStatusBar</a> if the implementing class does not override the respective function.  <a href="classStatus.html#a3090c3575be971368217ae7e3e470120">More...</a><br /></td></tr>
-<tr class="separator:a3090c3575be971368217ae7e3e470120 inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafda770737cec4ad6e503526aef7e7f0 inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">NO_NAME</a> = &quot;No name specified&quot;</td></tr>
-<tr class="memdesc:aafda770737cec4ad6e503526aef7e7f0 inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25" title="Returns a string representing the name of the implementing component in natural language.">getName</a> if the implementing class does not override the function.  <a href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">More...</a><br /></td></tr>
-<tr class="separator:aafda770737cec4ad6e503526aef7e7f0 inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ea6f22c5e9b8faa6f8af43d0bc2eed inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#a75ea6f22c5e9b8faa6f8af43d0bc2eed">NO_STATUS_SUPPORT</a> = &quot;Component doesn't support status updates!&quot;</td></tr>
+<tr class="memdesc:a75ea6f22c5e9b8faa6f8af43d0bc2eed inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a1102f7349b421fca575e3685cb599fc9" title="Returns a string representing the current state of the implementing component.">getStatus</a> and <a class="el" href="classStatus.html#a6dcff8054a96df8924cbbc4caf8472e3" title="Returns a string representing the current progress of the calculations of the implementing component.">getStatusBar</a> if the implementing class does not override the respective function.  <a href="classStatus.html#a75ea6f22c5e9b8faa6f8af43d0bc2eed">More...</a><br /></td></tr>
+<tr class="separator:a75ea6f22c5e9b8faa6f8af43d0bc2eed inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc78bdfd2d9603aa3012e01b3cde5b1 inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#aebc78bdfd2d9603aa3012e01b3cde5b1">NO_NAME</a> = &quot;No name specified&quot;</td></tr>
+<tr class="memdesc:aebc78bdfd2d9603aa3012e01b3cde5b1 inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a9d07378cbe210558ebb6b410a9b3855e" title="Returns a string representing the name of the implementing component in natural language.">getName</a> if the implementing class does not override the function.  <a href="classStatus.html#aebc78bdfd2d9603aa3012e01b3cde5b1">More...</a><br /></td></tr>
+<tr class="separator:aebc78bdfd2d9603aa3012e01b3cde5b1 inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class containing an optimization strategy which searches the minimum of a blackbox function given through argument-value pairs. </p>
-<p>The <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> has control over which <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations are simulated and evaluated as well as the duration of the optimization. If <a class="el" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d" title="Sets aborted to true.">abort</a> is called the optimization strategy should finish the optimization as soon as possible. </p>
+<p>The <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> has control over which parameterCombinations are simulated and evaluated as well as the duration of the optimization. If <a class="el" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d" title="Sets aborted to true.">abort</a> is called the optimization strategy should finish the optimization as soon as possible. </p>
 
-<p class="definition">Definition at line <a class="el" href="Optimizer_8h_source.html#l00044">44</a> of file <a class="el" href="Optimizer_8h_source.html">Optimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Optimizer_8h_source.html#l00042">42</a> of file <a class="el" href="Optimizer_8h_source.html">Optimizer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad082211744ae021d540f3816c9b935d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad082211744ae021d540f3816c9b935d0">&#9670;&nbsp;</a></span>Optimizer()</h2>
+<a id="abfab50ab4ad02f02cde68a7e2689f3ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfab50ab4ad02f02cde68a7e2689f3ab">&#9670;&nbsp;</a></span>Optimizer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +201,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">list&lt; shared_ptr&lt; <a class="el" href="classParameterDefinition.html">ParameterDefinition</a> &gt;&gt;&#160;</td>
+          <td class="paramtype">std::list&lt; std::shared_ptr&lt; <a class="el" href="classParameterDefinition.html">ParameterDefinition</a> &gt;&gt;&#160;</td>
           <td class="paramname"><em>params</em>&#160;</td>
         </tr>
         <tr>
@@ -215,7 +215,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Creates an <a class="el" href="classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> which can request values from the given <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> and tries to optimize the given parameters. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctrl</td><td><a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be used for evaluation of <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations. </td></tr>
+    <tr><td class="paramname">ctrl</td><td><a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be used for evaluation of parameterCombinations. </td></tr>
     <tr><td class="paramname">params</td><td>List of <a class="el" href="classParameterDefinition.html" title="A class storing information on the properties of parameters that are being optimized.">ParameterDefinition</a> defining the parameters that must be optimized. </td></tr>
   </table>
   </dd>
@@ -223,13 +223,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Optimizer_8cpp_source.html#l00017">17</a> of file <a class="el" href="Optimizer_8cpp_source.html">Optimizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Optimizer_8h_source.html#l00049">controller</a>, and <a class="el" href="Optimizer_8h_source.html#l00055">parameters</a>.</p>
+<p class="reference">References <a class="el" href="Optimizer_8h_source.html#l00047">controller</a>, and <a class="el" href="Optimizer_8h_source.html#l00053">parameters</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a910c6014a1b462ddc82ad280bd5f39f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a910c6014a1b462ddc82ad280bd5f39f7">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="aefad5ca2243994a8526ef01d1905f37f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefad5ca2243994a8526ef01d1905f37f">&#9670;&nbsp;</a></span>getName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +238,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Optimizer::getName </td>
+          <td class="memname">std::string Optimizer::getName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -254,7 +254,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a string representing the name of the implementing component in natural language. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing the name of the component. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25">Status</a>.</p>
+<p>Reimplemented from <a class="el" href="classStatus.html#a9d07378cbe210558ebb6b410a9b3855e">Status</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Optimizer_8cpp_source.html#l00025">25</a> of file <a class="el" href="Optimizer_8cpp_source.html">Optimizer.cpp</a>.</p>
 
@@ -262,8 +262,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ade37ad13536479c3430d7fd7eae41cad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade37ad13536479c3430d7fd7eae41cad">&#9670;&nbsp;</a></span>getStatus()</h2>
+<a id="ad77e086bd9d9d483331443df935790f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77e086bd9d9d483331443df935790f5">&#9670;&nbsp;</a></span>getStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -272,7 +272,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Optimizer::getStatus </td>
+          <td class="memname">std::string Optimizer::getStatus </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -288,7 +288,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a string representing the current state of the implementing component. </p>
 <p>May contain values of class members or other meaningful information. The returned string is always visible in <a class="el" href="classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>. </p><dl class="section return"><dt>Returns</dt><dd>A string containing the state of the component. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classStatus.html#a587fbda25430f10e4cade040aaad198f">Status</a>.</p>
+<p>Reimplemented from <a class="el" href="classStatus.html#a1102f7349b421fca575e3685cb599fc9">Status</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Optimizer_8cpp_source.html#l00029">29</a> of file <a class="el" href="Optimizer_8cpp_source.html">Optimizer.cpp</a>.</p>
 
@@ -296,8 +296,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ae94cf165014c25200612e23d8716a27d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae94cf165014c25200612e23d8716a27d">&#9670;&nbsp;</a></span>getStatusBar()</h2>
+<a id="aa09cccc12c47996be6a3130f7c086648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09cccc12c47996be6a3130f7c086648">&#9670;&nbsp;</a></span>getStatusBar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +306,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string Optimizer::getStatusBar </td>
+          <td class="memname">std::string Optimizer::getStatusBar </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -322,7 +322,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a string representing the current progress of the calculations of the implementing component. </p>
 <p>The returned string is visible in <a class="el" href="classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>, when the component is actively calculating something. Must not exceed one console line! </p><dl class="section return"><dt>Returns</dt><dd>A string containing the progress of a calculation. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0">Status</a>.</p>
+<p>Reimplemented from <a class="el" href="classStatus.html#a6dcff8054a96df8924cbbc4caf8472e3">Status</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="Optimizer_8cpp_source.html#l00033">33</a> of file <a class="el" href="Optimizer_8cpp_source.html">Optimizer.cpp</a>.</p>
 
@@ -345,19 +345,19 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a reference to <a class="el" href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02" title="ValueMap containing all values gathered by simulating and evaluating certain Parameter combinations.">Controller::valueMap</a>. </p>
+<p>Returns a reference to <a class="el" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6" title="ValueMap containing all values gathered by simulating and evaluating certain parameterCombinations.">Controller::valueMap</a>. </p>
 <p>Basically calls <a class="el" href="classController.html#ae3ea03330051f982d4e9bee7ffad29d2" title="Returns valueMap.">Controller::getValueMap</a> on <a class="el" href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de" title="Reference to the executing Controller to be able to request values using Controller::requestValues.">controller</a>. </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Optimizer_8cpp_source.html#l00021">21</a> of file <a class="el" href="Optimizer_8cpp_source.html">Optimizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Optimizer_8h_source.html#l00049">controller</a>, and <a class="el" href="Controller_8cpp_source.html#l00163">Controller::getValueMap()</a>.</p>
+<p class="reference">References <a class="el" href="Optimizer_8h_source.html#l00047">controller</a>, and <a class="el" href="Controller_8cpp_source.html#l00162">Controller::getValueMap()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DirectOptimizer_8cpp_source.html#l00023">DirectOptimizer::runOptimization()</a>.</p>
 
 </div>
 </div>
-<a id="a65c16b4d0f9ee3b84e24eec43e89cedd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65c16b4d0f9ee3b84e24eec43e89cedd">&#9670;&nbsp;</a></span>requestValues()</h2>
+<a id="a10c14e49cea1f9dfbb0fed45b93c6fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c14e49cea1f9dfbb0fed45b93c6fc9">&#9670;&nbsp;</a></span>requestValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,9 +366,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; Optimizer::requestValues </td>
+          <td class="memname">std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; Optimizer::requestValues </td>
           <td>(</td>
-          <td class="paramtype">const list&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::list&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
         </tr>
@@ -380,18 +380,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Requests the values when using certain <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations from <a class="el" href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de" title="Reference to the executing Controller to be able to request values using Controller::requestValues.">controller</a>. </p>
-<p>Basically calls <a class="el" href="classController.html#a2f373e8a6679515e782927fc86681ec9" title="Searches valueMap for results to given Parameter combinations.">Controller::requestValues</a> with the given values. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Requests the values when using certain parameterCombinations from <a class="el" href="classOptimizer.html#a39b5a35015181c52e78b7c444ec2c7de" title="Reference to the executing Controller to be able to request values using Controller::requestValues.">controller</a>. </p>
+<p>Basically calls <a class="el" href="classController.html#afb32e05616850fa9ab5c75e2a1c3d218" title="Searches valueMap for results to given parameterCombinations.">Controller::requestValues</a> with the given values. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations to be evaluated. </td></tr>
+    <tr><td class="paramname">params</td><td>parameterCombinations to be evaluated. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A map which maps <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations to their respective values. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A map which maps parameterCombinations to their respective values. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="Optimizer_8cpp_source.html#l00013">13</a> of file <a class="el" href="Optimizer_8cpp_source.html">Optimizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Optimizer_8h_source.html#l00049">controller</a>, and <a class="el" href="Controller_8cpp_source.html#l00129">Controller::requestValues()</a>.</p>
+<p class="reference">References <a class="el" href="Optimizer_8h_source.html#l00047">controller</a>, and <a class="el" href="Controller_8cpp_source.html#l00128">Controller::requestValues()</a>.</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implemented in <a class="el" href="classDirectOptimizer.html#a6ac79132f9fa57dc9cab3d23f4ee1207">DirectOptimizer</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Controller_8cpp_source.html#l00167">Controller::run()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Controller_8cpp_source.html#l00166">Controller::run()</a>.</p>
 
 </div>
 </div>
@@ -448,16 +448,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reference to the executing <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be able to request values using <a class="el" href="classController.html#a2f373e8a6679515e782927fc86681ec9" title="Searches valueMap for results to given Parameter combinations.">Controller::requestValues</a>. </p>
+<p>Reference to the executing <a class="el" href="classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be able to request values using <a class="el" href="classController.html#afb32e05616850fa9ab5c75e2a1c3d218" title="Searches valueMap for results to given parameterCombinations.">Controller::requestValues</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Optimizer_8h_source.html#l00049">49</a> of file <a class="el" href="Optimizer_8h_source.html">Optimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Optimizer_8h_source.html#l00047">47</a> of file <a class="el" href="Optimizer_8h_source.html">Optimizer.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Optimizer_8cpp_source.html#l00017">Optimizer()</a>, <a class="el" href="Optimizer_8cpp_source.html#l00021">getValueMap()</a>, and <a class="el" href="Optimizer_8cpp_source.html#l00013">requestValues()</a>.</p>
 
 </div>
 </div>
-<a id="a0f3d438c0b417d8b3faa646dd9c2c02f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f3d438c0b417d8b3faa646dd9c2c02f">&#9670;&nbsp;</a></span>parameters</h2>
+<a id="a5ad239e14d433114af6a5544ecb7a87e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ad239e14d433114af6a5544ecb7a87e">&#9670;&nbsp;</a></span>parameters</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,7 +466,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt;shared_ptr&lt;<a class="el" href="classParameterDefinition.html">ParameterDefinition</a>&gt; &gt; Optimizer::parameters</td>
+          <td class="memname">std::list&lt;std::shared_ptr&lt;<a class="el" href="classParameterDefinition.html">ParameterDefinition</a>&gt; &gt; Optimizer::parameters</td>
         </tr>
       </table>
   </td>
@@ -478,7 +478,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>List of parameters to be optimized. </p>
 
-<p class="definition">Definition at line <a class="el" href="Optimizer_8h_source.html#l00055">55</a> of file <a class="el" href="Optimizer_8h_source.html">Optimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Optimizer_8h_source.html#l00053">53</a> of file <a class="el" href="Optimizer_8h_source.html">Optimizer.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Optimizer_8cpp_source.html#l00017">Optimizer()</a>.</p>
 

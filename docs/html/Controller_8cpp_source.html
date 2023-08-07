@@ -108,225 +108,224 @@ $(document).ready(function(){initNavTree('Controller_8cpp_source.html',''); init
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../evaluation/constant_headway/ConstantHeadway.h&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;nlohmann/json.hpp&quot;</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using</span> json = nlohmann::json;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Helper method parsing a json object from the given file.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @param baseDir: Directory the json file resides in.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * @param config: Name of the json file.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * @return A json object parsed from the given file.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">json</a> <a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">getConfigByPath</a>(<a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">filesystem</a>::<a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">path</a> <a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">baseDir</a>, <span class="keyword">const</span> <a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">string</a> &amp;<a class="code" href="Controller_8cpp.html#a9f5015024e62a17e1438b412c804b2b3">config</a>) {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    filesystem::path configPath = std::move(baseDir);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    configPath.append(config);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ifstream configStream(configPath);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    json result = json::parse(configStream, <span class="keywordtype">nullptr</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    configStream.close();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classController.html#a0bedbc3a1cc0e479302ec2b3e651e693">   39</a></span>&#160;<a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a0bedbc3a1cc0e479302ec2b3e651e693">Controller</a>(<span class="keyword">const</span> filesystem::path &amp;configPath, <span class="keywordtype">bool</span> isStub) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;Initializing optimization...&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    cout.flush();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Controller settings</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    keepFiles = baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;keepResultFiles&quot;</span>).get&lt;<span class="keywordtype">bool</span>&gt;();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrTopEntries = baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;nrTopEntries&quot;</span>).get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02">valueMap</a> = std::make_unique&lt;<a class="code" href="classValueMap.html">ValueMap</a>&gt;(nrTopEntries);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">double</span> seconds = baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;updateInterval&quot;</span>).get&lt;<span class="keywordtype">double</span>&gt;();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classController.html#a0c1152d5255c61efc0ee957896ee4377">statusInterval</a> = milliseconds((<span class="keywordtype">long</span>) round(seconds * 1000));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Read Parameters</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    json paramJson = getConfigByPath(configPath.parent_path(), baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;params&quot;</span>).get&lt;string&gt;());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    list&lt;shared_ptr&lt;ParameterDefinition&gt;&gt; params;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> param: paramJson) {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        coordinate min = param.at(<span class="stringliteral">&quot;min&quot;</span>).get&lt;coordinate&gt;();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        coordinate max = param.at(<span class="stringliteral">&quot;max&quot;</span>).get&lt;coordinate&gt;();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        string config;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (param.contains(<span class="stringliteral">&quot;config&quot;</span>)) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            config = param.at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;string&gt;();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        string unit;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (param.contains(<span class="stringliteral">&quot;unit&quot;</span>)) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            unit = param.at(<span class="stringliteral">&quot;unit&quot;</span>).get&lt;string&gt;();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        params.push_back(make_shared&lt;ParameterDefinition&gt;(min, max, config, unit));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Optimizer settings</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    json optimizerConfig = getConfigByPath(configPath.parent_path(),</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                           baseConfig.at(<span class="stringliteral">&quot;optimizer&quot;</span>).at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;string&gt;());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    string opt = baseConfig.at(<span class="stringliteral">&quot;optimizer&quot;</span>).at(<span class="stringliteral">&quot;optimizer&quot;</span>).get&lt;string&gt;();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span> (opt == <span class="stringliteral">&quot;Direct&quot;</span>) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> trackProgress = optimizerConfig.at(<span class="stringliteral">&quot;output&quot;</span>).at(<span class="stringliteral">&quot;progress&quot;</span>);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordtype">bool</span> printValues = optimizerConfig.at(<span class="stringliteral">&quot;output&quot;</span>).at(<span class="stringliteral">&quot;values&quot;</span>);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        optimizer = unique_ptr&lt;Optimizer&gt;(</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">new</span> DirectOptimizer(*<span class="keyword">this</span>, params, StoppingCondition(optimizerConfig.at(<span class="stringliteral">&quot;stopCon&quot;</span>)), trackProgress,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                    printValues));</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;Optimzer not found: &quot;</span> + opt);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// If StubController is used, initialization of SimulationRunner and Evaluation may be skipped</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (isStub) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        runner = unique_ptr&lt;SimulationRunner&gt;(<span class="keywordtype">nullptr</span>);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        evaluation = unique_ptr&lt;Evaluation&gt;(<span class="keywordtype">nullptr</span>);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot;done\n&quot;</span> &lt;&lt; endl;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// SimulationRunner settings</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    json runnerConfig = getConfigByPath(configPath.parent_path(), baseConfig.at(<span class="stringliteral">&quot;runner&quot;</span>).at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;string&gt;());</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    string run = baseConfig.at(<span class="stringliteral">&quot;runner&quot;</span>).at(<span class="stringliteral">&quot;runner&quot;</span>).get&lt;string&gt;();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * Helper method parsing a json object from the given file.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @param baseDir: Directory the json file resides in.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @param config: Name of the json file.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @return A json object parsed from the given file.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">nlohmann</a>::<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">json</a> <a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">getConfigByPath</a>(<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">std</a>::<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">filesystem</a>::<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">path</a> <a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">baseDir</a>, <span class="keyword">const</span> <a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">std</a>::<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">string</a> &amp;<a class="code" href="Controller_8cpp.html#ae16956011d9566e7b53bffa939204d42">config</a>) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::filesystem::path configPath = std::move(baseDir);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    configPath.append(config);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::ifstream configStream(configPath);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    nlohmann::json result = nlohmann::json::parse(configStream, <span class="keywordtype">nullptr</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    configStream.close();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classController.html#aea49fce894856246d360e28ba6f5c3ed">   37</a></span>&#160;<a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#aea49fce894856246d360e28ba6f5c3ed">Controller</a>(<span class="keyword">const</span> std::filesystem::path &amp;configPath, <span class="keywordtype">bool</span> isStub) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;Initializing optimization...&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::cout.flush();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Controller settings</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    nlohmann::json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    keepFiles = baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;keepResultFiles&quot;</span>).get&lt;<span class="keywordtype">bool</span>&gt;();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrTopEntries = baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;nrTopEntries&quot;</span>).get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a> = std::make_unique&lt;<a class="code" href="classValueMap.html">ValueMap</a>&gt;(nrTopEntries);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> seconds = baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;updateInterval&quot;</span>).get&lt;<span class="keywordtype">double</span>&gt;();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classController.html#a983b7bd36a134e4210d7d2ed9465df19">statusInterval</a> = std::chrono::milliseconds((<span class="keywordtype">long</span>) round(seconds * 1000));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Read Parameters</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    nlohmann::json paramJson = getConfigByPath(configPath.parent_path(),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                               baseConfig.at(<span class="stringliteral">&quot;controller&quot;</span>).at(<span class="stringliteral">&quot;params&quot;</span>).get&lt;std::string&gt;());</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::list&lt;std::shared_ptr&lt;ParameterDefinition&gt;&gt; params;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> param: paramJson) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        coordinate min = param.at(<span class="stringliteral">&quot;min&quot;</span>).get&lt;coordinate&gt;();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        coordinate max = param.at(<span class="stringliteral">&quot;max&quot;</span>).get&lt;coordinate&gt;();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::string config;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (param.contains(<span class="stringliteral">&quot;config&quot;</span>)) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            config = param.at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;std::string&gt;();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::string unit;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">if</span> (param.contains(<span class="stringliteral">&quot;unit&quot;</span>)) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            unit = param.at(<span class="stringliteral">&quot;unit&quot;</span>).get&lt;std::string&gt;();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        params.push_back(std::make_shared&lt;ParameterDefinition&gt;(min, max, config, unit));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Optimizer settings</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    nlohmann::json optimizerConfig = getConfigByPath(configPath.parent_path(),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                     baseConfig.at(<span class="stringliteral">&quot;optimizer&quot;</span>).at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;std::string&gt;());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::string opt = baseConfig.at(<span class="stringliteral">&quot;optimizer&quot;</span>).at(<span class="stringliteral">&quot;optimizer&quot;</span>).get&lt;std::string&gt;();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (opt == <span class="stringliteral">&quot;Direct&quot;</span>) {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">bool</span> trackProgress = optimizerConfig.at(<span class="stringliteral">&quot;output&quot;</span>).at(<span class="stringliteral">&quot;progress&quot;</span>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> printValues = optimizerConfig.at(<span class="stringliteral">&quot;output&quot;</span>).at(<span class="stringliteral">&quot;values&quot;</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        optimizer = std::unique_ptr&lt;Optimizer&gt;(</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keyword">new</span> DirectOptimizer(*<span class="keyword">this</span>, params, StoppingCondition(optimizerConfig.at(<span class="stringliteral">&quot;stopCon&quot;</span>)), trackProgress,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                    printValues));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Optimzer not found: &quot;</span> + opt);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// If StubController is used, initialization of SimulationRunner and Evaluation may be skipped</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (isStub) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        runner = std::unique_ptr&lt;SimulationRunner&gt;(<span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        evaluation = std::unique_ptr&lt;Evaluation&gt;(<span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;done\n&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// SimulationRunner settings</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    nlohmann::json runnerConfig = getConfigByPath(configPath.parent_path(),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                                                  baseConfig.at(<span class="stringliteral">&quot;runner&quot;</span>).at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;std::string&gt;());</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::string run = baseConfig.at(<span class="stringliteral">&quot;runner&quot;</span>).at(<span class="stringliteral">&quot;runner&quot;</span>).get&lt;std::string&gt;();</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (run == <span class="stringliteral">&quot;Plexe&quot;</span>) {</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrThreads = runnerConfig.at(<span class="stringliteral">&quot;nrThreads&quot;</span>).get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> repeat = runnerConfig.at(<span class="stringliteral">&quot;repeat&quot;</span>).get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        vector&lt;string&gt; scenarios(runnerConfig.at(<span class="stringliteral">&quot;scenarios&quot;</span>).size());</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        std::vector&lt;std::string&gt; scenarios(runnerConfig.at(<span class="stringliteral">&quot;scenarios&quot;</span>).size());</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; scenarios.size(); ++i) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            scenarios[i] = runnerConfig.at(<span class="stringliteral">&quot;scenarios&quot;</span>).at(i).get&lt;string&gt;();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            scenarios[i] = runnerConfig.at(<span class="stringliteral">&quot;scenarios&quot;</span>).at(i).get&lt;std::string&gt;();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        string dir = runnerConfig.at(<span class="stringliteral">&quot;configDirectory&quot;</span>).get&lt;string&gt;();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        runner = unique_ptr&lt;SimulationRunner&gt;(<span class="keyword">new</span> PlexeSimulationRunner(nrThreads, repeat, scenarios, ConfigEditor(dir,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                                                                                   runnerConfig.at(</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                                                                                           <span class="stringliteral">&quot;controller&quot;</span>))));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::string dir = runnerConfig.at(<span class="stringliteral">&quot;configDirectory&quot;</span>).get&lt;std::string&gt;();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        runner = std::unique_ptr&lt;SimulationRunner&gt;(<span class="keyword">new</span> PlexeSimulationRunner(nrThreads, repeat, scenarios,</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                                             ConfigEditor(dir, runnerConfig.at(</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                                                                     <span class="stringliteral">&quot;controller&quot;</span>))));</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;SimulationRunner not found: &quot;</span> + run);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;SimulationRunner not found: &quot;</span> + run);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// Evaluation settings</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    json evalConfig = getConfigByPath(configPath.parent_path(),</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                      baseConfig.at(<span class="stringliteral">&quot;evaluation&quot;</span>).at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;string&gt;());</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    string eval = baseConfig.at(<span class="stringliteral">&quot;evaluation&quot;</span>).at(<span class="stringliteral">&quot;evaluation&quot;</span>).get&lt;string&gt;();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    nlohmann::json evalConfig = getConfigByPath(configPath.parent_path(),</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                baseConfig.at(<span class="stringliteral">&quot;evaluation&quot;</span>).at(<span class="stringliteral">&quot;config&quot;</span>).get&lt;std::string&gt;());</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::string eval = baseConfig.at(<span class="stringliteral">&quot;evaluation&quot;</span>).at(<span class="stringliteral">&quot;evaluation&quot;</span>).get&lt;std::string&gt;();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (eval == <span class="stringliteral">&quot;ConstantHeadway&quot;</span>) {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        string omnetppDirectory = evalConfig.at(<span class="stringliteral">&quot;omnetppDirectory&quot;</span>).get&lt;string&gt;();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        std::string omnetppDirectory = evalConfig.at(<span class="stringliteral">&quot;omnetppDirectory&quot;</span>).get&lt;std::string&gt;();</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        setenv(<span class="stringliteral">&quot;OMNETPP_HOME&quot;</span>, omnetppDirectory.c_str(), <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> nrThreads = evalConfig.at(<span class="stringliteral">&quot;nrThreads&quot;</span>).get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>&gt;();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        filesystem::path scriptPath(evalConfig.at(<span class="stringliteral">&quot;pythonScript&quot;</span>).get&lt;string&gt;());</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        evaluation = unique_ptr&lt;Evaluation&gt;(<span class="keyword">new</span> ConstantHeadway(nrThreads, scriptPath));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        std::filesystem::path scriptPath(evalConfig.at(<span class="stringliteral">&quot;pythonScript&quot;</span>).get&lt;std::string&gt;());</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        evaluation = std::unique_ptr&lt;Evaluation&gt;(<span class="keyword">new</span> ConstantHeadway(nrThreads, scriptPath));</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">throw</span> runtime_error(<span class="stringliteral">&quot;SimulationRunner not found: &quot;</span> + run);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;SimulationRunner not found: &quot;</span> + run);</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;done\n&quot;</span> &lt;&lt; endl;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;done\n&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;}</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;map&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, functionValue&gt;</div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="classController.html#a2f373e8a6679515e782927fc86681ec9">  129</a></span>&#160;<a class="code" href="classController.html">Controller</a>::requestValues(<span class="keyword">const</span> list&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;&gt; &amp;params) {</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    map&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, functionValue&gt; result;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    set&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, CmpVectorSharedParameter&gt; simRuns;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cords: params) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">if</span> (valueMap-&gt;isKnown(cords)) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            result.insert(make_pair(cords, valueMap-&gt;query(cords)));</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            simRuns.insert(cords);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        }</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span> (!simRuns.empty()) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">auto</span> vecToResult = runSimulations(simRuns);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keyword">auto</span> simResults = evaluate(vecToResult);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: simResults) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">if</span> (!aborted) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                valueMap-&gt;insert(entry.first, entry.second);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            topResults.insert(make_pair(entry.first, vecToResult[entry.first].first));</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles</a><a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">(</a><a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">)</a>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        result.merge(simResults);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classController.html#ae3ea03330051f982d4e9bee7ffad29d2">  163</a></span>&#160;<a class="code" href="classValueMap.html">ValueMap</a> &amp;<a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#ae3ea03330051f982d4e9bee7ffad29d2">getValueMap</a>() {</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02">valueMap</a>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">  167</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">run</a>() {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">auto</span> runStatusUpdate = [<span class="keyword">this</span>]() {</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="classController.html#a0c1152d5255c61efc0ee957896ee4377">statusInterval</a> != milliseconds(0)) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            this_thread::sleep_for(<a class="code" href="classController.html#a0c1152d5255c61efc0ee957896ee4377">statusInterval</a>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    };</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    thread statusThread(runStatusUpdate);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classController.html#a76a1904fb9734e0ca27e0ca9609a5d47">optimizer</a>-&gt;<a class="code" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">runOptimization</a><a class="code" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">(</a><a class="code" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">)</a>;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <a class="code" href="classController.html#a0c1152d5255c61efc0ee957896ee4377">statusInterval</a> = milliseconds(0);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    statusThread.join();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    list&lt;pair&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;functionValue, filesystem::path&gt;&gt;&gt; top;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: valueMap-&gt;getTopVals()) {</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        top.emplace_back(entry.first, make_pair(entry.second, topResults[entry.first]));</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    StatusBar::printResults(top);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;map&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;filesystem::path, set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt;</div>
-<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classController.html#a8c5bc8e2aeca77614fd124fc579699d1">  188</a></span>&#160;Controller::runSimulations(<span class="keyword">const</span> set&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, CmpVectorSharedParameter&gt; &amp;runs) {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    updateStatus();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keyword">auto</span> res = runner-&gt;runSimulations(runs);</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    updateStatus();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classController.html#ac7be0a2e1af37b2565323e5878483bb1">  195</a></span>&#160;map&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, functionValue, CmpVectorSharedParameter&gt; <a class="code" href="classController.html">Controller</a>::evaluate(</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">const</span> map&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, pair&lt;filesystem::path, set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt; &amp;simulationResults) {</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    set&lt;pair&lt;filesystem::path, set&lt;runId&gt;&gt;&gt; resultFiles;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: simulationResults) {</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        resultFiles.insert(entry.second);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keyword">auto</span> evaluationResult = evaluation-&gt;processOutput(resultFiles);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    map&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, functionValue, CmpVectorSharedParameter&gt; result;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: simulationResults) {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        result.insert(make_pair(entry.first, evaluationResult[entry.second]));</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;}</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">  211</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles</a>() {</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">if</span> (!(<a class="code" href="classController.html#a52d94a03de61c7e0f0b09e2989712bdd">keepFiles</a> || <a class="code" href="classController.html#a7c59e20dac3581b01b5dcd9f96581fde">topResults</a>.empty())) {</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        filesystem::path resultDir = topResults.begin()-&gt;second.parent_path();</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        filesystem::remove_all(resultDir);</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classController.html#a7c59e20dac3581b01b5dcd9f96581fde">topResults</a>.size() &gt; <a class="code" href="classController.html#a2d698ae17fd1548139f68bc6c93dfd02">valueMap</a>-&gt;<a class="code" href="classValueMap.html#a81306997e2c2f17d904330773ade5df5">getTopVals</a><a class="code" href="classValueMap.html#a81306997e2c2f17d904330773ade5df5">(</a><a class="code" href="classValueMap.html#a81306997e2c2f17d904330773ade5df5">)</a>.size()) {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        list&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;&gt; toBeRemoved;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: topResults) {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <span class="keywordflow">if</span> (!valueMap-&gt;isTopValue(entry.first)) {</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                filesystem::remove_all(entry.second);</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                toBeRemoved.push_back(entry.first);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            }</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: toBeRemoved) {</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            topResults.erase(entry);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">  229</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a>() {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    pair&lt;vector&lt;shared_ptr&lt;Parameter&gt;&gt;, functionValue&gt; p =</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            valueMap-&gt;getSize() != 0 ? valueMap-&gt;getTopVals().front() : make_pair(vector&lt;shared_ptr&lt;Parameter&gt;&gt;(),</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                                                                                  (functionValue) INFINITY);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">bool</span> stateChanged = stepState<a class="code" href="structController_1_1stepstate.html#a6343ff694edd3f21039f7c339790005a">.</a><a class="code" href="structController_1_1stepstate.html#a6343ff694edd3f21039f7c339790005a">stepChanged</a>;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    statusBar.updateStatus(optimizer.get(), runner.get(), evaluation.get(), p, stateChanged, stepState.get());</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">  237</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">abort</a>() {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="classAbortable.html">Abortable</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">::</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">abort</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">(</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">)</a>;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="classController.html#a76a1904fb9734e0ca27e0ca9609a5d47">optimizer</a>-&gt;<a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">abort</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">(</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">)</a>;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classController.html#afb32e05616850fa9ab5c75e2a1c3d218">  128</a></span>&#160;std::map&lt;parameterCombination, functionValue&gt; <a class="code" href="classController.html">Controller</a>::requestValues(<span class="keyword">const</span> std::list&lt;parameterCombination&gt; &amp;params) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    std::map&lt;parameterCombination, functionValue&gt; result;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    std::set&lt;parameterCombination, CmpVectorSharedParameter&gt; simRuns;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cords: params) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span> (valueMap-&gt;isKnown(cords)) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            result.insert(make_pair(cords, valueMap-&gt;query(cords)));</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            simRuns.insert(cords);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">if</span> (!simRuns.empty()) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keyword">auto</span> vecToResult = runSimulations(simRuns);</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keyword">auto</span> simResults = evaluate(vecToResult);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: simResults) {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">if</span> (!aborted) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                valueMap-&gt;insert(entry.first, entry.second);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            topResults.insert(make_pair(entry.first, vecToResult[entry.first].first));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles</a><a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">(</a><a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">)</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        result.merge(simResults);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classController.html#ae3ea03330051f982d4e9bee7ffad29d2">  162</a></span>&#160;<a class="code" href="classValueMap.html">ValueMap</a> &amp;<a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#ae3ea03330051f982d4e9bee7ffad29d2">getValueMap</a>() {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> *<a class="code" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">  166</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a692f0f5dc600cdcb79786a31cf283ce1">run</a>() {</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keyword">auto</span> runStatusUpdate = [<span class="keyword">this</span>]() {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="classController.html#a983b7bd36a134e4210d7d2ed9465df19">statusInterval</a> != std::chrono::milliseconds(0)) {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            std::this_thread::sleep_for(<a class="code" href="classController.html#a983b7bd36a134e4210d7d2ed9465df19">statusInterval</a>);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        }</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    };</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    stepState<a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">.</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">next</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">(</a><a class="code" href="structController_1_1stepstate.html#ac35298d19ed5787d999be9692173d186">)</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    std::thread statusThread(runStatusUpdate);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classController.html#a1d4cdec09fa091d4725076c0bff594cc">optimizer</a>-&gt;<a class="code" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">runOptimization</a><a class="code" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">(</a><a class="code" href="classOptimizer.html#af9a3322b650a543d78c19a658d9319d4">)</a>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classController.html#a983b7bd36a134e4210d7d2ed9465df19">statusInterval</a> = std::chrono::milliseconds(0);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    statusThread.join();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::list&lt;std::pair&lt;parameterCombination, std::pair&lt;functionValue, std::filesystem::path&gt;&gt;&gt; top;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: valueMap-&gt;getTopVals()) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        top.emplace_back(entry.first, std::make_pair(entry.second, topResults[entry.first]));</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    StatusBar::printResults(top);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;std::map&lt;parameterCombination, std::pair&lt;std::filesystem::path, std::set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="classController.html#aaae67948b92cb0e2d4624852b0a5761f">  187</a></span>&#160;<a class="code" href="classController.html">Controller</a>::runSimulations(<span class="keyword">const</span> std::set&lt;parameterCombination, CmpVectorSharedParameter&gt; &amp;runs) {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keyword">auto</span> res = runner-&gt;runSimulations(runs);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classController.html#a7a6413c68e4f62cdec218913c86070d0">  194</a></span>&#160;std::map&lt;parameterCombination, functionValue, CmpVectorSharedParameter&gt; <a class="code" href="classController.html">Controller</a>::evaluate(</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keyword">const</span> std::map&lt;parameterCombination, std::pair&lt;std::filesystem::path, std::set&lt;runId&gt;&gt;, CmpVectorSharedParameter&gt; &amp;simulationResults) {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    std::set&lt;std::pair&lt;std::filesystem::path, std::set&lt;runId&gt;&gt;&gt; resultFiles;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: simulationResults) {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        resultFiles.insert(entry.second);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keyword">auto</span> evaluationResult = evaluation-&gt;processOutput(resultFiles);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    std::map&lt;parameterCombination, functionValue, CmpVectorSharedParameter&gt; result;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: simulationResults) {</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        result.insert(make_pair(entry.first, evaluationResult[entry.second]));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">(</a><a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">)</a>;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno"><a class="line" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">  210</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles</a>() {</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordflow">if</span> (!(<a class="code" href="classController.html#a52d94a03de61c7e0f0b09e2989712bdd">keepFiles</a> || <a class="code" href="classController.html#a71aa7111a0474f8e41d0e4588afd3958">topResults</a>.empty())) {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        std::filesystem::path resultDir = topResults.begin()-&gt;second.parent_path();</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        std::filesystem::remove_all(resultDir);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classController.html#a71aa7111a0474f8e41d0e4588afd3958">topResults</a>.size() &gt; <a class="code" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>-&gt;<a class="code" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">getTopVals</a><a class="code" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">(</a><a class="code" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">)</a>.size()) {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        std::list&lt;parameterCombination&gt; toBeRemoved;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: topResults) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keywordflow">if</span> (!valueMap-&gt;isTopValue(entry.first)) {</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                std::filesystem::remove_all(entry.second);</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                toBeRemoved.push_back(entry.first);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            }</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        }</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: toBeRemoved) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;            topResults.erase(entry);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;        }</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">  228</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a71ab67d16c9773974ddda34e44e05a0a">updateStatus</a>() {</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    std::pair&lt;<a class="code" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; p =</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            <a class="code" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>-&gt;<a class="code" href="classValueMap.html#a617f5348dcf85e794516e496a04fde7a">getSize</a><a class="code" href="classValueMap.html#a617f5348dcf85e794516e496a04fde7a">(</a><a class="code" href="classValueMap.html#a617f5348dcf85e794516e496a04fde7a">)</a> != 0 ? <a class="code" href="classController.html#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>-&gt;<a class="code" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">getTopVals</a><a class="code" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">(</a><a class="code" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">)</a>.front() : make_pair(<a class="code" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>(),</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                                                                                  (<a class="code" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>) INFINITY);</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">bool</span> stateChanged = stepState<a class="code" href="structController_1_1stepstate.html#a6343ff694edd3f21039f7c339790005a">.</a><a class="code" href="structController_1_1stepstate.html#a6343ff694edd3f21039f7c339790005a">stepChanged</a>;</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <a class="code" href="classController.html#a2c6f1dfb295e5533cfa9b2d7a061b326">statusBar</a><a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">.</a><a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">updateStatus</a><a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">(</a><a class="code" href="classController.html#a1d4cdec09fa091d4725076c0bff594cc">optimizer</a>.get()<a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">,</a> <a class="code" href="classController.html#aff4806be1079865c59ce014123b78c5a">runner</a>.get()<a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">,</a> <a class="code" href="classController.html#ab0831dcbbdcff96900adcf5709062260">evaluation</a>.get()<a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">,</a> p<a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">,</a> stateChanged<a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">,</a> stepState<a class="code" href="structController_1_1stepstate.html#abff53428282626b9af0e34b054c02675">.</a><a class="code" href="structController_1_1stepstate.html#abff53428282626b9af0e34b054c02675">get</a><a class="code" href="structController_1_1stepstate.html#abff53428282626b9af0e34b054c02675">(</a><a class="code" href="structController_1_1stepstate.html#abff53428282626b9af0e34b054c02675">)</a><a class="code" href="classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc">)</a>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;}</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">  236</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classController.html">Controller</a>::<a class="code" href="classController.html#a51557bd56ca512daeb02ac99d359b2e7">abort</a>() {</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="classAbortable.html">Abortable</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">::</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">abort</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">(</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">)</a>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <a class="code" href="classController.html#a1d4cdec09fa091d4725076c0bff594cc">optimizer</a>-&gt;<a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">abort</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">(</a><a class="code" href="classAbortable.html#aa93818ee48fcc8f9ed845215d533436d">)</a>;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,12 +1,12 @@
 <map id="/home/runner/work/simopticon/simopticon/src/optimizer/direct/hyrect/HyRect.h" name="/home/runner/work/simopticon/simopticon/src/optimizer/direct/hyrect/HyRect.h">
-<area shape="rect" id="node1" title="In this file, the header of the HyRect class is defined." alt="" coords="340,5,561,61"/>
-<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="5,109,112,136"/>
-<area shape="rect" id="node4" href="$DirectTypes_8h.html" title="In this file, types are defined which are used in the direct module." alt="" coords="136,109,259,136"/>
-<area shape="rect" id="node5" title=" " alt="" coords="283,109,357,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="381,109,437,136"/>
-<area shape="rect" id="node7" title=" " alt="" coords="462,109,525,136"/>
-<area shape="rect" id="node8" title=" " alt="" coords="549,109,611,136"/>
-<area shape="rect" id="node9" title=" " alt="" coords="636,109,679,136"/>
-<area shape="rect" id="node10" title=" " alt="" coords="703,109,780,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="29,184,88,211"/>
+<area shape="rect" id="node1" title="In this file, the header of the HyRect class is defined." alt="" coords="265,5,486,61"/>
+<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="71,109,178,136"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,184,68,211"/>
+<area shape="rect" id="node5" title=" " alt="" coords="177,184,254,211"/>
+<area shape="rect" id="node6" href="$DirectTypes_8h.html" title="In this file, types are defined which are used in the direct module." alt="" coords="253,109,375,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="399,109,474,136"/>
+<area shape="rect" id="node8" title=" " alt="" coords="498,109,554,136"/>
+<area shape="rect" id="node9" title=" " alt="" coords="579,109,641,136"/>
+<area shape="rect" id="node10" title=" " alt="" coords="666,109,709,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="94,184,153,211"/>
 </map>

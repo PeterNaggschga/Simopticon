@@ -1,13 +1,13 @@
 <map id="/home/runner/work/simopticon/simopticon/src/controller/ValueMap.h" name="/home/runner/work/simopticon/simopticon/src/controller/ValueMap.h">
-<area shape="rect" id="node1" title="In this file, the header of the ValueMap class is defined." alt="" coords="240,5,461,61"/>
-<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="5,259,88,285"/>
-<area shape="rect" id="node4" href="$ComparisonFunctions_8h.html" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="76,109,263,136"/>
-<area shape="rect" id="node5" href="$Parameter_8h.html" title="In this file, the header of the Parameter class is defined." alt="" coords="36,184,215,211"/>
-<area shape="rect" id="node6" title=" " alt="" coords="237,259,315,285"/>
-<area shape="rect" id="node7" title=" " alt="" coords="245,184,307,211"/>
-<area shape="rect" id="node8" title=" " alt="" coords="388,109,439,136"/>
-<area shape="rect" id="node9" title=" " alt="" coords="463,109,505,136"/>
-<area shape="rect" id="node10" title=" " alt="" coords="529,109,572,136"/>
-<area shape="rect" id="node11" title=" " alt="" coords="596,109,660,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="56,333,115,360"/>
+<area shape="rect" id="node1" title="In this file, the header of the ValueMap class is defined." alt="" coords="339,5,560,61"/>
+<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="188,259,271,285"/>
+<area shape="rect" id="node4" title=" " alt="" coords="288,333,350,360"/>
+<area shape="rect" id="node5" title=" " alt="" coords="62,333,139,360"/>
+<area shape="rect" id="node6" href="$ComparisonFunctions_8h.html" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="226,109,412,136"/>
+<area shape="rect" id="node7" href="$Parameter_8h.html" title="In this file, the header of the Parameter class is defined." alt="" coords="26,184,204,211"/>
+<area shape="rect" id="node8" title=" " alt="" coords="487,109,538,136"/>
+<area shape="rect" id="node9" title=" " alt="" coords="562,109,604,136"/>
+<area shape="rect" id="node10" title=" " alt="" coords="628,109,671,136"/>
+<area shape="rect" id="node11" title=" " alt="" coords="695,109,759,136"/>
+<area shape="rect" id="node3" title=" " alt="" coords="190,333,248,360"/>
 </map>

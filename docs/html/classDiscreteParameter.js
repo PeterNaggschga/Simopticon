@@ -1,7 +1,7 @@
 var classDiscreteParameter =
 [
-    [ "DiscreteParameter", "classDiscreteParameter.html#a7c77d05d06207d5cb5bde5bab608076c", null ],
-    [ "DiscreteParameter", "classDiscreteParameter.html#aaa410a8904a6c5ef71563633de7fc8c6", null ],
+    [ "DiscreteParameter", "classDiscreteParameter.html#a835934342311428803c80321104dfe3a", null ],
+    [ "DiscreteParameter", "classDiscreteParameter.html#a637260eccb3a9cd8485078eea8ae53af", null ],
     [ "getOffset", "classDiscreteParameter.html#a32168788903a536998d0eb37a57abe85", null ],
     [ "getStep", "classDiscreteParameter.html#ad1b32356f2abd3ea777411ae6caa9b15", null ],
     [ "getTimes", "classDiscreteParameter.html#a4dda62dbc671674af0fd082bbd16c4f0", null ],
