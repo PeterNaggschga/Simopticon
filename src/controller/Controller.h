@@ -49,12 +49,12 @@ private:
     /**
      * Saves the best @a n Parameter combinations and the corresponding path to the result files, if #keepFiles is true. @a n can be set in main config.
      */
-    map<parameterCombination, filesystem::path> topResults;
+    std::map<parameterCombination, std::filesystem::path> topResults;
 
     /**
      * Interval of updates of StatusBar using #updateStatus in concurrent status thread.
      */
-    chrono::milliseconds statusInterval = chrono::milliseconds(0);
+    std::chrono::milliseconds statusInterval = std::chrono::milliseconds(0);
 
     /**
      * Calls the #runner to run simulations for the given Parameter combinations.
@@ -62,8 +62,8 @@ private:
      * @param runs: A set of Parameter combinations to be executed.
      * @return A map which maps the given Parameter combinations to their respective result file paths and runIds.
      */
-    virtual map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs);
+    virtual std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
+    runSimulations(const std::set<parameterCombination, CmpVectorSharedParameter> &runs);
 
     /**
      * Calls the #evaluation to evaluate the given result files.
@@ -71,8 +71,8 @@ private:
      * @param simulationResults: A map which maps the Parameter combinations that must be evaluated to their respective file paths of simulation results and runIds.
      * @return A map which maps the given Parameter combinations to their respective functionValue.
      */
-    virtual map<parameterCombination, functionValue, CmpVectorSharedParameter> evaluate(
-            const map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults);
+    virtual std::map<parameterCombination, functionValue, CmpVectorSharedParameter> evaluate(
+            const std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter> &simulationResults);
 
     /**
      * Removes all result files that don't belong to the best @a n results, where @a n is configured in main config.
@@ -93,19 +93,19 @@ protected:
     /**
      * Optimizer defining an optimization strategy.
      */
-    unique_ptr<Optimizer> optimizer;
+    std::unique_ptr<Optimizer> optimizer;
     /**
      * SimulationRunner able to run simulations with certain Parameter combinations.
      */
-    unique_ptr<SimulationRunner> runner;
+    std::unique_ptr<SimulationRunner> runner;
     /**
      * Evaluation capable of evaluating data produced by #runner.
      */
-    unique_ptr<Evaluation> evaluation;
+    std::unique_ptr<Evaluation> evaluation;
     /**
      * ValueMap containing all values gathered by simulating and evaluating certain Parameter combinations.
      */
-    unique_ptr<ValueMap> valueMap;
+    std::unique_ptr<ValueMap> valueMap;
 
 /**
  * A struct keeping track of the currently running optimization step for StatusBar#updateStatus.
@@ -150,7 +150,7 @@ public:
      * @param configPath: Path to the main config. Chosen by first command line argument.
      * @param isStub: Defines whether the constructor was called by constructor of StubController.
      */
-    explicit Controller(const filesystem::path &configPath, bool isStub = false);
+    explicit Controller(const std::filesystem::path &configPath, bool isStub = false);
 
     /**
      * Starts optimization process by calling Optimizer#runOptimization.
@@ -166,7 +166,7 @@ public:
      * @param params: A set of Parameter combinations to be evaluated.
      * @return A map which maps the given Parameter combinations to their respective functionValue.
      */
-    map<parameterCombination, functionValue> requestValues(const list<parameterCombination> &params);
+    std::map<parameterCombination, functionValue> requestValues(const std::list<parameterCombination> &params);
 
     /**
      * Returns #valueMap.

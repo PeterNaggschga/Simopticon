@@ -19,7 +19,7 @@
 /**
  * Reference to the Controller that is running the optimization.
  */
-unique_ptr<Controller> ctr;
+std::unique_ptr<Controller> ctr;
 
 /**
  * Handler routine for SIGINT signal which calls Controller#abort and sets the new handler of SIGINT to the default (instant interrupt of the software).
@@ -40,13 +40,13 @@ void interruptHandler([[maybe_unused]] int s) {
  */
 int main(int argc, char **argv) {
     if (argc < 2) {
-        throw invalid_argument("You need to specify a path to the config.json file as argument!");
+        throw std::invalid_argument("You need to specify a path to the config.json file as argument!");
     }
 
     if (argc == 2) {
-        ctr = make_unique<Controller>(argv[1]);
+        ctr = std::make_unique<Controller>(argv[1]);
     } else {
-        ctr = make_unique<StubController>(argv[1], argv[2]);
+        ctr = std::make_unique<StubController>(argv[1], argv[2]);
     }
 
     struct sigaction intHandler{};
