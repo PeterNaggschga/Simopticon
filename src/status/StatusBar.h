@@ -50,7 +50,7 @@ private:
     /**
      * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to #updateStatus.
      */
-    pair<vector<shared_ptr<Parameter>>, functionValue> lastVal;
+    pair<parameterCombination, functionValue> lastVal;
     /**
      * Step which the optimization was in when #updateStatus was called the last time.
      */
@@ -65,7 +65,7 @@ private:
      * @param cords: Parameter combination of the given result.
      * @param optimum: Value of the given result.
      */
-    static void printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum);
+    static void printResult(const parameterCombination &cords, functionValue optimum);
 
     /**
      * Prints the Status of the given object to the command line using Status#getStatus.
@@ -86,14 +86,14 @@ public:
      * @param currentStep: Current step the optimization is in.
      */
     void updateStatus(Status *opt, Status *runner, Status *eval,
-                      const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged = false,
+                      const pair<parameterCombination, functionValue> &currentVal, bool stepChanged = false,
                       step currentStep = INIT);
 
     /**
      * Prints the given Parameter combinations and respective values to command line.
      * @param top: List of Parameter combinations and respective values to be printed.
      */
-    static void printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top);
+    static void printResults(list<pair<parameterCombination, pair<functionValue, filesystem::path>>> top);
 
 };
 

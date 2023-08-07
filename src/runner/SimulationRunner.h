@@ -38,7 +38,7 @@ using namespace std;
  * @ingroup runner
  */
 class SimulationRunner
-        : public Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>,
+        : public Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>,
           public Status {
 private:
     /**
@@ -47,7 +47,7 @@ private:
      * @param run: Parameter combination to be simulated.
      * @return A pair containing a path to the result directory and a set of runIds identifying the respective simulation runs.
      */
-    pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override = 0;
+    pair<filesystem::path, set<runId>> work(parameterCombination run) override = 0;
 
 public:
     /**
@@ -64,8 +64,8 @@ public:
      * @param runs: Set of Parameter combinations to be simulated.
      * @return A map which maps the given Parameter combinations to their respective result directory and runIds.
      */
-    virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
+    virtual map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+    runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs);
 
     string getName() override;
 

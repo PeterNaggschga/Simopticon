@@ -42,14 +42,14 @@ public:
      * @param params: Parameter combination to be transformed.
      * @return A point in the unit hypercube corresponding to the given Parameter combination.
      */
-    static vector<dirCoordinate> normalize(const vector<shared_ptr<Parameter>> &params);
+    static vector<dirCoordinate> normalize(const parameterCombination &params);
 
     /**
      * Transforms the given point in the unit hypercube into a Parameter combination.
      * @param cords: Point in the unit hypercube to be transformed.
      * @return A Parameter combination corresponding to the given point in the unit hypercube.
      */
-    vector<shared_ptr<Parameter>> denormalize(vector<dirCoordinate> cords);
+    parameterCombination denormalize(vector<dirCoordinate> cords);
 };
 
 

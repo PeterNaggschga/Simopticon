@@ -14,7 +14,7 @@ const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
 const string StatusBar::SMALL_DIVIDER = string(70, '-') + "\n";
 
 void StatusBar::updateStatus(Status *opt, Status *runner, Status *eval,
-                             const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged,
+                             const pair<parameterCombination, functionValue> &currentVal, bool stepChanged,
                              step currentStep) {
     currentStep = stepChanged ? currentStep : lastStep;
     if (stepChanged || currentVal != lastVal) {
@@ -52,7 +52,7 @@ void StatusBar::updateStatus(Status *opt, Status *runner, Status *eval,
     cout.flush();
 }
 
-void StatusBar::printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum) {
+void StatusBar::printResult(const parameterCombination &cords, functionValue optimum) {
     unsigned int i = 1;
     for (const auto &param: cords) {
         if (param->getConfig().empty()) {
@@ -71,7 +71,7 @@ void StatusBar::printStatus(Status *object) {
     cout << object->getStatus() << "\n";
 }
 
-void StatusBar::printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top) {
+void StatusBar::printResults(list<pair<parameterCombination, pair<functionValue, filesystem::path>>> top) {
     cout << LARGE_DIVIDER;
     size_t i = top.size();
     for (auto it = top.rbegin(); it != top.rend(); ++it) {

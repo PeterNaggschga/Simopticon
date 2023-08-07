@@ -24,28 +24,28 @@ private:
      * Map that contains the predefined functions quadratic, shekel5, shekel7, shekel10, branin, goldprice, camel6, shubert, hartman3 and hartman6.
      * For more information on all but the first function visit: https://www.sfu.ca/~ssurjano/optimization.html
      */
-    static map<string, function<functionValue(vector<shared_ptr<Parameter>>)>> functions;
+    static map<string, function<functionValue(parameterCombination)>> functions;
 
     /**
      * Function to be optimized in the current optimization. One of the functions in #functions.
      */
-    const function<functionValue(vector<shared_ptr<Parameter>>)> f;
+    const function<functionValue(parameterCombination)> f;
 
     /**
      * Returns empty paths and runIds for each requested Parameter combination.
      * @param runs: Parameter combination to be simulated.
      * @return Map which maps the given Parameter combinations to empty paths and runIds.
      */
-    map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) override;
+    map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+    runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs) override;
 
     /**
      * Evaluates the given Parameter combinations with #f.
      * @param simulationResults: Map which maps Parameter combinations to empty results (see #runSimulations).
      * @return A Map which maps the given Parameter combinations to the respective value of #f.
      */
-    map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> evaluate(
-            const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) override;
+    map<parameterCombination, functionValue, CmpVectorSharedParameter> evaluate(
+            const map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) override;
 
     /**
      * Does nothing, since no simulations are run and therefore no result files are created.

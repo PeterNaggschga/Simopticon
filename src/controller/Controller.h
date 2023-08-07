@@ -49,7 +49,7 @@ private:
     /**
      * Saves the best @a n Parameter combinations and the corresponding path to the result files, if #keepFiles is true. @a n can be set in main config.
      */
-    map<vector<shared_ptr<Parameter>>, filesystem::path> topResults;
+    map<parameterCombination, filesystem::path> topResults;
 
     /**
      * Interval of updates of StatusBar using #updateStatus in concurrent status thread.
@@ -62,8 +62,8 @@ private:
      * @param runs: A set of Parameter combinations to be executed.
      * @return A map which maps the given Parameter combinations to their respective result file paths and runIds.
      */
-    virtual map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-    runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs);
+    virtual map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+    runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs);
 
     /**
      * Calls the #evaluation to evaluate the given result files.
@@ -71,8 +71,8 @@ private:
      * @param simulationResults: A map which maps the Parameter combinations that must be evaluated to their respective file paths of simulation results and runIds.
      * @return A map which maps the given Parameter combinations to their respective functionValue.
      */
-    virtual map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> evaluate(
-            const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults);
+    virtual map<parameterCombination, functionValue, CmpVectorSharedParameter> evaluate(
+            const map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults);
 
     /**
      * Removes all result files that don't belong to the best @a n results, where @a n is configured in main config.
@@ -166,7 +166,7 @@ public:
      * @param params: A set of Parameter combinations to be evaluated.
      * @return A map which maps the given Parameter combinations to their respective functionValue.
      */
-    map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
+    map<parameterCombination, functionValue> requestValues(const list<parameterCombination> &params);
 
     /**
      * Returns #valueMap.

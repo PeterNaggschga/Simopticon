@@ -13,7 +13,7 @@ ConfigEditor::ConfigEditor(filesystem::path directory, nlohmann::json controller
           RESULTS(directory.parent_path().append("optResults")), CONTROLLER(std::move(controller)) {
 }
 
-void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat) {
+void ConfigEditor::createConfig(const parameterCombination &params, size_t runNumber, unsigned int repeat) {
     ifstream inStream(CONFIG);
     ostringstream textStream;
     textStream << inStream.rdbuf();

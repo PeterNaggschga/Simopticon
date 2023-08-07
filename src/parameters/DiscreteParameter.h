@@ -38,7 +38,7 @@ public:
      * @param step: Difference between discrete values.
      * @param value: Initial value of the Parameter.
      */
-    DiscreteParameter(shared_ptr<ParameterDefinition> def, double step, double value);
+    DiscreteParameter(std::shared_ptr<ParameterDefinition> def, double step, double value);
 
     /**
      * Creates a DiscreteParameter with the given ParameterDefinition and step.
@@ -46,7 +46,7 @@ public:
      * @param def: ParameterDefinition of the Parameter.
      * @param step: Difference between discrete values.
      */
-    DiscreteParameter(shared_ptr<ParameterDefinition> def, double step);
+    DiscreteParameter(std::shared_ptr<ParameterDefinition> def, double step);
 
     /**
      * Returns the value of #times.

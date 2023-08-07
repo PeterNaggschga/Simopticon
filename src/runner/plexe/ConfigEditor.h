@@ -91,7 +91,7 @@ public:
      * @param runNumber: An unique number of the simulated Parameter combination.
      * @param repeat: Number of repetitions to be simulated.
      */
-    void createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat);
+    void createConfig(const parameterCombination &params, size_t runNumber, unsigned int repeat);
 
     /**
      * Deletes the file `.tmpx.ini` from #DIR where `x` is given by @a runId.

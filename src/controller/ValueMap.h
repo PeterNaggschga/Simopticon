@@ -30,16 +30,16 @@ private:
     /**
      * Threadlock to avoid damage to the data structure when concurrent threads access it.
      */
-    mutex operationsLock;
+    std::mutex operationsLock;
 
     /**
      * Greater half of the values in #values. Same size as or one element more than #lowerValues.
      */
-    set<functionValue *, CmpPtrFunctionvalue> upperValues;
+    std::set<functionValue *, CmpPtrFunctionvalue> upperValues;
     /**
      * Lesser half of the values in #values. Same size as or one element less than #upperValues.
      */
-    set<functionValue *, CmpPtrFunctionvalue> lowerValues;
+    std::set<functionValue *, CmpPtrFunctionvalue> lowerValues;
 
     /**
      * Number of entries to be printed as best values at the end of the optimization process.
@@ -50,18 +50,18 @@ private:
      * Set of pairs of the best Parameter combinations and their respective values.
      * Contains not more than #topEntries entries.
      */
-    set<pair<const vector<shared_ptr<Parameter>>, functionValue>, CmpPairVectorSharedParameterFunctionvalue> topVals;
+    std::set<std::pair<const parameterCombination, functionValue>, CmpPairVectorSharedParameterFunctionvalue> topVals;
 
     /**
      * Actual map that contains Parameter combinations and their respective values.
      */
-    map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> values;
+    std::map<parameterCombination, functionValue, CmpVectorSharedParameter> values;
 
     /**
      * Entries that have been added since last #updateMap.
      * Will be inserted into #values, #upperValues and #lowerValues when #updateMap is called.
      */
-    list<pair<vector<shared_ptr<Parameter>>, functionValue>> tba;
+    std::list<std::pair<parameterCombination, functionValue>> tba;
 
     /**
      * Takes all values in #tba, adds them to #lowerValues or #upperValues and inserts them into #values.
@@ -75,8 +75,8 @@ private:
      * @param val: Parameter combination and respective value to be inserted. 
      * @param set: Set that value is inserted in. Either #lowerValues or #upperValues.
      */
-    void addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
-                  set<functionValue *, CmpPtrFunctionvalue> &set);
+    void addValue(const std::pair<parameterCombination, functionValue> &val,
+                  std::set<functionValue *, CmpPtrFunctionvalue> &set);
 
 public:
     /**
@@ -91,14 +91,14 @@ public:
      * @param params: Parameter combination to which the value is requested. 
      * @return The value saved in #values at the given Parameter combination.
      */
-    [[nodiscard]] functionValue query(const vector<shared_ptr<Parameter>> &params);
+    [[nodiscard]] functionValue query(const parameterCombination &params);
 
     /**
      * Adds the given Parameter combination and value to #tba.
      * @param params: Parameter combination to be added.
      * @param val: Value to be added.
      */
-    void insert(const vector<shared_ptr<Parameter>> &params, functionValue val);
+    void insert(const parameterCombination &params, functionValue val);
 
     /**
      * Checks if a value has been recorded at the given Parameter combination.
@@ -106,7 +106,7 @@ public:
      * @param cords: Parameter combination that is checked. 
      * @return A boolean value that represents if the value is known.
      */
-    [[nodiscard]] bool isKnown(const vector<shared_ptr<Parameter>> &cords);
+    [[nodiscard]] bool isKnown(const parameterCombination &cords);
 
     /**
      * Checks if the given Parameter combination is to be found in #topVals.
@@ -114,14 +114,14 @@ public:
      * @param cords: Parameter combination that is checked. 
      * @return A boolean value that represents if the value is one of the best #topEntries entries in #values.
      */
-    [[nodiscard]] bool isTopValue(const vector<shared_ptr<Parameter>> &cords);
+    [[nodiscard]] bool isTopValue(const parameterCombination &cords);
 
     /**
      * Returns the whole #values member.
      * Triggers #updateMap.
      * @return A map reference to #values.
      */
-    const map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> &getValues();
+    const std::map<parameterCombination, functionValue, CmpVectorSharedParameter> &getValues();
 
     /**
      * Returns the median of all values using #lowerValues and #upperValues.
@@ -142,7 +142,7 @@ public:
      * Triggers #updateMap.
      * @return A list of the best #topEntries Parameter combinations and their respective values.
      */
-    [[nodiscard]] list<pair<vector<shared_ptr<Parameter>>, functionValue>> getTopVals();
+    [[nodiscard]] std::list<std::pair<parameterCombination, functionValue>> getTopVals();
 };
 
 

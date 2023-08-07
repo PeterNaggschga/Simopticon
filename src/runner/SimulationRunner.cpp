@@ -11,8 +11,8 @@
 SimulationRunner::SimulationRunner(unsigned int threads) : Multithreaded(threads) {
 }
 
-map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-SimulationRunner::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) {
+map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+SimulationRunner::runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs) {
     return runMultithreadedFunctions(runs);
 }
 

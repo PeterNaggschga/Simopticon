@@ -71,18 +71,18 @@ void DirectOptimizer::runOptimization() {
 }
 
 map<vector<dirCoordinate>, functionValue> DirectOptimizer::getValues(const list<vector<dirCoordinate>> &points) {
-    map<vector<shared_ptr<Parameter>>, vector<dirCoordinate>> paramToCord;
-    list<vector<shared_ptr<Parameter>>> paramList;
+    map<parameterCombination, vector<dirCoordinate>> paramToCord;
+    list<parameterCombination> paramList;
     for (const vector<dirCoordinate> &point: points) {
-        vector<shared_ptr<Parameter>> paramVec = normalizer.denormalize(point);
+        parameterCombination paramVec = normalizer.denormalize(point);
         paramList.push_back(paramVec);
         paramToCord.insert(make_pair(paramVec, point));
     }
 
-    map<vector<shared_ptr<Parameter>>, functionValue> values = requestValues(paramList);
+    map<parameterCombination, functionValue> values = requestValues(paramList);
 
     map<vector<dirCoordinate>, functionValue> result;
-    for (pair<vector<shared_ptr<Parameter>>, functionValue> pair: values) {
+    for (pair<parameterCombination, functionValue> pair: values) {
         result.insert(make_pair(paramToCord[pair.first], pair.second));
     }
     return result;

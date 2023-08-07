@@ -9,8 +9,8 @@
 
 #include <utility>
 
-map<vector<shared_ptr<Parameter>>, functionValue>
-Optimizer::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
+map<parameterCombination, functionValue>
+Optimizer::requestValues(const list<parameterCombination> &params) {
     return controller.requestValues(params);
 }
 

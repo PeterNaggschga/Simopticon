@@ -21,7 +21,7 @@ PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int 
                                                                     editor(std::move(editor)) {
 }
 
-pair<filesystem::path, set<runId>> PlexeSimulationRunner::work(vector<shared_ptr<Parameter>> run) {
+pair<filesystem::path, set<runId>> PlexeSimulationRunner::work(parameterCombination run) {
     size_t iniNumber = getRunId();
     editor.createConfig(run, iniNumber, REPEAT);
 
@@ -92,13 +92,13 @@ string PlexeSimulationRunner::getStatus() {
     status += "\nRepeat:\t\t\t" + to_string(REPEAT) + "\n";
     status += "Max. number of threads:\t" + to_string(
             Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::NR_THREADS *
-            Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::NR_THREADS);
+            Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::NR_THREADS);
     return status;
 }
 
 string PlexeSimulationRunner::getStatusBar() {
-    auto runnerCurrent = Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getSize();
-    auto runnerStart = Multithreaded<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getStartSize();
+    auto runnerCurrent = Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getSize();
+    auto runnerStart = Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getStartSize();
     auto plexeStart = Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::queue.getStartSize();
 
     return "Running simulations... waiting: " + to_string(plexeStart * runnerCurrent) + ", running/done: " +

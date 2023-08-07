@@ -72,7 +72,7 @@ private:
      * @param run: Parameter combination to be simulated.
      * @return A pair containing the path to the result files and OMNeT++-Run-IDs of the executed simulations.
      */
-    pair<filesystem::path, set<runId>> work(vector<shared_ptr<Parameter>> run) override;
+    pair<filesystem::path, set<runId>> work(parameterCombination run) override;
 
     /**
      * Executes one run of a Parameter combination (meaning repetition @a k of scenario @a c).
@@ -87,7 +87,7 @@ public:
      * Creates PlexeSimulationRunner which cannot use more than the given number of threads.
      * Number of repetitions, scenarios to be simulated and the ConfigEditor must also be defined.
      * The new PlexeSimulationRunner uses @f$ t = \min(\mathit{threads}, \mathit{repeat} \cdot \mathit{size}(\mathit{scenarios})) @f$ concurrent threads for parallelization of #work(std::pair< std::filesystem::path, std::pair< std::basic_string< char >, unsigned int >>).
-     * For the parallelization of #work(vector<shared_ptr<Parameter>>) @f$ t' = \lfloor \mathit{threads} \div t \rfloor @f$ concurrent threads are used.
+     * For the parallelization of #work(parameterCombination) @f$ t' = \lfloor \mathit{threads} \div t \rfloor @f$ concurrent threads are used.
      * @param threads: Maximum number of threads to be used.
      * @param repeat: Number of repetitions per Parameter combination and scenario.
      * @param scenarios: Scenarios to be simulated per Parameter combination.

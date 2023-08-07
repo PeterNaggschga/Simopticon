@@ -60,7 +60,7 @@ protected:
      * @param params: Parameter combinations to be evaluated.
      * @return A map which maps Parameter combinations to their respective values.
      */
-    map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
+    map<parameterCombination, functionValue> requestValues(const list<parameterCombination> &params);
 
 public:
     /**

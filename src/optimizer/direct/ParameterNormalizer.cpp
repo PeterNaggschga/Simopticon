@@ -14,7 +14,7 @@ ParameterNormalizer::ParameterNormalizer(list<shared_ptr<ParameterDefinition>> p
         std::move(parameters)) {
 }
 
-vector<dirCoordinate> ParameterNormalizer::normalize(const vector<shared_ptr<Parameter>> &params) {
+vector<dirCoordinate> ParameterNormalizer::normalize(const parameterCombination &params) {
     vector<dirCoordinate> result(params.size());
     for (const auto &param: params) {
         result.push_back((param->getVal() - param->getMin()) / (param->getMax() - param->getMin()));
@@ -22,8 +22,8 @@ vector<dirCoordinate> ParameterNormalizer::normalize(const vector<shared_ptr<Par
     return result;
 }
 
-vector<shared_ptr<Parameter>> ParameterNormalizer::denormalize(vector<dirCoordinate> cords) {
-    vector<shared_ptr<Parameter>> result;
+parameterCombination ParameterNormalizer::denormalize(vector<dirCoordinate> cords) {
+    parameterCombination result;
     int i = 0;
     for (const shared_ptr<ParameterDefinition> &def: parameters) {
         shared_ptr<Parameter> newParam(

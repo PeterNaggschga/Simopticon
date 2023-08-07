@@ -125,11 +125,11 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     cout << "done\n" << endl;
 }
 
-map<vector<shared_ptr<Parameter>>, functionValue>
-Controller::requestValues(const list<vector<shared_ptr<Parameter>>> &params) {
+map<parameterCombination, functionValue>
+Controller::requestValues(const list<parameterCombination> &params) {
     updateStatus();
-    map<vector<shared_ptr<Parameter>>, functionValue> result;
-    set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> simRuns;
+    map<parameterCombination, functionValue> result;
+    set<parameterCombination, CmpVectorSharedParameter> simRuns;
     for (const auto &cords: params) {
         if (valueMap->isKnown(cords)) {
             result.insert(make_pair(cords, valueMap->query(cords)));
@@ -177,30 +177,30 @@ void Controller::run() {
     optimizer->runOptimization();
     statusInterval = milliseconds(0);
     statusThread.join();
-    list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top;
+    list<pair<parameterCombination, pair<functionValue, filesystem::path>>> top;
     for (const auto &entry: valueMap->getTopVals()) {
         top.emplace_back(entry.first, make_pair(entry.second, topResults[entry.first]));
     }
     StatusBar::printResults(top);
 }
 
-map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-Controller::runSimulations(const set<vector<shared_ptr<Parameter>>, CmpVectorSharedParameter> &runs) {
+map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
+Controller::runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs) {
     updateStatus();
     auto res = runner->runSimulations(runs);
     updateStatus();
     return res;
 }
 
-map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> Controller::evaluate(
-        const map<vector<shared_ptr<Parameter>>, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
+map<parameterCombination, functionValue, CmpVectorSharedParameter> Controller::evaluate(
+        const map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
     updateStatus();
     set<pair<filesystem::path, set<runId>>> resultFiles;
     for (const auto &entry: simulationResults) {
         resultFiles.insert(entry.second);
     }
     auto evaluationResult = evaluation->processOutput(resultFiles);
-    map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> result;
+    map<parameterCombination, functionValue, CmpVectorSharedParameter> result;
     for (const auto &entry: simulationResults) {
         result.insert(make_pair(entry.first, evaluationResult[entry.second]));
     }
@@ -213,7 +213,7 @@ void Controller::removeOldResultfiles() {
         filesystem::path resultDir = topResults.begin()->second.parent_path();
         filesystem::remove_all(resultDir);
     } else if (topResults.size() > valueMap->getTopVals().size()) {
-        list<vector<shared_ptr<Parameter>>> toBeRemoved;
+        list<parameterCombination> toBeRemoved;
         for (const auto &entry: topResults) {
             if (!valueMap->isTopValue(entry.first)) {
                 filesystem::remove_all(entry.second);
@@ -227,8 +227,8 @@ void Controller::removeOldResultfiles() {
 }
 
 void Controller::updateStatus() {
-    pair<vector<shared_ptr<Parameter>>, functionValue> p =
-            valueMap->getSize() != 0 ? valueMap->getTopVals().front() : make_pair(vector<shared_ptr<Parameter>>(),
+    pair<parameterCombination, functionValue> p =
+            valueMap->getSize() != 0 ? valueMap->getTopVals().front() : make_pair(parameterCombination(),
                                                                                   (functionValue) INFINITY);
     bool stateChanged = stepState.stepChanged;
     statusBar.updateStatus(optimizer.get(), runner.get(), evaluation.get(), p, stateChanged, stepState.get());

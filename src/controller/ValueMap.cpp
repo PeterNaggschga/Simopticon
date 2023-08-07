@@ -5,8 +5,8 @@
 
 #include "ValueMap.h"
 
-#include <stdexcept>
 #include <cmath>
+#include <stdexcept>
 #include <algorithm>
 
 ValueMap::ValueMap(unsigned int topEntries) : topEntries(topEntries) {
@@ -40,18 +40,18 @@ void ValueMap::updateMap() {
         upperValues.erase(upperValues.begin(), it);
     } else if (diff < 0) {
         auto it = lowerValues.end();
-        advance(it, floor((float) diff / 2));
+        advance(it, std::floor((float) diff / 2));
         upperValues.insert(it, lowerValues.end());
         lowerValues.erase(it, lowerValues.end());
     }
     operationsLock.unlock();
 }
 
-void ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue> &val,
-                        set<functionValue *, CmpPtrFunctionvalue> &set) {
+void ValueMap::addValue(const std::pair<parameterCombination, functionValue> &val,
+                        std::set<functionValue *, CmpPtrFunctionvalue> &set) {
     auto worked = values.insert(val);
     if (!worked.second) {
-        throw logic_error("Value couldn't be inserted!");
+        throw std::logic_error("Value couldn't be inserted!");
     }
     set.insert(&worked.first->second);
     if (topVals.empty()) {
@@ -68,22 +68,22 @@ void ValueMap::addValue(const pair<vector<shared_ptr<Parameter>>, functionValue>
     }
 }
 
-functionValue ValueMap::query(const vector<shared_ptr<Parameter>> &params) {
+functionValue ValueMap::query(const parameterCombination &params) {
     updateMap();
     operationsLock.lock();
     auto res = values.find(params);
     if (res == values.end()) {
-        throw invalid_argument("Param combination not present!");
+        throw std::invalid_argument("Param combination not present!");
     }
     operationsLock.unlock();
     return res->second;
 }
 
-void ValueMap::insert(const vector<shared_ptr<Parameter>> &params, functionValue val) {
+void ValueMap::insert(const parameterCombination &params, functionValue val) {
     tba.emplace_back(params, val);
 }
 
-bool ValueMap::isKnown(const vector<shared_ptr<Parameter>> &cords) {
+bool ValueMap::isKnown(const parameterCombination &cords) {
     if (getSize() == 0) {
         return false;
     }
@@ -110,12 +110,12 @@ size_t ValueMap::getSize() const {
     return values.size() + tba.size();
 }
 
-list<pair<vector<shared_ptr<Parameter>>, functionValue>> ValueMap::getTopVals() {
+std::list<std::pair<parameterCombination, functionValue>> ValueMap::getTopVals() {
     updateMap();
     return {topVals.begin(), topVals.end()};
 }
 
-bool ValueMap::isTopValue(const vector<shared_ptr<Parameter>> &cords) {
+bool ValueMap::isTopValue(const parameterCombination &cords) {
     updateMap();
     for (const auto &entry: topVals) {
         if (entry.first.size() != cords.size()) {
@@ -131,7 +131,7 @@ bool ValueMap::isTopValue(const vector<shared_ptr<Parameter>> &cords) {
     return false;
 }
 
-const map<vector<shared_ptr<Parameter>>, functionValue, CmpVectorSharedParameter> &ValueMap::getValues() {
+const std::map<parameterCombination, functionValue, CmpVectorSharedParameter> &ValueMap::getValues() {
     updateMap();
     return values;
 }

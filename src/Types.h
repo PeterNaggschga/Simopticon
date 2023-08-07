@@ -3,12 +3,22 @@
 
 #include <string>
 
+#include <vector>
+#include <memory>
+
+class Parameter;
+
 /**
  * In this file, types are defined which should be used across the whole framework.
  *
  * @file Types.h
  * @ingroup utils
  */
+
+/**
+ * A complex type representing a vector in parameter space.
+ */
+typedef std::vector<std::shared_ptr<Parameter>> parameterCombination;
 
 /**
  * A floating point type containing the value of an optimized function.

@@ -18,8 +18,6 @@
 
 class ParameterDefinition;
 
-using namespace std;
-
 /**
  * This module defines framework-wide representations of the optimized parameters.
  * @defgroup parameters parameters
@@ -34,14 +32,14 @@ private:
     /**
      * Reference to the defining ParameterDefinition.
      */
-    shared_ptr<ParameterDefinition> definition;
+    std::shared_ptr<ParameterDefinition> definition;
 
 public:
     /**
      * Creates a Parameter with the given ParameterDefinition.
      * @param def: Definition of properties of the Parameter.
      */
-    explicit Parameter(shared_ptr<ParameterDefinition> def);
+    explicit Parameter(std::shared_ptr<ParameterDefinition> def);
 
     virtual ~Parameter() = default;
 
@@ -61,13 +59,13 @@ public:
      * Returns the unit string of the Parameter stored in ParameterDefinition#unit of #definition.
      * @return A string reference containing the unit.
      */
-    [[nodiscard]] const string &getUnit() const;
+    [[nodiscard]] const std::string &getUnit() const;
 
     /**
      * Returns the configuration string of the Parameter stored in ParameterDefinition#config of #definition.
      * @return A string reference containing the configuration.
      */
-    [[nodiscard]] const string &getConfig() const;
+    [[nodiscard]] const std::string &getConfig() const;
 
     /**
      * Returns the current value of the Parameter.
