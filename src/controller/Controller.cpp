@@ -21,6 +21,12 @@
 
 using json = nlohmann::json;
 
+/**
+ * Helper method parsing a json object from the given file.
+ * @param baseDir: Directory the json file resides in.
+ * @param config: Name of the json file.
+ * @return A json object parsed from the given file.
+ */
 json getConfigByPath(filesystem::path baseDir, const string &config) {
     filesystem::path configPath = std::move(baseDir);
     configPath.append(config);

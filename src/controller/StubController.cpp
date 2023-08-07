@@ -9,6 +9,14 @@
 #include <utility>
 #include <cmath>
 
+/**
+ * Helper method calculating the Shekel function with @a m local minima for the given input.
+ * Only implemented for @f$ 1 \leq m \leq 10 @f$.
+ * More information at https://www.sfu.ca/~ssurjano/shekel.html.
+ * @param m: Number of local minima.
+ * @param v: Argument vector where the function should be evaluated.
+ * @return The value of the shekel function at the given argument vector.
+ */
 functionValue shekel(int m, const vector<shared_ptr<Parameter>> &v) {
     const vector<vector<functionValue>> C = {
             {4, 1, 8, 6, 3, 2, 5, 8, 6, 7},
@@ -28,6 +36,14 @@ functionValue shekel(int m, const vector<shared_ptr<Parameter>> &v) {
     return val;
 }
 
+/**
+ * Helper method calculating the Hartman function with the given @a A and @a P matrices for the given input.
+ * More information at https://www.sfu.ca/~ssurjano/hart3.html, https://www.sfu.ca/~ssurjano/hart4.html and https://www.sfu.ca/~ssurjano/hart6.html.
+ * @param A: Matrix A used in calculation of Hartman function.
+ * @param P: Matrix P used in calculation of Hartman function.
+ * @param v
+ * @return
+ */
 functionValue hartman(const vector<vector<functionValue>> &A, const vector<vector<functionValue>> &P,
                       const vector<shared_ptr<Parameter>> &v) {
     const vector<functionValue> alpha = {1, 1.2, 3, 3.2};

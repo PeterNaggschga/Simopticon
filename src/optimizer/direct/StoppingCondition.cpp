@@ -12,6 +12,15 @@ StoppingCondition::StoppingCondition(size_t evaluations, size_t hyrects, unsigne
           NR_ACCURACY_ITERATIONS(accuracyIterations) {
 }
 
+/**
+ * Helper method, which checks whether the given condition should be used and returns the corresponding value if thats the case.
+ * If not, 0 is returned.
+ * @tparam T: Type of the value located at the given key.
+ * @param object: JSON object the condition is read from.
+ * @param key: Key of the fetched condition.
+ * @param val: Key of the value field of the fetched condition.
+ * @return A value of type T that should be used as value for the condition.
+ */
 template<typename T>
 T getConditionFromJSON(json object, const std::string &key, const std::string &val = "n") {
     return object.at(key).at("useCondition").get<bool>() ? object.at(key).at(val).get<T>() : 0;
