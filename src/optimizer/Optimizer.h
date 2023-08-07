@@ -27,8 +27,6 @@ class Parameter;
 
 class ValueMap;
 
-using namespace std;
-
 /**
  * This module contains components capable of finding the minimum of a function only defined through argument-value pairs.
  * Implementations must extend Optimizer.
@@ -52,7 +50,7 @@ protected:
     /**
      * List of parameters to be optimized.
      */
-    list<shared_ptr<ParameterDefinition>> parameters;
+    std::list<std::shared_ptr<ParameterDefinition>> parameters;
 
     /**
      * Requests the values when using certain Parameter combinations from #controller.
@@ -60,7 +58,7 @@ protected:
      * @param params: Parameter combinations to be evaluated.
      * @return A map which maps Parameter combinations to their respective values.
      */
-    map<parameterCombination, functionValue> requestValues(const list<parameterCombination> &params);
+    std::map<parameterCombination, functionValue> requestValues(const std::list<parameterCombination> &params);
 
 public:
     /**
@@ -68,7 +66,7 @@ public:
      * @param ctrl: Controller to be used for evaluation of Parameter combinations.
      * @param params: List of ParameterDefinition defining the parameters that must be optimized.
      */
-    Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params);
+    Optimizer(Controller &ctrl, std::list<std::shared_ptr<ParameterDefinition>> params);
 
     virtual ~Optimizer() = default;
 
@@ -84,11 +82,11 @@ public:
      */
     [[nodiscard]] ValueMap &getValueMap() const;
 
-    string getName() override;
+    std::string getName() override;
 
-    string getStatus() override;
+    std::string getStatus() override;
 
-    string getStatusBar() override;
+    std::string getStatusBar() override;
 
 };
 

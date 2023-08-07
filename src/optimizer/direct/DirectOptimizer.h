@@ -74,7 +74,7 @@ private:
      * This includes all rectangles which have not been divided yet.
      * They are grouped by HyRect#t and sorted by HyRect#avgValue which simplifies the search for potentially optimal rectangles in #optimalRectangles.
      */
-    map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>, greater<>> activeRects;
+    std::map<depth, std::set<std::shared_ptr<HyRect>, CmpSharedHyrect>, std::greater<>> activeRects;
 
     /**
      * Returns the function values at the given points.
@@ -83,7 +83,7 @@ private:
      * @param points: List of points in the hypercube to be evaluated.
      * @return A map which maps the given points to their respective values.
      */
-    map<vector<dirCoordinate>, functionValue> getValues(const list<vector<dirCoordinate>> &points);
+    std::map<std::vector<dirCoordinate>, functionValue> getValues(const std::list<std::vector<dirCoordinate>> &points);
 
     /**
      * Calculates the minimum expected value in a rectangle when the given Lipschitz constant is assumed.
@@ -91,7 +91,7 @@ private:
      * @param k: Lipschitz constant that is assumed in this rectangle.
      * @return A value representing an estimation of the absolute minimum reachable in this rectangle.
      */
-    static functionValue estimatedValue(const shared_ptr<HyRect> &rect, double k);
+    static functionValue estimatedValue(const std::shared_ptr<HyRect> &rect, double k);
 
     /**
      * Finds potentially optimal rectangles that should be divided in the current iteration.
@@ -102,19 +102,19 @@ private:
      * @param phi: Value at the current minimum.
      * @return A list of potentially optimal rectangles.
      */
-    list<shared_ptr<HyRect>> optimalRectangles(size_t nrRects, functionValue phi);
+    std::list<std::shared_ptr<HyRect>> optimalRectangles(size_t nrRects, functionValue phi);
 
     /**
      * Requests values at the corners of the given rectangles and add all given HyRect instances to #activeRects.
      * @param rects: Rectangles to be evaluated and added.
      */
-    void addActiveRects(const list<shared_ptr<HyRect>> &rects);
+    void addActiveRects(const std::list<std::shared_ptr<HyRect>> &rects);
 
     /**
      * Removes the given rectangles from #activeRects.
      * @param rects: Rectangles to be removed.
      */
-    void removeActiveRects(const list<shared_ptr<HyRect>> &rects);
+    void removeActiveRects(const std::list<std::shared_ptr<HyRect>> &rects);
 
     /**
      * Prints the current number of iterations, evaluations, rectangles and the current optimal value to a `.csv` file.
@@ -138,8 +138,8 @@ public:
      * @param trackProgress: Defines whether the progress should be printed in a `.csv` file.
      * @param printValues: Defines whether all obtained values should be printed in a `.csv` file after optimization.
      */
-    DirectOptimizer(Controller &ctrl, const list<shared_ptr<ParameterDefinition>> &params, StoppingCondition con,
-                    bool trackProgress, bool printValues);
+    DirectOptimizer(Controller &ctrl, const std::list<std::shared_ptr<ParameterDefinition>> &params,
+                    StoppingCondition con, bool trackProgress, bool printValues);
 
     /**
      * Starts the optimization using the DIRECT algorithm.
@@ -147,11 +147,11 @@ public:
      */
     void runOptimization() override;
 
-    string getName() override;
+    std::string getName() override;
 
-    string getStatus() override;
+    std::string getStatus() override;
 
-    string getStatusBar() override;
+    std::string getStatusBar() override;
 
     /**
      * Returns the number of rectangles stored in #activeRects.

@@ -9,8 +9,8 @@
 
 #include <utility>
 
-map<parameterCombination, functionValue>
-Optimizer::requestValues(const list<parameterCombination> &params) {
+std::map<parameterCombination, functionValue>
+Optimizer::requestValues(const std::list<parameterCombination> &params) {
     return controller.requestValues(params);
 }
 
