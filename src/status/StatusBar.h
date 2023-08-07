@@ -22,8 +22,6 @@ class Evaluation;
 
 class ValueMap;
 
-using namespace std;
-
 /**
  * An Enum defining the steps, an optimization process cycles through.
  * @ingroup status
@@ -41,16 +39,16 @@ private:
     /**
      * Large divider used to visibly divide two sections of content.
      */
-    const static string LARGE_DIVIDER;
+    const static std::string LARGE_DIVIDER;
     /**
      * Small divider used to visibly divide two sections of content.
      */
-    const static string SMALL_DIVIDER;
+    const static std::string SMALL_DIVIDER;
 
     /**
      * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to #updateStatus.
      */
-    pair<parameterCombination, functionValue> lastVal;
+    std::pair<parameterCombination, functionValue> lastVal;
     /**
      * Step which the optimization was in when #updateStatus was called the last time.
      */
@@ -58,7 +56,7 @@ private:
     /**
      * Last values of the StatusBar output (excluding value returned by Status#getStatusBar)
      */
-    string lastStatus;
+    std::string lastStatus;
 
     /**
      Prints the given result command line.
@@ -86,14 +84,15 @@ public:
      * @param currentStep: Current step the optimization is in.
      */
     void updateStatus(Status *opt, Status *runner, Status *eval,
-                      const pair<parameterCombination, functionValue> &currentVal, bool stepChanged = false,
+                      const std::pair<parameterCombination, functionValue> &currentVal, bool stepChanged = false,
                       step currentStep = INIT);
 
     /**
      * Prints the given Parameter combinations and respective values to command line.
      * @param top: List of Parameter combinations and respective values to be printed.
      */
-    static void printResults(list<pair<parameterCombination, pair<functionValue, filesystem::path>>> top);
+    static void
+    printResults(std::list<std::pair<parameterCombination, std::pair<functionValue, std::filesystem::path>>> top);
 
 };
 
