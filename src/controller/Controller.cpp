@@ -44,7 +44,7 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     unsigned int nrTopEntries = baseConfig.at("controller").at("nrTopEntries").get<unsigned int>();
     valueMap = std::make_unique<ValueMap>(nrTopEntries);
     double seconds = baseConfig.at("controller").at("updateInterval").get<double>();
-    statusInterval = milliseconds((long) round(seconds * 1000));
+    statusInterval = std::chrono::milliseconds((long) round(seconds * 1000));
 
     // Read Parameters
     nlohmann::json paramJson = getConfigByPath(configPath.parent_path(),
@@ -166,7 +166,7 @@ ValueMap &Controller::getValueMap() {
 
 void Controller::run() {
     auto runStatusUpdate = [this]() {
-        while (statusInterval != milliseconds(0)) {
+        while (statusInterval != std::chrono::milliseconds(0)) {
             updateStatus();
             this_thread::sleep_for(statusInterval);
         }
@@ -175,7 +175,7 @@ void Controller::run() {
     updateStatus();
     thread statusThread(runStatusUpdate);
     optimizer->runOptimization();
-    statusInterval = milliseconds(0);
+    statusInterval = std::chrono::milliseconds(0);
     statusThread.join();
     list<pair<parameterCombination, pair<functionValue, filesystem::path>>> top;
     for (const auto &entry: valueMap->getTopVals()) {

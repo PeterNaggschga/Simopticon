@@ -39,14 +39,15 @@ StoppingCondition::StoppingCondition(nlohmann::json stopCon) :
 bool StoppingCondition::evaluate(size_t evaluations, size_t hyrects, functionValue newBestVal) {
     bool eval = NR_EVALUATIONS == 0 || evaluations < NR_EVALUATIONS;
     bool rects = NR_HYRECTS == 0 || hyrects < NR_HYRECTS;
-    bool time = !time_eval || END_TIME > system_clock::now();
+    bool time = !time_eval || END_TIME > std::chrono::system_clock::now();
     bool accuracy = updateAccuracy(newBestVal) || (ACCURACY == 0 && NR_ACCURACY_ITERATIONS == 0);
     return eval && rects && time && accuracy;
 }
 
 void StoppingCondition::setStartNow() {
     if (time_eval) {
-        END_TIME = time_point_cast<seconds>(system_clock::now() + minutes(mins));
+        END_TIME = std::chrono::time_point_cast<std::chrono::seconds>(
+                std::chrono::system_clock::now() + std::chrono::minutes(mins));
     }
 }
 
