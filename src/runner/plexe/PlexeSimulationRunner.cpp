@@ -11,41 +11,41 @@
 #include <fstream>
 #include <iostream>
 
-PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios,
-                                             ConfigEditor editor) : SimulationRunner(
-        threads / min((size_t) threads, repeat * scenarios.size())),
-                                                                    Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>(
-                                                                            min((size_t) threads,
-                                                                                repeat * scenarios.size())),
-                                                                    REPEAT(repeat), SCENARIOS(std::move(scenarios)),
-                                                                    editor(std::move(editor)) {
+PlexeSimulationRunner::PlexeSimulationRunner(unsigned int threads, unsigned int repeat,
+                                             std::vector<std::string> scenarios, ConfigEditor editor) :
+        SimulationRunner(threads / std::min((size_t) threads, repeat * scenarios.size())),
+        Multithreaded<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>, bool>(
+                std::min((size_t) threads,
+                         repeat * scenarios.size())), REPEAT(repeat), SCENARIOS(std::move(scenarios)),
+        editor(std::move(editor)) {
 }
 
-pair<filesystem::path, set<runId>> PlexeSimulationRunner::work(parameterCombination run) {
+std::pair<std::filesystem::path, std::set<runId>> PlexeSimulationRunner::work(parameterCombination run) {
     size_t iniNumber = getRunId();
     editor.createConfig(run, iniNumber, REPEAT);
 
-    string configPath = editor.getConfigPath(iniNumber);
-    set<pair<filesystem::path, pair<string, unsigned int>>> runs;
+    std::string configPath = editor.getConfigPath(iniNumber);
+    std::set<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>> runs;
     for (const auto &scenario: SCENARIOS) {
         for (int i = 0; i < REPEAT; ++i) {
             runs.insert(make_pair(configPath, make_pair(scenario, i)));
         }
     }
-    Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::runMultithreadedFunctions(runs);
+    Multithreaded<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>, bool>::runMultithreadedFunctions(
+            runs);
 
     editor.deleteConfig(iniNumber);
 
-    set<runId> ids;
-    filesystem::path resultDir = editor.getResultPath(iniNumber);
-    for (const auto &file: filesystem::directory_iterator(resultDir)) {
+    std::set<runId> ids;
+    std::filesystem::path resultDir = editor.getResultPath(iniNumber);
+    for (const auto &file: std::filesystem::directory_iterator(resultDir)) {
         if (file.path().extension().string() != ".vci") {
             continue;
         }
-        ifstream inStream(file.path());
-        ostringstream textStream;
+        std::ifstream inStream(file.path());
+        std::ostringstream textStream;
         textStream << inStream.rdbuf();
-        string fileContents = textStream.str();
+        std::string fileContents = textStream.str();
         inStream.close();
 
         size_t pos = fileContents.find("run ") + 4;
@@ -65,42 +65,42 @@ size_t PlexeSimulationRunner::getRunId() {
 
 bool
 PlexeSimulationRunner::work(std::pair<std::filesystem::path, std::pair<std::basic_string<char>, unsigned int>> arg) {
-    string command = "cd " + editor.getDir().string() + "; ";
+    std::string command = "cd " + editor.getDir().string() + "; ";
     command += "./run -M release -s -u Cmdenv -c " + arg.second.first;
-    command += " -r " + to_string(arg.second.second) + " " + arg.first.string();
+    command += " -r " + std::to_string(arg.second.second) + " " + arg.first.string();
 
     try {
         CommandLine::exec(command);
         return true;
-    } catch (exception &e) {
-        cerr << e.what() << endl;
+    } catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
     }
     return false;
 
 }
 
-string PlexeSimulationRunner::getName() {
+std::string PlexeSimulationRunner::getName() {
     return "Plexe-Runner";
 }
 
-string PlexeSimulationRunner::getStatus() {
-    string status = "Evaluations:\t\t" + to_string(runNumber) + "\n";
+std::string PlexeSimulationRunner::getStatus() {
+    std::string status = "Evaluations:\t\t" + std::to_string(runNumber) + "\n";
     status += "Scenarios:\t\t" + SCENARIOS[0];
     for (int i = 1; i < SCENARIOS.size(); ++i) {
         status += ", " + SCENARIOS[i];
     }
-    status += "\nRepeat:\t\t\t" + to_string(REPEAT) + "\n";
-    status += "Max. number of threads:\t" + to_string(
-            Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::NR_THREADS *
-            Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::NR_THREADS);
+    status += "\nRepeat:\t\t\t" + std::to_string(REPEAT) + "\n";
+    status += "Max. number of threads:\t" + std::to_string(
+            Multithreaded<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>, bool>::NR_THREADS *
+            Multithreaded<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>::NR_THREADS);
     return status;
 }
 
-string PlexeSimulationRunner::getStatusBar() {
-    auto runnerCurrent = Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getSize();
-    auto runnerStart = Multithreaded<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>::queue.getStartSize();
-    auto plexeStart = Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool>::queue.getStartSize();
+std::string PlexeSimulationRunner::getStatusBar() {
+    auto runnerCurrent = Multithreaded<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>::queue.getSize();
+    auto runnerStart = Multithreaded<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>::queue.getStartSize();
+    auto plexeStart = Multithreaded<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>, bool>::queue.getStartSize();
 
-    return "Running simulations... waiting: " + to_string(plexeStart * runnerCurrent) + ", running/done: " +
-           to_string(plexeStart * (runnerStart - runnerCurrent));
+    return "Running simulations... waiting: " + std::to_string(plexeStart * runnerCurrent) + ", running/done: " +
+           std::to_string(plexeStart * (runnerStart - runnerCurrent));
 }

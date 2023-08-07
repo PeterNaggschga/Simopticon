@@ -27,8 +27,8 @@
  * A class capable of starting platooning simulations in the <a href="https://plexe.car2x.org/">Plexe</a> framework with given Parameter combinations.
  * @ingroup plexe
  */
-class PlexeSimulationRunner
-        : public SimulationRunner, public Multithreaded<pair<filesystem::path, pair<string, unsigned int>>, bool> {
+class PlexeSimulationRunner : public SimulationRunner,
+                              public Multithreaded<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>, bool> {
 private:
     /**
      * Number of repetitions per Parameter combination and scenario in #SCENARIOS.
@@ -39,7 +39,7 @@ private:
      * Scenarios that are simulated per Parameter combination.
      * Should not invoke a GUI (e.g. pick BrakingNoGui instead of Braking). Can be set in configuration.
      */
-    const vector<string> SCENARIOS;
+    const std::vector<std::string> SCENARIOS;
 
     /**
      * ConfigEditor used for automatically creating `.ini` files with given Parameter settings.
@@ -54,7 +54,7 @@ private:
     /**
      * Threadlock to prevent race conditions on concurrent access of #runNumber.
      */
-    mutex runNumberLock;
+    std::mutex runNumberLock;
 
     /**
      * Returns an unique number which can be used to identify the results of a certain Parameter combination.
@@ -72,7 +72,7 @@ private:
      * @param run: Parameter combination to be simulated.
      * @return A pair containing the path to the result files and OMNeT++-Run-IDs of the executed simulations.
      */
-    pair<filesystem::path, set<runId>> work(parameterCombination run) override;
+    std::pair<std::filesystem::path, std::set<runId>> work(parameterCombination run) override;
 
     /**
      * Executes one run of a Parameter combination (meaning repetition @a k of scenario @a c).
@@ -93,13 +93,14 @@ public:
      * @param scenarios: Scenarios to be simulated per Parameter combination.
      * @param editor: ConfigEditor to be used.
      */
-    PlexeSimulationRunner(unsigned int threads, unsigned int repeat, vector<string> scenarios, ConfigEditor editor);
+    PlexeSimulationRunner(unsigned int threads, unsigned int repeat, std::vector<std::string> scenarios,
+                          ConfigEditor editor);
 
-    string getName() override;
+    std::string getName() override;
 
-    string getStatus() override;
+    std::string getStatus() override;
 
-    string getStatusBar() override;
+    std::string getStatusBar() override;
 
 };
 

@@ -11,19 +11,19 @@
 SimulationRunner::SimulationRunner(unsigned int threads) : Multithreaded(threads) {
 }
 
-map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-SimulationRunner::runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs) {
+std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
+SimulationRunner::runSimulations(const std::set<parameterCombination, CmpVectorSharedParameter> &runs) {
     return runMultithreadedFunctions(runs);
 }
 
-string SimulationRunner::getName() {
+std::string SimulationRunner::getName() {
     return Status::getName();
 }
 
-string SimulationRunner::getStatus() {
+std::string SimulationRunner::getStatus() {
     return Status::getStatus();
 }
 
-string SimulationRunner::getStatusBar() {
+std::string SimulationRunner::getStatusBar() {
     return Status::getStatusBar();
 }
