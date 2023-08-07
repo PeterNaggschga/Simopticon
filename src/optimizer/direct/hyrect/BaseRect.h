@@ -27,7 +27,7 @@ public:
      * For BaseRect always returns one vector full of zeros and one vector full of ones.
      * @return An array containing two dirCoordinate vectors of the sampled vertices.
      */
-    array<vector<dirCoordinate>, 2> getSamplingVertices() override;
+    std::array<std::vector<dirCoordinate>, 2> getSamplingVertices() override;
 };
 
 

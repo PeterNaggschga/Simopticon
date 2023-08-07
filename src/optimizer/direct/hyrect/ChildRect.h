@@ -18,7 +18,7 @@ private:
     /**
      * Reference to the parent rectangle. Used for recursive calculation of #getSamplingVertices.
      */
-    shared_ptr<HyRect> parent;
+    std::shared_ptr<HyRect> parent;
 
 public:
     /**
@@ -26,7 +26,7 @@ public:
      * @param pos: Relative position to the given parent rectangle.
      * @param parent: Parent rectangle in the partition tree.
      */
-    ChildRect(position pos, shared_ptr<HyRect> parent);
+    ChildRect(position pos, std::shared_ptr<HyRect> parent);
 
     /**
      * Returns the coordinates of two opposite corner points of the rectangle.
@@ -34,7 +34,7 @@ public:
      * The vertices are calculated recursively based on the sampling vertices of #parent.
      * @return An array containing two dirCoordinate vectors of the sampled vertices.
      */
-    array<vector<dirCoordinate>, 2> getSamplingVertices() override;
+    std::array<std::vector<dirCoordinate>, 2> getSamplingVertices() override;
 
     bool operator==(const HyRect &rect) const override;
 };

@@ -11,18 +11,18 @@
 HyRect::HyRect(dimension D, position pos, depth t) : D(D), pos(pos), t(t) {
 }
 
-array<shared_ptr<HyRect>, 3> HyRect::divide(const shared_ptr<HyRect> &ptr) {
-    shared_ptr<HyRect> left(new ChildRect(position::LEFT, ptr));
-    shared_ptr<HyRect> mid(new ChildRect(position::MIDDLE, ptr));
-    shared_ptr<HyRect> right(new ChildRect(position::RIGHT, ptr));
+std::array<std::shared_ptr<HyRect>, 3> HyRect::divide(const std::shared_ptr<HyRect> &ptr) {
+    std::shared_ptr<HyRect> left(new ChildRect(position::LEFT, ptr));
+    std::shared_ptr<HyRect> mid(new ChildRect(position::MIDDLE, ptr));
+    std::shared_ptr<HyRect> right(new ChildRect(position::RIGHT, ptr));
     return {left, mid, right};
 }
 
 dirCoordinate HyRect::getDiagonalLength() const {
     auto longT = (long) t;
     auto longD = (long) D;
-    return pow(3, -(longT / longD)) *
-           sqrt(functionValue((functionValue) D) - 8 * (longT % longD) / (functionValue) 9.0);
+    return std::pow(3, -(longT / longD)) *
+           std::sqrt(functionValue((functionValue) D) - 8 * (longT % longD) / (functionValue) 9.0);
 }
 
 dimension HyRect::getSplitDim() const {
