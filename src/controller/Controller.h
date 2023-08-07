@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_CONTROLLER_H
 #define SIMOPTICON_CONTROLLER_H
 
+/**
+ * @file
+ * In this file the header of the Controller class is defined.
+ */
 
 #include "../Types.h"
 #include "../ComparisonFunctions.h"

@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_EVALUATION_H
 #define SIMOPTICON_EVALUATION_H
 
+/**
+ * @file
+ * In this file the header of the Evaluation class is defined.
+ */
+
 #include "../Types.h"
 #include "../status/Status.h"
 

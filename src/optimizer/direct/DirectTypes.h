@@ -2,7 +2,7 @@
 #define SIMOPTICON_DIRECTTYPES_H
 
 /**
- * In this file types are defined which are in the direct module.
+ * In this file types are defined which are used in the direct module.
  *
  * @file DirectTypes.h
  * @ingroup direct

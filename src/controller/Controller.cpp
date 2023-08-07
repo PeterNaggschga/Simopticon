@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the Controller class is defined.
+ */
+
 #include "Controller.h"
 
 #include <memory>

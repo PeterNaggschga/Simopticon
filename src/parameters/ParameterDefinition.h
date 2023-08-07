@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_PARAMETERDEFINITION_H
 #define SIMOPTICON_PARAMETERDEFINITION_H
 
+/**
+ * @file
+ * In this file the header of the ParameterDefinition class is defined.
+ */
 
 #include "../Types.h"
 

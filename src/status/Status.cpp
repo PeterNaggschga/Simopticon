@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the Status class is defined.
+ */
+
 #include "Status.h"
 
 

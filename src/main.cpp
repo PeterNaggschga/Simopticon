@@ -1,15 +1,15 @@
+/**
+ * This file contains the definition of the main function running the *Simopticon* framework.
+ *
+ * @file main.cpp
+ * @ingroup utils
+ */
+
 #include "controller/Controller.h"
 #include "controller/StubController.h"
 
 #include <iostream>
 #include <csignal>
-
-/**
- * Definition of the main function running the *Simopticon* framework.
- *
- * @file main.cpp
- * @ingroup utils
- */
 
 /**
  * Reference to the Controller that is running the optimization.

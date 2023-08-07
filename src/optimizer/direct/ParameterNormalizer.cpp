@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the ParameterNormalizer class is defined.
+ */
+
 #include "ParameterNormalizer.h"
 
 #include <utility>

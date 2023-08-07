@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 
 ##
-# A Python script
+# This file contains a Python script
 # providing functionality for automatic rating of Plexe result files on the mean deviation from the pre-defined gap.
 # To achieve this, the OMNeT++ Python API omnetpp.scave is used.
 # Multithreading is introduced to speed up the processing of multiple evaluations.
+# Wrapped by ConstantHeadway class.
 #
 # @file constant_headway.py
 # @ingroup constant_headway

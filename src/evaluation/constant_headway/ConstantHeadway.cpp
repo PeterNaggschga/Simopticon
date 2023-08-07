@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the ConstantHeadway class is defined.
+ */
+
 #include "ConstantHeadway.h"
 
 #include <iostream>

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the StatusBar class is defined.
+ */
+
 #include "StatusBar.h"
 
 #include "../optimizer/Optimizer.h"

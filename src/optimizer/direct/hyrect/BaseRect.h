@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_BASERECT_H
 #define SIMOPTICON_BASERECT_H
 
+/**
+ * @file
+ * In this file the header of the BaseRect class is defined.
+ */
 
 #include "HyRect.h"
 

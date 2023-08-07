@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_CHILDRECT_H
 #define SIMOPTICON_CHILDRECT_H
 
+/**
+ * @file
+ * In this file the header of the ChildRect class is defined.
+ */
 
 #include "HyRect.h"
 

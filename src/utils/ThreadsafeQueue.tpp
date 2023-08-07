@@ -1,5 +1,10 @@
 #include "ThreadsafeQueue.h"
 
+/**
+ * @file
+ * In this file the implementation of the ThreadSafeQueue class is defined.
+ */
+
 template<class Key>
 void ThreadsafeQueue<Key>::push(Key val) {
     queueLock.lock();

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the ParameterDefinition class is defined.
+ */
+
 #include "ParameterDefinition.h"
 
 #include <utility>

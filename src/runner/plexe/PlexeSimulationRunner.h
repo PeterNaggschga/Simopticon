@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_PLEXESIMULATIONRUNNER_H
 #define SIMOPTICON_PLEXESIMULATIONRUNNER_H
 
+/**
+ * @file
+ * In this file the header of the PlexeSimulationRunner class is defined.
+ */
 
 #include "../SimulationRunner.h"
 #include "ConfigEditor.h"

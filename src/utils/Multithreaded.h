@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_MULTITHREADED_H
 #define SIMOPTICON_MULTITHREADED_H
 
+/**
+ * @file
+ * In this file the header of the Multithreaded class is defined.
+ */
 
 #include <mutex>
 #include <queue>

@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_CONFIGEDITOR_H
 #define SIMOPTICON_CONFIGEDITOR_H
 
+/**
+ * @file
+ * In this file the header of the ConfigEditor class is defined.
+ */
 
 #include "../../ComparisonFunctions.h"
 #include "nlohmann/json.hpp"

@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_PARAMETERNORMALIZER_H
 #define SIMOPTICON_PARAMETERNORMALIZER_H
 
+/**
+ * @file
+ * In this file the header of the ParameterNormalizer class is defined.
+ */
 
 #include "DirectTypes.h"
 #include "../../Types.h"

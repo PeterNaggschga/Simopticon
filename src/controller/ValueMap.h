@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_VALUEMAP_H
 #define SIMOPTICON_VALUEMAP_H
 
+/**
+ * @file
+ * In this file the header of the ValueMap class is defined.
+ */
 
 #include "../Types.h"
 #include "../ComparisonFunctions.h"

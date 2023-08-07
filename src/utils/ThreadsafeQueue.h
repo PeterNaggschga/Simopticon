@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_THREADSAFEQUEUE_H
 #define SIMOPTICON_THREADSAFEQUEUE_H
 
+/**
+ * @file
+ * In this file the header of the ThreadSafeQueue class is defined.
+ */
 
 #include <queue>
 #include <mutex>

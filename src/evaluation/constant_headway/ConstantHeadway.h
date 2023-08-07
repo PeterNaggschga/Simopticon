@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_CONSTANTHEADWAY_H
 #define SIMOPTICON_CONSTANTHEADWAY_H
 
+/**
+ * @file
+ * In this file the header of the ConstantHeadway class is defined.
+ */
+
 #include "../Evaluation.h"
 #include "../../utils/PythonScript.h"
 

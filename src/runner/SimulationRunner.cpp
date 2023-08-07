@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the SimulationRunner class is defined.
+ */
+
 #include "SimulationRunner.h"
 
 #include <future>

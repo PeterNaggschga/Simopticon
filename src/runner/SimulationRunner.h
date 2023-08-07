@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_SIMULATIONRUNNER_H
 #define SIMOPTICON_SIMULATIONRUNNER_H
 
+/**
+ * @file
+ * In this file the header of the SimulationRunner class is defined.
+ */
+
 #include "../Types.h"
 #include "../ComparisonFunctions.h"
 #include "../utils/Multithreaded.h"

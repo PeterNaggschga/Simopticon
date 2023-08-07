@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_DISCRETEPARAMETER_H
 #define SIMOPTICON_DISCRETEPARAMETER_H
 
+/**
+ * @file
+ * In this file the header of the DiscreteParameter class is defined.
+ */
 
 #include "Parameter.h"
 

@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_STUBCONTROLLER_H
 #define SIMOPTICON_STUBCONTROLLER_H
 
+/**
+ * @file
+ * In this file the header of the StubController class is defined.
+ */
 
 #include <functional>
 #include "Controller.h"

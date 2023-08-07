@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_STATUS_H
 #define SIMOPTICON_STATUS_H
 
+/**
+ * @file
+ * In this file the header of the Status class is defined.
+ */
+
 #include <string>
 
 using namespace std;

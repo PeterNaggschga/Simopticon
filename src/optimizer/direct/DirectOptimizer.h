@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_DIRECTOPTIMIZER_H
 #define SIMOPTICON_DIRECTOPTIMIZER_H
 
+/**
+ * @file
+ * In this file the header of the DirectOptimizer class is defined.
+ */
 
 #include "DirectTypes.h"
 #include "DirectComparisonFunctions.h"

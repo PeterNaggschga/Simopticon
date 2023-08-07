@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the ContinuousParameter class is defined.
+ */
+
 #include "ContinuousParameter.h"
 
 #include <stdexcept>

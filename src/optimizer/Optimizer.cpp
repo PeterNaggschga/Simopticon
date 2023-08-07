@@ -1,7 +1,11 @@
+/**
+ * @file
+ * In this file the implementation of the Optimizer class is defined.
+ */
+
 #include "Optimizer.h"
 
 #include "../controller/Controller.h"
-#include "../parameters/Parameter.h"
 
 #include <utility>
 

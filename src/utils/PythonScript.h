@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_PYTHONSCRIPT_H
 #define SIMOPTICON_PYTHONSCRIPT_H
 
+/**
+ * @file
+ * In this file the header of the PythonScript class is defined.
+ */
+
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "OCUnusedMacroInspection"
 #define PY_SSIZE_T_CLEAN

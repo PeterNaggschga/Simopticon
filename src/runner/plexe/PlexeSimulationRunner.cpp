@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the PlexeSimulationRunner class is defined.
+ */
+
 #include "PlexeSimulationRunner.h"
 #include "ConfigEditor.h"
 #include "../../utils/CommandLine.h"

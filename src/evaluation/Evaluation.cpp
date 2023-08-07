@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the Evaluation class is defined.
+ */
+
 #include "Evaluation.h"
 
 map<pair<filesystem::path, set<runId>>, functionValue>

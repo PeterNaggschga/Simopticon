@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_HYRECT_H
 #define SIMOPTICON_HYRECT_H
 
+/**
+ * @file
+ * In this file the header of the HyRect class is defined.
+ */
+
 #include "../../../Types.h"
 #include "../DirectTypes.h"
 

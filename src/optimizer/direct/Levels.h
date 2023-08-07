@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_LEVELS_H
 #define SIMOPTICON_LEVELS_H
 
+/**
+ * @file
+ * In this file the header of the Levels class is defined.
+ */
+
 #include "DirectComparisonFunctions.h"
 #include "DirectTypes.h"
 

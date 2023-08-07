@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the DirectOptimizer class is defined.
+ */
+
 #include "DirectOptimizer.h"
 
 #include "GrahamScan.h"

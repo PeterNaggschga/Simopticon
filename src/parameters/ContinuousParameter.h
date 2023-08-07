@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_CONTINUOUSPARAMETER_H
 #define SIMOPTICON_CONTINUOUSPARAMETER_H
 
+/**
+ * @file
+ * In this file the header of the ContinuousParameter class is defined.
+ */
 
 #include "Parameter.h"
 

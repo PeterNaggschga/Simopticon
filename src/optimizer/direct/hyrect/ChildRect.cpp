@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the ChildRect class is defined.
+ */
+
 #include "ChildRect.h"
 
 #include <utility>

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * In this file the implementation of the Levels class is defined.
+ */
+
 #include "Levels.h"
 
 #include "hyrect/HyRect.h"

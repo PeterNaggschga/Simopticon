@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_ABORTABLE_H
 #define SIMOPTICON_ABORTABLE_H
 
+/**
+ * @file
+ * In this file the header of the Abortable class is defined.
+ */
 
 /**
  * A simple interface for classes that encapsulate abortable processes.

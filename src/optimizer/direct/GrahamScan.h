@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_GRAHAMSCAN_H
 #define SIMOPTICON_GRAHAMSCAN_H
 
+/**
+ * @file
+ * In this file the header of the GrahamScan class is defined.
+ */
+
 #include <list>
 #include <memory>
 

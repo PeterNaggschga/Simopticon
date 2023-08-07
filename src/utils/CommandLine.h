@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_COMMANDLINE_H
 #define SIMOPTICON_COMMANDLINE_H
 
+/**
+ * @file
+ * In this file the header of the CommandLine class is defined.
+ */
+
 #include <string>
 #include <memory>
 

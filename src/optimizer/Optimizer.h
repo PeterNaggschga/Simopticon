@@ -1,6 +1,11 @@
 #ifndef SIMOPTICON_OPTIMIZER_H
 #define SIMOPTICON_OPTIMIZER_H
 
+/**
+ * @file
+ * In this file the header of the Optimizer class is defined.
+ */
+
 #include "../Types.h"
 #include "../parameters/ParameterDefinition.h"
 #include "../status/Status.h"

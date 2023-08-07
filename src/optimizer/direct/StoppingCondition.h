@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_STOPPINGCONDITION_H
 #define SIMOPTICON_STOPPINGCONDITION_H
 
+/**
+ * @file
+ * In this file the header of the StoppingCondition class is defined.
+ */
 
 #include "../../Types.h"
 #include "nlohmann/json.hpp"

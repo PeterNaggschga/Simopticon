@@ -1,6 +1,10 @@
 #ifndef SIMOPTICON_STATUSBAR_H
 #define SIMOPTICON_STATUSBAR_H
 
+/**
+ * @file
+ * In this file the header of the StatusBar class is defined.
+ */
 
 #include "../Types.h"
 #include "../controller/ValueMap.h"
