@@ -87,20 +87,20 @@ $(document).ready(function(){initNavTree('ThreadsafeQueue_8tpp_source.html','');
 <div class="title">ThreadsafeQueue.tpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="ThreadsafeQueue_8tpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * In this file, the implementation of the ThreadSafeQueue class is defined.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">    7</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">push</a>(Key val) {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a247eabea2111272fbba04f0ef3402a54">queueLock</a>.lock();</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">safeQueue</a>.push(val);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a> = <a class="code" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">safeQueue</a>.size();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a247eabea2111272fbba04f0ef3402a54">queueLock</a>.unlock();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="ThreadsafeQueue_8h.html" title="In this file, the header of the ThreadSafeQueue class is defined.">&quot;ThreadsafeQueue.h&quot;</a></div>
+<a href="ThreadsafeQueue_8tpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="ThreadsafeQueue_8h.html" title="In this file, the header of the ThreadSafeQueue class is defined.">&quot;ThreadsafeQueue.h&quot;</a></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @file</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * In this file, the implementation of the ThreadSafeQueue class is defined.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.html#a1b5afe3b948403e0967b807cf5c926d2">push</a>(Key val) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a247eabea2111272fbba04f0ef3402a54">queueLock</a>.lock();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">safeQueue</a>.push(val);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a> = <a class="code" href="classThreadsafeQueue.html#a486d4dc4cc7aead3f6f0cb8c0dbf8e38">safeQueue</a>.size();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classThreadsafeQueue.html#a247eabea2111272fbba04f0ef3402a54">queueLock</a>.unlock();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.html#a2b6a9a27b8239443acfd7ce6c4fa78cf">   17</a></span>&#160;pair&lt;Key, <span class="keywordtype">bool</span>&gt; <a class="code" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.html#a2b6a9a27b8239443acfd7ce6c4fa78cf">pop</a>() {</div>
