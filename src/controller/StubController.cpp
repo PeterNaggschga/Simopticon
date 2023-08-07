@@ -44,8 +44,7 @@ functionValue shekel(int m, const parameterCombination &v) {
  * @param v
  * @return
  */
-functionValue
-hartman(const std::vector<std::vector<functionValue>> &A, const std::vector<std::vector<functionValue>> &P,
+functionValue hartman(const std::vector<std::vector<functionValue>> &A, const std::vector<std::vector<functionValue>> &P,
                       const parameterCombination &v) {
     const std::vector<functionValue> alpha = {1, 1.2, 3, 3.2};
     functionValue val = 0;
