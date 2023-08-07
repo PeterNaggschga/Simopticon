@@ -2,6 +2,11 @@
 #define SIMOPTICON_COMMANDLINE_H
 
 /**
+ * @dir
+ * In this directory, classes of the utils module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the CommandLine class is defined.
  */

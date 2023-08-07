@@ -2,6 +2,11 @@
 #define SIMOPTICON_DIRECTOPTIMIZER_H
 
 /**
+ * @dir
+ * In this directory, classes of the direct module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the DirectOptimizer class is defined.
  */

@@ -1,5 +1,3 @@
-#include "ThreadsafeQueue.h"
-
 /**
  * @file
  * In this file the implementation of the ThreadSafeQueue class is defined.
@@ -12,6 +10,8 @@ void ThreadsafeQueue<Key>::push(Key val) {
     startSize = safeQueue.size();
     queueLock.unlock();
 }
+
+#include "ThreadsafeQueue.h"
 
 template<class Key>
 pair<Key, bool> ThreadsafeQueue<Key>::pop() {

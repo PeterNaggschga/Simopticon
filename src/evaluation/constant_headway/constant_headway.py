@@ -1,8 +1,14 @@
 #!/usr/bin/env python
 
+
 ##
-# This file contains a Python script
-# providing functionality for automatic rating of Plexe result files on the mean deviation from the pre-defined gap.
+# @dir
+# In this directory, classes of the controller module are defined and implemented.
+
+
+##
+# In this file, Python functionality for automatic rating of Plexe result files on the mean deviation
+# from the pre-defined gap is defined.
 # To achieve this, the OMNeT++ Python API omnetpp.scave is used.
 # Multithreading is introduced to speed up the processing of multiple evaluations.
 # Wrapped by ConstantHeadway class.

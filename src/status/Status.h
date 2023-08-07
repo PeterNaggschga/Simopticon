@@ -2,6 +2,11 @@
 #define SIMOPTICON_STATUS_H
 
 /**
+ * @dir
+ * In this directory, classes of the status module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the Status class is defined.
  */

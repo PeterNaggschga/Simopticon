@@ -2,6 +2,11 @@
 #define SIMOPTICON_EVALUATION_H
 
 /**
+ * @dir
+ * In this directory, classes of the evaluation module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the Evaluation class is defined.
  */

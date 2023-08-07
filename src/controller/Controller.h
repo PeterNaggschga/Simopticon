@@ -2,6 +2,11 @@
 #define SIMOPTICON_CONTROLLER_H
 
 /**
+ * @dir
+ * In this directory, classes of the controller module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the Controller class is defined.
  */

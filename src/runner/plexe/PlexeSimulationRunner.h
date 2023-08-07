@@ -2,6 +2,11 @@
 #define SIMOPTICON_PLEXESIMULATIONRUNNER_H
 
 /**
+ * @dir
+ * In this directory, classes of the plexe module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the PlexeSimulationRunner class is defined.
  */

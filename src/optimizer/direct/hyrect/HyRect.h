@@ -2,6 +2,11 @@
 #define SIMOPTICON_HYRECT_H
 
 /**
+ * @dir
+ * In this directory, classes of the hyrect module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the HyRect class is defined.
  */

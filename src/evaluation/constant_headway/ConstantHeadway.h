@@ -2,6 +2,11 @@
 #define SIMOPTICON_CONSTANTHEADWAY_H
 
 /**
+ * @dir
+ * In this directory, classes of the constant_headway module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the ConstantHeadway class is defined.
  */

@@ -1,8 +1,13 @@
 /**
- * This file contains the definition of the main function running the *Simopticon* framework.
+ * In this file, the main function running the *Simopticon* framework is defined.
  *
  * @file main.cpp
  * @ingroup utils
+ */
+
+/**
+ * @dir
+ * In this directory, the source code of the *Simopticon* framework is located.
  */
 
 #include "controller/Controller.h"

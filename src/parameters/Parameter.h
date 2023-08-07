@@ -2,6 +2,11 @@
 #define SIMOPTICON_PARAMETER_H
 
 /**
+ * @dir
+ * In this directory, classes of the parameter module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the Parameter class is defined.
  */

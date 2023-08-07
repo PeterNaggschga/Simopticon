@@ -2,6 +2,11 @@
 #define SIMOPTICON_OPTIMIZER_H
 
 /**
+ * @dir
+ * In this directory, classes of the optimizer module are defined and implemented.
+ */
+
+/**
  * @file
  * In this file the header of the Optimizer class is defined.
  */
