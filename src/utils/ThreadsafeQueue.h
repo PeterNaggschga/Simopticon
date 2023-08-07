@@ -9,8 +9,6 @@
 #include <queue>
 #include <mutex>
 
-using namespace std;
-
 /**
  * A container class of a queue that is safe for concurrent access of different threads.
  * @tparam Key: Type of elements in the contained queue.
@@ -22,11 +20,11 @@ private:
     /**
      * The actual queue data structure.
      */
-    queue<Key> safeQueue;
+    std::queue<Key> safeQueue;
     /**
      * Threadlock to avoid damage to #safeQueue on concurrent access.
      */
-    mutex queueLock;
+    std::mutex queueLock;
     /**
      * Number of elements in queue when #push was called the last time.
      * Can be used for progress information.
@@ -44,7 +42,7 @@ public:
      * Returns the first element of the queue. If the queue is empty, the second entry of the returned pair is false.
      * @return A pair containing an element of type Key and a boolean determining if access was successful.
      */
-    pair<Key, bool> pop();
+    std::pair<Key, bool> pop();
 
     /**
      * Returns the value of #startSize.
