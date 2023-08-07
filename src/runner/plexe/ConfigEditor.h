@@ -18,7 +18,6 @@
 class Parameter;
 
 using namespace std;
-using json = nlohmann::json;
 
 /**
  * A class capable of creating `.ini` files with certain options based on a complete `omnetpp.ini`.
@@ -43,7 +42,7 @@ private:
      * Configuration of the controller to be simulated.
      * Can be set in config.
      */
-    const json CONTROLLER;
+    const nlohmann::json CONTROLLER;
 
     /**
      * Replaces the value of the given key with the given new value in the given string.
@@ -83,7 +82,7 @@ public:
      * @param directory: A path to the directory containing a Plexe configuration.
      * @param controller: A json object configuring the controller to be simulated.
      */
-    ConfigEditor(filesystem::path directory, json controller);
+    ConfigEditor(filesystem::path directory, nlohmann::json controller);
 
     /**
      * Copies the config at #CONFIG to a file `.tmpx.ini` where `x` is given by @a runNumber and edits the file for the purposes of the optimization.

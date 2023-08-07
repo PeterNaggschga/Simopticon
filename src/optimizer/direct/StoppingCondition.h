@@ -13,7 +13,6 @@
 #include <cmath>
 
 using namespace std::chrono;
-using json = nlohmann::json;
 
 /**
  * A class used for deciding whether the DIRECT should be stopped.
@@ -91,7 +90,7 @@ public:
      * Creates a StoppingCondition based on the given json configuration.
      * @param stopCon: JSON object defining the condition values.
      */
-    explicit StoppingCondition(json stopCon);
+    explicit StoppingCondition(nlohmann::json stopCon);
 
     /**
      * Sets #END_TIME to be the current time plus #mins.

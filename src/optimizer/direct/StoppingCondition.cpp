@@ -22,11 +22,11 @@ StoppingCondition::StoppingCondition(size_t evaluations, size_t hyrects, unsigne
  * @return A value of type T that should be used as value for the condition.
  */
 template<typename T>
-T getConditionFromJSON(json object, const std::string &key, const std::string &val = "n") {
+T getConditionFromJSON(nlohmann::json object, const std::string &key, const std::string &val = "n") {
     return object.at(key).at("useCondition").get<bool>() ? object.at(key).at(val).get<T>() : 0;
 }
 
-StoppingCondition::StoppingCondition(json stopCon) :
+StoppingCondition::StoppingCondition(nlohmann::json stopCon) :
         NR_EVALUATIONS(getConditionFromJSON<size_t>(stopCon, "evaluations")),
         NR_HYRECTS(getConditionFromJSON<size_t>(stopCon, "hyrects")),
         mins(getConditionFromJSON<unsigned int>(stopCon, "minutes")),

@@ -8,7 +8,7 @@
 #include <fstream>
 #include <utility>
 
-ConfigEditor::ConfigEditor(filesystem::path directory, json controller)
+ConfigEditor::ConfigEditor(filesystem::path directory, nlohmann::json controller)
         : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
           RESULTS(directory.parent_path().append("optResults")), CONTROLLER(std::move(controller)) {
 }

@@ -19,19 +19,17 @@
 #include "../evaluation/constant_headway/ConstantHeadway.h"
 #include "nlohmann/json.hpp"
 
-using json = nlohmann::json;
-
 /**
  * Helper method parsing a json object from the given file.
  * @param baseDir: Directory the json file resides in.
  * @param config: Name of the json file.
  * @return A json object parsed from the given file.
  */
-json getConfigByPath(filesystem::path baseDir, const string &config) {
+nlohmann::json getConfigByPath(filesystem::path baseDir, const string &config) {
     filesystem::path configPath = std::move(baseDir);
     configPath.append(config);
     ifstream configStream(configPath);
-    json result = json::parse(configStream, nullptr, true, true);
+    nlohmann::json result = nlohmann::json::parse(configStream, nullptr, true, true);
     configStream.close();
     return result;
 }
@@ -41,7 +39,7 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     cout.flush();
 
     // Controller settings
-    json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());
+    nlohmann::json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());
     keepFiles = baseConfig.at("controller").at("keepResultFiles").get<bool>();
     unsigned int nrTopEntries = baseConfig.at("controller").at("nrTopEntries").get<unsigned int>();
     valueMap = std::make_unique<ValueMap>(nrTopEntries);
@@ -49,7 +47,8 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     statusInterval = milliseconds((long) round(seconds * 1000));
 
     // Read Parameters
-    json paramJson = getConfigByPath(configPath.parent_path(), baseConfig.at("controller").at("params").get<string>());
+    nlohmann::json paramJson = getConfigByPath(configPath.parent_path(),
+                                               baseConfig.at("controller").at("params").get<string>());
     list<shared_ptr<ParameterDefinition>> params;
     for (auto param: paramJson) {
         coordinate min = param.at("min").get<coordinate>();
@@ -66,7 +65,7 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     }
 
     // Optimizer settings
-    json optimizerConfig = getConfigByPath(configPath.parent_path(),
+    nlohmann::json optimizerConfig = getConfigByPath(configPath.parent_path(),
                                            baseConfig.at("optimizer").at("config").get<string>());
     string opt = baseConfig.at("optimizer").at("optimizer").get<string>();
     if (opt == "Direct") {
@@ -88,7 +87,8 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     }
 
     // SimulationRunner settings
-    json runnerConfig = getConfigByPath(configPath.parent_path(), baseConfig.at("runner").at("config").get<string>());
+    nlohmann::json runnerConfig = getConfigByPath(configPath.parent_path(),
+                                                  baseConfig.at("runner").at("config").get<string>());
     string run = baseConfig.at("runner").at("runner").get<string>();
     if (run == "Plexe") {
         unsigned int nrThreads = runnerConfig.at("nrThreads").get<unsigned int>();
@@ -108,7 +108,7 @@ Controller::Controller(const filesystem::path &configPath, bool isStub) {
     }
 
     // Evaluation settings
-    json evalConfig = getConfigByPath(configPath.parent_path(),
+    nlohmann::json evalConfig = getConfigByPath(configPath.parent_path(),
                                       baseConfig.at("evaluation").at("config").get<string>());
     string eval = baseConfig.at("evaluation").at("evaluation").get<string>();
     if (eval == "ConstantHeadway") {
