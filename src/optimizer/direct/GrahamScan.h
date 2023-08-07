@@ -3,7 +3,7 @@
 
 /**
  * @file
- * In this file the header of the GrahamScan class is defined.
+ * In this file, the header of the GrahamScan class is defined.
  */
 
 #include <list>

@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the BaseRect class is defined.
+ * In this file, the implementation of the BaseRect class is defined.
  */
 
 #include "BaseRect.h"

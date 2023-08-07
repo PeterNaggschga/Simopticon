@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Levels class is defined.
+ * In this file, the implementation of the Levels class is defined.
  */
 
 #include "Levels.h"

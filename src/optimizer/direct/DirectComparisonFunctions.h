@@ -4,7 +4,7 @@
 #include "hyrect/HyRect.h"
 
 /**
- * In this file comparison functions are defined which are used in the direct module.
+ * In this file, comparison functions are defined which are used in the direct module.
  * They can be used to order elements in STL containers.
  *
  * @file DirectComparisonFunctions.h

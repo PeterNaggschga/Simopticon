@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Parameter class is defined.
+ * In this file, the implementation of the Parameter class is defined.
  */
 
 #include "Parameter.h"

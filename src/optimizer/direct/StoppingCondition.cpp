@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the StoppingCondition class is defined.
+ * In this file, the implementation of the StoppingCondition class is defined.
  */
 
 #include "StoppingCondition.h"

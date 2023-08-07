@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Abortable class is defined.
+ * In this file, the implementation of the Abortable class is defined.
  */
 
 #include "Abortable.h"

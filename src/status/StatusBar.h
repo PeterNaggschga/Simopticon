@@ -3,7 +3,7 @@
 
 /**
  * @file
- * In this file the header of the StatusBar class is defined.
+ * In this file, the header of the StatusBar class is defined.
  */
 
 #include "../Types.h"

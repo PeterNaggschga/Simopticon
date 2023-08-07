@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Multithreaded class is defined.
+ * In this file, the implementation of the Multithreaded class is defined.
  */
 
 #include <future>

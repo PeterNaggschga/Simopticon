@@ -3,7 +3,7 @@
 
 /**
  * @file
- * In this file the header of the StubController class is defined.
+ * In this file, the header of the StubController class is defined.
  */
 
 #include <functional>

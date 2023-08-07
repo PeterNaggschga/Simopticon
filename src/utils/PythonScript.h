@@ -3,7 +3,7 @@
 
 /**
  * @file
- * In this file the header of the PythonScript class is defined.
+ * In this file, the header of the PythonScript class is defined.
  */
 
 #pragma clang diagnostic push

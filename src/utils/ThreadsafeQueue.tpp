@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the ThreadSafeQueue class is defined.
+ * In this file, the implementation of the ThreadSafeQueue class is defined.
  */
 
 template<class Key>

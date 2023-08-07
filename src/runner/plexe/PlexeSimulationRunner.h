@@ -8,7 +8,7 @@
 
 /**
  * @file
- * In this file the header of the PlexeSimulationRunner class is defined.
+ * In this file, the header of the PlexeSimulationRunner class is defined.
  */
 
 #include "../SimulationRunner.h"

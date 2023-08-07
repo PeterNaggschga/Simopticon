@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Optimizer class is defined.
+ * In this file, the implementation of the Optimizer class is defined.
  */
 
 #include "Optimizer.h"

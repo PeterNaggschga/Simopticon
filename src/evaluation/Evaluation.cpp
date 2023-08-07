@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Evaluation class is defined.
+ * In this file, the implementation of the Evaluation class is defined.
  */
 
 #include "Evaluation.h"

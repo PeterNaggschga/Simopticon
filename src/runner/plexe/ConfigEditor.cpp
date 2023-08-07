@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the ConfigEditor class is defined.
+ * In this file, the implementation of the ConfigEditor class is defined.
  */
 
 #include "ConfigEditor.h"

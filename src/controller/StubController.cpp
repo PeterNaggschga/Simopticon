@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the StubController class is defined.
+ * In this file, the implementation of the StubController class is defined.
  */
 
 #include "StubController.h"

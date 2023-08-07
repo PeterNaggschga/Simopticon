@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the PlexeSimulationRunner class is defined.
+ * In this file, the implementation of the PlexeSimulationRunner class is defined.
  */
 
 #include "PlexeSimulationRunner.h"

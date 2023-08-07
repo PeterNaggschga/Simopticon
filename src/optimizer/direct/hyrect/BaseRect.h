@@ -3,7 +3,7 @@
 
 /**
  * @file
- * In this file the header of the BaseRect class is defined.
+ * In this file, the header of the BaseRect class is defined.
  */
 
 #include "HyRect.h"

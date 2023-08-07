@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the Controller class is defined.
+ * In this file, the implementation of the Controller class is defined.
  */
 
 #include "Controller.h"

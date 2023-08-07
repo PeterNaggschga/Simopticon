@@ -8,7 +8,7 @@
 
 /**
  * @file
- * In this file the header of the SimulationRunner class is defined.
+ * In this file, the header of the SimulationRunner class is defined.
  */
 
 #include "../Types.h"

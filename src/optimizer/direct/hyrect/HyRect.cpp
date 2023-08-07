@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the HyRect class is defined.
+ * In this file, the implementation of the HyRect class is defined.
  */
 
 #include "HyRect.h"

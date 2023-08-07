@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the GrahamScan class is defined.
+ * In this file, the implementation of the GrahamScan class is defined.
  */
 
 #include "GrahamScan.h"

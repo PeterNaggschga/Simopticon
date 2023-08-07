@@ -8,7 +8,7 @@
 
 /**
  * @file
- * In this file the header of the CommandLine class is defined.
+ * In this file, the header of the CommandLine class is defined.
  */
 
 #include <string>

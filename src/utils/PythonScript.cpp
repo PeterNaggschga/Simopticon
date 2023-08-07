@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the PythonScript class is defined.
+ * In this file, the implementation of the PythonScript class is defined.
  */
 
 #include "PythonScript.h"

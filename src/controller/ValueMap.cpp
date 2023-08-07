@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the ValueMap class is defined.
+ * In this file, the implementation of the ValueMap class is defined.
  */
 
 #include "ValueMap.h"

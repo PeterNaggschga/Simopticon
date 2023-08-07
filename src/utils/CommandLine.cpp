@@ -1,6 +1,6 @@
 /**
  * @file
- * In this file the implementation of the CommandLine class is defined.
+ * In this file, the implementation of the CommandLine class is defined.
  */
 
 #include "CommandLine.h"

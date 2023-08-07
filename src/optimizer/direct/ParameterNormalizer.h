@@ -3,7 +3,7 @@
 
 /**
  * @file
- * In this file the header of the ParameterNormalizer class is defined.
+ * In this file, the header of the ParameterNormalizer class is defined.
  */
 
 #include "DirectTypes.h"
