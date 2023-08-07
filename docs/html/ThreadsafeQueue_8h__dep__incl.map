@@ -1,0 +1,15 @@
+<map id="/home/runner/work/simopticon/simopticon/src/utils/ThreadsafeQueue.h" name="/home/runner/work/simopticon/simopticon/src/utils/ThreadsafeQueue.h">
+<area shape="rect" id="node1" title="In this file, the header of the ThreadSafeQueue class is defined." alt="" coords="834,5,1065,61"/>
+<area shape="rect" id="node2" href="$Multithreaded_8h.html" title="In this file, the header of the Multithreaded class is defined." alt="" coords="550,117,810,158"/>
+<area shape="rect" id="node13" href="$ThreadsafeQueue_8tpp.html" title="In this file, the implementation of the ThreadSafeQueue class is defined." alt="" coords="834,109,1065,165"/>
+<area shape="rect" id="node3" href="$SimulationRunner_8h.html" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="559,213,801,269"/>
+<area shape="rect" id="node4" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="324,317,545,373"/>
+<area shape="rect" id="node10" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="569,317,791,373"/>
+<area shape="rect" id="node12" href="$SimulationRunner_8cpp.html" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="815,317,1057,373"/>
+<area shape="rect" id="node5" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="521,525,743,581"/>
+<area shape="rect" id="node6" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="348,421,569,477"/>
+<area shape="rect" id="node8" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="5,533,227,574"/>
+<area shape="rect" id="node9" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="103,421,324,477"/>
+<area shape="rect" id="node7" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="276,525,497,581"/>
+<area shape="rect" id="node11" href="$PlexeSimulationRunner_8cpp.html" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="695,421,916,477"/>
+</map>

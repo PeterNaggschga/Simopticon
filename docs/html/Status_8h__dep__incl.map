@@ -1,0 +1,23 @@
+<map id="/home/runner/work/simopticon/simopticon/src/status/Status.h" name="/home/runner/work/simopticon/simopticon/src/status/Status.h">
+<area shape="rect" id="node1" title="In this file, the header of the Status class is defined." alt="" coords="1041,5,1263,47"/>
+<area shape="rect" id="node2" href="$Evaluation_8h.html" title="In this file, the header of the Evaluation class is defined." alt="" coords="467,95,688,151"/>
+<area shape="rect" id="node12" href="$Optimizer_8h.html" title="In this file, the header of the Optimizer class is defined." alt="" coords="785,95,1007,151"/>
+<area shape="rect" id="node16" href="$SimulationRunner_8h.html" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="1298,95,1539,151"/>
+<area shape="rect" id="node20" href="$StatusBar_8h.html" title="In this file, the header of the StatusBar class is defined." alt="" coords="1031,102,1273,143"/>
+<area shape="rect" id="node21" href="$Status_8cpp.html" title="In this file, the implementation of the Status class is defined." alt="" coords="1564,102,1801,143"/>
+<area shape="rect" id="node3" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="860,199,1081,255"/>
+<area shape="rect" id="node9" href="$ConstantHeadway_8h.html" title="In this file, the header of the ConstantHeadway class is defined." alt="" coords="13,199,294,255"/>
+<area shape="rect" id="node11" href="$Evaluation_8cpp.html" title="In this file, the implementation of the Evaluation class is defined." alt="" coords="319,199,540,255"/>
+<area shape="rect" id="node4" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="773,407,995,463"/>
+<area shape="rect" id="node5" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="1059,303,1280,359"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="1264,414,1485,455"/>
+<area shape="rect" id="node8" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="712,303,933,359"/>
+<area shape="rect" id="node6" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="1019,407,1240,463"/>
+<area shape="rect" id="node10" href="$ConstantHeadway_8cpp.html" title="In this file, the implementation of the ConstantHeadway class is defined." alt="" coords="5,303,301,359"/>
+<area shape="rect" id="node13" href="$DirectOptimizer_8h.html" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="564,199,785,255"/>
+<area shape="rect" id="node15" href="$StatusBar_8cpp.html" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="1105,206,1364,247"/>
+<area shape="rect" id="node14" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="416,303,637,359"/>
+<area shape="rect" id="node17" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="1388,199,1609,255"/>
+<area shape="rect" id="node19" href="$SimulationRunner_8cpp.html" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="1634,199,1875,255"/>
+<area shape="rect" id="node18" href="$PlexeSimulationRunner_8cpp.html" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="1388,303,1609,359"/>
+</map>

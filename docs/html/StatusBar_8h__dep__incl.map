@@ -1,0 +1,10 @@
+<map id="/home/runner/work/simopticon/simopticon/src/status/StatusBar.h" name="/home/runner/work/simopticon/simopticon/src/status/StatusBar.h">
+<area shape="rect" id="node1" title="In this file, the header of the StatusBar class is defined." alt="" coords="445,5,688,47"/>
+<area shape="rect" id="node2" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="324,95,545,151"/>
+<area shape="rect" id="node8" href="$StatusBar_8cpp.html" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="569,102,828,143"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,303,227,359"/>
+<area shape="rect" id="node4" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="251,199,472,255"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="496,310,717,351"/>
+<area shape="rect" id="node7" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="547,199,768,255"/>
+<area shape="rect" id="node5" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="251,303,472,359"/>
+</map>

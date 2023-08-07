@@ -1,0 +1,13 @@
+<map id="/home/runner/work/simopticon/simopticon/src/utils/Multithreaded.h" name="/home/runner/work/simopticon/simopticon/src/utils/Multithreaded.h">
+<area shape="rect" id="node1" title="In this file, the header of the Multithreaded class is defined." alt="" coords="550,5,810,47"/>
+<area shape="rect" id="node2" href="$SimulationRunner_8h.html" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="559,95,801,151"/>
+<area shape="rect" id="node3" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="324,199,545,255"/>
+<area shape="rect" id="node9" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="569,199,791,255"/>
+<area shape="rect" id="node11" href="$SimulationRunner_8cpp.html" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="815,199,1057,255"/>
+<area shape="rect" id="node4" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="521,407,743,463"/>
+<area shape="rect" id="node5" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="348,303,569,359"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="5,414,227,455"/>
+<area shape="rect" id="node8" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="103,303,324,359"/>
+<area shape="rect" id="node6" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="276,407,497,463"/>
+<area shape="rect" id="node10" href="$PlexeSimulationRunner_8cpp.html" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="695,303,916,359"/>
+</map>
