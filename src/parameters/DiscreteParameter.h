@@ -13,7 +13,7 @@
  * The value of the Parameter is calculated as @f$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} @f$.
  * @ingroup parameters
  */
-class DiscreteParameter : public Parameter {
+class [[maybe_unused]] DiscreteParameter : public Parameter {
 private:
     /**
      * Times used in the value calculation.
