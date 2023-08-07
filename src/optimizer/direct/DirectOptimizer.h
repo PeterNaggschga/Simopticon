@@ -125,7 +125,7 @@ private:
     void saveProgress(functionValue bestVal, size_t evaluations, size_t nrRects) const;
 
     /**
-     * Prints all evaluated Parameter combinations and their respective values to a `.csv` file.
+     * Prints all evaluated parameterCombinations and their respective values to a `.csv` file.
      */
     void saveValues();
 

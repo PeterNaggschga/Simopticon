@@ -26,13 +26,13 @@
 class Parameter;
 
 /**
- * This module contains components capable of automatically running simulations with certain Parameter combinations.
+ * This module contains components capable of automatically running simulations with certain parameterCombinations.
  * Implementations must extend SimulationRunner.
  * @defgroup runner runner
  */
 
 /**
- * A class capable of running simulations with certain Parameter combinations.
+ * A class capable of running simulations with certain parameterCombinations.
  * @ingroup runner
  */
 class SimulationRunner :
@@ -40,16 +40,16 @@ class SimulationRunner :
         public Status {
 private:
     /**
-     * Deals with the simulation of a single Parameter combination.
+     * Deals with the simulation of a single parameterCombination.
      * Overrides Multithreaded#work and therefore can be executed concurrently.
-     * @param run: Parameter combination to be simulated.
+     * @param run: parameterCombination to be simulated.
      * @return A pair containing a path to the result directory and a set of runIds identifying the respective simulation runs.
      */
     std::pair<std::filesystem::path, std::set<runId>> work(parameterCombination run) override = 0;
 
 public:
     /**
-     * Creates a SimulationRunner which can use no more than the given number of threads to simulate Parameter combinations concurrently.
+     * Creates a SimulationRunner which can use no more than the given number of threads to simulate parameterCombinations concurrently.
      * @param threads: Maximum number of threads that may be used for concurrent simulations.
      */
     explicit SimulationRunner(unsigned int threads);
@@ -57,10 +57,10 @@ public:
     virtual ~SimulationRunner() = default;
 
     /**
-     * Simulates the given Parameter combinations concurrently and returns their respective results.
+     * Simulates the given parameterCombinations concurrently and returns their respective results.
      * Basically calls Multithreaded#runMultithreadedFunctions which uses the ThreadPool pattern to parallelize the execution of #work.
-     * @param runs: Set of Parameter combinations to be simulated.
-     * @return A map which maps the given Parameter combinations to their respective result directory and runIds.
+     * @param runs: Set of parameterCombinations to be simulated.
+     * @return A map which maps the given parameterCombinations to their respective result directory and runIds.
      */
     virtual std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
     runSimulations(const std::set<parameterCombination, CmpVectorSharedParameter> &runs);

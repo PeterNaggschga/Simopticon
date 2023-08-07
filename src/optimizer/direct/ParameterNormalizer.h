@@ -36,16 +36,16 @@ public:
     explicit ParameterNormalizer(std::list<std::shared_ptr<ParameterDefinition>> parameters);
 
     /**
-     * Transforms the given Parameter combination into a point in the unit hypercube.
-     * @param params: Parameter combination to be transformed.
-     * @return A point in the unit hypercube corresponding to the given Parameter combination.
+     * Transforms the given parameterCombination into a point in the unit hypercube.
+     * @param params: parameterCombination to be transformed.
+     * @return A point in the unit hypercube corresponding to the given parameterCombination.
      */
     static std::vector<dirCoordinate> normalize(const parameterCombination &params);
 
     /**
-     * Transforms the given point in the unit hypercube into a Parameter combination.
+     * Transforms the given point in the unit hypercube into a parameterCombination.
      * @param cords: Point in the unit hypercube to be transformed.
-     * @return A Parameter combination corresponding to the given point in the unit hypercube.
+     * @return A parameterCombination corresponding to the given point in the unit hypercube.
      */
     parameterCombination denormalize(std::vector<dirCoordinate> cords);
 };

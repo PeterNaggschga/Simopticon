@@ -18,7 +18,7 @@
 #include <mutex>
 
 /**
- * A container managing a map data structure that maps Parameter combinations to their respective found values.
+ * A container managing a map data structure that maps parameterCombinations to their respective found values.
  * The class manages concurrent access using the #operationsLock.
  * Running median calculation is supported by using sets #upperValues and #lowerValues.
  * Values are inserted into the data structure at once when #updateMap is called.
@@ -47,13 +47,13 @@ private:
      */
     const unsigned int topEntries;
     /**
-     * Set of pairs of the best Parameter combinations and their respective values.
+     * Set of pairs of the best parameterCombinations and their respective values.
      * Contains not more than #topEntries entries.
      */
     std::set<std::pair<const parameterCombination, functionValue>, CmpPairVectorSharedParameterFunctionvalue> topVals;
 
     /**
-     * Actual map that contains Parameter combinations and their respective values.
+     * Actual map that contains parameterCombinations and their respective values.
      */
     std::map<parameterCombination, functionValue, CmpVectorSharedParameter> values;
 
@@ -72,7 +72,7 @@ private:
 
     /**
      * Inserts a single value into #values and into #lowerValues or #upperValues depending on @a set argument.
-     * @param val: Parameter combination and respective value to be inserted. 
+     * @param val: parameterCombination and respective value to be inserted.
      * @param set: Set that value is inserted in. Either #lowerValues or #upperValues.
      */
     void addValue(const std::pair<parameterCombination, functionValue> &val,
@@ -86,32 +86,32 @@ public:
     explicit ValueMap(unsigned int topEntries = 10);
 
     /**
-     * Returns the value saved at the given Parameter combination. If no value is present, an exception is thrown.
+     * Returns the value saved at the given parameterCombination. If no value is present, an exception is thrown.
      * Triggers #updateMap.
-     * @param params: Parameter combination to which the value is requested. 
-     * @return The value saved in #values at the given Parameter combination.
+     * @param params: parameterCombination to which the value is requested.
+     * @return The value saved in #values at the given parameterCombination.
      */
     [[nodiscard]] functionValue query(const parameterCombination &params);
 
     /**
-     * Adds the given Parameter combination and value to #tba.
-     * @param params: Parameter combination to be added.
+     * Adds the given parameterCombination and value to #tba.
+     * @param params: parameterCombination to be added.
      * @param val: Value to be added.
      */
     void insert(const parameterCombination &params, functionValue val);
 
     /**
-     * Checks if a value has been recorded at the given Parameter combination.
+     * Checks if a value has been recorded at the given parameterCombination.
      * Triggers #updateMap.
-     * @param cords: Parameter combination that is checked. 
+     * @param cords: parameterCombination that is checked.
      * @return A boolean value that represents if the value is known.
      */
     [[nodiscard]] bool isKnown(const parameterCombination &cords);
 
     /**
-     * Checks if the given Parameter combination is to be found in #topVals.
+     * Checks if the given parameterCombination is to be found in #topVals.
      * Triggers #updateMap.
-     * @param cords: Parameter combination that is checked. 
+     * @param cords: parameterCombination that is checked.
      * @return A boolean value that represents if the value is one of the best #topEntries entries in #values.
      */
     [[nodiscard]] bool isTopValue(const parameterCombination &cords);
@@ -140,7 +140,7 @@ public:
     /**
      * Returns the best #topEntries entries that are saved in #topVals.
      * Triggers #updateMap.
-     * @return A list of the best #topEntries Parameter combinations and their respective values.
+     * @return A list of the best #topEntries parameterCombinations and their respective values.
      */
     [[nodiscard]] std::list<std::pair<parameterCombination, functionValue>> getTopVals();
 };

@@ -46,7 +46,7 @@ private:
     const static std::string SMALL_DIVIDER;
 
     /**
-     * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to #updateStatus.
+     * Pair of parameterCombination and respective value used to discern if the best value has changed since the last call to #updateStatus.
      */
     std::pair<parameterCombination, functionValue> lastVal;
     /**
@@ -60,7 +60,7 @@ private:
 
     /**
      Prints the given result command line.
-     * @param cords: Parameter combination of the given result.
+     * @param cords: parameterCombination of the given result.
      * @param optimum: Value of the given result.
      */
     static void printResult(const parameterCombination &cords, functionValue optimum);
@@ -79,7 +79,7 @@ public:
      * @param opt: Pointer to Optimizer used in optimization.
      * @param runner: Pointer to SimulationRunner used in optimization.
      * @param eval: Pointer to Evaluation used in optimization.
-     * @param currentVal: Parameter combination and respective value of the current optimum.
+     * @param currentVal: parameterCombination and respective value of the current optimum.
      * @param stepChanged: Boolean defining whether the current step has changed since the last call.
      * @param currentStep: Current step the optimization is in.
      */
@@ -88,8 +88,8 @@ public:
                       step currentStep = INIT);
 
     /**
-     * Prints the given Parameter combinations and respective values to command line.
-     * @param top: List of Parameter combinations and respective values to be printed.
+     * Prints the given parameterCombinations and respective values to command line.
+     * @param top: List of parameterCombinations and respective values to be printed.
      */
     static void
     printResults(std::list<std::pair<parameterCombination, std::pair<functionValue, std::filesystem::path>>> top);

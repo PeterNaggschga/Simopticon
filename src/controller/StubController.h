@@ -32,17 +32,17 @@ private:
     const std::function<functionValue(parameterCombination)> f;
 
     /**
-     * Returns empty paths and runIds for each requested Parameter combination.
-     * @param runs: Parameter combination to be simulated.
-     * @return Map which maps the given Parameter combinations to empty paths and runIds.
+     * Returns empty paths and runIds for each requested parameterCombination.
+     * @param runs: parameterCombination to be simulated.
+     * @return Map which maps the given parameterCombinations to empty paths and runIds.
      */
     std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
     runSimulations(const std::set<parameterCombination, CmpVectorSharedParameter> &runs) override;
 
     /**
-     * Evaluates the given Parameter combinations with #f.
-     * @param simulationResults: Map which maps Parameter combinations to empty results (see #runSimulations).
-     * @return A Map which maps the given Parameter combinations to the respective value of #f.
+     * Evaluates the given parameterCombinations with #f.
+     * @param simulationResults: Map which maps parameterCombinations to empty results (see #runSimulations).
+     * @return A Map which maps the given parameterCombinations to the respective value of #f.
      */
     std::map<parameterCombination, functionValue, CmpVectorSharedParameter> evaluate(
             const std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter> &simulationResults) override;

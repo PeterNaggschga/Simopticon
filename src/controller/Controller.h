@@ -47,7 +47,7 @@ private:
      */
     bool keepFiles;
     /**
-     * Saves the best @a n Parameter combinations and the corresponding path to the result files, if #keepFiles is true. @a n can be set in main config.
+     * Saves the best @a n parameterCombinations and the corresponding path to the result files, if #keepFiles is true. @a n can be set in main config.
      */
     std::map<parameterCombination, std::filesystem::path> topResults;
 
@@ -57,10 +57,10 @@ private:
     std::chrono::milliseconds statusInterval = std::chrono::milliseconds(0);
 
     /**
-     * Calls the #runner to run simulations for the given Parameter combinations.
+     * Calls the #runner to run simulations for the given parameterCombinations.
      * Updates #statusBar before and after execution of simulations.
-     * @param runs: A set of Parameter combinations to be executed.
-     * @return A map which maps the given Parameter combinations to their respective result file paths and runIds.
+     * @param runs: A set of parameterCombinations to be executed.
+     * @return A map which maps the given parameterCombinations to their respective result file paths and runIds.
      */
     virtual std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
     runSimulations(const std::set<parameterCombination, CmpVectorSharedParameter> &runs);
@@ -68,8 +68,8 @@ private:
     /**
      * Calls the #evaluation to evaluate the given result files.
      * Updates #statusBar before and after execution of evaluation.
-     * @param simulationResults: A map which maps the Parameter combinations that must be evaluated to their respective file paths of simulation results and runIds.
-     * @return A map which maps the given Parameter combinations to their respective functionValue.
+     * @param simulationResults: A map which maps the parameterCombinations that must be evaluated to their respective file paths of simulation results and runIds.
+     * @return A map which maps the given parameterCombinations to their respective functionValue.
      */
     virtual std::map<parameterCombination, functionValue, CmpVectorSharedParameter> evaluate(
             const std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter> &simulationResults);
@@ -95,7 +95,7 @@ protected:
      */
     std::unique_ptr<Optimizer> optimizer;
     /**
-     * SimulationRunner able to run simulations with certain Parameter combinations.
+     * SimulationRunner able to run simulations with certain parameterCombinations.
      */
     std::unique_ptr<SimulationRunner> runner;
     /**
@@ -103,7 +103,7 @@ protected:
      */
     std::unique_ptr<Evaluation> evaluation;
     /**
-     * ValueMap containing all values gathered by simulating and evaluating certain Parameter combinations.
+     * ValueMap containing all values gathered by simulating and evaluating certain parameterCombinations.
      */
     std::unique_ptr<ValueMap> valueMap;
 
@@ -160,11 +160,11 @@ public:
     void run();
 
     /**
-     * Searches #valueMap for results to given Parameter combinations.
+     * Searches #valueMap for results to given parameterCombinations.
      * Each combination that hasn't been simulated is simulated and evaluated using #runSimulations and #evaluate.
      * Updates #statusBar before and after execution.
-     * @param params: A set of Parameter combinations to be evaluated.
-     * @return A map which maps the given Parameter combinations to their respective functionValue.
+     * @param params: A set of parameterCombinations to be evaluated.
+     * @return A map which maps the given parameterCombinations to their respective functionValue.
      */
     std::map<parameterCombination, functionValue> requestValues(const std::list<parameterCombination> &params);
 
