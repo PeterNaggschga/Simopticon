@@ -9,7 +9,7 @@
 
 #include <utility>
 
-Parameter::Parameter(shared_ptr<ParameterDefinition> def) : definition(std::move(def)) {
+Parameter::Parameter(std::shared_ptr<ParameterDefinition> def) : definition(std::move(def)) {
 
 }
 
@@ -21,11 +21,11 @@ coordinate Parameter::getMax() const {
     return definition->getMax();
 }
 
-const string &Parameter::getUnit() const {
+const std::string &Parameter::getUnit() const {
     return definition->getUnit();
 }
 
-const string &Parameter::getConfig() const {
+const std::string &Parameter::getConfig() const {
     return definition->getConfig();
 }
 

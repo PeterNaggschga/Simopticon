@@ -14,7 +14,7 @@ void ThreadsafeQueue<Key>::push(Key val) {
 }
 
 template<class Key>
-pair<Key, bool> ThreadsafeQueue<Key>::pop() {
+std::pair<Key, bool> ThreadsafeQueue<Key>::pop() {
     queueLock.lock();
     if (safeQueue.empty()) {
         queueLock.unlock();

@@ -9,10 +9,10 @@
 
 #include <map>
 
-list<pair<shared_ptr<HyRect>, double>> GrahamScan::scan(list<shared_ptr<HyRect>> vertices) {
-    map<double, shared_ptr<HyRect>> potentialHull;
+std::list<std::pair<std::shared_ptr<HyRect>, double>> GrahamScan::scan(std::list<std::shared_ptr<HyRect>> vertices) {
+    std::map<double, std::shared_ptr<HyRect>> potentialHull;
     auto it = vertices.begin();
-    shared_ptr<HyRect> firstRect = vertices.front();
+    std::shared_ptr<HyRect> firstRect = vertices.front();
     potentialHull.insert(make_pair(0, firstRect));
     vertices.erase(vertices.begin());
     for (const auto &entry: vertices) {
@@ -28,9 +28,9 @@ list<pair<shared_ptr<HyRect>, double>> GrahamScan::scan(list<shared_ptr<HyRect>>
         potentialHull.insert(make_pair(angle, entry));
     }
 
-    list<pair<shared_ptr<HyRect>, double>> result;
-    shared_ptr<HyRect> lastRect = potentialHull.begin()->second;
-    for (const pair<const double, shared_ptr<HyRect>> &entry: potentialHull) {
+    std::list<std::pair<std::shared_ptr<HyRect>, double>> result;
+    std::shared_ptr<HyRect> lastRect = potentialHull.begin()->second;
+    for (const std::pair<const double, std::shared_ptr<HyRect>> &entry: potentialHull) {
         if (entry == *potentialHull.begin()) {
             continue;
         }

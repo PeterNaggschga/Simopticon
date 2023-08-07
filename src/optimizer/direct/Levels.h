@@ -88,8 +88,9 @@ public:
      * @param size: Number of HyRect in the given partition.
      * @return A list containing only the best HyRect per diagonal length in the subset based on the current level.
      */
-    [[nodiscard]] list<shared_ptr<HyRect>>
-    getRectSubset(const map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>, greater<>> &rects, size_t size) const;
+    [[nodiscard]] std::list<std::shared_ptr<HyRect>>
+    getRectSubset(const std::map<depth, std::set<std::shared_ptr<HyRect>, CmpSharedHyrect>, std::greater<>> &rects,
+                  size_t size) const;
 
     /**
      * Returns the epsilon value on the current level the DIRECT algorithm resides on.

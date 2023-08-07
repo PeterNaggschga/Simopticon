@@ -12,18 +12,18 @@ Multithreaded<Key, T, Compare, Allocator>::Multithreaded(unsigned int threads) :
 }
 
 template<class Key, class T, class Compare, class Allocator>
-map<Key, T, Compare, Allocator>
-Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(set<Key, Compare> runs) {
+std::map<Key, T, Compare, Allocator>
+Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(std::set<Key, Compare> runs) {
     for (const auto &entry: runs) {
         queue.push(entry);
     }
 
-    list<future < map<Key, T, Compare, Allocator>> > threads;
-    for (int i = 0; i < min((size_t) NR_THREADS, runs.size()); ++i) {
-        threads.push_back(async(launch::async, &Multithreaded::multithreadFunction, this));
+    std::list<std::future<std::map<Key, T, Compare, Allocator>>> threads;
+    for (int i = 0; i < std::min((size_t) NR_THREADS, runs.size()); ++i) {
+        threads.push_back(async(std::launch::async, &Multithreaded::multithreadFunction, this));
     }
 
-    map<Key, T, Compare, Allocator> result;
+    std::map<Key, T, Compare, Allocator> result;
     for (auto it = threads.rbegin(); it != threads.rend(); ++it) {
         it->wait();
         result.merge(it->get());
@@ -32,9 +32,9 @@ Multithreaded<Key, T, Compare, Allocator>::runMultithreadedFunctions(set<Key, Co
 }
 
 template<class Key, class T, class Compare, class Allocator>
-map<Key, T, Compare, Allocator> Multithreaded<Key, T, Compare, Allocator>::multithreadFunction() {
-    map<Key, T, Compare, Allocator> result;
-    pair<Key, bool> run;
+std::map<Key, T, Compare, Allocator> Multithreaded<Key, T, Compare, Allocator>::multithreadFunction() {
+    std::map<Key, T, Compare, Allocator> result;
+    std::pair<Key, bool> run;
     while ((run = queue.pop()).second) {
         result.insert(make_pair(run.first, work(run.first)));
     }

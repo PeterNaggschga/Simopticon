@@ -13,8 +13,6 @@
 
 #include <string>
 
-using namespace std;
-
 /**
  * This module provides functionality for command line output to keep the user updated about the optimization state and progress.
  * @defgroup status status
@@ -30,25 +28,25 @@ protected:
     /**
      * Default message returned by #getStatus and #getStatusBar if the implementing class does not override the respective function.
      */
-    const static string NO_STATUS_SUPPORT;
+    const static std::string NO_STATUS_SUPPORT;
     /**
      * Default message returned by #getName if the implementing class does not override the function.
      */
-    const static string NO_NAME;
+    const static std::string NO_NAME;
 
 public:
     /**
      * Returns a string representing the name of the implementing component in natural language.
      * @return A string containing the name of the component.
      */
-    [[nodiscard]] virtual string getName();
+    [[nodiscard]] virtual std::string getName();
 
     /**
      * Returns a string representing the current state of the implementing component.
      * May contain values of class members or other meaningful information. The returned string is always visible in StatusBar.
      * @return A string containing the state of the component.
      */
-    [[nodiscard]] virtual string getStatus();
+    [[nodiscard]] virtual std::string getStatus();
 
     /**
      * Returns a string representing the current progress of the calculations of the implementing component.
@@ -56,7 +54,7 @@ public:
      * Must not exceed one console line!
      * @return A string containing the progress of a calculation.
      */
-    [[nodiscard]] virtual string getStatusBar();
+    [[nodiscard]] virtual std::string getStatusBar();
 };
 
 #endif //SIMOPTICON_STATUS_H

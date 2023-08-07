@@ -10,8 +10,6 @@
 
 #include <string>
 
-using namespace std;
-
 /**
  * A class storing information on the properties of parameters that are being optimized.
  * @ingroup parameters
@@ -29,12 +27,12 @@ private:
     /**
      * Unit of the Parameter (optional).
      */
-    const string unit;
+    const std::string unit;
     /**
      * String containing configuration details of the Parameter (optional).
      * May be used to transfer configuration information for SimulationRunner.
      */
-    const string config;
+    const std::string config;
 
 public:
     /**
@@ -44,7 +42,7 @@ public:
      * @param config: Configuration string for the Parameter (optional).
      * @param unit: Unit of the Parameter (optional)
      */
-    ParameterDefinition(coordinate min, coordinate max, string config = "", string unit = "");
+    ParameterDefinition(coordinate min, coordinate max, std::string config = "", std::string unit = "");
 
     /**
      * Returns the minimum value of the Parameter stored in #min.
@@ -62,13 +60,13 @@ public:
      * Returns the unit string of the Parameter stored in #unit.
      * @return A string reference containing the unit.
      */
-    [[nodiscard]] const string &getUnit() const;
+    [[nodiscard]] const std::string & getUnit() const;
 
     /**
      * Returns the configuration string of the Parameter stored in #config.
      * @return A string reference containing the configuration.
      */
-    [[nodiscard]] const string &getConfig() const;
+    [[nodiscard]] const std::string & getConfig() const;
 };
 
 

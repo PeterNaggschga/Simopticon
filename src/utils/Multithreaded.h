@@ -13,8 +13,6 @@
 #include <set>
 #include "ThreadsafeQueue.h"
 
-using namespace std;
-
 /**
  * A class implementing concurrent execution of the same function for different arguments.
  * The function must be implemented through #work and execution follows the ThreadPool design pattern.
@@ -24,7 +22,7 @@ using namespace std;
  * @tparam Allocator: Allocator for pairs of constant Key and T.
  * @ingroup utils
  */
-template<class Key, class T, class Compare = less<Key>, class Allocator = allocator<pair<const Key, T>>>
+template<class Key, class T, class Compare = std::less<Key>, class Allocator = std::allocator<std::pair<const Key, T>>>
 class Multithreaded {
 private:
     /**
@@ -49,14 +47,14 @@ protected:
      * @param runs: Set of arguments on which #work should to be executed.
      * @return A map which maps arguments to their respective calculated values.
      */
-    virtual map<Key, T, Compare, Allocator> runMultithreadedFunctions(set<Key, Compare> runs);
+    virtual std::map<Key, T, Compare, Allocator> runMultithreadedFunctions(std::set<Key, Compare> runs);
 
     /**
      * Function that is executed by each thread. As long as #queue is not empty, tasks are started.
      * When #queue is empty, the processed results are returned
      * @return A map which maps arguments to their respective calculated values.
      */
-    virtual map<Key, T, Compare, Allocator> multithreadFunction();
+    virtual std::map<Key, T, Compare, Allocator> multithreadFunction();
 
 public:
     /**

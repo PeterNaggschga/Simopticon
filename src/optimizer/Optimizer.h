@@ -27,8 +27,6 @@ class Parameter;
 
 class ValueMap;
 
-using namespace std;
-
 /**
  * This module contains components capable of finding the minimum of a function only defined through argument-value pairs.
  * Implementations must extend Optimizer.
@@ -37,7 +35,7 @@ using namespace std;
 
 /**
  * A class containing an optimization strategy which searches the minimum of a blackbox function given through argument-value pairs.
- * The Optimizer has control over which Parameter combinations are simulated and evaluated as well as the duration of the optimization.
+ * The Optimizer has control over which parameterCombinations are simulated and evaluated as well as the duration of the optimization.
  * If #abort is called the optimization strategy should finish the optimization as soon as possible.
  * @ingroup optimizer
  */
@@ -52,23 +50,23 @@ protected:
     /**
      * List of parameters to be optimized.
      */
-    list<shared_ptr<ParameterDefinition>> parameters;
+    std::list<std::shared_ptr<ParameterDefinition>> parameters;
 
     /**
-     * Requests the values when using certain Parameter combinations from #controller.
+     * Requests the values when using certain parameterCombinations from #controller.
      * Basically calls Controller#requestValues with the given values.
-     * @param params: Parameter combinations to be evaluated.
-     * @return A map which maps Parameter combinations to their respective values.
+     * @param params: parameterCombinations to be evaluated.
+     * @return A map which maps parameterCombinations to their respective values.
      */
-    map<vector<shared_ptr<Parameter>>, functionValue> requestValues(const list<vector<shared_ptr<Parameter>>> &params);
+    std::map<parameterCombination, functionValue> requestValues(const std::list<parameterCombination> &params);
 
 public:
     /**
      * Creates an Optimizer which can request values from the given Controller and tries to optimize the given parameters.
-     * @param ctrl: Controller to be used for evaluation of Parameter combinations.
+     * @param ctrl: Controller to be used for evaluation of parameterCombinations.
      * @param params: List of ParameterDefinition defining the parameters that must be optimized.
      */
-    Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params);
+    Optimizer(Controller &ctrl, std::list<std::shared_ptr<ParameterDefinition>> params);
 
     virtual ~Optimizer() = default;
 
@@ -84,11 +82,11 @@ public:
      */
     [[nodiscard]] ValueMap &getValueMap() const;
 
-    string getName() override;
+    std::string getName() override;
 
-    string getStatus() override;
+    std::string getStatus() override;
 
-    string getStatusBar() override;
+    std::string getStatusBar() override;
 
 };
 

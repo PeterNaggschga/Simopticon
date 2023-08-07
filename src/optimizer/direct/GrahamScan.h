@@ -11,8 +11,6 @@
 
 class HyRect;
 
-using namespace std;
-
 /**
  * A class providing functionality for finding the lower right convex hull of a set of points.
  * @ingroup direct
@@ -27,7 +25,7 @@ public:
      * @param vertices: List of rectangles with different sizes.
      * @return A list of rectangles and corresponding Lipschitz constants that represents convex hull meaning a subset of the given HyRect list.
      */
-    static list<pair<shared_ptr<HyRect>, double>> scan(list<shared_ptr<HyRect>> vertices);
+    static std::list<std::pair<std::shared_ptr<HyRect>, double>> scan(std::list<std::shared_ptr<HyRect>> vertices);
 };
 
 

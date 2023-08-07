@@ -26,13 +26,13 @@ public:
      * @param def: ParameterDefinition of the Parameter.
      * @param value: Initial value of the Parameter.
      */
-    ContinuousParameter(shared_ptr<ParameterDefinition> def, coordinate value);
+    ContinuousParameter(std::shared_ptr<ParameterDefinition> def, coordinate value);
 
     /**
      * Creates a ContinuousParameter with the given ParameterDefinition and the initial value being the mean between minimum and maximum.
      * @param def: ParameterDefinition of the Parameter.
      */
-    explicit ContinuousParameter(shared_ptr<ParameterDefinition> def);
+    explicit ContinuousParameter(std::shared_ptr<ParameterDefinition> def);
 
     /**
      * Returns the current value of #val.
@@ -43,9 +43,9 @@ public:
     /**
      * Sets the value of #val to the given value.
      * Checks if given value is in bounds set by the ParameterDefinition.
-     * @param val: Value to set the ContinuousParameter to.
+     * @param newVal: Value to set the ContinuousParameter to.
      */
-    void setVal(coordinate val) override;
+    void setVal(coordinate newVal) override;
 };
 
 

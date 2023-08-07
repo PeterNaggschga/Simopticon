@@ -9,30 +9,30 @@
 
 #include <iostream>
 
-const string StatusBar::LARGE_DIVIDER = "\n\n" + string(70, '#') + "\n";
+const std::string StatusBar::LARGE_DIVIDER = "\n\n" + std::string(70, '#') + "\n";
 
-const string StatusBar::SMALL_DIVIDER = string(70, '-') + "\n";
+const std::string StatusBar::SMALL_DIVIDER = std::string(70, '-') + "\n";
 
 void StatusBar::updateStatus(Status *opt, Status *runner, Status *eval,
-                             const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged,
+                             const std::pair<parameterCombination, functionValue> &currentVal, bool stepChanged,
                              step currentStep) {
     currentStep = stepChanged ? currentStep : lastStep;
     if (stepChanged || currentVal != lastVal) {
-        cout << LARGE_DIVIDER;
-        cout << "Current optimum:\n";
+        std::cout << LARGE_DIVIDER;
+        std::cout << "Current optimum:\n";
         printResult(currentVal.first, currentVal.second);
-        cout << SMALL_DIVIDER;
+        std::cout << SMALL_DIVIDER;
         printStatus(opt);
-        cout << SMALL_DIVIDER;
+        std::cout << SMALL_DIVIDER;
         printStatus(runner);
-        cout << SMALL_DIVIDER;
+        std::cout << SMALL_DIVIDER;
         printStatus(eval);
-        cout << SMALL_DIVIDER;
-        cout << "Status: ";
+        std::cout << SMALL_DIVIDER;
+        std::cout << "Status: ";
         lastStatus = "";
     }
     for (int i = 0; i < lastStatus.size(); ++i) {
-        cout << "\b \b";
+        std::cout << "\b \b";
     }
     switch (currentStep) {
         default:
@@ -48,40 +48,41 @@ void StatusBar::updateStatus(Status *opt, Status *runner, Status *eval,
     }
     lastVal = currentVal;
     lastStep = currentStep;
-    cout << lastStatus;
-    cout.flush();
+    std::cout << lastStatus;
+    std::cout.flush();
 }
 
-void StatusBar::printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum) {
+void StatusBar::printResult(const parameterCombination &cords, functionValue optimum) {
     unsigned int i = 1;
     for (const auto &param: cords) {
         if (param->getConfig().empty()) {
-            cout << "x" << i;
+            std::cout << "x" << i;
         } else {
-            cout << param->getConfig();
+            std::cout << param->getConfig();
         }
-        cout << ":\t" << param->getVal() << param->getUnit() << "\n";
+        std::cout << ":\t" << param->getVal() << param->getUnit() << "\n";
         i++;
     }
-    cout << "Value: " << optimum << "\n";
+    std::cout << "Value: " << optimum << "\n";
 }
 
 void StatusBar::printStatus(Status *object) {
-    cout << object->getName() << "\n";
-    cout << object->getStatus() << "\n";
+    std::cout << object->getName() << "\n";
+    std::cout << object->getStatus() << "\n";
 }
 
-void StatusBar::printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top) {
-    cout << LARGE_DIVIDER;
+void StatusBar::printResults(
+        std::list<std::pair<parameterCombination, std::pair<functionValue, std::filesystem::path>>> top) {
+    std::cout << LARGE_DIVIDER;
     size_t i = top.size();
     for (auto it = top.rbegin(); it != top.rend(); ++it) {
-        cout << i-- << ". Result\n";
+        std::cout << i-- << ". Result\n";
         printResult(it->first, it->second.first);
-        cout << "Path to result files: " << it->second.second << "\n";
-        cout << SMALL_DIVIDER;
+        std::cout << "Path to result files: " << it->second.second << "\n";
+        std::cout << SMALL_DIVIDER;
     }
     for (const auto &result: top) {
-        cout << ++i << ".\t" << result.second.first << "\n";
+        std::cout << ++i << ".\t" << result.second.first << "\n";
     }
-    cout.flush();
+    std::cout.flush();
 }

@@ -23,7 +23,7 @@ struct CmpVectorSharedParameter {
      * @param b: Second vector to be compared.
      * @return True if a is smaller in size than b or if a is to be sorted before b by ascending order of coordinates.
      */
-    bool operator()(vector<shared_ptr<Parameter>> a, vector<shared_ptr<Parameter>> b) const {
+    bool operator()(parameterCombination a, parameterCombination b) const {
         if (a.size() != b.size()) {
             return a.size() < b.size();
         }
@@ -50,17 +50,17 @@ struct CmpPtrFunctionvalue {
 };
 
 /**
- * This struct implements the comparison of two pairs of Parameter combination and function value.
+ * This struct implements the comparison of two pairs of parameterCombination and function value.
  */
 struct CmpPairVectorSharedParameterFunctionvalue {
     /**
-     * Compares two pairs of Parameter combination and function value.
+     * Compares two pairs of parameterCombination and function value.
      * @param a: First pair.
      * @param b: Second pair.
-     * @return Compares the function values. If they are the same, the Parameter combinations are compared.
+     * @return Compares the function values. If they are the same, the parameterCombinations are compared.
      */
-    bool operator()(const pair<vector<shared_ptr<Parameter>>, functionValue> &a,
-                    const pair<vector<shared_ptr<Parameter>>, functionValue> &b) const {
+    bool operator()(const std::pair<parameterCombination, functionValue> &a,
+                    const std::pair<parameterCombination, functionValue> &b) const {
         return a.second == b.second ? a.first < b.first : a.second < b.second;
     }
 };
