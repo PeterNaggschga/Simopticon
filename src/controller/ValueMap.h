@@ -17,8 +17,6 @@
 #include <set>
 #include <mutex>
 
-using namespace std;
-
 /**
  * A container managing a map data structure that maps Parameter combinations to their respective found values.
  * The class manages concurrent access using the #operationsLock.

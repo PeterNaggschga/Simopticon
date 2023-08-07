@@ -30,8 +30,6 @@ class ParameterDefinition;
 
 class ValueMap;
 
-using namespace std;
-
 /**
  * This module provides classes coordinating the optimization process independently from the actual implementation of Optimizer, SimulationRunner and Evaluation.
  * @defgroup controller controller
