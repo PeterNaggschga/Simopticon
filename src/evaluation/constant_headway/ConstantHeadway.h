@@ -59,7 +59,7 @@ public:
      * @param nrThreads: Maximum number of threads used for concurrent calculations.
      * @param pathToScript: Path to the constant_headway.py script.
      */
-    ConstantHeadway(unsigned int nrThreads, const filesystem::path &pathToScript);
+    ConstantHeadway(unsigned int nrThreads, const std::filesystem::path &pathToScript);
 
     /**
      * Returns a value to the results of a single simulation run.
@@ -68,7 +68,7 @@ public:
      * @param experimentIds: Identifiers of certain simulation runs within the directory represented by the given path.
      * @return A value that represents the performance of the simulation - the lower the better.
      */
-    functionValue processOutput(filesystem::path path, set<runId> experimentIds) override;
+    functionValue processOutput(std::filesystem::path path, std::set<runId> experimentIds) override;
 
     /**
      * Returns values to the results of multiple simulation runs.
@@ -76,14 +76,14 @@ public:
      * @param experimentResults: Paths to and identifiers of the simulation results.
      * @return A map which maps the given results to their respective performance value.
      */
-    map<pair<filesystem::path, set<runId>>, functionValue>
-    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults) override;
+    std::map<std::pair<std::filesystem::path, std::set<runId>>, functionValue>
+    processOutput(const std::set<std::pair<std::filesystem::path, std::set<runId>>> &experimentResults) override;
 
-    string getName() override;
+    std::string getName() override;
 
-    string getStatus() override;
+    std::string getStatus() override;
 
-    string getStatusBar() override;
+    std::string getStatusBar() override;
 
 };
 

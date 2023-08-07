@@ -14,7 +14,7 @@ Optimizer::requestValues(const std::list<parameterCombination> &params) {
     return controller.requestValues(params);
 }
 
-Optimizer::Optimizer(Controller &ctrl, list<shared_ptr<ParameterDefinition>> params) : controller(ctrl),
+Optimizer::Optimizer(Controller &ctrl, std::list<std::shared_ptr<ParameterDefinition>> params) : controller(ctrl),
                                                                                        parameters(std::move(params)) {
 }
 
@@ -22,14 +22,14 @@ ValueMap &Optimizer::getValueMap() const {
     return controller.getValueMap();
 }
 
-string Optimizer::getName() {
+std::string Optimizer::getName() {
     return Status::getName();
 }
 
-string Optimizer::getStatus() {
+std::string Optimizer::getStatus() {
     return Status::getStatus();
 }
 
-string Optimizer::getStatusBar() {
+std::string Optimizer::getStatusBar() {
     return Status::getStatusBar();
 }

@@ -5,23 +5,23 @@
 
 #include "Evaluation.h"
 
-map<pair<filesystem::path, set<runId>>, functionValue>
-Evaluation::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults) {
-    map<pair<filesystem::path, set<runId>>, functionValue> result;
+std::map<std::pair<std::filesystem::path, std::set<runId>>, functionValue>
+Evaluation::processOutput(const std::set<std::pair<std::filesystem::path, std::set<runId>>> &experimentResults) {
+    std::map<std::pair<std::filesystem::path, std::set<runId>>, functionValue> result;
     for (const auto &entry: experimentResults) {
         result.insert(make_pair(entry, processOutput(entry.first, entry.second)));
     }
     return result;
 }
 
-string Evaluation::getName() {
+std::string Evaluation::getName() {
     return Status::getName();
 }
 
-string Evaluation::getStatus() {
+std::string Evaluation::getStatus() {
     return Status::getStatus();
 }
 
-string Evaluation::getStatusBar() {
+std::string Evaluation::getStatusBar() {
     return Status::getStatusBar();
 }

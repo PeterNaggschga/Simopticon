@@ -18,18 +18,18 @@
  * @return The value of the shekel function at the given argument vector.
  */
 functionValue shekel(int m, const parameterCombination &v) {
-    const vector<vector<functionValue>> C = {
+    const std::vector<std::vector<functionValue>> C = {
             {4, 1, 8, 6, 3, 2, 5, 8, 6, 7},
             {4, 1, 8, 6, 7, 9, 3, 1, 2, 3.6},
             {4, 1, 8, 6, 3, 2, 5, 8, 6, 7},
             {4, 1, 8, 6, 7, 9, 3, 1, 2, 3.6}
     };
-    const vector<functionValue> beta = {0.1, 0.2, 0.2, 0.4, 0.4, 0.6, 0.3, 0.7, 0.5, 0.5};
+    const std::vector<functionValue> beta = {0.1, 0.2, 0.2, 0.4, 0.4, 0.6, 0.3, 0.7, 0.5, 0.5};
     functionValue val = 0;
     for (int i = 0; i < m; ++i) {
         functionValue sum = 0;
         for (int j = 0; j < C.size(); ++j) {
-            sum += pow(v[j]->getVal() - C[j][i], 2);
+            sum += std::pow(v[j]->getVal() - C[j][i], 2);
         }
         val -= 1 / (sum + beta[i]);
     }
@@ -44,45 +44,46 @@ functionValue shekel(int m, const parameterCombination &v) {
  * @param v
  * @return
  */
-functionValue hartman(const vector<vector<functionValue>> &A, const vector<vector<functionValue>> &P,
+functionValue
+hartman(const std::vector<std::vector<functionValue>> &A, const std::vector<std::vector<functionValue>> &P,
                       const parameterCombination &v) {
-    const vector<functionValue> alpha = {1, 1.2, 3, 3.2};
+    const std::vector<functionValue> alpha = {1, 1.2, 3, 3.2};
     functionValue val = 0;
     for (int i = 0; i < alpha.size(); ++i) {
         functionValue sum = 0;
         for (int j = 0; j < A[0].size(); ++j) {
-            sum -= A[i][j] * pow(v[j]->getVal() - P[i][j], 2);
+            sum -= A[i][j] * std::pow(v[j]->getVal() - P[i][j], 2);
         }
-        val -= alpha[i] * exp(sum);
+        val -= alpha[i] * std::exp(sum);
     }
     return val;
 }
 
-map<string, function<functionValue(parameterCombination)>> StubController::functions = {
-        make_pair("quadratic", [](const parameterCombination &v) {
+std::map<std::string, std::function<functionValue(parameterCombination)>> StubController::functions = {
+        std::make_pair("quadratic", [](const parameterCombination &v) {
             functionValue val = 0;
             for (const auto &par: v) {
                 val += (functionValue) par->getVal() * par->getVal();
             }
             return val;
         }),
-        make_pair("shekel5", [](const parameterCombination &v) {
+        std::make_pair("shekel5", [](const parameterCombination &v) {
             return shekel(5, v);
         }),
-        make_pair("shekel7", [](const parameterCombination &v) {
+        std::make_pair("shekel7", [](const parameterCombination &v) {
             return shekel(7, v);
         }),
-        make_pair("shekel10", [](const parameterCombination &v) {
+        std::make_pair("shekel10", [](const parameterCombination &v) {
             return shekel(10, v);
         }),
-        make_pair("hartman3", [](const parameterCombination &v) {
-            const vector<vector<functionValue>> A = {
+        std::make_pair("hartman3", [](const parameterCombination &v) {
+            const std::vector<std::vector<functionValue>> A = {
                     {3,   10, 30},
                     {0.1, 10, 35},
                     {3,   10, 30},
                     {0.1, 10, 35}
             };
-            const vector<vector<functionValue>> P = {
+            const std::vector<std::vector<functionValue>> P = {
                     {0.3689, 0.1170, 0.2673},
                     {0.4699, 0.4387, 0.7470},
                     {0.1091, 0.8732, 0.5547},
@@ -90,14 +91,14 @@ map<string, function<functionValue(parameterCombination)>> StubController::funct
             };
             return hartman(A, P, v);
         }),
-        make_pair("hartman6", [](const parameterCombination &v) {
-            const vector<vector<functionValue>> A = {
+        std::make_pair("hartman6", [](const parameterCombination &v) {
+            const std::vector<std::vector<functionValue>> A = {
                     {10,   3,   17,   3.5, 1.7, 8},
                     {0.05, 10,  17,   0.1, 8,   14},
                     {3,    3.5, 1.7,  10,  17,  8},
                     {17,   8,   0.05, 10,  0.1, 14}
             };
-            const vector<vector<functionValue>> P = {
+            const std::vector<std::vector<functionValue>> P = {
                     {0.1312, 0.1696, 0.5569, 0.0124, 0.8283, 0.5886},
                     {0.2329, 0.4135, 0.8307, 0.3736, 0.1004, 0.9991},
                     {0.2348, 0.1451, 0.3522, 0.2883, 0.3047, 0.6650},
@@ -105,26 +106,26 @@ map<string, function<functionValue(parameterCombination)>> StubController::funct
             };
             return hartman(A, P, v);
         }),
-        make_pair("branin", [](const parameterCombination &v) {
-            functionValue res = pow(v[1]->getVal() - ((functionValue) 5.1 / (4 * pow((functionValue) M_PI, 2))) *
+        std::make_pair("branin", [](const parameterCombination &v) {
+            functionValue res = std::pow(v[1]->getVal() - ((functionValue) 5.1 / (4 * pow((functionValue) M_PI, 2))) *
                                                      pow(v[0]->getVal(), 2) +
                                     ((functionValue) 5 / M_PI) * v[0]->getVal() - 6, 2);
             return res + (functionValue) 10 * (1 - pow(8 * M_PI, -1)) * cos(v[0]->getVal()) + 10;
         }),
-        make_pair("goldprice", [](const parameterCombination &v) {
+        std::make_pair("goldprice", [](const parameterCombination &v) {
             functionValue x1 = v[0]->getVal();
             functionValue x2 = v[1]->getVal();
-            return (1 + pow(x1 + x2 + 1, 2) * (19 - 14 * (x1 + x2) + 3 * (pow(x1, 2) + pow(x2, 2)) + 6 * x1 * x2)) *
-                   (30 + pow(2 * x1 - 3 * x2, 2) * (18 - 32 * x1 + 12 *
-                                                                   pow(x1, 2) + 48 * x2 - 36 * x1 * x2 +
-                                                    27 * pow(x2, 2)));
+            return (1 + std::pow(x1 + x2 + 1, 2) *
+                        (19 - 14 * (x1 + x2) + 3 * (std::pow(x1, 2) + std::pow(x2, 2)) + 6 * x1 * x2)) * (30 + std::pow(
+                    2 * x1 - 3 * x2, 2) * (18 - 32 * x1 + 12 * std::pow(x1, 2) + 48 * x2 - 36 * x1 * x2 +
+                                           27 * std::pow(x2, 2)));
         }),
-        make_pair("camel6", [](const parameterCombination &v) {
+        std::make_pair("camel6", [](const parameterCombination &v) {
             functionValue x1 = v[0]->getVal();
             functionValue x2 = v[1]->getVal();
             return (4 - 2.1 * pow(x1, 2) + pow(x1, 4) / 3) * pow(x1, 2) + x1 * x2 + (-4 + 4 * pow(x2, 2)) * pow(x2, 2);
         }),
-        make_pair("shubert", [](const parameterCombination &v) {
+        std::make_pair("shubert", [](const parameterCombination &v) {
             functionValue sum1 = 0;
             for (int i = 1; i <= 5; ++i) {
                 sum1 += (functionValue) i * cos((i + 1) * v[0]->getVal() + i);
@@ -137,23 +138,22 @@ map<string, function<functionValue(parameterCombination)>> StubController::funct
         })
 };
 
-StubController::StubController(const filesystem::path &configPath, const string &function) : f(functions[function]),
-                                                                                             Controller(configPath,
-                                                                                                        true) {
+StubController::StubController(const std::filesystem::path &configPath, const std::string &function) :
+        f(functions[function]), Controller(configPath, true) {
 }
 
-map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter>
-StubController::runSimulations(const set<parameterCombination, CmpVectorSharedParameter> &runs) {
-    map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> result;
+std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
+StubController::runSimulations(const std::set<parameterCombination, CmpVectorSharedParameter> &runs) {
+    std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter> result;
     for (const auto &v: runs) {
-        result.insert(make_pair(v, make_pair("", set<runId>())));
+        result.insert(make_pair(v, make_pair("", std::set<runId>())));
     }
     return result;
 }
 
-map<parameterCombination, functionValue, CmpVectorSharedParameter> StubController::evaluate(
-        const map<parameterCombination, pair<filesystem::path, set<runId>>, CmpVectorSharedParameter> &simulationResults) {
-    map<parameterCombination, functionValue, CmpVectorSharedParameter> result;
+std::map<parameterCombination, functionValue, CmpVectorSharedParameter> StubController::evaluate(
+        const std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter> &simulationResults) {
+    std::map<parameterCombination, functionValue, CmpVectorSharedParameter> result;
     for (const auto &v: simulationResults) {
         result.insert(make_pair(v.first, f(v.first)));
     }
@@ -164,7 +164,7 @@ void StubController::removeOldResultfiles() {
 }
 
 void StubController::updateStatus() {
-    pair<parameterCombination, functionValue> p =
+    std::pair<parameterCombination, functionValue> p =
             valueMap->getSize() != 0 ? valueMap->getTopVals().front() : make_pair(parameterCombination(),
                                                                                   (functionValue) INFINITY);
     bool stateChanged = stepState.stepChanged;
