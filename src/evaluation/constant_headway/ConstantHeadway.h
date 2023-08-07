@@ -63,7 +63,7 @@ public:
 
     /**
      * Returns a value to the results of a single simulation run.
-     * Basically calls #processOutput(const set<pair<filesystem::path, set<runId>>> &) with the given values.
+     * Basically calls #processOutput(const std::set<std::pair<std::filesystem::path, std::set<runId>>> &) with the given values.
      * @param path: Path to the result files.
      * @param experimentIds: Identifiers of certain simulation runs within the directory represented by the given path.
      * @return A value that represents the performance of the simulation - the lower the better.

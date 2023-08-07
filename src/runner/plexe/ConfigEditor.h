@@ -52,7 +52,7 @@ private:
 
     /**
      * Replaces the value of the given key with the given new value in the given string.
-     * Basically parses the given value to string and calls #replaceOption(string &, string, const string &).
+     * Basically parses the given value to string and calls #replaceOption(std::string &, std::string, const std::string &).
      * @param file: A string containing the contents of an `.ini` file.
      * @param option: A string representing a key in the given file.
      * @param value: The new value of the given option in the given file.

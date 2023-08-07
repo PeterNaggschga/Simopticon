@@ -43,7 +43,7 @@ public:
 
     /**
      * Returns values to the results of multiple simulation runs.
-     * Simply calls #processOutput(filesystem::path, set<runId>) multiple times if not overridden.
+fi     * Simply calls #processOutput(std::filesystem::path, std::set<runId>) multiple times if not overridden.
      * @param experimentResults: Paths to and identifiers of the simulation results.
      * @return A map which maps the given results to their respective performance value.
      */
