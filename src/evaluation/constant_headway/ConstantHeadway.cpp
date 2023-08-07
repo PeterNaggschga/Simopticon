@@ -7,9 +7,6 @@
 
 #include <iostream>
 
-
-using namespace std;
-
 ConstantHeadway::ConstantHeadway(unsigned int nrThreads, const filesystem::path &pathToScript) : PythonScript(
         pathToScript, "multithreaded"), NR_THREADS(nrThreads) {
 }

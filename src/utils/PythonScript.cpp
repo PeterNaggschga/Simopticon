@@ -8,11 +8,9 @@
 #include <stdexcept>
 #include <filesystem>
 
-using namespace std;
-
-PythonScript::PythonScript(const filesystem::path &path, const char *functionName) {
+PythonScript::PythonScript(const std::filesystem::path &path, const char *functionName) {
     setenv("PYTHONPATH", path.parent_path().c_str(), 1);
-    string scriptName = path.filename();
+    std::string scriptName = path.filename();
     scriptName.replace(scriptName.find(path.extension()), path.extension().string().size(), "");
 
     Py_Initialize();
@@ -25,12 +23,12 @@ PythonScript::PythonScript(const filesystem::path &path, const char *functionNam
         if (!(pFunc && PyCallable_Check(pFunc))) {
             if (PyErr_Occurred()) {
                 PyErr_Print();
-                throw runtime_error("Function couldn't be loaded!");
+                throw std::runtime_error("Function couldn't be loaded!");
             }
         }
     } else {
         PyErr_Print();
-        throw runtime_error("Python Module couldn't be loaded!");
+        throw std::runtime_error("Python Module couldn't be loaded!");
     }
 }
 
