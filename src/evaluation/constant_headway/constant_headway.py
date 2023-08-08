@@ -92,7 +92,7 @@ def multithreaded(threads: int, directory: str, run_ids: list) -> list:
     # @param directory: A path to the
     # directory directly or indirectly containing all result files that are to be evaluated.
     # @param run_ids: A list of lists of strings where each list of strings contains all OMNeT++ run ids of the runs
-    # conducted for one Parameter combination
+    # conducted for one parameterCombination
     # @return A list of longfloats representing the rating of the given simulation runs.
 
     res.set_inputs(directory)

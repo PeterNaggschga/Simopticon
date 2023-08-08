@@ -21,7 +21,7 @@ struct CmpSharedHyrect {
      * @param b: Second pointer to a HyRect.
      * @return True if a has a lower HyRect#avgValue value than b. If both values are the same, compare the sampling vertices returned by HyRect#getSamplingVertices.
      */
-    bool operator()(const shared_ptr<HyRect> &a, const shared_ptr<HyRect> &b) const {
+    bool operator()(const std::shared_ptr<HyRect> &a, const std::shared_ptr<HyRect> &b) const {
         return a->getAvgValue() == b->getAvgValue() ? a->getSamplingVertices() < b->getSamplingVertices() :
                a->getAvgValue() < b->getAvgValue();
     }

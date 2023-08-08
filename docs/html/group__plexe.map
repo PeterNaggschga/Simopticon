@@ -1,4 +1,4 @@
 <map id="plexe" name="plexe">
 <area shape="rect" id="node1" title="This module extends SimulationRunner to interface with the Plexe framework to enable the optimization..." alt="" coords="117,5,175,31"/>
-<area shape="rect" id="node2" href="$group__runner.html" title="This module contains components capable of automatically running simulations with certain Parameter c..." alt="" coords="5,5,69,31"/>
+<area shape="rect" id="node2" href="$group__runner.html" title="This module contains components capable of automatically running simulations with certain parameterCo..." alt="" coords="5,5,69,31"/>
 </map>

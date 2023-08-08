@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('classSimulationRunner.html',''); initR
 </div><!--header-->
 <div class="contents">
 
-<p>A class capable of running simulations with certain <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations.  
+<p>A class capable of running simulations with certain parameterCombinations.  
  <a href="classSimulationRunner.html#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="SimulationRunner_8h_source.html">SimulationRunner.h</a>&quot;</code></p>
@@ -101,10 +101,10 @@ Inheritance diagram for SimulationRunner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSimulationRunner__inherit__graph.png" border="0" usemap="#aSimulationRunner_inherit__map" alt="Inheritance graph"/></div>
 <map name="aSimulationRunner_inherit__map" id="aSimulationRunner_inherit__map">
-<area shape="rect" title="A class capable of running simulations with certain Parameter combinations." alt="" coords="277,75,416,101"/>
-<area shape="rect" href="classPlexeSimulationRunner.html" title="A class capable of starting platooning simulations in the Plexe framework with given Parameter combin..." alt="" coords="464,75,637,101"/>
-<area shape="rect" href="classMultithreaded.html" title=" " alt="" coords="5,5,229,91"/>
-<area shape="rect" href="classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="86,115,149,141"/>
+<area shape="rect" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="284,75,423,101"/>
+<area shape="rect" href="classPlexeSimulationRunner.html" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="471,75,644,101"/>
+<area shape="rect" href="classMultithreaded.html" title=" " alt="" coords="5,5,236,91"/>
+<area shape="rect" href="classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="89,115,152,141"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -112,68 +112,68 @@ Collaboration diagram for SimulationRunner:</div>
 <div class="dyncontent">
 <div class="center"><img src="classSimulationRunner__coll__graph.png" border="0" usemap="#aSimulationRunner_coll__map" alt="Collaboration graph"/></div>
 <map name="aSimulationRunner_coll__map" id="aSimulationRunner_coll__map">
-<area shape="rect" title="A class capable of running simulations with certain Parameter combinations." alt="" coords="277,75,416,101"/>
-<area shape="rect" href="classMultithreaded.html" title=" " alt="" coords="5,5,229,91"/>
-<area shape="rect" href="classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="86,115,149,141"/>
+<area shape="rect" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="284,75,423,101"/>
+<area shape="rect" href="classMultithreaded.html" title=" " alt="" coords="5,5,236,91"/>
+<area shape="rect" href="classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="89,115,152,141"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2a41b4b74ffb111ede54937551266a53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#a2a41b4b74ffb111ede54937551266a53">SimulationRunner</a> (unsigned int threads)</td></tr>
-<tr class="memdesc:a2a41b4b74ffb111ede54937551266a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations.">SimulationRunner</a> which can use no more than the given number of threads to simulate <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations concurrently.  <a href="classSimulationRunner.html#a2a41b4b74ffb111ede54937551266a53">More...</a><br /></td></tr>
+<tr class="memdesc:a2a41b4b74ffb111ede54937551266a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a> which can use no more than the given number of threads to simulate parameterCombinations concurrently.  <a href="classSimulationRunner.html#a2a41b4b74ffb111ede54937551266a53">More...</a><br /></td></tr>
 <tr class="separator:a2a41b4b74ffb111ede54937551266a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94b47c33b33f68366e0b0c6aacd94541"><td class="memItemLeft" align="right" valign="top">virtual map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#a94b47c33b33f68366e0b0c6aacd94541">runSimulations</a> (const set&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp;runs)</td></tr>
-<tr class="memdesc:a94b47c33b33f68366e0b0c6aacd94541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations concurrently and returns their respective results.  <a href="classSimulationRunner.html#a94b47c33b33f68366e0b0c6aacd94541">More...</a><br /></td></tr>
-<tr class="separator:a94b47c33b33f68366e0b0c6aacd94541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a64df92141a48ada5b9e237ba2986c5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#a6a64df92141a48ada5b9e237ba2986c5">getName</a> () override</td></tr>
-<tr class="memdesc:a6a64df92141a48ada5b9e237ba2986c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the name of the implementing component in natural language.  <a href="classSimulationRunner.html#a6a64df92141a48ada5b9e237ba2986c5">More...</a><br /></td></tr>
-<tr class="separator:a6a64df92141a48ada5b9e237ba2986c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb01dab67ff0e672b583a635ce4f74aa"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#acb01dab67ff0e672b583a635ce4f74aa">getStatus</a> () override</td></tr>
-<tr class="memdesc:acb01dab67ff0e672b583a635ce4f74aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current state of the implementing component.  <a href="classSimulationRunner.html#acb01dab67ff0e672b583a635ce4f74aa">More...</a><br /></td></tr>
-<tr class="separator:acb01dab67ff0e672b583a635ce4f74aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee360ed53b2160fc6ad4bb7a2dd2cd10"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#aee360ed53b2160fc6ad4bb7a2dd2cd10">getStatusBar</a> () override</td></tr>
-<tr class="memdesc:aee360ed53b2160fc6ad4bb7a2dd2cd10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current progress of the calculations of the implementing component.  <a href="classSimulationRunner.html#aee360ed53b2160fc6ad4bb7a2dd2cd10">More...</a><br /></td></tr>
-<tr class="separator:aee360ed53b2160fc6ad4bb7a2dd2cd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classMultithreaded"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMultithreaded')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMultithreaded.html">Multithreaded&lt; vector&lt; shared_ptr&lt; Parameter &gt; &gt;, pair&lt; filesystem::path, set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a></td></tr>
+<tr class="memitem:a37f73e47fd21b1167be2c44ab36e6254"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#a37f73e47fd21b1167be2c44ab36e6254">runSimulations</a> (const std::set&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp;runs)</td></tr>
+<tr class="memdesc:a37f73e47fd21b1167be2c44ab36e6254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulates the given parameterCombinations concurrently and returns their respective results.  <a href="classSimulationRunner.html#a37f73e47fd21b1167be2c44ab36e6254">More...</a><br /></td></tr>
+<tr class="separator:a37f73e47fd21b1167be2c44ab36e6254"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a884a6bee886f30ba251897387336f04b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#a884a6bee886f30ba251897387336f04b">getName</a> () override</td></tr>
+<tr class="memdesc:a884a6bee886f30ba251897387336f04b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the name of the implementing component in natural language.  <a href="classSimulationRunner.html#a884a6bee886f30ba251897387336f04b">More...</a><br /></td></tr>
+<tr class="separator:a884a6bee886f30ba251897387336f04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac223588e17ea7c69402e75be1f1ef0e1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#ac223588e17ea7c69402e75be1f1ef0e1">getStatus</a> () override</td></tr>
+<tr class="memdesc:ac223588e17ea7c69402e75be1f1ef0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current state of the implementing component.  <a href="classSimulationRunner.html#ac223588e17ea7c69402e75be1f1ef0e1">More...</a><br /></td></tr>
+<tr class="separator:ac223588e17ea7c69402e75be1f1ef0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af433c6cf68f7b9699251b96919d72152"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#af433c6cf68f7b9699251b96919d72152">getStatusBar</a> () override</td></tr>
+<tr class="memdesc:af433c6cf68f7b9699251b96919d72152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string representing the current progress of the calculations of the implementing component.  <a href="classSimulationRunner.html#af433c6cf68f7b9699251b96919d72152">More...</a><br /></td></tr>
+<tr class="separator:af433c6cf68f7b9699251b96919d72152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classMultithreaded"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classMultithreaded')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classMultithreaded.html">Multithreaded&lt; parameterCombination, std::pair&lt; std::filesystem::path, std::set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a></td></tr>
 <tr class="memitem:abb856a33aad9a1cc76a91c15c40bef8e inherit pub_methods_classMultithreaded"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a> (unsigned int threads)</td></tr>
 <tr class="memdesc:abb856a33aad9a1cc76a91c15c40bef8e inherit pub_methods_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classMultithreaded.html" title="A class implementing concurrent execution of the same function for different arguments.">Multithreaded</a> class that does not use more than the given number of threads.  <a href="classMultithreaded.html#abb856a33aad9a1cc76a91c15c40bef8e">More...</a><br /></td></tr>
 <tr class="separator:abb856a33aad9a1cc76a91c15c40bef8e inherit pub_methods_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:aee43d80890242d162b796049a2144b60"><td class="memItemLeft" align="right" valign="top">pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#aee43d80890242d162b796049a2144b60">work</a> (vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; run) override=0</td></tr>
-<tr class="memdesc:aee43d80890242d162b796049a2144b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deals with the simulation of a single <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination.  <a href="classSimulationRunner.html#aee43d80890242d162b796049a2144b60">More...</a><br /></td></tr>
-<tr class="separator:aee43d80890242d162b796049a2144b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe03a3ba517b5aca991dee71155bbec"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulationRunner.html#adfe03a3ba517b5aca991dee71155bbec">work</a> (<a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> run) override=0</td></tr>
+<tr class="memdesc:adfe03a3ba517b5aca991dee71155bbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deals with the simulation of a single parameterCombination.  <a href="classSimulationRunner.html#adfe03a3ba517b5aca991dee71155bbec">More...</a><br /></td></tr>
+<tr class="separator:adfe03a3ba517b5aca991dee71155bbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_methods_classMultithreaded"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classMultithreaded')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classMultithreaded.html">Multithreaded&lt; vector&lt; shared_ptr&lt; Parameter &gt; &gt;, pair&lt; filesystem::path, set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a></td></tr>
-<tr class="memitem:a3026e175e15e99a4bffbf27606e71a4f inherit pro_methods_classMultithreaded"><td class="memItemLeft" align="right" valign="top">virtual map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>, allocator&lt; pair&lt; const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt; &gt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f">runMultithreadedFunctions</a> (set&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; runs)</td></tr>
-<tr class="memdesc:a3026e175e15e99a4bffbf27606e71a4f inherit pro_methods_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes given tasks into <a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e" title="ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.">queue</a>, creates concurrent threads and merges them when execution is done.  <a href="classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f">More...</a><br /></td></tr>
-<tr class="separator:a3026e175e15e99a4bffbf27606e71a4f inherit pro_methods_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dcca101a87d5e05e7a4c7c9219b4ab5 inherit pro_methods_classMultithreaded"><td class="memItemLeft" align="right" valign="top">virtual map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>, allocator&lt; pair&lt; const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt; &gt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a4dcca101a87d5e05e7a4c7c9219b4ab5">multithreadFunction</a> ()</td></tr>
-<tr class="memdesc:a4dcca101a87d5e05e7a4c7c9219b4ab5 inherit pro_methods_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that is executed by each thread.  <a href="classMultithreaded.html#a4dcca101a87d5e05e7a4c7c9219b4ab5">More...</a><br /></td></tr>
-<tr class="separator:a4dcca101a87d5e05e7a4c7c9219b4ab5 inherit pro_methods_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classMultithreaded"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMultithreaded')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMultithreaded.html">Multithreaded&lt; vector&lt; shared_ptr&lt; Parameter &gt; &gt;, pair&lt; filesystem::path, set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a></td></tr>
+<tr class="inherit_header pro_methods_classMultithreaded"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classMultithreaded')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classMultithreaded.html">Multithreaded&lt; parameterCombination, std::pair&lt; std::filesystem::path, std::set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a></td></tr>
+<tr class="memitem:a1fcc1c0642faa664e11fefadde148b5f inherit pro_methods_classMultithreaded"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>, std::allocator&lt; std::pair&lt; const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt; &gt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a1fcc1c0642faa664e11fefadde148b5f">runMultithreadedFunctions</a> (std::set&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; runs)</td></tr>
+<tr class="memdesc:a1fcc1c0642faa664e11fefadde148b5f inherit pro_methods_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes given tasks into <a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e" title="ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.">queue</a>, creates concurrent threads and merges them when execution is done.  <a href="classMultithreaded.html#a1fcc1c0642faa664e11fefadde148b5f">More...</a><br /></td></tr>
+<tr class="separator:a1fcc1c0642faa664e11fefadde148b5f inherit pro_methods_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417daf5d214dc7046af294dba9979624 inherit pro_methods_classMultithreaded"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>, std::allocator&lt; std::pair&lt; const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt; &gt;&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a417daf5d214dc7046af294dba9979624">multithreadFunction</a> ()</td></tr>
+<tr class="memdesc:a417daf5d214dc7046af294dba9979624 inherit pro_methods_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that is executed by each thread.  <a href="classMultithreaded.html#a417daf5d214dc7046af294dba9979624">More...</a><br /></td></tr>
+<tr class="separator:a417daf5d214dc7046af294dba9979624 inherit pro_methods_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classMultithreaded"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classMultithreaded')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classMultithreaded.html">Multithreaded&lt; parameterCombination, std::pair&lt; std::filesystem::path, std::set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a></td></tr>
 <tr class="memitem:af49cb7239ee452d7c1d29ae50fe482a3 inherit pro_attribs_classMultithreaded"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a></td></tr>
 <tr class="memdesc:af49cb7239ee452d7c1d29ae50fe482a3 inherit pro_attribs_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of concurrent threads to be used in ThreadPool.  <a href="classMultithreaded.html#af49cb7239ee452d7c1d29ae50fe482a3">More...</a><br /></td></tr>
 <tr class="separator:af49cb7239ee452d7c1d29ae50fe482a3 inherit pro_attribs_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af18b358906f0dd910122e6541c46f45e inherit pro_attribs_classMultithreaded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e">queue</a></td></tr>
+<tr class="memitem:af18b358906f0dd910122e6541c46f45e inherit pro_attribs_classMultithreaded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classThreadsafeQueue.html">ThreadsafeQueue</a>&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e">queue</a></td></tr>
 <tr class="memdesc:af18b358906f0dd910122e6541c46f45e inherit pro_attribs_classMultithreaded"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classThreadsafeQueue.html" title="A container class of a queue that is safe for concurrent access of different threads.">ThreadsafeQueue</a> containing the arguments that have to be processed by the ThreadPool.  <a href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e">More...</a><br /></td></tr>
 <tr class="separator:af18b358906f0dd910122e6541c46f45e inherit pro_attribs_classMultithreaded"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_static_attribs_classStatus"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classStatus')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classStatus.html">Status</a></td></tr>
-<tr class="memitem:a3090c3575be971368217ae7e3e470120 inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#a3090c3575be971368217ae7e3e470120">NO_STATUS_SUPPORT</a> = &quot;Component doesn't support status updates!&quot;</td></tr>
-<tr class="memdesc:a3090c3575be971368217ae7e3e470120 inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a587fbda25430f10e4cade040aaad198f" title="Returns a string representing the current state of the implementing component.">getStatus</a> and <a class="el" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0" title="Returns a string representing the current progress of the calculations of the implementing component.">getStatusBar</a> if the implementing class does not override the respective function.  <a href="classStatus.html#a3090c3575be971368217ae7e3e470120">More...</a><br /></td></tr>
-<tr class="separator:a3090c3575be971368217ae7e3e470120 inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafda770737cec4ad6e503526aef7e7f0 inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">NO_NAME</a> = &quot;No name specified&quot;</td></tr>
-<tr class="memdesc:aafda770737cec4ad6e503526aef7e7f0 inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25" title="Returns a string representing the name of the implementing component in natural language.">getName</a> if the implementing class does not override the function.  <a href="classStatus.html#aafda770737cec4ad6e503526aef7e7f0">More...</a><br /></td></tr>
-<tr class="separator:aafda770737cec4ad6e503526aef7e7f0 inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75ea6f22c5e9b8faa6f8af43d0bc2eed inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#a75ea6f22c5e9b8faa6f8af43d0bc2eed">NO_STATUS_SUPPORT</a> = &quot;Component doesn't support status updates!&quot;</td></tr>
+<tr class="memdesc:a75ea6f22c5e9b8faa6f8af43d0bc2eed inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a1102f7349b421fca575e3685cb599fc9" title="Returns a string representing the current state of the implementing component.">getStatus</a> and <a class="el" href="classStatus.html#a6dcff8054a96df8924cbbc4caf8472e3" title="Returns a string representing the current progress of the calculations of the implementing component.">getStatusBar</a> if the implementing class does not override the respective function.  <a href="classStatus.html#a75ea6f22c5e9b8faa6f8af43d0bc2eed">More...</a><br /></td></tr>
+<tr class="separator:a75ea6f22c5e9b8faa6f8af43d0bc2eed inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc78bdfd2d9603aa3012e01b3cde5b1 inherit pro_static_attribs_classStatus"><td class="memItemLeft" align="right" valign="top">static const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStatus.html#aebc78bdfd2d9603aa3012e01b3cde5b1">NO_NAME</a> = &quot;No name specified&quot;</td></tr>
+<tr class="memdesc:aebc78bdfd2d9603aa3012e01b3cde5b1 inherit pro_static_attribs_classStatus"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message returned by <a class="el" href="classStatus.html#a9d07378cbe210558ebb6b410a9b3855e" title="Returns a string representing the name of the implementing component in natural language.">getName</a> if the implementing class does not override the function.  <a href="classStatus.html#aebc78bdfd2d9603aa3012e01b3cde5b1">More...</a><br /></td></tr>
+<tr class="separator:aebc78bdfd2d9603aa3012e01b3cde5b1 inherit pro_static_attribs_classStatus"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class capable of running simulations with certain <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations. </p>
+<div class="textblock"><p>A class capable of running simulations with certain parameterCombinations. </p>
 
-<p class="definition">Definition at line <a class="el" href="SimulationRunner_8h_source.html#l00040">40</a> of file <a class="el" href="SimulationRunner_8h_source.html">SimulationRunner.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SimulationRunner_8h_source.html#l00038">38</a> of file <a class="el" href="SimulationRunner_8h_source.html">SimulationRunner.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2a41b4b74ffb111ede54937551266a53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a41b4b74ffb111ede54937551266a53">&#9670;&nbsp;</a></span>SimulationRunner()</h2>
@@ -199,7 +199,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations.">SimulationRunner</a> which can use no more than the given number of threads to simulate <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations concurrently. </p>
+<p>Creates a <a class="el" href="classSimulationRunner.html" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a> which can use no more than the given number of threads to simulate parameterCombinations concurrently. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">threads</td><td>Maximum number of threads that may be used for concurrent simulations. </td></tr>
@@ -214,8 +214,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6a64df92141a48ada5b9e237ba2986c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a64df92141a48ada5b9e237ba2986c5">&#9670;&nbsp;</a></span>getName()</h2>
+<a id="a884a6bee886f30ba251897387336f04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a884a6bee886f30ba251897387336f04b">&#9670;&nbsp;</a></span>getName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +224,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string SimulationRunner::getName </td>
+          <td class="memname">std::string SimulationRunner::getName </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -240,7 +240,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a string representing the name of the implementing component in natural language. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing the name of the component. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25">Status</a>.</p>
+<p>Reimplemented from <a class="el" href="classStatus.html#a9d07378cbe210558ebb6b410a9b3855e">Status</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="SimulationRunner_8cpp_source.html#l00019">19</a> of file <a class="el" href="SimulationRunner_8cpp_source.html">SimulationRunner.cpp</a>.</p>
 
@@ -248,8 +248,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="acb01dab67ff0e672b583a635ce4f74aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb01dab67ff0e672b583a635ce4f74aa">&#9670;&nbsp;</a></span>getStatus()</h2>
+<a id="ac223588e17ea7c69402e75be1f1ef0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac223588e17ea7c69402e75be1f1ef0e1">&#9670;&nbsp;</a></span>getStatus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -258,7 +258,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string SimulationRunner::getStatus </td>
+          <td class="memname">std::string SimulationRunner::getStatus </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -274,7 +274,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a string representing the current state of the implementing component. </p>
 <p>May contain values of class members or other meaningful information. The returned string is always visible in <a class="el" href="classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>. </p><dl class="section return"><dt>Returns</dt><dd>A string containing the state of the component. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classStatus.html#a587fbda25430f10e4cade040aaad198f">Status</a>.</p>
+<p>Reimplemented from <a class="el" href="classStatus.html#a1102f7349b421fca575e3685cb599fc9">Status</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="SimulationRunner_8cpp_source.html#l00023">23</a> of file <a class="el" href="SimulationRunner_8cpp_source.html">SimulationRunner.cpp</a>.</p>
 
@@ -282,8 +282,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aee360ed53b2160fc6ad4bb7a2dd2cd10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee360ed53b2160fc6ad4bb7a2dd2cd10">&#9670;&nbsp;</a></span>getStatusBar()</h2>
+<a id="af433c6cf68f7b9699251b96919d72152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af433c6cf68f7b9699251b96919d72152">&#9670;&nbsp;</a></span>getStatusBar()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +292,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string SimulationRunner::getStatusBar </td>
+          <td class="memname">std::string SimulationRunner::getStatusBar </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -308,7 +308,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns a string representing the current progress of the calculations of the implementing component. </p>
 <p>The returned string is visible in <a class="el" href="classStatusBar.html" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>, when the component is actively calculating something. Must not exceed one console line! </p><dl class="section return"><dt>Returns</dt><dd>A string containing the progress of a calculation. </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0">Status</a>.</p>
+<p>Reimplemented from <a class="el" href="classStatus.html#a6dcff8054a96df8924cbbc4caf8472e3">Status</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="SimulationRunner_8cpp_source.html#l00027">27</a> of file <a class="el" href="SimulationRunner_8cpp_source.html">SimulationRunner.cpp</a>.</p>
 
@@ -316,8 +316,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a94b47c33b33f68366e0b0c6aacd94541"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94b47c33b33f68366e0b0c6aacd94541">&#9670;&nbsp;</a></span>runSimulations()</h2>
+<a id="a37f73e47fd21b1167be2c44ab36e6254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f73e47fd21b1167be2c44ab36e6254">&#9670;&nbsp;</a></span>runSimulations()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,9 +326,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, pair&lt; filesystem::path, set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; SimulationRunner::runSimulations </td>
+          <td class="memname">std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, std::pair&lt; std::filesystem::path, std::set&lt; <a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a> &gt; &gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; SimulationRunner::runSimulations </td>
           <td>(</td>
-          <td class="paramtype">const set&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::set&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>runs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -340,14 +340,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Simulates the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations concurrently and returns their respective results. </p>
-<p>Basically calls <a class="el" href="classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f" title="Pushes given tasks into queue, creates concurrent threads and merges them when execution is done.">Multithreaded::runMultithreadedFunctions</a> which uses the ThreadPool pattern to parallelize the execution of <a class="el" href="classSimulationRunner.html#aee43d80890242d162b796049a2144b60" title="Deals with the simulation of a single Parameter combination.">work</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Simulates the given parameterCombinations concurrently and returns their respective results. </p>
+<p>Basically calls <a class="el" href="classMultithreaded.html#a1fcc1c0642faa664e11fefadde148b5f" title="Pushes given tasks into queue, creates concurrent threads and merges them when execution is done.">Multithreaded::runMultithreadedFunctions</a> which uses the ThreadPool pattern to parallelize the execution of <a class="el" href="classSimulationRunner.html#adfe03a3ba517b5aca991dee71155bbec" title="Deals with the simulation of a single parameterCombination.">work</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">runs</td><td>Set of <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations to be simulated. </td></tr>
+    <tr><td class="paramname">runs</td><td>Set of parameterCombinations to be simulated. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A map which maps the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations to their respective result directory and runIds. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A map which maps the given parameterCombinations to their respective result directory and runIds. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="SimulationRunner_8cpp_source.html#l00015">15</a> of file <a class="el" href="SimulationRunner_8cpp_source.html">SimulationRunner.cpp</a>.</p>
 
@@ -355,8 +355,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aee43d80890242d162b796049a2144b60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee43d80890242d162b796049a2144b60">&#9670;&nbsp;</a></span>work()</h2>
+<a id="adfe03a3ba517b5aca991dee71155bbec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe03a3ba517b5aca991dee71155bbec">&#9670;&nbsp;</a></span>work()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,9 +365,9 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">pair&lt;filesystem::path, set&lt;<a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a>&gt; &gt; SimulationRunner::work </td>
+          <td class="memname">std::pair&lt;std::filesystem::path, std::set&lt;<a class="el" href="Types_8h.html#a057a8240c128713802bc4f54e877e8df">runId</a>&gt; &gt; SimulationRunner::work </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;&#160;</td>
+          <td class="paramtype"><a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>&#160;</td>
           <td class="paramname"><em>run</em></td><td>)</td>
           <td></td>
         </tr>
@@ -379,16 +379,18 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Deals with the simulation of a single <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination. </p>
+<p>Deals with the simulation of a single parameterCombination. </p>
 <p>Overrides <a class="el" href="classMultithreaded.html#a295f1db64506dc4054dc5d7bac9ba231" title="Function that should be executed concurrently on different arguments.">Multithreaded::work</a> and therefore can be executed concurrently. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">run</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination to be simulated. </td></tr>
+    <tr><td class="paramname">run</td><td>parameterCombination to be simulated. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pair containing a path to the result directory and a set of runIds identifying the respective simulation runs. </dd></dl>
 
-<p>Implemented in <a class="el" href="classPlexeSimulationRunner.html#a323b762ef210ebdb846cd3456bd20f67">PlexeSimulationRunner</a>.</p>
+<p>Implements <a class="el" href="classMultithreaded.html#a295f1db64506dc4054dc5d7bac9ba231">Multithreaded&lt; parameterCombination, std::pair&lt; std::filesystem::path, std::set&lt; runId &gt; &gt;, CmpVectorSharedParameter &gt;</a>.</p>
+
+<p>Implemented in <a class="el" href="classPlexeSimulationRunner.html#aa8dee29e4f5cc5566690d10f5d4d95a0">PlexeSimulationRunner</a>.</p>
 
 </div>
 </div>

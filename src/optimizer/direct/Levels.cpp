@@ -16,22 +16,23 @@ unsigned char Levels::nextLevel() {
     return getLevel();
 }
 
-list<shared_ptr<HyRect>>
-Levels::getRectSubset(const map<depth, set<shared_ptr<HyRect>, CmpSharedHyrect>, greater<>> &rects, size_t size) const {
+std::list<std::shared_ptr<HyRect>>
+Levels::getRectSubset(const std::map<depth, std::set<std::shared_ptr<HyRect>, CmpSharedHyrect>, std::greater<>> &rects,
+                      size_t size) const {
     switch (getLevel()) {
         case 2:
-            size = ceil(size * L2_SIZE);
+            size = std::ceil(size * L2_SIZE);
             break;
         case 1:
-            size = ceil(size * L1_SIZE);
+            size = std::ceil(size * L1_SIZE);
             break;
         case 0:
-            size = ceil(size * L0_SIZE);
+            size = std::ceil(size * L0_SIZE);
             break;
         default:
-            size = ceil(size * L3_SIZE);
+            size = std::ceil(size * L3_SIZE);
     }
-    list<shared_ptr<HyRect>> result;
+    std::list<std::shared_ptr<HyRect>> result;
     if (global) {
         for (auto it = rects.rbegin(); it != rects.rend(); ++it) {
             result.push_back(*it->second.begin());

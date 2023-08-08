@@ -1,13 +1,13 @@
 var classHyRect =
 [
     [ "HyRect", "classHyRect.html#a074dd7cc4b16fcebb6dd3f68957007b1", null ],
-    [ "divide", "classHyRect.html#af0eaedc8ac149f85abf57be89889a26e", null ],
+    [ "divide", "classHyRect.html#af9a26c555fd9ac4d42ae56b532b21935", null ],
     [ "getAvgValue", "classHyRect.html#add4d30ef978a52194bcd990e2757aadf", null ],
     [ "getD", "classHyRect.html#ab940dbf1d55a6df7649eb931f814c9a3", null ],
     [ "getDepth", "classHyRect.html#a90abc4e3ecc0a9a5a5f0e7e0250f3121", null ],
     [ "getDiagonalLength", "classHyRect.html#a65aa2a8878742309bfb9dccc751b7bcb", null ],
     [ "getPos", "classHyRect.html#aaaf4f13552c02eada0e75e771524b02f", null ],
-    [ "getSamplingVertices", "classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36", null ],
+    [ "getSamplingVertices", "classHyRect.html#a603fe77569003ae273b3fb5be5d69592", null ],
     [ "getSplitDim", "classHyRect.html#ab1667b7a0394ff53fc61f3f88b4cb9bb", null ],
     [ "operator!=", "classHyRect.html#a727c67caa93a8af946685adf456dda04", null ],
     [ "operator<", "classHyRect.html#a4170bce42d9733872d102dd7db56ebd5", null ],

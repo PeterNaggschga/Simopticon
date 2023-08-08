@@ -98,17 +98,17 @@ $(document).ready(function(){initNavTree('structCmpSharedHyrect.html',''); initR
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abe38cfe0242f48d20fe4467f5e3724a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCmpSharedHyrect.html#abe38cfe0242f48d20fe4467f5e3724a2">operator()</a> (const shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;a, const shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;b) const</td></tr>
-<tr class="memdesc:abe38cfe0242f48d20fe4467f5e3724a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two shared pointers to <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> instances.  <a href="structCmpSharedHyrect.html#abe38cfe0242f48d20fe4467f5e3724a2">More...</a><br /></td></tr>
-<tr class="separator:abe38cfe0242f48d20fe4467f5e3724a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d91468c7a56d24850c8ebbe5622e194"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCmpSharedHyrect.html#a8d91468c7a56d24850c8ebbe5622e194">operator()</a> (const std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;a, const std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;b) const</td></tr>
+<tr class="memdesc:a8d91468c7a56d24850c8ebbe5622e194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares two shared pointers to <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> instances.  <a href="structCmpSharedHyrect.html#a8d91468c7a56d24850c8ebbe5622e194">More...</a><br /></td></tr>
+<tr class="separator:a8d91468c7a56d24850c8ebbe5622e194"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This struct implements the comparison of two shared pointers to <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> instances. </p>
 
 <p class="definition">Definition at line <a class="el" href="DirectComparisonFunctions_8h_source.html#l00017">17</a> of file <a class="el" href="DirectComparisonFunctions_8h_source.html">DirectComparisonFunctions.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="abe38cfe0242f48d20fe4467f5e3724a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe38cfe0242f48d20fe4467f5e3724a2">&#9670;&nbsp;</a></span>operator()()</h2>
+<a id="a8d91468c7a56d24850c8ebbe5622e194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d91468c7a56d24850c8ebbe5622e194">&#9670;&nbsp;</a></span>operator()()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -119,13 +119,13 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool CmpSharedHyrect::operator() </td>
           <td>(</td>
-          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
@@ -149,11 +149,11 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if a has a lower <a class="el" href="classHyRect.html#aaed25fd458c840441423fb11d1ddff55" title="Mean between the values obtained at the parameters returned by getSamplingVertices.">HyRect::avgValue</a> value than b. If both values are the same, compare the sampling vertices returned by <a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36" title="Returns the coordinates of two opposite corner points of the rectangle.">HyRect::getSamplingVertices</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if a has a lower <a class="el" href="classHyRect.html#aaed25fd458c840441423fb11d1ddff55" title="Mean between the values obtained at the parameters returned by getSamplingVertices.">HyRect::avgValue</a> value than b. If both values are the same, compare the sampling vertices returned by <a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592" title="Returns the coordinates of two opposite corner points of the rectangle.">HyRect::getSamplingVertices</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="DirectComparisonFunctions_8h_source.html#l00024">24</a> of file <a class="el" href="DirectComparisonFunctions_8h_source.html">DirectComparisonFunctions.h</a>.</p>
 
-<p class="reference">References <a class="el" href="HyRect_8cpp_source.html#l00040">HyRect::getAvgValue()</a>, and <a class="el" href="classHyRect.html#ae19c28ce098e9dd107f6f907c6606b36">HyRect::getSamplingVertices()</a>.</p>
+<p class="reference">References <a class="el" href="HyRect_8cpp_source.html#l00040">HyRect::getAvgValue()</a>, and <a class="el" href="classHyRect.html#a603fe77569003ae273b3fb5be5d69592">HyRect::getSamplingVertices()</a>.</p>
 
 </div>
 </div>

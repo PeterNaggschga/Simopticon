@@ -18,8 +18,6 @@
 #include <filesystem>
 #include <map>
 
-using namespace std;
-
 /**
  * This module contains components capable of evaluating the performance of simulations by rating simulation data with a number value.
  * Implementations must extend Evaluation.
@@ -41,22 +39,22 @@ public:
      * @param experimentIds: Identifiers of certain simulation runs within the directory represented by the given path.
      * @return A value that represents the performance of the simulation - the lower the better.
      */
-    virtual functionValue processOutput(filesystem::path path, set<runId> experimentIds) = 0;
+    virtual functionValue processOutput(std::filesystem::path path, std::set<runId> experimentIds) = 0;
 
     /**
      * Returns values to the results of multiple simulation runs.
-     * Simply calls #processOutput(filesystem::path, set<runId>) multiple times if not overridden.
+fi     * Simply calls #processOutput(std::filesystem::path, std::set<runId>) multiple times if not overridden.
      * @param experimentResults: Paths to and identifiers of the simulation results.
      * @return A map which maps the given results to their respective performance value.
      */
-    virtual map<pair<filesystem::path, set<runId>>, functionValue>
-    processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults);
+    virtual std::map<std::pair<std::filesystem::path, std::set<runId>>, functionValue>
+    processOutput(const std::set<std::pair<std::filesystem::path, std::set<runId>>> &experimentResults);
 
-    string getName() override;
+    std::string getName() override;
 
-    string getStatus() override;
+    std::string getStatus() override;
 
-    string getStatusBar() override;
+    std::string getStatusBar() override;
 
 };
 

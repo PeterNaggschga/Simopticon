@@ -21,13 +21,13 @@ var hierarchy =
     ] ],
     [ "Levels", "classLevels.html", null ],
     [ "Multithreaded< Key, T, Compare, Allocator >", "classMultithreaded.html", null ],
-    [ "Multithreaded< pair< filesystem::path, pair< string, unsigned int > >, bool >", "classMultithreaded.html", [
-      [ "PlexeSimulationRunner", "classPlexeSimulationRunner.html", null ]
-    ] ],
-    [ "Multithreaded< vector< shared_ptr< Parameter > >, pair< filesystem::path, set< runId > >, CmpVectorSharedParameter >", "classMultithreaded.html", [
+    [ "Multithreaded< parameterCombination, std::pair< std::filesystem::path, std::set< runId > >, CmpVectorSharedParameter >", "classMultithreaded.html", [
       [ "SimulationRunner", "classSimulationRunner.html", [
         [ "PlexeSimulationRunner", "classPlexeSimulationRunner.html", null ]
       ] ]
+    ] ],
+    [ "Multithreaded< std::pair< std::filesystem::path, std::pair< std::string, unsigned int > >, bool >", "classMultithreaded.html", [
+      [ "PlexeSimulationRunner", "classPlexeSimulationRunner.html", null ]
     ] ],
     [ "Parameter", "classParameter.html", [
       [ "ContinuousParameter", "classContinuousParameter.html", null ],

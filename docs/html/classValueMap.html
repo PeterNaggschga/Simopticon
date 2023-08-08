@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('classValueMap.html',''); initResizable
 </div><!--header-->
 <div class="contents">
 
-<p>A container managing a map data structure that maps <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations to their respective found values.  
+<p>A container managing a map data structure that maps parameterCombinations to their respective found values.  
  <a href="classValueMap.html#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>&quot;</code></p>
@@ -101,71 +101,71 @@ $(document).ready(function(){initNavTree('classValueMap.html',''); initResizable
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0358924a0892af703067a64314de868c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a0358924a0892af703067a64314de868c">ValueMap</a> (unsigned int <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7">topEntries</a>=10)</td></tr>
-<tr class="memdesc:a0358924a0892af703067a64314de868c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classValueMap.html" title="A container managing a map data structure that maps Parameter combinations to their respective found ...">ValueMap</a>.  <a href="classValueMap.html#a0358924a0892af703067a64314de868c">More...</a><br /></td></tr>
+<tr class="memdesc:a0358924a0892af703067a64314de868c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classValueMap.html" title="A container managing a map data structure that maps parameterCombinations to their respective found v...">ValueMap</a>.  <a href="classValueMap.html#a0358924a0892af703067a64314de868c">More...</a><br /></td></tr>
 <tr class="separator:a0358924a0892af703067a64314de868c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac176542d8baf403fbe843350384b2137"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#ac176542d8baf403fbe843350384b2137">query</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;params)</td></tr>
-<tr class="memdesc:ac176542d8baf403fbe843350384b2137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value saved at the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination.  <a href="classValueMap.html#ac176542d8baf403fbe843350384b2137">More...</a><br /></td></tr>
-<tr class="separator:ac176542d8baf403fbe843350384b2137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a464650b67b154cad96054587a6b5cb6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a464650b67b154cad96054587a6b5cb6d">insert</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;params, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> val)</td></tr>
-<tr class="memdesc:a464650b67b154cad96054587a6b5cb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and value to <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a>.  <a href="classValueMap.html#a464650b67b154cad96054587a6b5cb6d">More...</a><br /></td></tr>
-<tr class="separator:a464650b67b154cad96054587a6b5cb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfbe2d2baf080ebd50cbf0cb70c1c31b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#abfbe2d2baf080ebd50cbf0cb70c1c31b">isKnown</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;cords)</td></tr>
-<tr class="memdesc:abfbe2d2baf080ebd50cbf0cb70c1c31b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a value has been recorded at the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination.  <a href="classValueMap.html#abfbe2d2baf080ebd50cbf0cb70c1c31b">More...</a><br /></td></tr>
-<tr class="separator:abfbe2d2baf080ebd50cbf0cb70c1c31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48f7503620ad30ab3cb683fc514f389b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a48f7503620ad30ab3cb683fc514f389b">isTopValue</a> (const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;cords)</td></tr>
-<tr class="memdesc:a48f7503620ad30ab3cb683fc514f389b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination is to be found in <a class="el" href="classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa" title="Set of pairs of the best Parameter combinations and their respective values.">topVals</a>.  <a href="classValueMap.html#a48f7503620ad30ab3cb683fc514f389b">More...</a><br /></td></tr>
-<tr class="separator:a48f7503620ad30ab3cb683fc514f389b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f85ce224917104f530a14bd8fac3a52"><td class="memItemLeft" align="right" valign="top">const map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a5f85ce224917104f530a14bd8fac3a52">getValues</a> ()</td></tr>
-<tr class="memdesc:a5f85ce224917104f530a14bd8fac3a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the whole <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a> member.  <a href="classValueMap.html#a5f85ce224917104f530a14bd8fac3a52">More...</a><br /></td></tr>
-<tr class="separator:a5f85ce224917104f530a14bd8fac3a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3043db82ef367128e59f1a2140a509d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a3043db82ef367128e59f1a2140a509d3">query</a> (const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;params)</td></tr>
+<tr class="memdesc:a3043db82ef367128e59f1a2140a509d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value saved at the given parameterCombination.  <a href="classValueMap.html#a3043db82ef367128e59f1a2140a509d3">More...</a><br /></td></tr>
+<tr class="separator:a3043db82ef367128e59f1a2140a509d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b860dabbca6a99edcd465ff76d6f71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#af0b860dabbca6a99edcd465ff76d6f71">insert</a> (const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;params, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> val)</td></tr>
+<tr class="memdesc:af0b860dabbca6a99edcd465ff76d6f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given parameterCombination and value to <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a>.  <a href="classValueMap.html#af0b860dabbca6a99edcd465ff76d6f71">More...</a><br /></td></tr>
+<tr class="separator:af0b860dabbca6a99edcd465ff76d6f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a1397bb6661b22236ff8f5f65dde61"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a60a1397bb6661b22236ff8f5f65dde61">isKnown</a> (const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;cords)</td></tr>
+<tr class="memdesc:a60a1397bb6661b22236ff8f5f65dde61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a value has been recorded at the given parameterCombination.  <a href="classValueMap.html#a60a1397bb6661b22236ff8f5f65dde61">More...</a><br /></td></tr>
+<tr class="separator:a60a1397bb6661b22236ff8f5f65dde61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4af42edda71b59c147f82e1d7efc24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#aaa4af42edda71b59c147f82e1d7efc24">isTopValue</a> (const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;cords)</td></tr>
+<tr class="memdesc:aaa4af42edda71b59c147f82e1d7efc24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given parameterCombination is to be found in <a class="el" href="classValueMap.html#ae447de5acae21216862e292611a0dd1e" title="Set of pairs of the best parameterCombinations and their respective values.">topVals</a>.  <a href="classValueMap.html#aaa4af42edda71b59c147f82e1d7efc24">More...</a><br /></td></tr>
+<tr class="separator:aaa4af42edda71b59c147f82e1d7efc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6b062fe87c6dbd54e50adf8fe8ce594"><td class="memItemLeft" align="right" valign="top">const std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#ac6b062fe87c6dbd54e50adf8fe8ce594">getValues</a> ()</td></tr>
+<tr class="memdesc:ac6b062fe87c6dbd54e50adf8fe8ce594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the whole <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> member.  <a href="classValueMap.html#ac6b062fe87c6dbd54e50adf8fe8ce594">More...</a><br /></td></tr>
+<tr class="separator:ac6b062fe87c6dbd54e50adf8fe8ce594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9c5e1b67ec01dd4b94328da64c3074c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#aa9c5e1b67ec01dd4b94328da64c3074c">getMedian</a> ()</td></tr>
-<tr class="memdesc:aa9c5e1b67ec01dd4b94328da64c3074c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the median of all values using <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a>.  <a href="classValueMap.html#aa9c5e1b67ec01dd4b94328da64c3074c">More...</a><br /></td></tr>
+<tr class="memdesc:aa9c5e1b67ec01dd4b94328da64c3074c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the median of all values using <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a>.  <a href="classValueMap.html#aa9c5e1b67ec01dd4b94328da64c3074c">More...</a><br /></td></tr>
 <tr class="separator:aa9c5e1b67ec01dd4b94328da64c3074c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a617f5348dcf85e794516e496a04fde7a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a617f5348dcf85e794516e496a04fde7a">getSize</a> () const</td></tr>
 <tr class="memdesc:a617f5348dcf85e794516e496a04fde7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of inserted values.  <a href="classValueMap.html#a617f5348dcf85e794516e496a04fde7a">More...</a><br /></td></tr>
 <tr class="separator:a617f5348dcf85e794516e496a04fde7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81306997e2c2f17d904330773ade5df5"><td class="memItemLeft" align="right" valign="top">list&lt; pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a81306997e2c2f17d904330773ade5df5">getTopVals</a> ()</td></tr>
-<tr class="memdesc:a81306997e2c2f17d904330773ade5df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries that are saved in <a class="el" href="classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa" title="Set of pairs of the best Parameter combinations and their respective values.">topVals</a>.  <a href="classValueMap.html#a81306997e2c2f17d904330773ade5df5">More...</a><br /></td></tr>
-<tr class="separator:a81306997e2c2f17d904330773ade5df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae03b07acab0165a85291145cd5f34d2e"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::pair&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">getTopVals</a> ()</td></tr>
+<tr class="memdesc:ae03b07acab0165a85291145cd5f34d2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries that are saved in <a class="el" href="classValueMap.html#ae447de5acae21216862e292611a0dd1e" title="Set of pairs of the best parameterCombinations and their respective values.">topVals</a>.  <a href="classValueMap.html#ae03b07acab0165a85291145cd5f34d2e">More...</a><br /></td></tr>
+<tr class="separator:ae03b07acab0165a85291145cd5f34d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aa13ab1a81147776fe1b76c1342b2dbd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap</a> ()</td></tr>
-<tr class="memdesc:aa13ab1a81147776fe1b76c1342b2dbd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes all values in <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a>, adds them to <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> and inserts them into <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>.  <a href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5">More...</a><br /></td></tr>
+<tr class="memdesc:aa13ab1a81147776fe1b76c1342b2dbd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes all values in <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a>, adds them to <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and inserts them into <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>.  <a href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5">More...</a><br /></td></tr>
 <tr class="separator:aa13ab1a81147776fe1b76c1342b2dbd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd42c2c593539874b96e4aa6cb13ff35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#acd42c2c593539874b96e4aa6cb13ff35">addValue</a> (const pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &amp;val, set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt; &amp;set)</td></tr>
-<tr class="memdesc:acd42c2c593539874b96e4aa6cb13ff35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a single value into <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a> and into <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> depending on <em>set</em> argument.  <a href="classValueMap.html#acd42c2c593539874b96e4aa6cb13ff35">More...</a><br /></td></tr>
-<tr class="separator:acd42c2c593539874b96e4aa6cb13ff35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7206f4b8f871cbbf4383ba24f84f06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#aad7206f4b8f871cbbf4383ba24f84f06">addValue</a> (const std::pair&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &amp;val, std::set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt; &amp;set)</td></tr>
+<tr class="memdesc:aad7206f4b8f871cbbf4383ba24f84f06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a single value into <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> and into <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> depending on <em>set</em> argument.  <a href="classValueMap.html#aad7206f4b8f871cbbf4383ba24f84f06">More...</a><br /></td></tr>
+<tr class="separator:aad7206f4b8f871cbbf4383ba24f84f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:adfb0c4d55f17d85cd53186d0be2c1cfb"><td class="memItemLeft" align="right" valign="top">mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#adfb0c4d55f17d85cd53186d0be2c1cfb">operationsLock</a></td></tr>
-<tr class="memdesc:adfb0c4d55f17d85cd53186d0be2c1cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threadlock to avoid damage to the data structure when concurrent threads access it.  <a href="classValueMap.html#adfb0c4d55f17d85cd53186d0be2c1cfb">More...</a><br /></td></tr>
-<tr class="separator:adfb0c4d55f17d85cd53186d0be2c1cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add6b191069b0975d94d5bdb695992936"><td class="memItemLeft" align="right" valign="top">set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936">upperValues</a></td></tr>
-<tr class="memdesc:add6b191069b0975d94d5bdb695992936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greater half of the values in <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>.  <a href="classValueMap.html#add6b191069b0975d94d5bdb695992936">More...</a><br /></td></tr>
-<tr class="separator:add6b191069b0975d94d5bdb695992936"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4dcc6213ff75c29ca81e1bd586f7b73"><td class="memItemLeft" align="right" valign="top">set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73">lowerValues</a></td></tr>
-<tr class="memdesc:ac4dcc6213ff75c29ca81e1bd586f7b73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lesser half of the values in <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>.  <a href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73">More...</a><br /></td></tr>
-<tr class="separator:ac4dcc6213ff75c29ca81e1bd586f7b73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7945a7ce85bec9a56a1fb67f1109cc41"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a7945a7ce85bec9a56a1fb67f1109cc41">operationsLock</a></td></tr>
+<tr class="memdesc:a7945a7ce85bec9a56a1fb67f1109cc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threadlock to avoid damage to the data structure when concurrent threads access it.  <a href="classValueMap.html#a7945a7ce85bec9a56a1fb67f1109cc41">More...</a><br /></td></tr>
+<tr class="separator:a7945a7ce85bec9a56a1fb67f1109cc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a010e3b5b9432699e2beab85ba7b97c75"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75">upperValues</a></td></tr>
+<tr class="memdesc:a010e3b5b9432699e2beab85ba7b97c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Greater half of the values in <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>.  <a href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75">More...</a><br /></td></tr>
+<tr class="separator:a010e3b5b9432699e2beab85ba7b97c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088a8fb73d7bdd3fe78bc08b4cc0f733"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733">lowerValues</a></td></tr>
+<tr class="memdesc:a088a8fb73d7bdd3fe78bc08b4cc0f733"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lesser half of the values in <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>.  <a href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733">More...</a><br /></td></tr>
+<tr class="separator:a088a8fb73d7bdd3fe78bc08b4cc0f733"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaef0053f649f407dd9e7a4bddfb6bde7"><td class="memItemLeft" align="right" valign="top">const unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7">topEntries</a></td></tr>
 <tr class="memdesc:aaef0053f649f407dd9e7a4bddfb6bde7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of entries to be printed as best values at the end of the optimization process.  <a href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7">More...</a><br /></td></tr>
 <tr class="separator:aaef0053f649f407dd9e7a4bddfb6bde7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf3a3b49e448011b7fd63a14c427dcaa"><td class="memItemLeft" align="right" valign="top">set&lt; pair&lt; const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt;, <a class="el" href="structCmpPairVectorSharedParameterFunctionvalue.html">CmpPairVectorSharedParameterFunctionvalue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa">topVals</a></td></tr>
-<tr class="memdesc:acf3a3b49e448011b7fd63a14c427dcaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of pairs of the best <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations and their respective values.  <a href="classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa">More...</a><br /></td></tr>
-<tr class="separator:acf3a3b49e448011b7fd63a14c427dcaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c9d80bac78383c2a06def0043a8e8e"><td class="memItemLeft" align="right" valign="top">map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e">values</a></td></tr>
-<tr class="memdesc:af8c9d80bac78383c2a06def0043a8e8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual map that contains <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations and their respective values.  <a href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e">More...</a><br /></td></tr>
-<tr class="separator:af8c9d80bac78383c2a06def0043a8e8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3d7fb7bf10aa25f98c3555e972ebcbd"><td class="memItemLeft" align="right" valign="top">list&lt; pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd">tba</a></td></tr>
-<tr class="memdesc:ab3d7fb7bf10aa25f98c3555e972ebcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entries that have been added since last <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>.  <a href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd">More...</a><br /></td></tr>
-<tr class="separator:ab3d7fb7bf10aa25f98c3555e972ebcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae447de5acae21216862e292611a0dd1e"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::pair&lt; const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt;, <a class="el" href="structCmpPairVectorSharedParameterFunctionvalue.html">CmpPairVectorSharedParameterFunctionvalue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#ae447de5acae21216862e292611a0dd1e">topVals</a></td></tr>
+<tr class="memdesc:ae447de5acae21216862e292611a0dd1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of pairs of the best parameterCombinations and their respective values.  <a href="classValueMap.html#ae447de5acae21216862e292611a0dd1e">More...</a><br /></td></tr>
+<tr class="separator:ae447de5acae21216862e292611a0dd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bff9fd38bf71bb1755cf3a1f756e02"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02">values</a></td></tr>
+<tr class="memdesc:a03bff9fd38bf71bb1755cf3a1f756e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual map that contains parameterCombinations and their respective values.  <a href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02">More...</a><br /></td></tr>
+<tr class="separator:a03bff9fd38bf71bb1755cf3a1f756e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f128a5f14f516347ffbd384d820e19c"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::pair&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c">tba</a></td></tr>
+<tr class="memdesc:a6f128a5f14f516347ffbd384d820e19c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entries that have been added since last <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>.  <a href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c">More...</a><br /></td></tr>
+<tr class="separator:a6f128a5f14f516347ffbd384d820e19c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A container managing a map data structure that maps <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations to their respective found values. </p>
-<p>The class manages concurrent access using the <a class="el" href="classValueMap.html#adfb0c4d55f17d85cd53186d0be2c1cfb" title="Threadlock to avoid damage to the data structure when concurrent threads access it.">operationsLock</a>. Running median calculation is supported by using sets <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a>. Values are inserted into the data structure at once when <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. Before that they are saved in <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a> to avoid unnecessary costly insertion operations. </p>
+<div class="textblock"><p>A container managing a map data structure that maps parameterCombinations to their respective found values. </p>
+<p>The class manages concurrent access using the <a class="el" href="classValueMap.html#a7945a7ce85bec9a56a1fb67f1109cc41" title="Threadlock to avoid damage to the data structure when concurrent threads access it.">operationsLock</a>. Running median calculation is supported by using sets <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a>. Values are inserted into the data structure at once when <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. Before that they are saved in <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> to avoid unnecessary costly insertion operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00030">30</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00028">28</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0358924a0892af703067a64314de868c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0358924a0892af703067a64314de868c">&#9670;&nbsp;</a></span>ValueMap()</h2>
@@ -191,7 +191,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a <a class="el" href="classValueMap.html" title="A container managing a map data structure that maps Parameter combinations to their respective found ...">ValueMap</a>. </p>
+<p>Creates a <a class="el" href="classValueMap.html" title="A container managing a map data structure that maps parameterCombinations to their respective found v...">ValueMap</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">topEntries</td><td>Value to be assigned to <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a>. </td></tr>
@@ -201,13 +201,13 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00012">12</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00050">topEntries</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00048">topEntries</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="acd42c2c593539874b96e4aa6cb13ff35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd42c2c593539874b96e4aa6cb13ff35">&#9670;&nbsp;</a></span>addValue()</h2>
+<a id="aad7206f4b8f871cbbf4383ba24f84f06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7206f4b8f871cbbf4383ba24f84f06">&#9670;&nbsp;</a></span>addValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,13 +218,13 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ValueMap::addValue </td>
           <td>(</td>
-          <td class="paramtype">const pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::pair&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>val</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::set&lt; <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>set</em>&#160;</td>
         </tr>
         <tr>
@@ -240,18 +240,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Inserts a single value into <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a> and into <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> depending on <em>set</em> argument. </p>
+<p>Inserts a single value into <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> and into <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> depending on <em>set</em> argument. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">val</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and respective value to be inserted. </td></tr>
-    <tr><td class="paramname">set</td><td>Set that value is inserted in. Either <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a>. </td></tr>
+    <tr><td class="paramname">val</td><td>parameterCombination and respective value to be inserted. </td></tr>
+    <tr><td class="paramname">set</td><td>Set that value is inserted in. Either <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a>. </td></tr>
   </table>
   </dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00050">50</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00050">topEntries</a>, <a class="el" href="ValueMap_8h_source.html#l00055">topVals</a>, and <a class="el" href="ValueMap_8h_source.html#l00060">values</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00048">topEntries</a>, <a class="el" href="ValueMap_8h_source.html#l00053">topVals</a>, and <a class="el" href="ValueMap_8h_source.html#l00058">values</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
@@ -272,12 +272,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the median of all values using <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a>. </p>
+<p>Returns the median of all values using <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a>. </p>
 <p>If no values have been added, 0 is returned. Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A value representing the median of all values. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00097">97</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00109">getSize()</a>, <a class="el" href="ValueMap_8h_source.html#l00044">lowerValues</a>, <a class="el" href="ValueMap_8h_source.html#l00035">operationsLock</a>, <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00040">upperValues</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00109">getSize()</a>, <a class="el" href="ValueMap_8h_source.html#l00042">lowerValues</a>, <a class="el" href="ValueMap_8h_source.html#l00033">operationsLock</a>, <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00038">upperValues</a>.</p>
 
 </div>
 </div>
@@ -297,24 +297,24 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns the number of inserted values. </p>
-<p>Values in <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a> are included. </p><dl class="section return"><dt>Returns</dt><dd>An integral representing the number of inserted values. </dd></dl>
+<p>Values in <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> are included. </p><dl class="section return"><dt>Returns</dt><dd>An integral representing the number of inserted values. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00109">109</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00066">tba</a>, and <a class="el" href="ValueMap_8h_source.html#l00060">values</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00064">tba</a>, and <a class="el" href="ValueMap_8h_source.html#l00058">values</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00097">getMedian()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00086">isKnown()</a>, and <a class="el" href="StubController_8cpp_source.html#l00166">StubController::updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00097">getMedian()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00086">isKnown()</a>, <a class="el" href="Controller_8cpp_source.html#l00228">Controller::updateStatus()</a>, and <a class="el" href="StubController_8cpp_source.html#l00167">StubController::updateStatus()</a>.</p>
 
 </div>
 </div>
-<a id="a81306997e2c2f17d904330773ade5df5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81306997e2c2f17d904330773ade5df5">&#9670;&nbsp;</a></span>getTopVals()</h2>
+<a id="ae03b07acab0165a85291145cd5f34d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae03b07acab0165a85291145cd5f34d2e">&#9670;&nbsp;</a></span>getTopVals()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt; pair&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &gt; ValueMap::getTopVals </td>
+          <td class="memname">std::list&lt; std::pair&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> &gt; &gt; ValueMap::getTopVals </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -322,25 +322,25 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries that are saved in <a class="el" href="classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa" title="Set of pairs of the best Parameter combinations and their respective values.">topVals</a>. </p>
-<p>Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A list of the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations and their respective values. </dd></dl>
+<p>Returns the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries that are saved in <a class="el" href="classValueMap.html#ae447de5acae21216862e292611a0dd1e" title="Set of pairs of the best parameterCombinations and their respective values.">topVals</a>. </p>
+<p>Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A list of the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> parameterCombinations and their respective values. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00113">113</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00055">topVals</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00053">topVals</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Controller_8cpp_source.html#l00211">Controller::removeOldResultfiles()</a>, and <a class="el" href="StubController_8cpp_source.html#l00166">StubController::updateStatus()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Controller_8cpp_source.html#l00210">Controller::removeOldResultfiles()</a>, <a class="el" href="Controller_8cpp_source.html#l00228">Controller::updateStatus()</a>, and <a class="el" href="StubController_8cpp_source.html#l00167">StubController::updateStatus()</a>.</p>
 
 </div>
 </div>
-<a id="a5f85ce224917104f530a14bd8fac3a52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f85ce224917104f530a14bd8fac3a52">&#9670;&nbsp;</a></span>getValues()</h2>
+<a id="ac6b062fe87c6dbd54e50adf8fe8ce594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6b062fe87c6dbd54e50adf8fe8ce594">&#9670;&nbsp;</a></span>getValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const map&lt; vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp; ValueMap::getValues </td>
+          <td class="memname">const std::map&lt; <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a> &gt; &amp; ValueMap::getValues </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -348,17 +348,17 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the whole <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a> member. </p>
-<p>Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A map reference to <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>. </dd></dl>
+<p>Returns the whole <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> member. </p>
+<p>Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A map reference to <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00134">134</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00060">values</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00058">values</a>.</p>
 
 </div>
 </div>
-<a id="a464650b67b154cad96054587a6b5cb6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a464650b67b154cad96054587a6b5cb6d">&#9670;&nbsp;</a></span>insert()</h2>
+<a id="af0b860dabbca6a99edcd465ff76d6f71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b860dabbca6a99edcd465ff76d6f71">&#9670;&nbsp;</a></span>insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,7 +366,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void ValueMap::insert </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em>, </td>
         </tr>
         <tr>
@@ -383,10 +383,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination and value to <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a>. </p>
+<p>Adds the given parameterCombination and value to <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination to be added. </td></tr>
+    <tr><td class="paramname">params</td><td>parameterCombination to be added. </td></tr>
     <tr><td class="paramname">val</td><td>Value to be added. </td></tr>
   </table>
   </dd>
@@ -394,12 +394,12 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00082">82</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00066">tba</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00064">tba</a>.</p>
 
 </div>
 </div>
-<a id="abfbe2d2baf080ebd50cbf0cb70c1c31b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfbe2d2baf080ebd50cbf0cb70c1c31b">&#9670;&nbsp;</a></span>isKnown()</h2>
+<a id="a60a1397bb6661b22236ff8f5f65dde61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a1397bb6661b22236ff8f5f65dde61">&#9670;&nbsp;</a></span>isKnown()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -407,17 +407,17 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool ValueMap::isKnown </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;&#160;</td>
           <td class="paramname"><em>cords</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks if a value has been recorded at the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination. </p>
+<p>Checks if a value has been recorded at the given parameterCombination. </p>
 <p>Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cords</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination that is checked. </td></tr>
+    <tr><td class="paramname">cords</td><td>parameterCombination that is checked. </td></tr>
   </table>
   </dd>
 </dl>
@@ -425,12 +425,12 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00086">86</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00109">getSize()</a>, <a class="el" href="ValueMap_8h_source.html#l00035">operationsLock</a>, <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00060">values</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00109">getSize()</a>, <a class="el" href="ValueMap_8h_source.html#l00033">operationsLock</a>, <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00058">values</a>.</p>
 
 </div>
 </div>
-<a id="a48f7503620ad30ab3cb683fc514f389b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48f7503620ad30ab3cb683fc514f389b">&#9670;&nbsp;</a></span>isTopValue()</h2>
+<a id="aaa4af42edda71b59c147f82e1d7efc24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4af42edda71b59c147f82e1d7efc24">&#9670;&nbsp;</a></span>isTopValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -438,30 +438,30 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool ValueMap::isTopValue </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;&#160;</td>
           <td class="paramname"><em>cords</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Checks if the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination is to be found in <a class="el" href="classValueMap.html#acf3a3b49e448011b7fd63a14c427dcaa" title="Set of pairs of the best Parameter combinations and their respective values.">topVals</a>. </p>
+<p>Checks if the given parameterCombination is to be found in <a class="el" href="classValueMap.html#ae447de5acae21216862e292611a0dd1e" title="Set of pairs of the best parameterCombinations and their respective values.">topVals</a>. </p>
 <p>Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cords</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination that is checked. </td></tr>
+    <tr><td class="paramname">cords</td><td>parameterCombination that is checked. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A boolean value that represents if the value is one of the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries in <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A boolean value that represents if the value is one of the best <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries in <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00118">118</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classParameter.html#a39f52082ae9e000edff3d517ef78a8bb">Parameter::getVal()</a>, <a class="el" href="ValueMap_8h_source.html#l00055">topVals</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
+<p class="reference">References <a class="el" href="classParameter.html#a39f52082ae9e000edff3d517ef78a8bb">Parameter::getVal()</a>, <a class="el" href="ValueMap_8h_source.html#l00053">topVals</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
 </div>
 </div>
-<a id="ac176542d8baf403fbe843350384b2137"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac176542d8baf403fbe843350384b2137">&#9670;&nbsp;</a></span>query()</h2>
+<a id="a3043db82ef367128e59f1a2140a509d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3043db82ef367128e59f1a2140a509d3">&#9670;&nbsp;</a></span>query()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -469,25 +469,25 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> ValueMap::query </td>
           <td>(</td>
-          <td class="paramtype">const vector&lt; shared_ptr&lt; <a class="el" href="classParameter.html">Parameter</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> &amp;&#160;</td>
           <td class="paramname"><em>params</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the value saved at the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination. </p>
+<p>Returns the value saved at the given parameterCombination. </p>
 <p>If no value is present, an exception is thrown. Triggers <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td><a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination to which the value is requested. </td></tr>
+    <tr><td class="paramname">params</td><td>parameterCombination to which the value is requested. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value saved in <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a> at the given <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combination. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value saved in <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> at the given parameterCombination. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00071">71</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00035">operationsLock</a>, <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00060">values</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8h_source.html#l00033">operationsLock</a>, <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>, and <a class="el" href="ValueMap_8h_source.html#l00058">values</a>.</p>
 
 </div>
 </div>
@@ -514,20 +514,20 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Takes all values in <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a>, adds them to <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> and inserts them into <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>. </p>
-<p><a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> are sorted as is required by their constraints. Afterwards <a class="el" href="classValueMap.html#ab3d7fb7bf10aa25f98c3555e972ebcbd" title="Entries that have been added since last updateMap.">tba</a> is cleared. </p>
+<p>Takes all values in <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a>, adds them to <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and inserts them into <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </p>
+<p><a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> are sorted as is required by their constraints. Afterwards <a class="el" href="classValueMap.html#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> is cleared. </p>
 
 <p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.html#l00015">15</a> of file <a class="el" href="ValueMap_8cpp_source.html">ValueMap.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00050">addValue()</a>, <a class="el" href="ValueMap_8h_source.html#l00044">lowerValues</a>, <a class="el" href="ValueMap_8h_source.html#l00035">operationsLock</a>, <a class="el" href="ValueMap_8h_source.html#l00066">tba</a>, and <a class="el" href="ValueMap_8h_source.html#l00040">upperValues</a>.</p>
+<p class="reference">References <a class="el" href="ValueMap_8cpp_source.html#l00050">addValue()</a>, <a class="el" href="ValueMap_8h_source.html#l00042">lowerValues</a>, <a class="el" href="ValueMap_8h_source.html#l00033">operationsLock</a>, <a class="el" href="ValueMap_8h_source.html#l00064">tba</a>, and <a class="el" href="ValueMap_8h_source.html#l00038">upperValues</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00097">getMedian()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00113">getTopVals()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00134">getValues()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00086">isKnown()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00118">isTopValue()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00071">query()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac4dcc6213ff75c29ca81e1bd586f7b73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4dcc6213ff75c29ca81e1bd586f7b73">&#9670;&nbsp;</a></span>lowerValues</h2>
+<a id="a088a8fb73d7bdd3fe78bc08b4cc0f733"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088a8fb73d7bdd3fe78bc08b4cc0f733">&#9670;&nbsp;</a></span>lowerValues</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -536,7 +536,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">set&lt;<a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a>&gt; ValueMap::lowerValues</td>
+          <td class="memname">std::set&lt;<a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a>&gt; ValueMap::lowerValues</td>
         </tr>
       </table>
   </td>
@@ -546,17 +546,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Lesser half of the values in <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>. </p>
-<p>Same size as or one element less than <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a>. </p>
+<p>Lesser half of the values in <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </p>
+<p>Same size as or one element less than <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00044">44</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00042">42</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00097">getMedian()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
 </div>
 </div>
-<a id="adfb0c4d55f17d85cd53186d0be2c1cfb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfb0c4d55f17d85cd53186d0be2c1cfb">&#9670;&nbsp;</a></span>operationsLock</h2>
+<a id="a7945a7ce85bec9a56a1fb67f1109cc41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7945a7ce85bec9a56a1fb67f1109cc41">&#9670;&nbsp;</a></span>operationsLock</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -565,7 +565,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mutex ValueMap::operationsLock</td>
+          <td class="memname">std::mutex ValueMap::operationsLock</td>
         </tr>
       </table>
   </td>
@@ -577,14 +577,14 @@ Private Attributes</h2></td></tr>
 
 <p>Threadlock to avoid damage to the data structure when concurrent threads access it. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00035">35</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00033">33</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00097">getMedian()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00086">isKnown()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00071">query()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
 </div>
 </div>
-<a id="ab3d7fb7bf10aa25f98c3555e972ebcbd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3d7fb7bf10aa25f98c3555e972ebcbd">&#9670;&nbsp;</a></span>tba</h2>
+<a id="a6f128a5f14f516347ffbd384d820e19c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f128a5f14f516347ffbd384d820e19c">&#9670;&nbsp;</a></span>tba</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -593,7 +593,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt;pair&lt;vector&lt;shared_ptr&lt;<a class="el" href="classParameter.html">Parameter</a>&gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; &gt; ValueMap::tba</td>
+          <td class="memname">std::list&lt;std::pair&lt;<a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; &gt; ValueMap::tba</td>
         </tr>
       </table>
   </td>
@@ -604,9 +604,9 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Entries that have been added since last <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p>
-<p>Will be inserted into <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>, <a class="el" href="classValueMap.html#add6b191069b0975d94d5bdb695992936" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a> when <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. </p>
+<p>Will be inserted into <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>, <a class="el" href="classValueMap.html#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> when <a class="el" href="classValueMap.html#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00066">66</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00064">64</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00109">getSize()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00082">insert()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
@@ -635,14 +635,14 @@ Private Attributes</h2></td></tr>
 <p>Number of entries to be printed as best values at the end of the optimization process. </p>
 <p>Can be configured in main config. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00050">50</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00048">48</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00012">ValueMap()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00050">addValue()</a>.</p>
 
 </div>
 </div>
-<a id="acf3a3b49e448011b7fd63a14c427dcaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf3a3b49e448011b7fd63a14c427dcaa">&#9670;&nbsp;</a></span>topVals</h2>
+<a id="ae447de5acae21216862e292611a0dd1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae447de5acae21216862e292611a0dd1e">&#9670;&nbsp;</a></span>topVals</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -651,7 +651,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">set&lt;pair&lt;const vector&lt;shared_ptr&lt;<a class="el" href="classParameter.html">Parameter</a>&gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt;, <a class="el" href="structCmpPairVectorSharedParameterFunctionvalue.html">CmpPairVectorSharedParameterFunctionvalue</a>&gt; ValueMap::topVals</td>
+          <td class="memname">std::set&lt;std::pair&lt;const <a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt;, <a class="el" href="structCmpPairVectorSharedParameterFunctionvalue.html">CmpPairVectorSharedParameterFunctionvalue</a>&gt; ValueMap::topVals</td>
         </tr>
       </table>
   </td>
@@ -661,17 +661,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set of pairs of the best <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations and their respective values. </p>
+<p>Set of pairs of the best parameterCombinations and their respective values. </p>
 <p>Contains not more than <a class="el" href="classValueMap.html#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00055">55</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00053">53</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00050">addValue()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00113">getTopVals()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00118">isTopValue()</a>.</p>
 
 </div>
 </div>
-<a id="add6b191069b0975d94d5bdb695992936"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add6b191069b0975d94d5bdb695992936">&#9670;&nbsp;</a></span>upperValues</h2>
+<a id="a010e3b5b9432699e2beab85ba7b97c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a010e3b5b9432699e2beab85ba7b97c75">&#9670;&nbsp;</a></span>upperValues</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -680,7 +680,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">set&lt;<a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a>&gt; ValueMap::upperValues</td>
+          <td class="memname">std::set&lt;<a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> *, <a class="el" href="structCmpPtrFunctionvalue.html">CmpPtrFunctionvalue</a>&gt; ValueMap::upperValues</td>
         </tr>
       </table>
   </td>
@@ -690,17 +690,17 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Greater half of the values in <a class="el" href="classValueMap.html#af8c9d80bac78383c2a06def0043a8e8e" title="Actual map that contains Parameter combinations and their respective values.">values</a>. </p>
-<p>Same size as or one element more than <a class="el" href="classValueMap.html#ac4dcc6213ff75c29ca81e1bd586f7b73" title="Lesser half of the values in values.">lowerValues</a>. </p>
+<p>Greater half of the values in <a class="el" href="classValueMap.html#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </p>
+<p>Same size as or one element more than <a class="el" href="classValueMap.html#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00040">40</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00038">38</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00097">getMedian()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00015">updateMap()</a>.</p>
 
 </div>
 </div>
-<a id="af8c9d80bac78383c2a06def0043a8e8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8c9d80bac78383c2a06def0043a8e8e">&#9670;&nbsp;</a></span>values</h2>
+<a id="a03bff9fd38bf71bb1755cf3a1f756e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bff9fd38bf71bb1755cf3a1f756e02">&#9670;&nbsp;</a></span>values</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -709,7 +709,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt;vector&lt;shared_ptr&lt;<a class="el" href="classParameter.html">Parameter</a>&gt; &gt;, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; ValueMap::values</td>
+          <td class="memname">std::map&lt;<a class="el" href="Types_8h.html#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="el" href="Types_8h.html#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>, <a class="el" href="structCmpVectorSharedParameter.html">CmpVectorSharedParameter</a>&gt; ValueMap::values</td>
         </tr>
       </table>
   </td>
@@ -719,9 +719,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Actual map that contains <a class="el" href="classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> combinations and their respective values. </p>
+<p>Actual map that contains parameterCombinations and their respective values. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00060">60</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.html#l00058">58</a> of file <a class="el" href="ValueMap_8h_source.html">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="ValueMap_8cpp_source.html#l00050">addValue()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00109">getSize()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00134">getValues()</a>, <a class="el" href="ValueMap_8cpp_source.html#l00086">isKnown()</a>, and <a class="el" href="ValueMap_8cpp_source.html#l00071">query()</a>.</p>
 

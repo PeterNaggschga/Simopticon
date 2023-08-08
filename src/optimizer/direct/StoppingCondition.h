@@ -12,9 +12,6 @@
 #include <chrono>
 #include <cmath>
 
-using namespace std::chrono;
-using json = nlohmann::json;
-
 /**
  * A class used for deciding whether the DIRECT should be stopped.
  * Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met.
@@ -35,7 +32,7 @@ private:
      * Point in time after which optimization should end.
      * Calculated using time when #setStartNow is called and #mins.
      */
-    time_point<system_clock, seconds> END_TIME;
+    std::chrono::time_point<std::chrono::system_clock, std::chrono::seconds> END_TIME;
     /**
      * Number of minutes after which the optimization should stop.
      */
@@ -91,7 +88,7 @@ public:
      * Creates a StoppingCondition based on the given json configuration.
      * @param stopCon: JSON object defining the condition values.
      */
-    explicit StoppingCondition(json stopCon);
+    explicit StoppingCondition(nlohmann::json stopCon);
 
     /**
      * Sets #END_TIME to be the current time plus #mins.

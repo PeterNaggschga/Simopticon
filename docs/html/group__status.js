@@ -1,22 +1,22 @@
 var group__status =
 [
     [ "Status", "classStatus.html", [
-      [ "getName", "classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25", null ],
-      [ "getStatus", "classStatus.html#a587fbda25430f10e4cade040aaad198f", null ],
-      [ "getStatusBar", "classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0", null ],
-      [ "NO_NAME", "classStatus.html#aafda770737cec4ad6e503526aef7e7f0", null ],
-      [ "NO_STATUS_SUPPORT", "classStatus.html#a3090c3575be971368217ae7e3e470120", null ]
+      [ "getName", "classStatus.html#a9d07378cbe210558ebb6b410a9b3855e", null ],
+      [ "getStatus", "classStatus.html#a1102f7349b421fca575e3685cb599fc9", null ],
+      [ "getStatusBar", "classStatus.html#a6dcff8054a96df8924cbbc4caf8472e3", null ],
+      [ "NO_NAME", "classStatus.html#aebc78bdfd2d9603aa3012e01b3cde5b1", null ],
+      [ "NO_STATUS_SUPPORT", "classStatus.html#a75ea6f22c5e9b8faa6f8af43d0bc2eed", null ]
     ] ],
     [ "StatusBar", "classStatusBar.html", [
-      [ "printResult", "classStatusBar.html#a99449623885279b8d9723da4364b0054", null ],
-      [ "printResults", "classStatusBar.html#a3925b372e4339cab95b0f433128f0756", null ],
+      [ "printResult", "classStatusBar.html#a7d63719c42adf3ba2af266545b27132c", null ],
+      [ "printResults", "classStatusBar.html#ab08646a3281ccbbca4442be0b6e12ee1", null ],
       [ "printStatus", "classStatusBar.html#a480213e17dcf95b6968647c7cffc7fe6", null ],
-      [ "updateStatus", "classStatusBar.html#a107cb6b54d0c41491566e0b3395195a8", null ],
-      [ "LARGE_DIVIDER", "classStatusBar.html#ac547a5d3873206533bbf973bdb3e692a", null ],
-      [ "lastStatus", "classStatusBar.html#abb3579818701079d6ddce79081c05362", null ],
+      [ "updateStatus", "classStatusBar.html#ac6014b2ccdf716850364ae4a1ef742cc", null ],
+      [ "LARGE_DIVIDER", "classStatusBar.html#a6747ec1d1e2728d65e468609aae67e11", null ],
+      [ "lastStatus", "classStatusBar.html#a302f4053cd3d5184f41cc2c1b5da7811", null ],
       [ "lastStep", "classStatusBar.html#a3277bbd17dbaf1d6d626c6ad625e575e", null ],
-      [ "lastVal", "classStatusBar.html#aecf510d876e286102eb5aa1de9b67d56", null ],
-      [ "SMALL_DIVIDER", "classStatusBar.html#af267b6b291583919ab9bebeeb47efce2", null ]
+      [ "lastVal", "classStatusBar.html#a2b66f1c6c72b082db9a08d09a4794bd4", null ],
+      [ "SMALL_DIVIDER", "classStatusBar.html#a859903f326e74c645db27a340d0f0352", null ]
     ] ],
     [ "step", "group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2", null ]
 ];

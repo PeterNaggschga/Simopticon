@@ -7,17 +7,14 @@
 
 #include <iostream>
 
-
-using namespace std;
-
-ConstantHeadway::ConstantHeadway(unsigned int nrThreads, const filesystem::path &pathToScript) : PythonScript(
+ConstantHeadway::ConstantHeadway(unsigned int nrThreads, const std::filesystem::path &pathToScript) : PythonScript(
         pathToScript, "multithreaded"), NR_THREADS(nrThreads) {
 }
 
-map<pair<filesystem::path, set<runId>>, functionValue>
-ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &experimentResults) {
-    usedThreads = min((size_t) NR_THREADS, experimentResults.size());
-    map<pair<filesystem::path, set<runId>>, functionValue> result;
+std::map<std::pair<std::filesystem::path, std::set<runId>>, functionValue>
+ConstantHeadway::processOutput(const std::set<std::pair<std::filesystem::path, std::set<runId>>> &experimentResults) {
+    usedThreads = std::min((size_t) NR_THREADS, experimentResults.size());
+    std::map<std::pair<std::filesystem::path, std::set<runId>>, functionValue> result;
 
     PyObject *pArgs, *pValue, *pList;
     pArgs = PyTuple_New(3);
@@ -53,35 +50,36 @@ ConstantHeadway::processOutput(const set<pair<filesystem::path, set<runId>>> &ex
     } else {
         Py_DECREF(pFunc);
         Py_DECREF(pModule);
-        cerr << "Call to Python function failed!";
+        std::cerr << "Call to Python function failed!";
         return {};
     }
     usedThreads = 0;
     return result;
 }
 
-functionValue ConstantHeadway::processOutput(filesystem::path path, set<runId> experimentIds) {
-    return processOutput(set<pair<filesystem::path, set<runId>>>({make_pair(path, experimentIds)})).begin()->second;
+functionValue ConstantHeadway::processOutput(std::filesystem::path path, std::set<runId> experimentIds) {
+    return processOutput(std::set<std::pair<std::filesystem::path, std::set<runId>>>(
+            {make_pair(path, experimentIds)})).begin()->second;
 }
 
 PyObject *ConstantHeadway::secureValue(PyObject *object) {
     if (!object) {
         Py_DECREF(pFunc);
         Py_DECREF(pModule);
-        cerr << "PyObject couldn't be created!" << endl;
+        std::cerr << "PyObject couldn't be created!" << std::endl;
         return nullptr;
     }
     return object;
 }
 
-string ConstantHeadway::getName() {
+std::string ConstantHeadway::getName() {
     return "Constant-Headway-Evaluation";
 }
 
-string ConstantHeadway::getStatus() {
-    return "Max. number of threads: " + to_string(NR_THREADS);
+std::string ConstantHeadway::getStatus() {
+    return "Max. number of threads: " + std::to_string(NR_THREADS);
 }
 
-string ConstantHeadway::getStatusBar() {
-    return "Evaluating results... using " + to_string(usedThreads) + "/" + to_string(NR_THREADS) + " threads";
+std::string ConstantHeadway::getStatusBar() {
+    return "Evaluating results... using " + std::to_string(usedThreads) + "/" + std::to_string(NR_THREADS) + " threads";
 }

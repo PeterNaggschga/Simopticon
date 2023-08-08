@@ -103,9 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a74a0701bbc7e23f2364cac58f04e446a"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevels.html#a74a0701bbc7e23f2364cac58f04e446a">nextLevel</a> ()</td></tr>
 <tr class="memdesc:a74a0701bbc7e23f2364cac58f04e446a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Switches <a class="el" href="classLevels.html#abd45b1d0e8075215d0f77855fad78894" title="Local level the optimization is currently using when global is false.">currentLevel</a> to the next local level if <a class="el" href="classLevels.html#a72284fae03025ce37da257459ea5837b" title="Defines whether global optimization (level 3) or one of the local levels (0-2) is used.">global</a> is false.  <a href="classLevels.html#a74a0701bbc7e23f2364cac58f04e446a">More...</a><br /></td></tr>
 <tr class="separator:a74a0701bbc7e23f2364cac58f04e446a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa98ae6b5d40cdbaf9d4f14b0ba9bf449"><td class="memItemLeft" align="right" valign="top">list&lt; shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">getRectSubset</a> (const map&lt; <a class="el" href="DirectTypes_8h.html#a083ce87ca066d42ecd2a0fd189019120">depth</a>, set&lt; shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, <a class="el" href="structCmpSharedHyrect.html">CmpSharedHyrect</a> &gt;, greater&lt;&gt;&gt; &amp;rects, size_t size) const</td></tr>
-<tr class="memdesc:aa98ae6b5d40cdbaf9d4f14b0ba9bf449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the subset of all given rectangles based on the current level and returns a list containing only the best <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> per diagonal length.  <a href="classLevels.html#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">More...</a><br /></td></tr>
-<tr class="separator:aa98ae6b5d40cdbaf9d4f14b0ba9bf449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad36d674c5dd72407671725086b3b45a2"><td class="memItemLeft" align="right" valign="top">std::list&lt; std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevels.html#ad36d674c5dd72407671725086b3b45a2">getRectSubset</a> (const std::map&lt; <a class="el" href="DirectTypes_8h.html#a083ce87ca066d42ecd2a0fd189019120">depth</a>, std::set&lt; std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, <a class="el" href="structCmpSharedHyrect.html">CmpSharedHyrect</a> &gt;, std::greater&lt;&gt;&gt; &amp;rects, size_t size) const</td></tr>
+<tr class="memdesc:ad36d674c5dd72407671725086b3b45a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the subset of all given rectangles based on the current level and returns a list containing only the best <a class="el" href="classHyRect.html" title="An abstract class representing a rectangular part of the search space.">HyRect</a> per diagonal length.  <a href="classLevels.html#ad36d674c5dd72407671725086b3b45a2">More...</a><br /></td></tr>
+<tr class="separator:ad36d674c5dd72407671725086b3b45a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34b84c704d0a8af303b5266d238f57e3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLevels.html#a34b84c704d0a8af303b5266d238f57e3">getEpsilon</a> () const</td></tr>
 <tr class="memdesc:a34b84c704d0a8af303b5266d238f57e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the epsilon value on the current level the DIRECT algorithm resides on.  <a href="classLevels.html#a34b84c704d0a8af303b5266d238f57e3">More...</a><br /></td></tr>
 <tr class="separator:a34b84c704d0a8af303b5266d238f57e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,9 +178,9 @@ Private Attributes</h2></td></tr>
 <p>Returns the epsilon value on the current level the DIRECT algorithm resides on. </p>
 <p>Either <a class="el" href="classLevels.html#a535c7cf00e8d86b285e0984827f1f062" title="Epsilon value to be used when DIRECT algorithm uses level 3.">L3_EPSILON</a>, <a class="el" href="classLevels.html#a79b4b148ee0b0e0c337f9988e57f8e84" title="Epsilon value to be used when DIRECT algorithm uses level 2.">L2_EPSILON</a>, <a class="el" href="classLevels.html#a86c341a31ed52fc6fdc29b3b9d2b74d9" title="Epsilon value to be used when DIRECT algorithm uses level 1.">L1_EPSILON</a> or <a class="el" href="classLevels.html#a612991931ab1249ce1a8cab26575317f" title="Epsilon value to be used when DIRECT algorithm uses level 0.">L0_EPSILON</a>. </p><dl class="section return"><dt>Returns</dt><dd>A floating point value used as epsilon parameter on the current level. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00057">57</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00058">58</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Levels_8cpp_source.html#l00070">getLevel()</a>, <a class="el" href="Levels_8h_source.html#l00058">L0_EPSILON</a>, <a class="el" href="Levels_8h_source.html#l00054">L1_EPSILON</a>, <a class="el" href="Levels_8h_source.html#l00050">L2_EPSILON</a>, and <a class="el" href="Levels_8h_source.html#l00046">L3_EPSILON</a>.</p>
+<p class="reference">References <a class="el" href="Levels_8cpp_source.html#l00071">getLevel()</a>, <a class="el" href="Levels_8h_source.html#l00058">L0_EPSILON</a>, <a class="el" href="Levels_8h_source.html#l00054">L1_EPSILON</a>, <a class="el" href="Levels_8h_source.html#l00050">L2_EPSILON</a>, and <a class="el" href="Levels_8h_source.html#l00046">L3_EPSILON</a>.</p>
 
 </div>
 </div>
@@ -202,24 +202,24 @@ Private Attributes</h2></td></tr>
 <p>Returns a number corresponding to the current level the optimization resides on. </p>
 <dl class="section return"><dt>Returns</dt><dd>An integral corresponding to the current level. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00070">70</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00071">71</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Levels_8h_source.html#l00036">currentLevel</a>, and <a class="el" href="Levels_8h_source.html#l00040">global</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00057">getEpsilon()</a>, <a class="el" href="Levels_8cpp_source.html#l00020">getRectSubset()</a>, <a class="el" href="DirectOptimizer_8cpp_source.html#l00198">DirectOptimizer::getStatus()</a>, and <a class="el" href="Levels_8cpp_source.html#l00012">nextLevel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00058">getEpsilon()</a>, <a class="el" href="Levels_8cpp_source.html#l00020">getRectSubset()</a>, <a class="el" href="DirectOptimizer_8cpp_source.html#l00200">DirectOptimizer::getStatus()</a>, and <a class="el" href="Levels_8cpp_source.html#l00012">nextLevel()</a>.</p>
 
 </div>
 </div>
-<a id="aa98ae6b5d40cdbaf9d4f14b0ba9bf449"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa98ae6b5d40cdbaf9d4f14b0ba9bf449">&#9670;&nbsp;</a></span>getRectSubset()</h2>
+<a id="ad36d674c5dd72407671725086b3b45a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad36d674c5dd72407671725086b3b45a2">&#9670;&nbsp;</a></span>getRectSubset()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">list&lt; shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &gt; Levels::getRectSubset </td>
+          <td class="memname">std::list&lt; std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt; &gt; Levels::getRectSubset </td>
           <td>(</td>
-          <td class="paramtype">const map&lt; <a class="el" href="DirectTypes_8h.html#a083ce87ca066d42ecd2a0fd189019120">depth</a>, set&lt; shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, <a class="el" href="structCmpSharedHyrect.html">CmpSharedHyrect</a> &gt;, greater&lt;&gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">const std::map&lt; <a class="el" href="DirectTypes_8h.html#a083ce87ca066d42ecd2a0fd189019120">depth</a>, std::set&lt; std::shared_ptr&lt; <a class="el" href="classHyRect.html">HyRect</a> &gt;, <a class="el" href="structCmpSharedHyrect.html">CmpSharedHyrect</a> &gt;, std::greater&lt;&gt;&gt; &amp;&#160;</td>
           <td class="paramname"><em>rects</em>, </td>
         </tr>
         <tr>
@@ -248,7 +248,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00020">20</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Levels_8cpp_source.html#l00070">getLevel()</a>, <a class="el" href="Levels_8h_source.html#l00040">global</a>, <a class="el" href="Levels_8h_source.html#l00075">L0_SIZE</a>, <a class="el" href="Levels_8h_source.html#l00071">L1_SIZE</a>, <a class="el" href="Levels_8h_source.html#l00067">L2_SIZE</a>, and <a class="el" href="Levels_8h_source.html#l00063">L3_SIZE</a>.</p>
+<p class="reference">References <a class="el" href="Levels_8cpp_source.html#l00071">getLevel()</a>, <a class="el" href="Levels_8h_source.html#l00040">global</a>, <a class="el" href="Levels_8h_source.html#l00075">L0_SIZE</a>, <a class="el" href="Levels_8h_source.html#l00071">L1_SIZE</a>, <a class="el" href="Levels_8h_source.html#l00067">L2_SIZE</a>, and <a class="el" href="Levels_8h_source.html#l00063">L3_SIZE</a>.</p>
 
 </div>
 </div>
@@ -270,7 +270,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the value of <a class="el" href="classLevels.html#a72284fae03025ce37da257459ea5837b" title="Defines whether global optimization (level 3) or one of the local levels (0-2) is used.">global</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A boolean defining whether the optimization is currently in the global phase. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00086">86</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00087">87</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Levels_8h_source.html#l00040">global</a>.</p>
 
@@ -298,7 +298,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00012">12</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Levels_8h_source.html#l00036">currentLevel</a>, <a class="el" href="Levels_8cpp_source.html#l00070">getLevel()</a>, and <a class="el" href="Levels_8h_source.html#l00040">global</a>.</p>
+<p class="reference">References <a class="el" href="Levels_8h_source.html#l00036">currentLevel</a>, <a class="el" href="Levels_8cpp_source.html#l00071">getLevel()</a>, and <a class="el" href="Levels_8h_source.html#l00040">global</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="DirectOptimizer_8cpp_source.html#l00023">DirectOptimizer::runOptimization()</a>.</p>
 
@@ -328,7 +328,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00090">90</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Levels_8cpp_source.html#l00091">91</a> of file <a class="el" href="Levels_8cpp_source.html">Levels.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="Levels_8h_source.html#l00040">global</a>.</p>
 
@@ -361,7 +361,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8h_source.html#l00036">36</a> of file <a class="el" href="Levels_8h_source.html">Levels.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00070">getLevel()</a>, and <a class="el" href="Levels_8cpp_source.html#l00012">nextLevel()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00071">getLevel()</a>, and <a class="el" href="Levels_8cpp_source.html#l00012">nextLevel()</a>.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8h_source.html#l00040">40</a> of file <a class="el" href="Levels_8h_source.html">Levels.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00070">getLevel()</a>, <a class="el" href="Levels_8cpp_source.html#l00020">getRectSubset()</a>, <a class="el" href="Levels_8cpp_source.html#l00086">isGlobal()</a>, <a class="el" href="Levels_8cpp_source.html#l00012">nextLevel()</a>, and <a class="el" href="Levels_8cpp_source.html#l00090">setGlobal()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00071">getLevel()</a>, <a class="el" href="Levels_8cpp_source.html#l00020">getRectSubset()</a>, <a class="el" href="Levels_8cpp_source.html#l00087">isGlobal()</a>, <a class="el" href="Levels_8cpp_source.html#l00012">nextLevel()</a>, and <a class="el" href="Levels_8cpp_source.html#l00091">setGlobal()</a>.</p>
 
 </div>
 </div>
@@ -417,7 +417,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8h_source.html#l00058">58</a> of file <a class="el" href="Levels_8h_source.html">Levels.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00057">getEpsilon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00058">getEpsilon()</a>.</p>
 
 </div>
 </div>
@@ -473,7 +473,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8h_source.html#l00054">54</a> of file <a class="el" href="Levels_8h_source.html">Levels.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00057">getEpsilon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00058">getEpsilon()</a>.</p>
 
 </div>
 </div>
@@ -529,7 +529,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8h_source.html#l00050">50</a> of file <a class="el" href="Levels_8h_source.html">Levels.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00057">getEpsilon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00058">getEpsilon()</a>.</p>
 
 </div>
 </div>
@@ -585,7 +585,7 @@ Private Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Levels_8h_source.html#l00046">46</a> of file <a class="el" href="Levels_8h_source.html">Levels.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00057">getEpsilon()</a>, and <a class="el" href="DirectOptimizer_8cpp_source.html#l00023">DirectOptimizer::runOptimization()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="Levels_8cpp_source.html#l00058">getEpsilon()</a>, and <a class="el" href="DirectOptimizer_8cpp_source.html#l00023">DirectOptimizer::runOptimization()</a>.</p>
 
 </div>
 </div>

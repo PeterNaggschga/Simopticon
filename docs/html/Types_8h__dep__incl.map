@@ -21,8 +21,8 @@
 <area shape="rect" id="node12" href="$StatusBar_8cpp.html" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="1024,518,1283,559"/>
 <area shape="rect" id="node14" href="$ComparisonFunctions_8h.html" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="934,206,1211,247"/>
 <area shape="rect" id="node21" href="$ContinuousParameter_8h.html" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="1660,199,1882,255"/>
-<area shape="rect" id="node24" href="$DiscreteParameter_8h.html" title="In this file, the header of the DiscreteParameter class is defined." alt="" coords="688,199,910,255"/>
-<area shape="rect" id="node26" href="$Parameter_8cpp.html" title="In this file, the implementation of the Parameter class is defined." alt="" coords="1415,303,1636,359"/>
+<area shape="rect" id="node24" href="$Parameter_8cpp.html" title="In this file, the implementation of the Parameter class is defined." alt="" coords="1415,303,1636,359"/>
+<area shape="rect" id="node25" href="$DiscreteParameter_8h.html" title="In this file, the header of the DiscreteParameter class is defined." alt="" coords="688,199,910,255"/>
 <area shape="rect" id="node19" href="$ConfigEditor_8h.html" title="In this file, the header of the ConfigEditor class is defined." alt="" coords="631,303,852,359"/>
 <area shape="rect" id="node16" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="656,407,878,463"/>
 <area shape="rect" id="node18" href="$SimulationRunner_8cpp.html" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="1270,407,1512,463"/>
@@ -30,7 +30,7 @@
 <area shape="rect" id="node20" href="$ConfigEditor_8cpp.html" title="In this file, the implementation of the ConfigEditor class is defined." alt="" coords="411,407,632,463"/>
 <area shape="rect" id="node22" href="$ParameterNormalizer_8cpp.html" title="In this file, the implementation of the ParameterNormalizer class is defined." alt="" coords="2151,303,2383,359"/>
 <area shape="rect" id="node23" href="$ContinuousParameter_8cpp.html" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="1660,303,1882,359"/>
-<area shape="rect" id="node25" href="$DiscreteParameter_8cpp.html" title="In this file, the implementation of the DiscreteParameter class is defined." alt="" coords="386,303,607,359"/>
+<area shape="rect" id="node26" href="$DiscreteParameter_8cpp.html" title="In this file, the implementation of the DiscreteParameter class is defined." alt="" coords="386,303,607,359"/>
 <area shape="rect" id="node28" href="$ConstantHeadway_8h.html" title="In this file, the header of the ConstantHeadway class is defined." alt="" coords="2306,511,2588,567"/>
 <area shape="rect" id="node30" href="$Evaluation_8cpp.html" title="In this file, the implementation of the Evaluation class is defined." alt="" coords="2620,511,2842,567"/>
 <area shape="rect" id="node29" href="$ConstantHeadway_8cpp.html" title="In this file, the implementation of the ConstantHeadway class is defined." alt="" coords="2299,615,2595,671"/>

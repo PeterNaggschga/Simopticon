@@ -1,15 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classAbortable.html" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="75,31,160,57"/>
-<area shape="rect" id="node2" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="319,5,406,32"/>
-<area shape="rect" id="node4" href="$classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="319,56,406,83"/>
-<area shape="rect" id="node3" href="$classStubController.html" title="A class that mocks behaviour of Controller." alt="" coords="525,5,640,32"/>
-<area shape="rect" id="node5" href="$classDirectOptimizer.html" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm." alt="" coords="520,56,645,83"/>
-<area shape="rect" id="node6" href="$classMultithreaded.html" title=" " alt="" coords="277,107,448,178"/>
-<area shape="rect" id="node7" href="$classPlexeSimulationRunner.html" title="A class capable of starting platooning simulations in the Plexe framework with given Parameter combin..." alt="" coords="496,167,669,193"/>
-<area shape="rect" id="node8" href="$classMultithreaded.html" title=" " alt="" coords="5,133,229,219"/>
-<area shape="rect" id="node9" href="$classSimulationRunner.html" title="A class capable of running simulations with certain Parameter combinations." alt="" coords="293,203,432,229"/>
-<area shape="rect" id="node10" href="$classPythonScript.html" title="A class containing functionality for interfacing with the function of a Python module on creation." alt="" coords="311,253,415,280"/>
-<area shape="rect" id="node11" href="$classConstantHeadway.html" title="A wrapper for the constant_headway.py script." alt="" coords="512,279,653,305"/>
-<area shape="rect" id="node12" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="86,243,149,269"/>
-<area shape="rect" id="node13" href="$classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="317,304,408,331"/>
+<area shape="rect" id="node1" href="$classAbortable.html" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="78,31,163,57"/>
+<area shape="rect" id="node2" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="326,5,413,32"/>
+<area shape="rect" id="node4" href="$classOptimizer.html" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="326,56,413,83"/>
+<area shape="rect" id="node3" href="$classStubController.html" title="A class that mocks behaviour of Controller." alt="" coords="532,5,647,32"/>
+<area shape="rect" id="node5" href="$classDirectOptimizer.html" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm." alt="" coords="527,56,652,83"/>
+<area shape="rect" id="node6" href="$classMultithreaded.html" title=" " alt="" coords="5,288,236,373"/>
+<area shape="rect" id="node7" href="$classSimulationRunner.html" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="300,317,439,344"/>
+<area shape="rect" id="node8" href="$classPlexeSimulationRunner.html" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="503,277,676,304"/>
+<area shape="rect" id="node9" href="$classMultithreaded.html" title=" " alt="" coords="284,208,455,293"/>
+<area shape="rect" id="node10" href="$classPythonScript.html" title="A class containing functionality for interfacing with the function of a Python module on creation." alt="" coords="317,157,421,184"/>
+<area shape="rect" id="node11" href="$classConstantHeadway.html" title="A wrapper for the constant_headway.py script." alt="" coords="519,132,660,159"/>
+<area shape="rect" id="node12" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="89,107,152,133"/>
+<area shape="rect" id="node13" href="$classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="324,107,415,133"/>
 </map>

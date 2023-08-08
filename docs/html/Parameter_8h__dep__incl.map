@@ -4,8 +4,8 @@
 <area shape="rect" id="node8" href="$ValueMap_8h.html" title="In this file, the header of the ValueMap class is defined." alt="" coords="568,213,789,269"/>
 <area shape="rect" id="node13" href="$ComparisonFunctions_8h.html" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="985,117,1263,158"/>
 <area shape="rect" id="node20" href="$ContinuousParameter_8h.html" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="1403,109,1624,165"/>
-<area shape="rect" id="node23" href="$DiscreteParameter_8h.html" title="In this file, the header of the DiscreteParameter class is defined." alt="" coords="1648,109,1869,165"/>
-<area shape="rect" id="node25" href="$Parameter_8cpp.html" title="In this file, the implementation of the Parameter class is defined." alt="" coords="1893,109,2115,165"/>
+<area shape="rect" id="node23" href="$Parameter_8cpp.html" title="In this file, the implementation of the Parameter class is defined." alt="" coords="1648,109,1869,165"/>
+<area shape="rect" id="node24" href="$DiscreteParameter_8h.html" title="In this file, the header of the DiscreteParameter class is defined." alt="" coords="1955,109,2176,165"/>
 <area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="1176,629,1397,685"/>
 <area shape="rect" id="node4" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="1103,525,1324,581"/>
 <area shape="rect" id="node6" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="757,637,979,678"/>
@@ -23,5 +23,5 @@
 <area shape="rect" id="node19" href="$ConfigEditor_8cpp.html" title="In this file, the implementation of the ConfigEditor class is defined." alt="" coords="1540,317,1761,373"/>
 <area shape="rect" id="node21" href="$ParameterNormalizer_8cpp.html" title="In this file, the implementation of the ParameterNormalizer class is defined." alt="" coords="1515,213,1747,269"/>
 <area shape="rect" id="node22" href="$ContinuousParameter_8cpp.html" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="1771,213,1992,269"/>
-<area shape="rect" id="node24" href="$DiscreteParameter_8cpp.html" title="In this file, the implementation of the DiscreteParameter class is defined." alt="" coords="2016,213,2237,269"/>
+<area shape="rect" id="node25" href="$DiscreteParameter_8cpp.html" title="In this file, the implementation of the DiscreteParameter class is defined." alt="" coords="2016,213,2237,269"/>
 </map>

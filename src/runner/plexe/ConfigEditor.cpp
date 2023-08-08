@@ -8,16 +8,16 @@
 #include <fstream>
 #include <utility>
 
-ConfigEditor::ConfigEditor(filesystem::path directory, json controller)
+ConfigEditor::ConfigEditor(std::filesystem::path directory, nlohmann::json controller)
         : DIR(directory), CONFIG(directory.append("omnetpp.ini")),
           RESULTS(directory.parent_path().append("optResults")), CONTROLLER(std::move(controller)) {
 }
 
-void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, size_t runNumber, unsigned int repeat) {
-    ifstream inStream(CONFIG);
-    ostringstream textStream;
+void ConfigEditor::createConfig(const parameterCombination &params, size_t runNumber, unsigned int repeat) {
+    std::ifstream inStream(CONFIG);
+    std::ostringstream textStream;
     textStream << inStream.rdbuf();
-    string fileContents = textStream.str();
+    std::string fileContents = textStream.str();
     inStream.close();
 
     setResultFiles(fileContents, runNumber);
@@ -36,19 +36,19 @@ void ConfigEditor::createConfig(const vector<shared_ptr<Parameter>> &params, siz
     replaceOption(fileContents, "cmdenv-status-frequency", "100s");
 
     for (auto &param: params) {
-        replaceOption(fileContents, param->getConfig(), to_string(param->getVal()) + " " + param->getUnit());
+        replaceOption(fileContents, param->getConfig(), std::to_string(param->getVal()) + " " + param->getUnit());
     }
 
-    ofstream outStream(getConfigPath(runNumber));
+    std::ofstream outStream(getConfigPath(runNumber));
     outStream << fileContents;
     outStream.close();
 }
 
-void ConfigEditor::replaceOption(string &file, string option, const string &value) {
+void ConfigEditor::replaceOption(std::string &file, std::string option, const std::string &value) {
     option = "\n" + option + " = ";
     size_t pos = file.find(option);
-    if (pos == string::npos) {
-        const string general = "[General]\n";
+    if (pos == std::string::npos) {
+        const std::string general = "[General]\n";
         pos = file.find(general);
         file.insert(pos + general.size(), option + value + "\n");
         return;
@@ -58,21 +58,21 @@ void ConfigEditor::replaceOption(string &file, string option, const string &valu
     file.replace(pos, endOfLine - pos, value);
 }
 
-void ConfigEditor::replaceOption(string &file, string option, long value) {
-    replaceOption(file, std::move(option), to_string(value));
+void ConfigEditor::replaceOption(std::string &file, std::string option, long value) {
+    replaceOption(file, std::move(option), std::to_string(value));
 }
 
-void ConfigEditor::setResultFiles(string &file, size_t runNumber) {
-    const string resDir = "${resultdir}";
+void ConfigEditor::setResultFiles(std::string &file, size_t runNumber) {
+    const std::string resDir = "${resultdir}";
     size_t pos = 0;
-    while ((pos = file.find(resDir, pos)) != string::npos) {
-        file.replace(pos, resDir.size(), RESULTS.filename().string() + "/" + to_string(runNumber));
+    while ((pos = file.find(resDir, pos)) != std::string::npos) {
+        file.replace(pos, resDir.size(), RESULTS.filename().string() + "/" + std::to_string(runNumber));
         pos++;
     }
 }
 
-string ConfigEditor::getControllerOption(string &file) {
-    const string option = ".controller = ";
+std::string ConfigEditor::getControllerOption(std::string &file) {
+    const std::string option = ".controller = ";
     size_t optionPos = file.find(option);
     size_t startOfLine = file.find('\n') + 1;
     size_t nextLine;
@@ -82,20 +82,20 @@ string ConfigEditor::getControllerOption(string &file) {
     return file.substr(startOfLine, optionPos - startOfLine + option.size() - 3);
 }
 
-filesystem::path ConfigEditor::getConfigPath(size_t runId) const {
-    filesystem::path result = DIR;
-    return result.append(".tmp" + to_string(runId) + ".ini");
+std::filesystem::path ConfigEditor::getConfigPath(size_t runId) const {
+    std::filesystem::path result = DIR;
+    return result.append(".tmp" + std::to_string(runId) + ".ini");
 }
 
-filesystem::path ConfigEditor::getResultPath(size_t runId) const {
-    filesystem::path result = RESULTS;
-    return result.append(to_string(runId));
+std::filesystem::path ConfigEditor::getResultPath(size_t runId) const {
+    std::filesystem::path result = RESULTS;
+    return result.append(std::to_string(runId));
 }
 
 void ConfigEditor::deleteConfig(size_t runId) const {
-    filesystem::remove(getConfigPath(runId));
+    std::filesystem::remove(getConfigPath(runId));
 }
 
-const filesystem::path &ConfigEditor::getDir() const {
+const std::filesystem::path & ConfigEditor::getDir() const {
     return DIR;
 }

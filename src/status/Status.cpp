@@ -6,18 +6,18 @@
 #include "Status.h"
 
 
-const string Status::NO_STATUS_SUPPORT = "Component doesn't support status updates!";
+const std::string Status::NO_STATUS_SUPPORT = "Component doesn't support status updates!";
 
-const string Status::NO_NAME = "No name specified";
+const std::string Status::NO_NAME = "No name specified";
 
-string Status::getStatus() {
+std::string Status::getStatus() {
     return NO_STATUS_SUPPORT;
 }
 
-string Status::getStatusBar() {
+std::string Status::getStatusBar() {
     return NO_STATUS_SUPPORT;
 }
 
-string Status::getName() {
+std::string Status::getName() {
     return NO_NAME;
 }

@@ -1,8 +1,8 @@
 var classStatus =
 [
-    [ "getName", "classStatus.html#a6fcb6d7e6a56ad2506f362a4bd9a4f25", null ],
-    [ "getStatus", "classStatus.html#a587fbda25430f10e4cade040aaad198f", null ],
-    [ "getStatusBar", "classStatus.html#a2c8e1942534a480bb0da7cbf17fb65d0", null ],
-    [ "NO_NAME", "classStatus.html#aafda770737cec4ad6e503526aef7e7f0", null ],
-    [ "NO_STATUS_SUPPORT", "classStatus.html#a3090c3575be971368217ae7e3e470120", null ]
+    [ "getName", "classStatus.html#a9d07378cbe210558ebb6b410a9b3855e", null ],
+    [ "getStatus", "classStatus.html#a1102f7349b421fca575e3685cb599fc9", null ],
+    [ "getStatusBar", "classStatus.html#a6dcff8054a96df8924cbbc4caf8472e3", null ],
+    [ "NO_NAME", "classStatus.html#aebc78bdfd2d9603aa3012e01b3cde5b1", null ],
+    [ "NO_STATUS_SUPPORT", "classStatus.html#a75ea6f22c5e9b8faa6f8af43d0bc2eed", null ]
 ];

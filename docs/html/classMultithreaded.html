@@ -107,12 +107,12 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a3026e175e15e99a4bffbf27606e71a4f"><td class="memItemLeft" align="right" valign="top">virtual map&lt; Key, T, Compare, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f">runMultithreadedFunctions</a> (set&lt; Key, Compare &gt; runs)</td></tr>
-<tr class="memdesc:a3026e175e15e99a4bffbf27606e71a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes given tasks into <a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e" title="ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.">queue</a>, creates concurrent threads and merges them when execution is done.  <a href="classMultithreaded.html#a3026e175e15e99a4bffbf27606e71a4f">More...</a><br /></td></tr>
-<tr class="separator:a3026e175e15e99a4bffbf27606e71a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dcca101a87d5e05e7a4c7c9219b4ab5"><td class="memItemLeft" align="right" valign="top">virtual map&lt; Key, T, Compare, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a4dcca101a87d5e05e7a4c7c9219b4ab5">multithreadFunction</a> ()</td></tr>
-<tr class="memdesc:a4dcca101a87d5e05e7a4c7c9219b4ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that is executed by each thread.  <a href="classMultithreaded.html#a4dcca101a87d5e05e7a4c7c9219b4ab5">More...</a><br /></td></tr>
-<tr class="separator:a4dcca101a87d5e05e7a4c7c9219b4ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcc1c0642faa664e11fefadde148b5f"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; Key, T, Compare, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a1fcc1c0642faa664e11fefadde148b5f">runMultithreadedFunctions</a> (std::set&lt; Key, Compare &gt; runs)</td></tr>
+<tr class="memdesc:a1fcc1c0642faa664e11fefadde148b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes given tasks into <a class="el" href="classMultithreaded.html#af18b358906f0dd910122e6541c46f45e" title="ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.">queue</a>, creates concurrent threads and merges them when execution is done.  <a href="classMultithreaded.html#a1fcc1c0642faa664e11fefadde148b5f">More...</a><br /></td></tr>
+<tr class="separator:a1fcc1c0642faa664e11fefadde148b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a417daf5d214dc7046af294dba9979624"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; Key, T, Compare, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultithreaded.html#a417daf5d214dc7046af294dba9979624">multithreadFunction</a> ()</td></tr>
+<tr class="memdesc:a417daf5d214dc7046af294dba9979624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that is executed by each thread.  <a href="classMultithreaded.html#a417daf5d214dc7046af294dba9979624">More...</a><br /></td></tr>
+<tr class="separator:a417daf5d214dc7046af294dba9979624"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -130,7 +130,7 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a295f1db64506dc4054dc5d7bac9ba231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Key, class T, class Compare = less&lt;Key&gt;, class Allocator = allocator&lt;pair&lt;const Key, T&gt;&gt;&gt;<br />
+<div class="textblock"><h3>template&lt;class Key, class T, class Compare = std::less&lt;Key&gt;, class Allocator = std::allocator&lt;std::pair&lt;const Key, T&gt;&gt;&gt;<br />
 class Multithreaded&lt; Key, T, Compare, Allocator &gt;</h3>
 
 <p>A class implementing concurrent execution of the same function for different arguments. </p>
@@ -144,7 +144,7 @@ class Multithreaded&lt; Key, T, Compare, Allocator &gt;</h3>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00028">28</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00026">26</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abb856a33aad9a1cc76a91c15c40bef8e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb856a33aad9a1cc76a91c15c40bef8e">&#9670;&nbsp;</a></span>Multithreaded()</h2>
@@ -182,15 +182,15 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00011">11</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00041">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>.</p>
+<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00039">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimulationRunner_8cpp_source.html#l00011">SimulationRunner::SimulationRunner()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4dcca101a87d5e05e7a4c7c9219b4ab5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dcca101a87d5e05e7a4c7c9219b4ab5">&#9670;&nbsp;</a></span>multithreadFunction()</h2>
+<a id="a417daf5d214dc7046af294dba9979624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a417daf5d214dc7046af294dba9979624">&#9670;&nbsp;</a></span>multithreadFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,7 +201,7 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt; Key, T, Compare, Allocator &gt; <a class="el" href="classMultithreaded.html">Multithreaded</a>&lt; Key, T, Compare, Allocator &gt;::multithreadFunction</td>
+          <td class="memname">std::map&lt; Key, T, Compare, Allocator &gt; <a class="el" href="classMultithreaded.html">Multithreaded</a>&lt; Key, T, Compare, Allocator &gt;::multithreadFunction</td>
         </tr>
       </table>
   </td>
@@ -216,14 +216,14 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00035">35</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00045">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>, and <a class="el" href="classMultithreaded.html#a295f1db64506dc4054dc5d7bac9ba231">Multithreaded&lt; Key, T, Compare, Allocator &gt;::work()</a>.</p>
+<p class="reference">References <a class="el" href="Multithreaded_8h_source.html#l00043">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>, and <a class="el" href="classMultithreaded.html#a295f1db64506dc4054dc5d7bac9ba231">Multithreaded&lt; Key, T, Compare, Allocator &gt;::work()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00016">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
 
 </div>
 </div>
-<a id="a3026e175e15e99a4bffbf27606e71a4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3026e175e15e99a4bffbf27606e71a4f">&#9670;&nbsp;</a></span>runMultithreadedFunctions()</h2>
+<a id="a1fcc1c0642faa664e11fefadde148b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcc1c0642faa664e11fefadde148b5f">&#9670;&nbsp;</a></span>runMultithreadedFunctions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,9 +234,9 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">map&lt; Key, T, Compare, Allocator &gt; <a class="el" href="classMultithreaded.html">Multithreaded</a>&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions </td>
+          <td class="memname">std::map&lt; Key, T, Compare, Allocator &gt; <a class="el" href="classMultithreaded.html">Multithreaded</a>&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions </td>
           <td>(</td>
-          <td class="paramtype">set&lt; Key, Compare &gt;&#160;</td>
+          <td class="paramtype">std::set&lt; Key, Compare &gt;&#160;</td>
           <td class="paramname"><em>runs</em></td><td>)</td>
           <td></td>
         </tr>
@@ -259,7 +259,7 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
 
 <p class="definition">Definition at line <a class="el" href="Multithreaded_8tpp_source.html#l00016">16</a> of file <a class="el" href="Multithreaded_8tpp_source.html">Multithreaded.tpp</a>.</p>
 
-<p class="reference">References <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, <a class="el" href="Multithreaded_8h_source.html#l00041">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>, and <a class="el" href="Multithreaded_8h_source.html#l00045">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>.</p>
+<p class="reference">References <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, <a class="el" href="Multithreaded_8h_source.html#l00039">Multithreaded&lt; Key, T, Compare, Allocator &gt;::NR_THREADS</a>, and <a class="el" href="Multithreaded_8h_source.html#l00043">Multithreaded&lt; Key, T, Compare, Allocator &gt;::queue</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="SimulationRunner_8cpp_source.html#l00015">SimulationRunner::runSimulations()</a>.</p>
 
@@ -271,7 +271,7 @@ template&lt;class Key , class T , class Compare , class Allocator &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Allocator  = allocator&lt;pair&lt;const Key, T&gt;&gt;&gt; </div>
+template&lt;class Key , class T , class Compare  = std::less&lt;Key&gt;, class Allocator  = std::allocator&lt;std::pair&lt;const Key, T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -300,6 +300,8 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return value of the concurrently executed function. </dd></dl>
 
+<p>Implemented in <a class="el" href="classSimulationRunner.html#adfe03a3ba517b5aca991dee71155bbec">SimulationRunner</a>, and <a class="el" href="classPlexeSimulationRunner.html#aa8dee29e4f5cc5566690d10f5d4d95a0">PlexeSimulationRunner</a>.</p>
+
 <p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>.</p>
 
 </div>
@@ -311,7 +313,7 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Allocator  = allocator&lt;pair&lt;const Key, T&gt;&gt;&gt; </div>
+template&lt;class Key , class T , class Compare  = std::less&lt;Key&gt;, class Allocator  = std::allocator&lt;std::pair&lt;const Key, T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -329,7 +331,7 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 
 <p>Maximum number of concurrent threads to be used in ThreadPool. </p>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00041">41</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00039">39</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00011">Multithreaded&lt; Key, T, Compare, Allocator &gt;::Multithreaded()</a>, and <a class="el" href="Multithreaded_8tpp_source.html#l00016">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
 
@@ -341,7 +343,7 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Allocator  = allocator&lt;pair&lt;const Key, T&gt;&gt;&gt; </div>
+template&lt;class Key , class T , class Compare  = std::less&lt;Key&gt;, class Allocator  = std::allocator&lt;std::pair&lt;const Key, T&gt;&gt;&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -359,7 +361,7 @@ template&lt;class Key , class T , class Compare  = less&lt;Key&gt;, class Alloca
 
 <p><a class="el" href="classThreadsafeQueue.html" title="A container class of a queue that is safe for concurrent access of different threads.">ThreadsafeQueue</a> containing the arguments that have to be processed by the ThreadPool. </p>
 
-<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00045">45</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Multithreaded_8h_source.html#l00043">43</a> of file <a class="el" href="Multithreaded_8h_source.html">Multithreaded.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="Multithreaded_8tpp_source.html#l00035">Multithreaded&lt; Key, T, Compare, Allocator &gt;::multithreadFunction()</a>, and <a class="el" href="Multithreaded_8tpp_source.html#l00016">Multithreaded&lt; Key, T, Compare, Allocator &gt;::runMultithreadedFunctions()</a>.</p>
 

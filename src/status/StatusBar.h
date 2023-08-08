@@ -22,8 +22,6 @@ class Evaluation;
 
 class ValueMap;
 
-using namespace std;
-
 /**
  * An Enum defining the steps, an optimization process cycles through.
  * @ingroup status
@@ -41,16 +39,16 @@ private:
     /**
      * Large divider used to visibly divide two sections of content.
      */
-    const static string LARGE_DIVIDER;
+    const static std::string LARGE_DIVIDER;
     /**
      * Small divider used to visibly divide two sections of content.
      */
-    const static string SMALL_DIVIDER;
+    const static std::string SMALL_DIVIDER;
 
     /**
-     * Pair of Parameter combination and respective value used to discern if the best value has changed since the last call to #updateStatus.
+     * Pair of parameterCombination and respective value used to discern if the best value has changed since the last call to #updateStatus.
      */
-    pair<vector<shared_ptr<Parameter>>, functionValue> lastVal;
+    std::pair<parameterCombination, functionValue> lastVal;
     /**
      * Step which the optimization was in when #updateStatus was called the last time.
      */
@@ -58,14 +56,14 @@ private:
     /**
      * Last values of the StatusBar output (excluding value returned by Status#getStatusBar)
      */
-    string lastStatus;
+    std::string lastStatus;
 
     /**
      Prints the given result command line.
-     * @param cords: Parameter combination of the given result.
+     * @param cords: parameterCombination of the given result.
      * @param optimum: Value of the given result.
      */
-    static void printResult(const vector<shared_ptr<Parameter>> &cords, functionValue optimum);
+    static void printResult(const parameterCombination &cords, functionValue optimum);
 
     /**
      * Prints the Status of the given object to the command line using Status#getStatus.
@@ -81,19 +79,20 @@ public:
      * @param opt: Pointer to Optimizer used in optimization.
      * @param runner: Pointer to SimulationRunner used in optimization.
      * @param eval: Pointer to Evaluation used in optimization.
-     * @param currentVal: Parameter combination and respective value of the current optimum.
+     * @param currentVal: parameterCombination and respective value of the current optimum.
      * @param stepChanged: Boolean defining whether the current step has changed since the last call.
      * @param currentStep: Current step the optimization is in.
      */
     void updateStatus(Status *opt, Status *runner, Status *eval,
-                      const pair<vector<shared_ptr<Parameter>>, functionValue> &currentVal, bool stepChanged = false,
+                      const std::pair<parameterCombination, functionValue> &currentVal, bool stepChanged = false,
                       step currentStep = INIT);
 
     /**
-     * Prints the given Parameter combinations and respective values to command line.
-     * @param top: List of Parameter combinations and respective values to be printed.
+     * Prints the given parameterCombinations and respective values to command line.
+     * @param top: List of parameterCombinations and respective values to be printed.
      */
-    static void printResults(list<pair<vector<shared_ptr<Parameter>>, pair<functionValue, filesystem::path>>> top);
+    static void
+    printResults(std::list<std::pair<parameterCombination, std::pair<functionValue, std::filesystem::path>>> top);
 
 };
 
