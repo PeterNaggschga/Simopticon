@@ -1,4 +1,4 @@
 <map id="ChildRect" name="ChildRect">
 <area shape="rect" id="node1" title="A class representing a HyRect that has a parent HyRect." alt="" coords="5,80,89,107"/>
-<area shape="rect" id="node2" href="$classHyRect.html" title="An abstract class representing a rectangular part of the search space." alt="" coords="13,5,82,32"/>
+<area shape="rect" id="node2" href="$classHyRect.xhtml" title="An abstract class representing a rectangular part of the search space." alt="" coords="13,5,82,32"/>
 </map>

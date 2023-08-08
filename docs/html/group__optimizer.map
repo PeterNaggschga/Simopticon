@@ -1,4 +1,4 @@
 <map id="optimizer" name="optimizer">
 <area shape="rect" id="node1" title="This module contains components capable of finding the minimum of a function only defined through arg..." alt="" coords="5,5,89,31"/>
-<area shape="rect" id="node2" href="$group__direct.html" title="This module extends Optimizer to use a variant of the DIRECT algorithm by Jones et al." alt="" coords="137,5,196,31"/>
+<area shape="rect" id="node2" href="$group__direct.xhtml" title="This module extends Optimizer to use a variant of the DIRECT algorithm by Jones et al." alt="" coords="137,5,196,31"/>
 </map>

@@ -1,8 +1,9 @@
 <map id="PlexeSimulationRunner" name="PlexeSimulationRunner">
-<area shape="rect" id="node1" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="547,155,720,181"/>
-<area shape="rect" id="node2" href="$classSimulationRunner.html" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="301,75,440,101"/>
-<area shape="rect" id="node3" href="$classMultithreaded.html" title=" " alt="" coords="5,5,236,91"/>
-<area shape="rect" id="node4" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="89,115,152,141"/>
-<area shape="rect" id="node5" href="$classMultithreaded.html" title=" " alt="" coords="285,125,456,211"/>
-<area shape="rect" id="node6" href="$classConfigEditor.html" title="A class capable of creating .ini files with certain options based on a complete omnetpp...." alt="" coords="320,235,421,261"/>
+<area shape="rect" id="node1" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="111,461,284,488"/>
+<area shape="rect" id="node2" href="$classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="128,372,267,399"/>
+<area shape="rect" id="node3" href="$classMultithreaded.xhtml" title=" " alt="" coords="242,153,473,239"/>
+<area shape="rect" id="node4" href="$classMultithreaded.xhtml" title="A class implementing concurrent execution of the same function for different arguments." alt="" coords="123,5,306,47"/>
+<area shape="rect" id="node6" href="$classMultithreaded.xhtml" title=" " alt="" coords="5,263,176,348"/>
+<area shape="rect" id="node5" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="155,183,218,209"/>
+<area shape="rect" id="node7" href="$classConfigEditor.xhtml" title="A class capable of creating .ini files with certain options based on a complete omnetpp...." alt="" coords="291,372,392,399"/>
 </map>

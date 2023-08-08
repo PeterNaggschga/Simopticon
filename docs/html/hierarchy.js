@@ -1,53 +1,53 @@
 var hierarchy =
 [
-    [ "Abortable", "classAbortable.html", [
-      [ "Controller", "classController.html", [
-        [ "StubController", "classStubController.html", null ]
+    [ "Abortable", "classAbortable.xhtml", [
+      [ "Controller", "classController.xhtml", [
+        [ "StubController", "classStubController.xhtml", null ]
       ] ],
-      [ "Optimizer", "classOptimizer.html", [
-        [ "DirectOptimizer", "classDirectOptimizer.html", null ]
+      [ "Optimizer", "classOptimizer.xhtml", [
+        [ "DirectOptimizer", "classDirectOptimizer.xhtml", null ]
       ] ]
     ] ],
-    [ "CmpPairVectorSharedParameterFunctionvalue", "structCmpPairVectorSharedParameterFunctionvalue.html", null ],
-    [ "CmpPtrFunctionvalue", "structCmpPtrFunctionvalue.html", null ],
-    [ "CmpSharedHyrect", "structCmpSharedHyrect.html", null ],
-    [ "CmpVectorSharedParameter", "structCmpVectorSharedParameter.html", null ],
-    [ "CommandLine", "classCommandLine.html", null ],
-    [ "ConfigEditor", "classConfigEditor.html", null ],
-    [ "GrahamScan", "classGrahamScan.html", null ],
-    [ "HyRect", "classHyRect.html", [
-      [ "BaseRect", "classBaseRect.html", null ],
-      [ "ChildRect", "classChildRect.html", null ]
+    [ "CmpPairVectorSharedParameterFunctionvalue", "structCmpPairVectorSharedParameterFunctionvalue.xhtml", null ],
+    [ "CmpPtrFunctionvalue", "structCmpPtrFunctionvalue.xhtml", null ],
+    [ "CmpSharedHyrect", "structCmpSharedHyrect.xhtml", null ],
+    [ "CmpVectorSharedParameter", "structCmpVectorSharedParameter.xhtml", null ],
+    [ "CommandLine", "classCommandLine.xhtml", null ],
+    [ "ConfigEditor", "classConfigEditor.xhtml", null ],
+    [ "GrahamScan", "classGrahamScan.xhtml", null ],
+    [ "HyRect", "classHyRect.xhtml", [
+      [ "BaseRect", "classBaseRect.xhtml", null ],
+      [ "ChildRect", "classChildRect.xhtml", null ]
     ] ],
-    [ "Levels", "classLevels.html", null ],
-    [ "Multithreaded< Key, T, Compare, Allocator >", "classMultithreaded.html", null ],
-    [ "Multithreaded< parameterCombination, std::pair< std::filesystem::path, std::set< runId > >, CmpVectorSharedParameter >", "classMultithreaded.html", [
-      [ "SimulationRunner", "classSimulationRunner.html", [
-        [ "PlexeSimulationRunner", "classPlexeSimulationRunner.html", null ]
+    [ "Levels", "classLevels.xhtml", null ],
+    [ "Multithreaded< Key, T, Compare, Allocator >", "classMultithreaded.xhtml", null ],
+    [ "Multithreaded< parameterCombination, std::pair< std::filesystem::path, std::set< runId > >, CmpVectorSharedParameter >", "classMultithreaded.xhtml", [
+      [ "SimulationRunner", "classSimulationRunner.xhtml", [
+        [ "PlexeSimulationRunner", "classPlexeSimulationRunner.xhtml", null ]
       ] ]
     ] ],
-    [ "Multithreaded< std::pair< std::filesystem::path, std::pair< std::string, unsigned int > >, bool >", "classMultithreaded.html", [
-      [ "PlexeSimulationRunner", "classPlexeSimulationRunner.html", null ]
+    [ "Multithreaded< std::pair< std::filesystem::path, std::pair< std::string, unsigned int > >, bool >", "classMultithreaded.xhtml", [
+      [ "PlexeSimulationRunner", "classPlexeSimulationRunner.xhtml", null ]
     ] ],
-    [ "Parameter", "classParameter.html", [
-      [ "ContinuousParameter", "classContinuousParameter.html", null ],
-      [ "DiscreteParameter", "classDiscreteParameter.html", null ]
+    [ "Parameter", "classParameter.xhtml", [
+      [ "ContinuousParameter", "classContinuousParameter.xhtml", null ],
+      [ "DiscreteParameter", "classDiscreteParameter.xhtml", null ]
     ] ],
-    [ "ParameterDefinition", "classParameterDefinition.html", null ],
-    [ "ParameterNormalizer", "classParameterNormalizer.html", null ],
-    [ "PythonScript", "classPythonScript.html", [
-      [ "ConstantHeadway", "classConstantHeadway.html", null ]
+    [ "ParameterDefinition", "classParameterDefinition.xhtml", null ],
+    [ "ParameterNormalizer", "classParameterNormalizer.xhtml", null ],
+    [ "PythonScript", "classPythonScript.xhtml", [
+      [ "ConstantHeadway", "classConstantHeadway.xhtml", null ]
     ] ],
-    [ "Status", "classStatus.html", [
-      [ "Evaluation", "classEvaluation.html", [
-        [ "ConstantHeadway", "classConstantHeadway.html", null ]
+    [ "Status", "classStatus.xhtml", [
+      [ "Evaluation", "classEvaluation.xhtml", [
+        [ "ConstantHeadway", "classConstantHeadway.xhtml", null ]
       ] ],
-      [ "Optimizer", "classOptimizer.html", null ],
-      [ "SimulationRunner", "classSimulationRunner.html", null ]
+      [ "Optimizer", "classOptimizer.xhtml", null ],
+      [ "SimulationRunner", "classSimulationRunner.xhtml", null ]
     ] ],
-    [ "StatusBar", "classStatusBar.html", null ],
-    [ "Controller::stepstate", "structController_1_1stepstate.html", null ],
-    [ "StoppingCondition", "classStoppingCondition.html", null ],
-    [ "ThreadsafeQueue< Key >", "classThreadsafeQueue.html", null ],
-    [ "ValueMap", "classValueMap.html", null ]
+    [ "StatusBar", "classStatusBar.xhtml", null ],
+    [ "Controller::stepstate", "structController_1_1stepstate.xhtml", null ],
+    [ "StoppingCondition", "classStoppingCondition.xhtml", null ],
+    [ "ThreadsafeQueue< Key >", "classThreadsafeQueue.xhtml", null ],
+    [ "ValueMap", "classValueMap.xhtml", null ]
 ];

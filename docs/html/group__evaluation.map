@@ -1,4 +1,4 @@
 <map id="evaluation" name="evaluation">
 <area shape="rect" id="node1" title="This module contains components capable of evaluating the performance of simulations by rating simula..." alt="" coords="5,5,96,31"/>
-<area shape="rect" id="node2" href="$group__constant__headway.html" title="This module extends Evaluation to interface with a Python script evaluating the performance of platoo..." alt="" coords="144,5,288,31"/>
+<area shape="rect" id="node2" href="$group__constant__headway.xhtml" title="This module extends Evaluation to interface with a Python script evaluating the performance of platoo..." alt="" coords="144,5,288,31"/>
 </map>

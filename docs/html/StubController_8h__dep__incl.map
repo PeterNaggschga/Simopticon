@@ -1,6 +1,6 @@
 <map id="src/controller/StubController.h" name="src/controller/StubController.h">
 <area shape="rect" id="node1" title="In this file, the header of the StubController class is defined." alt="" coords="253,5,468,32"/>
-<area shape="rect" id="node2" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="5,80,236,107"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="260,80,461,107"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="485,80,591,107"/>
+<area shape="rect" id="node2" href="$StubController_8cpp.xhtml" title="In this file, the implementation of the StubController class is defined." alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="260,80,461,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.xhtml" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="485,80,591,107"/>
 </map>

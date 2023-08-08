@@ -1,6 +1,6 @@
 <map id="ConstantHeadway" name="ConstantHeadway">
 <area shape="rect" id="node1" title="A wrapper for the constant_headway.py script." alt="" coords="40,155,181,181"/>
-<area shape="rect" id="node2" href="$classEvaluation.html" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="5,80,96,107"/>
-<area shape="rect" id="node3" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="19,5,82,32"/>
-<area shape="rect" id="node4" href="$classPythonScript.html" title="A class containing functionality for interfacing with the function of a Python module on creation." alt="" coords="120,80,224,107"/>
+<area shape="rect" id="node2" href="$classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node3" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="19,5,82,32"/>
+<area shape="rect" id="node4" href="$classPythonScript.xhtml" title="A class containing functionality for interfacing with the function of a Python module on creation." alt="" coords="120,80,224,107"/>
 </map>

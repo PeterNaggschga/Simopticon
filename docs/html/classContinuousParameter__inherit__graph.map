@@ -1,4 +1,4 @@
 <map id="ContinuousParameter" name="ContinuousParameter">
 <area shape="rect" id="node1" title="Implements a Parameter using continuos values in the form of floating point numbers." alt="" coords="5,80,168,107"/>
-<area shape="rect" id="node2" href="$classParameter.html" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition." alt="" coords="42,5,131,32"/>
+<area shape="rect" id="node2" href="$classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition." alt="" coords="42,5,131,32"/>
 </map>

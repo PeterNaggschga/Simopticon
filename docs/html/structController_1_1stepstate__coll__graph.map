@@ -1,0 +1,3 @@
+<map id="Controller::stepstate" name="Controller::stepstate">
+<area shape="rect" id="node1" title="A struct keeping track of the currently running optimization step for StatusBar::updateStatus." alt="" coords="5,5,160,32"/>
+</map>

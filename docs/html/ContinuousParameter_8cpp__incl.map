@@ -1,10 +1,10 @@
 <map id="src/parameters/ContinuousParameter.cpp" name="src/parameters/ContinuousParameter.cpp">
 <area shape="rect" id="node1" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="176,5,373,47"/>
-<area shape="rect" id="node2" href="$ContinuousParameter_8h.html" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="33,95,207,121"/>
+<area shape="rect" id="node2" href="$ContinuousParameter_8h.xhtml" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="33,95,207,121"/>
 <area shape="rect" id="node8" title=" " alt="" coords="231,95,318,121"/>
 <area shape="rect" id="node9" title=" " alt="" coords="342,95,402,121"/>
-<area shape="rect" id="node3" href="$Parameter_8h.html" title="In this file, the header of the Parameter class is defined." alt="" coords="70,169,170,196"/>
-<area shape="rect" id="node4" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="79,244,161,271"/>
+<area shape="rect" id="node3" href="$Parameter_8h.xhtml" title="In this file, the header of the Parameter class is defined." alt="" coords="70,169,170,196"/>
+<area shape="rect" id="node4" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="79,244,161,271"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,319,64,345"/>
 <area shape="rect" id="node7" title=" " alt="" coords="176,319,253,345"/>
 <area shape="rect" id="node6" title=" " alt="" coords="89,319,151,345"/>

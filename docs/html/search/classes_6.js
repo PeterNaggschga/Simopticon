@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hyrect_322',['HyRect',['../classHyRect.html',1,'']]]
+  ['hyrect_322',['HyRect',['../classHyRect.xhtml',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['optimizer_327',['Optimizer',['../classOptimizer.html',1,'']]]
+  ['optimizer_327',['Optimizer',['../classOptimizer.xhtml',1,'']]]
 ];
