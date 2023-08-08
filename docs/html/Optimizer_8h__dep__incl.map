@@ -1,12 +1,12 @@
-<map id="/home/runner/work/simopticon/simopticon/src/optimizer/Optimizer.h" name="/home/runner/work/simopticon/simopticon/src/optimizer/Optimizer.h">
-<area shape="rect" id="node1" title="In this file, the header of the Optimizer class is defined." alt="" coords="469,5,691,61"/>
-<area shape="rect" id="node2" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="396,109,617,165"/>
-<area shape="rect" id="node7" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="619,213,840,269"/>
-<area shape="rect" id="node8" href="$DirectOptimizer_8h.html" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="27,109,248,165"/>
-<area shape="rect" id="node10" href="$StatusBar_8cpp.html" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="692,117,951,158"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="28,317,249,373"/>
-<area shape="rect" id="node4" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="323,213,544,269"/>
-<area shape="rect" id="node6" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="519,325,740,366"/>
-<area shape="rect" id="node5" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="273,317,495,373"/>
-<area shape="rect" id="node9" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="27,213,248,269"/>
+<map id="src/optimizer/Optimizer.h" name="src/optimizer/Optimizer.h">
+<area shape="rect" id="node1" title="In this file, the header of the Optimizer class is defined." alt="" coords="414,5,601,32"/>
+<area shape="rect" id="node2" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="349,87,535,114"/>
+<area shape="rect" id="node7" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="553,177,755,203"/>
+<area shape="rect" id="node8" href="$DirectOptimizer_8h.html" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="36,80,184,121"/>
+<area shape="rect" id="node10" href="$StatusBar_8cpp.html" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="610,87,789,114"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,259,207,285"/>
+<area shape="rect" id="node4" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="263,177,477,203"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="485,259,591,285"/>
+<area shape="rect" id="node5" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="231,259,461,285"/>
+<area shape="rect" id="node9" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="33,169,187,211"/>
 </map>

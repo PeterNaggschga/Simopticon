@@ -1,13 +1,13 @@
-<map id="/home/runner/work/simopticon/simopticon/src/utils/Multithreaded.h" name="/home/runner/work/simopticon/simopticon/src/utils/Multithreaded.h">
-<area shape="rect" id="node1" title="In this file, the header of the Multithreaded class is defined." alt="" coords="255,5,515,47"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,169,69,196"/>
-<area shape="rect" id="node3" title=" " alt="" coords="406,169,469,196"/>
-<area shape="rect" id="node4" title=" " alt="" coords="267,95,317,121"/>
-<area shape="rect" id="node5" title=" " alt="" coords="342,95,429,121"/>
-<area shape="rect" id="node6" title=" " alt="" coords="453,95,496,121"/>
-<area shape="rect" id="node7" href="$ThreadsafeQueue_8h.html" title="In this file, the header of the ThreadSafeQueue class is defined." alt="" coords="93,95,243,121"/>
-<area shape="rect" id="node9" href="$Multithreaded_8tpp.html" title="In this file, the implementation of the Multithreaded class is defined." alt="" coords="571,95,709,121"/>
-<area shape="rect" id="node8" href="$ThreadsafeQueue_8tpp.html" title="In this file, the implementation of the ThreadSafeQueue class is defined." alt="" coords="93,169,256,196"/>
-<area shape="rect" id="node10" title=" " alt="" coords="647,169,708,196"/>
-<area shape="rect" id="node11" title=" " alt="" coords="580,169,623,196"/>
+<map id="src/utils/Multithreaded.h" name="src/utils/Multithreaded.h">
+<area shape="rect" id="node1" title="In this file, the header of the Multithreaded class is defined." alt="" coords="295,5,475,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,155,69,181"/>
+<area shape="rect" id="node3" title=" " alt="" coords="406,155,469,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="267,80,317,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="342,80,429,107"/>
+<area shape="rect" id="node6" title=" " alt="" coords="453,80,496,107"/>
+<area shape="rect" id="node7" href="$ThreadsafeQueue_8h.html" title="In this file, the header of the ThreadSafeQueue class is defined." alt="" coords="93,80,243,107"/>
+<area shape="rect" id="node9" href="$Multithreaded_8tpp.html" title="In this file, the implementation of the Multithreaded class is defined." alt="" coords="571,80,709,107"/>
+<area shape="rect" id="node8" href="$ThreadsafeQueue_8tpp.html" title="In this file, the implementation of the ThreadSafeQueue class is defined." alt="" coords="93,155,256,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="647,155,708,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="580,155,623,181"/>
 </map>

@@ -1,5 +1,5 @@
-<map id="/home/runner/work/simopticon/simopticon/src/optimizer/direct/DirectOptimizer.h" name="/home/runner/work/simopticon/simopticon/src/optimizer/direct/DirectOptimizer.h">
-<area shape="rect" id="node1" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="128,5,349,61"/>
-<area shape="rect" id="node2" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,109,227,165"/>
-<area shape="rect" id="node3" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="251,109,472,165"/>
+<map id="src/optimizer/direct/DirectOptimizer.h" name="src/optimizer/direct/DirectOptimizer.h">
+<area shape="rect" id="node1" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="133,5,281,47"/>
+<area shape="rect" id="node2" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,102,207,129"/>
+<area shape="rect" id="node3" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="231,95,386,136"/>
 </map>

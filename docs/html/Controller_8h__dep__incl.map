@@ -1,8 +1,8 @@
-<map id="/home/runner/work/simopticon/simopticon/src/controller/Controller.h" name="/home/runner/work/simopticon/simopticon/src/controller/Controller.h">
-<area shape="rect" id="node1" title="In this file, the header of the Controller class is defined." alt="" coords="324,5,545,61"/>
-<area shape="rect" id="node2" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,213,227,269"/>
-<area shape="rect" id="node3" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="251,109,472,165"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="496,221,717,262"/>
-<area shape="rect" id="node6" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="547,109,768,165"/>
-<area shape="rect" id="node4" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="251,213,472,269"/>
+<map id="src/controller/Controller.h" name="src/controller/Controller.h">
+<area shape="rect" id="node1" title="In this file, the header of the Controller class is defined." alt="" coords="325,5,511,32"/>
+<area shape="rect" id="node2" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,155,207,181"/>
+<area shape="rect" id="node3" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="239,80,453,107"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="485,155,591,181"/>
+<area shape="rect" id="node6" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="529,80,731,107"/>
+<area shape="rect" id="node4" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="231,155,461,181"/>
 </map>
