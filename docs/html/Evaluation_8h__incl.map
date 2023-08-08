@@ -1,11 +1,11 @@
-<map id="/home/runner/work/simopticon/simopticon/src/evaluation/Evaluation.h" name="/home/runner/work/simopticon/simopticon/src/evaluation/Evaluation.h">
-<area shape="rect" id="node1" title="In this file, the header of the Evaluation class is defined." alt="" coords="177,5,399,61"/>
-<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="160,109,243,136"/>
-<area shape="rect" id="node6" href="$Status_8h.html" title="In this file, the header of the Status class is defined." alt="" coords="5,109,136,136"/>
-<area shape="rect" id="node7" title=" " alt="" coords="267,109,309,136"/>
-<area shape="rect" id="node8" title=" " alt="" coords="333,109,424,136"/>
-<area shape="rect" id="node9" title=" " alt="" coords="448,109,499,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="64,184,123,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="158,184,221,211"/>
-<area shape="rect" id="node5" title=" " alt="" coords="245,184,323,211"/>
+<map id="src/evaluation/Evaluation.h" name="src/evaluation/Evaluation.h">
+<area shape="rect" id="node1" title="In this file, the header of the Evaluation class is defined." alt="" coords="189,5,387,32"/>
+<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="160,80,243,107"/>
+<area shape="rect" id="node6" href="$Status_8h.html" title="In this file, the header of the Status class is defined." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node7" title=" " alt="" coords="267,80,309,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="333,80,424,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="448,80,499,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="64,155,123,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="158,155,221,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="245,155,323,181"/>
 </map>

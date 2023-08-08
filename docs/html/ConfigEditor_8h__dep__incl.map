@@ -1,7 +1,7 @@
-<map id="/home/runner/work/simopticon/simopticon/src/runner/plexe/ConfigEditor.h" name="/home/runner/work/simopticon/simopticon/src/runner/plexe/ConfigEditor.h">
-<area shape="rect" id="node1" title="In this file, the header of the ConfigEditor class is defined." alt="" coords="251,5,472,61"/>
-<area shape="rect" id="node2" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="103,109,324,165"/>
-<area shape="rect" id="node4" href="$PlexeSimulationRunner_8cpp.html" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="251,213,472,269"/>
-<area shape="rect" id="node5" href="$ConfigEditor_8cpp.html" title="In this file, the implementation of the ConfigEditor class is defined." alt="" coords="399,109,620,165"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,213,227,269"/>
+<map id="src/runner/plexe/ConfigEditor.h" name="src/runner/plexe/ConfigEditor.h">
+<area shape="rect" id="node1" title="In this file, the header of the ConfigEditor class is defined." alt="" coords="239,5,459,32"/>
+<area shape="rect" id="node2" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="77,80,311,121"/>
+<area shape="rect" id="node4" href="$PlexeSimulationRunner_8cpp.html" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="231,169,466,211"/>
+<area shape="rect" id="node5" href="$ConfigEditor_8cpp.html" title="In this file, the implementation of the ConfigEditor class is defined." alt="" coords="386,87,621,114"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,177,207,203"/>
 </map>

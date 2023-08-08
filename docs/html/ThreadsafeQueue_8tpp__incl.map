@@ -1,6 +1,6 @@
-<map id="/home/runner/work/simopticon/simopticon/src/utils/ThreadsafeQueue.tpp" name="/home/runner/work/simopticon/simopticon/src/utils/ThreadsafeQueue.tpp">
-<area shape="rect" id="node1" title="In this file, the implementation of the ThreadSafeQueue class is defined." alt="" coords="5,5,236,61"/>
-<area shape="rect" id="node2" href="$ThreadsafeQueue_8h.html" title="In this file, the header of the ThreadSafeQueue class is defined." alt="" coords="46,109,195,136"/>
-<area shape="rect" id="node3" title=" " alt="" coords="45,184,108,211"/>
-<area shape="rect" id="node4" title=" " alt="" coords="133,184,197,211"/>
+<map id="src/utils/ThreadsafeQueue.tpp" name="src/utils/ThreadsafeQueue.tpp">
+<area shape="rect" id="node1" title="In this file, the implementation of the ThreadSafeQueue class is defined." alt="" coords="5,5,223,32"/>
+<area shape="rect" id="node2" href="$ThreadsafeQueue_8h.html" title="In this file, the header of the ThreadSafeQueue class is defined." alt="" coords="39,80,189,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="39,155,101,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="126,155,190,181"/>
 </map>
