@@ -1,13 +1,13 @@
 <map id="src/utils/Multithreaded.h" name="src/utils/Multithreaded.h">
 <area shape="rect" id="node1" title="In this file, the header of the Multithreaded class is defined." alt="" coords="485,5,665,32"/>
-<area shape="rect" id="node2" href="$SimulationRunner_8h.html" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="466,80,685,107"/>
-<area shape="rect" id="node3" href="$Controller_8h.html" title="In this file, the header of the Controller class is defined." alt="" coords="247,162,434,189"/>
-<area shape="rect" id="node9" href="$PlexeSimulationRunner_8h.html" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="458,155,693,196"/>
-<area shape="rect" id="node11" href="$SimulationRunner_8cpp.html" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="717,162,951,189"/>
-<area shape="rect" id="node4" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="431,333,632,360"/>
-<area shape="rect" id="node5" href="$StubController_8h.html" title="In this file, the header of the StubController class is defined." alt="" coords="253,251,468,278"/>
-<area shape="rect" id="node7" href="$main_8cpp.html" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="5,333,111,360"/>
-<area shape="rect" id="node8" href="$Optimizer_8cpp.html" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="28,251,229,278"/>
-<area shape="rect" id="node6" href="$StubController_8cpp.html" title="In this file, the implementation of the StubController class is defined." alt="" coords="176,333,407,360"/>
-<area shape="rect" id="node10" href="$PlexeSimulationRunner_8cpp.html" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="594,244,829,285"/>
+<area shape="rect" id="node2" href="$SimulationRunner_8h.xhtml" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="466,80,685,107"/>
+<area shape="rect" id="node3" href="$Controller_8h.xhtml" title="In this file, the header of the Controller class is defined." alt="" coords="247,162,434,189"/>
+<area shape="rect" id="node9" href="$PlexeSimulationRunner_8h.xhtml" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="458,155,693,196"/>
+<area shape="rect" id="node11" href="$SimulationRunner_8cpp.xhtml" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="717,162,951,189"/>
+<area shape="rect" id="node4" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="431,333,632,360"/>
+<area shape="rect" id="node5" href="$StubController_8h.xhtml" title="In this file, the header of the StubController class is defined." alt="" coords="253,251,468,278"/>
+<area shape="rect" id="node7" href="$main_8cpp.xhtml" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="5,333,111,360"/>
+<area shape="rect" id="node8" href="$Optimizer_8cpp.xhtml" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="28,251,229,278"/>
+<area shape="rect" id="node6" href="$StubController_8cpp.xhtml" title="In this file, the implementation of the StubController class is defined." alt="" coords="176,333,407,360"/>
+<area shape="rect" id="node10" href="$PlexeSimulationRunner_8cpp.xhtml" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="594,244,829,285"/>
 </map>

@@ -1,11 +1,11 @@
 <map id="src/optimizer/Optimizer.h" name="src/optimizer/Optimizer.h">
 <area shape="rect" id="node1" title="In this file, the header of the Optimizer class is defined." alt="" coords="283,5,470,32"/>
-<area shape="rect" id="node2" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="115,155,198,181"/>
+<area shape="rect" id="node2" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="115,155,198,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="5,229,68,256"/>
 <area shape="rect" id="node5" title=" " alt="" coords="110,229,187,256"/>
-<area shape="rect" id="node6" href="$ParameterDefinition_8h.html" title="In this file, the header of the ParameterDefinition class is defined." alt="" coords="167,80,421,107"/>
-<area shape="rect" id="node7" href="$Status_8h.html" title="In this file, the header of the Status class is defined." alt="" coords="362,155,493,181"/>
-<area shape="rect" id="node8" href="$Abortable_8h.html" title="In this file, the header of the Abortable class is defined." alt="" coords="497,80,638,107"/>
+<area shape="rect" id="node6" href="$ParameterDefinition_8h.xhtml" title="In this file, the header of the ParameterDefinition class is defined." alt="" coords="167,80,421,107"/>
+<area shape="rect" id="node7" href="$Status_8h.xhtml" title="In this file, the header of the Status class is defined." alt="" coords="362,155,493,181"/>
+<area shape="rect" id="node8" href="$Abortable_8h.xhtml" title="In this file, the header of the Abortable class is defined." alt="" coords="497,80,638,107"/>
 <area shape="rect" id="node9" title=" " alt="" coords="662,80,705,107"/>
 <area shape="rect" id="node10" title=" " alt="" coords="729,80,779,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="265,229,323,256"/>

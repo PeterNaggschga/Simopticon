@@ -1,5 +1,5 @@
 <map id="Evaluation" name="Evaluation">
 <area shape="rect" id="node1" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="31,80,121,107"/>
-<area shape="rect" id="node3" href="$classConstantHeadway.html" title="A wrapper for the constant_headway.py script." alt="" coords="5,155,147,181"/>
-<area shape="rect" id="node2" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="45,5,107,32"/>
+<area shape="rect" id="node3" href="$classConstantHeadway.xhtml" title="A wrapper for the constant_headway.py script." alt="" coords="5,155,147,181"/>
+<area shape="rect" id="node2" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="45,5,107,32"/>
 </map>

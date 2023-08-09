@@ -1,7 +1,8 @@
 <map id="PlexeSimulationRunner" name="PlexeSimulationRunner">
-<area shape="rect" id="node1" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="503,115,676,141"/>
-<area shape="rect" id="node2" href="$classSimulationRunner.html" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="300,75,439,101"/>
-<area shape="rect" id="node3" href="$classMultithreaded.html" title=" " alt="" coords="5,5,236,91"/>
-<area shape="rect" id="node4" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="89,115,152,141"/>
-<area shape="rect" id="node5" href="$classMultithreaded.html" title=" " alt="" coords="284,125,455,211"/>
+<area shape="rect" id="node1" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="253,448,426,475"/>
+<area shape="rect" id="node2" href="$classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="217,372,355,399"/>
+<area shape="rect" id="node3" href="$classMultithreaded.xhtml" title=" " alt="" coords="5,153,236,239"/>
+<area shape="rect" id="node4" href="$classMultithreaded.xhtml" title="A class implementing concurrent execution of the same function for different arguments." alt="" coords="167,5,349,47"/>
+<area shape="rect" id="node6" href="$classMultithreaded.xhtml" title=" " alt="" coords="307,263,478,348"/>
+<area shape="rect" id="node5" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="260,183,323,209"/>
 </map>

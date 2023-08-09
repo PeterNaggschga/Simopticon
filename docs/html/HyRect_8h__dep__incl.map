@@ -1,15 +1,15 @@
 <map id="src/optimizer/direct/hyrect/HyRect.h" name="src/optimizer/direct/hyrect/HyRect.h">
 <area shape="rect" id="node1" title="In this file, the header of the HyRect class is defined." alt="" coords="372,5,520,47"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8h.html" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="32,273,180,315"/>
-<area shape="rect" id="node5" href="$DirectComparisonFunctions_8h.html" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="79,95,296,136"/>
-<area shape="rect" id="node7" href="$Levels_8cpp.html" title="In this file, the implementation of the Levels class is defined." alt="" coords="204,273,352,315"/>
-<area shape="rect" id="node8" href="$BaseRect_8h.html" title="In this file, the header of the BaseRect class is defined." alt="" coords="372,95,520,136"/>
-<area shape="rect" id="node10" href="$GrahamScan_8cpp.html" title="In this file, the implementation of the GrahamScan class is defined." alt="" coords="544,95,692,136"/>
-<area shape="rect" id="node11" href="$HyRect_8cpp.html" title="In this file, the implementation of the HyRect class is defined." alt="" coords="656,184,804,225"/>
-<area shape="rect" id="node12" href="$ChildRect_8h.html" title="In this file, the header of the ChildRect class is defined." alt="" coords="768,95,916,136"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.html" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,370,207,397"/>
-<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.html" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="271,363,426,404"/>
-<area shape="rect" id="node6" href="$Levels_8h.html" title="In this file, the header of the Levels class is defined." alt="" coords="144,184,292,225"/>
-<area shape="rect" id="node9" href="$BaseRect_8cpp.html" title="In this file, the implementation of the BaseRect class is defined." alt="" coords="428,184,587,225"/>
-<area shape="rect" id="node13" href="$ChildRect_8cpp.html" title="In this file, the implementation of the ChildRect class is defined." alt="" coords="829,184,989,225"/>
+<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="32,273,180,315"/>
+<area shape="rect" id="node5" href="$DirectComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="79,95,296,136"/>
+<area shape="rect" id="node7" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="204,273,352,315"/>
+<area shape="rect" id="node8" href="$BaseRect_8h.xhtml" title="In this file, the header of the BaseRect class is defined." alt="" coords="372,95,520,136"/>
+<area shape="rect" id="node10" href="$GrahamScan_8cpp.xhtml" title="In this file, the implementation of the GrahamScan class is defined." alt="" coords="544,95,692,136"/>
+<area shape="rect" id="node11" href="$HyRect_8cpp.xhtml" title="In this file, the implementation of the HyRect class is defined." alt="" coords="656,184,804,225"/>
+<area shape="rect" id="node12" href="$ChildRect_8h.xhtml" title="In this file, the header of the ChildRect class is defined." alt="" coords="768,95,916,136"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,370,207,397"/>
+<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="271,363,426,404"/>
+<area shape="rect" id="node6" href="$Levels_8h.xhtml" title="In this file, the header of the Levels class is defined." alt="" coords="144,184,292,225"/>
+<area shape="rect" id="node9" href="$BaseRect_8cpp.xhtml" title="In this file, the implementation of the BaseRect class is defined." alt="" coords="428,184,587,225"/>
+<area shape="rect" id="node13" href="$ChildRect_8cpp.xhtml" title="In this file, the implementation of the ChildRect class is defined." alt="" coords="829,184,989,225"/>
 </map>

@@ -24,43 +24,43 @@
 */
 var NAVTREE =
 [
-  [ "Simopticon", "index.html", [
-    [ "Documentation", "index.html", [
-      [ "Overview", "index.html#autotoc_md3", null ],
-      [ "Setup", "index.html#autotoc_md5", [
-        [ "Requirements", "index.html#autotoc_md6", null ],
-        [ "Installation", "index.html#autotoc_md7", null ]
+  [ "Simopticon", "index.xhtml", [
+    [ "Documentation", "index.xhtml", [
+      [ "Overview", "index.xhtml#autotoc_md3", null ],
+      [ "Setup", "index.xhtml#autotoc_md5", [
+        [ "Requirements", "index.xhtml#autotoc_md6", null ],
+        [ "Installation", "index.xhtml#autotoc_md7", null ]
       ] ],
-      [ "Usage", "index.html#autotoc_md9", [
-        [ "Configuration", "index.html#autotoc_md10", null ],
-        [ "Optimization", "index.html#autotoc_md11", null ]
+      [ "Usage", "index.xhtml#autotoc_md9", [
+        [ "Configuration", "index.xhtml#autotoc_md10", null ],
+        [ "Optimization", "index.xhtml#autotoc_md11", null ]
       ] ],
-      [ "Extension", "index.html#autotoc_md13", [
-        [ "Development", "index.html#autotoc_md14", null ],
-        [ "Integration", "index.html#autotoc_md15", null ]
+      [ "Extension", "index.xhtml#autotoc_md13", [
+        [ "Development", "index.xhtml#autotoc_md14", null ],
+        [ "Integration", "index.xhtml#autotoc_md15", null ]
       ] ]
     ] ],
-    [ "Todo List", "todo.html", null ],
-    [ "Bug List", "bug.html", null ],
-    [ "Modules", "modules.html", "modules" ],
-    [ "Classes", "annotated.html", [
-      [ "Class List", "annotated.html", "annotated_dup" ],
-      [ "Class Index", "classes.html", null ],
-      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
-      [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+    [ "Todo List", "todo.xhtml", null ],
+    [ "Bug List", "bug.xhtml", null ],
+    [ "Modules", "modules.xhtml", "modules" ],
+    [ "Classes", "annotated.xhtml", [
+      [ "Class List", "annotated.xhtml", "annotated_dup" ],
+      [ "Class Index", "classes.xhtml", null ],
+      [ "Class Hierarchy", "hierarchy.xhtml", "hierarchy" ],
+      [ "Class Members", "functions.xhtml", [
+        [ "All", "functions.xhtml", "functions_dup" ],
+        [ "Functions", "functions_func.xhtml", null ],
+        [ "Variables", "functions_vars.xhtml", null ]
       ] ]
     ] ],
-    [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ],
-      [ "File Members", "globals.html", [
-        [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ]
+    [ "Files", "files.xhtml", [
+      [ "File List", "files.xhtml", "files_dup" ],
+      [ "File Members", "globals.xhtml", [
+        [ "All", "globals.xhtml", null ],
+        [ "Functions", "globals_func.xhtml", null ],
+        [ "Variables", "globals_vars.xhtml", null ],
+        [ "Typedefs", "globals_type.xhtml", null ],
+        [ "Enumerations", "globals_enum.xhtml", null ]
       ] ]
     ] ]
   ] ]
@@ -68,9 +68,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Abortable_8cpp.html",
-"classHyRect.html#aa04990af9102dad46d5d29a8c62773cd",
-"group__status.html#gaa607b08567c9a77d9cfc9f4137d6dea2"
+"Abortable_8cpp.xhtml",
+"classHyRect.xhtml#aa04990af9102dad46d5d29a8c62773cd",
+"group__status.xhtml#gaa607b08567c9a77d9cfc9f4137d6dea2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

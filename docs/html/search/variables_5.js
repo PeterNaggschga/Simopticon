@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['f_541',['f',['../classStubController.html#ae8dc50daa73bd5fd7d7c6b43dc3c410c',1,'StubController']]],
-  ['functions_542',['functions',['../classStubController.html#a77ca1e17171d26144c0c5b639e4e7b67',1,'StubController']]]
+  ['f_541',['f',['../classStubController.xhtml#ae8dc50daa73bd5fd7d7c6b43dc3c410c',1,'StubController']]],
+  ['functions_542',['functions',['../classStubController.xhtml#a77ca1e17171d26144c0c5b639e4e7b67',1,'StubController']]]
 ];

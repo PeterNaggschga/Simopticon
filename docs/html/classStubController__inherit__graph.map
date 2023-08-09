@@ -1,5 +1,5 @@
 <map id="StubController" name="StubController">
 <area shape="rect" id="node1" title="A class that mocks behaviour of Controller." alt="" coords="5,155,120,181"/>
-<area shape="rect" id="node2" href="$classController.html" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="19,80,106,107"/>
-<area shape="rect" id="node3" href="$classAbortable.html" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="20,5,105,32"/>
+<area shape="rect" id="node2" href="$classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="19,80,106,107"/>
+<area shape="rect" id="node3" href="$classAbortable.xhtml" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="20,5,105,32"/>
 </map>

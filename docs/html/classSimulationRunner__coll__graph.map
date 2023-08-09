@@ -1,5 +1,6 @@
 <map id="SimulationRunner" name="SimulationRunner">
-<area shape="rect" id="node1" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="284,75,423,101"/>
-<area shape="rect" id="node2" href="$classMultithreaded.html" title=" " alt="" coords="5,5,236,91"/>
-<area shape="rect" id="node3" href="$classStatus.html" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="89,115,152,141"/>
+<area shape="rect" id="node1" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="179,288,318,315"/>
+<area shape="rect" id="node2" href="$classMultithreaded.xhtml" title=" " alt="" coords="5,153,236,239"/>
+<area shape="rect" id="node3" href="$classMultithreaded.xhtml" title="A class implementing concurrent execution of the same function for different arguments." alt="" coords="29,5,212,47"/>
+<area shape="rect" id="node4" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="260,183,323,209"/>
 </map>

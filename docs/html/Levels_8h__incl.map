@@ -1,13 +1,13 @@
 <map id="src/optimizer/direct/Levels.h" name="src/optimizer/direct/Levels.h">
 <area shape="rect" id="node1" title="In this file, the header of the Levels class is defined." alt="" coords="530,5,678,47"/>
-<area shape="rect" id="node2" href="$DirectComparisonFunctions_8h.html" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="305,95,519,121"/>
+<area shape="rect" id="node2" href="$DirectComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="305,95,519,121"/>
 <area shape="rect" id="node7" title=" " alt="" coords="5,319,83,345"/>
-<area shape="rect" id="node8" href="$DirectTypes_8h.html" title="In this file, types are defined which are used in the direct module." alt="" coords="529,244,652,271"/>
+<area shape="rect" id="node8" href="$DirectTypes_8h.xhtml" title="In this file, types are defined which are used in the direct module." alt="" coords="529,244,652,271"/>
 <area shape="rect" id="node12" title=" " alt="" coords="676,244,719,271"/>
 <area shape="rect" id="node13" title=" " alt="" coords="667,95,717,121"/>
 <area shape="rect" id="node14" title=" " alt="" coords="741,95,784,121"/>
-<area shape="rect" id="node3" href="$HyRect_8h.html" title="In this file, the header of the HyRect class is defined." alt="" coords="338,169,465,196"/>
-<area shape="rect" id="node4" href="$Types_8h.html" title="In this file, types are defined which should be used across the whole framework." alt="" coords="348,244,455,271"/>
+<area shape="rect" id="node3" href="$HyRect_8h.xhtml" title="In this file, the header of the HyRect class is defined." alt="" coords="338,169,465,196"/>
+<area shape="rect" id="node4" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="348,244,455,271"/>
 <area shape="rect" id="node6" title=" " alt="" coords="458,319,521,345"/>
 <area shape="rect" id="node9" title=" " alt="" coords="81,244,156,271"/>
 <area shape="rect" id="node10" title=" " alt="" coords="180,244,236,271"/>

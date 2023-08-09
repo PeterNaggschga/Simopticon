@@ -1,0 +1,3 @@
+<map id="ThreadsafeQueue&lt; Key &gt;" name="ThreadsafeQueue&lt; Key &gt;">
+<area shape="rect" id="node1" title="A container class of a queue that is safe for concurrent access of different threads." alt="" coords="5,5,196,32"/>
+</map>

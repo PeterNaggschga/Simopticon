@@ -1,5 +1,5 @@
 <map id="direct" name="direct">
-<area shape="rect" id="node1" href="$group__optimizer.html" title="This module contains components capable of finding the minimum of a function only defined through arg..." alt="" coords="5,5,89,31"/>
+<area shape="rect" id="node1" href="$group__optimizer.xhtml" title="This module contains components capable of finding the minimum of a function only defined through arg..." alt="" coords="5,5,89,31"/>
 <area shape="rect" id="node2" title="This module extends Optimizer to use a variant of the DIRECT algorithm by Jones et al." alt="" coords="137,5,196,31"/>
-<area shape="rect" id="node3" href="$group__hyrect.html" title="This module contains the definition of a tree&#45;like data structure representing the partition of a sea..." alt="" coords="244,5,307,31"/>
+<area shape="rect" id="node3" href="$group__hyrect.xhtml" title="This module contains the definition of a tree&#45;like data structure representing the partition of a sea..." alt="" coords="244,5,307,31"/>
 </map>
