@@ -24,9 +24,11 @@ std::unique_ptr<Controller> ctr;
 /**
  * Handler routine for SIGINT signal which calls Controller#abort and sets the new handler of SIGINT to the default (instant interrupt of the software).
  * @param s: Necessary parameter for interrupt handlers (unused).
- * @todo Make interrupt handling independent from OS - currently only Systems using POSIX signals are supported.
  */
 void interruptHandler([[maybe_unused]] int s) {
+    /**
+     * @todo Make interrupt handling independent from OS - currently only Systems using POSIX signals are supported.
+     */
     signal(SIGINT, SIG_DFL);
     ctr->abort();
 }
