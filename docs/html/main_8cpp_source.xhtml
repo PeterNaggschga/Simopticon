@@ -113,40 +113,42 @@ $(document).ready(function(){initNavTree('main_8cpp_source.xhtml',''); initResiz
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * Handler routine for SIGINT signal which calls Controller#abort and sets the new handler of SIGINT to the default (instant interrupt of the software).</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @param s: Necessary parameter for interrupt handlers (unused).</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> * @todo Make interrupt handling independent from OS - currently only Systems using POSIX signals are supported.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.xhtml#a6165098e568a4d12627b33ad880d0961">interruptHandler</a>([[<a class="code" href="main_8cpp.xhtml#a6165098e568a4d12627b33ad880d0961">maybe_unused</a>]] <span class="keywordtype">int</span> s) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    signal(SIGINT, SIG_DFL);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a>-&gt;<a class="code" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">abort</a><a class="code" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">(</a><a class="code" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">)</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * Checks correct command line input and registers interrupt handler for SIGINT signal.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * Instantiates Controller or StubController and kicks of the optimization using Controller#run.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * @param argc: Number of command line arguments.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * @param argv: Array of command line arguments.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * @return %Status code.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.xhtml#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (argc &lt; 2) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;You need to specify a path to the config.json file as argument!&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (argc == 2) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a> = std::make_unique&lt;<a class="code" href="classController.xhtml">Controller</a>&gt;(argv[1]);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a> = std::make_unique&lt;<a class="code" href="classStubController.xhtml">StubController</a>&gt;(argv[1], argv[2]);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">struct</span> sigaction intHandler{};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    intHandler.sa_handler = <a class="code" href="main_8cpp.xhtml#a6165098e568a4d12627b33ad880d0961">interruptHandler</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    sigemptyset(&amp;intHandler.sa_mask);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    intHandler.sa_flags = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    sigaction(SIGINT, &amp;intHandler, <span class="keywordtype">nullptr</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a>-&gt;<a class="code" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">run</a><a class="code" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">(</a><a class="code" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">)</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> <a class="code" href="main_8cpp.xhtml#a6165098e568a4d12627b33ad880d0961">interruptHandler</a>([[<a class="code" href="main_8cpp.xhtml#a6165098e568a4d12627b33ad880d0961">maybe_unused</a>]] <span class="keywordtype">int</span> s) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * @todo Make interrupt handling independent from OS - currently only Systems using POSIX signals are supported.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    signal(SIGINT, SIG_DFL);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a>-&gt;<a class="code" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">abort</a><a class="code" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">(</a><a class="code" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">)</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * Checks correct command line input and registers interrupt handler for SIGINT signal.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * Instantiates Controller or StubController and kicks of the optimization using Controller#run.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * @param argc: Number of command line arguments.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * @param argv: Array of command line arguments.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * @return %Status code.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">int</span> <a class="code" href="main_8cpp.xhtml#a3c04138a5bfe5d72780bb7e82a18e627">main</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (argc &lt; 2) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;You need to specify a path to the config.json file as argument!&quot;</span>);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (argc == 2) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a> = std::make_unique&lt;<a class="code" href="classController.xhtml">Controller</a>&gt;(argv[1]);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a> = std::make_unique&lt;<a class="code" href="classStubController.xhtml">StubController</a>&gt;(argv[1], argv[2]);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">struct</span> sigaction intHandler{};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    intHandler.sa_handler = <a class="code" href="main_8cpp.xhtml#a6165098e568a4d12627b33ad880d0961">interruptHandler</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    sigemptyset(&amp;intHandler.sa_mask);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    intHandler.sa_flags = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    sigaction(SIGINT, &amp;intHandler, <span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="main_8cpp.xhtml#a14f881284487bbc3cb82e5d7e4b1b62e">ctr</a>-&gt;<a class="code" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">run</a><a class="code" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">(</a><a class="code" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">)</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
