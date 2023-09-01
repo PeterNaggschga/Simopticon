@@ -25,8 +25,8 @@
  * @param config: Name of the json file.
  * @return A json object parsed from the given file.
  */
-nlohmann::json getConfigByPath(std::filesystem::path baseDir, const std::string &config) {
-    std::filesystem::path configPath = std::move(baseDir);
+nlohmann::json getConfigByPath(const std::filesystem::path &baseDir, const std::string &config) {
+    std::filesystem::path configPath = baseDir;
     configPath.append(config);
     std::ifstream configStream(configPath);
     nlohmann::json result = nlohmann::json::parse(configStream, nullptr, true, true);
@@ -119,7 +119,7 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
         std::filesystem::path scriptPath(evalConfig.at("pythonScript").get<std::string>());
         evaluation = std::unique_ptr<Evaluation>(new ConstantHeadway(nrThreads, scriptPath));
     } else {
-        throw std::runtime_error("SimulationRunner not found: " + run);
+        throw std::runtime_error("Evaluation not found: " + eval);
     }
 
     std::cout << "done\n" << std::endl;
