@@ -39,9 +39,8 @@ using the [Plexe](https://plexe.car2x.org/) framework.
 The full API documentation may be found
 on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/simopticon/)
 or in the comprehensive [PDF file](https://peternaggschga.github.io/simopticon/documentation.pdf) provided.
-A more in-depth explanation of *Simopticon* and its design principles may be found in the [**german
-** bachelor's thesis](https://peternaggschga.github.io/simopticon/thesis.pdf)
-that proposed the framework.
+A more in-depth explanation of *Simopticon* and its design principles may be found in the 
+[**german** bachelor's thesis](https://peternaggschga.github.io/simopticon/thesis.pdf) that proposed the framework.
 
 ---
 
