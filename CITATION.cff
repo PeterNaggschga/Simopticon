@@ -1,0 +1,82 @@
+cff-version: 1.2.0
+title: Simopticon
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Per
+    family-names: Natzschka
+    email: per.natzschka1@mailbox.tu-dresden.de
+    affiliation: TUD Dresden University of Technology
+repository-code: 'https://github.com/PeterNaggschga/simopticon'
+url: 'https://peternaggschga.github.io/simopticon/'
+abstract: >-
+  Simopticon is a framework which automates the search for
+  optimal parameters for simulated processes. The key
+  strategy is to define parameters that shall be optimized,
+  automatically run simulations with certain parameters,
+  evaluate their performance by calculating a number rating
+  (the lower, the better) and trying to find parameter
+  combinations that minimize the rating. The framework can
+  be used for optimization of platoon controllers using
+  Plexe and the DIRECT optimization method. It may be
+  extended for other optimization problems and strategies.
+keywords:
+  - simulation
+  - optimization
+  - direct-algorithm
+  - platooning
+license: MIT
+version: 1.0
+date-released: '2023-08-08'
+preferred-citation:	
+ type: thesis
+ title: Simulationsbasierte Parameteroptimierung für Platoon-Regler
+ authors:
+  - given-names: Per
+    family-names: Natzschka
+    email: per.natzschka1@mailbox.tu-dresden.de
+    affiliation: TUD Dresden University of Technology
+ url: 'https://www.zotero.org/penatz'
+ date-released: '2023-08-08'
+ languages: 
+  - de
+ abstract: >-
+  Platooning is a form of cooperative driving that can
+  greatly decrease air drag, fuel consumption, and air
+  pollution due to small gaps between vehicles. Many
+  different controllers which control vehicle speed in order
+  to ensure string stability have been proposed. A
+  comparison of those controllers has not yet been done –
+  not least because the performance of most controllers
+  depends heavily on multiple parameters for which no
+  optimal allocation is known. To analyze the impact of
+  different parameters and maybe find an optimal allocation,
+  simulation can be used. In this thesis the modular
+  Simopticon framework, which automates the task of
+  simulation optimization, is proposed. Simopticon is then
+  used to optimize the parameters of the platoon controller
+  proposed by Swaroop et al. in 1994. To achieve this, a new
+  derivative of the DIRECT algorithm is proposed as
+  optimization strategy and shown to perform better than the
+  original algorithm for problems of low dimensionality.
+  Moreover an interface to the Platooning Extension for
+  Veins (Plexe) is implemented in Simopticon to automate the
+  process of running and evaluating multiple platooning
+  simulations in parallel in the course of an optimization.
+  The framework is shown to be effective for the task of
+  simulation optimization for platoon controllers.
+references:
+  authors:
+    - family-names: Lohmann
+      given-names: Niels
+      orcid: https://orcid.org/0000-0001-9037-795X
+      email: mail@nlohmann.me
+      website: https://nlohmann.me
+  title: "JSON for Modern C++"
+  version: 3.11.2
+  date-released: '2022-08-12'
+  license: MIT
+  repository-code: "https://github.com/nlohmann"
+  url: https://json.nlohmann.me
