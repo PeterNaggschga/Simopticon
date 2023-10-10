@@ -128,304 +128,306 @@ $(document).ready(function(){initNavTree('README_8md.xhtml',''); initResizable()
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;The full API documentation may be found</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/simopticon/)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;or in the comprehensive [PDF file](https://peternaggschga.github.io/simopticon/documentation.pdf) provided.</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;---</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;A more in-depth explanation of *Simopticon* and its design principles may be found in the </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;[**german** bachelor&#39;s thesis](https://peternaggschga.github.io/simopticon/thesis.pdf) that proposed the framework.</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;## Setup</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;---</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;### Requirements</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;## Setup</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;The following sections describe the requirements your machine has to fulfill to run *Simopticon*.</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;They may differ depending on the Optimizer, SimulationRunner and Evaluation implementations you plan to use, therefore,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;the implementations have their own dependency sections.</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;#### Simopticon</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;### Requirements</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;The following sections describe the requirements your machine has to fulfill to run *Simopticon*.</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;They may differ depending on the Optimizer, SimulationRunner and Evaluation implementations you plan to use, therefore,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;the implementations have their own dependency sections.</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;The framework itself is developed for Debian-based Unix/Linux machines. Other operating systems might work but are not</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;actively supported.</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;To be able to install the framework, you need the following software:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;- Git (see [Git](#git))</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;- CMake Version 3.25 or higher (see [CMake](#cmake))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;- Python3 development tools (see [Python3 Development Tools](#python3-development-tools))</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;#### PlexeSimulationRunner</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;#### Simopticon</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;The framework itself is developed for Debian-based Unix/Linux machines. Other operating systems might work but are not</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;actively supported.</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;To be able to install the framework, you need the following software:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;- Git (see [Git](#git))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;- CMake Version 3.25 or higher (see [CMake](#cmake))</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;- Python3 development tools (see [Python3 Development Tools](#python3-development-tools))</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;To enable simulations with Plexe, Version 3.1 of the framework must be installed.</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;Refer to the [Plexe install guide](https://plexe.car2x.org/building/) for more information.</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;Please mind that you might want to install OMNeT++ Version 6 or higher in order to use</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;the [ConstantHeadway](#constantheadway) Evaluation, even though the installation guide might suggest an older version.</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;#### ConstantHeadway</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;#### PlexeSimulationRunner</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;To enable simulations with Plexe, Version 3.1 of the framework must be installed.</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;Refer to the [Plexe install guide](https://plexe.car2x.org/building/) for more information.</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;Please mind that you might want to install OMNeT++ Version 6 or higher in order to use</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;the [ConstantHeadway](#constantheadway) Evaluation, even though the installation guide might suggest an older version.</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;To use the ConstantHeadway Evaluation, OMNeT++ Version 6 or higher is needed.</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;Please refer to the [OMNeT++ Install Guide](https://doc.omnetpp.org/omnetpp/InstallGuide.pdf) for more information on</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;the requirements.</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;### Installation</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;#### ConstantHeadway</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;To use the ConstantHeadway Evaluation, OMNeT++ Version 6 or higher is needed.</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;Please refer to the [OMNeT++ Install Guide](https://doc.omnetpp.org/omnetpp/InstallGuide.pdf) for more information on</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;the requirements.</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;#### Prerequisites</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;### Installation</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;##### Git</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;#### Prerequisites</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;Check whether Git is installed on your machine and install it if necessary using:</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;##### Git</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;``` </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;sudo apt install git</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; ```</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;##### CMake</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;Check whether Git is installed on your machine and install it if necessary using:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;``` </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;sudo apt install git</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; ```</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;CMake Version 3.25 or higher is needed for building *Simopticon*.</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;If you don&#39;t have CMake installed, follow the guide below.</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;If you have an older version installed, you must first remove it.</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;First, make sure to install g++ and OpenSSL Development tools.</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;##### CMake</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;CMake Version 3.25 or higher is needed for building *Simopticon*.</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;If you don&#39;t have CMake installed, follow the guide below.</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;If you have an older version installed, you must first remove it.</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;```</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;sudo apt install g++ libssl-dev</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;First, make sure to install g++ and OpenSSL Development tools.</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;```</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;Then you need to download the latest version of CMake from their [download page](https://cmake.org/download/) — search</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;for the source distribution tar package.</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;Unpack the downloaded package using:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;```</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;tar xf cmake-[version number].tar.gz</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;sudo apt install g++ libssl-dev</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;```</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;Then you need to download the latest version of CMake from their [download page](https://cmake.org/download/) — search</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;for the source distribution tar package.</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;Unpack the downloaded package using:</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;```</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;Open the newly created directory and run the configuration script with:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;tar xf cmake-[version number].tar.gz</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;```</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;```</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;cd cmake-[version number] &amp;&amp; ./configure</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;Open the newly created directory and run the configuration script with:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;```</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;When the configuration has completed successfully, you are ready to build and install using:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;cd cmake-[version number] &amp;&amp; ./configure</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;```</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;```</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;make -j $(nproc)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;sudo make install</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;```</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;You may remove the downloaded tar file and extracted directory if needed.</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;When the configuration has completed successfully, you are ready to build and install using:</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;```</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;make -j $(nproc)</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;sudo make install</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;```</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;##### Python3 Development Tools</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;You may remove the downloaded tar file and extracted directory if needed.</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;Check whether Python3 development tools are installed on your machine and install them if necessary using:</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;##### Python3 Development Tools</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;```</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;sudo apt install python3-dev</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;Check whether Python3 development tools are installed on your machine and install them if necessary using:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;```</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;#### Simopticon</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;sudo apt install python3-dev</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;```</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;Go to the directory you want to install *Simopticon* in, e.g. `~/src`.</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;To get the source code, clone the git repository using:</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;```</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;git clone https://github.com/PeterNaggschga/simopticon.git</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;#### Simopticon</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;Go to the directory you want to install *Simopticon* in, e.g. `~/src`.</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;To get the source code, clone the git repository using:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;```</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;Create a build directory in the downloaded files with:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;git clone https://github.com/PeterNaggschga/simopticon.git</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;```</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;```</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;mkdir simopticon/build</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;cd simopticon/build</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;```</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;Build *Simopticon* by calling:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;Create a build directory in the downloaded files with:</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;```</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;mkdir simopticon/build</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;cd simopticon/build</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;```</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;```</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;cmake ..</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;make -j  $(nproc)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;```</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;The resulting executable `simopticon` may be copied to other locations or referenced via symlinks for more convenient</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;access.</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;The same applies to the `config` directory in `~/src/simopticon` which is used to configure the optimization process</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;(see [Usage](#usage)).</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;---</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;Build *Simopticon* by calling:</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;```</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;cmake ..</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;make -j  $(nproc)</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;```</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;The resulting executable `simopticon` may be copied to other locations or referenced via symlinks for more convenient</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;access.</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;The same applies to the `config` directory in `~/src/simopticon` which is used to configure the optimization process</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;(see [Usage](#usage)).</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;## Usage</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;---</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;### Configuration</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;## Usage</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;The optimization process and its components are configured using several JSON files.</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;Default examples of such files can be found in the `config` directory.</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;Be aware, however,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;that the default files in `config` must be edited before use,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;since some file paths must be set which depend on your filesystem.</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;The options in the JSON files are commented and therefore self-explanatory.</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;The following sections only show options that must be changed to successfully run optimizations.</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;#### Main Configuration</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;### Configuration</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;The optimization process and its components are configured using several JSON files.</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;Default examples of such files can be found in the `config` directory.</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;Be aware, however,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;that the default files in `config` must be edited before use,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;since some file paths must be set which depend on your filesystem.</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;The options in the JSON files are commented and therefore self-explanatory.</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;The following sections only show options that must be changed to successfully run optimizations.</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;The main configuration can be found in `config/simopticon.json`.</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;It contains settings of the Controller and selects the other components.</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;In the `controller` settings,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;the key `params` must be set</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;to reference another JSON file containing an array of ParameterDefinition that are to be optimized.</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;The main configuration selects which Optimizer, SimulationRunner and Evaluation implementations are to be used.</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;For each of those components, a name of the implementation and a reference to a JSON file configuring it must be given.</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;References are used</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;because different implementations of the same component may vastly differ in their configurable options,</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;and switching the used components gets easier this way.</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;#### PlexeSimulationRunner</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;#### Main Configuration</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;The main configuration can be found in `config/simopticon.json`.</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;It contains settings of the Controller and selects the other components.</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;In the `controller` settings,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;the key `params` must be set</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;to reference another JSON file containing an array of ParameterDefinition that are to be optimized.</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;The main configuration selects which Optimizer, SimulationRunner and Evaluation implementations are to be used.</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;For each of those components, a name of the implementation and a reference to a JSON file configuring it must be given.</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;References are used</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;because different implementations of the same component may vastly differ in their configurable options,</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;and switching the used components gets easier this way.</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;If you want to use PlexeSimulationRunner, you need to configure `config/runners/plexe.json`.</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;There you have to set the `configDirectory` key to match the path to the directory containing your Plexe configuration</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;(`omnetpp.ini`).</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;For default installations</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;that should be something along the lines of `[installation-directory]/plexe/examples/platooning`.</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;#### ConstantHeadway</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;#### PlexeSimulationRunner</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;If you want to use PlexeSimulationRunner, you need to configure `config/runners/plexe.json`.</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;There you have to set the `configDirectory` key to match the path to the directory containing your Plexe configuration</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;(`omnetpp.ini`).</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;For default installations</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;that should be something along the lines of `[installation-directory]/plexe/examples/platooning`.</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;If you want to use ConstantHeadway evaluation, you need to configure `config/evaluations/constant_headway.json`.</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;There you have to set the `pythonScript` and the `omnetppDirectory` keys.</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;`pythonScript` must point to the script `constant_headway.py` which can be found in `src/evaluation/constant_headway`.</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;`omnetppDirectory` must point to the directory where OMNeT++ Version 6 or higher is installed,</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;e.g. `~/src/omnetpp-6.0.1`.</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;### Optimization</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;#### ConstantHeadway</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;If you want to use ConstantHeadway evaluation, you need to configure `config/evaluations/constant_headway.json`.</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;There you have to set the `pythonScript` and the `omnetppDirectory` keys.</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;`pythonScript` must point to the script `constant_headway.py` which can be found in `src/evaluation/constant_headway`.</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;`omnetppDirectory` must point to the directory where OMNeT++ Version 6 or higher is installed,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;e.g. `~/src/omnetpp-6.0.1`.</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;The optimization is invoked on the command line by executing the program built in [Setup](#setup).</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;The call on the command line has one mandatory and one optional argument.</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;The First argument must be the path to the main config, i.e. `config/simopticon.json`.</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;A valid call to an optimization could be:</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;```</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;./simopticon ../config/simopticon.json</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;### Optimization</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;The optimization is invoked on the command line by executing the program built in [Setup](#setup).</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;The call on the command line has one mandatory and one optional argument.</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;The First argument must be the path to the main config, i.e. `config/simopticon.json`.</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;A valid call to an optimization could be:</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;```</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;If a second argument is given,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;instead of running actual simulations with the configured SimulationRunner</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;and evaluating their results with an Evaluation, the StubController is used.</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;StubController can be used</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;to implement and optimize benchmark functions</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;to test Optimizer implementations without relying on actual costly simulations.</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;The second argument holds the name of the function to be optimized, i.e., one of the following:</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;- quadratic (squares all Parameter values and adds them up)</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;- [branin](https://www.sfu.ca/~ssurjano/branin.html)</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;- [goldprice](https://www.sfu.ca/~ssurjano/goldpr.html)</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;- [camel6](https://www.sfu.ca/~ssurjano/camel6.html)</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;- [shubert](https://www.sfu.ca/~ssurjano/shubert.html)</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;- [hartman3](https://www.sfu.ca/~ssurjano/hart3.html)</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;- [shekel5](https://www.sfu.ca/~ssurjano/shekel.html)</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;- [shekel7](https://www.sfu.ca/~ssurjano/shekel.html)</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;- [shekel10](https://www.sfu.ca/~ssurjano/shekel.html)</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;- [hartman6](https://www.sfu.ca/~ssurjano/hart6.html)</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;A valid call to the optimization of a benchmark function could be:</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;./simopticon ../config/simopticon.json</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;```</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;If a second argument is given,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;instead of running actual simulations with the configured SimulationRunner</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;and evaluating their results with an Evaluation, the StubController is used.</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;StubController can be used</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;to implement and optimize benchmark functions</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;to test Optimizer implementations without relying on actual costly simulations.</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;The second argument holds the name of the function to be optimized, i.e., one of the following:</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;- quadratic (squares all Parameter values and adds them up)</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;- [branin](https://www.sfu.ca/~ssurjano/branin.html)</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;- [goldprice](https://www.sfu.ca/~ssurjano/goldpr.html)</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;- [camel6](https://www.sfu.ca/~ssurjano/camel6.html)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;- [shubert](https://www.sfu.ca/~ssurjano/shubert.html)</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;- [hartman3](https://www.sfu.ca/~ssurjano/hart3.html)</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;- [shekel5](https://www.sfu.ca/~ssurjano/shekel.html)</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;- [shekel7](https://www.sfu.ca/~ssurjano/shekel.html)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;- [shekel10](https://www.sfu.ca/~ssurjano/shekel.html)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;- [hartman6](https://www.sfu.ca/~ssurjano/hart6.html)</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;```</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;./simopticon ../config/simopticon.json branin</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;A valid call to the optimization of a benchmark function could be:</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;```</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;Please note</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;that you need to define the optimized parameters in `config/simopticon.json` even when you are optimizing a benchmark.</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;---</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;./simopticon ../config/simopticon.json branin</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;```</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;Please note</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;that you need to define the optimized parameters in `config/simopticon.json` even when you are optimizing a benchmark.</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;## Extension</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;---</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;This section goes through the steps you need to undertake to extend the framework with new Optimizer,</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;SimulationRunner or Evaluation implementations.</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;### Development</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;## Extension</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;This section goes through the steps you need to undertake to extend the framework with new Optimizer,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;SimulationRunner or Evaluation implementations.</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;When developing new implementations of components,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;please stick to the project structure — Optimizer extensions go into `src/optimizer`,</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;SimulationRunner extensions go into `src/runner` and Evaluation extensions go into `src/evaluation`.</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;If your implementation needs a more sophisticated implementation of the Parameter class than the ones provided</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;in `src/parameters`,</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;feel free to extend the abstract Parameter class.</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160; </div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;Please document your code using [Doxygen](https://www.doxygen.nl/) comments!</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;### Development</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;When developing new implementations of components,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;please stick to the project structure — Optimizer extensions go into `src/optimizer`,</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;SimulationRunner extensions go into `src/runner` and Evaluation extensions go into `src/evaluation`.</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;If your implementation needs a more sophisticated implementation of the Parameter class than the ones provided</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;in `src/parameters`,</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;feel free to extend the abstract Parameter class.</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;The `src/Types.h` header file defines framework-wide types such as `functionValue` for values</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;returned by the Evaluation component or `coordinate` which is used to store Parameter values.</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;The `src/ComparisonFunctions.h` header file defines comparison functions,</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;which can be used in STL containers that are ordered.</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;E.g. `CmpVectorSharedParameter` can be used to compare two objects of type `vector&lt;shared_ptr&lt;Parameter&gt;&gt;`.</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;#### Optimization Strategies</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;Please document your code using [Doxygen](https://www.doxygen.nl/) comments!</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;The `src/Types.h` header file defines framework-wide types such as `functionValue` for values</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;returned by the Evaluation component or `coordinate` which is used to store Parameter values.</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;The `src/ComparisonFunctions.h` header file defines comparison functions,</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;which can be used in STL containers that are ordered.</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;E.g. `CmpVectorSharedParameter` can be used to compare two objects of type `vector&lt;shared_ptr&lt;Parameter&gt;&gt;`.</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;To add a new optimization strategy, you have to extend the Optimizer class.</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;You need</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;to override the Optimizer#runOptimization method which should start the optimization process</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;and only return</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;when your strategy is finished or if the Optimizer#abort method is called which you should implement too.</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;Optimizer extensions can instruct the Controller to start simulations</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;and evaluate them with the Optimizer#requestValues method.</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;Please try</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;to commission as many Parameters as possible in one call of the method</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;so the other components may parallelize calculations.</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;#### Optimization Strategies</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;To add a new optimization strategy, you have to extend the Optimizer class.</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;You need</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;to override the Optimizer#runOptimization method which should start the optimization process</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;and only return</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;when your strategy is finished or if the Optimizer#abort method is called which you should implement too.</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;Optimizer extensions can instruct the Controller to start simulations</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;and evaluate them with the Optimizer#requestValues method.</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;Please try</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;to commission as many Parameters as possible in one call of the method</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;so the other components may parallelize calculations.</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;#### Simulation Execution</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;To add a new way of executing simulations, you have to extend the SimulationRunner class.</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;You need</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;to override the SimulationRunner#work function, which is run concurrently for all Parameter vectors</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;provided to SimulationRunner#runSimulations.</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;If you want to prohibit concurrent execution, you may override SimulationRunner#runSimulations instead</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;(in that case, SimulationRunner#work should return an empty pair).</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;See documentation of Multithreaded class for more information on that.</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160; </div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;SimulationRunner#work should run a simulation with the given parameters</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;and return a path to the result files and a set of identifiers relating to simulation runs.</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;The interface for the identifiers is very loosely defined —</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;if your Evaluation does not need any identifiers of simulation runs, you may return an empty set.</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;Please be aware that the Controller might try to delete the path you return after some time,</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;so that should not be an empty path!</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;Other than that,</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;it is not further standardized</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;what must be returned as a path and identifiers as long</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;as your Evaluation component can evaluate the simulation based on the returned information.</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;#### Simulation Execution</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;To add a new way of executing simulations, you have to extend the SimulationRunner class.</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;You need</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;to override the SimulationRunner#work function, which is run concurrently for all Parameter vectors</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;provided to SimulationRunner#runSimulations.</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;If you want to prohibit concurrent execution, you may override SimulationRunner#runSimulations instead</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;(in that case, SimulationRunner#work should return an empty pair).</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;See documentation of Multithreaded class for more information on that.</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;SimulationRunner#work should run a simulation with the given parameters</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;and return a path to the result files and a set of identifiers relating to simulation runs.</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;The interface for the identifiers is very loosely defined —</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;if your Evaluation does not need any identifiers of simulation runs, you may return an empty set.</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;Please be aware that the Controller might try to delete the path you return after some time,</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;so that should not be an empty path!</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;Other than that,</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;it is not further standardized</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;what must be returned as a path and identifiers as long</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;as your Evaluation component can evaluate the simulation based on the returned information.</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;#### Simulation Evaluation</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160; </div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;To add a new rating algorithm based on simulation data, you have to extend the Evaluation class.</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;You need to override the Evaluation#processOutput function,</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;which conducts the rating of simulation performance based on the path to the result files and the given identifiers.</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;This process heavily depends on the implemented SimulationRunner,</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;which is responsible for returning result files and run identifiers if necessary.</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;Your Evaluation implementation should rate the given simulation results with a `functionValue` — the lower, the better.</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;#### Simulation Evaluation</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;To add a new rating algorithm based on simulation data, you have to extend the Evaluation class.</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;You need to override the Evaluation#processOutput function,</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;which conducts the rating of simulation performance based on the path to the result files and the given identifiers.</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;This process heavily depends on the implemented SimulationRunner,</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;which is responsible for returning result files and run identifiers if necessary.</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;Your Evaluation implementation should rate the given simulation results with a `functionValue` — the lower, the better.</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;### Integration</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;Please consider overriding the methods provided by the Status interface to give the user a sense of what is happening.</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;All newly added classes must be registered in `CMakeList.txt` so the compiler does not ignore them!</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;External dependencies and added libraries should be included there too.</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;To make your new component available for configuration, you must add it to the constructor of the Controller class.</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;Let&#39;s assume you wrote a new Optimizer implementation.</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;First you need to create a JSON configuration file in `config/optimizer`.</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;There you can define any desired options for your component.</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;The next step is editing the Controller class to make your Optimizer available.</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;To do that, you find the &quot;Optimizer settings&quot; in the constructor of the Controller.</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;There you add another case to the `if`-Statement where `opt` equals the name of your component</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;(this is the name that will be set in the main config later, see [Configuration](#configuration)).</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;In the added case you can read the necessary options from the JSON object in `optimizerConfig`.</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;You have to set Controller#optimizer to an `unique_ptr&lt;Optimizer&gt;`,</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;owning a new instance of your Optimizer implementation.</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;When this setup is complete,</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;you may build the framework again and update the main configuration</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;to use your new Optimizer</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;by changing the `optimizer.optimizer` key to the name of your Optimizer and the `optimizer.config` key to the path of</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;your created JSON configuration file.</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;### Integration</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;All newly added classes must be registered in `CMakeList.txt` so the compiler does not ignore them!</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;External dependencies and added libraries should be included there too.</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;To make your new component available for configuration, you must add it to the constructor of the Controller class.</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;Let&#39;s assume you wrote a new Optimizer implementation.</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;First you need to create a JSON configuration file in `config/optimizer`.</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;There you can define any desired options for your component.</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;The next step is editing the Controller class to make your Optimizer available.</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;To do that, you find the &quot;Optimizer settings&quot; in the constructor of the Controller.</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;There you add another case to the `if`-Statement where `opt` equals the name of your component</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;(this is the name that will be set in the main config later, see [Configuration](#configuration)).</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;In the added case you can read the necessary options from the JSON object in `optimizerConfig`.</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;You have to set Controller#optimizer to an `unique_ptr&lt;Optimizer&gt;`,</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;owning a new instance of your Optimizer implementation.</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;When this setup is complete,</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;you may build the framework again and update the main configuration</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;to use your new Optimizer</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;by changing the `optimizer.optimizer` key to the name of your Optimizer and the `optimizer.config` key to the path of</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;your created JSON configuration file.</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
