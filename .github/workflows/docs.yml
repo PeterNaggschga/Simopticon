@@ -52,8 +52,13 @@ jobs:
           mv refman.pdf ../documentation.pdf
           cd ..
           rm -r latex
-          cp documentation.pdf html/
         shell: bash
+
+      - name: Copy PDFs to website
+        run: |
+          cd docs
+          cp documentation.pdf html/
+          cp thesis.pdf html/          
 
       - name: Push changes
         uses: actions-x/commit@v6
