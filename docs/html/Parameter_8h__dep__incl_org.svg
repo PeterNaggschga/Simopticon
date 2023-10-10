@@ -67,47 +67,47 @@
 <g id="node20" class="node">
 <title>Node20</title>
 <g id="a_node20"><a xlink:href="ContinuousParameter_8h.xhtml" target="_top" xlink:title="In this file, the header of the ContinuousParameter class is defined.">
-<polygon fill="white" stroke="black" points="886,-313.5 886,-343.5 1034,-343.5 1034,-313.5 886,-313.5"/>
-<text text-anchor="start" x="894" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/Continuous</text>
-<text text-anchor="middle" x="960" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parameter.h</text>
+<polygon fill="white" stroke="black" points="880,-313.5 880,-343.5 1028,-343.5 1028,-313.5 880,-313.5"/>
+<text text-anchor="start" x="888" y="-331.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/Continuous</text>
+<text text-anchor="middle" x="954" y="-320.5" font-family="Helvetica,sans-Serif" font-size="10.00">Parameter.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node20 -->
 <g id="edge30" class="edge">
 <title>Node1&#45;&gt;Node20</title>
-<path fill="none" stroke="midnightblue" d="M818.01,-377.23C846.83,-367.54 887.77,-353.78 918.28,-343.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="816.72,-373.97 808.36,-380.48 818.95,-380.61 816.72,-373.97"/>
+<path fill="none" stroke="midnightblue" d="M817.19,-377.1C845.02,-367.42 884.34,-353.74 913.7,-343.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="815.79,-373.88 807.5,-380.48 818.09,-380.49 815.79,-373.88"/>
 </g>
 <!-- Node23 -->
 <g id="node23" class="node">
 <title>Node23</title>
-<g id="a_node23"><a xlink:href="DiscreteParameter_8h.xhtml" target="_top" xlink:title="In this file, the header of the DiscreteParameter class is defined.">
-<polygon fill="white" stroke="black" points="1052,-319 1052,-338 1244,-338 1244,-319 1052,-319"/>
-<text text-anchor="middle" x="1148" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/DiscreteParameter.h</text>
+<g id="a_node23"><a xlink:href="Parameter_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Parameter class is defined.">
+<polygon fill="white" stroke="black" points="1046.5,-319 1046.5,-338 1209.5,-338 1209.5,-319 1046.5,-319"/>
+<text text-anchor="middle" x="1128" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/Parameter.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node23 -->
 <g id="edge33" class="edge">
 <title>Node1&#45;&gt;Node23</title>
-<path fill="none" stroke="midnightblue" d="M845.39,-378.83C915.98,-367.32 1029.71,-348.78 1095.8,-338.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="844.6,-375.41 835.3,-380.48 845.73,-382.32 844.6,-375.41"/>
+<path fill="none" stroke="midnightblue" d="M842.38,-378.76C909.14,-367.25 1016.32,-348.76 1078.66,-338.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="841.69,-375.33 832.43,-380.48 842.88,-382.22 841.69,-375.33"/>
 </g>
-<!-- Node25 -->
-<g id="node25" class="node">
-<title>Node25</title>
-<g id="a_node25"><a xlink:href="Parameter_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Parameter class is defined.">
-<polygon fill="white" stroke="black" points="1262.5,-319 1262.5,-338 1425.5,-338 1425.5,-319 1262.5,-319"/>
-<text text-anchor="middle" x="1344" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/Parameter.cpp</text>
+<!-- Node24 -->
+<g id="node24" class="node">
+<title>Node24</title>
+<g id="a_node24"><a xlink:href="DiscreteParameter_8h.xhtml" target="_top" xlink:title="In this file, the header of the DiscreteParameter class is defined.">
+<polygon fill="white" stroke="black" points="1272,-319 1272,-338 1464,-338 1464,-319 1272,-319"/>
+<text text-anchor="middle" x="1368" y="-326" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/DiscreteParameter.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node25 -->
-<g id="edge35" class="edge">
-<title>Node1&#45;&gt;Node25</title>
-<path fill="none" stroke="midnightblue" d="M869.35,-382.36C963.76,-374.72 1119.43,-361.02 1253,-344 1266.33,-342.3 1280.71,-340.16 1294.02,-338.04"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="868.96,-378.88 859.28,-383.17 869.52,-385.86 868.96,-378.88"/>
+<!-- Node1&#45;&gt;Node24 -->
+<g id="edge34" class="edge">
+<title>Node1&#45;&gt;Node24</title>
+<path fill="none" stroke="midnightblue" d="M869.39,-380.21C981.01,-368.86 1174.03,-349.23 1284.32,-338.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="868.77,-376.76 859.18,-381.25 869.48,-383.72 868.77,-376.76"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -385,8 +385,8 @@
 <!-- Node18&#45;&gt;Node16 -->
 <g id="edge29" class="edge">
 <title>Node18&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M947.07,-250.38C956.44,-248.91 965.97,-247.41 975,-246 1026.55,-237.94 1173.05,-249.62 1207,-210 1228.09,-185.39 1189.31,-158.53 1159.26,-142.63"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="946.33,-246.96 937,-251.97 947.42,-253.87 946.33,-246.96"/>
+<path fill="none" stroke="midnightblue" d="M946.37,-250.36C955.63,-248.89 965.06,-247.4 974,-246 1025.76,-237.88 1172.9,-249.77 1207,-210 1228.1,-185.39 1189.32,-158.54 1159.26,-142.63"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="945.73,-246.92 936.41,-251.95 946.83,-253.83 945.73,-246.92"/>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
@@ -416,8 +416,8 @@
 <!-- Node20&#45;&gt;Node21 -->
 <g id="edge31" class="edge">
 <title>Node20&#45;&gt;Node21</title>
-<path fill="none" stroke="midnightblue" d="M988.89,-307.73C1003.59,-297.68 1021.11,-285.68 1034.43,-276.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="986.89,-304.86 980.61,-313.4 990.84,-310.64 986.89,-304.86"/>
+<path fill="none" stroke="midnightblue" d="M984.71,-307.73C1000.34,-297.68 1018.97,-285.68 1033.13,-276.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="982.43,-305.04 975.92,-313.4 986.22,-310.93 982.43,-305.04"/>
 </g>
 <!-- Node22 -->
 <g id="node22" class="node">
@@ -432,23 +432,23 @@
 <!-- Node20&#45;&gt;Node22 -->
 <g id="edge32" class="edge">
 <title>Node20&#45;&gt;Node22</title>
-<path fill="none" stroke="midnightblue" d="M1025.81,-310.98C1068.11,-300.37 1122.49,-286.72 1162.77,-276.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1024.73,-307.65 1015.88,-313.48 1026.43,-314.44 1024.73,-307.65"/>
+<path fill="none" stroke="midnightblue" d="M1021.06,-311.05C1064.38,-300.43 1120.17,-286.74 1161.47,-276.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1020.05,-307.69 1011.17,-313.48 1021.72,-314.49 1020.05,-307.69"/>
 </g>
-<!-- Node24 -->
-<g id="node24" class="node">
-<title>Node24</title>
-<g id="a_node24"><a xlink:href="DiscreteParameter_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the DiscreteParameter class is defined.">
+<!-- Node25 -->
+<g id="node25" class="node">
+<title>Node25</title>
+<g id="a_node25"><a xlink:href="DiscreteParameter_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the DiscreteParameter class is defined.">
 <polygon fill="white" stroke="black" points="1311.5,-252 1311.5,-271 1514.5,-271 1514.5,-252 1311.5,-252"/>
 <text text-anchor="middle" x="1413" y="-259" font-family="Helvetica,sans-Serif" font-size="10.00">src/parameters/DiscreteParameter.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node23&#45;&gt;Node24 -->
-<g id="edge34" class="edge">
-<title>Node23&#45;&gt;Node24</title>
-<path fill="none" stroke="midnightblue" d="M1192.91,-316.48C1245.18,-303.66 1330.4,-282.76 1378.01,-271.08"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1191.79,-313.15 1182.92,-318.94 1193.46,-319.95 1191.79,-313.15"/>
+<!-- Node24&#45;&gt;Node25 -->
+<g id="edge35" class="edge">
+<title>Node24&#45;&gt;Node25</title>
+<path fill="none" stroke="midnightblue" d="M1379.84,-310.4C1388.58,-297.77 1400.12,-281.1 1407.03,-271.13"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1376.88,-308.52 1374.07,-318.73 1382.64,-312.5 1376.88,-308.52"/>
 </g>
 </g>
 </svg>
