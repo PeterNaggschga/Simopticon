@@ -28,7 +28,7 @@ keywords:
   - direct-algorithm
   - platooning
 license: MIT
-version: 1.0
+version: 1.0.0
 date-released: '2023-08-08'
 preferred-citation:	
  type: thesis
