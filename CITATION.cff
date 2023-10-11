@@ -68,15 +68,16 @@ preferred-citation:
   The framework is shown to be effective for the task of
   simulation optimization for platoon controllers.
 references:
-  authors:
-    - family-names: Lohmann
-      given-names: Niels
-      orcid: https://orcid.org/0000-0001-9037-795X
-      email: mail@nlohmann.me
-      website: https://nlohmann.me
-  title: "JSON for Modern C++"
-  version: 3.11.2
-  date-released: '2022-08-12'
-  license: MIT
-  repository-code: "https://github.com/nlohmann"
-  url: https://json.nlohmann.me
+  - type: software
+    authors:
+      - family-names: Lohmann
+        given-names: Niels
+        orcid: https://orcid.org/0000-0001-9037-795X
+        email: mail@nlohmann.me
+        website: https://nlohmann.me
+    title: "JSON for Modern C++"
+    version: 3.11.2
+    date-released: '2022-08-12'
+    license: MIT
+    repository-code: "https://github.com/nlohmann"
+    url: https://json.nlohmann.me
