@@ -47,10 +47,14 @@ private:
      */
     bool keepFiles;
     /**
+     * Defines if all found values should be recorded in a `.csv` file after optimization has finished.
+     * Can be set in main config.
+     */
+    bool printValues;
+    /**
      * Saves the best @a n parameterCombinations and the corresponding path to the result files, if #keepFiles is true. @a n can be set in main config.
      */
     std::map<parameterCombination, std::filesystem::path> topResults;
-
     /**
      * Interval of updates of StatusBar using #updateStatus in concurrent status thread.
      */
@@ -79,6 +83,11 @@ private:
      * If #keepFiles is @a false, all result files are removed.
      */
     virtual void removeOldResultfiles();
+
+    /**
+     * Prints all evaluated parameterCombinations and their respective values to `results/values.csv`.
+     */
+    void saveValues();
 
     /**
      * Updates the #statusBar using StatusBar#updateStatus.

@@ -14,10 +14,11 @@
 #include <fstream>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, const std::list<std::shared_ptr<ParameterDefinition>> &params,
-                                 StoppingCondition con, bool trackProgress, bool printValues)
-        : Optimizer(ctrl, params), D(params.size()),
-          stopCon(con), normalizer(ParameterNormalizer(params)), level(Levels()),
-          trackProgress(trackProgress), printValues(printValues) {
+                                 StoppingCondition con, bool trackProgress) : Optimizer(ctrl, params),
+                                                                              D(params.size()), stopCon(con),
+                                                                              normalizer(ParameterNormalizer(params)),
+                                                                              level(Levels()),
+                                                                              trackProgress(trackProgress) {
 }
 
 void DirectOptimizer::runOptimization() {
@@ -65,9 +66,6 @@ void DirectOptimizer::runOptimization() {
         if (trackProgress) {
             saveProgress(bestValue, evaluations, numberOfRectangles);
         }
-    }
-    if (printValues) {
-        saveValues();
     }
 }
 
@@ -166,31 +164,6 @@ void DirectOptimizer::saveProgress(functionValue bestVal, size_t evaluations, si
         out << "Iteration;" << "Evaluations;" << "Rectangles;" << "Minimum\n";
     }
     out << iterations << ";" << evaluations << ";" << nrRects << ";" << bestVal << std::endl;
-}
-
-void DirectOptimizer::saveValues() {
-    if (!std::filesystem::exists("results/values.csv")) {
-        std::filesystem::create_directories("results");
-    }
-    std::ofstream out;
-    out.open("results/values.csv", std::ios::out | std::ios::trunc);
-    for (const auto &param: getValueMap().getValues().begin()->first) {
-        static unsigned int i = 1;
-        if (param->getConfig().empty()) {
-            out << "x" << i << ";";
-        } else {
-            out << param->getConfig() << ";";
-        }
-        i++;
-    }
-    out << "Value\n";
-    for (const auto &entry: getValueMap().getValues()) {
-        for (const auto &param: entry.first) {
-            out << param->getVal() << ";";
-        }
-        out << entry.second << "\n";
-    }
-    out.close();
 }
 
 std::string DirectOptimizer::getName() {
