@@ -121,12 +121,16 @@ bool ValueMap::isTopValue(const parameterCombination &cords) {
         if (entry.first.size() != cords.size()) {
             continue;
         }
+        bool equal = true;
         for (int i = 0; i < entry.first.size(); ++i) {
             if (entry.first[i]->getVal() != cords[i]->getVal()) {
-                continue;
+                equal = false;
+                break;
             }
         }
-        return true;
+        if (equal) {
+            return true;
+        }
     }
     return false;
 }
