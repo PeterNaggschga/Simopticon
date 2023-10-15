@@ -98,10 +98,12 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
             scenarios[i] = runnerConfig.at("scenarios").at(i).get<std::string>();
         }
 
-        std::string dir = runnerConfig.at("configDirectory").get<std::string>();
+        std::filesystem::path dir = runnerConfig.at("configDirectory").get<std::string>();
+        std::filesystem::remove_all(dir.append("optResults"));
         runner = std::unique_ptr<SimulationRunner>(new PlexeSimulationRunner(nrThreads, repeat, scenarios,
-                                                                             ConfigEditor(dir, runnerConfig.at(
-                                                                                     "controller"))));
+                                                                             ConfigEditor(dir.parent_path(),
+                                                                                          runnerConfig.at(
+                                                                                                  "controller"))));
     } else {
         throw std::runtime_error("SimulationRunner not found: " + run);
     }
