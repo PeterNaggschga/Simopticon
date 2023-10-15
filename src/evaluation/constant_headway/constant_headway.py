@@ -26,7 +26,7 @@ import pandas as pd
 sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')
 
 # noinspection PyUnresolvedReferences
-from omnetpp.scave import results as res, vectorops as ops
+from omnetpp.scave import results as res, vectorops as ops, utils
 
 
 def get_last_value(df: pd.DataFrame) -> np.float128:
@@ -49,7 +49,6 @@ def get_constant_headway(run_ids: list) -> np.float128:
     #
     # @param run_ids: List of strings representing the OMNeT++ run ids of all runs to be evaluated.
     # @return A longfloat rating the deviation from the pre-defined gap.
-    # @bug Running mean calculation over vectors using omnetpp.scave does not work correctly!
 
     # create filter for opp_scavetool to only use files with correct run ids
     run_filter = f"(run =~ {run_ids[0]}"
@@ -71,8 +70,8 @@ def get_constant_headway(run_ids: list) -> np.float128:
         vecs = res.get_vectors(name_filter)
         # calculate square error on each value
         vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
-        # calculate running mean over vectors - this statement is buggy for some reason
-        vecs = ops.mean(vecs)
+        # calculate running mean over vectors
+        utils.perform_vector_ops(vecs, "mean")
         # sum up the values of all vehicles
         vecs = ops.aggregate(vecs, "sum")
         # save the last value of the aggregated vector
