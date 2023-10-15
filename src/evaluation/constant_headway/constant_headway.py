@@ -21,23 +21,11 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
-import pandas as pd
 
 sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')
 
 # noinspection PyUnresolvedReferences
 from omnetpp.scave import results as res, vectorops as ops, utils
-
-
-def get_last_value(df: pd.DataFrame) -> np.float128:
-    ##
-    # Returns the last value of the numpy array
-    # located in the first row of the given DataFrame in field 'vecvalue'.
-    #
-    # @param df: A DataFrame containing a recorded vector of simulation data.
-    # @return The longfloat at the last vector position in the first row of the DataFrame.
-    vec = list(df.iloc[0]["vecvalue"])
-    return np.float128(vec[len(vec) - 1])
 
 
 def get_constant_headway(run_ids: list) -> np.float128:
@@ -70,13 +58,10 @@ def get_constant_headway(run_ids: list) -> np.float128:
         vecs = res.get_vectors(name_filter)
         # calculate square error on each value
         vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
-        # calculate running mean over vectors
-        utils.perform_vector_ops(vecs, "mean")
-        # sum up the values of all vehicles
-        vecs = ops.aggregate(vecs, "sum")
-        # save the last value of the aggregated vector
-        # (is equivalent with sum of means of all square errors since running mean was calculated)
-        values.put(i, get_last_value(vecs))
+        # calculate means over vectors
+        means = np.array([v[1]["vecvalue"].mean(dtype=np.float128) for v in vecs.iterrows()])
+        # calculate the sum of means and add to values
+        values.put(i, means.sum(dtype=np.float128))
     # return mean over all simulation runs
     return values.mean(dtype=np.float128)
 
