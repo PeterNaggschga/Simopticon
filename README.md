@@ -6,6 +6,7 @@
 2. [Setup](#setup)
    1. [Requirements](#requirements)
    2. [Installation](#installation)
+   3. [Update](#update)
 3. [Usage](#usage)
    1. [Configuration](#configuration)
    2. [Optimization](#optimization)
@@ -157,6 +158,24 @@ The resulting executable `simopticon` may be copied to other locations or refere
 access.
 The same applies to the `config` directory in `~/src/simopticon` which is used to configure the optimization process
 (see [Usage](#usage)).
+
+### Update
+
+To upgrade to the latest version of *Simopticon*, the latest release must be pulled and recompiled.
+Go to the directory, you installed *Simopticon* in, e.g. `~/src/simopticon`. Then pull from `master` using:
+
+```
+git pull
+```
+
+Go to the `build` directory and rebuild the executable by calling:
+
+```
+cmake ..
+make -j $(nproc)
+```
+
+The resulting `simopticon` executable file contains the latest version of *Simopticon*.
 
 ---
 
