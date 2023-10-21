@@ -21,23 +21,11 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
-import pandas as pd
 
 sys.path.append(f'{os.environ["OMNETPP_HOME"]}/python')
 
 # noinspection PyUnresolvedReferences
-from omnetpp.scave import results as res, vectorops as ops
-
-
-def get_last_value(df: pd.DataFrame) -> np.float128:
-    ##
-    # Returns the last value of the numpy array
-    # located in the first row of the given DataFrame in field 'vecvalue'.
-    #
-    # @param df: A DataFrame containing a recorded vector of simulation data.
-    # @return The longfloat at the last vector position in the first row of the DataFrame.
-    vec = list(df.iloc[0]["vecvalue"])
-    return np.float128(vec[len(vec) - 1])
+from omnetpp.scave import results as res, vectorops as ops, utils
 
 
 def get_constant_headway(run_ids: list) -> np.float128:
@@ -49,7 +37,6 @@ def get_constant_headway(run_ids: list) -> np.float128:
     #
     # @param run_ids: List of strings representing the OMNeT++ run ids of all runs to be evaluated.
     # @return A longfloat rating the deviation from the pre-defined gap.
-    # @bug Running mean calculation over vectors using omnetpp.scave does not work correctly!
 
     # create filter for opp_scavetool to only use files with correct run ids
     run_filter = f"(run =~ {run_ids[0]}"
@@ -71,13 +58,10 @@ def get_constant_headway(run_ids: list) -> np.float128:
         vecs = res.get_vectors(name_filter)
         # calculate square error on each value
         vecs = ops.expression(vecs, f"(y - {headway}) ** 2")
-        # calculate running mean over vectors - this statement is buggy for some reason
-        vecs = ops.mean(vecs)
-        # sum up the values of all vehicles
-        vecs = ops.aggregate(vecs, "sum")
-        # save the last value of the aggregated vector
-        # (is equivalent with sum of means of all square errors since running mean was calculated)
-        values.put(i, get_last_value(vecs))
+        # calculate means over vectors
+        means = np.array([v[1]["vecvalue"].mean(dtype=np.float128) for v in vecs.iterrows()])
+        # calculate the sum of means and add to values
+        values.put(i, means.sum(dtype=np.float128))
     # return mean over all simulation runs
     return values.mean(dtype=np.float128)
 

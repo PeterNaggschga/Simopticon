@@ -41,6 +41,7 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
     // Controller settings
     nlohmann::json baseConfig = getConfigByPath(configPath.parent_path(), configPath.filename().string());
     keepFiles = baseConfig.at("controller").at("keepResultFiles").get<bool>();
+    printValues = baseConfig.at("controller").at("outputValues").get<bool>();
     unsigned int nrTopEntries = baseConfig.at("controller").at("nrTopEntries").get<unsigned int>();
     valueMap = std::make_unique<ValueMap>(nrTopEntries);
     double seconds = baseConfig.at("controller").at("updateInterval").get<double>();
@@ -69,11 +70,9 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
                                                      baseConfig.at("optimizer").at("config").get<std::string>());
     std::string opt = baseConfig.at("optimizer").at("optimizer").get<std::string>();
     if (opt == "Direct") {
-        bool trackProgress = optimizerConfig.at("output").at("progress");
-        bool printValues = optimizerConfig.at("output").at("values");
+        bool trackProgress = optimizerConfig.at("outputProgress");
         optimizer = std::unique_ptr<Optimizer>(
-                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon")), trackProgress,
-                                    printValues));
+                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon")), trackProgress));
     } else {
         throw std::runtime_error("Optimzer not found: " + opt);
     }
@@ -99,10 +98,12 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
             scenarios[i] = runnerConfig.at("scenarios").at(i).get<std::string>();
         }
 
-        std::string dir = runnerConfig.at("configDirectory").get<std::string>();
+        std::filesystem::path dir = runnerConfig.at("configDirectory").get<std::string>();
+        std::filesystem::remove_all(dir.append("optResults"));
         runner = std::unique_ptr<SimulationRunner>(new PlexeSimulationRunner(nrThreads, repeat, scenarios,
-                                                                             ConfigEditor(dir, runnerConfig.at(
-                                                                                     "controller"))));
+                                                                             ConfigEditor(dir.parent_path(),
+                                                                                          runnerConfig.at(
+                                                                                                  "controller"))));
     } else {
         throw std::runtime_error("SimulationRunner not found: " + run);
     }
@@ -181,6 +182,9 @@ void Controller::run() {
         top.emplace_back(entry.first, std::make_pair(entry.second, topResults[entry.first]));
     }
     StatusBar::printResults(top);
+    if (printValues) {
+        saveValues();
+    }
 }
 
 std::map<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>
@@ -223,6 +227,31 @@ void Controller::removeOldResultfiles() {
             topResults.erase(entry);
         }
     }
+}
+
+void Controller::saveValues() {
+    if (!std::filesystem::exists("results/values.csv")) {
+        std::filesystem::create_directories("results");
+    }
+    std::ofstream out;
+    out.open("results/values.csv", std::ios::out | std::ios::trunc);
+    for (const auto &param: valueMap->getValues().begin()->first) {
+        static unsigned int i = 1;
+        if (param->getConfig().empty()) {
+            out << "x" << i << ";";
+        } else {
+            out << param->getConfig() << ";";
+        }
+        i++;
+    }
+    out << "Value\n";
+    for (const auto &entry: valueMap->getValues()) {
+        for (const auto &param: entry.first) {
+            out << param->getVal() << ";";
+        }
+        out << entry.second << "\n";
+    }
+    out.close();
 }
 
 void Controller::updateStatus() {

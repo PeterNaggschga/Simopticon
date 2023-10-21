@@ -1,13 +1,8 @@
 // DirectOptimizer Config
 
 {
-  // Output-related Options
-  "output": {
-    // enable live-tracking of optimization progress in results/progress.csv
-    "progress": false,
-    // enable printing of all evaluated combinations in results/values.csv
-    "values": false
-  },
+  // enable live-tracking of optimization progress in results/progress.csv
+  "outputProgress": false,
   // StoppingCondition-related Options
   "stopCon": {
     // stop after n evaluations

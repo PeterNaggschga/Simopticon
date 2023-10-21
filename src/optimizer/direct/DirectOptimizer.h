@@ -63,11 +63,6 @@ private:
      * Can be set in config.
      */
     bool trackProgress;
-    /**
-     * Defines if all found values should be recorded in a `.csv` file after optimization has finished.
-     * Can be set in config.
-     */
-    bool printValues;
 
     /**
      * Holds all rectangles that are immediate part of the current partition.
@@ -124,11 +119,6 @@ private:
      */
     void saveProgress(functionValue bestVal, size_t evaluations, size_t nrRects) const;
 
-    /**
-     * Prints all evaluated parameterCombinations and their respective values to a `.csv` file.
-     */
-    void saveValues();
-
 public:
     /**
      * Creates a DirectOptimizer that evaluates functions with the given Controller, optimizes the given ParameterDefinition list and stops as defined by the given StoppingCondition.
@@ -136,10 +126,9 @@ public:
      * @param params: ParameterDefinition list to be optimized.
      * @param con: StoppingCondition defining the end of optimization.
      * @param trackProgress: Defines whether the progress should be printed in a `.csv` file.
-     * @param printValues: Defines whether all obtained values should be printed in a `.csv` file after optimization.
      */
     DirectOptimizer(Controller &ctrl, const std::list<std::shared_ptr<ParameterDefinition>> &params,
-                    StoppingCondition con, bool trackProgress, bool printValues);
+                    StoppingCondition con, bool trackProgress);
 
     /**
      * Starts the optimization using the DIRECT algorithm.
