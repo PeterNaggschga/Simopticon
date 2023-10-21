@@ -29,19 +29,19 @@ var NAVTREE =
       [ "Overview", "index.xhtml#autotoc_md3", null ],
       [ "Setup", "index.xhtml#autotoc_md5", [
         [ "Requirements", "index.xhtml#autotoc_md6", null ],
-        [ "Installation", "index.xhtml#autotoc_md7", null ]
+        [ "Installation", "index.xhtml#autotoc_md7", null ],
+        [ "Update", "index.xhtml#autotoc_md8", null ]
       ] ],
-      [ "Usage", "index.xhtml#autotoc_md9", [
-        [ "Configuration", "index.xhtml#autotoc_md10", null ],
-        [ "Optimization", "index.xhtml#autotoc_md11", null ]
+      [ "Usage", "index.xhtml#autotoc_md10", [
+        [ "Configuration", "index.xhtml#autotoc_md11", null ],
+        [ "Optimization", "index.xhtml#autotoc_md12", null ]
       ] ],
-      [ "Extension", "index.xhtml#autotoc_md13", [
-        [ "Development", "index.xhtml#autotoc_md14", null ],
-        [ "Integration", "index.xhtml#autotoc_md15", null ]
+      [ "Extension", "index.xhtml#autotoc_md14", [
+        [ "Development", "index.xhtml#autotoc_md15", null ],
+        [ "Integration", "index.xhtml#autotoc_md16", null ]
       ] ]
     ] ],
     [ "Todo List", "todo.xhtml", null ],
-    [ "Bug List", "bug.xhtml", null ],
     [ "Modules", "modules.xhtml", "modules" ],
     [ "Classes", "annotated.xhtml", [
       [ "Class List", "annotated.xhtml", "annotated_dup" ],
@@ -69,8 +69,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Abortable_8cpp.xhtml",
-"classHyRect.xhtml#aa04990af9102dad46d5d29a8c62773cd",
-"group__status.xhtml#gaa607b08567c9a77d9cfc9f4137d6dea2"
+"classHyRect.xhtml#aaaf4f13552c02eada0e75e771524b02f",
+"group__status.xhtml#ggaa607b08567c9a77d9cfc9f4137d6dea2a76c7876b0fc4f9feea30c67b510e5855"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

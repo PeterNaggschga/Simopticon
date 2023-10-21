@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('index.xhtml',''); initResizable(); });
 <li><a href="#setup">Setup</a><ol type="a">
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#installation">Installation</a></li>
+<li><a href="#update">Update</a></li>
 </ol>
 </li>
 <li><a href="#usage">Usage</a><ol type="a">
@@ -167,10 +168,18 @@ Installation</h2>
 <div class="fragment"><div class="line">cmake ..</div>
 <div class="line">make -j  $(nproc)</div>
 </div><!-- fragment --><p>The resulting executable <code>simopticon</code> may be copied to other locations or referenced via symlinks for more convenient access. The same applies to the <code>config</code> directory in <code>~/src/simopticon</code> which is used to configure the optimization process (see <a href="#usage">Usage</a>).</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Update</h2>
+<p>To upgrade to the latest version of <em>Simopticon</em>, the latest release must be pulled and recompiled. Go to the directory, you installed <em>Simopticon</em> in, e.g. <code>~/src/simopticon</code>. Then pull from <code>master</code> using:</p>
+<div class="fragment"><div class="line">git pull</div>
+</div><!-- fragment --><p>Go to the <code>build</code> directory and rebuild the executable by calling:</p>
+<div class="fragment"><div class="line">cmake ..</div>
+<div class="line">make -j $(nproc)</div>
+</div><!-- fragment --><p>The resulting <code>simopticon</code> executable file contains the latest version of <em>Simopticon</em>.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 Usage</h1>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Configuration</h2>
 <p>The optimization process and its components are configured using several JSON files. Default examples of such files can be found in the <code>config</code> directory. Be aware, however, that the default files in <code>config</code> must be edited before use, since some file paths must be set which depend on your filesystem.</p>
 <p>The options in the JSON files are commented and therefore self-explanatory. The following sections only show options that must be changed to successfully run optimizations.</p>
@@ -181,7 +190,7 @@ Configuration</h2>
 <p>If you want to use <a class="el" href="classPlexeSimulationRunner.xhtml" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina...">PlexeSimulationRunner</a>, you need to configure <code>config/runners/plexe.json</code>. There you have to set the <code>configDirectory</code> key to match the path to the directory containing your Plexe configuration (<code>omnetpp.ini</code>). For default installations that should be something along the lines of <code>[installation-directory]/plexe/examples/platooning</code>.</p>
 <h3><a class="el" href="classConstantHeadway.xhtml" title="A wrapper for the constant_headway.py script.">ConstantHeadway</a></h3>
 <p>If you want to use <a class="el" href="classConstantHeadway.xhtml" title="A wrapper for the constant_headway.py script.">ConstantHeadway</a> evaluation, you need to configure <code>config/evaluations/constant_headway.json</code>. There you have to set the <code>pythonScript</code> and the <code>omnetppDirectory</code> keys. <code>pythonScript</code> must point to the script <code><a class="el" href="constant__headway_8py.xhtml" title="In this file, Python functionality for automatic rating of Plexe result files on the mean deviation f...">constant_headway.py</a></code> which can be found in <code>src/evaluation/constant_headway</code>. <code>omnetppDirectory</code> must point to the directory where OMNeT++ Version 6 or higher is installed, e.g. <code>~/src/omnetpp-6.0.1</code>.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Optimization</h2>
 <p>The optimization is invoked on the command line by executing the program built in <a href="#setup">Setup</a>. The call on the command line has one mandatory and one optional argument. The First argument must be the path to the main config, i.e. <code>config/simopticon.json</code>. A valid call to an optimization could be:</p>
 <div class="fragment"><div class="line">./simopticon ../config/simopticon.json</div>
@@ -202,10 +211,10 @@ Optimization</h2>
 <div class="fragment"><div class="line">./simopticon ../config/simopticon.json branin</div>
 </div><!-- fragment --><p>Please note that you need to define the optimized parameters in <code>config/simopticon.json</code> even when you are optimizing a benchmark.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 Extension</h1>
 <p>This section goes through the steps you need to undertake to extend the framework with new <a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a>, <a class="el" href="classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a> or <a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> implementations.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Development</h2>
 <p>When developing new implementations of components, please stick to the project structure — <a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> extensions go into <code>src/optimizer</code>, <a class="el" href="classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a> extensions go into <code>src/runner</code> and <a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> extensions go into <code>src/evaluation</code>. If your implementation needs a more sophisticated implementation of the <a class="el" href="classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> class than the ones provided in <code>src/parameters</code>, feel free to extend the abstract <a class="el" href="classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> class.</p>
 <p>Please document your code using <a href="https://www.doxygen.nl/">Doxygen</a> comments!</p>
@@ -221,7 +230,7 @@ Development</h2>
 <h3>Simulation <a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a></h3>
 <p>To add a new rating algorithm based on simulation data, you have to extend the <a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> class. You need to override the <a class="el" href="classEvaluation.xhtml#a55e7851f5acc8fed0004f0845ed7395d" title="Returns a value to the results of a single simulation run.">Evaluation::processOutput</a> function, which conducts the rating of simulation performance based on the path to the result files and the given identifiers. This process heavily depends on the implemented <a class="el" href="classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a>, which is responsible for returning result files and run identifiers if necessary. Your <a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> implementation should rate the given simulation results with a <code>functionValue</code> — the lower, the better.</p>
 <p>Please consider overriding the methods provided by the <a class="el" href="classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class.">Status</a> interface to give the user a sense of what is happening.</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Integration</h2>
 <p>All newly added classes must be registered in <code>CMakeList.txt</code> so the compiler does not ignore them! External dependencies and added libraries should be included there too.</p>
 <p>To make your new component available for configuration, you must add it to the constructor of the <a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> class. Let's assume you wrote a new <a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> implementation. First you need to create a JSON configuration file in <code>config/optimizer</code>. There you can define any desired options for your component.</p>

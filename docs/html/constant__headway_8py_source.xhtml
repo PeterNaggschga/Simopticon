@@ -100,61 +100,51 @@ $(document).ready(function(){initNavTree('constant__headway_8py_source.xhtml',''
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">import</span> numpy <span class="keyword">as</span> np</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">import</span> pandas <span class="keyword">as</span> pd</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;sys.path.append(f<span class="stringliteral">&#39;{os.environ[&quot;OMNETPP_HOME&quot;]}/python&#39;</span>)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"># noinspection PyUnresolvedReferences</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">from</span> omnetpp.scave <span class="keyword">import</span> results <span class="keyword">as</span> res, vectorops <span class="keyword">as</span> ops</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;sys.path.append(f<span class="stringliteral">&#39;{os.environ[&quot;OMNETPP_HOME&quot;]}/python&#39;</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"># noinspection PyUnresolvedReferences</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">from</span> omnetpp.scave <span class="keyword">import</span> results <span class="keyword">as</span> res, vectorops <span class="keyword">as</span> ops, utils</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">def </span>get_last_value(df: pd.DataFrame) -&gt; np.float128:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    vec = list(df.iloc[0][<span class="stringliteral">&quot;vecvalue&quot;</span>])</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> np.float128(vec[len(vec) - 1])</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">def </span>get_constant_headway(run_ids: list) -&gt; np.float128:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment"># create filter for opp_scavetool to only use files with correct run ids</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    run_filter = f<span class="stringliteral">&quot;(run =~ {run_ids[0]}&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, len(run_ids)):</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        run_filter += f<span class="stringliteral">&quot; OR run =~ {run_ids[i]}&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    run_filter += <span class="stringliteral">&quot;)&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment"># find out pre-defined gap</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    name_filter = f<span class="stringliteral">&quot;{run_filter} AND **.scenario.caccSpacing&quot;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    headway = float(res.get_param_assignments(name_filter).iloc[0][<span class="stringliteral">&quot;value&quot;</span>][0])</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment"># iterate over all simulation runs</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    values = np.empty(len(run_ids), dtype=np.float128)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(run_ids)):</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="comment"># get gap vectors of all but the first vehicles simulated in the given run</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        name_filter = f<span class="stringliteral">&quot;run =~ {run_ids[i]} AND distance AND module =~ **.node[*].appl AND NOT module =~ **.node[0]&quot;</span> \</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                      f<span class="stringliteral">&quot;.appl&quot;</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment"># fetch vectors</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        vecs = res.get_vectors(name_filter)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment"># calculate square error on each value</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        vecs = ops.expression(vecs, f<span class="stringliteral">&quot;(y - {headway}) ** 2&quot;</span>)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment"># calculate running mean over vectors - this statement is buggy for some reason</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        vecs = ops.mean(vecs)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment"># sum up the values of all vehicles</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        vecs = ops.aggregate(vecs, <span class="stringliteral">&quot;sum&quot;</span>)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment"># save the last value of the aggregated vector</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment"># (is equivalent with sum of means of all square errors since running mean was calculated)</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        values.put(i, get_last_value(vecs))</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment"># return mean over all simulation runs</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> values.mean(dtype=np.float128)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">def </span>multithreaded(threads: int, directory: str, run_ids: list) -&gt; list:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    res.set_inputs(directory)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">with</span> ThreadPoolExecutor(max_workers=threads) <span class="keyword">as</span> pool:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        results = pool.map(get_constant_headway, run_ids)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> list(results)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">def </span>get_constant_headway(run_ids: list) -&gt; np.float128:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment"># create filter for opp_scavetool to only use files with correct run ids</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    run_filter = f<span class="stringliteral">&quot;(run =~ {run_ids[0]}&quot;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(1, len(run_ids)):</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        run_filter += f<span class="stringliteral">&quot; OR run =~ {run_ids[i]}&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    run_filter += <span class="stringliteral">&quot;)&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment"># find out pre-defined gap</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    name_filter = f<span class="stringliteral">&quot;{run_filter} AND **.scenario.caccSpacing&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    headway = float(res.get_param_assignments(name_filter).iloc[0][<span class="stringliteral">&quot;value&quot;</span>][0])</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment"># iterate over all simulation runs</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    values = np.empty(len(run_ids), dtype=np.float128)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(len(run_ids)):</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="comment"># get gap vectors of all but the first vehicles simulated in the given run</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        name_filter = f<span class="stringliteral">&quot;run =~ {run_ids[i]} AND distance AND module =~ **.node[*].appl AND NOT module =~ **.node[0]&quot;</span> \</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                      f<span class="stringliteral">&quot;.appl&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment"># fetch vectors</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        vecs = res.get_vectors(name_filter)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment"># calculate square error on each value</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        vecs = ops.expression(vecs, f<span class="stringliteral">&quot;(y - {headway}) ** 2&quot;</span>)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment"># calculate means over vectors</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        means = np.array([v[1][<span class="stringliteral">&quot;vecvalue&quot;</span>].mean(dtype=np.float128) <span class="keywordflow">for</span> v <span class="keywordflow">in</span> vecs.iterrows()])</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment"># calculate the sum of means and add to values</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        values.put(i, means.sum(dtype=np.float128))</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment"># return mean over all simulation runs</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> values.mean(dtype=np.float128)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">def </span>multithreaded(threads: int, directory: str, run_ids: list) -&gt; list:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    res.set_inputs(directory)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">with</span> ThreadPoolExecutor(max_workers=threads) <span class="keyword">as</span> pool:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        results = pool.map(get_constant_headway, run_ids)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> list(results)</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
