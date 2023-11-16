@@ -84,7 +84,7 @@ the requirements.
 
 Check whether Git is installed on your machine and install it if necessary using:
 
-``` 
+```shell
 sudo apt install git
  ```
 
@@ -96,7 +96,7 @@ If you have an older version installed, you must first remove it.
 
 First, make sure to install g++ and OpenSSL Development tools.
 
-```
+```shell
 sudo apt install g++ libssl-dev
 ```
 
@@ -104,19 +104,19 @@ Then you need to download the latest version of CMake from their [download page]
 for the source distribution tar package.
 Unpack the downloaded package using:
 
-```
+```shell
 tar xf cmake-[version number].tar.gz
 ```
 
 Open the newly created directory and run the configuration script with:
 
-```
+```shell
 cd cmake-[version number] && ./configure
 ```
 
 When the configuration has completed successfully, you are ready to build and install using:
 
-```
+```shell
 make -j $(nproc)
 sudo make install
 ```
@@ -127,7 +127,7 @@ You may remove the downloaded tar file and extracted directory if needed.
 
 Check whether Python3 development tools are installed on your machine and install them if necessary using:
 
-```
+```shell
 sudo apt install python3-dev
 ```
 
@@ -136,20 +136,20 @@ sudo apt install python3-dev
 Go to the directory you want to install *Simopticon* in, e.g. `~/src`.
 To get the source code, clone the git repository using:
 
-```
+```shell
 git clone https://github.com/PeterNaggschga/simopticon.git
 ```
 
 Create a build directory in the downloaded files with:
 
-```
+```shell
 mkdir simopticon/build
 cd simopticon/build
 ```
 
 Build *Simopticon* by calling:
 
-```
+```shell
 cmake ..
 make -j  $(nproc)
 ```
@@ -164,13 +164,13 @@ The same applies to the `config` directory in `~/src/simopticon` which is used t
 To upgrade to the latest version of *Simopticon*, the latest release must be pulled and recompiled.
 Go to the directory, you installed *Simopticon* in, e.g. `~/src/simopticon`. Then pull from `master` using:
 
-```
+```shell
 git pull
 ```
 
 Go to the `build` directory and rebuild the executable by calling:
 
-```
+```shell
 cmake ..
 make -j $(nproc)
 ```
@@ -229,7 +229,7 @@ The call on the command line has one mandatory and one optional argument.
 The First argument must be the path to the main config, i.e. `config/simopticon.json`.
 A valid call to an optimization could be:
 
-```
+```shell
 ./simopticon ../config/simopticon.json
 ```
 
@@ -254,7 +254,7 @@ The second argument holds the name of the function to be optimized, i.e., one of
 
 A valid call to the optimization of a benchmark function could be:
 
-```
+```shell
 ./simopticon ../config/simopticon.json branin
 ```
 
