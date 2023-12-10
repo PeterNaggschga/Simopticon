@@ -10,7 +10,7 @@ authors:
     email: per.natzschka1@mailbox.tu-dresden.de
     affiliation: TUD Dresden University of Technology
 repository-code: 'https://github.com/PeterNaggschga/simopticon'
-url: 'https://peternaggschga.github.io/simopticon/'
+url: 'https://peternaggschga.github.io/Simopticon/'
 abstract: >-
   Simopticon is a framework which automates the search for
   optimal parameters for simulated processes. The key
