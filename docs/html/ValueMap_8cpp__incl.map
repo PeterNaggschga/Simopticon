@@ -1,17 +1,17 @@
-<map id="src/controller/ValueMap.cpp" name="src/controller/ValueMap.cpp">
-<area shape="rect" id="node1" title="In this file, the implementation of the ValueMap class is defined." alt="" coords="503,5,706,32"/>
-<area shape="rect" id="node2" href="$ValueMap_8h.xhtml" title="In this file, the header of the ValueMap class is defined." alt="" coords="400,80,499,107"/>
-<area shape="rect" id="node13" title=" " alt="" coords="524,80,586,107"/>
-<area shape="rect" id="node14" title=" " alt="" coords="610,80,697,107"/>
-<area shape="rect" id="node15" title=" " alt="" coords="722,80,807,107"/>
-<area shape="rect" id="node3" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="188,304,271,331"/>
-<area shape="rect" id="node5" title=" " alt="" coords="288,379,350,405"/>
-<area shape="rect" id="node6" title=" " alt="" coords="62,379,139,405"/>
-<area shape="rect" id="node7" href="$ComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="226,155,412,181"/>
-<area shape="rect" id="node8" href="$Parameter_8h.xhtml" title="In this file, the header of the Parameter class is defined." alt="" coords="26,229,204,256"/>
-<area shape="rect" id="node9" title=" " alt="" coords="487,155,538,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="562,155,604,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="628,155,671,181"/>
-<area shape="rect" id="node12" title=" " alt="" coords="695,155,759,181"/>
-<area shape="rect" id="node4" title=" " alt="" coords="190,379,248,405"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/controller/ValueMap.cpp" name="/home/runner/work/Simopticon/Simopticon/src/controller/ValueMap.cpp">
+<area shape="rect" id="node1" title="In this file, the implementation of the ValueMap class is defined." alt="" coords="493,5,716,61"/>
+<area shape="rect" id="node2" href="$ValueMap_8h.xhtml" title="In this file, the header of the ValueMap class is defined." alt="" coords="400,109,499,136"/>
+<area shape="rect" id="node13" title=" " alt="" coords="524,109,586,136"/>
+<area shape="rect" id="node14" title=" " alt="" coords="610,109,697,136"/>
+<area shape="rect" id="node15" title=" " alt="" coords="722,109,807,136"/>
+<area shape="rect" id="node3" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="188,333,271,360"/>
+<area shape="rect" id="node5" title=" " alt="" coords="288,408,350,435"/>
+<area shape="rect" id="node6" title=" " alt="" coords="62,408,139,435"/>
+<area shape="rect" id="node7" href="$ComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="226,184,412,211"/>
+<area shape="rect" id="node8" href="$Parameter_8h.xhtml" title="In this file, the header of the Parameter class is defined." alt="" coords="26,259,204,285"/>
+<area shape="rect" id="node9" title=" " alt="" coords="487,184,538,211"/>
+<area shape="rect" id="node10" title=" " alt="" coords="562,184,604,211"/>
+<area shape="rect" id="node11" title=" " alt="" coords="628,184,671,211"/>
+<area shape="rect" id="node12" title=" " alt="" coords="695,184,759,211"/>
+<area shape="rect" id="node4" title=" " alt="" coords="190,408,248,435"/>
 </map>

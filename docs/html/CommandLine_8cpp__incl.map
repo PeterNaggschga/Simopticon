@@ -1,8 +1,8 @@
-<map id="src/utils/CommandLine.cpp" name="src/utils/CommandLine.cpp">
-<area shape="rect" id="node1" title="In this file, the implementation of the CommandLine class is defined." alt="" coords="103,5,302,32"/>
-<area shape="rect" id="node2" href="$CommandLine_8h.xhtml" title="In this file, the header of the CommandLine class is defined." alt="" coords="5,80,133,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="127,155,204,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="208,80,264,107"/>
-<area shape="rect" id="node6" title=" " alt="" coords="289,80,375,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="40,155,99,181"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/utils/CommandLine.cpp" name="/home/runner/work/Simopticon/Simopticon/src/utils/CommandLine.cpp">
+<area shape="rect" id="node1" title="In this file, the implementation of the CommandLine class is defined." alt="" coords="63,5,342,47"/>
+<area shape="rect" id="node2" href="$CommandLine_8h.xhtml" title="In this file, the header of the CommandLine class is defined." alt="" coords="5,95,133,121"/>
+<area shape="rect" id="node4" title=" " alt="" coords="127,169,204,196"/>
+<area shape="rect" id="node5" title=" " alt="" coords="208,95,264,121"/>
+<area shape="rect" id="node6" title=" " alt="" coords="289,95,375,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="40,169,99,196"/>
 </map>

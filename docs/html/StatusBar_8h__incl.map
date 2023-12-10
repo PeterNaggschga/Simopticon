@@ -1,16 +1,16 @@
-<map id="src/status/StatusBar.h" name="src/status/StatusBar.h">
-<area shape="rect" id="node1" title="In this file, the header of the StatusBar class is defined." alt="" coords="219,5,381,32"/>
-<area shape="rect" id="node2" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="452,304,535,331"/>
-<area shape="rect" id="node4" title=" " alt="" coords="191,379,254,405"/>
-<area shape="rect" id="node5" title=" " alt="" coords="721,379,799,405"/>
-<area shape="rect" id="node6" href="$ValueMap_8h.xhtml" title="In this file, the header of the ValueMap class is defined." alt="" coords="435,80,611,107"/>
-<area shape="rect" id="node13" href="$Status_8h.xhtml" title="In this file, the header of the Status class is defined." alt="" coords="160,229,235,256"/>
-<area shape="rect" id="node14" title=" " alt="" coords="904,80,995,107"/>
-<area shape="rect" id="node3" title=" " alt="" coords="464,379,523,405"/>
-<area shape="rect" id="node7" href="$ComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="195,155,381,181"/>
-<area shape="rect" id="node8" href="$Parameter_8h.xhtml" title="In this file, the header of the Parameter class is defined." alt="" coords="531,229,709,256"/>
-<area shape="rect" id="node9" title=" " alt="" coords="405,155,456,181"/>
-<area shape="rect" id="node10" title=" " alt="" coords="531,155,573,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="597,155,640,181"/>
-<area shape="rect" id="node12" title=" " alt="" coords="664,155,728,181"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/status/StatusBar.h" name="/home/runner/work/Simopticon/Simopticon/src/status/StatusBar.h">
+<area shape="rect" id="node1" title="In this file, the header of the StatusBar class is defined." alt="" coords="178,5,422,47"/>
+<area shape="rect" id="node2" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="452,319,535,345"/>
+<area shape="rect" id="node4" title=" " alt="" coords="191,393,254,420"/>
+<area shape="rect" id="node5" title=" " alt="" coords="721,393,799,420"/>
+<area shape="rect" id="node6" href="$ValueMap_8h.xhtml" title="In this file, the header of the ValueMap class is defined." alt="" coords="435,95,611,121"/>
+<area shape="rect" id="node13" href="$Status_8h.xhtml" title="In this file, the header of the Status class is defined." alt="" coords="160,244,235,271"/>
+<area shape="rect" id="node14" title=" " alt="" coords="904,95,995,121"/>
+<area shape="rect" id="node3" title=" " alt="" coords="464,393,523,420"/>
+<area shape="rect" id="node7" href="$ComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="195,169,381,196"/>
+<area shape="rect" id="node8" href="$Parameter_8h.xhtml" title="In this file, the header of the Parameter class is defined." alt="" coords="531,244,709,271"/>
+<area shape="rect" id="node9" title=" " alt="" coords="405,169,456,196"/>
+<area shape="rect" id="node10" title=" " alt="" coords="531,169,573,196"/>
+<area shape="rect" id="node11" title=" " alt="" coords="597,169,640,196"/>
+<area shape="rect" id="node12" title=" " alt="" coords="664,169,728,196"/>
 </map>

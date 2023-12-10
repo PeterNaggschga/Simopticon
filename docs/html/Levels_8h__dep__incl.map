@@ -1,7 +1,7 @@
-<map id="src/optimizer/direct/Levels.h" name="src/optimizer/direct/Levels.h">
-<area shape="rect" id="node1" title="In this file, the header of the Levels class is defined." alt="" coords="219,5,367,47"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="133,95,281,136"/>
-<area shape="rect" id="node5" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="305,95,453,136"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,191,207,218"/>
-<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="231,184,386,225"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/Levels.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/Levels.h">
+<area shape="rect" id="node1" title="In this file, the header of the Levels class is defined." alt="" coords="251,5,473,61"/>
+<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="128,109,351,165"/>
+<area shape="rect" id="node5" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="375,109,597,165"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,213,228,269"/>
+<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="252,213,475,269"/>
 </map>

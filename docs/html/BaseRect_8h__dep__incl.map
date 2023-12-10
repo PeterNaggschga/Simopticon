@@ -1,5 +1,5 @@
-<map id="src/optimizer/direct/hyrect/BaseRect.h" name="src/optimizer/direct/hyrect/BaseRect.h">
-<area shape="rect" id="node1" title="In this file, the header of the BaseRect class is defined." alt="" coords="99,5,247,47"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="5,95,160,136"/>
-<area shape="rect" id="node3" href="$BaseRect_8cpp.xhtml" title="In this file, the implementation of the BaseRect class is defined." alt="" coords="185,95,343,136"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/hyrect/BaseRect.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/hyrect/BaseRect.h">
+<area shape="rect" id="node1" title="In this file, the header of the BaseRect class is defined." alt="" coords="128,5,351,61"/>
+<area shape="rect" id="node2" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="5,109,228,165"/>
+<area shape="rect" id="node3" href="$BaseRect_8cpp.xhtml" title="In this file, the implementation of the BaseRect class is defined." alt="" coords="252,109,475,165"/>
 </map>
