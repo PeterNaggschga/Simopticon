@@ -16,7 +16,7 @@
   },
   // Optimizer-related Options
   "optimizer": {
-    // optimizer to be used (either "Direct", "MonteCarlo", or "RandomNeighbor")
+    // optimizer to be used (either "Direct", "MonteCarlo", or "RandomNeighbors")
     "optimizer": "Direct",
     // config of the used optimizer
     "config": "optimizers/direct.json"
