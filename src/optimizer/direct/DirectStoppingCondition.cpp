@@ -14,7 +14,7 @@ DirectStoppingCondition::DirectStoppingCondition(size_t evaluations, size_t hyre
 
 DirectStoppingCondition::DirectStoppingCondition(nlohmann::json stopCon) :
         StoppingCondition(stopCon),
-        NR_HYRECTS(getConditionFromJSON<size_t>(stopCon, "hyrects")) {
+        NR_HYRECTS(this->getConditionFromJSON<size_t>(stopCon, "hyrects")) {
 }
 
 
