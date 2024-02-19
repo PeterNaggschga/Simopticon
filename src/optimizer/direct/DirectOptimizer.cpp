@@ -14,7 +14,7 @@
 #include <fstream>
 
 DirectOptimizer::DirectOptimizer(Controller &ctrl, const std::list<std::shared_ptr<ParameterDefinition>> &params,
-                                 StoppingCondition con, bool trackProgress) : Optimizer(ctrl, params),
+                                 DirectStoppingCondition con, bool trackProgress) : Optimizer(ctrl, params),
                                                                               D(params.size()), stopCon(con),
                                                                               normalizer(ParameterNormalizer(params)),
                                                                               level(Levels()),

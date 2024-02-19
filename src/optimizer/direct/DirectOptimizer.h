@@ -14,7 +14,7 @@
 #include "DirectTypes.h"
 #include "DirectComparisonFunctions.h"
 #include "../Optimizer.h"
-#include "StoppingCondition.h"
+#include "DirectStoppingCondition.h"
 #include "hyrect/HyRect.h"
 #include "ParameterNormalizer.h"
 #include "Levels.h"
@@ -22,6 +22,7 @@
 #include <set>
 #include <unordered_set>
 #include <memory>
+
 
 class StoppingCondition;
 
@@ -49,7 +50,7 @@ private:
     /**
      * An object deciding when the optimization stops.
      */
-    StoppingCondition stopCon;
+    DirectStoppingCondition stopCon;
     /**
      * An object used switching between different levels between global and local search.
      */
@@ -124,11 +125,11 @@ public:
      * Creates a DirectOptimizer that evaluates functions with the given Controller, optimizes the given ParameterDefinition list and stops as defined by the given StoppingCondition.
      * @param ctrl: Controller to be used for evaluating the optimized function.
      * @param params: ParameterDefinition list to be optimized.
-     * @param con: StoppingCondition defining the end of optimization.
+     * @param con: DirectStoppingCondition defining the end of optimization.
      * @param trackProgress: Defines whether the progress should be printed in a `.csv` file.
      */
     DirectOptimizer(Controller &ctrl, const std::list<std::shared_ptr<ParameterDefinition>> &params,
-                    StoppingCondition con, bool trackProgress);
+                    DirectStoppingCondition con, bool trackProgress);
 
     /**
      * Starts the optimization using the DIRECT algorithm.

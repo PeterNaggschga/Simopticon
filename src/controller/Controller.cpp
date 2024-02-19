@@ -15,6 +15,7 @@
 #include "StubController.h"
 #include "ValueMap.h"
 #include "../optimizer/direct/DirectOptimizer.h"
+#include "../optimizer/montecarlo/MonteCarlo.h"
 #include "../runner/plexe/PlexeSimulationRunner.h"
 #include "../evaluation/constant_headway/ConstantHeadway.h"
 #include "nlohmann/json.hpp"
@@ -72,7 +73,11 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
     if (opt == "Direct") {
         bool trackProgress = optimizerConfig.at("outputProgress");
         optimizer = std::unique_ptr<Optimizer>(
-                new DirectOptimizer(*this, params, StoppingCondition(optimizerConfig.at("stopCon")), trackProgress));
+                new DirectOptimizer(*this, params, DirectStoppingCondition(optimizerConfig.at("stopCon")),
+                                    trackProgress));
+    } else if (opt == "MonteCarlo") {
+        optimizer = std::unique_ptr<Optimizer>(
+                new MonteCarlo(*this, params, optimizerConfig));
     } else {
         throw std::runtime_error("Optimzer not found: " + opt);
     }

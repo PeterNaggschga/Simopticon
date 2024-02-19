@@ -6,14 +6,14 @@
  * In this file, the header of the StoppingCondition class is defined.
  */
 
-#include "../../Types.h"
+#include "../Types.h"
 #include "nlohmann/json.hpp"
 
 #include <chrono>
 #include <cmath>
 
 /**
- * A class used for deciding whether the DIRECT should be stopped.
+ * A class used for deciding whether the optimization should be stopped.
  * Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met.
  * @ingroup direct
  */
@@ -23,10 +23,6 @@ private:
      * Number of evaluations after which the optimization should stop.
      */
     const size_t NR_EVALUATIONS;
-    /**
-     * Number of rectangles in the partition after which the optimization should stop.
-     */
-    const size_t NR_HYRECTS;
 
     /**
      * Point in time after which optimization should end.
@@ -72,16 +68,28 @@ private:
      */
     bool updateAccuracy(functionValue newBestVal);
 
+protected:
+    /**
+     * Helper method, which checks whether the given condition should be used and returns the corresponding value if thats the case.
+     * If not, 0 is returned.
+     * @tparam T: Type of the value located at the given key.
+     * @param object: JSON object the condition is read from.
+     * @param key: Key of the fetched condition.
+     * @param val: Key of the value field of the fetched condition.
+     * @return A value of type T that should be used as value for the condition.
+     */
+    template<typename T>
+    T getConditionFromJSON(nlohmann::json object, const std::string &key, const std::string &val = "n");
+
 public:
     /**
      * Creates a StoppingCondition with the given condition values.
      * @param evaluations: Number of evaluations after which the optimization should stop.
-     * @param hyrects: Number of rectangles in the partition after which the optimization should stop.
      * @param minutes: Number of minutes after which the optimization should stop.
      * @param accuracy: Accuracy used in accuracy condition (see #ACCURACY).
      * @param accuracyIterations: Number of iterations used in accuracy condition (see #NR_ACCURACY_ITERATIONS).
      */
-    explicit StoppingCondition(size_t evaluations = 0, size_t hyrects = 0, unsigned int minutes = 0,
+    explicit StoppingCondition(size_t evaluations = 0, unsigned int minutes = 0,
                                functionValue accuracy = 0, unsigned int accuracyIterations = 0);
 
     /**
@@ -98,11 +106,10 @@ public:
     /**
      * Checks if any of the configured conditions is met for the given parameters.
      * @param evaluations: Number of evaluations conducted by the optimization.
-     * @param hyrects: Number of rectangles in the current partition.
      * @param newBestVal: Value of the current optimum.
      * @return A boolean defining whether none of the configured conditions is met (meaning whether the optimization should keep running).
      */
-    bool evaluate(size_t evaluations, size_t hyrects, functionValue newBestVal);
+    bool evaluate(size_t evaluations, functionValue newBestVal);
 
     /**
      * Returns the value of #iterationsSinceImprov.

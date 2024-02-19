@@ -25,14 +25,18 @@ add_executable(simopticon
         src/parameters/DiscreteParameter.h
         src/parameters/DiscreteParameter.cpp
         src/controller/Controller.h
+        src/optimizer/StoppingCondition.cpp
+        src/optimizer/StoppingCondition.h
         src/optimizer/direct/hyrect/HyRect.cpp
         src/optimizer/direct/hyrect/HyRect.h
         src/optimizer/direct/DirectOptimizer.cpp
         src/optimizer/direct/DirectOptimizer.h
-        src/optimizer/direct/StoppingCondition.cpp
-        src/optimizer/direct/StoppingCondition.h
+        src/optimizer/direct/DirectStoppingCondition.cpp
+        src/optimizer/direct/DirectStoppingCondition.h
         src/optimizer/direct/Levels.cpp
         src/optimizer/direct/Levels.h
+        src/optimizer/montecarlo/MonteCarlo.cpp
+        src/optimizer/montecarlo/MonteCarlo.h
         src/optimizer/Optimizer.cpp
         src/optimizer/Optimizer.h
         src/controller/Controller.cpp
