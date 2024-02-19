@@ -39,6 +39,7 @@ class ValueMap;
  * A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also
  * user interaction such as tracking results, updating StatusBar and handling interrupts by the user via Abortable.
  * @ingroup controller
+ * @author Per Natzschka
  */
 class Controller : public Abortable {
 private:

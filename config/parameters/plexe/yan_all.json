@@ -1,0 +1,33 @@
+// Definitions of all parameters used by Yan consensus controller
+
+[
+  {
+    "min": 0,
+    "max": 200,
+    "config": "*.node[*].scenario.yanBeta",
+    "unit": "s"
+  },
+  {
+    "min": 0,
+    "max": 50,
+    "config": "*.node[*].scenario.yanGamma",
+    "unit": "ss"
+  },
+  {
+    "min": 0,
+    "max": 200,
+    "config": "*.node[*].scenario.yanKappa"
+  },
+  {
+    "min": 0,
+    "max": 10,
+    "config": "*.node[*].scenario.yanEta",
+    "unit": "s"
+  },
+  {
+    "min": 0,
+    "max": 10,
+    "config": "*.node[*].scenario.yanXi",
+    "unit": "ss"
+  }
+]

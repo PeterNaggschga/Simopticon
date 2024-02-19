@@ -12,6 +12,7 @@
  * A class representing a HyRect that has a parent HyRect.
  * Used for all HyRect where depth @f$ t > 0 @f$.
  * @ingroup hyrect
+ * @author Per Natzschka
  */
 class ChildRect : public HyRect {
 private:

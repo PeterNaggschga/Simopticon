@@ -12,6 +12,7 @@
  * A class representing a HyRect without a parent rectangle.
  * This rectangle is always at the root of a partition tree and therefore has depth @f$ t=0 @f$ and represents the whole search space.
  * @ingroup hyrect
+ * @author Per Natzschka
  */
 class BaseRect : public HyRect {
 public:

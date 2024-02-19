@@ -1,6 +1,7 @@
 /**
  * @file
  * In this file, the implementation of the Status class is defined.
+ * @author Per Natzschka
  */
 
 #include "Status.h"

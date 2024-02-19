@@ -1,0 +1,14 @@
+// Definitions of all parameters used by Ploeg controller
+
+[
+  {
+    "min": 0,
+    "max": 100000,
+    "config": "*.node[*].scenario.ploegKp"
+  },
+  {
+    "min": 0,
+    "max": 100000,
+    "config": "*.node[*].scenario.ploegKd"
+  }
+]

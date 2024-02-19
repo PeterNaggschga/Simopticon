@@ -14,6 +14,7 @@ class HyRect;
 /**
  * A class providing functionality for finding the lower right convex hull of a set of points.
  * @ingroup direct
+ * @author Per Natzschka
  */
 class GrahamScan {
 public:

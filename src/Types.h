@@ -13,6 +13,7 @@ class Parameter;
  *
  * @file Types.h
  * @ingroup utils
+ * @author Per Natzschka
  */
 
 /**

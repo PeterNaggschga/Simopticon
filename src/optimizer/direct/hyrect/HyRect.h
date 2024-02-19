@@ -39,6 +39,7 @@ enum class position : char {
 /**
  * An abstract class representing a rectangular part of the search space.
  * @ingroup hyrect
+ * @author Per Natzschka
  */
 class HyRect {
 protected:

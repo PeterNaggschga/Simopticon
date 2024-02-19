@@ -1,0 +1,31 @@
+// RandomNeighbors Config
+
+{
+  // enable live-tracking of optimization progress in results/progress.csv
+  "outputProgress": false,
+  // (parallel) evaluations per iteration
+  "evaluations": 2,
+  // search ratio around the current optimum relative to each parameters' search space
+  "neighborhoodWidth": 0.1,
+  // probabiliy of local search compared to global search
+  "localSearchProbability": 0.3,
+  // StoppingCondition-related Options
+  "stopCon": {
+    // stop after n evaluations
+    "evaluations": {
+      "useCondition": false,
+      "n": 500
+    },
+    // stop after n minutes
+    "minutes": {
+      "useCondition": true,
+      "n": 1000
+    },
+    // stop when the best value hasn't changed more than delta in n iterations
+    "accuracy": {
+      "useCondition": false,
+      "delta": 0.00001,
+      "n": 100
+    }
+  }
+}

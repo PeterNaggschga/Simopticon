@@ -20,6 +20,7 @@ class Parameter;
 /**
  * A class capable of creating `.ini` files with certain options based on a complete `omnetpp.ini`.
  * @ingroup plexe
+ * @author Per Natzschka
  */
 class ConfigEditor {
 private:

@@ -1,0 +1,24 @@
+// Definitions of all parameters used in flatbed controller
+
+[
+  {
+    "min": 0,
+    "max": 80,
+    "config": "*.node[*].scenario.flatbedKa"
+  },
+  {
+    "min": 0,
+    "max": 1000,
+    "config": "*.node[*].scenario.flatbedKv"
+  },
+  {
+    "min": 500,
+    "max": 1000,
+    "config": "*.node[*].scenario.flatbedKp"
+  },
+  {
+    "min": 0,
+    "max": 20,
+    "config": "*.node[*].scenario.flatbedH"
+  }
+]

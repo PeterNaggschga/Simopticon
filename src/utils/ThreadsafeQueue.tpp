@@ -3,6 +3,7 @@
 /**
  * @file
  * In this file, the implementation of the ThreadSafeQueue class is defined.
+ * @author Per Natzschka
  */
 
 template<class Key>

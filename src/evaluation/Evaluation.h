@@ -28,6 +28,7 @@
  * A class capable of evaluating simulation results and scoring them with a value which is treated as the function value for the optimization.
  * A lower value is considered better in this framework. The optimized function can be viewed as an error function.
  * @ingroup evaluation
+ * @author Per Natzschka
  */
 class Evaluation : public Status {
 public:

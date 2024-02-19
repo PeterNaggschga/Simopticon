@@ -9,7 +9,8 @@
    3. [Update](#update)
 3. [Usage](#usage)
    1. [Configuration](#configuration)
-   2. [Optimization](#optimization)
+   2. [Available Optimizers](#available-optimizers)
+   3. [Optimization](#optimization)
 4. [Extension](#extension)
    1. [Development](#development)
    2. [Integration](#integration)
@@ -30,18 +31,21 @@ The described process is distributed over four major components:
 2. SimulationRunner: A component used to run simulations with certain parameters automatically.
 3. Evaluation: A component capable of calculating a rating value based on result files of simulations.
 4. Controller: A component managing the optimization process and communication between Optimizer, SimulationRunner and
-   Evaluation. Used to abstract components 1-3 from each other.
+   Evaluation.
+   Used to abstract components 1–3 from each other.
 
 Extensions of the framework may introduce new Optimizer, SimulationRunner and Evaluation implementations
 (see [Extension](#extension)).
-Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers
+Currently, there is only one implementation of SimulationRunner and Evaluation, tailored for the optimization of platoon
+controllers
 using the [Plexe](https://plexe.car2x.org/) framework.
+The available Optimizers are explained in [Available Optimizers](#available-optimizers).
 
 The full API documentation may be found
-on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/simopticon/)
-or in the comprehensive [PDF file](https://peternaggschga.github.io/simopticon/documentation.pdf) provided.
-A more in-depth explanation of *Simopticon* and its design principles may be found in the 
-[**german** bachelor's thesis](https://peternaggschga.github.io/simopticon/thesis.pdf) that proposed the framework.
+on [peternaggschga.github.io/Simopticon](https://peternaggschga.github.io/Simopticon/)
+or in the comprehensive [PDF file](https://peternaggschga.github.io/Simopticon/documentation.pdf) provided.
+A more in-depth explanation of *Simopticon* and its design principles may be found in the
+[**german** bachelor's thesis](https://peternaggschga.github.io/Simopticon/thesis.pdf) that proposed the framework.
 
 ---
 
@@ -84,7 +88,7 @@ the requirements.
 
 Check whether Git is installed on your machine and install it if necessary using:
 
-``` 
+```shell
 sudo apt install git
  ```
 
@@ -96,7 +100,7 @@ If you have an older version installed, you must first remove it.
 
 First, make sure to install g++ and OpenSSL Development tools.
 
-```
+```shell
 sudo apt install g++ libssl-dev
 ```
 
@@ -104,19 +108,19 @@ Then you need to download the latest version of CMake from their [download page]
 for the source distribution tar package.
 Unpack the downloaded package using:
 
-```
+```shell
 tar xf cmake-[version number].tar.gz
 ```
 
 Open the newly created directory and run the configuration script with:
 
-```
+```shell
 cd cmake-[version number] && ./configure
 ```
 
 When the configuration has completed successfully, you are ready to build and install using:
 
-```
+```shell
 make -j $(nproc)
 sudo make install
 ```
@@ -127,7 +131,7 @@ You may remove the downloaded tar file and extracted directory if needed.
 
 Check whether Python3 development tools are installed on your machine and install them if necessary using:
 
-```
+```shell
 sudo apt install python3-dev
 ```
 
@@ -136,20 +140,20 @@ sudo apt install python3-dev
 Go to the directory you want to install *Simopticon* in, e.g. `~/src`.
 To get the source code, clone the git repository using:
 
-```
+```shell
 git clone https://github.com/PeterNaggschga/simopticon.git
 ```
 
 Create a build directory in the downloaded files with:
 
-```
+```shell
 mkdir simopticon/build
 cd simopticon/build
 ```
 
 Build *Simopticon* by calling:
 
-```
+```shell
 cmake ..
 make -j  $(nproc)
 ```
@@ -164,13 +168,13 @@ The same applies to the `config` directory in `~/src/simopticon` which is used t
 To upgrade to the latest version of *Simopticon*, the latest release must be pulled and recompiled.
 Go to the directory, you installed *Simopticon* in, e.g. `~/src/simopticon`. Then pull from `master` using:
 
-```
+```shell
 git pull
 ```
 
 Go to the `build` directory and rebuild the executable by calling:
 
-```
+```shell
 cmake ..
 make -j $(nproc)
 ```
@@ -222,6 +226,43 @@ There you have to set the `pythonScript` and the `omnetppDirectory` keys.
 `omnetppDirectory` must point to the directory where OMNeT++ Version 6 or higher is installed,
 e.g. `~/src/omnetpp-6.0.1`.
 
+### Available Optimizers
+
+*Simopticon* contains implementations of multiple optimization strategies, which are shortly described here.
+Which algorithm is used can be selected in the main config (`config/simopticon.json`).
+
+#### DIRECT-Algorithm
+
+The DIRECT algorithm is a global optimization algorithm motivated by Lipschitzian optimization.
+DIRECT is deterministic and tailored to low-dimensional problems.
+It partitions the search space iteratively into increasingly smaller rectangles
+which are each sampled on opposing vertices.
+DIRECT decides which rectangles are explored further,
+based on the value of those samples and the size of the rectangles.
+That way, rectangles are sampled either because they yield good values,
+or because they are large and therefore not yet sampled in detail.
+This leads to a balance between local refinement and global optimization.
+
+The concrete implementation of DIRECT in *Simopticon* is a derivative of Adaptive Diagonal Curves and MrDIRECT
+which are both derivatives of the original DIRECT algorithm.
+For a more in-depth explanation of the implemented algorithm refer to the
+[**german** bachelor's thesis](https://peternaggschga.github.io/Simopticon/thesis.pdf) that proposed it.
+
+#### Monte Carlo Optimization
+
+Monte Carlo methods are a simple class of random algorithms and therefore not deterministic.
+When applied to optimization problems, they show great performance despite their simplicity.
+Basically, the algorithm iteratively selects random values to be tested and evaluates them.
+
+#### Random Neighbor Optimization
+
+The RandomNeighbor Optimizer is an implementation
+of [random-restart stochastic hill climbing](https://en.wikipedia.org/wiki/Hill_climbing#Variants).
+It starts at a random point in the search space.
+In the next step, a new point is randomly chosen from the neighborhood of the current optimum.
+The next point is chosen completely random (i.e. independent of the optimum)
+with a predefined probability to ensure global search.
+
 ### Optimization
 
 The optimization is invoked on the command line by executing the program built in [Setup](#setup).
@@ -229,7 +270,7 @@ The call on the command line has one mandatory and one optional argument.
 The First argument must be the path to the main config, i.e. `config/simopticon.json`.
 A valid call to an optimization could be:
 
-```
+```shell
 ./simopticon ../config/simopticon.json
 ```
 
@@ -254,7 +295,7 @@ The second argument holds the name of the function to be optimized, i.e., one of
 
 A valid call to the optimization of a benchmark function could be:
 
-```
+```shell
 ./simopticon ../config/simopticon.json branin
 ```
 

@@ -26,6 +26,7 @@ class ParameterDefinition;
 /**
  * A class acting as the container of the value of a parameter defined by a ParameterDefinition.
  * @ingroup parameters
+ * @author Per Natzschka
  */
 class Parameter {
 private:

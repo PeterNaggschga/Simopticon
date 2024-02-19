@@ -11,6 +11,7 @@
 /**
  * Implements a Parameter using continuos values in the form of floating point numbers.
  * @ingroup parameters
+ * @author Per Natzschka
  */
 class ContinuousParameter : public Parameter {
 private:

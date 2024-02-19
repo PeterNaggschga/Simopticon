@@ -1,6 +1,7 @@
 /**
  * @file
  * In this file, the implementation of the DiscreteParameter class is defined.
+ * @author Per Natzschka
  */
 
 #include "DiscreteParameter.h"

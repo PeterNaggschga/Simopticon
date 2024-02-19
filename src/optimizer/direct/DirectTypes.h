@@ -6,6 +6,7 @@
  *
  * @file DirectTypes.h
  * @ingroup direct
+ * @author Per Natzschka
  */
 
 /**
