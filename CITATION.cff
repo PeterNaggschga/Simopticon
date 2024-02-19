@@ -9,6 +9,11 @@ authors:
     family-names: Natzschka
     email: per.natzschka1@mailbox.tu-dresden.de
     affiliation: TUD Dresden University of Technology
+  - given-names: Burkhard
+    family-names: Hensel
+    email: burkhard.hensel@tu-dresden.de
+    affiliation: TUD Dresden University of Technology
+    orcid: https://orcid.org/0000-0002-6824-3549
 repository-code: 'https://github.com/PeterNaggschga/simopticon'
 url: 'https://peternaggschga.github.io/Simopticon/'
 abstract: >-
