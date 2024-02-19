@@ -1,0 +1,10 @@
+// Definitions of all parameters used in ACC
+
+[
+  {
+    "min": 0,
+    "max": 2000,
+    "config": "*.node[*].scenario.accLambda",
+    "unit": "ps"
+  }
+]
