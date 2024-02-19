@@ -16,6 +16,7 @@
 #include "ValueMap.h"
 #include "../optimizer/direct/DirectOptimizer.h"
 #include "../optimizer/montecarlo/MonteCarlo.h"
+#include "../optimizer/randomneighbors/RandomNeighbors.h"
 #include "../runner/plexe/PlexeSimulationRunner.h"
 #include "../evaluation/constant_headway/ConstantHeadway.h"
 #include "nlohmann/json.hpp"
@@ -78,6 +79,9 @@ Controller::Controller(const std::filesystem::path &configPath, bool isStub) {
     } else if (opt == "MonteCarlo") {
         optimizer = std::unique_ptr<Optimizer>(
                 new MonteCarlo(*this, params, optimizerConfig));
+    } else if (opt == "RandomNeighbors") {
+        optimizer = std::unique_ptr<Optimizer>(
+                new RandomNeighbors(*this, params, optimizerConfig));
     } else {
         throw std::runtime_error("Optimzer not found: " + opt);
     }

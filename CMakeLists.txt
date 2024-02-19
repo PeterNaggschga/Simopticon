@@ -39,6 +39,8 @@ add_executable(simopticon
         src/optimizer/montecarlo/MonteCarlo.h
         src/optimizer/Optimizer.cpp
         src/optimizer/Optimizer.h
+        src/optimizer/randomneighbors/RandomNeighbors.cpp
+        src/optimizer/randomneighbors/RandomNeighbors.h
         src/controller/Controller.cpp
         src/Types.h
         src/optimizer/direct/ParameterNormalizer.cpp
