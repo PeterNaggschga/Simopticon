@@ -10,10 +10,8 @@ var searchData=
   ['operator_3e_193',['operator&gt;',['../classHyRect.xhtml#ac583307712c940ab436e8947178eae52',1,'HyRect::operator&gt;()'],['../classParameter.xhtml#ab644815d2a11967cdb1676ba823fe828',1,'Parameter::operator&gt;()']]],
   ['operator_3e_3d_194',['operator&gt;=',['../classHyRect.xhtml#a6a06a98c6020a6497f8463d7459ca473',1,'HyRect::operator&gt;=()'],['../classParameter.xhtml#ac18e33c9e734edd27753dba28f7c6738',1,'Parameter::operator&gt;=()']]],
   ['optimalrectangles_195',['optimalRectangles',['../classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b',1,'DirectOptimizer']]],
-  ['optimizer_196',['optimizer',['../classController.xhtml#a1d4cdec09fa091d4725076c0bff594cc',1,'Controller']]],
-  ['optimizer_197',['Optimizer',['../classOptimizer.xhtml',1,'']]],
-  ['optimizer_198',['optimizer',['../group__optimizer.xhtml',1,'']]],
-  ['optimizer_199',['Optimizer',['../classOptimizer.xhtml#abfab50ab4ad02f02cde68a7e2689f3ab',1,'Optimizer']]],
-  ['optimizer_2ecpp_200',['Optimizer.cpp',['../Optimizer_8cpp.xhtml',1,'']]],
-  ['optimizer_2eh_201',['Optimizer.h',['../Optimizer_8h.xhtml',1,'']]]
+  ['optimizer_196',['Optimizer',['../classOptimizer.xhtml#abfab50ab4ad02f02cde68a7e2689f3ab',1,'Optimizer::Optimizer()'],['../classOptimizer.xhtml',1,'Optimizer']]],
+  ['optimizer_197',['optimizer',['../group__optimizer.xhtml',1,'(Global Namespace)'],['../classController.xhtml#a1d4cdec09fa091d4725076c0bff594cc',1,'Controller::optimizer()']]],
+  ['optimizer_2ecpp_198',['Optimizer.cpp',['../Optimizer_8cpp.xhtml',1,'']]],
+  ['optimizer_2eh_199',['Optimizer.h',['../Optimizer_8h.xhtml',1,'']]]
 ];

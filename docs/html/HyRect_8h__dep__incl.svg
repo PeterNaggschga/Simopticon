@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1040;
+var viewWidth = 989;
 var viewHeight = 362;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,15 +54,15 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/hyrect/HyRect.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-358 1036.19,-358 1036.19,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-358 985,-358 985,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="In this file, the header of the HyRect class is defined.">
-<polygon fill="#bfbfbf" stroke="black" points="346.19,-312.5 346.19,-353.5 513.19,-353.5 513.19,-312.5 346.19,-312.5"/>
-<text text-anchor="start" x="354.19" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="354.19" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="429.69" y="-319.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/HyRect.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="333,-312.5 333,-353.5 500,-353.5 500,-312.5 333,-312.5"/>
+<text text-anchor="start" x="341" y="-341.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="341" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="416.5" y="-319.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/HyRect.h</text>
 </a>
 </g>
 </g>
@@ -70,235 +70,235 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="DirectOptimizer_8h.xhtml" target="_top" xlink:title="In this file, the header of the DirectOptimizer class is defined.">
-<polygon fill="white" stroke="black" points="88.19,-78.5 88.19,-119.5 255.19,-119.5 255.19,-78.5 88.19,-78.5"/>
-<text text-anchor="start" x="96.19" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="96.19" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="171.69" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.h</text>
+<polygon fill="white" stroke="black" points="0,-78.5 0,-119.5 167,-119.5 167,-78.5 0,-78.5"/>
+<text text-anchor="start" x="8" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="8" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="83.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M335.76,-325.82C219.61,-317.19 34.58,-299.89 13.69,-276 -36.51,-218.58 69.32,-151.83 131.19,-119.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="335.51,-329.31 345.74,-326.55 336.02,-322.32 335.51,-329.31"/>
+<path fill="none" stroke="midnightblue" d="M322.38,-329.8C232.35,-325.48 105.77,-312.81 74.5,-276 36.66,-231.46 60.3,-155.41 74.74,-119.66"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="322.47,-333.31 332.62,-330.27 322.79,-326.32 322.47,-333.31"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
-<g id="a_node5"><a xlink:href="GrahamScan_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the GrahamScan class is defined.">
-<polygon fill="white" stroke="black" points="23.19,-234.5 23.19,-275.5 190.19,-275.5 190.19,-234.5 23.19,-234.5"/>
-<text text-anchor="start" x="31.19" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="31.19" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="106.69" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/GrahamScan.cpp</text>
+<g id="a_node5"><a xlink:href="DirectComparisonFunctions_8h.xhtml" target="_top" xlink:title="In this file, comparison functions are defined which are used in the direct module.">
+<polygon fill="white" stroke="black" points="83.5,-234.5 83.5,-275.5 277.5,-275.5 277.5,-234.5 83.5,-234.5"/>
+<text text-anchor="start" x="91.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="91.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="180.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectComparisonFunctions.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M336.75,-310.13C290.3,-299.2 234.57,-286.09 189.59,-275.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="335.98,-313.54 346.51,-312.43 337.58,-306.73 335.98,-313.54"/>
+<path fill="none" stroke="midnightblue" d="M346.02,-309.3C312.62,-298.55 273.11,-285.82 241.07,-275.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="345.13,-312.69 355.72,-312.43 347.28,-306.03 345.13,-312.69"/>
 </g>
-<!-- Node6 -->
-<g id="node6" class="node">
-<title>Node6</title>
-<g id="a_node6"><a xlink:href="DirectComparisonFunctions_8h.xhtml" target="_top" xlink:title="In this file, comparison functions are defined which are used in the direct module.">
-<polygon fill="white" stroke="black" points="207.69,-234.5 207.69,-275.5 401.69,-275.5 401.69,-234.5 207.69,-234.5"/>
-<text text-anchor="start" x="215.69" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="215.69" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="304.69" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectComparisonFunctions.h</text>
+<!-- Node7 -->
+<g id="node7" class="node">
+<title>Node7</title>
+<g id="a_node7"><a xlink:href="Levels_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Levels class is defined.">
+<polygon fill="white" stroke="black" points="185,-78.5 185,-119.5 352,-119.5 352,-78.5 185,-78.5"/>
+<text text-anchor="start" x="193" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="193" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="268.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/Levels.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
-<title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M388.91,-307.2C371.99,-296.92 352.65,-285.16 336.78,-275.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="387.14,-310.22 397.5,-312.43 390.78,-304.24 387.14,-310.22"/>
+<!-- Node1&#45;&gt;Node7 -->
+<g id="edge14" class="edge">
+<title>Node1&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M360.42,-307.16C346.78,-298.9 333.31,-288.54 323.5,-276 289.11,-232.04 303.26,-209.23 286.5,-156 282.7,-143.92 278.35,-130.41 274.89,-119.68"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="358.95,-310.35 369.37,-312.28 362.43,-304.28 358.95,-310.35"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="Levels_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Levels class is defined.">
-<polygon fill="white" stroke="black" points="273.19,-78.5 273.19,-119.5 440.19,-119.5 440.19,-78.5 273.19,-78.5"/>
-<text text-anchor="start" x="281.19" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="281.19" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="356.69" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/Levels.cpp</text>
+<g id="a_node8"><a xlink:href="BaseRect_8h.xhtml" target="_top" xlink:title="In this file, the header of the BaseRect class is defined.">
+<polygon fill="white" stroke="black" points="333,-234.5 333,-275.5 500,-275.5 500,-234.5 333,-234.5"/>
+<text text-anchor="start" x="341" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="341" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="416.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/BaseRect.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
-<g id="edge14" class="edge">
+<g id="edge9" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M428.03,-302.17C425.16,-266.22 417.4,-204.6 396.69,-156 391.12,-142.92 382.09,-129.9 374.01,-119.71"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="424.57,-302.74 428.78,-312.46 431.55,-302.23 424.57,-302.74"/>
+<path fill="none" stroke="midnightblue" d="M416.5,-302.3C416.5,-293.3 416.5,-283.65 416.5,-275.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="413,-302.43 416.5,-312.43 420,-302.43 413,-302.43"/>
 </g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="BaseRect_8h.xhtml" target="_top" xlink:title="In this file, the header of the BaseRect class is defined.">
-<polygon fill="white" stroke="black" points="457.19,-234.5 457.19,-275.5 624.19,-275.5 624.19,-234.5 457.19,-234.5"/>
-<text text-anchor="start" x="465.19" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="465.19" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="540.69" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/BaseRect.h</text>
+<!-- Node10 -->
+<g id="node10" class="node">
+<title>Node10</title>
+<g id="a_node10"><a xlink:href="GrahamScan_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the GrahamScan class is defined.">
+<polygon fill="white" stroke="black" points="518,-234.5 518,-275.5 685,-275.5 685,-234.5 518,-234.5"/>
+<text text-anchor="start" x="526" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="526" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="601.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/GrahamScan.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node9 -->
-<g id="edge10" class="edge">
-<title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M466.74,-306.64C481.56,-296.49 498.37,-284.98 512.21,-275.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="464.55,-303.89 458.28,-312.43 468.51,-309.67 464.55,-303.89"/>
+<!-- Node1&#45;&gt;Node10 -->
+<g id="edge12" class="edge">
+<title>Node1&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M473.44,-308.61C499.26,-298 529.44,-285.6 554.02,-275.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="472.06,-305.39 464.14,-312.43 474.72,-311.87 472.06,-305.39"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
 <g id="a_node11"><a xlink:href="HyRect_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the HyRect class is defined.">
-<polygon fill="white" stroke="black" points="680.19,-156.5 680.19,-197.5 847.19,-197.5 847.19,-156.5 680.19,-156.5"/>
-<text text-anchor="start" x="688.19" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="688.19" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="763.69" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/HyRect.cpp</text>
+<polygon fill="white" stroke="black" points="629,-156.5 629,-197.5 796,-197.5 796,-156.5 629,-156.5"/>
+<text text-anchor="start" x="637" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="637" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="712.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/HyRect.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node11 -->
 <g id="edge13" class="edge">
 <title>Node1&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M523.42,-317.47C559.4,-309.07 599.7,-296.04 632.69,-276 654.47,-262.78 651.96,-250.11 671.69,-234 688.5,-220.28 708.96,-207.5 726.32,-197.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="522.39,-314.11 513.4,-319.72 523.92,-320.94 522.39,-314.11"/>
+<path fill="none" stroke="midnightblue" d="M510.21,-324.15C580.23,-316.32 668.06,-301.65 693.5,-276 713.88,-255.45 715.76,-220.01 714.6,-197.85"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="509.58,-320.7 500.02,-325.26 510.33,-327.66 509.58,-320.7"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="ChildRect_8h.xhtml" target="_top" xlink:title="In this file, the header of the ChildRect class is defined.">
-<polygon fill="white" stroke="black" points="680.19,-234.5 680.19,-275.5 847.19,-275.5 847.19,-234.5 680.19,-234.5"/>
-<text text-anchor="start" x="688.19" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="688.19" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="763.69" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/ChildRect.h</text>
+<polygon fill="white" stroke="black" points="740,-234.5 740,-275.5 907,-275.5 907,-234.5 740,-234.5"/>
+<text text-anchor="start" x="748" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="748" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="823.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/ChildRect.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge15" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M523.56,-310.64C572.75,-299.45 632.51,-285.85 680.1,-275.02"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="522.52,-307.29 513.54,-312.92 524.07,-314.11 522.52,-307.29"/>
+<path fill="none" stroke="midnightblue" d="M510.23,-315.69C571.78,-304.82 654.02,-290.02 726.5,-276 730.89,-275.15 735.39,-274.27 739.93,-273.37"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="509.39,-312.28 500.15,-317.46 510.61,-319.17 509.39,-312.28"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="Controller_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Controller class is defined.">
-<polygon fill="white" stroke="black" points="88.19,-0.5 88.19,-41.5 255.19,-41.5 255.19,-0.5 88.19,-0.5"/>
-<text text-anchor="start" x="96.19" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="96.19" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
-<text text-anchor="middle" x="171.69" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Controller.cpp</text>
+<polygon fill="white" stroke="black" points="0,-0.5 0,-41.5 167,-41.5 167,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
+<text text-anchor="middle" x="83.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Controller.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M171.69,-68.3C171.69,-59.3 171.69,-49.65 171.69,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="168.19,-68.43 171.69,-78.43 175.19,-68.43 168.19,-68.43"/>
+<path fill="none" stroke="midnightblue" d="M83.5,-68.3C83.5,-59.3 83.5,-49.65 83.5,-41.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="80,-68.43 83.5,-78.43 87,-68.43 80,-68.43"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
 <g id="a_node4"><a xlink:href="DirectOptimizer_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the DirectOptimizer class is defined.">
-<polygon fill="white" stroke="black" points="328.19,-0.5 328.19,-41.5 495.19,-41.5 495.19,-0.5 328.19,-0.5"/>
-<text text-anchor="start" x="336.19" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="336.19" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="411.69" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.cpp</text>
+<polygon fill="white" stroke="black" points="240,-0.5 240,-41.5 407,-41.5 407,-0.5 240,-0.5"/>
+<text text-anchor="start" x="248" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="248" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="323.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M243.37,-75.3C277.34,-64.55 317.52,-51.82 350.1,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="241.98,-72.07 233.5,-78.43 244.09,-78.75 241.98,-72.07"/>
+<path fill="none" stroke="midnightblue" d="M155.17,-75.3C189.14,-64.55 229.32,-51.82 261.9,-41.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="153.78,-72.07 145.31,-78.43 155.9,-78.75 153.78,-72.07"/>
+</g>
+<!-- Node5&#45;&gt;Node2 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node2</title>
+<path fill="none" stroke="midnightblue" d="M132.25,-228.63C120.56,-220.34 109.21,-210.09 101.5,-198 86.24,-174.08 83.15,-140.59 82.89,-119.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="130.53,-231.69 140.79,-234.33 134.41,-225.86 130.53,-231.69"/>
+</g>
+<!-- Node6 -->
+<g id="node6" class="node">
+<title>Node6</title>
+<g id="a_node6"><a xlink:href="Levels_8h.xhtml" target="_top" xlink:title="In this file, the header of the Levels class is defined.">
+<polygon fill="white" stroke="black" points="111,-156.5 111,-197.5 278,-197.5 278,-156.5 111,-156.5"/>
+<text text-anchor="start" x="119" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="119" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="194.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/Levels.h</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge6" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M185.92,-224.59C187.59,-215.51 189.39,-205.74 190.91,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="182.47,-223.96 184.11,-234.43 189.36,-225.23 182.47,-223.96"/>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
-<g id="edge6" class="edge">
+<g id="edge7" class="edge">
 <title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M250.94,-229.52C236.77,-221.1 222.45,-210.57 211.69,-198 191.97,-174.97 181.06,-140.92 175.79,-119.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="249.28,-232.6 259.71,-234.48 252.73,-226.51 249.28,-232.6"/>
-</g>
-<!-- Node7 -->
-<g id="node7" class="node">
-<title>Node7</title>
-<g id="a_node7"><a xlink:href="Levels_8h.xhtml" target="_top" xlink:title="In this file, the header of the Levels class is defined.">
-<polygon fill="white" stroke="black" points="221.19,-156.5 221.19,-197.5 388.19,-197.5 388.19,-156.5 221.19,-156.5"/>
-<text text-anchor="start" x="229.19" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="229.19" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="304.69" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/Levels.h</text>
-</a>
-</g>
+<path fill="none" stroke="midnightblue" d="M157.45,-150.64C142.63,-140.49 125.83,-128.98 111.99,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="155.69,-153.67 165.91,-156.43 159.64,-147.89 155.69,-153.67"/>
 </g>
 <!-- Node6&#45;&gt;Node7 -->
-<g id="edge7" class="edge">
-<title>Node6&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M304.69,-224.3C304.69,-215.3 304.69,-205.65 304.69,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="301.19,-224.43 304.69,-234.43 308.19,-224.43 301.19,-224.43"/>
-</g>
-<!-- Node7&#45;&gt;Node2 -->
 <g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M261.3,-151.2C243.3,-140.92 222.72,-129.16 205.83,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="260.02,-154.51 270.44,-156.43 263.5,-148.43 260.02,-154.51"/>
+<title>Node6&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M220.59,-149.2C230.12,-139.42 240.71,-128.54 249.51,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="218.03,-146.82 213.56,-156.43 223.04,-151.71 218.03,-146.82"/>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M323.82,-148.05C330.31,-138.57 337.41,-128.18 343.35,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="320.84,-146.2 318.09,-156.43 326.62,-150.15 320.84,-146.2"/>
+<!-- Node8&#45;&gt;Node4 -->
+<g id="edge10" class="edge">
+<title>Node8&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M406.4,-224.73C403.48,-216.14 400.32,-206.71 397.5,-198 380.31,-144.9 384.35,-128.46 360.5,-78 354.48,-65.25 345.88,-52.04 338.49,-41.66"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="403.14,-226.02 409.68,-234.35 409.76,-223.75 403.14,-226.02"/>
 </g>
-<!-- Node9&#45;&gt;Node4 -->
-<g id="edge11" class="edge">
-<title>Node9&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M510,-227.21C501.52,-218.58 492.95,-208.5 486.69,-198 458.08,-149.93 472.79,-128.49 448.69,-78 442.62,-65.28 434.02,-52.07 426.64,-41.68"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="507.77,-229.92 517.37,-234.41 512.66,-224.92 507.77,-229.92"/>
-</g>
-<!-- Node10 -->
-<g id="node10" class="node">
-<title>Node10</title>
-<g id="a_node10"><a xlink:href="BaseRect_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the BaseRect class is defined.">
-<polygon fill="white" stroke="black" points="495.19,-156.5 495.19,-197.5 662.19,-197.5 662.19,-156.5 495.19,-156.5"/>
-<text text-anchor="start" x="503.19" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="503.19" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="578.69" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/BaseRect.cpp</text>
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="BaseRect_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the BaseRect class is defined.">
+<polygon fill="white" stroke="black" points="407,-156.5 407,-197.5 574,-197.5 574,-156.5 407,-156.5"/>
+<text text-anchor="start" x="415" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="415" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="490.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/BaseRect.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node10 -->
-<g id="edge12" class="edge">
-<title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M554.96,-225.47C559.62,-216.14 564.69,-206.01 568.94,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="551.82,-223.92 550.48,-234.43 558.08,-227.05 551.82,-223.92"/>
+<!-- Node8&#45;&gt;Node9 -->
+<g id="edge11" class="edge">
+<title>Node8&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M442.59,-227.2C452.12,-217.42 462.71,-206.54 471.51,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="440.03,-224.82 435.56,-234.43 445.04,-229.71 440.03,-224.82"/>
 </g>
 <!-- Node12&#45;&gt;Node11 -->
 <g id="edge17" class="edge">
 <title>Node12&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M763.69,-224.3C763.69,-215.3 763.69,-205.65 763.69,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="760.19,-224.43 763.69,-234.43 767.19,-224.43 760.19,-224.43"/>
+<path fill="none" stroke="midnightblue" d="M786.45,-228.64C771.63,-218.49 754.83,-206.98 740.99,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="784.69,-231.67 794.91,-234.43 788.64,-225.89 784.69,-231.67"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
 <g id="a_node13"><a xlink:href="ChildRect_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the ChildRect class is defined.">
-<polygon fill="white" stroke="black" points="865.19,-156.5 865.19,-197.5 1032.19,-197.5 1032.19,-156.5 865.19,-156.5"/>
-<text text-anchor="start" x="873.19" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="873.19" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="948.69" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/ChildRect.cpp</text>
+<polygon fill="white" stroke="black" points="814,-156.5 814,-197.5 981,-197.5 981,-156.5 814,-156.5"/>
+<text text-anchor="start" x="822" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="822" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="897.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/hyrect/ChildRect.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node13 -->
 <g id="edge16" class="edge">
 <title>Node12&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M820.63,-230.61C846.45,-220 876.64,-207.6 901.21,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="819.26,-227.39 811.34,-234.43 821.92,-233.87 819.26,-227.39"/>
+<path fill="none" stroke="midnightblue" d="M849.59,-227.2C859.12,-217.42 869.71,-206.54 878.51,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="847.03,-224.82 842.56,-234.43 852.04,-229.71 847.03,-224.82"/>
 </g>
 </g>
 </svg>

@@ -1,15 +1,15 @@
 <map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/hyrect/HyRect.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/hyrect/HyRect.h">
-<area shape="rect" id="node1" title="In this file, the header of the HyRect class is defined." alt="" coords="467,5,690,61"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="123,317,346,373"/>
-<area shape="rect" id="node5" href="$GrahamScan_8cpp.xhtml" title="In this file, the implementation of the GrahamScan class is defined." alt="" coords="36,109,259,165"/>
-<area shape="rect" id="node6" href="$DirectComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="282,109,541,165"/>
-<area shape="rect" id="node8" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="370,317,592,373"/>
-<area shape="rect" id="node9" href="$BaseRect_8h.xhtml" title="In this file, the header of the BaseRect class is defined." alt="" coords="615,109,838,165"/>
-<area shape="rect" id="node11" href="$HyRect_8cpp.xhtml" title="In this file, the implementation of the HyRect class is defined." alt="" coords="912,213,1135,269"/>
-<area shape="rect" id="node12" href="$ChildRect_8h.xhtml" title="In this file, the header of the ChildRect class is defined." alt="" coords="912,109,1135,165"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="123,421,346,477"/>
-<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="443,421,666,477"/>
-<area shape="rect" id="node7" href="$Levels_8h.xhtml" title="In this file, the header of the Levels class is defined." alt="" coords="300,213,523,269"/>
-<area shape="rect" id="node10" href="$BaseRect_8cpp.xhtml" title="In this file, the implementation of the BaseRect class is defined." alt="" coords="666,213,888,269"/>
-<area shape="rect" id="node13" href="$ChildRect_8cpp.xhtml" title="In this file, the implementation of the ChildRect class is defined." alt="" coords="1159,213,1382,269"/>
+<area shape="rect" id="node1" title="In this file, the header of the HyRect class is defined." alt="" coords="449,5,672,61"/>
+<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="5,317,228,373"/>
+<area shape="rect" id="node5" href="$DirectComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="117,109,375,165"/>
+<area shape="rect" id="node7" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="252,317,475,373"/>
+<area shape="rect" id="node8" href="$BaseRect_8h.xhtml" title="In this file, the header of the BaseRect class is defined." alt="" coords="449,109,672,165"/>
+<area shape="rect" id="node10" href="$GrahamScan_8cpp.xhtml" title="In this file, the implementation of the GrahamScan class is defined." alt="" coords="696,109,919,165"/>
+<area shape="rect" id="node11" href="$HyRect_8cpp.xhtml" title="In this file, the implementation of the HyRect class is defined." alt="" coords="844,213,1067,269"/>
+<area shape="rect" id="node12" href="$ChildRect_8h.xhtml" title="In this file, the header of the ChildRect class is defined." alt="" coords="992,109,1215,165"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,421,228,477"/>
+<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="325,421,548,477"/>
+<area shape="rect" id="node6" href="$Levels_8h.xhtml" title="In this file, the header of the Levels class is defined." alt="" coords="153,213,376,269"/>
+<area shape="rect" id="node9" href="$BaseRect_8cpp.xhtml" title="In this file, the implementation of the BaseRect class is defined." alt="" coords="548,213,771,269"/>
+<area shape="rect" id="node13" href="$ChildRect_8cpp.xhtml" title="In this file, the implementation of the ChildRect class is defined." alt="" coords="1091,213,1313,269"/>
 </map>

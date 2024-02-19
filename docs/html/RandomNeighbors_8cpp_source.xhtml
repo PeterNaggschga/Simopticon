@@ -118,98 +118,103 @@ $(document).ready(function(){initNavTree('RandomNeighbors_8cpp_source.xhtml','')
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    size_t evaluations = 0;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> bestValue = INFINITY;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span> (!aborted &amp;&amp; stopCon.evaluate(evaluations, bestValue)) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::list&lt;parameterCombination&gt; paramList;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">double</span> mode = (<span class="keywordtype">double</span>) rand() / RAND_MAX;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">double</span> size_scale = (<span class="keywordtype">double</span>) rand() / RAND_MAX;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">lastLocal</a> = mode &lt; <a class="code" href="classRandomNeighbors.xhtml#ac41625f09e3c7dacf64a9b92e6e5ed1f">localSearchProbability</a> &amp;&amp; <a class="code" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">iterations</a> &gt;= 5;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="Types_8h.xhtml#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> currentOptimum;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">lastLocal</a>) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            currentOptimum = getValueMap().getTopVals().front().first;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classRandomNeighbors.xhtml#aa4aeb607a08f1d8615fafec7518c6c6a">parallelTrials</a>; i++) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">auto</span> *pcomb = <span class="keyword">new</span> parameterCombination();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> coord;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordtype">int</span> index = 0;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> std::shared_ptr&lt;ParameterDefinition&gt; &amp;pdef: parameters) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">double</span> rand_relative = (<span class="keywordtype">double</span>) rand() / RAND_MAX;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">if</span> (lastLocal) {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <span class="comment">// local search</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    <span class="keywordtype">double</span> val = currentOptimum[index].get()-&gt;getVal();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordtype">double</span> regionSize = size_scale * neighborhoodWidth * (pdef-&gt;getMax() - pdef-&gt;getMin());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    coord = val + (rand_relative - 0.5) * regionSize;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    <span class="keywordflow">if</span> (coord &lt; pdef-&gt;getMin())</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                        coord = pdef-&gt;getMin();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordflow">if</span> (coord &gt; pdef-&gt;getMax())</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        coord = pdef-&gt;getMax();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="comment">// global search</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    coord = (coordinate) rand_relative * (pdef-&gt;getMax() - pdef-&gt;getMin()) + pdef-&gt;getMin();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                std::shared_ptr&lt;Parameter&gt; newParam(<span class="keyword">new</span> ContinuousParameter(pdef, coord));</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                pcomb-&gt;push_back(newParam);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                index++;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            paramList.push_back(*pcomb);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::map&lt;parameterCombination, functionValue&gt; values = requestValues(paramList);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        bestValue = <a class="code" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a>().getTopVals().front().second;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <a class="code" href="classRandomNeighbors.xhtml#a8e7ceb6cb2fe2a56c7371bfb2cdb9afb">lastEvaluations</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> parameterCombination &amp;comb: paramList) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            lastEvaluations += std::to_string(values[comb]) + <span class="stringliteral">&quot;; &quot;</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// set random seed for reproducible results</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// NOTE: Separate random number generators would be better if there are different positions in Simopticon where</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// random numbers are used. This is currently (2023-12-07) not the case.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    srand(1234); <span class="comment">// NOLINT(*-msc51-cpp)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">while</span> (!aborted &amp;&amp; stopCon.evaluate(evaluations, bestValue)) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::list&lt;parameterCombination&gt; paramList;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">double</span> mode = (<span class="keywordtype">double</span>) rand() / RAND_MAX;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">double</span> size_scale = (<span class="keywordtype">double</span>) rand() / RAND_MAX;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">lastLocal</a> = mode &lt; <a class="code" href="classRandomNeighbors.xhtml#ac41625f09e3c7dacf64a9b92e6e5ed1f">localSearchProbability</a> &amp;&amp; <a class="code" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">iterations</a> &gt;= 5;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="Types_8h.xhtml#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a> currentOptimum;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">lastLocal</a>) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            currentOptimum = getValueMap().getTopVals().front().first;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="classRandomNeighbors.xhtml#aa4aeb607a08f1d8615fafec7518c6c6a">parallelTrials</a>; i++) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">auto</span> *pcomb = <span class="keyword">new</span> parameterCombination();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> coord;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">int</span> index = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> std::shared_ptr&lt;ParameterDefinition&gt; &amp;pdef: parameters) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordtype">double</span> rand_relative = (<span class="keywordtype">double</span>) rand() / RAND_MAX;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">if</span> (lastLocal) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="comment">// local search</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordtype">double</span> val = currentOptimum[index].get()-&gt;getVal();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    <span class="keywordtype">double</span> regionSize = size_scale * neighborhoodWidth * (pdef-&gt;getMax() - pdef-&gt;getMin());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    coord = val + (rand_relative - 0.5) * regionSize;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">if</span> (coord &lt; pdef-&gt;getMin())</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                        coord = pdef-&gt;getMin();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    <span class="keywordflow">if</span> (coord &gt; pdef-&gt;getMax())</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        coord = pdef-&gt;getMax();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="comment">// global search</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    coord = (coordinate) rand_relative * (pdef-&gt;getMax() - pdef-&gt;getMin()) + pdef-&gt;getMin();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                std::shared_ptr&lt;Parameter&gt; newParam(<span class="keyword">new</span> ContinuousParameter(pdef, coord));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                pcomb-&gt;push_back(newParam);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                index++;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            paramList.push_back(*pcomb);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        std::map&lt;parameterCombination, functionValue&gt; values = requestValues(paramList);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        bestValue = <a class="code" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a>().getTopVals().front().second;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// update counters</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">iterations</a>++;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        evaluations = <a class="code" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a>().getSize();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        evaluations += <a class="code" href="classRandomNeighbors.xhtml#aa4aeb607a08f1d8615fafec7518c6c6a">parallelTrials</a>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRandomNeighbors.xhtml#a68afe606cf95e2c816d125f3fe46be46">trackProgress</a>) {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">saveProgress</a><a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">(</a>bestValue<a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">,</a> evaluations<a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">)</a>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">clang</span> <span class="preprocessor">diagnostic</span> <span class="preprocessor">pop</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">saveProgress</a>(<a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> bestVal, size_t evaluations) <span class="keyword">const</span> {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> std::ofstream out;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (!out.is_open()) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">if</span> (!std::filesystem::exists(<span class="stringliteral">&quot;results/progress.csv&quot;</span>)) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            std::filesystem::create_directories(<span class="stringliteral">&quot;results&quot;</span>);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        out.open(<span class="stringliteral">&quot;results/progress.csv&quot;</span>, std::ios::out | std::ios::trunc);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Iteration;&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Evaluations;&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Minimum\n&quot;</span>;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    out &lt;&lt; iterations &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; evaluations &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; bestVal &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#a7676bbc22b7f8a099a7f5e145197218b">  100</a></span>&#160;std::string <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#a7676bbc22b7f8a099a7f5e145197218b">getName</a>() {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Random Neighbors&quot;</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#a9d77d41ca49c947ca6efb5cc37ba0ab7">  104</a></span>&#160;std::string <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#a9d77d41ca49c947ca6efb5cc37ba0ab7">getStatus</a>() {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::string status = <span class="stringliteral">&quot;Iterations:\t\t\t&quot;</span> + std::to_string(<a class="code" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">iterations</a>) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    status += <span class="stringliteral">&quot;Iterations without improvement:\t&quot;</span> + std::to_string(stopCon.getIterationsSinceImprov()) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    status += <span class="stringliteral">&quot;Last evaluations: &quot;</span> + <a class="code" href="classRandomNeighbors.xhtml#a8e7ceb6cb2fe2a56c7371bfb2cdb9afb">lastEvaluations</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    status += (<a class="code" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">lastLocal</a> ? <span class="stringliteral">&quot; (local)&quot;</span> : <span class="stringliteral">&quot; (global)&quot;</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    status += <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    status += <span class="stringliteral">&quot;Best evaluations: &quot;</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">int</span> counter = 0;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;val: getValueMap().getTopVals()) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        status += std::to_string(val.second) + <span class="stringliteral">&quot;; &quot;</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        counter++;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (counter == 4)</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> status;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#a3d6fb698405866195d2bc3d27924f9b3">  121</a></span>&#160;std::string <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#a3d6fb698405866195d2bc3d27924f9b3">getStatusBar</a>() {</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Optimizer running...&quot;</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="classRandomNeighbors.xhtml#a8e7ceb6cb2fe2a56c7371bfb2cdb9afb">lastEvaluations</a> = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> parameterCombination &amp;comb: paramList) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            lastEvaluations += std::to_string(values[comb]) + <span class="stringliteral">&quot;; &quot;</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// update counters</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">iterations</a>++;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        evaluations = <a class="code" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a>().getSize();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        evaluations += <a class="code" href="classRandomNeighbors.xhtml#aa4aeb607a08f1d8615fafec7518c6c6a">parallelTrials</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRandomNeighbors.xhtml#a68afe606cf95e2c816d125f3fe46be46">trackProgress</a>) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">saveProgress</a><a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">(</a>bestValue<a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">,</a> evaluations<a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">)</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">pragma</span> <span class="preprocessor">clang</span> <span class="preprocessor">diagnostic</span> <span class="preprocessor">pop</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">   93</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#ab8e146151b4e0741bc67ba2c2bc2388b">saveProgress</a>(<a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> bestVal, size_t evaluations) <span class="keyword">const</span> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> std::ofstream out;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (!out.is_open()) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">if</span> (!std::filesystem::exists(<span class="stringliteral">&quot;results/progress.csv&quot;</span>)) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            std::filesystem::create_directories(<span class="stringliteral">&quot;results&quot;</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        out.open(<span class="stringliteral">&quot;results/progress.csv&quot;</span>, std::ios::out | std::ios::trunc);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;Iteration;&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Evaluations;&quot;</span> &lt;&lt; <span class="stringliteral">&quot;Minimum\n&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    out &lt;&lt; iterations &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; evaluations &lt;&lt; <span class="stringliteral">&quot;;&quot;</span> &lt;&lt; bestVal &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#a7676bbc22b7f8a099a7f5e145197218b">  105</a></span>&#160;std::string <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#a7676bbc22b7f8a099a7f5e145197218b">getName</a>() {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Random Neighbors&quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#a9d77d41ca49c947ca6efb5cc37ba0ab7">  109</a></span>&#160;std::string <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#a9d77d41ca49c947ca6efb5cc37ba0ab7">getStatus</a>() {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::string status = <span class="stringliteral">&quot;Iterations:\t\t\t&quot;</span> + std::to_string(<a class="code" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">iterations</a>) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    status += <span class="stringliteral">&quot;Iterations without improvement:\t&quot;</span> + std::to_string(stopCon.getIterationsSinceImprov()) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    status += <span class="stringliteral">&quot;Last evaluations: &quot;</span> + <a class="code" href="classRandomNeighbors.xhtml#a8e7ceb6cb2fe2a56c7371bfb2cdb9afb">lastEvaluations</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    status += (<a class="code" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">lastLocal</a> ? <span class="stringliteral">&quot; (local)&quot;</span> : <span class="stringliteral">&quot; (global)&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    status += <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    status += <span class="stringliteral">&quot;Best evaluations: &quot;</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;val: getValueMap().getTopVals()) {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        status += std::to_string(val.second) + <span class="stringliteral">&quot;; &quot;</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        counter++;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (counter == 4)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">return</span> status;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classRandomNeighbors.xhtml#a3d6fb698405866195d2bc3d27924f9b3">  126</a></span>&#160;std::string <a class="code" href="classRandomNeighbors.xhtml">RandomNeighbors</a>::<a class="code" href="classRandomNeighbors.xhtml#a3d6fb698405866195d2bc3d27924f9b3">getStatusBar</a>() {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;Optimizer running...&quot;</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

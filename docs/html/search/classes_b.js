@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['randomneighbors_351',['RandomNeighbors',['../classRandomNeighbors.xhtml',1,'']]]
+  ['randomneighbors_349',['RandomNeighbors',['../classRandomNeighbors.xhtml',1,'']]]
 ];
