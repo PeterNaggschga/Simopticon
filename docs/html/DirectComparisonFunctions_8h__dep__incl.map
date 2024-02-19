@@ -1,8 +1,8 @@
-<map id="src/optimizer/direct/DirectComparisonFunctions.h" name="src/optimizer/direct/DirectComparisonFunctions.h">
-<area shape="rect" id="node1" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="155,5,372,47"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="133,184,281,225"/>
-<area shape="rect" id="node5" href="$Levels_8h.xhtml" title="In this file, the header of the Levels class is defined." alt="" coords="245,95,393,136"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,281,207,307"/>
-<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="231,273,386,315"/>
-<area shape="rect" id="node6" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="305,184,453,225"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/DirectComparisonFunctions.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/DirectComparisonFunctions.h">
+<area shape="rect" id="node1" title="In this file, comparison functions are defined which are used in the direct module." alt="" coords="183,5,442,61"/>
+<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="128,213,351,269"/>
+<area shape="rect" id="node5" href="$Levels_8h.xhtml" title="In this file, the header of the Levels class is defined." alt="" coords="276,109,499,165"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,317,228,373"/>
+<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="252,317,475,373"/>
+<area shape="rect" id="node6" href="$Levels_8cpp.xhtml" title="In this file, the implementation of the Levels class is defined." alt="" coords="375,213,597,269"/>
 </map>

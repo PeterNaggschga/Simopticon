@@ -1,13 +1,13 @@
-<map id="src/controller/ValueMap.h" name="src/controller/ValueMap.h">
-<area shape="rect" id="node1" title="In this file, the header of the ValueMap class is defined." alt="" coords="623,5,810,32"/>
-<area shape="rect" id="node2" href="$StubController_8cpp.xhtml" title="In this file, the implementation of the StubController class is defined." alt="" coords="5,319,236,345"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="563,319,764,345"/>
-<area shape="rect" id="node4" href="$ValueMap_8cpp.xhtml" title="In this file, the implementation of the ValueMap class is defined." alt="" coords="754,87,957,114"/>
-<area shape="rect" id="node5" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="981,80,1135,121"/>
-<area shape="rect" id="node6" href="$StatusBar_8h.xhtml" title="In this file, the header of the StatusBar class is defined." alt="" coords="509,87,671,114"/>
-<area shape="rect" id="node7" href="$Controller_8h.xhtml" title="In this file, the header of the Controller class is defined." alt="" coords="290,169,477,196"/>
-<area shape="rect" id="node11" href="$StatusBar_8cpp.xhtml" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="501,169,679,196"/>
-<area shape="rect" id="node8" href="$StubController_8h.xhtml" title="In this file, the header of the StubController class is defined." alt="" coords="133,244,348,271"/>
-<area shape="rect" id="node9" href="$main_8cpp.xhtml" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="284,319,389,345"/>
-<area shape="rect" id="node10" href="$Optimizer_8cpp.xhtml" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="424,244,625,271"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/controller/ValueMap.h" name="/home/runner/work/Simopticon/Simopticon/src/controller/ValueMap.h">
+<area shape="rect" id="node1" title="In this file, the header of the ValueMap class is defined." alt="" coords="497,5,720,61"/>
+<area shape="rect" id="node2" href="$ValueMap_8cpp.xhtml" title="In this file, the implementation of the ValueMap class is defined." alt="" coords="5,109,228,165"/>
+<area shape="rect" id="node3" href="$StubController_8cpp.xhtml" title="In this file, the implementation of the StubController class is defined." alt="" coords="167,421,389,477"/>
+<area shape="rect" id="node4" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="745,421,968,477"/>
+<area shape="rect" id="node5" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="944,109,1167,165"/>
+<area shape="rect" id="node6" href="$StatusBar_8h.xhtml" title="In this file, the header of the StatusBar class is defined." alt="" coords="487,117,731,158"/>
+<area shape="rect" id="node7" href="$Controller_8h.xhtml" title="In this file, the header of the Controller class is defined." alt="" coords="365,213,588,269"/>
+<area shape="rect" id="node11" href="$StatusBar_8cpp.xhtml" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="611,221,870,262"/>
+<area shape="rect" id="node8" href="$main_8cpp.xhtml" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="425,429,648,470"/>
+<area shape="rect" id="node9" href="$StubController_8h.xhtml" title="In this file, the header of the StubController class is defined." alt="" coords="301,317,524,373"/>
+<area shape="rect" id="node10" href="$Optimizer_8cpp.xhtml" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="597,317,820,373"/>
 </map>
