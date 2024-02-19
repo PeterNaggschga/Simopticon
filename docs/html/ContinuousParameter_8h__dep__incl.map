@@ -1,5 +1,7 @@
 <map id="/home/runner/work/Simopticon/Simopticon/src/parameters/ContinuousParameter.h" name="/home/runner/work/Simopticon/Simopticon/src/parameters/ContinuousParameter.h">
-<area shape="rect" id="node1" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="135,5,358,61"/>
+<area shape="rect" id="node1" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="402,5,625,61"/>
 <area shape="rect" id="node2" href="$ParameterNormalizer_8cpp.xhtml" title="In this file, the implementation of the ParameterNormalizer class is defined." alt="" coords="5,109,237,165"/>
-<area shape="rect" id="node3" href="$ContinuousParameter_8cpp.xhtml" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="262,109,485,165"/>
+<area shape="rect" id="node3" href="$MonteCarlo_8cpp.xhtml" title="In this file, the implementation of the MonteCarlo optimizer class is defined." alt="" coords="262,109,485,165"/>
+<area shape="rect" id="node4" href="$RandomNeighbors_8cpp.xhtml" title="In this file, the implementation of the RandomNeighbors optimizer class is defined." alt="" coords="509,109,800,165"/>
+<area shape="rect" id="node5" href="$ContinuousParameter_8cpp.xhtml" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="825,109,1047,165"/>
 </map>

@@ -1,9 +1,9 @@
-<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/StoppingCondition.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/StoppingCondition.h">
-<area shape="rect" id="node1" title="In this file, the header of the StoppingCondition class is defined." alt="" coords="219,5,442,61"/>
-<area shape="rect" id="node2" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="73,109,167,136"/>
-<area shape="rect" id="node6" title=" " alt="" coords="192,109,339,136"/>
-<area shape="rect" id="node7" title=" " alt="" coords="363,109,429,136"/>
-<area shape="rect" id="node8" title=" " alt="" coords="454,109,517,136"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/StoppingCondition.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/StoppingCondition.h">
+<area shape="rect" id="node1" title="In this file, the header of the StoppingCondition class is defined." alt="" coords="213,5,435,61"/>
+<area shape="rect" id="node2" href="$Types_8h.xhtml" title="In this file, types are defined which should be used across the whole framework." alt="" coords="79,109,161,136"/>
+<area shape="rect" id="node6" title=" " alt="" coords="185,109,332,136"/>
+<area shape="rect" id="node7" title=" " alt="" coords="356,109,423,136"/>
+<area shape="rect" id="node8" title=" " alt="" coords="447,109,510,136"/>
 <area shape="rect" id="node3" title=" " alt="" coords="5,184,64,211"/>
 <area shape="rect" id="node4" title=" " alt="" coords="89,184,151,211"/>
 <area shape="rect" id="node5" title=" " alt="" coords="176,184,253,211"/>

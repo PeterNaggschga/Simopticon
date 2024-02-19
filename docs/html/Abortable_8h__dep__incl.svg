@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 860;
+var viewWidth = 1287;
 var viewHeight = 351;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,14 +54,14 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>/home/runner/work/Simopticon/Simopticon/src/utils/Abortable.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-347 856,-347 856,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-347 1282.5,-347 1282.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title="In this file, the header of the Abortable class is defined.">
-<polygon fill="#bfbfbf" stroke="black" points="358,-312.5 358,-342.5 533,-342.5 533,-312.5 358,-312.5"/>
-<text text-anchor="start" x="366" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="middle" x="445.5" y="-319.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/utils/Abortable.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="459,-312.5 459,-342.5 634,-342.5 634,-312.5 459,-312.5"/>
+<text text-anchor="start" x="467" y="-330.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="middle" x="546.5" y="-319.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/utils/Abortable.h</text>
 </a>
 </g>
 </g>
@@ -69,68 +69,68 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="Controller_8h.xhtml" target="_top" xlink:title="In this file, the header of the Controller class is defined.">
-<polygon fill="white" stroke="black" points="251,-156.5 251,-197.5 418,-197.5 418,-156.5 251,-156.5"/>
-<text text-anchor="start" x="259" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="259" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
-<text text-anchor="middle" x="334.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Controller.h</text>
+<polygon fill="white" stroke="black" points="231,-156.5 231,-197.5 398,-197.5 398,-156.5 231,-156.5"/>
+<text text-anchor="start" x="239" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="239" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
+<text text-anchor="middle" x="314.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Controller.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M393.52,-307.95C378.54,-300.23 363.55,-289.78 353.5,-276 336.65,-252.9 333.63,-218.86 333.61,-197.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="392.28,-311.23 402.81,-312.4 395.31,-304.92 392.28,-311.23"/>
+<path fill="none" stroke="midnightblue" d="M509.16,-307.5C491.95,-298.42 471.41,-287.12 453.5,-276 412.74,-250.69 367.72,-218.02 340.27,-197.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="507.86,-310.77 518.35,-312.3 511.11,-304.57 507.86,-310.77"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="Optimizer_8h.xhtml" target="_top" xlink:title="In this file, the header of the Optimizer class is defined.">
-<polygon fill="white" stroke="black" points="362,-234.5 362,-275.5 529,-275.5 529,-234.5 362,-234.5"/>
-<text text-anchor="start" x="370" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="370" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="445.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Optimizer.h</text>
+<polygon fill="white" stroke="black" points="463,-234.5 463,-275.5 630,-275.5 630,-234.5 463,-234.5"/>
+<text text-anchor="start" x="471" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="471" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="546.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Optimizer.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge9" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M445.5,-301.98C445.5,-293.35 445.5,-283.76 445.5,-275.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="442,-302.23 445.5,-312.23 449,-302.23 442,-302.23"/>
+<path fill="none" stroke="midnightblue" d="M546.5,-301.98C546.5,-293.35 546.5,-283.76 546.5,-275.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="543,-302.23 546.5,-312.23 550,-302.23 543,-302.23"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="Abortable_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Abortable class is defined.">
-<polygon fill="white" stroke="black" points="546.5,-240 546.5,-270 732.5,-270 732.5,-240 546.5,-240"/>
-<text text-anchor="start" x="554.5" y="-258" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="middle" x="639.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/utils/Abortable.cpp</text>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="Abortable_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Abortable class is defined.">
+<polygon fill="white" stroke="black" points="647.5,-240 647.5,-270 833.5,-270 833.5,-240 647.5,-240"/>
+<text text-anchor="start" x="655.5" y="-258" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="middle" x="740.5" y="-247" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/utils/Abortable.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node12 -->
-<g id="edge16" class="edge">
-<title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M493.75,-308.96C526.78,-296.96 570,-281.26 600.77,-270.07"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="492.5,-305.7 484.29,-312.4 494.89,-312.28 492.5,-305.7"/>
+<!-- Node1&#45;&gt;Node16 -->
+<g id="edge22" class="edge">
+<title>Node1&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M594.75,-308.96C627.78,-296.96 671,-281.26 701.77,-270.07"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="593.5,-305.7 585.29,-312.4 595.89,-312.28 593.5,-305.7"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="Controller_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Controller class is defined.">
-<polygon fill="white" stroke="black" points="370,-0.5 370,-41.5 537,-41.5 537,-0.5 370,-0.5"/>
-<text text-anchor="start" x="378" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="378" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
-<text text-anchor="middle" x="453.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Controller.cpp</text>
+<polygon fill="white" stroke="black" points="444,-0.5 444,-41.5 611,-41.5 611,-0.5 444,-0.5"/>
+<text text-anchor="start" x="452" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="452" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
+<text text-anchor="middle" x="527.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Controller.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M343.59,-146.87C351.01,-126.2 362.98,-98.57 379.5,-78 390.9,-63.81 406.66,-51.23 420.7,-41.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="340.25,-145.81 340.31,-156.4 346.87,-148.08 340.25,-145.81"/>
+<path fill="none" stroke="midnightblue" d="M309,-146.08C306.86,-124.72 307.92,-96.6 323.5,-78 339.36,-59.07 394.86,-44.57 443.98,-35.07"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="305.56,-146.77 310.3,-156.24 312.5,-145.88 305.56,-146.77"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -145,54 +145,54 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M241.01,-158.38C212.14,-149.96 181.41,-137.7 156.5,-120 125.02,-97.64 101.41,-57.54 90.38,-36.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="240.14,-161.78 250.71,-161.1 242.02,-155.03 240.14,-161.78"/>
+<path fill="none" stroke="midnightblue" d="M220.67,-161.5C171.53,-151.98 118.16,-137.97 101.5,-120 80.09,-96.91 80.03,-57.12 81.78,-36.04"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="220.28,-164.98 230.76,-163.4 221.58,-158.1 220.28,-164.98"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="StubController_8h.xhtml" target="_top" xlink:title="In this file, the header of the StubController class is defined.">
-<polygon fill="white" stroke="black" points="166,-78.5 166,-119.5 333,-119.5 333,-78.5 166,-78.5"/>
-<text text-anchor="start" x="174" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="174" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
-<text text-anchor="middle" x="249.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/StubController.h</text>
+<polygon fill="white" stroke="black" points="111,-78.5 111,-119.5 278,-119.5 278,-78.5 111,-78.5"/>
+<text text-anchor="start" x="119" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="119" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/controller</text>
+<text text-anchor="middle" x="194.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/StubController.h</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M304.85,-149.49C293.82,-139.63 281.52,-128.63 271.32,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="302.82,-152.37 312.61,-156.43 307.49,-147.15 302.82,-152.37"/>
+<path fill="none" stroke="midnightblue" d="M274.9,-150.92C258.77,-140.7 240.4,-129.07 225.3,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="273.28,-154.03 283.6,-156.43 277.02,-148.12 273.28,-154.03"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="Optimizer_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the Optimizer class is defined.">
-<polygon fill="white" stroke="black" points="388,-78.5 388,-119.5 555,-119.5 555,-78.5 388,-78.5"/>
-<text text-anchor="start" x="396" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="396" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="471.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Optimizer.cpp</text>
+<polygon fill="white" stroke="black" points="333,-78.5 333,-119.5 500,-119.5 500,-78.5 333,-78.5"/>
+<text text-anchor="start" x="341" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="341" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="416.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Optimizer.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node7 -->
 <g id="edge8" class="edge">
 <title>Node2&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M378.69,-151.49C397.35,-141.13 418.78,-129.25 436.34,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="376.83,-148.52 369.78,-156.43 380.22,-154.64 376.83,-148.52"/>
+<path fill="none" stroke="midnightblue" d="M348.92,-150.35C362.45,-140.27 377.72,-128.89 390.32,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="346.7,-147.65 340.77,-156.43 350.88,-153.26 346.7,-147.65"/>
 </g>
 <!-- Node5&#45;&gt;Node3 -->
 <g id="edge6" class="edge">
 <title>Node5&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M311.54,-74.89C340.18,-64.22 373.81,-51.69 401.14,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="310.18,-71.66 302.04,-78.43 312.63,-78.22 310.18,-71.66"/>
+<path fill="none" stroke="midnightblue" d="M288.06,-76.65C337.02,-65.47 396.46,-51.91 443.87,-41.09"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="287.07,-73.28 278.1,-78.92 288.63,-80.11 287.07,-73.28"/>
 </g>
 <!-- Node5&#45;&gt;Node4 -->
 <g id="edge7" class="edge">
 <title>Node5&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M197.34,-74.12C170.05,-61.63 137.58,-46.76 114.31,-36.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="196.2,-77.45 206.75,-78.43 199.12,-71.08 196.2,-77.45"/>
+<path fill="none" stroke="midnightblue" d="M157.48,-72.66C139.77,-60.53 119.22,-46.45 104.28,-36.23"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="155.69,-75.67 165.91,-78.43 159.64,-69.89 155.69,-75.67"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -208,76 +208,156 @@ var sectionId = 'dynsection-0';
 <!-- Node5&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node5&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M256.85,-68.59C259.12,-59.51 261.56,-49.74 263.62,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="253.42,-67.88 254.39,-78.43 260.21,-69.58 253.42,-67.88"/>
+<path fill="none" stroke="midnightblue" d="M220.59,-71.2C230.12,-61.42 240.71,-50.54 249.51,-41.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="218.03,-68.82 213.56,-78.43 223.04,-73.71 218.03,-68.82"/>
 </g>
 <!-- Node8&#45;&gt;Node2 -->
 <g id="edge10" class="edge">
 <title>Node8&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M408.45,-228.64C393.63,-218.49 376.83,-206.98 362.99,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="406.69,-231.67 416.91,-234.43 410.64,-225.89 406.69,-231.67"/>
+<path fill="none" stroke="midnightblue" d="M477.22,-231.3C444.38,-220.55 405.54,-207.82 374.04,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="476.16,-234.64 486.75,-234.43 478.34,-227.99 476.16,-234.64"/>
 </g>
 <!-- Node8&#45;&gt;Node7 -->
-<g id="edge14" class="edge">
+<g id="edge20" class="edge">
 <title>Node8&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M450.5,-224.36C455.7,-193.61 463.67,-146.36 468.15,-119.83"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="447.01,-224.05 448.79,-234.5 453.91,-225.22 447.01,-224.05"/>
+<path fill="none" stroke="midnightblue" d="M492.13,-229.46C478.09,-221.09 463.99,-210.59 453.5,-198 434.29,-174.95 424.47,-140.9 419.92,-119.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="490.4,-232.51 500.83,-234.4 493.86,-226.42 490.4,-232.51"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="DirectOptimizer_8h.xhtml" target="_top" xlink:title="In this file, the header of the DirectOptimizer class is defined.">
-<polygon fill="white" stroke="black" points="685,-156.5 685,-197.5 852,-197.5 852,-156.5 685,-156.5"/>
-<text text-anchor="start" x="693" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="693" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="768.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.h</text>
+<polygon fill="white" stroke="black" points="463,-156.5 463,-197.5 630,-197.5 630,-156.5 463,-156.5"/>
+<text text-anchor="start" x="471" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="471" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="546.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.h</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node9 -->
 <g id="edge11" class="edge">
 <title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M538.44,-232.13C584.89,-221.2 640.62,-208.09 685.6,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="537.61,-228.73 528.68,-234.43 539.22,-235.54 537.61,-228.73"/>
+<path fill="none" stroke="midnightblue" d="M546.5,-224.3C546.5,-215.3 546.5,-205.65 546.5,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="543,-224.43 546.5,-234.43 550,-224.43 543,-224.43"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="StatusBar_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the StatusBar class is defined.">
-<polygon fill="white" stroke="black" points="473.5,-162 473.5,-192 667.5,-192 667.5,-162 473.5,-162"/>
-<text text-anchor="start" x="481.5" y="-180" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="middle" x="570.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/status/StatusBar.cpp</text>
+<g id="a_node11"><a xlink:href="MonteCarlo_8h.xhtml" target="_top" xlink:title="In this file, the header of the MonteCarlo class is defined.">
+<polygon fill="white" stroke="black" points="666,-156.5 666,-197.5 833,-197.5 833,-156.5 666,-156.5"/>
+<text text-anchor="start" x="674" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="674" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="749.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/montecarlo/MonteCarlo.h</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node11 -->
-<g id="edge15" class="edge">
+<g id="edge14" class="edge">
 <title>Node8&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M486.37,-229.15C506.5,-216.91 530.05,-202.59 547.1,-192.23"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="484.42,-226.24 477.69,-234.43 488.05,-232.22 484.42,-226.24"/>
+<path fill="none" stroke="midnightblue" d="M608.24,-230.89C636.73,-220.22 670.2,-207.69 697.4,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="606.92,-227.64 598.78,-234.43 609.37,-234.2 606.92,-227.64"/>
+</g>
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="RandomNeighbors_8h.xhtml" target="_top" xlink:title="In this file, the header of the RandomNeighbors optimizer class is defined.">
+<polygon fill="white" stroke="black" points="859,-156.5 859,-197.5 1066,-197.5 1066,-156.5 859,-156.5"/>
+<text text-anchor="start" x="867" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="867" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="962.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/randomneighbors/RandomNeighbors.h</text>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node13 -->
+<g id="edge17" class="edge">
+<title>Node8&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M640.06,-233.74C692.18,-223.83 785.29,-207.87 858.7,-195.44"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="639.36,-230.31 630.21,-235.64 640.69,-237.19 639.36,-230.31"/>
+</g>
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="StatusBar_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the StatusBar class is defined.">
+<polygon fill="white" stroke="black" points="1084.5,-162 1084.5,-192 1278.5,-192 1278.5,-162 1084.5,-162"/>
+<text text-anchor="start" x="1092.5" y="-180" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="middle" x="1181.5" y="-169" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/status/StatusBar.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node15 -->
+<g id="edge21" class="edge">
+<title>Node8&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M640.33,-233.83C833.04,-205.87 885.68,-223.66 1075.5,-198 1087.66,-196.36 1100.53,-194.25 1112.96,-192.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="639.53,-230.4 630.15,-235.33 640.55,-237.33 639.53,-230.4"/>
 </g>
 <!-- Node9&#45;&gt;Node3 -->
 <g id="edge12" class="edge">
 <title>Node9&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M719.38,-151.99C657.17,-121.57 551.14,-69.74 493.57,-41.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="718.08,-155.25 728.61,-156.5 721.16,-148.96 718.08,-155.25"/>
+<path fill="none" stroke="midnightblue" d="M542.84,-146.36C539.05,-115.61 533.22,-68.36 529.95,-41.83"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="539.4,-147 544.09,-156.5 546.34,-146.14 539.4,-147"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
 <g id="a_node10"><a xlink:href="DirectOptimizer_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the DirectOptimizer class is defined.">
-<polygon fill="white" stroke="black" points="685,-78.5 685,-119.5 852,-119.5 852,-78.5 685,-78.5"/>
-<text text-anchor="start" x="693" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
-<text text-anchor="start" x="693" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
-<text text-anchor="middle" x="768.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.cpp</text>
+<polygon fill="white" stroke="black" points="555,-78.5 555,-119.5 722,-119.5 722,-78.5 555,-78.5"/>
+<text text-anchor="start" x="563" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="563" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="638.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/direct/DirectOptimizer.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge13" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M768.5,-146.3C768.5,-137.3 768.5,-127.65 768.5,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="765,-146.43 768.5,-156.43 772,-146.43 765,-146.43"/>
+<path fill="none" stroke="midnightblue" d="M578.24,-149.78C590.27,-139.84 603.74,-128.72 614.89,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="575.67,-147.36 570.19,-156.43 580.13,-152.76 575.67,-147.36"/>
+</g>
+<!-- Node11&#45;&gt;Node3 -->
+<g id="edge15" class="edge">
+<title>Node11&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M751.5,-146.15C751.28,-124.58 747.31,-96.17 730.5,-78 700.21,-45.26 652.69,-31.01 611.23,-25.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="748,-146.35 751.33,-156.4 754.99,-146.46 748,-146.35"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="MonteCarlo_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the MonteCarlo optimizer class is defined.">
+<polygon fill="white" stroke="black" points="777,-78.5 777,-119.5 944,-119.5 944,-78.5 777,-78.5"/>
+<text text-anchor="start" x="785" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="785" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="860.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/montecarlo/MonteCarlo.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge16" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M786.55,-150.64C801.37,-140.49 818.17,-128.98 832.01,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="784.36,-147.89 778.09,-156.43 788.31,-153.67 784.36,-147.89"/>
+</g>
+<!-- Node13&#45;&gt;Node3 -->
+<g id="edge18" class="edge">
+<title>Node13&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M968.66,-146.1C971.26,-124.33 970.5,-95.67 953.5,-78 907.74,-30.42 721.61,-21.86 611.09,-21.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="965.17,-145.75 967.16,-156.16 972.1,-146.78 965.17,-145.75"/>
+</g>
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="RandomNeighbors_8cpp.xhtml" target="_top" xlink:title="In this file, the implementation of the RandomNeighbors optimizer class is defined.">
+<polygon fill="white" stroke="black" points="999.5,-78.5 999.5,-119.5 1217.5,-119.5 1217.5,-78.5 999.5,-78.5"/>
+<text text-anchor="start" x="1007.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">/home/runner/work/Simopticon</text>
+<text text-anchor="start" x="1007.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Simopticon/src/optimizer</text>
+<text text-anchor="middle" x="1108.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/randomneighbors/RandomNeighbors.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node13&#45;&gt;Node14 -->
+<g id="edge19" class="edge">
+<title>Node13&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M1009.05,-151.77C1029.06,-141.35 1052.14,-129.34 1071.03,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1007.35,-148.71 1000.1,-156.43 1010.58,-154.92 1007.35,-148.71"/>
 </g>
 </g>
 </svg>

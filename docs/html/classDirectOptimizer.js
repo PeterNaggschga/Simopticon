@@ -1,6 +1,6 @@
 var classDirectOptimizer =
 [
-    [ "DirectOptimizer", "classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5", null ],
+    [ "DirectOptimizer", "classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819", null ],
     [ "addActiveRects", "classDirectOptimizer.xhtml#aa0ca777ddca12cc9b12453be07151346", null ],
     [ "estimatedValue", "classDirectOptimizer.xhtml#aba4b95c69131cac24fe71649c41cf640", null ],
     [ "getName", "classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020", null ],
@@ -17,6 +17,6 @@ var classDirectOptimizer =
     [ "iterations", "classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353", null ],
     [ "level", "classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c", null ],
     [ "normalizer", "classDirectOptimizer.xhtml#a2cb499bc603fcb3445ba740e7ec8d21d", null ],
-    [ "stopCon", "classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9", null ],
+    [ "stopCon", "classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47", null ],
     [ "trackProgress", "classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0", null ]
 ];

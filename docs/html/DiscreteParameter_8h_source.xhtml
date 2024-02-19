@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -101,83 +101,84 @@ $(document).ready(function(){initNavTree('DiscreteParameter_8h_source.xhtml','')
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Implements a Parameter using discrete values.</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * The value of the Parameter is calculated as @f$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} @f$.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @ingroup parameters</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml">   16</a></span>&#160;<span class="keyword">class</span> [[maybe_unused]] <a class="code" href="classDiscreteParameter.xhtml">DiscreteParameter</a> : <span class="keyword">public</span> <a class="code" href="classParameter.xhtml">Parameter</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">     * Times used in the value calculation.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">   21</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">times</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">     * Difference between discrete values. Used in the value calculation.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">   25</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * Offset used in the value calculation.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">   29</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a> = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml">   17</a></span>&#160;<span class="keyword">class</span> [[maybe_unused]] <a class="code" href="classDiscreteParameter.xhtml">DiscreteParameter</a> : <span class="keyword">public</span> <a class="code" href="classParameter.xhtml">Parameter</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     * Times used in the value calculation.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">   22</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">times</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     * Difference between discrete values. Used in the value calculation.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">   26</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     * Offset used in the value calculation.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">   30</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a> = 0;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * Creates a DiscreteParameter with the given ParameterDefinition, step and value.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * Checks if given value is in bounds set by the ParameterDefinition.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * Calculates #times and #offset automatically.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * @param def: ParameterDefinition of the Parameter.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * @param step: Difference between discrete values.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @param value: Initial value of the Parameter.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classDiscreteParameter.xhtml#a835934342311428803c80321104dfe3a">DiscreteParameter</a>(std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt; def, <span class="keywordtype">double</span> step, <span class="keywordtype">double</span> value);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * Creates a DiscreteParameter with the given ParameterDefinition and step.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * Calculates #times and #offset automatically.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * @param def: ParameterDefinition of the Parameter.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * @param step: Difference between discrete values.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classDiscreteParameter.xhtml#a637260eccb3a9cd8485078eea8ae53af">DiscreteParameter</a>(std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt; def, <span class="keywordtype">double</span> step);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * Returns the value of #times.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * @return An integer representing the times value.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <span class="keywordtype">int</span> <a class="code" href="classDiscreteParameter.xhtml#a4dda62dbc671674af0fd082bbd16c4f0">getTimes</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     * Sets the value of #times to the given value.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * Checks if value is in bounds set by ParameterDefinition.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @param newTimes</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDiscreteParameter.xhtml#a724fb5a23b4e312152e89e435243d824">setTimes</a>(<span class="keywordtype">int</span> newTimes);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">     * Returns the value of #step.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * @return A floating point number representing the difference between discrete values.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#ad1b32356f2abd3ea777411ae6caa9b15">getStep</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     * Returns the value of #offset.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     * @return A floating point number representing the offset.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#a32168788903a536998d0eb37a57abe85">getOffset</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * Returns the current value of the DiscreteParameter as calculated by the following formula:</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * @f$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} @f$.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     * @return A coordinate representing the value of the ContinuousParameter.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classDiscreteParameter.xhtml#aa84ef5350df8d1c0f9acb5609087263f">getVal</a>() <span class="keyword">const</span> <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">     * Sets the value of the DiscreteParameter to the discrete value closest to the given value by modifying #times using #setTimes.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">     * @param val: Value to set the DiscreteParameter to.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDiscreteParameter.xhtml#af20b49b28b2b309be93e72edeeeb8f36">setVal</a>(<a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> val) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     * Creates a DiscreteParameter with the given ParameterDefinition, step and value.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * Checks if given value is in bounds set by the ParameterDefinition.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * Calculates #times and #offset automatically.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * @param def: ParameterDefinition of the Parameter.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @param step: Difference between discrete values.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * @param value: Initial value of the Parameter.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classDiscreteParameter.xhtml#a835934342311428803c80321104dfe3a">DiscreteParameter</a>(std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt; def, <span class="keywordtype">double</span> step, <span class="keywordtype">double</span> value);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * Creates a DiscreteParameter with the given ParameterDefinition and step.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Calculates #times and #offset automatically.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * @param def: ParameterDefinition of the Parameter.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @param step: Difference between discrete values.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classDiscreteParameter.xhtml#a637260eccb3a9cd8485078eea8ae53af">DiscreteParameter</a>(std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt; def, <span class="keywordtype">double</span> step);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * Returns the value of #times.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * @return An integer representing the times value.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <span class="keywordtype">int</span> <a class="code" href="classDiscreteParameter.xhtml#a4dda62dbc671674af0fd082bbd16c4f0">getTimes</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * Sets the value of #times to the given value.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * Checks if value is in bounds set by ParameterDefinition.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * @param newTimes</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDiscreteParameter.xhtml#a724fb5a23b4e312152e89e435243d824">setTimes</a>(<span class="keywordtype">int</span> newTimes);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * Returns the value of #step.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @return A floating point number representing the difference between discrete values.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#ad1b32356f2abd3ea777411ae6caa9b15">getStep</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     * Returns the value of #offset.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     * @return A floating point number representing the offset.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <span class="keywordtype">double</span> <a class="code" href="classDiscreteParameter.xhtml#a32168788903a536998d0eb37a57abe85">getOffset</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * Returns the current value of the DiscreteParameter as calculated by the following formula:</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     * @f$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} @f$.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     * @return A coordinate representing the value of the ContinuousParameter.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    [[<a class="code" href="classDiscreteParameter.xhtml">nodiscard</a>]] <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classDiscreteParameter.xhtml#aa84ef5350df8d1c0f9acb5609087263f">getVal</a>() <span class="keyword">const</span> <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">     * Sets the value of the DiscreteParameter to the discrete value closest to the given value by modifying #times using #setTimes.</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">     * @param val: Value to set the DiscreteParameter to.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDiscreteParameter.xhtml#af20b49b28b2b309be93e72edeeeb8f36">setVal</a>(<a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> val) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_DISCRETEPARAMETER_H</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_DISCRETEPARAMETER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -111,19 +111,20 @@ $(document).ready(function(){initNavTree('CommandLine_8h_source.xhtml',''); init
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * A class containing functionality for executing commands on UNIX shell.</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @ingroup utils</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classCommandLine.xhtml">   26</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classCommandLine.xhtml">CommandLine</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     * Executes the given command in UNIX shell and returns the output (both stderr and stdout merged).</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * @param cmd: Command to be executed.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * @return A string containing the output (sterr and stdout merged).</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">static</span> <a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">std</a>::<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">unique_ptr</a>&lt;<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">std</a>::<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">string</a>&gt; <a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">exec</a>(<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">std</a>::<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">string</a> <a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">cmd</a>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_COMMANDLINE_H</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classCommandLine.xhtml">   27</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classCommandLine.xhtml">CommandLine</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * Executes the given command in UNIX shell and returns the output (both stderr and stdout merged).</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * @param cmd: Command to be executed.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @return A string containing the output (sterr and stdout merged).</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">std</a>::<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">unique_ptr</a>&lt;<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">std</a>::<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">string</a>&gt; <a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">exec</a>(<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">std</a>::<a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">string</a> <a class="code" href="classCommandLine.xhtml#a7bce45ff0c0f518095d060eb400bd791">cmd</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_COMMANDLINE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

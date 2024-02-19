@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -196,8 +196,9 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class responsible for communication between <a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a>, <a class="el" href="classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a> and <a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> and also user interaction such as tracking results, updating <a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a> and handling interrupts by the user via <a class="el" href="classAbortable.xhtml" title="A simple interface for classes that encapsulate abortable processes.">Abortable</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00043">43</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00044">44</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aea49fce894856246d360e28ba6f5c3ed"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aea49fce894856246d360e28ba6f5c3ed">&#9670;&nbsp;</a></span>Controller()</h2>
@@ -242,7 +243,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00037">37</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00040">40</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classController.xhtml#a983b7bd36a134e4210d7d2ed9465df19">statusInterval</a>, and <a class="el" href="classController.xhtml#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>.</p>
 
@@ -279,7 +280,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classAbortable.xhtml#aa93818ee48fcc8f9ed845215d533436d">Abortable</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00265">265</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00275">275</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classAbortable.xhtml#aa93818ee48fcc8f9ed845215d533436d">Abortable::abort()</a>, and <a class="el" href="classController.xhtml#a1d4cdec09fa091d4725076c0bff594cc">optimizer</a>.</p>
 
@@ -320,7 +321,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classStubController.xhtml#a3d52b26b033e239bd596595ce1744567">StubController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00198">198</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00208">208</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>.</p>
 
@@ -344,7 +345,7 @@ Private Attributes</h2></td></tr>
 <p>Returns <a class="el" href="classController.xhtml#a64bbb1c9373dd25c40f0f7f4cc88f4b6" title="ValueMap containing all values gathered by simulating and evaluating certain parameterCombinations.">valueMap</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classValueMap.xhtml" title="A container managing a map data structure that maps parameterCombinations to their respective found v...">ValueMap</a> object. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00163">163</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00173">173</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classController.xhtml#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>.</p>
 
@@ -380,7 +381,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classStubController.xhtml#adc942af04e05cdce84f9db0cd6d788cf">StubController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00214">214</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00224">224</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#ae03b07acab0165a85291145cd5f34d2e">ValueMap::getTopVals()</a>, <a class="el" href="classController.xhtml#a52d94a03de61c7e0f0b09e2989712bdd">keepFiles</a>, <a class="el" href="classController.xhtml#a71aa7111a0474f8e41d0e4588afd3958">topResults</a>, and <a class="el" href="classController.xhtml#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>.</p>
 
@@ -413,7 +414,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A map which maps the given parameterCombinations to their respective functionValue. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00129">129</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00139">139</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="structController_1_1stepstate.xhtml#ac35298d19ed5787d999be9692173d186">Controller::stepstate::next()</a>, <a class="el" href="classController.xhtml#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles()</a>, and <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>.</p>
 
@@ -439,7 +440,7 @@ Private Attributes</h2></td></tr>
 <p>Starts optimization process by calling <a class="el" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4" title="Starts the optimization process.">Optimizer::runOptimization</a>. </p>
 <p>Creates concurrent thread that updates <a class="el" href="classController.xhtml#a2c6f1dfb295e5533cfa9b2d7a061b326" title="StatusBar object used for output.">statusBar</a> every <a class="el" href="classController.xhtml#a983b7bd36a134e4210d7d2ed9465df19" title="Interval of updates of StatusBar using updateStatus in concurrent status thread.">statusInterval</a> milliseconds. Prints results in command line after optimization is done using <a class="el" href="classStatusBar.xhtml#ab08646a3281ccbbca4442be0b6e12ee1" title="Prints the given parameterCombinations and respective values to command line.">StatusBar::printResults</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00167">167</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00177">177</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="structController_1_1stepstate.xhtml#ac35298d19ed5787d999be9692173d186">Controller::stepstate::next()</a>, <a class="el" href="classController.xhtml#a1d4cdec09fa091d4725076c0bff594cc">optimizer</a>, <a class="el" href="classController.xhtml#a96dc46ab045e55e26b629290205ff120">printValues</a>, <a class="el" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4">Optimizer::runOptimization()</a>, <a class="el" href="classController.xhtml#a400e6b8e3c0b74bd6ec214f41cd7bf9c">saveValues()</a>, <a class="el" href="classController.xhtml#a983b7bd36a134e4210d7d2ed9465df19">statusInterval</a>, and <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>.</p>
 
@@ -480,7 +481,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classStubController.xhtml#a11c5ca829d9211ddcdc263041e015675">StubController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00191">191</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00201">201</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>.</p>
 
@@ -511,7 +512,7 @@ Private Attributes</h2></td></tr>
 
 <p>Prints all evaluated parameterCombinations and their respective values to <code>results/values.csv</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00232">232</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00242">242</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">run()</a>.</p>
 
@@ -544,7 +545,7 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="classStubController.xhtml#a7974121c2eaa51eb718e0eed6fa27e4b">StubController</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00257">257</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00267">267</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classController.xhtml#ab0831dcbbdcff96900adcf5709062260">evaluation</a>, <a class="el" href="structController_1_1stepstate.xhtml#abff53428282626b9af0e34b054c02675">Controller::stepstate::get()</a>, <a class="el" href="classValueMap.xhtml#a617f5348dcf85e794516e496a04fde7a">ValueMap::getSize()</a>, <a class="el" href="classValueMap.xhtml#ae03b07acab0165a85291145cd5f34d2e">ValueMap::getTopVals()</a>, <a class="el" href="classController.xhtml#a1d4cdec09fa091d4725076c0bff594cc">optimizer</a>, <a class="el" href="classController.xhtml#aff4806be1079865c59ce014123b78c5a">runner</a>, <a class="el" href="classController.xhtml#a2c6f1dfb295e5533cfa9b2d7a061b326">statusBar</a>, <a class="el" href="structController_1_1stepstate.xhtml#a6343ff694edd3f21039f7c339790005a">Controller::stepstate::stepChanged</a>, <a class="el" href="classStatusBar.xhtml#ac6014b2ccdf716850364ae4a1ef742cc">StatusBar::updateStatus()</a>, and <a class="el" href="classController.xhtml#a64bbb1c9373dd25c40f0f7f4cc88f4b6">valueMap</a>.</p>
 
@@ -575,7 +576,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th...">Evaluation</a> capable of evaluating data produced by <a class="el" href="classController.xhtml#aff4806be1079865c59ce014123b78c5a" title="SimulationRunner able to run simulations with certain parameterCombinations.">runner</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00113">113</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00114">114</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>.</p>
 
@@ -604,7 +605,7 @@ Private Attributes</h2></td></tr>
 <p>Defines if result files of best simulations are kept after optimization. </p>
 <p>Can be set in main config. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00048">48</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00049">49</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles()</a>.</p>
 
@@ -632,7 +633,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> defining an optimization strategy. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00105">105</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00106">106</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a51557bd56ca512daeb02ac99d359b2e7">abort()</a>, <a class="el" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">run()</a>, <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>, and <a class="el" href="classStubController.xhtml#a7974121c2eaa51eb718e0eed6fa27e4b">StubController::updateStatus()</a>.</p>
 
@@ -661,7 +662,7 @@ Private Attributes</h2></td></tr>
 <p>Defines if all found values should be recorded in a <code>.csv</code> file after optimization has finished. </p>
 <p>Can be set in main config. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00053">53</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00054">54</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">run()</a>.</p>
 
@@ -689,7 +690,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations.">SimulationRunner</a> able to run simulations with certain parameterCombinations. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00109">109</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00110">110</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>.</p>
 
@@ -717,7 +718,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a> object used for output. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00101">101</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00102">102</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>, and <a class="el" href="classStubController.xhtml#a7974121c2eaa51eb718e0eed6fa27e4b">StubController::updateStatus()</a>.</p>
 
@@ -745,7 +746,7 @@ Private Attributes</h2></td></tr>
 
 <p>Interval of updates of <a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a> using <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a" title="Updates the statusBar using StatusBar::updateStatus.">updateStatus</a> in concurrent status thread. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00061">61</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00062">62</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#aea49fce894856246d360e28ba6f5c3ed">Controller()</a>, and <a class="el" href="classController.xhtml#a692f0f5dc600cdcb79786a31cf283ce1">run()</a>.</p>
 
@@ -774,7 +775,7 @@ Private Attributes</h2></td></tr>
 <p>Saves the best <em>n</em> parameterCombinations and the corresponding path to the result files, if <a class="el" href="classController.xhtml#a52d94a03de61c7e0f0b09e2989712bdd" title="Defines if result files of best simulations are kept after optimization.">keepFiles</a> is true. </p>
 <p><em>n</em> can be set in main config. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00057">57</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00058">58</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles()</a>.</p>
 
@@ -802,7 +803,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="classValueMap.xhtml" title="A container managing a map data structure that maps parameterCombinations to their respective found v...">ValueMap</a> containing all values gathered by simulating and evaluating certain parameterCombinations. </p>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00117">117</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8h_source.xhtml#l00118">118</a> of file <a class="el" href="Controller_8h_source.xhtml">Controller.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classController.xhtml#aea49fce894856246d360e28ba6f5c3ed">Controller()</a>, <a class="el" href="classController.xhtml#ae3ea03330051f982d4e9bee7ffad29d2">getValueMap()</a>, <a class="el" href="classController.xhtml#a9c60e96e8f7afd4cdfbb0dfe0bc44d84">removeOldResultfiles()</a>, <a class="el" href="classController.xhtml#a71ab67d16c9773974ddda34e44e05a0a">updateStatus()</a>, and <a class="el" href="classStubController.xhtml#a7974121c2eaa51eb718e0eed6fa27e4b">StubController::updateStatus()</a>.</p>
 

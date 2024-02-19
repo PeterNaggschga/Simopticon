@@ -1,7 +1,13 @@
-<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/StoppingCondition.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/StoppingCondition.h">
-<area shape="rect" id="node1" title="In this file, the header of the StoppingCondition class is defined." alt="" coords="251,5,473,61"/>
-<area shape="rect" id="node2" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="128,109,351,165"/>
-<area shape="rect" id="node5" href="$StoppingCondition_8cpp.xhtml" title="In this file, the implementation of the StoppingCondition class is defined." alt="" coords="375,109,597,165"/>
-<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="5,213,228,269"/>
-<area shape="rect" id="node4" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="252,213,475,269"/>
+<map id="/home/runner/work/Simopticon/Simopticon/src/optimizer/StoppingCondition.h" name="/home/runner/work/Simopticon/Simopticon/src/optimizer/StoppingCondition.h">
+<area shape="rect" id="node1" title="In this file, the header of the StoppingCondition class is defined." alt="" coords="499,5,722,61"/>
+<area shape="rect" id="node2" href="$MonteCarlo_8h.xhtml" title="In this file, the header of the MonteCarlo class is defined." alt="" coords="28,109,251,165"/>
+<area shape="rect" id="node5" href="$RandomNeighbors_8h.xhtml" title="In this file, the header of the RandomNeighbors optimizer class is defined." alt="" coords="332,109,608,165"/>
+<area shape="rect" id="node7" href="$DirectStoppingCondition_8h.xhtml" title="In this file, the header of the StoppingCondition class is defined." alt="" coords="633,109,870,165"/>
+<area shape="rect" id="node11" href="$StoppingCondition_8cpp.xhtml" title="In this file, the implementation of the StoppingCondition class is defined." alt="" coords="894,109,1116,165"/>
+<area shape="rect" id="node3" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="176,317,399,373"/>
+<area shape="rect" id="node4" href="$MonteCarlo_8cpp.xhtml" title="In this file, the implementation of the MonteCarlo optimizer class is defined." alt="" coords="28,213,251,269"/>
+<area shape="rect" id="node6" href="$RandomNeighbors_8cpp.xhtml" title="In this file, the implementation of the RandomNeighbors optimizer class is defined." alt="" coords="325,213,616,269"/>
+<area shape="rect" id="node8" href="$DirectOptimizer_8h.xhtml" title="In this file, the header of the DirectOptimizer class is defined." alt="" coords="640,213,863,269"/>
+<area shape="rect" id="node10" href="$DirectStoppingCondition_8cpp.xhtml" title="In this file, the implementation of the DirectStoppingCondition class is defined." alt="" coords="887,213,1139,269"/>
+<area shape="rect" id="node9" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="640,317,863,373"/>
 </map>

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -101,26 +101,27 @@ $(document).ready(function(){initNavTree('BaseRect_8h_source.xhtml',''); initRes
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * A class representing a HyRect without a parent rectangle.</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * This rectangle is always at the root of a partition tree and therefore has depth @f$ t=0 @f$ and represents the whole search space.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @ingroup hyrect</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classBaseRect.xhtml">   16</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classBaseRect.xhtml">BaseRect</a> : <span class="keyword">public</span> <a class="code" href="classHyRect.xhtml">HyRect</a> {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">     * Creates a BaseRect representing a hypercube with the given dimensionality.</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     * @param D: Number of dimensions of the search space.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694">BaseRect</a>(<a class="code" href="DirectTypes_8h.xhtml#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> D);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     * Returns the coordinates of two opposite corner points of the rectangle.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * The returned vertices must be sampled.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * For BaseRect always returns one vector full of zeros and one vector full of ones.</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     * @return An array containing two dirCoordinate vectors of the sampled vertices.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">std</a>::<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">array</a>&lt;<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">std</a>::<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">vector</a>&lt;<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">dirCoordinate</a>&gt;, 2&gt; <a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">getSamplingVertices</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classBaseRect.xhtml">   17</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classBaseRect.xhtml">BaseRect</a> : <span class="keyword">public</span> <a class="code" href="classHyRect.xhtml">HyRect</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     * Creates a BaseRect representing a hypercube with the given dimensionality.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     * @param D: Number of dimensions of the search space.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694">BaseRect</a>(<a class="code" href="DirectTypes_8h.xhtml#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> D);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * Returns the coordinates of two opposite corner points of the rectangle.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * The returned vertices must be sampled.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     * For BaseRect always returns one vector full of zeros and one vector full of ones.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     * @return An array containing two dirCoordinate vectors of the sampled vertices.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">std</a>::<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">array</a>&lt;<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">std</a>::<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">vector</a>&lt;<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">dirCoordinate</a>&gt;, 2&gt; <a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">getSamplingVertices</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_BASERECT_H</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_BASERECT_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

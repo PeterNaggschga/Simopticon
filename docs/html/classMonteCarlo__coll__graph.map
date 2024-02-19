@@ -1,0 +1,10 @@
+<map id="MonteCarlo" name="MonteCarlo">
+<area shape="rect" id="node1" title="A class capable of finding the minimum of a blackbox function using the Monte Carlo algorithm." alt="" coords="127,273,224,300"/>
+<area shape="rect" id="node2" href="$classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="63,184,149,211"/>
+<area shape="rect" id="node3" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="5,95,68,121"/>
+<area shape="rect" id="node4" href="$classAbortable.xhtml" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="50,5,135,32"/>
+<area shape="rect" id="node5" href="$classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use..." alt="" coords="152,95,239,121"/>
+<area shape="rect" id="node6" href="$classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi..." alt="" coords="159,5,245,32"/>
+<area shape="rect" id="node7" href="$structController_1_1stepstate.xhtml" title="A struct keeping track of the currently running optimization step for StatusBar::updateStatus." alt="" coords="269,5,423,32"/>
+<area shape="rect" id="node8" href="$classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped." alt="" coords="174,184,315,211"/>
+</map>

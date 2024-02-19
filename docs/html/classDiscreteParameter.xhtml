@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -184,9 +184,10 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implements a <a class="el" href="classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> using discrete values. </p>
-<p>The value of the <a class="el" href="classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> is calculated as <img class="formulaInl" alt="$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} $" src="form_5.png" width="139" height="13"/>. </p>
+<p>The value of the <a class="el" href="classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> is calculated as <img class="formulaInl" alt="$ \mathit{val} = \mathit{times} \cdot \mathit{step} + \mathit{offset} $" src="form_5.png" width="139" height="13"/>.</p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00016">16</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00017">17</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a835934342311428803c80321104dfe3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a835934342311428803c80321104dfe3a">&#9670;&nbsp;</a></span>DiscreteParameter() <span class="overload">[1/2]</span></h2>
@@ -230,7 +231,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00012">12</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00013">13</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classParameter.xhtml#ac500bf8b8fab78ebd0a68830ec9e99ba">Parameter::Parameter()</a>, <a class="el" href="classParameter.xhtml#a00c82745dc024154c697cbecaf02cc55">Parameter::getMax()</a>, <a class="el" href="classParameter.xhtml#a49e6b8c47cbd44d4b2348d3b8cea7bba">Parameter::getMin()</a>, <a class="el" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a>, <a class="el" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>, and <a class="el" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">times</a>.</p>
 
@@ -273,7 +274,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00022">22</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00023">23</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classDiscreteParameter.xhtml#a835934342311428803c80321104dfe3a">DiscreteParameter()</a>, <a class="el" href="classParameter.xhtml#a00c82745dc024154c697cbecaf02cc55">Parameter::getMax()</a>, and <a class="el" href="classParameter.xhtml#a49e6b8c47cbd44d4b2348d3b8cea7bba">Parameter::getMin()</a>.</p>
 
@@ -298,7 +299,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the value of <a class="el" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185" title="Offset used in the value calculation.">offset</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A floating point number representing the offset. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00042">42</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00043">43</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a>.</p>
 
@@ -322,7 +323,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the value of <a class="el" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b" title="Difference between discrete values.">step</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A floating point number representing the difference between discrete values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00038">38</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00039">39</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>.</p>
 
@@ -346,7 +347,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the value of <a class="el" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf" title="Times used in the value calculation.">times</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>An integer representing the times value. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00026">26</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00027">27</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">times</a>.</p>
 
@@ -380,7 +381,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classParameter.xhtml#a39f52082ae9e000edff3d517ef78a8bb">Parameter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00046">46</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00047">47</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a>, <a class="el" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>, and <a class="el" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">times</a>.</p>
 
@@ -410,7 +411,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00030">30</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00031">31</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classParameter.xhtml#a00c82745dc024154c697cbecaf02cc55">Parameter::getMax()</a>, <a class="el" href="classParameter.xhtml#a49e6b8c47cbd44d4b2348d3b8cea7bba">Parameter::getMin()</a>, <a class="el" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a>, <a class="el" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>, and <a class="el" href="classDiscreteParameter.xhtml#ab66ffee0181e1c577f57eb33e78cc6bf">times</a>.</p>
 
@@ -452,7 +453,7 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classParameter.xhtml#a4299bc2da9ef07c8a94ac5017ef7668b">Parameter</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00050">50</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8cpp_source.xhtml#l00051">51</a> of file <a class="el" href="DiscreteParameter_8cpp_source.xhtml">DiscreteParameter.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classDiscreteParameter.xhtml#a844bc19ba733297cc899115d01bfd185">offset</a>, <a class="el" href="classDiscreteParameter.xhtml#a724fb5a23b4e312152e89e435243d824">setTimes()</a>, and <a class="el" href="classDiscreteParameter.xhtml#a07c95f48b45bb4900e649cd70582738b">step</a>.</p>
 
@@ -481,7 +482,7 @@ Private Attributes</h2></td></tr>
 
 <p>Offset used in the value calculation. </p>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00029">29</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00030">30</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classDiscreteParameter.xhtml#a835934342311428803c80321104dfe3a">DiscreteParameter()</a>, <a class="el" href="classDiscreteParameter.xhtml#a32168788903a536998d0eb37a57abe85">getOffset()</a>, <a class="el" href="classDiscreteParameter.xhtml#aa84ef5350df8d1c0f9acb5609087263f">getVal()</a>, <a class="el" href="classDiscreteParameter.xhtml#a724fb5a23b4e312152e89e435243d824">setTimes()</a>, and <a class="el" href="classDiscreteParameter.xhtml#af20b49b28b2b309be93e72edeeeb8f36">setVal()</a>.</p>
 
@@ -510,7 +511,7 @@ Private Attributes</h2></td></tr>
 <p>Difference between discrete values. </p>
 <p>Used in the value calculation. </p>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00025">25</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00026">26</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classDiscreteParameter.xhtml#a835934342311428803c80321104dfe3a">DiscreteParameter()</a>, <a class="el" href="classDiscreteParameter.xhtml#ad1b32356f2abd3ea777411ae6caa9b15">getStep()</a>, <a class="el" href="classDiscreteParameter.xhtml#aa84ef5350df8d1c0f9acb5609087263f">getVal()</a>, <a class="el" href="classDiscreteParameter.xhtml#a724fb5a23b4e312152e89e435243d824">setTimes()</a>, and <a class="el" href="classDiscreteParameter.xhtml#af20b49b28b2b309be93e72edeeeb8f36">setVal()</a>.</p>
 
@@ -538,7 +539,7 @@ Private Attributes</h2></td></tr>
 
 <p>Times used in the value calculation. </p>
 
-<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00021">21</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DiscreteParameter_8h_source.xhtml#l00022">22</a> of file <a class="el" href="DiscreteParameter_8h_source.xhtml">DiscreteParameter.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classDiscreteParameter.xhtml#a835934342311428803c80321104dfe3a">DiscreteParameter()</a>, <a class="el" href="classDiscreteParameter.xhtml#a4dda62dbc671674af0fd082bbd16c4f0">getTimes()</a>, <a class="el" href="classDiscreteParameter.xhtml#aa84ef5350df8d1c0f9acb5609087263f">getVal()</a>, and <a class="el" href="classDiscreteParameter.xhtml#a724fb5a23b4e312152e89e435243d824">setTimes()</a>.</p>
 

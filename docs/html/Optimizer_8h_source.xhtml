@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -127,60 +127,61 @@ $(document).ready(function(){initNavTree('Optimizer_8h_source.xhtml',''); initRe
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * The Optimizer has control over which parameterCombinations are simulated and evaluated as well as the duration of the optimization.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * If #abort is called the optimization strategy should finish the optimization as soon as possible.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> * @ingroup optimizer</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml">   42</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classOptimizer.xhtml">Optimizer</a> : <span class="keyword">public</span> <a class="code" href="classStatus.xhtml">Status</a>, <span class="keyword">public</span> <a class="code" href="classAbortable.xhtml">Abortable</a> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * Reference to the executing Controller to be able to request values using Controller#requestValues.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml#a39b5a35015181c52e78b7c444ec2c7de">   47</a></span>&#160;    <a class="code" href="classController.xhtml">Controller</a> &amp;<a class="code" href="classOptimizer.xhtml#a39b5a35015181c52e78b7c444ec2c7de">controller</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     * List of parameters to be optimized.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml#a5ad239e14d433114af6a5544ecb7a87e">   53</a></span>&#160;    std::list&lt;std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt;&gt; <a class="code" href="classOptimizer.xhtml#a5ad239e14d433114af6a5544ecb7a87e">parameters</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * Requests the values when using certain parameterCombinations from #controller.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     * Basically calls Controller#requestValues with the given values.</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     * @param params: parameterCombinations to be evaluated.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * @return A map which maps parameterCombinations to their respective values.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::map&lt;<a class="code" href="Types_8h.xhtml#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; <a class="code" href="classOptimizer.xhtml#a10c14e49cea1f9dfbb0fed45b93c6fc9">requestValues</a>(<span class="keyword">const</span> std::list&lt;<a class="code" href="Types_8h.xhtml#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>&gt; &amp;params);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">     * Creates an Optimizer which can request values from the given Controller and tries to optimize the given parameters.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * @param ctrl: Controller to be used for evaluation of parameterCombinations.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @param params: List of ParameterDefinition defining the parameters that must be optimized.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classOptimizer.xhtml#abfab50ab4ad02f02cde68a7e2689f3ab">Optimizer</a>(<a class="code" href="classController.xhtml">Controller</a> &amp;ctrl, std::list&lt;std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt;&gt; params);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">virtual</span> ~Optimizer() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">     * Starts the optimization process.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * Should only return if the optimization strategy deems the optimization complete or when #abort is called.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4">   77</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4">runOptimization</a>() = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     * Returns a reference to Controller#valueMap. Basically calls Controller#getValueMap on #controller.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">     * @return</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    [[<a class="code" href="classOptimizer.xhtml">nodiscard</a>]] <a class="code" href="classValueMap.xhtml">ValueMap</a> &amp;<a class="code" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::string <a class="code" href="classOptimizer.xhtml#aefad5ca2243994a8526ef01d1905f37f">getName</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string <a class="code" href="classOptimizer.xhtml#ad77e086bd9d9d483331443df935790f5">getStatus</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::string <a class="code" href="classOptimizer.xhtml#aa09cccc12c47996be6a3130f7c086648">getStatusBar</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml">   43</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classOptimizer.xhtml">Optimizer</a> : <span class="keyword">public</span> <a class="code" href="classStatus.xhtml">Status</a>, <span class="keyword">public</span> <a class="code" href="classAbortable.xhtml">Abortable</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Reference to the executing Controller to be able to request values using Controller#requestValues.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml#a39b5a35015181c52e78b7c444ec2c7de">   48</a></span>&#160;    <a class="code" href="classController.xhtml">Controller</a> &amp;<a class="code" href="classOptimizer.xhtml#a39b5a35015181c52e78b7c444ec2c7de">controller</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * List of parameters to be optimized.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml#a5ad239e14d433114af6a5544ecb7a87e">   54</a></span>&#160;    std::list&lt;std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt;&gt; <a class="code" href="classOptimizer.xhtml#a5ad239e14d433114af6a5544ecb7a87e">parameters</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     * Requests the values when using certain parameterCombinations from #controller.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     * Basically calls Controller#requestValues with the given values.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * @param params: parameterCombinations to be evaluated.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @return A map which maps parameterCombinations to their respective values.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::map&lt;<a class="code" href="Types_8h.xhtml#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>, <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt; <a class="code" href="classOptimizer.xhtml#a10c14e49cea1f9dfbb0fed45b93c6fc9">requestValues</a>(<span class="keyword">const</span> std::list&lt;<a class="code" href="Types_8h.xhtml#ac86955a0dc006fe09cd1a6303638a8b9">parameterCombination</a>&gt; &amp;params);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * Creates an Optimizer which can request values from the given Controller and tries to optimize the given parameters.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @param ctrl: Controller to be used for evaluation of parameterCombinations.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * @param params: List of ParameterDefinition defining the parameters that must be optimized.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classOptimizer.xhtml#abfab50ab4ad02f02cde68a7e2689f3ab">Optimizer</a>(<a class="code" href="classController.xhtml">Controller</a> &amp;ctrl, std::list&lt;std::shared_ptr&lt;<a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a>&gt;&gt; params);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> ~Optimizer() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * Starts the optimization process.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     * Should only return if the optimization strategy deems the optimization complete or when #abort is called.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4">   78</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4">runOptimization</a>() = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">     * Returns a reference to Controller#valueMap. Basically calls Controller#getValueMap on #controller.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     * @return</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    [[<a class="code" href="classOptimizer.xhtml">nodiscard</a>]] <a class="code" href="classValueMap.xhtml">ValueMap</a> &amp;<a class="code" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">getValueMap</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::string <a class="code" href="classOptimizer.xhtml#aefad5ca2243994a8526ef01d1905f37f">getName</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::string <a class="code" href="classOptimizer.xhtml#ad77e086bd9d9d483331443df935790f5">getStatus</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::string <a class="code" href="classOptimizer.xhtml#aa09cccc12c47996be6a3130f7c086648">getStatusBar</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_OPTIMIZER_H</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_OPTIMIZER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

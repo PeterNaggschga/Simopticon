@@ -5,7 +5,9 @@ var hierarchy =
         [ "StubController", "classStubController.xhtml", null ]
       ] ],
       [ "Optimizer", "classOptimizer.xhtml", [
-        [ "DirectOptimizer", "classDirectOptimizer.xhtml", null ]
+        [ "DirectOptimizer", "classDirectOptimizer.xhtml", null ],
+        [ "MonteCarlo", "classMonteCarlo.xhtml", null ],
+        [ "RandomNeighbors", "classRandomNeighbors.xhtml", null ]
       ] ]
     ] ],
     [ "CmpPairVectorSharedParameterFunctionvalue", "structCmpPairVectorSharedParameterFunctionvalue.xhtml", null ],
@@ -47,7 +49,9 @@ var hierarchy =
     ] ],
     [ "StatusBar", "classStatusBar.xhtml", null ],
     [ "Controller::stepstate", "structController_1_1stepstate.xhtml", null ],
-    [ "StoppingCondition", "classStoppingCondition.xhtml", null ],
+    [ "StoppingCondition", "classStoppingCondition.xhtml", [
+      [ "DirectStoppingCondition", "classDirectStoppingCondition.xhtml", null ]
+    ] ],
     [ "ThreadsafeQueue< Key >", "classThreadsafeQueue.xhtml", null ],
     [ "ValueMap", "classValueMap.xhtml", null ]
 ];

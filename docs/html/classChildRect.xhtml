@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -189,9 +189,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class representing a <a class="el" href="classHyRect.xhtml" title="An abstract class representing a rectangular part of the search space.">HyRect</a> that has a parent <a class="el" href="classHyRect.xhtml" title="An abstract class representing a rectangular part of the search space.">HyRect</a>. </p>
-<p>Used for all <a class="el" href="classHyRect.xhtml" title="An abstract class representing a rectangular part of the search space.">HyRect</a> where depth <img class="formulaInl" alt="$ t &gt; 0 $" src="form_4.png" width="29" height="10"/>. </p>
+<p>Used for all <a class="el" href="classHyRect.xhtml" title="An abstract class representing a rectangular part of the search space.">HyRect</a> where depth <img class="formulaInl" alt="$ t &gt; 0 $" src="form_4.png" width="29" height="10"/>.</p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ChildRect_8h_source.xhtml#l00016">16</a> of file <a class="el" href="ChildRect_8h_source.xhtml">ChildRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChildRect_8h_source.xhtml#l00017">17</a> of file <a class="el" href="ChildRect_8h_source.xhtml">ChildRect.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a873626d01b973a678b881242a1afb432"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a873626d01b973a678b881242a1afb432">&#9670;&nbsp;</a></span>ChildRect()</h2>
@@ -228,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ChildRect_8cpp_source.xhtml#l00010">10</a> of file <a class="el" href="ChildRect_8cpp_source.xhtml">ChildRect.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChildRect_8cpp_source.xhtml#l00011">11</a> of file <a class="el" href="ChildRect_8cpp_source.xhtml">ChildRect.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">HyRect::HyRect()</a>, <a class="el" href="classHyRect.xhtml#ab940dbf1d55a6df7649eb931f814c9a3">HyRect::getD()</a>, <a class="el" href="classHyRect.xhtml#a90abc4e3ecc0a9a5a5f0e7e0250f3121">HyRect::getDepth()</a>, and <a class="el" href="classChildRect.xhtml#ac93627818db86c88b4ebef9baccdb169">parent</a>.</p>
 
@@ -265,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classHyRect.xhtml#a603fe77569003ae273b3fb5be5d69592">HyRect</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ChildRect_8cpp_source.xhtml#l00015">15</a> of file <a class="el" href="ChildRect_8cpp_source.xhtml">ChildRect.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChildRect_8cpp_source.xhtml#l00016">16</a> of file <a class="el" href="ChildRect_8cpp_source.xhtml">ChildRect.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classHyRect.xhtml#a603fe77569003ae273b3fb5be5d69592">HyRect::getSamplingVertices()</a>, <a class="el" href="classHyRect.xhtml#ab1667b7a0394ff53fc61f3f88b4cb9bb">HyRect::getSplitDim()</a>, <a class="el" href="classChildRect.xhtml#ac93627818db86c88b4ebef9baccdb169">parent</a>, and <a class="el" href="classHyRect.xhtml#ad3de4de4b307a600af5ee1c5cad0ed86">HyRect::pos</a>.</p>
 
@@ -306,7 +307,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classHyRect.xhtml#acb3049d7c6d507c4ef7c7a97e5f36f89">HyRect</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="ChildRect_8cpp_source.xhtml#l00033">33</a> of file <a class="el" href="ChildRect_8cpp_source.xhtml">ChildRect.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChildRect_8cpp_source.xhtml#l00034">34</a> of file <a class="el" href="ChildRect_8cpp_source.xhtml">ChildRect.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classHyRect.xhtml#aaaf4f13552c02eada0e75e771524b02f">HyRect::getPos()</a>, <a class="el" href="classChildRect.xhtml#ac93627818db86c88b4ebef9baccdb169">parent</a>, and <a class="el" href="classHyRect.xhtml#ad3de4de4b307a600af5ee1c5cad0ed86">HyRect::pos</a>.</p>
 
@@ -336,7 +337,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Reference to the parent rectangle. </p>
 <p>Used for recursive calculation of <a class="el" href="classChildRect.xhtml#a6544411d52121e78efb221108e3cc474" title="Returns the coordinates of two opposite corner points of the rectangle.">getSamplingVertices</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ChildRect_8h_source.xhtml#l00021">21</a> of file <a class="el" href="ChildRect_8h_source.xhtml">ChildRect.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ChildRect_8h_source.xhtml#l00022">22</a> of file <a class="el" href="ChildRect_8h_source.xhtml">ChildRect.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classChildRect.xhtml#a873626d01b973a678b881242a1afb432">ChildRect()</a>, <a class="el" href="classChildRect.xhtml#a6544411d52121e78efb221108e3cc474">getSamplingVertices()</a>, and <a class="el" href="classChildRect.xhtml#adf5ba69c837223db712a35221fd5b04b">operator==()</a>.</p>
 

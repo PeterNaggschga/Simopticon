@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('DirectOptimizer_8h_source.xhtml',''); 
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="DirectTypes_8h.xhtml" title="In this file, types are defined which are used in the direct module.">&quot;DirectTypes.h&quot;</a></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="DirectComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which are used in the direct module.">&quot;DirectComparisonFunctions.h&quot;</a></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;../Optimizer.h&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="StoppingCondition_8h.xhtml" title="In this file, the header of the StoppingCondition class is defined.">&quot;StoppingCondition.h&quot;</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="DirectStoppingCondition_8h.xhtml" title="In this file, the header of the StoppingCondition class is defined.">&quot;DirectStoppingCondition.h&quot;</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&quot;hyrect/HyRect.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="ParameterNormalizer_8h.xhtml" title="In this file, the header of the ParameterNormalizer class is defined.">&quot;ParameterNormalizer.h&quot;</a></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Levels_8h.xhtml" title="In this file, the header of the Levels class is defined.">&quot;Levels.h&quot;</a></div>
@@ -112,134 +112,136 @@ $(document).ready(function(){initNavTree('DirectOptimizer_8h_source.xhtml',''); 
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">unordered_set</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">memory</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">class</span> <a class="code" href="classStoppingCondition.xhtml">StoppingCondition</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * This module extends Optimizer to use a variant of the DIRECT algorithm by &lt;a href=&quot;https://doi.org/10.1007/BF00941892&quot;&gt;Jones et al&lt;/a&gt;.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * It incorporates features proposed by &lt;a href=&quot;https://doi.org/10.1007/s10898-016-0447-z&quot;&gt;Liu et al.&lt;/a&gt; and &lt;a href=&quot;https://doi.org/10.1137/040621132&quot;&gt;Sergeyev and Kvasov&lt;/a&gt;.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @defgroup direct direct</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * @ingroup optimizer</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">/**</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> * A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> * @ingroup direct</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml">   39</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classDirectOptimizer.xhtml">DirectOptimizer</a> : <span class="keyword">public</span> <a class="code" href="classOptimizer.xhtml">Optimizer</a> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     * Number of parameters to be optimized (meaning dimensions of the search space).</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a6e0cbcc251d77044560376bf7c125ff1">   44</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="DirectTypes_8h.xhtml#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> <a class="code" href="classDirectOptimizer.xhtml#a6e0cbcc251d77044560376bf7c125ff1">D</a>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Number of iterations completed.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">   48</a></span>&#160;    size_t <a class="code" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">iterations</a> = 0;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     * An object deciding when the optimization stops.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9">   52</a></span>&#160;    <a class="code" href="classStoppingCondition.xhtml">StoppingCondition</a> <a class="code" href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9">stopCon</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * An object used switching between different levels between global and local search.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">   56</a></span>&#160;    <a class="code" href="classLevels.xhtml">Levels</a> <a class="code" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     * An object used for transformation between the unit hypercube used in DIRECT and the actual parameter space.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a2cb499bc603fcb3445ba740e7ec8d21d">   60</a></span>&#160;    <a class="code" href="classParameterNormalizer.xhtml">ParameterNormalizer</a> <a class="code" href="classDirectOptimizer.xhtml#a2cb499bc603fcb3445ba740e7ec8d21d">normalizer</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * Defines if the current number of iterations, evaluations, rectangles and the optimal value should be recorded into a `.csv` file after each iteration.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     * Can be set in config.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * Holds all rectangles that are immediate part of the current partition.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     * This includes all rectangles which have not been divided yet.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     * They are grouped by HyRect#t and sorted by HyRect#avgValue which simplifies the search for potentially optimal rectangles in #optimalRectangles.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a75ccc02cc03884adae3a02de0687db98">   72</a></span>&#160;    <a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">map</a>&lt;<a class="code" href="classDirectOptimizer.xhtml">depth</a>, <a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">set</a>&lt;<a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">shared_ptr</a>&lt;<a class="code" href="classDirectOptimizer.xhtml">HyRect</a>&gt;, <a class="code" href="classDirectOptimizer.xhtml">CmpSharedHyrect</a>&gt;, <a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">greater</a>&lt;&gt;&gt; <a class="code" href="classDirectOptimizer.xhtml">activeRects</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">     * Returns the function values at the given points.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     * Basically transforms the given points from dirCoordinates in the hypercube to actual coordinates</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * in the parameter space using #normalizer and calls #requestValues.</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * @param points: List of points in the hypercube to be evaluated.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     * @return A map which maps the given points to their respective values.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">map</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">vector</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">dirCoordinate</a>&gt;, <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">functionValue</a>&gt; <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">getValues</a>(<span class="keyword">const</span> <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">list</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">vector</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">dirCoordinate</a>&gt;&gt; &amp;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">points</a>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">     * Calculates the minimum expected value in a rectangle when the given Lipschitz constant is assumed.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">     * @param rect: Rectangle the minimum is searched for.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">     * @param k: Lipschitz constant that is assumed in this rectangle.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">     * @return A value representing an estimation of the absolute minimum reachable in this rectangle.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> <a class="code" href="classDirectOptimizer.xhtml#aba4b95c69131cac24fe71649c41cf640">estimatedValue</a>(<span class="keyword">const</span> std::shared_ptr&lt;<a class="code" href="classHyRect.xhtml">HyRect</a>&gt; &amp;rect, <span class="keywordtype">double</span> k);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">     * Finds potentially optimal rectangles that should be divided in the current iteration.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">     * First filters for only the best rectangles of a size from a subset of all #activeRects determined by #level.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">     * Then uses GrahamScan to filter after the first condition of the DIRECT algorithm.</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">     * Finally filters for the second condition of the DIRECT algorithm.</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">     * @param nrRects: Size of the partition (meaning number of rectangles in #activeRects).</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">     * @param phi: Value at the current minimum.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">     * @return A list of potentially optimal rectangles.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">std</a>::<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">list</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">std</a>::<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">shared_ptr</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">HyRect</a>&gt;&gt; <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">optimalRectangles</a>(<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">size_t</a> <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">nrRects</a>, <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">functionValue</a> <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">phi</a>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">     * Requests values at the corners of the given rectangles and add all given HyRect instances to #activeRects.</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">     * @param rects: Rectangles to be evaluated and added.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#aa0ca777ddca12cc9b12453be07151346">addActiveRects</a>(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;HyRect&gt;&gt; &amp;rects);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">     * Removes the given rectangles from #activeRects.</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">     * @param rects: Rectangles to be removed.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#a523c720b819b9d22131d4e5518de83ba">removeActiveRects</a>(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;HyRect&gt;&gt; &amp;rects);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">     * Prints the current number of iterations, evaluations, rectangles and the current optimal value to a `.csv` file.</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">     * @param bestVal: Value at the current minimum.</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">     * @param evaluations: Number of evaluations conducted by the optimization.</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">     * @param nrRects: Number of rectangles in the current partition (meaning number of rectangles in #activeRects).</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#a5e86cc2e76c36177d0039fb8f8b4cf6e">saveProgress</a>(<a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> bestVal, size_t evaluations, size_t nrRects) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">     * Creates a DirectOptimizer that evaluates functions with the given Controller, optimizes the given ParameterDefinition list and stops as defined by the given StoppingCondition.</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">     * @param ctrl: Controller to be used for evaluating the optimized function.</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">     * @param params: ParameterDefinition list to be optimized.</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">     * @param con: StoppingCondition defining the end of optimization.</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">     * @param trackProgress: Defines whether the progress should be printed in a `.csv` file.</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer</a>(<a class="code" href="classController.xhtml">Controller</a> &amp;ctrl, <span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;ParameterDefinition&gt;&gt; &amp;params,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                    <a class="code" href="classStoppingCondition.xhtml">StoppingCondition</a> con, <span class="keywordtype">bool</span> trackProgress);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">     * Starts the optimization using the DIRECT algorithm.</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">     * Only returns when an iteration has completed and #stopCon deems the optimization complete or when #abort was called in the last iteration.</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    std::string <a class="code" href="classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020">getName</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class</span> <a class="code" href="classStoppingCondition.xhtml">StoppingCondition</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * This module extends Optimizer to use a variant of the DIRECT algorithm by &lt;a href=&quot;https://doi.org/10.1007/BF00941892&quot;&gt;Jones et al&lt;/a&gt;.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * It incorporates features proposed by &lt;a href=&quot;https://doi.org/10.1007/s10898-016-0447-z&quot;&gt;Liu et al.&lt;/a&gt; and &lt;a href=&quot;https://doi.org/10.1137/040621132&quot;&gt;Sergeyev and Kvasov&lt;/a&gt;.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * @defgroup direct direct</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * @ingroup optimizer</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> * A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> * @ingroup direct</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml">   41</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classDirectOptimizer.xhtml">DirectOptimizer</a> : <span class="keyword">public</span> <a class="code" href="classOptimizer.xhtml">Optimizer</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * Number of parameters to be optimized (meaning dimensions of the search space).</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a6e0cbcc251d77044560376bf7c125ff1">   46</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="DirectTypes_8h.xhtml#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> <a class="code" href="classDirectOptimizer.xhtml#a6e0cbcc251d77044560376bf7c125ff1">D</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * Number of iterations completed.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">   50</a></span>&#160;    size_t <a class="code" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">iterations</a> = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     * An object deciding when the optimization stops.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47">   54</a></span>&#160;    <a class="code" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a> <a class="code" href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47">stopCon</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * An object used switching between different levels between global and local search.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">   58</a></span>&#160;    <a class="code" href="classLevels.xhtml">Levels</a> <a class="code" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * An object used for transformation between the unit hypercube used in DIRECT and the actual parameter space.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a2cb499bc603fcb3445ba740e7ec8d21d">   62</a></span>&#160;    <a class="code" href="classParameterNormalizer.xhtml">ParameterNormalizer</a> <a class="code" href="classDirectOptimizer.xhtml#a2cb499bc603fcb3445ba740e7ec8d21d">normalizer</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     * Defines if the current number of iterations, evaluations, rectangles and the optimal value should be recorded into a `.csv` file after each iteration.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">     * Can be set in config.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">   67</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     * Holds all rectangles that are immediate part of the current partition.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">     * This includes all rectangles which have not been divided yet.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">     * They are grouped by HyRect#t and sorted by HyRect#avgValue which simplifies the search for potentially optimal rectangles in #optimalRectangles.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classDirectOptimizer.xhtml#a75ccc02cc03884adae3a02de0687db98">   74</a></span>&#160;    <a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">map</a>&lt;<a class="code" href="classDirectOptimizer.xhtml">depth</a>, <a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">set</a>&lt;<a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">shared_ptr</a>&lt;<a class="code" href="classDirectOptimizer.xhtml">HyRect</a>&gt;, <a class="code" href="classDirectOptimizer.xhtml">CmpSharedHyrect</a>&gt;, <a class="code" href="classDirectOptimizer.xhtml">std</a>::<a class="code" href="classDirectOptimizer.xhtml">greater</a>&lt;&gt;&gt; <a class="code" href="classDirectOptimizer.xhtml">activeRects</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * Returns the function values at the given points.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * Basically transforms the given points from dirCoordinates in the hypercube to actual coordinates</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     * in the parameter space using #normalizer and calls #requestValues.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">     * @param points: List of points in the hypercube to be evaluated.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">     * @return A map which maps the given points to their respective values.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">map</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">vector</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">dirCoordinate</a>&gt;, <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">functionValue</a>&gt; <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">getValues</a>(<span class="keyword">const</span> <a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">list</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">std</a>::<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">vector</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">dirCoordinate</a>&gt;&gt; &amp;<a class="code" href="classDirectOptimizer.xhtml#a1ada0bc8b5d54368da258b67a3774133">points</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">     * Calculates the minimum expected value in a rectangle when the given Lipschitz constant is assumed.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">     * @param rect: Rectangle the minimum is searched for.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">     * @param k: Lipschitz constant that is assumed in this rectangle.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">     * @return A value representing an estimation of the absolute minimum reachable in this rectangle.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> <a class="code" href="classDirectOptimizer.xhtml#aba4b95c69131cac24fe71649c41cf640">estimatedValue</a>(<span class="keyword">const</span> std::shared_ptr&lt;<a class="code" href="classHyRect.xhtml">HyRect</a>&gt; &amp;rect, <span class="keywordtype">double</span> k);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">     * Finds potentially optimal rectangles that should be divided in the current iteration.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">     * First filters for only the best rectangles of a size from a subset of all #activeRects determined by #level.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">     * Then uses GrahamScan to filter after the first condition of the DIRECT algorithm.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">     * Finally filters for the second condition of the DIRECT algorithm.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">     * @param nrRects: Size of the partition (meaning number of rectangles in #activeRects).</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">     * @param phi: Value at the current minimum.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">     * @return A list of potentially optimal rectangles.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">std</a>::<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">list</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">std</a>::<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">shared_ptr</a>&lt;<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">HyRect</a>&gt;&gt; <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">optimalRectangles</a>(<a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">size_t</a> <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">nrRects</a>, <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">functionValue</a> <a class="code" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b">phi</a>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">     * Requests values at the corners of the given rectangles and add all given HyRect instances to #activeRects.</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">     * @param rects: Rectangles to be evaluated and added.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#aa0ca777ddca12cc9b12453be07151346">addActiveRects</a>(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;HyRect&gt;&gt; &amp;rects);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">     * Removes the given rectangles from #activeRects.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">     * @param rects: Rectangles to be removed.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#a523c720b819b9d22131d4e5518de83ba">removeActiveRects</a>(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;HyRect&gt;&gt; &amp;rects);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">     * Prints the current number of iterations, evaluations, rectangles and the current optimal value to a `.csv` file.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">     * @param bestVal: Value at the current minimum.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">     * @param evaluations: Number of evaluations conducted by the optimization.</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment">     * @param nrRects: Number of rectangles in the current partition (meaning number of rectangles in #activeRects).</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#a5e86cc2e76c36177d0039fb8f8b4cf6e">saveProgress</a>(<a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> bestVal, size_t evaluations, size_t nrRects) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">     * Creates a DirectOptimizer that evaluates functions with the given Controller, optimizes the given ParameterDefinition list and stops as defined by the given StoppingCondition.</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">     * @param ctrl: Controller to be used for evaluating the optimized function.</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">     * @param params: ParameterDefinition list to be optimized.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">     * @param con: DirectStoppingCondition defining the end of optimization.</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">     * @param trackProgress: Defines whether the progress should be printed in a `.csv` file.</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer</a>(<a class="code" href="classController.xhtml">Controller</a> &amp;ctrl, <span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;ParameterDefinition&gt;&gt; &amp;params,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                    <a class="code" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a> con, <span class="keywordtype">bool</span> trackProgress);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">     * Starts the optimization using the DIRECT algorithm.</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="comment">     * Only returns when an iteration has completed and #stopCon deems the optimization complete or when #abort was called in the last iteration.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    std::string <a class="code" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">getStatus</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    std::string <a class="code" href="classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020">getName</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::string <a class="code" href="classDirectOptimizer.xhtml#adc4a24127cbf852b135962724062ea9a">getStatusBar</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::string <a class="code" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">getStatus</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">     * Returns the number of rectangles stored in #activeRects.</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">     * @return A number representing the size of the partition.</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    size_t <a class="code" href="classDirectOptimizer.xhtml#a153f62d950ce52c25402a0c131c040c2">getPartitionSize</a>();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_DIRECTOPTIMIZER_H</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    std::string <a class="code" href="classDirectOptimizer.xhtml#adc4a24127cbf852b135962724062ea9a">getStatusBar</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">     * Returns the number of rectangles stored in #activeRects.</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">     * @return A number representing the size of the partition.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    size_t <a class="code" href="classDirectOptimizer.xhtml#a153f62d950ce52c25402a0c131c040c2">getPartitionSize</a>();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_DIRECTOPTIMIZER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

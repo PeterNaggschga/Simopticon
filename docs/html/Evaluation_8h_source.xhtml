@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -117,38 +117,39 @@ $(document).ready(function(){initNavTree('Evaluation_8h_source.xhtml',''); initR
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * A class capable of evaluating simulation results and scoring them with a value which is treated as the function value for the optimization.</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * A lower value is considered better in this framework. The optimized function can be viewed as an error function.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> * @ingroup evaluation</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classEvaluation.xhtml">   32</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classEvaluation.xhtml">Evaluation</a> : <span class="keyword">public</span> <a class="code" href="classStatus.xhtml">Status</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> ~Evaluation() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * Returns a value to the results of a single simulation run.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * @param path: Path to the result files.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @param experimentIds: Identifiers of certain simulation runs within the directory represented by the given path.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * @return A value that represents the performance of the simulation - the lower the better.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classEvaluation.xhtml#a55e7851f5acc8fed0004f0845ed7395d">   42</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> <a class="code" href="classEvaluation.xhtml#a55e7851f5acc8fed0004f0845ed7395d">processOutput</a>(std::filesystem::path path, std::set&lt;<a class="code" href="Types_8h.xhtml#a057a8240c128713802bc4f54e877e8df">runId</a>&gt; experimentIds) = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     * Returns values to the results of multiple simulation runs.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">fi     * Simply calls #processOutput(std::filesystem::path, std::set&lt;runId&gt;) multiple times if not overridden.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * @param experimentResults: Paths to and identifiers of the simulation results.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @return A map which maps the given results to their respective performance value.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> std::map&lt;std::pair&lt;std::filesystem::path, std::set&lt;<a class="code" href="Types_8h.xhtml#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;, <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classEvaluation.xhtml#a91d5e3369b7d2bc58045a01d62419fa2">processOutput</a>(<span class="keyword">const</span> std::set&lt;std::pair&lt;std::filesystem::path, std::set&lt;<a class="code" href="Types_8h.xhtml#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;&gt; &amp;experimentResults);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::string <a class="code" href="classEvaluation.xhtml#a35762fb18ce56f29ee6842dea59e91e0">getName</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::string <a class="code" href="classEvaluation.xhtml#a7d8da035f8ad3fae53d0d1e9e10610f7">getStatus</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::string <a class="code" href="classEvaluation.xhtml#a125e34ba1feb394eaa882137c6ecd68c">getStatusBar</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classEvaluation.xhtml">   33</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classEvaluation.xhtml">Evaluation</a> : <span class="keyword">public</span> <a class="code" href="classStatus.xhtml">Status</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> ~Evaluation() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * Returns a value to the results of a single simulation run.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @param path: Path to the result files.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * @param experimentIds: Identifiers of certain simulation runs within the directory represented by the given path.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * @return A value that represents the performance of the simulation - the lower the better.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classEvaluation.xhtml#a55e7851f5acc8fed0004f0845ed7395d">   43</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> <a class="code" href="classEvaluation.xhtml#a55e7851f5acc8fed0004f0845ed7395d">processOutput</a>(std::filesystem::path path, std::set&lt;<a class="code" href="Types_8h.xhtml#a057a8240c128713802bc4f54e877e8df">runId</a>&gt; experimentIds) = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Returns values to the results of multiple simulation runs.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">fi     * Simply calls #processOutput(std::filesystem::path, std::set&lt;runId&gt;) multiple times if not overridden.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @param experimentResults: Paths to and identifiers of the simulation results.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * @return A map which maps the given results to their respective performance value.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> std::map&lt;std::pair&lt;std::filesystem::path, std::set&lt;<a class="code" href="Types_8h.xhtml#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;, <a class="code" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a>&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classEvaluation.xhtml#a91d5e3369b7d2bc58045a01d62419fa2">processOutput</a>(<span class="keyword">const</span> std::set&lt;std::pair&lt;std::filesystem::path, std::set&lt;<a class="code" href="Types_8h.xhtml#a057a8240c128713802bc4f54e877e8df">runId</a>&gt;&gt;&gt; &amp;experimentResults);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string <a class="code" href="classEvaluation.xhtml#a35762fb18ce56f29ee6842dea59e91e0">getName</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::string <a class="code" href="classEvaluation.xhtml#a7d8da035f8ad3fae53d0d1e9e10610f7">getStatus</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::string <a class="code" href="classEvaluation.xhtml#a125e34ba1feb394eaa882137c6ecd68c">getStatusBar</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_EVALUATION_H</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_EVALUATION_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

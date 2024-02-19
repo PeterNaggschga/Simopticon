@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -90,45 +90,46 @@ $(document).ready(function(){initNavTree('Multithreaded_8tpp_source.xhtml',''); 
 <a href="Multithreaded_8tpp.xhtml">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * In this file, the implementation of the Multithreaded class is defined.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">future</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">list</span><span class="preprocessor">&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">future</span><span class="preprocessor">&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <span class="preprocessor">&lt;</span><span class="preprocessor">list</span><span class="preprocessor">&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare, <span class="keyword">class</span> Allocator&gt;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#abb856a33aad9a1cc76a91c15c40bef8e">   11</a></span>&#160;<a class="code" href="classMultithreaded.xhtml">Multithreaded</a>&lt;Key, T, Compare, Allocator&gt;::<a class="code" href="classMultithreaded.xhtml#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threads) : <a class="code" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a>(threads) {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare, <span class="keyword">class</span> Allocator&gt;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;std::map&lt;Key, T, Compare, Allocator&gt;</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#a1fcc1c0642faa664e11fefadde148b5f">   16</a></span>&#160;<a class="code" href="classMultithreaded.xhtml">Multithreaded</a>&lt;Key, T, Compare, Allocator&gt;::<a class="code" href="classMultithreaded.xhtml#a1fcc1c0642faa664e11fefadde148b5f">runMultithreadedFunctions</a>(std::set&lt;Key, Compare&gt; runs) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: runs) {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">queue</a>.push(entry);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    std::list&lt;std::future&lt;std::map&lt;Key, T, Compare, Allocator&gt;&gt;&gt; threads;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; std::min((size_t) <a class="code" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a>, runs.size()); ++i) {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        threads.push_back(async(std::launch::async, &amp;<a class="code" href="classMultithreaded.xhtml">Multithreaded</a><a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">::</a><a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">multithreadFunction</a>, <span class="keyword">this</span>));</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::map&lt;Key, T, Compare, Allocator&gt; result;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = threads.rbegin(); it != threads.rend(); ++it) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        it-&gt;wait();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        result.merge(it-&gt;get());</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare, <span class="keyword">class</span> Allocator&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">   35</a></span>&#160;std::map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.xhtml">Multithreaded</a>&lt;Key, T, Compare, Allocator&gt;::<a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">multithreadFunction</a>() {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::map&lt;Key, T, Compare, Allocator&gt; result;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::pair&lt;Key, <span class="keywordtype">bool</span>&gt; run;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span> ((run = <a class="code" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">queue</a>.pop()).second) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        result.insert(make_pair(run.first, <a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">work</a><a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">(</a>run.first<a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">)</a>));</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare, <span class="keyword">class</span> Allocator&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#abb856a33aad9a1cc76a91c15c40bef8e">   12</a></span>&#160;<a class="code" href="classMultithreaded.xhtml">Multithreaded</a>&lt;Key, T, Compare, Allocator&gt;::<a class="code" href="classMultithreaded.xhtml#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threads) : <a class="code" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a>(threads) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare, <span class="keyword">class</span> Allocator&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;std::map&lt;Key, T, Compare, Allocator&gt;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#a1fcc1c0642faa664e11fefadde148b5f">   17</a></span>&#160;<a class="code" href="classMultithreaded.xhtml">Multithreaded</a>&lt;Key, T, Compare, Allocator&gt;::<a class="code" href="classMultithreaded.xhtml#a1fcc1c0642faa664e11fefadde148b5f">runMultithreadedFunctions</a>(std::set&lt;Key, Compare&gt; runs) {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;entry: runs) {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">queue</a>.push(entry);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::list&lt;std::future&lt;std::map&lt;Key, T, Compare, Allocator&gt;&gt;&gt; threads;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; std::min((size_t) <a class="code" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a>, runs.size()); ++i) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        threads.push_back(async(std::launch::async, &amp;<a class="code" href="classMultithreaded.xhtml">Multithreaded</a><a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">::</a><a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">multithreadFunction</a>, <span class="keyword">this</span>));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::map&lt;Key, T, Compare, Allocator&gt; result;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = threads.rbegin(); it != threads.rend(); ++it) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        it-&gt;wait();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        result.merge(it-&gt;get());</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare, <span class="keyword">class</span> Allocator&gt;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">   36</a></span>&#160;std::map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.xhtml">Multithreaded</a>&lt;Key, T, Compare, Allocator&gt;::<a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">multithreadFunction</a>() {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::map&lt;Key, T, Compare, Allocator&gt; result;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::pair&lt;Key, <span class="keywordtype">bool</span>&gt; run;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">while</span> ((run = <a class="code" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">queue</a>.pop()).second) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        result.insert(make_pair(run.first, <a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">work</a><a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">(</a>run.first<a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">)</a>));</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

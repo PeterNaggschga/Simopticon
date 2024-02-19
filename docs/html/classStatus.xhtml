@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('classStatus.xhtml',''); initResizable(
 <div class="dynheader">
 Inheritance diagram for Status:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classStatus__inherit__graph.svg" width="499" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classStatus__inherit__graph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <div class="dynheader">
@@ -132,9 +132,10 @@ Static Protected Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An interface defining functions for status updates on configuration and progress of a class. </p>
-<p>Used for creation of a <a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>. Overriding the defined methods is not mandatory but recommended. </p>
+<p>Used for creation of a <a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>. Overriding the defined methods is not mandatory but recommended.</p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Status_8h_source.xhtml#l00026">26</a> of file <a class="el" href="Status_8h_source.xhtml">Status.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Status_8h_source.xhtml#l00027">27</a> of file <a class="el" href="Status_8h_source.xhtml">Status.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a9d07378cbe210558ebb6b410a9b3855e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d07378cbe210558ebb6b410a9b3855e">&#9670;&nbsp;</a></span>getName()</h2>
@@ -162,9 +163,9 @@ Static Protected Attributes</h2></td></tr>
 <p>Returns a string representing the name of the implementing component in natural language. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string containing the name of the component. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classSimulationRunner.xhtml#a884a6bee886f30ba251897387336f04b">SimulationRunner</a>, <a class="el" href="classPlexeSimulationRunner.xhtml#a5f854e5e1e22243d060a8765fbda402d">PlexeSimulationRunner</a>, <a class="el" href="classOptimizer.xhtml#aefad5ca2243994a8526ef01d1905f37f">Optimizer</a>, <a class="el" href="classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020">DirectOptimizer</a>, <a class="el" href="classEvaluation.xhtml#a35762fb18ce56f29ee6842dea59e91e0">Evaluation</a>, and <a class="el" href="classConstantHeadway.xhtml#adbf42453998748d73e7dc46bd711d92f">ConstantHeadway</a>.</p>
+<p>Reimplemented in <a class="el" href="classSimulationRunner.xhtml#a884a6bee886f30ba251897387336f04b">SimulationRunner</a>, <a class="el" href="classPlexeSimulationRunner.xhtml#a5f854e5e1e22243d060a8765fbda402d">PlexeSimulationRunner</a>, <a class="el" href="classRandomNeighbors.xhtml#a7676bbc22b7f8a099a7f5e145197218b">RandomNeighbors</a>, <a class="el" href="classOptimizer.xhtml#aefad5ca2243994a8526ef01d1905f37f">Optimizer</a>, <a class="el" href="classMonteCarlo.xhtml#afe129cb363946c359ac23a26e4db66be">MonteCarlo</a>, <a class="el" href="classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020">DirectOptimizer</a>, <a class="el" href="classEvaluation.xhtml#a35762fb18ce56f29ee6842dea59e91e0">Evaluation</a>, and <a class="el" href="classConstantHeadway.xhtml#adbf42453998748d73e7dc46bd711d92f">ConstantHeadway</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Status_8cpp_source.xhtml#l00021">21</a> of file <a class="el" href="Status_8cpp_source.xhtml">Status.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Status_8cpp_source.xhtml#l00022">22</a> of file <a class="el" href="Status_8cpp_source.xhtml">Status.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStatus.xhtml#aebc78bdfd2d9603aa3012e01b3cde5b1">NO_NAME</a>.</p>
 
@@ -198,9 +199,9 @@ Static Protected Attributes</h2></td></tr>
 <p>Returns a string representing the current state of the implementing component. </p>
 <p>May contain values of class members or other meaningful information. The returned string is always visible in <a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>. </p><dl class="section return"><dt>Returns</dt><dd>A string containing the state of the component. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classSimulationRunner.xhtml#ac223588e17ea7c69402e75be1f1ef0e1">SimulationRunner</a>, <a class="el" href="classPlexeSimulationRunner.xhtml#abbbdd9ac8d6e963d586bdac74fce53b1">PlexeSimulationRunner</a>, <a class="el" href="classOptimizer.xhtml#ad77e086bd9d9d483331443df935790f5">Optimizer</a>, <a class="el" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">DirectOptimizer</a>, <a class="el" href="classEvaluation.xhtml#a7d8da035f8ad3fae53d0d1e9e10610f7">Evaluation</a>, and <a class="el" href="classConstantHeadway.xhtml#ad6ac38e1bb98f02aadc1a21cc6875611">ConstantHeadway</a>.</p>
+<p>Reimplemented in <a class="el" href="classSimulationRunner.xhtml#ac223588e17ea7c69402e75be1f1ef0e1">SimulationRunner</a>, <a class="el" href="classPlexeSimulationRunner.xhtml#abbbdd9ac8d6e963d586bdac74fce53b1">PlexeSimulationRunner</a>, <a class="el" href="classRandomNeighbors.xhtml#a9d77d41ca49c947ca6efb5cc37ba0ab7">RandomNeighbors</a>, <a class="el" href="classOptimizer.xhtml#ad77e086bd9d9d483331443df935790f5">Optimizer</a>, <a class="el" href="classMonteCarlo.xhtml#a4f345e54af196a71a332ffa3082a6bc6">MonteCarlo</a>, <a class="el" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">DirectOptimizer</a>, <a class="el" href="classEvaluation.xhtml#a7d8da035f8ad3fae53d0d1e9e10610f7">Evaluation</a>, and <a class="el" href="classConstantHeadway.xhtml#ad6ac38e1bb98f02aadc1a21cc6875611">ConstantHeadway</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Status_8cpp_source.xhtml#l00013">13</a> of file <a class="el" href="Status_8cpp_source.xhtml">Status.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Status_8cpp_source.xhtml#l00014">14</a> of file <a class="el" href="Status_8cpp_source.xhtml">Status.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStatus.xhtml#a75ea6f22c5e9b8faa6f8af43d0bc2eed">NO_STATUS_SUPPORT</a>.</p>
 
@@ -234,9 +235,9 @@ Static Protected Attributes</h2></td></tr>
 <p>Returns a string representing the current progress of the calculations of the implementing component. </p>
 <p>The returned string is visible in <a class="el" href="classStatusBar.xhtml" title="A class used to conduct command line output containing information about the state of the used Optimi...">StatusBar</a>, when the component is actively calculating something. Must not exceed one console line! </p><dl class="section return"><dt>Returns</dt><dd>A string containing the progress of a calculation. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classSimulationRunner.xhtml#af433c6cf68f7b9699251b96919d72152">SimulationRunner</a>, <a class="el" href="classPlexeSimulationRunner.xhtml#a77a48141f105454813f65246f47ab4c1">PlexeSimulationRunner</a>, <a class="el" href="classOptimizer.xhtml#aa09cccc12c47996be6a3130f7c086648">Optimizer</a>, <a class="el" href="classDirectOptimizer.xhtml#adc4a24127cbf852b135962724062ea9a">DirectOptimizer</a>, <a class="el" href="classEvaluation.xhtml#a125e34ba1feb394eaa882137c6ecd68c">Evaluation</a>, and <a class="el" href="classConstantHeadway.xhtml#af78c28ded0b73ec772f09890ce8b2c6a">ConstantHeadway</a>.</p>
+<p>Reimplemented in <a class="el" href="classSimulationRunner.xhtml#af433c6cf68f7b9699251b96919d72152">SimulationRunner</a>, <a class="el" href="classPlexeSimulationRunner.xhtml#a77a48141f105454813f65246f47ab4c1">PlexeSimulationRunner</a>, <a class="el" href="classRandomNeighbors.xhtml#a3d6fb698405866195d2bc3d27924f9b3">RandomNeighbors</a>, <a class="el" href="classOptimizer.xhtml#aa09cccc12c47996be6a3130f7c086648">Optimizer</a>, <a class="el" href="classMonteCarlo.xhtml#a91f7297753288824473b17c495174c9f">MonteCarlo</a>, <a class="el" href="classDirectOptimizer.xhtml#adc4a24127cbf852b135962724062ea9a">DirectOptimizer</a>, <a class="el" href="classEvaluation.xhtml#a125e34ba1feb394eaa882137c6ecd68c">Evaluation</a>, and <a class="el" href="classConstantHeadway.xhtml#af78c28ded0b73ec772f09890ce8b2c6a">ConstantHeadway</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Status_8cpp_source.xhtml#l00017">17</a> of file <a class="el" href="Status_8cpp_source.xhtml">Status.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Status_8cpp_source.xhtml#l00018">18</a> of file <a class="el" href="Status_8cpp_source.xhtml">Status.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStatus.xhtml#a75ea6f22c5e9b8faa6f8af43d0bc2eed">NO_STATUS_SUPPORT</a>.</p>
 
@@ -267,7 +268,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Default message returned by <a class="el" href="classStatus.xhtml#a9d07378cbe210558ebb6b410a9b3855e" title="Returns a string representing the name of the implementing component in natural language.">getName</a> if the implementing class does not override the function. </p>
 
-<p class="definition">Definition at line <a class="el" href="Status_8h_source.xhtml#l00035">35</a> of file <a class="el" href="Status_8h_source.xhtml">Status.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Status_8h_source.xhtml#l00036">36</a> of file <a class="el" href="Status_8h_source.xhtml">Status.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classStatus.xhtml#a9d07378cbe210558ebb6b410a9b3855e">getName()</a>.</p>
 
@@ -295,7 +296,7 @@ Static Protected Attributes</h2></td></tr>
 
 <p>Default message returned by <a class="el" href="classStatus.xhtml#a1102f7349b421fca575e3685cb599fc9" title="Returns a string representing the current state of the implementing component.">getStatus</a> and <a class="el" href="classStatus.xhtml#a6dcff8054a96df8924cbbc4caf8472e3" title="Returns a string representing the current progress of the calculations of the implementing component.">getStatusBar</a> if the implementing class does not override the respective function. </p>
 
-<p class="definition">Definition at line <a class="el" href="Status_8h_source.xhtml#l00031">31</a> of file <a class="el" href="Status_8h_source.xhtml">Status.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Status_8h_source.xhtml#l00032">32</a> of file <a class="el" href="Status_8h_source.xhtml">Status.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classStatus.xhtml#a1102f7349b421fca575e3685cb599fc9">getStatus()</a>, and <a class="el" href="classStatus.xhtml#a6dcff8054a96df8924cbbc4caf8472e3">getStatusBar()</a>.</p>
 

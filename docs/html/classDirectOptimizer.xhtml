@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -107,15 +107,15 @@ Inheritance diagram for DirectOptimizer:</div>
 <div class="dynheader">
 Collaboration diagram for DirectOptimizer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classDirectOptimizer__coll__graph.svg" width="595" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classDirectOptimizer__coll__graph.svg" width="100%" height="529"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adf3e535ac51caddf0e4de2bd2d5916a5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer</a> (<a class="el" href="classController.xhtml">Controller</a> &amp;ctrl, const std::list&lt; std::shared_ptr&lt; <a class="el" href="classParameterDefinition.xhtml">ParameterDefinition</a> &gt;&gt; &amp;params, <a class="el" href="classStoppingCondition.xhtml">StoppingCondition</a> con, bool <a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>)</td></tr>
-<tr class="memdesc:adf3e535ac51caddf0e4de2bd2d5916a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classDirectOptimizer.xhtml" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.">DirectOptimizer</a> that evaluates functions with the given <a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a>, optimizes the given <a class="el" href="classParameterDefinition.xhtml" title="A class storing information on the properties of parameters that are being optimized.">ParameterDefinition</a> list and stops as defined by the given <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a>.  <a href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">More...</a><br /></td></tr>
-<tr class="separator:adf3e535ac51caddf0e4de2bd2d5916a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba65e7989d3edf2b9eac4c6dd0e6819"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer</a> (<a class="el" href="classController.xhtml">Controller</a> &amp;ctrl, const std::list&lt; std::shared_ptr&lt; <a class="el" href="classParameterDefinition.xhtml">ParameterDefinition</a> &gt;&gt; &amp;params, <a class="el" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a> con, bool <a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>)</td></tr>
+<tr class="memdesc:a6ba65e7989d3edf2b9eac4c6dd0e6819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classDirectOptimizer.xhtml" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.">DirectOptimizer</a> that evaluates functions with the given <a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a>, optimizes the given <a class="el" href="classParameterDefinition.xhtml" title="A class storing information on the properties of parameters that are being optimized.">ParameterDefinition</a> list and stops as defined by the given <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped.">StoppingCondition</a>.  <a href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">More...</a><br /></td></tr>
+<tr class="separator:a6ba65e7989d3edf2b9eac4c6dd0e6819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ac79132f9fa57dc9cab3d23f4ee1207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization</a> () override</td></tr>
 <tr class="memdesc:a6ac79132f9fa57dc9cab3d23f4ee1207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the optimization using the DIRECT algorithm.  <a href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">More...</a><br /></td></tr>
 <tr class="separator:a6ac79132f9fa57dc9cab3d23f4ee1207"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,9 +184,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8504fd1fbb419f386a48f5e129feb353"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">iterations</a> = 0</td></tr>
 <tr class="memdesc:a8504fd1fbb419f386a48f5e129feb353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of iterations completed.  <a href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">More...</a><br /></td></tr>
 <tr class="separator:a8504fd1fbb419f386a48f5e129feb353"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a35fa6d3d59c02cdf65f818d0bc68f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classStoppingCondition.xhtml">StoppingCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9">stopCon</a></td></tr>
-<tr class="memdesc:a9a35fa6d3d59c02cdf65f818d0bc68f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object deciding when the optimization stops.  <a href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9">More...</a><br /></td></tr>
-<tr class="separator:a9a35fa6d3d59c02cdf65f818d0bc68f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d819e3905054d38ef149b8ef5b13b47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47">stopCon</a></td></tr>
+<tr class="memdesc:a2d819e3905054d38ef149b8ef5b13b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object deciding when the optimization stops.  <a href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47">More...</a><br /></td></tr>
+<tr class="separator:a2d819e3905054d38ef149b8ef5b13b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a933b782ee8c0a8ab7801ae25062bff6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classLevels.xhtml">Levels</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a></td></tr>
 <tr class="memdesc:a933b782ee8c0a8ab7801ae25062bff6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">An object used switching between different levels between global and local search.  <a href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">More...</a><br /></td></tr>
 <tr class="separator:a933b782ee8c0a8ab7801ae25062bff6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -225,10 +225,10 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class capable of finding the minimum of a blackbox function using the DIRECT algorithm. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00039">39</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00041">41</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adf3e535ac51caddf0e4de2bd2d5916a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf3e535ac51caddf0e4de2bd2d5916a5">&#9670;&nbsp;</a></span>DirectOptimizer()</h2>
+<a id="a6ba65e7989d3edf2b9eac4c6dd0e6819"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ba65e7989d3edf2b9eac4c6dd0e6819">&#9670;&nbsp;</a></span>DirectOptimizer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +248,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classStoppingCondition.xhtml">StoppingCondition</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a>&#160;</td>
           <td class="paramname"><em>con</em>, </td>
         </tr>
         <tr>
@@ -265,22 +265,22 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a <a class="el" href="classDirectOptimizer.xhtml" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.">DirectOptimizer</a> that evaluates functions with the given <a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a>, optimizes the given <a class="el" href="classParameterDefinition.xhtml" title="A class storing information on the properties of parameters that are being optimized.">ParameterDefinition</a> list and stops as defined by the given <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a>. </p>
+<p>Creates a <a class="el" href="classDirectOptimizer.xhtml" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.">DirectOptimizer</a> that evaluates functions with the given <a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a>, optimizes the given <a class="el" href="classParameterDefinition.xhtml" title="A class storing information on the properties of parameters that are being optimized.">ParameterDefinition</a> list and stops as defined by the given <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped.">StoppingCondition</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ctrl</td><td><a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> to be used for evaluating the optimized function. </td></tr>
     <tr><td class="paramname">params</td><td><a class="el" href="classParameterDefinition.xhtml" title="A class storing information on the properties of parameters that are being optimized.">ParameterDefinition</a> list to be optimized. </td></tr>
-    <tr><td class="paramname">con</td><td><a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a> defining the end of optimization. </td></tr>
+    <tr><td class="paramname">con</td><td><a class="el" href="classDirectStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">DirectStoppingCondition</a> defining the end of optimization. </td></tr>
     <tr><td class="paramname">trackProgress</td><td>Defines whether the progress should be printed in a <code>.csv</code> file. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00016">16</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00017">17</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer()</a>, <a class="el" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a>, and <a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>.</p>
+<p class="reference">References <a class="el" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer()</a>, <a class="el" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a>, and <a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer()</a>.</p>
 
 </div>
 </div>
@@ -317,7 +317,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00111">111</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00112">112</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -365,7 +365,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A value representing an estimation of the absolute minimum reachable in this rectangle. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00091">91</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00092">92</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classHyRect.xhtml#add4d30ef978a52194bcd990e2757aadf">HyRect::getAvgValue()</a>, and <a class="el" href="classHyRect.xhtml#a65aa2a8878742309bfb9dccc751b7bcb">HyRect::getDiagonalLength()</a>.</p>
 
@@ -399,7 +399,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classStatus.xhtml#a9d07378cbe210558ebb6b410a9b3855e">Status</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00169">169</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00170">170</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -421,7 +421,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Returns the number of rectangles stored in <a class="el" href="classDirectOptimizer.xhtml#a75ccc02cc03884adae3a02de0687db98" title="Holds all rectangles that are immediate part of the current partition.">activeRects</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A number representing the size of the partition. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00186">186</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00187">187</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">getStatus()</a>.</p>
 
@@ -455,7 +455,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classStatus.xhtml#a1102f7349b421fca575e3685cb599fc9">Status</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00173">173</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00174">174</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classLevels.xhtml#aa67493dec7929cb6927b8513ea86fb43">Levels::getLevel()</a>, <a class="el" href="classDirectOptimizer.xhtml#a153f62d950ce52c25402a0c131c040c2">getPartitionSize()</a>, <a class="el" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">iterations</a>, and <a class="el" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a>.</p>
 
@@ -489,7 +489,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classStatus.xhtml#a6dcff8054a96df8924cbbc4caf8472e3">Status</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00182">182</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00183">183</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +526,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A map which maps the given points to their respective values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00073">73</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00074">74</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -574,7 +574,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A list of potentially optimal rectangles. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00095">95</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00096">96</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +610,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00146">146</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00147">147</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 </div>
 </div>
@@ -638,11 +638,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the optimization using the DIRECT algorithm. </p>
-<p>Only returns when an iteration has completed and <a class="el" href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9" title="An object deciding when the optimization stops.">stopCon</a> deems the optimization complete or when <a class="el" href="classAbortable.xhtml#aa93818ee48fcc8f9ed845215d533436d" title="Sets aborted to true.">abort</a> was called in the last iteration. </p>
+<p>Only returns when an iteration has completed and <a class="el" href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47" title="An object deciding when the optimization stops.">stopCon</a> deems the optimization complete or when <a class="el" href="classAbortable.xhtml#aa93818ee48fcc8f9ed845215d533436d" title="Sets aborted to true.">abort</a> was called in the last iteration. </p>
 
 <p>Implements <a class="el" href="classOptimizer.xhtml#af9a3322b650a543d78c19a658d9319d4">Optimizer</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00024">24</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00025">25</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classOptimizer.xhtml#a2442b637e285b98eb30e1266986bbe3e">Optimizer::getValueMap()</a>, <a class="el" href="classLevels.xhtml#a61be04e785318336297702b38409e09e">Levels::isGlobal()</a>, <a class="el" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">iterations</a>, <a class="el" href="classLevels.xhtml#a535c7cf00e8d86b285e0984827f1f062">Levels::L3_EPSILON</a>, <a class="el" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">level</a>, <a class="el" href="classLevels.xhtml#a74a0701bbc7e23f2364cac58f04e446a">Levels::nextLevel()</a>, <a class="el" href="classDirectOptimizer.xhtml#a5e86cc2e76c36177d0039fb8f8b4cf6e">saveProgress()</a>, <a class="el" href="classLevels.xhtml#a0922cbbce779efadd8d3e514035b525b">Levels::setGlobal()</a>, and <a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a>.</p>
 
@@ -698,7 +698,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00157">157</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8cpp_source.xhtml#l00158">158</a> of file <a class="el" href="DirectOptimizer_8cpp_source.xhtml">DirectOptimizer.cpp</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization()</a>.</p>
 
@@ -728,7 +728,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Holds all rectangles that are immediate part of the current partition. </p>
 <p>This includes all rectangles which have not been divided yet. They are grouped by <a class="el" href="classHyRect.xhtml#a96df21ffd424d02b112e2f47f67572d0" title="Depth of the rectangle in the partition tree.">HyRect::t</a> and sorted by <a class="el" href="classHyRect.xhtml#aaed25fd458c840441423fb11d1ddff55" title="Mean between the values obtained at the parameters returned by getSamplingVertices.">HyRect::avgValue</a> which simplifies the search for potentially optimal rectangles in <a class="el" href="classDirectOptimizer.xhtml#af96cd00a7d35a71ef3cfc4d61ee7869b" title="Finds potentially optimal rectangles that should be divided in the current iteration.">optimalRectangles</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00072">72</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00074">74</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
 </div>
 </div>
@@ -754,7 +754,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Number of parameters to be optimized (meaning dimensions of the search space). </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00044">44</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00046">46</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
 </div>
 </div>
@@ -780,7 +780,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Number of iterations completed. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00048">48</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00050">50</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">getStatus()</a>, and <a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization()</a>.</p>
 
@@ -808,9 +808,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>An object used switching between different levels between global and local search. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00056">56</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00058">58</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer()</a>, <a class="el" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">getStatus()</a>, and <a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer()</a>, <a class="el" href="classDirectOptimizer.xhtml#a94663d94833397cc00377634a1f0a141">getStatus()</a>, and <a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization()</a>.</p>
 
 </div>
 </div>
@@ -836,12 +836,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>An object used for transformation between the unit hypercube used in DIRECT and the actual parameter space. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00060">60</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00062">62</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
 </div>
 </div>
-<a id="a9a35fa6d3d59c02cdf65f818d0bc68f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a35fa6d3d59c02cdf65f818d0bc68f9">&#9670;&nbsp;</a></span>stopCon</h2>
+<a id="a2d819e3905054d38ef149b8ef5b13b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d819e3905054d38ef149b8ef5b13b47">&#9670;&nbsp;</a></span>stopCon</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -850,7 +850,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classStoppingCondition.xhtml">StoppingCondition</a> DirectOptimizer::stopCon</td>
+          <td class="memname"><a class="el" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a> DirectOptimizer::stopCon</td>
         </tr>
       </table>
   </td>
@@ -862,7 +862,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>An object deciding when the optimization stops. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00052">52</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00054">54</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
 </div>
 </div>
@@ -889,9 +889,9 @@ Additional Inherited Members</h2></td></tr>
 <p>Defines if the current number of iterations, evaluations, rectangles and the optimal value should be recorded into a <code>.csv</code> file after each iteration. </p>
 <p>Can be set in config. </p>
 
-<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00065">65</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="DirectOptimizer_8h_source.xhtml#l00067">67</a> of file <a class="el" href="DirectOptimizer_8h_source.xhtml">DirectOptimizer.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer()</a>, and <a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer()</a>, and <a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization()</a>.</p>
 
 </div>
 </div>

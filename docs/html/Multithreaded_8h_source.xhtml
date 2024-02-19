@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -110,53 +110,54 @@ $(document).ready(function(){initNavTree('Multithreaded_8h_source.xhtml',''); in
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @tparam Compare: Comparison for objects of type Key.</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @tparam Allocator: Allocator for pairs of constant Key and T.</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @ingroup utils</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare = std::less&lt;Key&gt;, <span class="keyword">class</span> Allocator = std::allocator&lt;std::pair&lt;<span class="keyword">const</span> Key, T&gt;&gt;&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml">   26</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classMultithreaded.xhtml">Multithreaded</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     * Function that should be executed concurrently on different arguments.</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * @param arg: Argument of the concurrently executed function.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * @return Return value of the concurrently executed function.</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">   33</a></span>&#160;    <span class="keyword">virtual</span> T <a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">work</a>(Key arg) = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * Maximum number of concurrent threads to be used in ThreadPool.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">   39</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">   43</a></span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt; <a class="code" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">queue</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     * Pushes given tasks into #queue, creates concurrent threads and merges them when execution is done.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * @param runs: Set of arguments on which #work should to be executed.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> std::map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.xhtml#a1fcc1c0642faa664e11fefadde148b5f">runMultithreadedFunctions</a>(std::set&lt;Key, Compare&gt; runs);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     * Function that is executed by each thread. As long as #queue is not empty, tasks are started.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * When #queue is empty, the processed results are returned</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> std::map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">multithreadFunction</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * Creates a Multithreaded class that does not use more than the given number of threads.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * @param threads: Maximum number of threads to use.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMultithreaded.xhtml#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threads);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Multithreaded_8tpp.xhtml" title="In this file, the implementation of the Multithreaded class is defined.">&quot;Multithreaded.tpp&quot;</a></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_MULTITHREADED_H</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key, <span class="keyword">class</span> T, <span class="keyword">class</span> Compare = std::less&lt;Key&gt;, <span class="keyword">class</span> Allocator = std::allocator&lt;std::pair&lt;<span class="keyword">const</span> Key, T&gt;&gt;&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml">   27</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classMultithreaded.xhtml">Multithreaded</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * Function that should be executed concurrently on different arguments.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * @param arg: Argument of the concurrently executed function.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * @return Return value of the concurrently executed function.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">   34</a></span>&#160;    <span class="keyword">virtual</span> T <a class="code" href="classMultithreaded.xhtml#a295f1db64506dc4054dc5d7bac9ba231">work</a>(Key arg) = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * Maximum number of concurrent threads to be used in ThreadPool.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">   40</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classMultithreaded.xhtml#af49cb7239ee452d7c1d29ae50fe482a3">NR_THREADS</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     * ThreadsafeQueue containing the arguments that have to be processed by the ThreadPool.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">   44</a></span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt; <a class="code" href="classMultithreaded.xhtml#af18b358906f0dd910122e6541c46f45e">queue</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     * Pushes given tasks into #queue, creates concurrent threads and merges them when execution is done.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * @param runs: Set of arguments on which #work should to be executed.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> std::map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.xhtml#a1fcc1c0642faa664e11fefadde148b5f">runMultithreadedFunctions</a>(std::set&lt;Key, Compare&gt; runs);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * Function that is executed by each thread. As long as #queue is not empty, tasks are started.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * When #queue is empty, the processed results are returned</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * @return A map which maps arguments to their respective calculated values.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> std::map&lt;Key, T, Compare, Allocator&gt; <a class="code" href="classMultithreaded.xhtml#a417daf5d214dc7046af294dba9979624">multithreadFunction</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * Creates a Multithreaded class that does not use more than the given number of threads.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     * @param threads: Maximum number of threads to use.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classMultithreaded.xhtml#abb856a33aad9a1cc76a91c15c40bef8e">Multithreaded</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> threads);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="Multithreaded_8tpp.xhtml" title="In this file, the implementation of the Multithreaded class is defined.">&quot;Multithreaded.tpp&quot;</a></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_MULTITHREADED_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

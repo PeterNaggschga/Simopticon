@@ -1,9 +1,5 @@
 var group__hyrect =
 [
-    [ "BaseRect", "classBaseRect.xhtml", [
-      [ "BaseRect", "classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694", null ],
-      [ "getSamplingVertices", "classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492", null ]
-    ] ],
     [ "HyRect", "classHyRect.xhtml", [
       [ "HyRect", "classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1", null ],
       [ "divide", "classHyRect.xhtml#af9a26c555fd9ac4d42ae56b532b21935", null ],
@@ -25,6 +21,10 @@ var group__hyrect =
       [ "D", "classHyRect.xhtml#a4a6c86c3a10e740c3c4937532325fb90", null ],
       [ "pos", "classHyRect.xhtml#ad3de4de4b307a600af5ee1c5cad0ed86", null ],
       [ "t", "classHyRect.xhtml#a96df21ffd424d02b112e2f47f67572d0", null ]
+    ] ],
+    [ "BaseRect", "classBaseRect.xhtml", [
+      [ "BaseRect", "classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694", null ],
+      [ "getSamplingVertices", "classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492", null ]
     ] ],
     [ "ChildRect", "classChildRect.xhtml", [
       [ "ChildRect", "classChildRect.xhtml#a873626d01b973a678b881242a1afb432", null ],

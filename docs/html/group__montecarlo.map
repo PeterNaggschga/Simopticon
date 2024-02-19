@@ -1,0 +1,4 @@
+<map id="montecarlo" name="montecarlo">
+<area shape="rect" id="node1" title="This is a simple implementation of Monte Carlo optimization." alt="" coords="137,5,233,31"/>
+<area shape="rect" id="node2" href="$group__optimizer.xhtml" title="This module contains components capable of finding the minimum of a function only defined through arg..." alt="" coords="5,5,89,31"/>
+</map>

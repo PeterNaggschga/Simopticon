@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -122,8 +122,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class capable of finding the minimum of a blackbox function using the DIRECT algorithm.  <a href="classDirectOptimizer.xhtml#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml">StoppingCondition</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class used for deciding whether the DIRECT should be stopped.  <a href="classStoppingCondition.xhtml#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDirectStoppingCondition.xhtml">DirectStoppingCondition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class used for deciding whether the DIRECT should be stopped.  <a href="classDirectStoppingCondition.xhtml#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParameterNormalizer.xhtml">ParameterNormalizer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class used for transforming parameters between the actual <a class="el" href="classParameter.xhtml" title="A class acting as the container of the value of a parameter defined by a ParameterDefinition.">Parameter</a> space and the unit hypercube used in DIRECT algorithm.  <a href="classParameterNormalizer.xhtml#details">More...</a><br /></td></tr>
@@ -154,7 +154,8 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>This module extends <a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> to use a variant of the DIRECT algorithm by <a href="https://doi.org/10.1007/BF00941892">Jones et al</a>. </p>
-<p>It incorporates features proposed by <a href="https://doi.org/10.1007/s10898-016-0447-z">Liu et al.</a> and <a href="https://doi.org/10.1137/040621132">Sergeyev and Kvasov</a>. </p>
+<p>It incorporates features proposed by <a href="https://doi.org/10.1007/s10898-016-0447-z">Liu et al.</a> and <a href="https://doi.org/10.1137/040621132">Sergeyev and Kvasov</a>.</p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="gaf172dcde49444958d79cedd30bc5b230"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf172dcde49444958d79cedd30bc5b230">&#9670;&nbsp;</a></span>level</h2>
@@ -170,7 +171,7 @@ Enumerations</h2></td></tr>
 
 <p>An enum representing the sequence of local levels. </p>
 
-<p class="definition">Definition at line <a class="el" href="Levels_8h_source.xhtml#l00023">23</a> of file <a class="el" href="Levels_8h_source.xhtml">Levels.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Levels_8h_source.xhtml#l00024">24</a> of file <a class="el" href="Levels_8h_source.xhtml">Levels.h</a>.</p>
 
 </div>
 </div>

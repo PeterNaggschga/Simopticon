@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('classDirectOptimizer.xhtml',''); initR
   <tr><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#aa0ca777ddca12cc9b12453be07151346">addActiveRects</a>(const std::list&lt; std::shared_ptr&lt; HyRect &gt;&gt; &amp;rects)</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classOptimizer.xhtml#a39b5a35015181c52e78b7c444ec2c7de">controller</a></td><td class="entry"><a class="el" href="classOptimizer.xhtml">Optimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a6e0cbcc251d77044560376bf7c125ff1">D</a></td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5">DirectOptimizer</a>(Controller &amp;ctrl, const std::list&lt; std::shared_ptr&lt; ParameterDefinition &gt;&gt; &amp;params, StoppingCondition con, bool trackProgress)</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819">DirectOptimizer</a>(Controller &amp;ctrl, const std::list&lt; std::shared_ptr&lt; ParameterDefinition &gt;&gt; &amp;params, DirectStoppingCondition con, bool trackProgress)</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#aba4b95c69131cac24fe71649c41cf640">estimatedValue</a>(const std::shared_ptr&lt; HyRect &gt; &amp;rect, double k)</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020">getName</a>() override</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a153f62d950ce52c25402a0c131c040c2">getPartitionSize</a>()</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"></td></tr>
@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('classDirectOptimizer.xhtml',''); initR
   <tr><td class="entry"><a class="el" href="classOptimizer.xhtml#a10c14e49cea1f9dfbb0fed45b93c6fc9">requestValues</a>(const std::list&lt; parameterCombination &gt; &amp;params)</td><td class="entry"><a class="el" href="classOptimizer.xhtml">Optimizer</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a6ac79132f9fa57dc9cab3d23f4ee1207">runOptimization</a>() override</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a5e86cc2e76c36177d0039fb8f8b4cf6e">saveProgress</a>(functionValue bestVal, size_t evaluations, size_t nrRects) const</td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9">stopCon</a></td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47">stopCon</a></td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr><td class="entry"><a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">trackProgress</a></td><td class="entry"><a class="el" href="classDirectOptimizer.xhtml">DirectOptimizer</a></td><td class="entry"><span class="mlabel">private</span></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Optimizer</b>()=default (defined in <a class="el" href="classOptimizer.xhtml">Optimizer</a>)</td><td class="entry"><a class="el" href="classOptimizer.xhtml">Optimizer</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('group__optimizer.xhtml',''); initResiz
 <div class="dynheader">
 Collaboration diagram for optimizer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="group__optimizer.svg" width="202" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="group__optimizer.svg" width="279" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -105,11 +105,20 @@ Modules</h2></td></tr>
 <tr class="memitem:group__direct"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__direct.xhtml">direct</a></td></tr>
 <tr class="memdesc:group__direct"><td class="mdescLeft">&#160;</td><td class="mdescRight">This module extends <a class="el" href="classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t...">Optimizer</a> to use a variant of the DIRECT algorithm by <a href="https://doi.org/10.1007/BF00941892">Jones et al</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__montecarlo"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__montecarlo.xhtml">montecarlo</a></td></tr>
+<tr class="memdesc:group__montecarlo"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple implementation of Monte Carlo optimization. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__randomneighbors"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__randomneighbors.xhtml">randomneighbors</a></td></tr>
+<tr class="memdesc:group__randomneighbors"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a simple implementation of Random Neighbors optimization. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOptimizer.xhtml">Optimizer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class containing an optimization strategy which searches the minimum of a blackbox function given through argument-value pairs.  <a href="classOptimizer.xhtml#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml">StoppingCondition</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A class used for deciding whether the optimization should be stopped.  <a href="classStoppingCondition.xhtml#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>

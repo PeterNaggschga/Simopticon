@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -177,6 +177,8 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 <h3><a id="index_i"></a>- i -</h3><ul>
 <li>iterations
 : <a class="el" href="classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353">DirectOptimizer</a>
+, <a class="el" href="classMonteCarlo.xhtml#a3ddd7d62c0b08b03245d5c4408f6d5af">MonteCarlo</a>
+, <a class="el" href="classRandomNeighbors.xhtml#a6622af7352a10f418b41240989056797">RandomNeighbors</a>
 </li>
 <li>iterationsSinceImprov
 : <a class="el" href="classStoppingCondition.xhtml#ace80e2bd8cdce582d265ad0fe536476f">StoppingCondition</a>
@@ -219,6 +221,13 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 <li>LARGE_DIVIDER
 : <a class="el" href="classStatusBar.xhtml#a6747ec1d1e2728d65e468609aae67e11">StatusBar</a>
 </li>
+<li>lastEvaluations
+: <a class="el" href="classMonteCarlo.xhtml#ad1f097f06b9f460646914be4e9e93905">MonteCarlo</a>
+, <a class="el" href="classRandomNeighbors.xhtml#a8e7ceb6cb2fe2a56c7371bfb2cdb9afb">RandomNeighbors</a>
+</li>
+<li>lastLocal
+: <a class="el" href="classRandomNeighbors.xhtml#a5a089ad1bed8d1cc8139035b8288d069">RandomNeighbors</a>
+</li>
 <li>lastStatus
 : <a class="el" href="classStatusBar.xhtml#a302f4053cd3d5184f41cc2c1b5da7811">StatusBar</a>
 </li>
@@ -230,6 +239,9 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 </li>
 <li>level
 : <a class="el" href="classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c">DirectOptimizer</a>
+</li>
+<li>localSearchProbability
+: <a class="el" href="classRandomNeighbors.xhtml#ac41625f09e3c7dacf64a9b92e6e5ed1f">RandomNeighbors</a>
 </li>
 <li>lowerValues
 : <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733">ValueMap</a>
@@ -251,6 +263,9 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 
 
 <h3><a id="index_n"></a>- n -</h3><ul>
+<li>neighborhoodWidth
+: <a class="el" href="classRandomNeighbors.xhtml#ac4f1b00ebeffb37d17f76aef6e0a249c">RandomNeighbors</a>
+</li>
 <li>NO_NAME
 : <a class="el" href="classStatus.xhtml#aebc78bdfd2d9603aa3012e01b3cde5b1">Status</a>
 </li>
@@ -267,7 +282,7 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 : <a class="el" href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">StoppingCondition</a>
 </li>
 <li>NR_HYRECTS
-: <a class="el" href="classStoppingCondition.xhtml#aac8a02e45818311cbd4de360ebc3f068">StoppingCondition</a>
+: <a class="el" href="classDirectStoppingCondition.xhtml#ae850ee3dfffccfa77b95cdcf906cd17c">DirectStoppingCondition</a>
 </li>
 <li>NR_THREADS
 : <a class="el" href="classConstantHeadway.xhtml#a37f540c221d3afe7119499d222f2d84a">ConstantHeadway</a>
@@ -290,6 +305,10 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 
 
 <h3><a id="index_p"></a>- p -</h3><ul>
+<li>parallelTrials
+: <a class="el" href="classMonteCarlo.xhtml#a472ced8271f2ed6fe7d1883dbccfb99b">MonteCarlo</a>
+, <a class="el" href="classRandomNeighbors.xhtml#aa4aeb607a08f1d8615fafec7518c6c6a">RandomNeighbors</a>
+</li>
 <li>parameters
 : <a class="el" href="classOptimizer.xhtml#a5ad239e14d433114af6a5544ecb7a87e">Optimizer</a>
 , <a class="el" href="classParameterNormalizer.xhtml#a67f607119423b9f864b972fc5928504e">ParameterNormalizer</a>
@@ -370,7 +389,9 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 : <a class="el" href="group__controller.xhtml#gae16dcbfaf98be49180edea1bf00954ea">Controller</a>
 </li>
 <li>stopCon
-: <a class="el" href="classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9">DirectOptimizer</a>
+: <a class="el" href="classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47">DirectOptimizer</a>
+, <a class="el" href="classMonteCarlo.xhtml#a8cecbc93579f30dbc936f341a8ee9bb8">MonteCarlo</a>
+, <a class="el" href="classRandomNeighbors.xhtml#afcb619191a0bdc05653af4c19006a821">RandomNeighbors</a>
 </li>
 </ul>
 
@@ -399,6 +420,8 @@ $(document).ready(function(){initNavTree('functions_vars.xhtml',''); initResizab
 </li>
 <li>trackProgress
 : <a class="el" href="classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0">DirectOptimizer</a>
+, <a class="el" href="classMonteCarlo.xhtml#ade76b2809944c2e160beef4e0ac6e9a7">MonteCarlo</a>
+, <a class="el" href="classRandomNeighbors.xhtml#a68afe606cf95e2c816d125f3fe46be46">RandomNeighbors</a>
 </li>
 </ul>
 

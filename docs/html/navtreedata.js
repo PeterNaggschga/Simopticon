@@ -34,11 +34,12 @@ var NAVTREE =
       ] ],
       [ "Usage", "index.xhtml#autotoc_md10", [
         [ "Configuration", "index.xhtml#autotoc_md11", null ],
-        [ "Optimization", "index.xhtml#autotoc_md12", null ]
+        [ "Available Optimizers", "index.xhtml#autotoc_md12", null ],
+        [ "Optimization", "index.xhtml#autotoc_md13", null ]
       ] ],
-      [ "Extension", "index.xhtml#autotoc_md14", [
-        [ "Development", "index.xhtml#autotoc_md15", null ],
-        [ "Integration", "index.xhtml#autotoc_md16", null ]
+      [ "Extension", "index.xhtml#autotoc_md15", [
+        [ "Development", "index.xhtml#autotoc_md16", null ],
+        [ "Integration", "index.xhtml#autotoc_md17", null ]
       ] ]
     ] ],
     [ "Todo List", "todo.xhtml", null ],
@@ -69,8 +70,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Abortable_8cpp.xhtml",
-"classHyRect.xhtml#aaaf4f13552c02eada0e75e771524b02f",
-"group__runner.xhtml"
+"classEvaluation.xhtml#a55e7851f5acc8fed0004f0845ed7395d",
+"functions_l.xhtml"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

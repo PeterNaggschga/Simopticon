@@ -1,27 +1,29 @@
 <map id="/home/runner/work/Simopticon/Simopticon/src/parameters/Parameter.h" name="/home/runner/work/Simopticon/Simopticon/src/parameters/Parameter.h">
-<area shape="rect" id="node1" title="In this file, the header of the Parameter class is defined." alt="" coords="1132,5,1355,61"/>
-<area shape="rect" id="node2" href="$ValueMap_8h.xhtml" title="In this file, the header of the ValueMap class is defined." alt="" coords="562,213,784,269"/>
-<area shape="rect" id="node8" href="$Controller_8h.xhtml" title="In this file, the header of the Controller class is defined." alt="" coords="858,421,1080,477"/>
-<area shape="rect" id="node13" href="$ComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="967,117,1246,158"/>
-<area shape="rect" id="node20" href="$ContinuousParameter_8h.xhtml" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="1387,109,1610,165"/>
-<area shape="rect" id="node23" href="$Parameter_8cpp.xhtml" title="In this file, the implementation of the Parameter class is defined." alt="" coords="1634,109,1856,165"/>
-<area shape="rect" id="node24" href="$DiscreteParameter_8h.xhtml" title="In this file, the header of the DiscreteParameter class is defined." alt="" coords="1942,109,2164,165"/>
-<area shape="rect" id="node3" href="$ValueMap_8cpp.xhtml" title="In this file, the implementation of the ValueMap class is defined." alt="" coords="47,317,270,373"/>
-<area shape="rect" id="node4" href="$StubController_8cpp.xhtml" title="In this file, the implementation of the StubController class is defined." alt="" coords="34,629,256,685"/>
-<area shape="rect" id="node5" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="834,629,1056,685"/>
-<area shape="rect" id="node6" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="562,317,784,373"/>
-<area shape="rect" id="node7" href="$StatusBar_8h.xhtml" title="In this file, the header of the StatusBar class is defined." alt="" coords="294,325,538,366"/>
-<area shape="rect" id="node12" href="$StatusBar_8cpp.xhtml" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="286,429,545,470"/>
-<area shape="rect" id="node9" href="$main_8cpp.xhtml" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="488,637,711,678"/>
-<area shape="rect" id="node10" href="$StubController_8h.xhtml" title="In this file, the header of the StubController class is defined." alt="" coords="562,525,784,581"/>
-<area shape="rect" id="node11" href="$Optimizer_8cpp.xhtml" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="858,525,1080,581"/>
-<area shape="rect" id="node14" href="$SimulationRunner_8h.xhtml" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="985,213,1228,269"/>
-<area shape="rect" id="node18" href="$ConfigEditor_8h.xhtml" title="In this file, the header of the ConfigEditor class is defined." alt="" coords="1252,213,1475,269"/>
-<area shape="rect" id="node15" href="$PlexeSimulationRunner_8h.xhtml" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="1278,317,1500,373"/>
-<area shape="rect" id="node17" href="$SimulationRunner_8cpp.xhtml" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="1010,317,1253,373"/>
-<area shape="rect" id="node16" href="$PlexeSimulationRunner_8cpp.xhtml" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="1370,421,1592,477"/>
-<area shape="rect" id="node19" href="$ConfigEditor_8cpp.xhtml" title="In this file, the implementation of the ConfigEditor class is defined." alt="" coords="1524,317,1747,373"/>
-<area shape="rect" id="node21" href="$ParameterNormalizer_8cpp.xhtml" title="In this file, the implementation of the ParameterNormalizer class is defined." alt="" coords="1500,213,1732,269"/>
-<area shape="rect" id="node22" href="$ContinuousParameter_8cpp.xhtml" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="1756,213,1979,269"/>
-<area shape="rect" id="node25" href="$DiscreteParameter_8cpp.xhtml" title="In this file, the implementation of the DiscreteParameter class is defined." alt="" coords="2003,213,2226,269"/>
+<area shape="rect" id="node1" title="In this file, the header of the Parameter class is defined." alt="" coords="1105,5,1327,61"/>
+<area shape="rect" id="node2" href="$ValueMap_8h.xhtml" title="In this file, the header of the ValueMap class is defined." alt="" coords="779,213,1002,269"/>
+<area shape="rect" id="node10" href="$Controller_8h.xhtml" title="In this file, the header of the Controller class is defined." alt="" coords="335,421,558,477"/>
+<area shape="rect" id="node15" href="$ComparisonFunctions_8h.xhtml" title="In this file, comparison functions are defined which should be used across the whole framework." alt="" coords="989,117,1267,158"/>
+<area shape="rect" id="node22" href="$ContinuousParameter_8h.xhtml" title="In this file, the header of the ContinuousParameter class is defined." alt="" coords="1962,213,2185,269"/>
+<area shape="rect" id="node25" href="$Parameter_8cpp.xhtml" title="In this file, the implementation of the Parameter class is defined." alt="" coords="1342,109,1565,165"/>
+<area shape="rect" id="node26" href="$DiscreteParameter_8h.xhtml" title="In this file, the header of the DiscreteParameter class is defined." alt="" coords="1838,109,2061,165"/>
+<area shape="rect" id="node3" href="$ValueMap_8cpp.xhtml" title="In this file, the implementation of the ValueMap class is defined." alt="" coords="629,317,851,373"/>
+<area shape="rect" id="node4" href="$StubController_8cpp.xhtml" title="In this file, the implementation of the StubController class is defined." alt="" coords="581,629,803,685"/>
+<area shape="rect" id="node5" href="$Controller_8cpp.xhtml" title="In this file, the implementation of the Controller class is defined." alt="" coords="853,629,1075,685"/>
+<area shape="rect" id="node6" href="$DirectOptimizer_8cpp.xhtml" title="In this file, the implementation of the DirectOptimizer class is defined." alt="" coords="382,317,605,373"/>
+<area shape="rect" id="node7" href="$MonteCarlo_8cpp.xhtml" title="In this file, the implementation of the MonteCarlo optimizer class is defined." alt="" coords="2103,317,2326,373"/>
+<area shape="rect" id="node8" href="$RandomNeighbors_8cpp.xhtml" title="In this file, the implementation of the RandomNeighbors optimizer class is defined." alt="" coords="1788,317,2079,373"/>
+<area shape="rect" id="node9" href="$StatusBar_8h.xhtml" title="In this file, the header of the StatusBar class is defined." alt="" coords="13,325,257,366"/>
+<area shape="rect" id="node14" href="$StatusBar_8cpp.xhtml" title="In this file, the implementation of the StatusBar class is defined." alt="" coords="5,429,264,470"/>
+<area shape="rect" id="node11" href="$main_8cpp.xhtml" title="In this file, the main function running the Simopticon framework is defined." alt="" coords="285,637,507,678"/>
+<area shape="rect" id="node12" href="$StubController_8h.xhtml" title="In this file, the header of the StubController class is defined." alt="" coords="382,525,605,581"/>
+<area shape="rect" id="node13" href="$Optimizer_8cpp.xhtml" title="In this file, the implementation of the Optimizer class is defined." alt="" coords="629,525,851,581"/>
+<area shape="rect" id="node16" href="$SimulationRunner_8h.xhtml" title="In this file, the header of the SimulationRunner class is defined." alt="" coords="1027,213,1269,269"/>
+<area shape="rect" id="node20" href="$ConfigEditor_8h.xhtml" title="In this file, the header of the ConfigEditor class is defined." alt="" coords="1417,213,1639,269"/>
+<area shape="rect" id="node17" href="$PlexeSimulationRunner_8h.xhtml" title="In this file, the header of the PlexeSimulationRunner class is defined." alt="" coords="1294,317,1517,373"/>
+<area shape="rect" id="node19" href="$SimulationRunner_8cpp.xhtml" title="In this file, the implementation of the SimulationRunner class is defined." alt="" coords="1027,317,1269,373"/>
+<area shape="rect" id="node18" href="$PlexeSimulationRunner_8cpp.xhtml" title="In this file, the implementation of the PlexeSimulationRunner class is defined." alt="" coords="1422,421,1645,477"/>
+<area shape="rect" id="node21" href="$ConfigEditor_8cpp.xhtml" title="In this file, the implementation of the ConfigEditor class is defined." alt="" coords="1541,317,1763,373"/>
+<area shape="rect" id="node23" href="$ParameterNormalizer_8cpp.xhtml" title="In this file, the implementation of the ParameterNormalizer class is defined." alt="" coords="2400,317,2632,373"/>
+<area shape="rect" id="node24" href="$ContinuousParameter_8cpp.xhtml" title="In this file, the implementation of the ContinuousParameter class is defined." alt="" coords="2657,317,2879,373"/>
+<area shape="rect" id="node27" href="$DiscreteParameter_8cpp.xhtml" title="In this file, the implementation of the DiscreteParameter class is defined." alt="" coords="2209,213,2431,269"/>
 </map>

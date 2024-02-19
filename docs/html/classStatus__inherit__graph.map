@@ -1,9 +1,11 @@
 <map id="Status" name="Status">
-<area shape="rect" id="node1" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="202,5,265,32"/>
-<area shape="rect" id="node2" href="$classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="53,80,144,107"/>
-<area shape="rect" id="node4" href="$classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="190,80,277,107"/>
-<area shape="rect" id="node6" href="$classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="319,80,457,107"/>
+<area shape="rect" id="node1" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="338,5,401,32"/>
+<area shape="rect" id="node2" href="$classEvaluation.xhtml" title="A class capable of evaluating simulation results and scoring them with a value which is treated as th..." alt="" coords="121,80,212,107"/>
+<area shape="rect" id="node4" href="$classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="326,80,413,107"/>
+<area shape="rect" id="node8" href="$classSimulationRunner.xhtml" title="A class capable of running simulations with certain parameterCombinations." alt="" coords="532,80,671,107"/>
 <area shape="rect" id="node3" href="$classConstantHeadway.xhtml" title="A wrapper for the constant_headway.py script." alt="" coords="5,155,147,181"/>
 <area shape="rect" id="node5" href="$classDirectOptimizer.xhtml" title="A class capable of finding the minimum of a blackbox function using the DIRECT algorithm." alt="" coords="171,155,296,181"/>
-<area shape="rect" id="node7" href="$classPlexeSimulationRunner.xhtml" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="320,155,493,181"/>
+<area shape="rect" id="node6" href="$classMonteCarlo.xhtml" title="A class capable of finding the minimum of a blackbox function using the Monte Carlo algorithm." alt="" coords="321,155,418,181"/>
+<area shape="rect" id="node7" href="$classRandomNeighbors.xhtml" title="A class capable of finding the minimum of a blackbox function using the Random Neighbors algorithm." alt="" coords="442,155,585,181"/>
+<area shape="rect" id="node9" href="$classPlexeSimulationRunner.xhtml" title="A class capable of starting platooning simulations in the Plexe framework with given parameterCombina..." alt="" coords="609,155,783,181"/>
 </map>

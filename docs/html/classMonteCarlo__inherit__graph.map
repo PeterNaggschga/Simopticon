@@ -1,0 +1,6 @@
+<map id="MonteCarlo" name="MonteCarlo">
+<area shape="rect" id="node1" title="A class capable of finding the minimum of a blackbox function using the Monte Carlo algorithm." alt="" coords="37,155,135,181"/>
+<area shape="rect" id="node2" href="$classOptimizer.xhtml" title="A class containing an optimization strategy which searches the minimum of a blackbox function given t..." alt="" coords="43,80,129,107"/>
+<area shape="rect" id="node3" href="$classStatus.xhtml" title="An interface defining functions for status updates on configuration and progress of a class." alt="" coords="5,5,68,32"/>
+<area shape="rect" id="node4" href="$classAbortable.xhtml" title="A simple interface for classes that encapsulate abortable processes." alt="" coords="93,5,178,32"/>
+</map>

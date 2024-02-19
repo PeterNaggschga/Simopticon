@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -90,18 +90,19 @@ $(document).ready(function(){initNavTree('BaseRect_8cpp_source.xhtml',''); initR
 <a href="BaseRect_8cpp.xhtml">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * In this file, the implementation of the BaseRect class is defined.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="BaseRect_8h.xhtml" title="In this file, the header of the BaseRect class is defined.">&quot;BaseRect.h&quot;</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694">    8</a></span>&#160;<a class="code" href="classBaseRect.xhtml">BaseRect</a>::<a class="code" href="classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694">BaseRect</a>(<a class="code" href="DirectTypes_8h.xhtml#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> D) : <a class="code" href="classHyRect.xhtml">HyRect</a><a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">(</a>D<a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">,</a> <a class="code" href="group__hyrect.xhtml#gad173c5addf1993b5b138135b644279ab">position</a>::BASE<a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">,</a> 0<a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">)</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;}</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">   11</a></span>&#160;std::array&lt;std::vector&lt;<a class="code" href="DirectTypes_8h.xhtml#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt;, 2&gt; <a class="code" href="classBaseRect.xhtml">BaseRect</a>::<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">getSamplingVertices</a>() {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::vector&lt;<a class="code" href="DirectTypes_8h.xhtml#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt; a(<a class="code" href="classHyRect.xhtml#a4a6c86c3a10e740c3c4937532325fb90">D</a>, 0);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::vector&lt;<a class="code" href="DirectTypes_8h.xhtml#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt; b(<a class="code" href="classHyRect.xhtml#a4a6c86c3a10e740c3c4937532325fb90">D</a>, 1);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> {a, b};</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">include</span> <a class="code" href="BaseRect_8h.xhtml" title="In this file, the header of the BaseRect class is defined.">&quot;BaseRect.h&quot;</a></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694">    9</a></span>&#160;<a class="code" href="classBaseRect.xhtml">BaseRect</a>::<a class="code" href="classBaseRect.xhtml#a8cc8a03fff059cff70e9f534237a8694">BaseRect</a>(<a class="code" href="DirectTypes_8h.xhtml#a3f22cc1f9a0eb7ab35eea55cd61c9112">dimension</a> D) : <a class="code" href="classHyRect.xhtml">HyRect</a><a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">(</a>D<a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">,</a> <a class="code" href="group__hyrect.xhtml#gad173c5addf1993b5b138135b644279ab">position</a>::BASE<a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">,</a> 0<a class="code" href="classHyRect.xhtml#a074dd7cc4b16fcebb6dd3f68957007b1">)</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">   12</a></span>&#160;std::array&lt;std::vector&lt;<a class="code" href="DirectTypes_8h.xhtml#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt;, 2&gt; <a class="code" href="classBaseRect.xhtml">BaseRect</a>::<a class="code" href="classBaseRect.xhtml#ac5443b99f1acd241ccd874dbdb8fd492">getSamplingVertices</a>() {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    std::vector&lt;<a class="code" href="DirectTypes_8h.xhtml#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt; a(<a class="code" href="classHyRect.xhtml#a4a6c86c3a10e740c3c4937532325fb90">D</a>, 0);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::vector&lt;<a class="code" href="DirectTypes_8h.xhtml#a747d142e8f05a5bad1a7b29c9ee5dee0">dirCoordinate</a>&gt; b(<a class="code" href="classHyRect.xhtml#a4a6c86c3a10e740c3c4937532325fb90">D</a>, 1);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">return</span> {a, b};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

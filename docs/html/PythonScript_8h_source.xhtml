@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -108,35 +108,36 @@ $(document).ready(function(){initNavTree('PythonScript_8h_source.xhtml',''); ini
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * A class containing functionality for interfacing with the function of a Python module on creation.</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * See https://docs.python.org/3/c-api/index.html for more information.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @ingroup utils</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classPythonScript.xhtml">   23</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classPythonScript.xhtml">PythonScript</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     * Pointer to module that contains function which should be used by the class.</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classPythonScript.xhtml#a06576c1093a5bdb725b0a872c93129e3">   28</a></span>&#160;    <a class="code" href="classPythonScript.xhtml#a06576c1093a5bdb725b0a872c93129e3">PyObject</a> *<a class="code" href="classPythonScript.xhtml#a06576c1093a5bdb725b0a872c93129e3">pModule</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     * Pointer to function which should be used by the class.</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classPythonScript.xhtml#a33365a89ca9cfa267c7a4b9527f7c201">   32</a></span>&#160;    <a class="code" href="classPythonScript.xhtml#a33365a89ca9cfa267c7a4b9527f7c201">PyObject</a> *<a class="code" href="classPythonScript.xhtml#a33365a89ca9cfa267c7a4b9527f7c201">pFunc</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">     * Creates a connection to the given function of a Python script at the given path.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * @param path: Path to the Python script containing the function.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * @param functionName: Name of the function to be used.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classPythonScript.xhtml#a74bee58d7a6489a37a2200e9aeabb884">PythonScript</a>(<span class="keyword">const</span> std::filesystem::path &amp;path, <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     * Ends connection to function #pFunc and module #pModule.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    ~<a class="code" href="classPythonScript.xhtml#a3fcfdd0cb55e0dba5b197625a005327d">PythonScript</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classPythonScript.xhtml">   24</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classPythonScript.xhtml">PythonScript</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">     * Pointer to module that contains function which should be used by the class.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classPythonScript.xhtml#a06576c1093a5bdb725b0a872c93129e3">   29</a></span>&#160;    <a class="code" href="classPythonScript.xhtml#a06576c1093a5bdb725b0a872c93129e3">PyObject</a> *<a class="code" href="classPythonScript.xhtml#a06576c1093a5bdb725b0a872c93129e3">pModule</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">     * Pointer to function which should be used by the class.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classPythonScript.xhtml#a33365a89ca9cfa267c7a4b9527f7c201">   33</a></span>&#160;    <a class="code" href="classPythonScript.xhtml#a33365a89ca9cfa267c7a4b9527f7c201">PyObject</a> *<a class="code" href="classPythonScript.xhtml#a33365a89ca9cfa267c7a4b9527f7c201">pFunc</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">     * Creates a connection to the given function of a Python script at the given path.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     * @param path: Path to the Python script containing the function.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * @param functionName: Name of the function to be used.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classPythonScript.xhtml#a74bee58d7a6489a37a2200e9aeabb884">PythonScript</a>(<span class="keyword">const</span> std::filesystem::path &amp;path, <span class="keyword">const</span> <span class="keywordtype">char</span> *functionName);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * Ends connection to function #pFunc and module #pModule.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ~<a class="code" href="classPythonScript.xhtml#a3fcfdd0cb55e0dba5b197625a005327d">PythonScript</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_PYTHONSCRIPT_H</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_PYTHONSCRIPT_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -92,44 +92,45 @@ $(document).ready(function(){initNavTree('ThreadsafeQueue_8tpp_source.xhtml','')
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * @file</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * In this file, the implementation of the ThreadSafeQueue class is defined.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">    9</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">push</a>(Key val) {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.push(val);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a> = <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.size();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#aa40bffdfa93996d51215ccd1672db488">   17</a></span>&#160;std::pair&lt;Key, <span class="keywordtype">bool</span>&gt; <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#aa40bffdfa93996d51215ccd1672db488">pop</a>() {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.empty()) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> make_pair(Key{}, <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> val = <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.front();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.pop();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> make_pair(val, <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#ade19ff302f75c6be3e417bb5cc22e89f">   30</a></span>&#160;size_t <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#ade19ff302f75c6be3e417bb5cc22e89f">getStartSize</a>() {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    size_t res = <a class="code" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#aa46228c650ec0199d03007c2a682d28f">   38</a></span>&#160;size_t <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#aa46228c650ec0199d03007c2a682d28f">getSize</a>() {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    size_t res = <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.size();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">   10</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">push</a>(Key val) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.push(val);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a> = <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.size();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#aa40bffdfa93996d51215ccd1672db488">   18</a></span>&#160;std::pair&lt;Key, <span class="keywordtype">bool</span>&gt; <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#aa40bffdfa93996d51215ccd1672db488">pop</a>() {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.empty()) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> make_pair(Key{}, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">auto</span> val = <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.front();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.pop();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> make_pair(val, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#ade19ff302f75c6be3e417bb5cc22e89f">   31</a></span>&#160;size_t <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#ade19ff302f75c6be3e417bb5cc22e89f">getStartSize</a>() {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    size_t res = <a class="code" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b">startSize</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Key&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classThreadsafeQueue.xhtml#aa46228c650ec0199d03007c2a682d28f">   39</a></span>&#160;size_t <a class="code" href="classThreadsafeQueue.xhtml">ThreadsafeQueue</a>&lt;Key&gt;::<a class="code" href="classThreadsafeQueue.xhtml#aa46228c650ec0199d03007c2a682d28f">getSize</a>() {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.lock();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    size_t res = <a class="code" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">safeQueue</a>.size();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">queueLock</a>.unlock();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

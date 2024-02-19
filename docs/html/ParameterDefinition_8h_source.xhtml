@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -102,64 +102,65 @@ $(document).ready(function(){initNavTree('ParameterDefinition_8h_source.xhtml','
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * A class storing information on the properties of parameters that are being optimized.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @ingroup parameters</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml">   17</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">     * Minimum value of the Parameter.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#aab20725ea78ebd717b3fe5c9344e846c">   22</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#aab20725ea78ebd717b3fe5c9344e846c">min</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">     * Maximum value of the Parameter.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#a296c62a39c6adad6da5af3ead874ddc3">   26</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#a296c62a39c6adad6da5af3ead874ddc3">max</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">     * Unit of the Parameter (optional).</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#ac97c95d233e9cda30d67187569468f2d">   30</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="classParameterDefinition.xhtml#ac97c95d233e9cda30d67187569468f2d">unit</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">     * String containing configuration details of the Parameter (optional).</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * May be used to transfer configuration information for SimulationRunner.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#ac47583dd989a5cf854023ff5145e9a49">   35</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="classParameterDefinition.xhtml#ac47583dd989a5cf854023ff5145e9a49">config</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">     * Creates a ParameterDefinition with the given minimum, maximum, configuration string and unit.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * @param min: Minimum value of the Parameter.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * @param max: Maximum value of the Parameter.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     * @param config: Configuration string for the Parameter (optional).</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     * @param unit: Unit of the Parameter (optional)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classParameterDefinition.xhtml#af9a9e4dd7e329634920aadc2b793724f">ParameterDefinition</a>(<a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> min, <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> max, std::string config = <span class="stringliteral">&quot;&quot;</span>, std::string unit = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">     * Returns the minimum value of the Parameter stored in #min.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * @return A coordinate representing the minimum value.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#ab65c3d1b2f6ec0ef1674633bb1403021">getMin</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     * Returns the maximum value of the Parameter stored in #max.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * @return A coordinate representing the maximum value.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#a4ba9b3feac909312382af311dea10801">getMax</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * Returns the unit string of the Parameter stored in #unit.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * @return A string reference containing the unit.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <span class="keyword">const</span> std::string &amp; <a class="code" href="classParameterDefinition.xhtml#aca1c2f2211639a3972a491d5a8724976">getUnit</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/**</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">     * Returns the configuration string of the Parameter stored in #config.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * @return A string reference containing the configuration.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     */</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <span class="keyword">const</span> std::string &amp; <a class="code" href="classParameterDefinition.xhtml#a770b2fec71e285a386d92d1a3e446c93">getConfig</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * @author Per Natzschka</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml">   18</a></span>&#160;<span class="keyword">class</span> <a class="code" href="classParameterDefinition.xhtml">ParameterDefinition</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">     * Minimum value of the Parameter.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#aab20725ea78ebd717b3fe5c9344e846c">   23</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#aab20725ea78ebd717b3fe5c9344e846c">min</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">     * Maximum value of the Parameter.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#a296c62a39c6adad6da5af3ead874ddc3">   27</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#a296c62a39c6adad6da5af3ead874ddc3">max</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">     * Unit of the Parameter (optional).</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#ac97c95d233e9cda30d67187569468f2d">   31</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="classParameterDefinition.xhtml#ac97c95d233e9cda30d67187569468f2d">unit</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">     * String containing configuration details of the Parameter (optional).</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">     * May be used to transfer configuration information for SimulationRunner.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classParameterDefinition.xhtml#ac47583dd989a5cf854023ff5145e9a49">   36</a></span>&#160;    <span class="keyword">const</span> std::string <a class="code" href="classParameterDefinition.xhtml#ac47583dd989a5cf854023ff5145e9a49">config</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">     * Creates a ParameterDefinition with the given minimum, maximum, configuration string and unit.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">     * @param min: Minimum value of the Parameter.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">     * @param max: Maximum value of the Parameter.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">     * @param config: Configuration string for the Parameter (optional).</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     * @param unit: Unit of the Parameter (optional)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classParameterDefinition.xhtml#af9a9e4dd7e329634920aadc2b793724f">ParameterDefinition</a>(<a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> min, <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> max, std::string config = <span class="stringliteral">&quot;&quot;</span>, std::string unit = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">     * Returns the minimum value of the Parameter stored in #min.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">     * @return A coordinate representing the minimum value.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#ab65c3d1b2f6ec0ef1674633bb1403021">getMin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     * Returns the maximum value of the Parameter stored in #max.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     * @return A coordinate representing the maximum value.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <a class="code" href="Types_8h.xhtml#ac6e8101996ab6f0705e43049d0d1abbd">coordinate</a> <a class="code" href="classParameterDefinition.xhtml#a4ba9b3feac909312382af311dea10801">getMax</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * Returns the unit string of the Parameter stored in #unit.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     * @return A string reference containing the unit.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <span class="keyword">const</span> std::string &amp; <a class="code" href="classParameterDefinition.xhtml#aca1c2f2211639a3972a491d5a8724976">getUnit</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">/**</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     * Returns the configuration string of the Parameter stored in #config.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * @return A string reference containing the configuration.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    [[<a class="code" href="classParameterDefinition.xhtml">nodiscard</a>]] <span class="keyword">const</span> std::string &amp; <a class="code" href="classParameterDefinition.xhtml#a770b2fec71e285a386d92d1a3e446c93">getConfig</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_PARAMETERDEFINITION_H</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#</span><span class="preprocessor">endif</span> <span class="comment">//SIMOPTICON_PARAMETERDEFINITION_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

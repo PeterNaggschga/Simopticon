@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['directoptimizer_316',['DirectOptimizer',['../classDirectOptimizer.xhtml',1,'']]],
-  ['discreteparameter_317',['DiscreteParameter',['../classDiscreteParameter.xhtml',1,'']]]
+  ['directoptimizer_334',['DirectOptimizer',['../classDirectOptimizer.xhtml',1,'']]],
+  ['directstoppingcondition_335',['DirectStoppingCondition',['../classDirectStoppingCondition.xhtml',1,'']]],
+  ['discreteparameter_336',['DiscreteParameter',['../classDiscreteParameter.xhtml',1,'']]]
 ];

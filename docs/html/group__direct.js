@@ -4,7 +4,7 @@ var group__direct =
     [ "DirectTypes.h", "DirectTypes_8h.xhtml", null ],
     [ "DirectComparisonFunctions.h", "DirectComparisonFunctions_8h.xhtml", null ],
     [ "DirectOptimizer", "classDirectOptimizer.xhtml", [
-      [ "DirectOptimizer", "classDirectOptimizer.xhtml#adf3e535ac51caddf0e4de2bd2d5916a5", null ],
+      [ "DirectOptimizer", "classDirectOptimizer.xhtml#a6ba65e7989d3edf2b9eac4c6dd0e6819", null ],
       [ "addActiveRects", "classDirectOptimizer.xhtml#aa0ca777ddca12cc9b12453be07151346", null ],
       [ "estimatedValue", "classDirectOptimizer.xhtml#aba4b95c69131cac24fe71649c41cf640", null ],
       [ "getName", "classDirectOptimizer.xhtml#abc823dbd865040c2c810022191a80020", null ],
@@ -21,25 +21,14 @@ var group__direct =
       [ "iterations", "classDirectOptimizer.xhtml#a8504fd1fbb419f386a48f5e129feb353", null ],
       [ "level", "classDirectOptimizer.xhtml#a933b782ee8c0a8ab7801ae25062bff6c", null ],
       [ "normalizer", "classDirectOptimizer.xhtml#a2cb499bc603fcb3445ba740e7ec8d21d", null ],
-      [ "stopCon", "classDirectOptimizer.xhtml#a9a35fa6d3d59c02cdf65f818d0bc68f9", null ],
+      [ "stopCon", "classDirectOptimizer.xhtml#a2d819e3905054d38ef149b8ef5b13b47", null ],
       [ "trackProgress", "classDirectOptimizer.xhtml#a643d0ad9495e6f980cbffc6b3e8dd6a0", null ]
     ] ],
-    [ "StoppingCondition", "classStoppingCondition.xhtml", [
-      [ "StoppingCondition", "classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f", null ],
-      [ "StoppingCondition", "classStoppingCondition.xhtml#a25ce7cad0254021a28044c246972e78a", null ],
-      [ "evaluate", "classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee", null ],
-      [ "getIterationsSinceImprov", "classStoppingCondition.xhtml#a94700e15200a6d4eb85f4c473afad741", null ],
-      [ "setStartNow", "classStoppingCondition.xhtml#ae8f18cde9fe020efe710b8395d546168", null ],
-      [ "updateAccuracy", "classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b", null ],
-      [ "ACCURACY", "classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7", null ],
-      [ "bestVal", "classStoppingCondition.xhtml#ab12484975b244e078b726ce9ba8b1399", null ],
-      [ "END_TIME", "classStoppingCondition.xhtml#adfc5517bf5a749fdcb7b125038811549", null ],
-      [ "iterationsSinceImprov", "classStoppingCondition.xhtml#ace80e2bd8cdce582d265ad0fe536476f", null ],
-      [ "mins", "classStoppingCondition.xhtml#a276ba85d2c7a68f13abe91afc9c4aac6", null ],
-      [ "NR_ACCURACY_ITERATIONS", "classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e", null ],
-      [ "NR_EVALUATIONS", "classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2", null ],
-      [ "NR_HYRECTS", "classStoppingCondition.xhtml#aac8a02e45818311cbd4de360ebc3f068", null ],
-      [ "time_eval", "classStoppingCondition.xhtml#a58d93ccfb455014f2a780f98ee7deecd", null ]
+    [ "DirectStoppingCondition", "classDirectStoppingCondition.xhtml", [
+      [ "DirectStoppingCondition", "classDirectStoppingCondition.xhtml#a905c98605059c43a32200a2eda8ba6d2", null ],
+      [ "DirectStoppingCondition", "classDirectStoppingCondition.xhtml#aaddba2ce6a3d5a55044363b1139b9140", null ],
+      [ "evaluate", "classDirectStoppingCondition.xhtml#a730cc34e97d8afffe5bc65c91ce8db71", null ],
+      [ "NR_HYRECTS", "classDirectStoppingCondition.xhtml#ae850ee3dfffccfa77b95cdcf906cd17c", null ]
     ] ],
     [ "ParameterNormalizer", "classParameterNormalizer.xhtml", [
       [ "ParameterNormalizer", "classParameterNormalizer.xhtml#a5cb79ffe0fcb5407d286defcf78da3e7", null ],

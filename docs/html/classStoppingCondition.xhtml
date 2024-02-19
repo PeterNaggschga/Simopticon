@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -85,18 +85,25 @@ $(document).ready(function(){initNavTree('classStoppingCondition.xhtml',''); ini
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classStoppingCondition-members.xhtml">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">StoppingCondition Class Reference<div class="ingroups"><a class="el" href="group__optimizer.xhtml">optimizer</a> &raquo; <a class="el" href="group__direct.xhtml">direct</a></div></div>  </div>
+<div class="title">StoppingCondition Class Reference<div class="ingroups"><a class="el" href="group__optimizer.xhtml">optimizer</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A class used for deciding whether the DIRECT should be stopped.  
+<p>A class used for deciding whether the optimization should be stopped.  
  <a href="classStoppingCondition.xhtml#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>&quot;</code></p>
+<div class="dynheader">
+Inheritance diagram for StoppingCondition:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classStoppingCondition__inherit__graph.svg" width="191" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 <div class="dynheader">
 Collaboration diagram for StoppingCondition:</div>
 <div class="dyncontent">
@@ -106,21 +113,28 @@ Collaboration diagram for StoppingCondition:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab89a31368e0d5392a975dfc4a4f4276f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition</a> (size_t evaluations=0, size_t hyrects=0, unsigned int minutes=0, <a class="el" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> accuracy=0, unsigned int accuracyIterations=0)</td></tr>
-<tr class="memdesc:ab89a31368e0d5392a975dfc4a4f4276f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a> with the given condition values.  <a href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">More...</a><br /></td></tr>
-<tr class="separator:ab89a31368e0d5392a975dfc4a4f4276f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b95fd9e6877151db63122fec3bc049c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">StoppingCondition</a> (size_t evaluations=0, unsigned int minutes=0, <a class="el" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> accuracy=0, unsigned int accuracyIterations=0)</td></tr>
+<tr class="memdesc:a2b95fd9e6877151db63122fec3bc049c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped.">StoppingCondition</a> with the given condition values.  <a href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">More...</a><br /></td></tr>
+<tr class="separator:a2b95fd9e6877151db63122fec3bc049c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25ce7cad0254021a28044c246972e78a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#a25ce7cad0254021a28044c246972e78a">StoppingCondition</a> (nlohmann::json stopCon)</td></tr>
-<tr class="memdesc:a25ce7cad0254021a28044c246972e78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a> based on the given json configuration.  <a href="classStoppingCondition.xhtml#a25ce7cad0254021a28044c246972e78a">More...</a><br /></td></tr>
+<tr class="memdesc:a25ce7cad0254021a28044c246972e78a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped.">StoppingCondition</a> based on the given json configuration.  <a href="classStoppingCondition.xhtml#a25ce7cad0254021a28044c246972e78a">More...</a><br /></td></tr>
 <tr class="separator:a25ce7cad0254021a28044c246972e78a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8f18cde9fe020efe710b8395d546168"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#ae8f18cde9fe020efe710b8395d546168">setStartNow</a> ()</td></tr>
 <tr class="memdesc:ae8f18cde9fe020efe710b8395d546168"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets <a class="el" href="classStoppingCondition.xhtml#adfc5517bf5a749fdcb7b125038811549" title="Point in time after which optimization should end.">END_TIME</a> to be the current time plus <a class="el" href="classStoppingCondition.xhtml#a276ba85d2c7a68f13abe91afc9c4aac6" title="Number of minutes after which the optimization should stop.">mins</a>.  <a href="classStoppingCondition.xhtml#ae8f18cde9fe020efe710b8395d546168">More...</a><br /></td></tr>
 <tr class="separator:ae8f18cde9fe020efe710b8395d546168"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a493c4f36528167c6585ab44649c1b4ee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">evaluate</a> (size_t evaluations, size_t hyrects, <a class="el" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> newBestVal)</td></tr>
-<tr class="memdesc:a493c4f36528167c6585ab44649c1b4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any of the configured conditions is met for the given parameters.  <a href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">More...</a><br /></td></tr>
-<tr class="separator:a493c4f36528167c6585ab44649c1b4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c7478b8be03c01ab2ff758e4b37b85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#a19c7478b8be03c01ab2ff758e4b37b85">evaluate</a> (size_t evaluations, <a class="el" href="Types_8h.xhtml#aa12a140bd1c79b30f8aa5311b12f13cc">functionValue</a> newBestVal)</td></tr>
+<tr class="memdesc:a19c7478b8be03c01ab2ff758e4b37b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any of the configured conditions is met for the given parameters.  <a href="classStoppingCondition.xhtml#a19c7478b8be03c01ab2ff758e4b37b85">More...</a><br /></td></tr>
+<tr class="separator:a19c7478b8be03c01ab2ff758e4b37b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94700e15200a6d4eb85f4c473afad741"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#a94700e15200a6d4eb85f4c473afad741">getIterationsSinceImprov</a> () const</td></tr>
 <tr class="memdesc:a94700e15200a6d4eb85f4c473afad741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of <a class="el" href="classStoppingCondition.xhtml#ace80e2bd8cdce582d265ad0fe536476f" title="Number of iterations since last improvement of the optimum used to keep track of accuracy condition.">iterationsSinceImprov</a>.  <a href="classStoppingCondition.xhtml#a94700e15200a6d4eb85f4c473afad741">More...</a><br /></td></tr>
 <tr class="separator:a94700e15200a6d4eb85f4c473afad741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:aa4ffddecd720ff79579f034944596722"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa4ffddecd720ff79579f034944596722"><td class="memTemplItemLeft" align="right" valign="top">static T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#aa4ffddecd720ff79579f034944596722">getConditionFromJSON</a> (nlohmann::json object, const std::string &amp;key, const std::string &amp;val=&quot;n&quot;)</td></tr>
+<tr class="memdesc:aa4ffddecd720ff79579f034944596722"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper method, which checks whether the given condition should be used and returns the corresponding value if thats the case.  <a href="classStoppingCondition.xhtml#aa4ffddecd720ff79579f034944596722">More...</a><br /></td></tr>
+<tr class="separator:aa4ffddecd720ff79579f034944596722"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -133,9 +147,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae8e6c737422c82c811b55b5716d7aae2"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a></td></tr>
 <tr class="memdesc:ae8e6c737422c82c811b55b5716d7aae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of evaluations after which the optimization should stop.  <a href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">More...</a><br /></td></tr>
 <tr class="separator:ae8e6c737422c82c811b55b5716d7aae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac8a02e45818311cbd4de360ebc3f068"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#aac8a02e45818311cbd4de360ebc3f068">NR_HYRECTS</a></td></tr>
-<tr class="memdesc:aac8a02e45818311cbd4de360ebc3f068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of rectangles in the partition after which the optimization should stop.  <a href="classStoppingCondition.xhtml#aac8a02e45818311cbd4de360ebc3f068">More...</a><br /></td></tr>
-<tr class="separator:aac8a02e45818311cbd4de360ebc3f068"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc5517bf5a749fdcb7b125038811549"><td class="memItemLeft" align="right" valign="top">std::chrono::time_point&lt; std::chrono::system_clock, std::chrono::seconds &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStoppingCondition.xhtml#adfc5517bf5a749fdcb7b125038811549">END_TIME</a></td></tr>
 <tr class="memdesc:adfc5517bf5a749fdcb7b125038811549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Point in time after which optimization should end.  <a href="classStoppingCondition.xhtml#adfc5517bf5a749fdcb7b125038811549">More...</a><br /></td></tr>
 <tr class="separator:adfc5517bf5a749fdcb7b125038811549"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,13 +170,14 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ace80e2bd8cdce582d265ad0fe536476f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A class used for deciding whether the DIRECT should be stopped. </p>
-<p>Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met. </p>
+<div class="textblock"><p>A class used for deciding whether the optimization should be stopped. </p>
+<p>Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met.</p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00020">20</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00021">21</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab89a31368e0d5392a975dfc4a4f4276f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab89a31368e0d5392a975dfc4a4f4276f">&#9670;&nbsp;</a></span>StoppingCondition() <span class="overload">[1/2]</span></h2>
+<a id="a2b95fd9e6877151db63122fec3bc049c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b95fd9e6877151db63122fec3bc049c">&#9670;&nbsp;</a></span>StoppingCondition() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,12 +190,6 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>evaluations</em> = <code>0</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>hyrects</em> = <code>0</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -216,11 +222,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a> with the given condition values. </p>
+<p>Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped.">StoppingCondition</a> with the given condition values. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evaluations</td><td>Number of evaluations after which the optimization should stop. </td></tr>
-    <tr><td class="paramname">hyrects</td><td>Number of rectangles in the partition after which the optimization should stop. </td></tr>
     <tr><td class="paramname">minutes</td><td>Number of minutes after which the optimization should stop. </td></tr>
     <tr><td class="paramname">accuracy</td><td>Accuracy used in accuracy condition (see <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7" title="Accuracy used in accuracy condition.">ACCURACY</a>). </td></tr>
     <tr><td class="paramname">accuracyIterations</td><td>Number of iterations used in accuracy condition (see <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e" title="Number of iterations used in accuracy condition.">NR_ACCURACY_ITERATIONS</a>). </td></tr>
@@ -228,9 +233,11 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00008">8</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00009">9</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7">ACCURACY</a>, <a class="el" href="classStoppingCondition.xhtml#a276ba85d2c7a68f13abe91afc9c4aac6">mins</a>, <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e">NR_ACCURACY_ITERATIONS</a>, <a class="el" href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a>, <a class="el" href="classStoppingCondition.xhtml#aac8a02e45818311cbd4de360ebc3f068">NR_HYRECTS</a>, and <a class="el" href="classStoppingCondition.xhtml#a58d93ccfb455014f2a780f98ee7deecd">time_eval</a>.</p>
+<p class="reference">References <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7">ACCURACY</a>, <a class="el" href="classStoppingCondition.xhtml#a276ba85d2c7a68f13abe91afc9c4aac6">mins</a>, <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e">NR_ACCURACY_ITERATIONS</a>, <a class="el" href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a>, and <a class="el" href="classStoppingCondition.xhtml#a58d93ccfb455014f2a780f98ee7deecd">time_eval</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classDirectStoppingCondition.xhtml#a905c98605059c43a32200a2eda8ba6d2">DirectStoppingCondition::DirectStoppingCondition()</a>.</p>
 
 </div>
 </div>
@@ -258,7 +265,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the DIRECT should be stopped.">StoppingCondition</a> based on the given json configuration. </p>
+<p>Creates a <a class="el" href="classStoppingCondition.xhtml" title="A class used for deciding whether the optimization should be stopped.">StoppingCondition</a> based on the given json configuration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stopCon</td><td>JSON object defining the condition values. </td></tr>
@@ -266,7 +273,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00029">29</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00016">16</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStoppingCondition.xhtml#a25ce7cad0254021a28044c246972e78a">StoppingCondition()</a>.</p>
 
@@ -275,8 +282,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a493c4f36528167c6585ab44649c1b4ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a493c4f36528167c6585ab44649c1b4ee">&#9670;&nbsp;</a></span>evaluate()</h2>
+<a id="a19c7478b8be03c01ab2ff758e4b37b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c7478b8be03c01ab2ff758e4b37b85">&#9670;&nbsp;</a></span>evaluate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,12 +293,6 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>evaluations</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>hyrects</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -311,16 +312,80 @@ Private Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">evaluations</td><td>Number of evaluations conducted by the optimization. </td></tr>
-    <tr><td class="paramname">hyrects</td><td>Number of rectangles in the current partition. </td></tr>
     <tr><td class="paramname">newBestVal</td><td>Value of the current optimum. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A boolean defining whether none of the configured conditions is met (meaning whether the optimization should keep running). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00039">39</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00025">25</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7">ACCURACY</a>, <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e">NR_ACCURACY_ITERATIONS</a>, <a class="el" href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a>, <a class="el" href="classStoppingCondition.xhtml#aac8a02e45818311cbd4de360ebc3f068">NR_HYRECTS</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
+<p class="reference">References <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7">ACCURACY</a>, <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e">NR_ACCURACY_ITERATIONS</a>, <a class="el" href="classStoppingCondition.xhtml#ae8e6c737422c82c811b55b5716d7aae2">NR_EVALUATIONS</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="classDirectStoppingCondition.xhtml#a730cc34e97d8afffe5bc65c91ce8db71">DirectStoppingCondition::evaluate()</a>.</p>
+
+</div>
+</div>
+<a id="aa4ffddecd720ff79579f034944596722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4ffddecd720ff79579f034944596722">&#9670;&nbsp;</a></span>getConditionFromJSON()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static T StoppingCondition::getConditionFromJSON </td>
+          <td>(</td>
+          <td class="paramtype">nlohmann::json&#160;</td>
+          <td class="paramname"><em>object</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>val</em> = <code>&quot;n&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper method, which checks whether the given condition should be used and returns the corresponding value if thats the case. </p>
+<p>If not, 0 is returned. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the value located at the given key. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td>JSON object the condition is read from. </td></tr>
+    <tr><td class="paramname">key</td><td>Key of the fetched condition. </td></tr>
+    <tr><td class="paramname">val</td><td>Key of the value field of the fetched condition. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A value of type T that should be used as value for the condition. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00083">83</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +407,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the value of <a class="el" href="classStoppingCondition.xhtml#ace80e2bd8cdce582d265ad0fe536476f" title="Number of iterations since last improvement of the optimum used to keep track of accuracy condition.">iterationsSinceImprov</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>An integral representing the number of iterations since the best value improved by more than <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7" title="Accuracy used in accuracy condition.">ACCURACY</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00064">64</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00049">49</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStoppingCondition.xhtml#ace80e2bd8cdce582d265ad0fe536476f">iterationsSinceImprov</a>.</p>
 
@@ -365,7 +430,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sets <a class="el" href="classStoppingCondition.xhtml#adfc5517bf5a749fdcb7b125038811549" title="Point in time after which optimization should end.">END_TIME</a> to be the current time plus <a class="el" href="classStoppingCondition.xhtml#a276ba85d2c7a68f13abe91afc9c4aac6" title="Number of minutes after which the optimization should stop.">mins</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00047">47</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00032">32</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStoppingCondition.xhtml#a58d93ccfb455014f2a780f98ee7deecd">time_eval</a>.</p>
 
@@ -404,11 +469,11 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A bool defining if the accuracy condition is met after the values where updated. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00054">54</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8cpp_source.xhtml#l00039">39</a> of file <a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7">ACCURACY</a>, <a class="el" href="classStoppingCondition.xhtml#ab12484975b244e078b726ce9ba8b1399">bestVal</a>, <a class="el" href="classStoppingCondition.xhtml#ace80e2bd8cdce582d265ad0fe536476f">iterationsSinceImprov</a>, and <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e">NR_ACCURACY_ITERATIONS</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a19c7478b8be03c01ab2ff758e4b37b85">evaluate()</a>.</p>
 
 </div>
 </div>
@@ -436,9 +501,9 @@ Private Attributes</h2></td></tr>
 <p>Accuracy used in accuracy condition. </p>
 <p>When the <a class="el" href="classStoppingCondition.xhtml#ab12484975b244e078b726ce9ba8b1399" title="Best value used to keep track of accuracy condition.">bestVal</a> has not changed more than <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7" title="Accuracy used in accuracy condition.">ACCURACY</a> after <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e" title="Number of iterations used in accuracy condition.">NR_ACCURACY_ITERATIONS</a> iterations, the optimization is stopped. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00049">49</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00046">46</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition()</a>, <a class="el" href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">evaluate()</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">StoppingCondition()</a>, <a class="el" href="classStoppingCondition.xhtml#a19c7478b8be03c01ab2ff758e4b37b85">evaluate()</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
 
 </div>
 </div>
@@ -465,7 +530,7 @@ Private Attributes</h2></td></tr>
 <p>Best value used to keep track of accuracy condition. </p>
 <p>When the <a class="el" href="classStoppingCondition.xhtml#ab12484975b244e078b726ce9ba8b1399" title="Best value used to keep track of accuracy condition.">bestVal</a> has not changed more than <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7" title="Accuracy used in accuracy condition.">ACCURACY</a> after <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e" title="Number of iterations used in accuracy condition.">NR_ACCURACY_ITERATIONS</a> iterations, the optimization is stopped. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00059">59</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00056">56</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
 
@@ -494,7 +559,7 @@ Private Attributes</h2></td></tr>
 <p>Point in time after which optimization should end. </p>
 <p>Calculated using time when <a class="el" href="classStoppingCondition.xhtml#ae8f18cde9fe020efe710b8395d546168" title="Sets END_TIME to be the current time plus mins.">setStartNow</a> is called and <a class="el" href="classStoppingCondition.xhtml#a276ba85d2c7a68f13abe91afc9c4aac6" title="Number of minutes after which the optimization should stop.">mins</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00035">35</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00032">32</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
 </div>
 </div>
@@ -521,7 +586,7 @@ Private Attributes</h2></td></tr>
 <p>Number of iterations since last improvement of the optimum used to keep track of accuracy condition. </p>
 <p>When the <a class="el" href="classStoppingCondition.xhtml#ab12484975b244e078b726ce9ba8b1399" title="Best value used to keep track of accuracy condition.">bestVal</a> has not changed more than <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7" title="Accuracy used in accuracy condition.">ACCURACY</a> after <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e" title="Number of iterations used in accuracy condition.">NR_ACCURACY_ITERATIONS</a> iterations, the optimization is stopped. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00064">64</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00061">61</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a94700e15200a6d4eb85f4c473afad741">getIterationsSinceImprov()</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
 
@@ -549,9 +614,9 @@ Private Attributes</h2></td></tr>
 
 <p>Number of minutes after which the optimization should stop. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00039">39</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00036">36</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">StoppingCondition()</a>.</p>
 
 </div>
 </div>
@@ -578,9 +643,9 @@ Private Attributes</h2></td></tr>
 <p>Number of iterations used in accuracy condition. </p>
 <p>When the <a class="el" href="classStoppingCondition.xhtml#ab12484975b244e078b726ce9ba8b1399" title="Best value used to keep track of accuracy condition.">bestVal</a> has not changed more than <a class="el" href="classStoppingCondition.xhtml#aa05be5f5ed70be46723bff346fd62dd7" title="Accuracy used in accuracy condition.">ACCURACY</a> after <a class="el" href="classStoppingCondition.xhtml#a4a496422b9c56a808a6b548183d9f35e" title="Number of iterations used in accuracy condition.">NR_ACCURACY_ITERATIONS</a> iterations, the optimization is stopped. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00054">54</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00051">51</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition()</a>, <a class="el" href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">evaluate()</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">StoppingCondition()</a>, <a class="el" href="classStoppingCondition.xhtml#a19c7478b8be03c01ab2ff758e4b37b85">evaluate()</a>, and <a class="el" href="classStoppingCondition.xhtml#a79d653f53cd4947613d8595c418c420b">updateAccuracy()</a>.</p>
 
 </div>
 </div>
@@ -606,37 +671,9 @@ Private Attributes</h2></td></tr>
 
 <p>Number of evaluations after which the optimization should stop. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00025">25</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00026">26</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition()</a>, and <a class="el" href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">evaluate()</a>.</p>
-
-</div>
-</div>
-<a id="aac8a02e45818311cbd4de360ebc3f068"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac8a02e45818311cbd4de360ebc3f068">&#9670;&nbsp;</a></span>NR_HYRECTS</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const size_t StoppingCondition::NR_HYRECTS</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Number of rectangles in the partition after which the optimization should stop. </p>
-
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00029">29</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition()</a>, and <a class="el" href="classStoppingCondition.xhtml#a493c4f36528167c6585ab44649c1b4ee">evaluate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">StoppingCondition()</a>, and <a class="el" href="classStoppingCondition.xhtml#a19c7478b8be03c01ab2ff758e4b37b85">evaluate()</a>.</p>
 
 </div>
 </div>
@@ -662,15 +699,15 @@ Private Attributes</h2></td></tr>
 
 <p>Defines whether the time condition should be used. </p>
 
-<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00043">43</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="StoppingCondition_8h_source.xhtml#l00040">40</a> of file <a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#ab89a31368e0d5392a975dfc4a4f4276f">StoppingCondition()</a>, and <a class="el" href="classStoppingCondition.xhtml#ae8f18cde9fe020efe710b8395d546168">setStartNow()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="classStoppingCondition.xhtml#a2b95fd9e6877151db63122fec3bc049c">StoppingCondition()</a>, and <a class="el" href="classStoppingCondition.xhtml#ae8f18cde9fe020efe710b8395d546168">setStartNow()</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/<a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a></li>
-<li>/home/runner/work/Simopticon/Simopticon/src/optimizer/direct/<a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a></li>
+<li>/home/runner/work/Simopticon/Simopticon/src/optimizer/<a class="el" href="StoppingCondition_8h_source.xhtml">StoppingCondition.h</a></li>
+<li>/home/runner/work/Simopticon/Simopticon/src/optimizer/<a class="el" href="StoppingCondition_8cpp_source.xhtml">StoppingCondition.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

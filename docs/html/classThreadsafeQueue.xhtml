@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -137,12 +137,13 @@ class ThreadsafeQueue&lt; Key &gt;</h3>
 <p>A container class of a queue that is safe for concurrent access of different threads. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Key</td><td>Type of elements in the contained queue. </td></tr>
+    <tr><td class="paramname">Key</td><td>Type of elements in the contained queue.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00018">18</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00019">19</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa46228c650ec0199d03007c2a682d28f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa46228c650ec0199d03007c2a682d28f">&#9670;&nbsp;</a></span>getSize()</h2>
@@ -161,7 +162,7 @@ template&lt;class Key &gt; </div>
 <p>Returns current size of the underlying queue structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>A number representing the size of the queue. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00038">38</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00039">39</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>.</p>
 
@@ -184,7 +185,7 @@ template&lt;class Key &gt; </div>
 <p>Returns the value of <a class="el" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b" title="Number of elements in queue when push was called the last time.">startSize</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A number representing the number of tasks, when <a class="el" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2" title="Adds the given value to safeQueue.">push</a> was called last. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00030">30</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00031">31</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b">ThreadsafeQueue&lt; Key &gt;::startSize</a>.</p>
 
@@ -207,7 +208,7 @@ template&lt;class Key &gt; </div>
 <p>Returns the first element of the queue. </p>
 <p>If the queue is empty, the second entry of the returned pair is false. </p><dl class="section return"><dt>Returns</dt><dd>A pair containing an element of type Key and a boolean determining if access was successful. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00017">17</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00018">18</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, and <a class="el" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>.</p>
 
@@ -239,7 +240,7 @@ template&lt;class Key &gt; </div>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00009">9</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml#l00010">10</a> of file <a class="el" href="ThreadsafeQueue_8tpp_source.xhtml">ThreadsafeQueue.tpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classThreadsafeQueue.xhtml#a7e9d245fce3dffb361848b281caf0ac1">ThreadsafeQueue&lt; Key &gt;::queueLock</a>, <a class="el" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613">ThreadsafeQueue&lt; Key &gt;::safeQueue</a>, and <a class="el" href="classThreadsafeQueue.xhtml#a085f257b2c4541db5ef9eb5c8605d49b">ThreadsafeQueue&lt; Key &gt;::startSize</a>.</p>
 
@@ -270,7 +271,7 @@ template&lt;class Key &gt; </div>
 
 <p>Threadlock to avoid damage to <a class="el" href="classThreadsafeQueue.xhtml#af7780cccd01d381bed4303c45bafa613" title="The actual queue data structure.">safeQueue</a> on concurrent access. </p>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00027">27</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00028">28</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classThreadsafeQueue.xhtml#aa46228c650ec0199d03007c2a682d28f">ThreadsafeQueue&lt; Key &gt;::getSize()</a>, <a class="el" href="classThreadsafeQueue.xhtml#ade19ff302f75c6be3e417bb5cc22e89f">ThreadsafeQueue&lt; Key &gt;::getStartSize()</a>, <a class="el" href="classThreadsafeQueue.xhtml#aa40bffdfa93996d51215ccd1672db488">ThreadsafeQueue&lt; Key &gt;::pop()</a>, and <a class="el" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">ThreadsafeQueue&lt; Key &gt;::push()</a>.</p>
 
@@ -300,7 +301,7 @@ template&lt;class Key &gt; </div>
 
 <p>The actual queue data structure. </p>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00023">23</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00024">24</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classThreadsafeQueue.xhtml#aa46228c650ec0199d03007c2a682d28f">ThreadsafeQueue&lt; Key &gt;::getSize()</a>, <a class="el" href="classThreadsafeQueue.xhtml#aa40bffdfa93996d51215ccd1672db488">ThreadsafeQueue&lt; Key &gt;::pop()</a>, and <a class="el" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">ThreadsafeQueue&lt; Key &gt;::push()</a>.</p>
 
@@ -331,7 +332,7 @@ template&lt;class Key &gt; </div>
 <p>Number of elements in queue when <a class="el" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2" title="Adds the given value to safeQueue.">push</a> was called the last time. </p>
 <p>Can be used for progress information. </p>
 
-<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00032">32</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ThreadsafeQueue_8h_source.xhtml#l00033">33</a> of file <a class="el" href="ThreadsafeQueue_8h_source.xhtml">ThreadsafeQueue.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classThreadsafeQueue.xhtml#ade19ff302f75c6be3e417bb5cc22e89f">ThreadsafeQueue&lt; Key &gt;::getStartSize()</a>, and <a class="el" href="classThreadsafeQueue.xhtml#a1b5afe3b948403e0967b807cf5c926d2">ThreadsafeQueue&lt; Key &gt;::push()</a>.</p>
 

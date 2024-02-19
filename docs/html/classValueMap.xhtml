@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -169,9 +169,10 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A container managing a map data structure that maps parameterCombinations to their respective found values. </p>
-<p>The class manages concurrent access using the <a class="el" href="classValueMap.xhtml#a7945a7ce85bec9a56a1fb67f1109cc41" title="Threadlock to avoid damage to the data structure when concurrent threads access it.">operationsLock</a>. Running median calculation is supported by using sets <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a>. Values are inserted into the data structure at once when <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. Before that they are saved in <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> to avoid unnecessary costly insertion operations. </p>
+<p>The class manages concurrent access using the <a class="el" href="classValueMap.xhtml#a7945a7ce85bec9a56a1fb67f1109cc41" title="Threadlock to avoid damage to the data structure when concurrent threads access it.">operationsLock</a>. Running median calculation is supported by using sets <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a>. Values are inserted into the data structure at once when <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. Before that they are saved in <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> to avoid unnecessary costly insertion operations.</p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00028">28</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00029">29</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0358924a0892af703067a64314de868c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0358924a0892af703067a64314de868c">&#9670;&nbsp;</a></span>ValueMap()</h2>
@@ -205,7 +206,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00012">12</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00013">13</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#aaef0053f649f407dd9e7a4bddfb6bde7">topEntries</a>.</p>
 
@@ -255,7 +256,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00050">50</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00051">51</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#aaef0053f649f407dd9e7a4bddfb6bde7">topEntries</a>, <a class="el" href="classValueMap.xhtml#ae447de5acae21216862e292611a0dd1e">topVals</a>, and <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02">values</a>.</p>
 
@@ -281,7 +282,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the median of all values using <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a>. </p>
 <p>If no values have been added, 0 is returned. Triggers <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A value representing the median of all values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00097">97</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00098">98</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#a617f5348dcf85e794516e496a04fde7a">getSize()</a>, <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733">lowerValues</a>, <a class="el" href="classValueMap.xhtml#a7945a7ce85bec9a56a1fb67f1109cc41">operationsLock</a>, <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>, and <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75">upperValues</a>.</p>
 
@@ -305,7 +306,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the number of inserted values. </p>
 <p>Values in <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> are included. </p><dl class="section return"><dt>Returns</dt><dd>An integral representing the number of inserted values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00109">109</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00110">110</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c">tba</a>, and <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02">values</a>.</p>
 
@@ -331,7 +332,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the best <a class="el" href="classValueMap.xhtml#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries that are saved in <a class="el" href="classValueMap.xhtml#ae447de5acae21216862e292611a0dd1e" title="Set of pairs of the best parameterCombinations and their respective values.">topVals</a>. </p>
 <p>Triggers <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A list of the best <a class="el" href="classValueMap.xhtml#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> parameterCombinations and their respective values. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00113">113</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00114">114</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#ae447de5acae21216862e292611a0dd1e">topVals</a>, and <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>.</p>
 
@@ -357,7 +358,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the whole <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> member. </p>
 <p>Triggers <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p><dl class="section return"><dt>Returns</dt><dd>A map reference to <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00138">138</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00139">139</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>, and <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02">values</a>.</p>
 
@@ -398,7 +399,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00082">82</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00083">83</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c">tba</a>.</p>
 
@@ -429,7 +430,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A boolean value that represents if the value is known. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00086">86</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00087">87</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#a617f5348dcf85e794516e496a04fde7a">getSize()</a>, <a class="el" href="classValueMap.xhtml#a7945a7ce85bec9a56a1fb67f1109cc41">operationsLock</a>, <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>, and <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02">values</a>.</p>
 
@@ -460,7 +461,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A boolean value that represents if the value is one of the best <a class="el" href="classValueMap.xhtml#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries in <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00118">118</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00119">119</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classParameter.xhtml#a39f52082ae9e000edff3d517ef78a8bb">Parameter::getVal()</a>, <a class="el" href="classValueMap.xhtml#ae447de5acae21216862e292611a0dd1e">topVals</a>, and <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>.</p>
 
@@ -491,7 +492,7 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value saved in <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a> at the given parameterCombination. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00071">71</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00072">72</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#a7945a7ce85bec9a56a1fb67f1109cc41">operationsLock</a>, <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>, and <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02">values</a>.</p>
 
@@ -523,7 +524,7 @@ Private Attributes</h2></td></tr>
 <p>Takes all values in <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a>, adds them to <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> or <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and inserts them into <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </p>
 <p><a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> and <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> are sorted as is required by their constraints. Afterwards <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c" title="Entries that have been added since last updateMap.">tba</a> is cleared. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00015">15</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8cpp_source.xhtml#l00016">16</a> of file <a class="el" href="ValueMap_8cpp_source.xhtml">ValueMap.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="classValueMap.xhtml#aad7206f4b8f871cbbf4383ba24f84f06">addValue()</a>, <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733">lowerValues</a>, <a class="el" href="classValueMap.xhtml#a7945a7ce85bec9a56a1fb67f1109cc41">operationsLock</a>, <a class="el" href="classValueMap.xhtml#a6f128a5f14f516347ffbd384d820e19c">tba</a>, and <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75">upperValues</a>.</p>
 
@@ -555,7 +556,7 @@ Private Attributes</h2></td></tr>
 <p>Lesser half of the values in <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </p>
 <p>Same size as or one element less than <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00042">42</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00043">43</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#aa9c5e1b67ec01dd4b94328da64c3074c">getMedian()</a>, and <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>.</p>
 
@@ -583,7 +584,7 @@ Private Attributes</h2></td></tr>
 
 <p>Threadlock to avoid damage to the data structure when concurrent threads access it. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00033">33</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00034">34</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#aa9c5e1b67ec01dd4b94328da64c3074c">getMedian()</a>, <a class="el" href="classValueMap.xhtml#a60a1397bb6661b22236ff8f5f65dde61">isKnown()</a>, <a class="el" href="classValueMap.xhtml#a3043db82ef367128e59f1a2140a509d3">query()</a>, and <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>.</p>
 
@@ -612,7 +613,7 @@ Private Attributes</h2></td></tr>
 <p>Entries that have been added since last <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a>. </p>
 <p>Will be inserted into <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>, <a class="el" href="classValueMap.xhtml#a010e3b5b9432699e2beab85ba7b97c75" title="Greater half of the values in values.">upperValues</a> and <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a> when <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5" title="Takes all values in tba, adds them to lowerValues or upperValues and inserts them into values.">updateMap</a> is called. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00064">64</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00065">65</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#a617f5348dcf85e794516e496a04fde7a">getSize()</a>, <a class="el" href="classValueMap.xhtml#af0b860dabbca6a99edcd465ff76d6f71">insert()</a>, and <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>.</p>
 
@@ -641,7 +642,7 @@ Private Attributes</h2></td></tr>
 <p>Number of entries to be printed as best values at the end of the optimization process. </p>
 <p>Can be configured in main config. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00048">48</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00049">49</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#a0358924a0892af703067a64314de868c">ValueMap()</a>, and <a class="el" href="classValueMap.xhtml#aad7206f4b8f871cbbf4383ba24f84f06">addValue()</a>.</p>
 
@@ -670,7 +671,7 @@ Private Attributes</h2></td></tr>
 <p>Set of pairs of the best parameterCombinations and their respective values. </p>
 <p>Contains not more than <a class="el" href="classValueMap.xhtml#aaef0053f649f407dd9e7a4bddfb6bde7" title="Number of entries to be printed as best values at the end of the optimization process.">topEntries</a> entries. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00053">53</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00054">54</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#aad7206f4b8f871cbbf4383ba24f84f06">addValue()</a>, <a class="el" href="classValueMap.xhtml#ae03b07acab0165a85291145cd5f34d2e">getTopVals()</a>, and <a class="el" href="classValueMap.xhtml#aaa4af42edda71b59c147f82e1d7efc24">isTopValue()</a>.</p>
 
@@ -699,7 +700,7 @@ Private Attributes</h2></td></tr>
 <p>Greater half of the values in <a class="el" href="classValueMap.xhtml#a03bff9fd38bf71bb1755cf3a1f756e02" title="Actual map that contains parameterCombinations and their respective values.">values</a>. </p>
 <p>Same size as or one element more than <a class="el" href="classValueMap.xhtml#a088a8fb73d7bdd3fe78bc08b4cc0f733" title="Lesser half of the values in values.">lowerValues</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00038">38</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00039">39</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#aa9c5e1b67ec01dd4b94328da64c3074c">getMedian()</a>, and <a class="el" href="classValueMap.xhtml#aa13ab1a81147776fe1b76c1342b2dbd5">updateMap()</a>.</p>
 
@@ -727,7 +728,7 @@ Private Attributes</h2></td></tr>
 
 <p>Actual map that contains parameterCombinations and their respective values. </p>
 
-<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00058">58</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="ValueMap_8h_source.xhtml#l00059">59</a> of file <a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="classValueMap.xhtml#aad7206f4b8f871cbbf4383ba24f84f06">addValue()</a>, <a class="el" href="classValueMap.xhtml#a617f5348dcf85e794516e496a04fde7a">getSize()</a>, <a class="el" href="classValueMap.xhtml#ac6b062fe87c6dbd54e50adf8fe8ce594">getValues()</a>, <a class="el" href="classValueMap.xhtml#a60a1397bb6661b22236ff8f5f65dde61">isKnown()</a>, and <a class="el" href="classValueMap.xhtml#a3043db82ef367128e59f1a2140a509d3">query()</a>.</p>
 

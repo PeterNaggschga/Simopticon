@@ -26,7 +26,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Simopticon
-   &#160;<span id="projectnumber">1.0</span>
+   &#160;<span id="projectnumber">1.1.0</span>
    </div>
    <div id="projectbrief">A framework for the optimization of simulation parameters.</div>
   </td>
@@ -102,6 +102,8 @@ $(document).ready(function(){initNavTree('Controller_8cpp.xhtml',''); initResiza
 <code>#include &quot;<a class="el" href="StubController_8h_source.xhtml">StubController.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ValueMap_8h_source.xhtml">ValueMap.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="DirectOptimizer_8h_source.xhtml">../optimizer/direct/DirectOptimizer.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MonteCarlo_8h_source.xhtml">../optimizer/montecarlo/MonteCarlo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RandomNeighbors_8h_source.xhtml">../optimizer/randomneighbors/RandomNeighbors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PlexeSimulationRunner_8h_source.xhtml">../runner/plexe/PlexeSimulationRunner.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ConstantHeadway_8h_source.xhtml">../evaluation/constant_headway/ConstantHeadway.h</a>&quot;</code><br />
 <code>#include &quot;nlohmann/json.hpp&quot;</code><br />
@@ -122,6 +124,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>In this file, the implementation of the <a class="el" href="classController.xhtml" title="A class responsible for communication between Optimizer, SimulationRunner and Evaluation and also use...">Controller</a> class is defined. </p>
+<dl class="section author"><dt>Author</dt><dd>Per Natzschka </dd></dl>
 
 <p class="definition">Definition in file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
@@ -161,7 +164,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A json object parsed from the given file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00028">28</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Controller_8cpp_source.xhtml#l00031">31</a> of file <a class="el" href="Controller_8cpp_source.xhtml">Controller.cpp</a>.</p>
 
 </div>
 </div>
