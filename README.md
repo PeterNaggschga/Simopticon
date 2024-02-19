@@ -31,7 +31,8 @@ The described process is distributed over four major components:
 2. SimulationRunner: A component used to run simulations with certain parameters automatically.
 3. Evaluation: A component capable of calculating a rating value based on result files of simulations.
 4. Controller: A component managing the optimization process and communication between Optimizer, SimulationRunner and
-   Evaluation. Used to abstract components 1-3 from each other.
+   Evaluation.
+   Used to abstract components 1–3 from each other.
 
 Extensions of the framework may introduce new Optimizer, SimulationRunner and Evaluation implementations
 (see [Extension](#extension)).
@@ -41,7 +42,7 @@ using the [Plexe](https://plexe.car2x.org/) framework.
 The available Optimizers are explained in [Available Optimizers](#available-optimizers).
 
 The full API documentation may be found
-on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/Simopticon/)
+on [peternaggschga.github.io/Simopticon](https://peternaggschga.github.io/Simopticon/)
 or in the comprehensive [PDF file](https://peternaggschga.github.io/Simopticon/documentation.pdf) provided.
 A more in-depth explanation of *Simopticon* and its design principles may be found in the
 [**german** bachelor's thesis](https://peternaggschga.github.io/Simopticon/thesis.pdf) that proposed the framework.
@@ -244,15 +245,14 @@ This leads to a balance between local refinement and global optimization.
 
 The concrete implementation of DIRECT in *Simopticon* is a derivative of Adaptive Diagonal Curves and MrDIRECT
 which are both derivatives of the original DIRECT algorithm.
-For a more in-depth explanation of the implemented algorithm refer to the [**german
-** bachelor's thesis](https://peternaggschga.github.io/Simopticon/thesis.pdf)
-that proposed it.
+For a more in-depth explanation of the implemented algorithm refer to the
+[**german** bachelor's thesis](https://peternaggschga.github.io/Simopticon/thesis.pdf) that proposed it.
 
 #### Monte Carlo Optimization
 
 Monte Carlo methods are a simple class of random algorithms and therefore not deterministic.
 When applied to optimization problems, they show great performance despite their simplicity.
-Basically the algorithm iteratively selects random values to be tested and evaluates them.
+Basically, the algorithm iteratively selects random values to be tested and evaluates them.
 
 #### Random Neighbor Optimization
 
