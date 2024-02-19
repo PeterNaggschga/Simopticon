@@ -9,7 +9,8 @@
    3. [Update](#update)
 3. [Usage](#usage)
    1. [Configuration](#configuration)
-   2. [Optimization](#optimization)
+   2. [Available Optimizers](#available-optimizers)
+   3. [Optimization](#optimization)
 4. [Extension](#extension)
    1. [Development](#development)
    2. [Integration](#integration)
@@ -34,8 +35,10 @@ The described process is distributed over four major components:
 
 Extensions of the framework may introduce new Optimizer, SimulationRunner and Evaluation implementations
 (see [Extension](#extension)).
-Currently, there is only one implementation of each component, tailored for the optimization of platoon controllers
+Currently, there is only one implementation of SimulationRunner and Evaluation, tailored for the optimization of platoon
+controllers
 using the [Plexe](https://plexe.car2x.org/) framework.
+The available Optimizers are explained in [Available Optimizers](#available-optimizers).
 
 The full API documentation may be found
 on [peternaggschga.github.io/simopticon](https://peternaggschga.github.io/Simopticon/)
@@ -221,6 +224,35 @@ There you have to set the `pythonScript` and the `omnetppDirectory` keys.
 `pythonScript` must point to the script `constant_headway.py` which can be found in `src/evaluation/constant_headway`.
 `omnetppDirectory` must point to the directory where OMNeT++ Version 6 or higher is installed,
 e.g. `~/src/omnetpp-6.0.1`.
+
+### Available Optimizers
+
+*Simopticon* contains implementations of multiple optimization strategies, which are shortly described here.
+Which algorithm is used can be selected in the main config (`config/simopticon.json`).
+
+#### DIRECT-Algorithm
+
+The DIRECT algorithm is a global optimization algorithm motivated by Lipschitzian optimization.
+DIRECT is deterministic and tailored to low-dimensional problems.
+It partitions the search space iteratively into increasingly smaller rectangles
+which are each sampled on opposing vertices.
+DIRECT decides which rectangles are explored further,
+based on the value of those samples and the size of the rectangles.
+That way, rectangles are sampled either because they yield good values,
+or because they are large and therefore not yet sampled in detail.
+This leads to a balance between local refinement and global optimization.
+
+The concrete implementation of DIRECT in *Simopticon* is a derivative of Adaptive Diagonal Curves and MrDIRECT
+which are both derivatives of the original DIRECT algorithm.
+For a more in-depth explanation of the implemented algorithm refer to the [**german
+** bachelor's thesis](https://peternaggschga.github.io/Simopticon/thesis.pdf)
+that proposed it.
+
+#### Monte Carlo Optimization
+
+Monte Carlo methods are a simple class of random algorithms and therefore not deterministic.
+When applied to optimization problems, they show great performance despite their simplicity.
+Basically the algorithm iteratively selects random values to be tested and evaluates them.
 
 ### Optimization
 
