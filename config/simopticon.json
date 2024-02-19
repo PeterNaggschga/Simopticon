@@ -16,21 +16,21 @@
   },
   // Optimizer-related Options
   "optimizer": {
-    // optimizer to be used
+    // optimizer to be used (either "Direct", "MonteCarlo", or "RandomNeighbor")
     "optimizer": "Direct",
     // config of the used optimizer
     "config": "optimizers/direct.json"
   },
   // SimulationRunner-related Options
   "runner": {
-    // runner to be used,
+    // runner to be used (currently only "Plexe" available)
     "runner": "Plexe",
     // config of the used runner
     "config": "runners/plexe.json"
   },
   // Evaluation-related Options
   "evaluation": {
-    // evaluation to be used
+    // evaluation to be used (currently only "ConstantHeadway" available
     "evaluation": "ConstantHeadway",
     // config of the used evaluation
     "config": "evaluations/constant_headway.json"
