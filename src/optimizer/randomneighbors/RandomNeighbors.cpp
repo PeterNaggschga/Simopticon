@@ -29,6 +29,11 @@ void RandomNeighbors::runOptimization() {
     size_t evaluations = 0;
     functionValue bestValue = INFINITY;
 
+    // set random seed for reproducible results
+    // NOTE: Separate random number generators would be better if there are different positions in Simopticon where
+    // random numbers are used. This is currently (2023-12-07) not the case.
+    srand(1234); // NOLINT(*-msc51-cpp)
+
     while (!aborted && stopCon.evaluate(evaluations, bestValue)) {
         std::list<parameterCombination> paramList;
 
