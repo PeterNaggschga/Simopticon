@@ -254,6 +254,15 @@ Monte Carlo methods are a simple class of random algorithms and therefore not de
 When applied to optimization problems, they show great performance despite their simplicity.
 Basically the algorithm iteratively selects random values to be tested and evaluates them.
 
+#### Random Neighbor Optimization
+
+The RandomNeighbor Optimizer is an implementation
+of [random-restart stochastic hill climbing](https://en.wikipedia.org/wiki/Hill_climbing#Variants).
+It starts at a random point in the search space.
+In the next step, a new point is randomly chosen from the neighborhood of the current optimum.
+The next point is chosen completely random (i.e. independent of the optimum)
+with a predefined probability to ensure global search.
+
 ### Optimization
 
 The optimization is invoked on the command line by executing the program built in [Setup](#setup).
