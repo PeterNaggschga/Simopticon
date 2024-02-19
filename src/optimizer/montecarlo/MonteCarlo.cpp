@@ -8,7 +8,6 @@
 #include "../../controller/ValueMap.h"
 #include "../../parameters/ContinuousParameter.h"
 
-#include <utility>
 #include <memory>
 #include <fstream>
 
@@ -31,7 +30,7 @@ void MonteCarlo::runOptimization() {
     // set random seed for reproducible results
     // NOTE: Separate random number generators would be better if there are different positions in Simopticon where
     // random numbers are used. This is currently (2023-12-07) not the case.
-    srand(1234);
+    srand(1234); // NOLINT(*-msc51-cpp)
 
 
     while (!aborted && stopCon.evaluate(evaluations, bestValue)) {
@@ -39,9 +38,9 @@ void MonteCarlo::runOptimization() {
 
         // approach taken from parameterNormalizer::denormalize()
         for (int i = 0; i < parallelTrials; i++) {
-            parameterCombination *pcomb = new parameterCombination();
+            auto *pcomb = new parameterCombination();
             for (const std::shared_ptr<ParameterDefinition> &pdef: parameters) {
-                double rand_relative = (double) rand() / RAND_MAX;
+                double rand_relative = (double) rand() / RAND_MAX; // NOLINT(*-msc50-cpp)
                 std::shared_ptr<Parameter> newParam(
                         new ContinuousParameter(pdef, (coordinate) rand_relative * (pdef->getMax() - pdef->getMin()) +
                                                       pdef->getMin()));
@@ -53,7 +52,7 @@ void MonteCarlo::runOptimization() {
         bestValue = getValueMap().getTopVals().front().second;
 
         lastEvaluations = "";
-        for (parameterCombination comb: paramList) {
+        for (const parameterCombination &comb: paramList) {
             lastEvaluations += std::to_string(values[comb]) + "; ";
         }
 
@@ -90,7 +89,7 @@ std::string MonteCarlo::getStatus() {
     status += "Last evaluations: " + lastEvaluations + "\n";
     status += "Best evaluations: ";
     int counter = 0;
-    for (auto val: getValueMap().getTopVals()) {
+    for (const auto &val: getValueMap().getTopVals()) {
         status += std::to_string(val.second) + "; ";
         counter++;
         if (counter == 4)

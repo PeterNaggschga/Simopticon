@@ -56,7 +56,7 @@ private:
     /**
      * True, if the last iteration was a local search, false if global search
      */
-    bool lastLocal;
+    bool lastLocal = false;
     /**
      * An object deciding when the optimization stops.
      */

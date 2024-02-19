@@ -42,7 +42,7 @@ public:
      * Creates a StoppingCondition based on the given json configuration.
      * @param stopCon: JSON object defining the condition values.
      */
-    explicit DirectStoppingCondition(nlohmann::json stopCon);
+    explicit DirectStoppingCondition(const nlohmann::json &stopCon);
 
     /**
      * Checks if any of the configured conditions is met for the given parameters.

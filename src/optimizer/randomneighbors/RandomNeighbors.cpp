@@ -8,7 +8,6 @@
 #include "../../controller/ValueMap.h"
 #include "../../parameters/ContinuousParameter.h"
 
-#include <utility>
 #include <memory>
 #include <fstream>
 
@@ -21,6 +20,8 @@ RandomNeighbors::RandomNeighbors(Controller &ctrl, const std::list<std::shared_p
                                                           localSearchProbability(config.at("localSearchProbability")) {
 }
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "cert-msc50-cpp"
 void RandomNeighbors::runOptimization() {
     stopCon.setStartNow();
 
@@ -33,7 +34,7 @@ void RandomNeighbors::runOptimization() {
     // set random seed for reproducible results
     // NOTE: Separate random number generators would be better if there are different positions in Simopticon where
     // random numbers are used. This is currently (2023-12-07) not the case.
-    srand(1234);
+    srand(1234); // NOLINT(*-msc51-cpp)
 
 
     while (!aborted && stopCon.evaluate(evaluations, bestValue)) {
@@ -45,7 +46,7 @@ void RandomNeighbors::runOptimization() {
         parameterCombination currentOptimum = getValueMap().getTopVals().front().first;
 
         for (int i = 0; i < parallelTrials; i++) {
-            parameterCombination *pcomb = new parameterCombination();
+            auto *pcomb = new parameterCombination();
             coordinate coord;
             int index = 0;
             for (const std::shared_ptr<ParameterDefinition> &pdef: parameters) {
@@ -73,7 +74,7 @@ void RandomNeighbors::runOptimization() {
         bestValue = getValueMap().getTopVals().front().second;
 
         lastEvaluations = "";
-        for (parameterCombination comb: paramList) {
+        for (const parameterCombination &comb: paramList) {
             lastEvaluations += std::to_string(values[comb]) + "; ";
         }
 
@@ -86,6 +87,8 @@ void RandomNeighbors::runOptimization() {
         }
     }
 }
+
+#pragma clang diagnostic pop
 
 void RandomNeighbors::saveProgress(functionValue bestVal, size_t evaluations) const {
     static std::ofstream out;
@@ -111,7 +114,7 @@ std::string RandomNeighbors::getStatus() {
     status += "\n";
     status += "Best evaluations: ";
     int counter = 0;
-    for (auto val: getValueMap().getTopVals()) {
+    for (const auto &val: getValueMap().getTopVals()) {
         status += std::to_string(val.second) + "; ";
         counter++;
         if (counter == 4)
