@@ -25,7 +25,6 @@ class StoppingCondition;
  * This is a simple implementation of Monte Carlo optimization. Parameter values are chosen by random in given bounds.
  * @defgroup montecarlo montecarlo
  * @ingroup optimizer
- * @author Burkhard Hensel
  */
 
 /**

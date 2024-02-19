@@ -3,6 +3,7 @@
  *
  * @file main.cpp
  * @ingroup utils
+ * @author Per Natzschka
  */
 
 /**

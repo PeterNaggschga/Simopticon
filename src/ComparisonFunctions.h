@@ -11,6 +11,7 @@
  *
  * @file ComparisonFunctions.h
  * @ingroup utils
+ * @author Per Natzschka
  */
 
 /**

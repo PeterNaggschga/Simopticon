@@ -17,6 +17,7 @@
  * A class used for deciding whether the DIRECT should be stopped.
  * Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met.
  * @ingroup direct
+ * @author Per Natzschka
  */
 class DirectStoppingCondition : public StoppingCondition {
 private:

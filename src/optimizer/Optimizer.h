@@ -38,6 +38,7 @@ class ValueMap;
  * The Optimizer has control over which parameterCombinations are simulated and evaluated as well as the duration of the optimization.
  * If #abort is called the optimization strategy should finish the optimization as soon as possible.
  * @ingroup optimizer
+ * @author Per Natzschka
  */
 class Optimizer : public Status, public Abortable {
 private:

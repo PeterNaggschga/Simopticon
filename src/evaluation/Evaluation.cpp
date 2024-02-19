@@ -1,6 +1,7 @@
 /**
  * @file
  * In this file, the implementation of the Evaluation class is defined.
+ * @author Per Natzschka
  */
 
 #include "Evaluation.h"

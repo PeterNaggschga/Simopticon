@@ -15,6 +15,7 @@
 #
 # @file constant_headway.py
 # @ingroup constant_headway
+# @author Per Natzschka
 
 import os
 import sys

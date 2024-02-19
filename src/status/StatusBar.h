@@ -4,6 +4,7 @@
 /**
  * @file
  * In this file, the header of the StatusBar class is defined.
+ * @author Per Natzschka
  */
 
 #include "../Types.h"

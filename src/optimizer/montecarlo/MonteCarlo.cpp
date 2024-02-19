@@ -1,6 +1,7 @@
 /**
  * @file
  * In this file, the implementation of the MonteCarlo optimizer class is defined.
+ * @author Burkhard Hensel
  */
 
 #include "MonteCarlo.h"

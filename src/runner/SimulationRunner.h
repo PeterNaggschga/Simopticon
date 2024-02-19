@@ -34,6 +34,7 @@ class Parameter;
 /**
  * A class capable of running simulations with certain parameterCombinations.
  * @ingroup runner
+ * @author Per Natzschka
  */
 class SimulationRunner :
         public Multithreaded<parameterCombination, std::pair<std::filesystem::path, std::set<runId>>, CmpVectorSharedParameter>,

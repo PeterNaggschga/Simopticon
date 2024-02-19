@@ -22,6 +22,7 @@
  * An interface defining functions for status updates on configuration and progress of a class.
  * Used for creation of a StatusBar. Overriding the defined methods is not mandatory but recommended.
  * @ingroup status
+ * @author Per Natzschka
  */
 class Status {
 protected:

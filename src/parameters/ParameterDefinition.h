@@ -13,6 +13,7 @@
 /**
  * A class storing information on the properties of parameters that are being optimized.
  * @ingroup parameters
+ * @author Per Natzschka
  */
 class ParameterDefinition {
 private:

@@ -9,6 +9,7 @@
 /**
  * A simple interface for classes that encapsulate abortable processes.
  * @ingroup utils
+ * @author Per Natzschka
  */
 class Abortable {
 protected:

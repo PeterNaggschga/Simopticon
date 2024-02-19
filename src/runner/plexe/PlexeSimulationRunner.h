@@ -26,6 +26,7 @@
 /**
  * A class capable of starting platooning simulations in the <a href="https://plexe.car2x.org/">Plexe</a> framework with given parameterCombinations.
  * @ingroup plexe
+ * @author Per Natzschka
  */
 class PlexeSimulationRunner : public SimulationRunner,
                               public Multithreaded<std::pair<std::filesystem::path, std::pair<std::string, unsigned int>>, bool> {
