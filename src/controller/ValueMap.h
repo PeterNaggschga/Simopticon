@@ -24,6 +24,7 @@
  * Values are inserted into the data structure at once when #updateMap is called.
  * Before that they are saved in #tba to avoid unnecessary costly insertion operations.
  * @ingroup controller
+ * @author Per Natzschka
  */
 class ValueMap {
 private:

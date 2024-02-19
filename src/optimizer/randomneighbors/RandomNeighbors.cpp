@@ -1,6 +1,7 @@
 /**
  * @file
  * In this file, the implementation of the RandomNeighbors optimizer class is defined.
+ * @author Burkhard Hensel
  */
 
 #include "RandomNeighbors.h"
@@ -26,16 +27,7 @@ void RandomNeighbors::runOptimization() {
     stopCon.setStartNow();
 
     size_t evaluations = 0;
-    functionValue bestValue = getValueMap().getTopVals().front().second;
-    if (trackProgress) {
-        saveProgress(bestValue, evaluations);
-    }
-
-    // set random seed for reproducible results
-    // NOTE: Separate random number generators would be better if there are different positions in Simopticon where
-    // random numbers are used. This is currently (2023-12-07) not the case.
-    srand(1234); // NOLINT(*-msc51-cpp)
-
+    functionValue bestValue = INFINITY;
 
     while (!aborted && stopCon.evaluate(evaluations, bestValue)) {
         std::list<parameterCombination> paramList;
@@ -43,7 +35,10 @@ void RandomNeighbors::runOptimization() {
         double mode = (double) rand() / RAND_MAX;
         double size_scale = (double) rand() / RAND_MAX;
         lastLocal = mode < localSearchProbability && iterations >= 5;
-        parameterCombination currentOptimum = getValueMap().getTopVals().front().first;
+        parameterCombination currentOptimum;
+        if (lastLocal) {
+            currentOptimum = getValueMap().getTopVals().front().first;
+        }
 
         for (int i = 0; i < parallelTrials; i++) {
             auto *pcomb = new parameterCombination();

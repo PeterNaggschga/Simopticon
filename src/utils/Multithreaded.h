@@ -21,6 +21,7 @@
  * @tparam Compare: Comparison for objects of type Key.
  * @tparam Allocator: Allocator for pairs of constant Key and T.
  * @ingroup utils
+ * @author Per Natzschka
  */
 template<class Key, class T, class Compare = std::less<Key>, class Allocator = std::allocator<std::pair<const Key, T>>>
 class Multithreaded {

@@ -27,7 +27,6 @@ class StoppingCondition;
  *
  * @defgroup randomneighbors randomneighbors
  * @ingroup optimizer
- * @author Burkhard Hensel
  */
 
 /**

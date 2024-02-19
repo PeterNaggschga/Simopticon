@@ -31,6 +31,7 @@ class StoppingCondition;
  * It incorporates features proposed by <a href="https://doi.org/10.1007/s10898-016-0447-z">Liu et al.</a> and <a href="https://doi.org/10.1137/040621132">Sergeyev and Kvasov</a>.
  * @defgroup direct direct
  * @ingroup optimizer
+ * @author Per Natzschka
  */
 
 /**

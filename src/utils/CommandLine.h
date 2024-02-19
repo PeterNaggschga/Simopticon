@@ -22,6 +22,7 @@
 /**
  * A class containing functionality for executing commands on UNIX shell.
  * @ingroup utils
+ * @author Per Natzschka
  */
 class CommandLine {
 public:

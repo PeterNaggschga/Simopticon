@@ -9,6 +9,7 @@
  *
  * @file DirectComparisonFunctions.h
  * @ingroup direct
+ * @author Per Natzschka
  */
 
 /**

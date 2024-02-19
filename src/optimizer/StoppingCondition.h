@@ -15,7 +15,8 @@
 /**
  * A class used for deciding whether the optimization should be stopped.
  * Every conditions is optional and can be set in config. The optimization is stopped when one of the activated conditions is met.
- * @ingroup direct
+ * @ingroup optimizer
+ * @author Per Natzschka
  */
 class StoppingCondition {
 private:
