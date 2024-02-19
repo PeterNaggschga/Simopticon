@@ -19,7 +19,6 @@
  * @ingroup direct
  */
 class DirectStoppingCondition : public StoppingCondition {
-    using StoppingCondition::getConditionFromJSON;
 private:
     /**
      * Number of rectangles in the partition after which the optimization should stop.

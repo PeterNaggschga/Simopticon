@@ -12,11 +12,6 @@ StoppingCondition::StoppingCondition(size_t evaluations, unsigned int minutes,
           NR_ACCURACY_ITERATIONS(accuracyIterations) {
 }
 
-template<typename T>
-T StoppingCondition::getConditionFromJSON(nlohmann::json object, const std::string &key, const std::string &val) {
-    return object.at(key).at("useCondition").get<bool>() ? object.at(key).at(val).get<T>() : 0;
-}
-
 StoppingCondition::StoppingCondition(nlohmann::json stopCon) :
         NR_EVALUATIONS(getConditionFromJSON<size_t>(stopCon, "evaluations")),
         mins(getConditionFromJSON<unsigned int>(stopCon, "minutes")),
